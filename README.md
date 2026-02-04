@@ -92,3 +92,16 @@ The `kafkanotes.sty` file also configures:
 - Custom spacing for sections and paragraphs
 - Fancy headers and footers support
 - Margin notes configuration
+
+### Color Commands (from kafkanotes.sty)
+
+You can use the following commands for colored text in your notes:
+- `\red{text}` – Red colored text
+- `\blue{text}` – Blue colored text
+- `\orange{text}` – Orange colored text
+- `\green{text}` – Green colored text
+
+Example:
+```latex
+\red{Important!} \blue{Note} \orange{Warning} \green{Success}
+```

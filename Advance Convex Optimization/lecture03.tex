@@ -1,0 +1,958 @@
+\section{Lecture 3}
+
+\begin{definition}
+    Let $\mathbb{X}$ be a normed vector space.
+
+    \begin{itemize}
+        \item $\Gamma(\mathbb{X}) := \{ f : \mathbb{X} \to \mathbb{R} \mid f \text{ is convex} \}$.
+
+        \item $C^0(\mathbb{X})$ denotes the space of continuous functions on $\mathbb{X}$.
+
+        \item $C^1(\mathbb{X})$ denotes the space of continuously differentiable functions on $\mathbb{X}$.
+
+        \item A function $f : \mathbb{X} \to \mathbb{R}$ is called $\beta$-Lipschitz if
+              \[
+                  |f(\mathbf{x}) - f(\mathbf{y})|
+                  \le \beta \|\mathbf{x} - \mathbf{y}\|
+                  \quad \text{for all } \mathbf{x},\mathbf{y} \in \mathbb{X}.
+              \]
+
+        \item A function $f : \mathbb{X} \to \mathbb{R}$ is called $\beta$-smooth if
+              $f \in C^1(\mathbb{X})$ and
+              \[
+                  \|\nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\|
+                  \le \beta \|\mathbf{x} - \mathbf{y}\|
+                  \quad \text{for all } \mathbf{x},\mathbf{y} \in \mathbb{X}.
+              \]
+
+        \item
+              \[
+                  C^1_\beta(\mathbb{X})
+                  := \{ f : \mathbb{X} \to \mathbb{R}
+                  \mid f \in C^1(\mathbb{X}) \text{ and }
+                  \nabla f \text{ is } \beta\text{-Lipschitz} \}.
+              \]
+    \end{itemize}
+\end{definition}
+
+\begin{examples}
+    \begin{itemize}
+        \item Let $\mathbb{X}=\mathbb{R}^2$. The function
+              \[
+                  f(\mathbf{x}) = \tfrac12 \|\mathbf{x}\|_2^2
+              \]
+              is $1$-smooth.
+
+        \item Let $Q \in \mathbb{R}^{n \times n}$ be symmetric positive semidefinite. The quadratic function
+              \[
+                  f(\mathbf{x}) = \tfrac12 \mathbf{x}^\top Q \mathbf{x}
+              \]
+              is $\lambda_{\max}(Q)$-smooth.
+
+        \item The function
+              \[
+                  f(\mathbf{x}) = \|\mathbf{x}\|_2^2
+              \]
+              is $4$-smooth on the unit ball
+              \[
+                  \{ \mathbf{x} \in \mathbb{R}^n : \|\mathbf{x}\|_2 \le 1 \}.
+              \]
+    \end{itemize}
+\end{examples}
+
+
+\begin{theorem}
+    Let $f : \mathbb{R}^n \to \mathbb{R}$ be continuously differentiable.
+    Then $f$ is $\beta$-Lipschitz (with respect to the Euclidean norm) if and only if
+    \[
+        \|\nabla f(\mathbf{x})\|_2 \le \beta
+        \quad \text{for all } \mathbf{x} \in \mathbb{R}^n.
+    \]
+\end{theorem}
+
+\begin{proof}
+    ($\Rightarrow$)
+    Assume $f$ is $\beta$-Lipschitz.
+    Fix $\mathbf{x} \in \mathbb{R}^n$ and let $\mathbf{v} \in \mathbb{R}^n$ be any unit vector.
+    For $t \in \mathbb{R}$,
+    \[
+        |f(\mathbf{x} + t\mathbf{v}) - f(\mathbf{x})|
+        \le \beta |t|.
+    \]
+    Dividing by $|t|$ and letting $t \to 0$, we obtain
+    \[
+        |\nabla f(\mathbf{x})^\top \mathbf{v}| \le \beta.
+    \]
+    Taking the supremum over all unit vectors $\mathbf{v}$ yields
+    \[
+        \|\nabla f(\mathbf{x})\|_2 \le \beta.
+    \]
+
+    ($\Leftarrow$)
+    Assume $\|\nabla f(\mathbf{x})\|_2 \le \beta$ for all $\mathbf{x} \in \mathbb{R}^n$.
+    For any $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$, define
+    \[
+        \boldsymbol{\gamma}(t) = \mathbf{x} + t(\mathbf{y} - \mathbf{x}),
+        \quad t \in [0,1].
+    \]
+    By the fundamental theorem of calculus,
+    \[
+        f(\mathbf{y}) - f(\mathbf{x})
+        = \int_0^1 \nabla f(\boldsymbol{\gamma}(t))^\top (\mathbf{y} - \mathbf{x}) \, dt.
+    \]
+    Applying the Cauchy--Schwarz inequality,
+    \[
+        |f(\mathbf{y}) - f(\mathbf{x})|
+        \le \int_0^1 \|\nabla f(\boldsymbol{\gamma}(t))\|_2 \, \|\mathbf{y} - \mathbf{x}\|_2 \, dt
+        \le \beta \|\mathbf{y} - \mathbf{x}\|_2.
+    \]
+    Thus, $f$ is $\beta$-Lipschitz.
+\end{proof}
+
+\begin{exercise}[First-order characterizations of convexity]
+    Let $f : \mathbb{R}^n \to \mathbb{R}$ be differentiable.
+    The following statements are equivalent:
+
+    \begin{enumerate}
+        \item $f$ is convex.
+
+        \item For all $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+              \[
+                  f(\mathbf{y})
+                  \ge
+                  f(\mathbf{x})
+                  +
+                  \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+              \]
+
+        \item For all $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+              \[
+                  \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}), \mathbf{x} - \mathbf{y} \rangle \ge 0.
+              \]
+    \end{enumerate}
+\end{exercise}
+\begin{proof}
+    We prove the equivalence by showing $(1)\Rightarrow(2)\Rightarrow(3)\Rightarrow(1)$.
+
+    \medskip
+
+    \noindent
+    $(1)\Rightarrow(2)$.
+    Assume that $f$ is convex.
+    Fix $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ and define
+    \[
+        \phi(t) := f(\mathbf{x} + t(\mathbf{y} - \mathbf{x})), \quad t \in [0,1].
+    \]
+    Since $f$ is convex and differentiable, $\phi$ is convex and differentiable.
+    By convexity of $\phi$,
+    \[
+        \phi(1) \ge \phi(0) + \phi'(0).
+    \]
+    Using the chain rule,
+    \[
+        \phi'(0)
+        =
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+    Substituting $\phi(1)=f(\mathbf{y})$ and $\phi(0)=f(\mathbf{x})$ yields
+    \[
+        f(\mathbf{y})
+        \ge
+        f(\mathbf{x})
+        +
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+
+    \medskip
+
+    \noindent
+    $(2)\Rightarrow(3)$.
+    Assume that (2) holds.
+    Applying (2) with $(\mathbf{x},\mathbf{y})$ gives
+    \[
+        f(\mathbf{y})
+        \ge
+        f(\mathbf{x})
+        +
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+    Applying (2) with $(\mathbf{y},\mathbf{x})$ gives
+    \[
+        f(\mathbf{x})
+        \ge
+        f(\mathbf{y})
+        +
+        \langle \nabla f(\mathbf{y}), \mathbf{x} - \mathbf{y} \rangle.
+    \]
+    Adding the two inequalities and simplifying yields
+    \[
+        \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+        \mathbf{x} - \mathbf{y} \rangle \ge 0.
+    \]
+
+    \medskip
+
+    \noindent
+    $(3)\Rightarrow(1)$.
+    Assume that (3) holds.
+    Fix $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$ and define
+    \[
+        \boldsymbol{\gamma}(t) := (1-t)\mathbf{x} + t\mathbf{y},
+        \quad t \in [0,1],
+    \]
+    and
+    \[
+        \phi(t) := f(\boldsymbol{\gamma}(t)).
+    \]
+    By the chain rule,
+    \[
+        \phi'(t)
+        =
+        \langle \nabla f(\boldsymbol{\gamma}(t)), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+    Applying (3) with $\mathbf{x}=\boldsymbol{\gamma}(t)$ and $\mathbf{y}=\mathbf{x}$ gives
+    \[
+        \langle \nabla f(\boldsymbol{\gamma}(t)) - \nabla f(\mathbf{x}),
+        \boldsymbol{\gamma}(t) - \mathbf{x} \rangle \ge 0.
+    \]
+    Since $\boldsymbol{\gamma}(t)-\mathbf{x}=t(\mathbf{y}-\mathbf{x})$, this implies
+    \[
+        \phi'(t) \ge \phi'(0).
+    \]
+    Thus $\phi'$ is nondecreasing on $[0,1]$, and hence $\phi$ is convex.
+    Therefore,
+    \[
+        f(\boldsymbol{\gamma}(t))
+        \le
+        (1-t)f(\mathbf{x}) + t f(\mathbf{y}),
+        \quad \text{for all } t \in [0,1].
+    \]
+    This is precisely the definition of convexity of $f$.
+\end{proof}
+
+
+\begin{remark}
+    When $n=1$, condition (3) reduces to
+    \[
+        (f'(x) - f'(y))(x - y) \ge 0,
+    \]
+    which is equivalent to monotonicity of $f'$.
+    Hence, a differentiable function $f : \mathbb{R} \to \mathbb{R}$ is convex if and only if
+    its derivative is nondecreasing.
+\end{remark}
+
+\begin{lemma}[Smoothness Upper Bound or Descent Lemma]
+    Let $f \in C^1_\beta(\mathbb{X})$, where $\mathbb{X} \subset \mathbb{R}^n$.
+    Then, for all $\mathbf{x}, \mathbf{y} \in \mathbb{X}$,
+    \[
+        f(\mathbf{y})
+        \le
+        f(\mathbf{x})
+        +
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle
+        +
+        \frac{\beta}{2}\|\mathbf{y} - \mathbf{x}\|_2^2.
+    \]
+\end{lemma}
+\begin{proof}
+    Fix $\mathbf{x}, \mathbf{y} \in \mathbb{X}$ and define
+    \[
+        \boldsymbol{\gamma}(t) := \mathbf{x} + t(\mathbf{y} - \mathbf{x}),
+        \quad t \in [0,1],
+    \]
+    and
+    \[
+        \phi(t) := f(\boldsymbol{\gamma}(t)).
+    \]
+    By the chain rule,
+    \[
+        \phi'(t)
+        =
+        \langle \nabla f(\boldsymbol{\gamma}(t)), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+    Using the fundamental theorem of calculus,
+    \[
+        f(\mathbf{y}) - f(\mathbf{x})
+        =
+        \phi(1) - \phi(0)
+        =
+        \int_0^1 \phi'(t)\, dt.
+    \]
+    Add and subtract $\nabla f(\mathbf{x})$ inside the integrand:
+    \[
+        \begin{aligned}
+            f(\mathbf{y}) - f(\mathbf{x})
+             & =
+            \int_0^1
+            \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle \, dt \\
+             & \quad +
+            \int_0^1
+            \langle \nabla f(\boldsymbol{\gamma}(t)) - \nabla f(\mathbf{x}),
+            \mathbf{y} - \mathbf{x} \rangle \, dt.
+        \end{aligned}
+    \]
+    The first term gives
+    \[
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+    \]
+    For the second term, by Cauchy–Schwarz and $\beta$-Lipschitz continuity of $\nabla f$,
+    \[
+        \begin{aligned}
+            \left|
+            \langle \nabla f(\boldsymbol{\gamma}(t)) - \nabla f(\mathbf{x}),
+            \mathbf{y} - \mathbf{x} \rangle
+            \right|
+             & \le
+            \|\nabla f(\boldsymbol{\gamma}(t)) - \nabla f(\mathbf{x})\|_2
+            \|\mathbf{y} - \mathbf{x}\|_2 \\
+             & \le
+            \beta t \|\mathbf{y} - \mathbf{x}\|_2^2.
+        \end{aligned}
+    \]
+    Integrating over $t \in [0,1]$ yields
+    \[
+        \int_0^1 \beta t \|\mathbf{y} - \mathbf{x}\|_2^2 \, dt
+        =
+        \frac{\beta}{2}\|\mathbf{y} - \mathbf{x}\|_2^2.
+    \]
+    Combining all terms gives
+    \[
+        f(\mathbf{y})
+        \le
+        f(\mathbf{x})
+        +
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle
+        +
+        \frac{\beta}{2}\|\mathbf{y} - \mathbf{x}\|_2^2.
+    \]
+\end{proof}
+
+\begin{lemma}[Descent property of gradient descent]
+    \label{lem:smoothness}
+    Let $f \in C^1_\beta(\mathbb{X})$ and let $\gamma \in (0, 2/\beta]$.
+    Consider the gradient descent iteration
+    \[
+        \mathbf{x}_{k+1} = \mathbf{x}_k - \gamma \nabla f(\mathbf{x}_k),
+        \quad \mathbf{x}_0 \in \mathbb{X}.
+    \]
+    Then, for all $k \ge 0$,
+    \[
+        f(\mathbf{x}_{k+1}) \le f(\mathbf{x}_k),
+    \]
+    and more precisely,
+    \[
+        f(\mathbf{x}_{k+1})
+        \le
+        f(\mathbf{x}_k)
+        -
+        \gamma\Bigl(1 - \tfrac{\beta\gamma}{2}\Bigr)
+        \|\nabla f(\mathbf{x}_k)\|_2^2.
+    \]
+\end{lemma}\begin{proof}
+    Fix $k \ge 0$.
+    Apply Lemma~\ref{lem:smoothness} (the smoothness upper bound) with
+    \[
+        \mathbf{x} = \mathbf{x}_k,
+        \qquad
+        \mathbf{y} = \mathbf{x}_{k+1}.
+    \]
+    Since
+    \[
+        \mathbf{x}_{k+1} - \mathbf{x}_k
+        =
+        - \gamma \nabla f(\mathbf{x}_k),
+    \]
+    Lemma~\ref{lem:smoothness} yields
+    \[
+        \begin{aligned}
+            f(\mathbf{x}_{k+1})
+             & \le
+            f(\mathbf{x}_k)
+            +
+            \langle \nabla f(\mathbf{x}_k),
+            \mathbf{x}_{k+1} - \mathbf{x}_k \rangle
+            +
+            \frac{\beta}{2}\|\mathbf{x}_{k+1} - \mathbf{x}_k\|_2^2 \\
+             & =
+            f(\mathbf{x}_k)
+            -
+            \gamma \|\nabla f(\mathbf{x}_k)\|_2^2
+            +
+            \frac{\beta}{2}\gamma^2
+            \|\nabla f(\mathbf{x}_k)\|_2^2.
+        \end{aligned}
+    \]
+    Rearranging gives
+    \[
+        f(\mathbf{x}_{k+1})
+        \le
+        f(\mathbf{x}_k)
+        -
+        \gamma\Bigl(1 - \tfrac{\beta\gamma}{2}\Bigr)
+        \|\nabla f(\mathbf{x}_k)\|_2^2.
+    \]
+    If $\gamma \in (0,2/\beta]$, then
+    $1 - \tfrac{\beta\gamma}{2} \ge 0$, and hence
+    $f(\mathbf{x}_{k+1}) \le f(\mathbf{x}_k)$.
+\end{proof}
+\begin{theorem}
+    Let $f \in C^1_\beta(\mathbb{R}^n)$ be convex and let
+    $\mathbf{x}^\ast \in \arg\min f$ with $p^\ast := f(\mathbf{x}^\ast)$.
+    Consider gradient descent with step size $\gamma \in (0, 1/\beta]$:
+    \[
+        \mathbf{x}_{k+1} = \mathbf{x}_k - \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Define
+    \[
+        \delta_k := f(\mathbf{x}_k) - p^\ast.
+    \]
+    Then:
+    \begin{enumerate}
+        \item $\{f(\mathbf{x}_k)\}$ is nonincreasing and bounded below by $p^\ast$;
+        \item $\sum_{k=0}^\infty \|\nabla f(\mathbf{x}_k)\|_2^2 < \infty$;
+        \item there exists $C > 0$ such that
+              \[
+                  \delta_k \le \frac{C}{k}
+                  \quad \text{for all } k \ge 1.
+              \]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    By the descent lemma, for $\gamma \le 1/\beta$,
+    \[
+        f(\mathbf{x}_{k+1})
+        \le
+        f(\mathbf{x}_k)
+        -
+        \frac{\gamma}{2}\|\nabla f(\mathbf{x}_k)\|_2^2.
+    \]
+    Subtracting $p^\ast$ from both sides yields
+    \[
+        \delta_{k+1}
+        \le
+        \delta_k
+        -
+        \frac{\gamma}{2}\|\nabla f(\mathbf{x}_k)\|_2^2.
+        \tag{1}
+    \]
+    Hence $\{\delta_k\}$ is nonincreasing and bounded below by $0$, and therefore
+    \[
+        \delta_k \to v \ge 0.
+    \]
+
+    Summing inequality \emph{(1)} from $k=0$ to $N-1$ gives
+    \[
+        \delta_N
+        \le
+        \delta_0
+        -
+        \frac{\gamma}{2}
+        \sum_{k=0}^{N-1}
+        \|\nabla f(\mathbf{x}_k)\|_2^2.
+    \]
+    Since $\delta_N \ge 0$, we obtain
+    \[
+        \sum_{k=0}^{\infty}
+        \|\nabla f(\mathbf{x}_k)\|_2^2
+        \le
+        \frac{2}{\gamma}\delta_0
+        < \infty.
+        \tag{2}
+    \]
+
+    By convexity of $f$,
+    \[
+        f(\mathbf{x}_k) - p^\ast
+        \le
+        \langle \nabla f(\mathbf{x}_k), \mathbf{x}_k - \mathbf{x}^\ast \rangle.
+    \]
+    Using the Cauchy--Schwarz inequality,
+    \[
+        \delta_k
+        \le
+        \|\nabla f(\mathbf{x}_k)\|_2
+        \|\mathbf{x}_k - \mathbf{x}^\ast\|_2.
+    \]
+    Since $\{f(\mathbf{x}_k)\}$ is decreasing and $f$ is coercive on level sets,
+    there exists $R > 0$ such that
+    \[
+        \|\mathbf{x}_k - \mathbf{x}^\ast\|_2 \le R
+        \quad \text{for all } k.
+    \]
+
+    The boundedness of $\{\mathbf{x}_k\}$ is established later using Fej\'er monotonicity;
+    see Remark~\ref{rem:fejer-boundedness}.
+
+    Thus,
+    \[
+        \delta_k
+        \le
+        R \|\nabla f(\mathbf{x}_k)\|_2.
+        \tag{3}
+    \]
+
+    Combining \emph{(1)} and \emph{(3)}, we obtain
+    \[
+        \delta_{k+1}
+        \le
+        \delta_k
+        -
+        \frac{\gamma}{2R^2}
+        \delta_k^2.
+    \]
+    This implies
+    \[
+        \frac{1}{\delta_{k+1}}
+        \ge
+        \frac{1}{\delta_k}
+        +
+        \frac{\gamma}{2R^2}.
+    \]
+    Iterating,
+    \[
+        \frac{1}{\delta_k}
+        \ge
+        \frac{1}{\delta_0}
+        +
+        k\frac{\gamma}{2R^2}.
+    \]
+    Taking reciprocals yields
+    \[
+        \delta_k
+        \le
+        \frac{2R^2}{\gamma k}
+        = \frac{C}{k},
+        \quad
+        C := \frac{2R^2}{\gamma}.
+    \]
+\end{proof}
+\begin{remark}\label{rem:fejer-boundedness}
+    The boundedness assumption used in the proof above is not restrictive.
+    In fact, for $\gamma \in (0,1/\beta]$, the gradient descent iterates
+    $\{\mathbf{x}_k\}$ are Fej\'er monotone with respect to $\arg\min f$,
+    which implies boundedness and convergence.
+\end{remark}
+
+
+\begin{lemma}[Baillon-Haddad]\label{lem:baillon-haddad}
+    Let $f : \mathbb{R}^n \to \mathbb{R}$ be convex and continuously differentiable.
+    If $\nabla f$ is $\beta$-Lipschitz, then $\nabla f$ is $\frac{1}{\beta}$-cocoercive, i.e.,
+    for all $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+    \[
+        \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+        \mathbf{x} - \mathbf{y} \rangle
+        \ge
+        \frac{1}{\beta}
+        \|\nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\|_2^2.
+    \]
+\end{lemma}
+
+\begin{proof}
+    Since $f \in C^1_\beta(\mathbb{R}^n)$, the descent lemma gives, for all
+    $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+    \[
+        f(\mathbf{y})
+        \le
+        f(\mathbf{x})
+        +
+        \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle
+        +
+        \frac{\beta}{2}\|\mathbf{y} - \mathbf{x}\|_2^2.
+        \tag{1}
+    \]
+    Exchanging the roles of $\mathbf{x}$ and $\mathbf{y}$ yields
+    \[
+        f(\mathbf{x})
+        \le
+        f(\mathbf{y})
+        +
+        \langle \nabla f(\mathbf{y}), \mathbf{x} - \mathbf{y} \rangle
+        +
+        \frac{\beta}{2}\|\mathbf{x} - \mathbf{y}\|_2^2.
+        \tag{2}
+    \]
+    Adding \emph{(1)} and \emph{(2)} gives
+    \[
+        \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+        \mathbf{x} - \mathbf{y} \rangle
+        \le
+        \beta \|\mathbf{x} - \mathbf{y}\|_2^2.
+        \tag{3}
+    \]
+
+    On the other hand, since $\nabla f$ is $\beta$-Lipschitz,
+    \[
+        \|\nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\|_2^2
+        \le
+        \beta
+        \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+        \mathbf{x} - \mathbf{y} \rangle.
+    \]
+    Rearranging yields the desired inequality:
+    \[
+        \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+        \mathbf{x} - \mathbf{y} \rangle
+        \ge
+        \frac{1}{\beta}
+        \|\nabla f(\mathbf{x}) - \nabla f(\mathbf{y})\|_2^2.
+    \]
+\end{proof}
+
+\begin{definition}[Fej\'er monotonicity]
+    Let $\mathcal{C} \subset \mathbb{R}^n$ be nonempty.
+    A sequence $\{\mathbf{x}_k\} \subset \mathbb{R}^n$ is said to be
+    \emph{Fej\'er monotone} with respect to $\mathcal{C}$ if
+    \[
+        \|\mathbf{x}_{k+1} - \mathbf{z}\|_2
+        \le
+        \|\mathbf{x}_k - \mathbf{z}\|_2
+        \quad \text{for all } \mathbf{z} \in \mathcal{C} \text{ and all } k \ge 0.
+    \]
+\end{definition}
+
+\begin{lemma}
+    Let $f \in C^1_\beta(\mathbb{R}^n)$ be convex and let
+    $\mathcal{X}^\ast := \arg\min f \neq \varnothing$.
+    Assume $\gamma \in (0,1/\beta]$ and consider
+    \[
+        \mathbf{x}_{k+1} = \mathbf{x}_k - \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Then $\{\mathbf{x}_k\}$ is Fej\'er monotone with respect to $\mathcal{X}^\ast$.
+\end{lemma}
+% \begin{proof}
+%     Fix $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+%     We compute
+%     \[
+%         \mathbf{x}_{k+1}-\mathbf{x}^\ast
+%         =
+%         \mathbf{x}_k-\mathbf{x}^\ast
+%         -
+%         \gamma \nabla f(\mathbf{x}_k).
+%     \]
+%     Taking squared norms,
+%     \[
+%         \begin{aligned}
+%             \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2^2
+%              & =
+%             \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2
+%             -2\gamma\langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle
+%             +\gamma^2\|\nabla f(\mathbf{x}_k)\|_2^2.
+%         \end{aligned}
+%     \]
+%     By convexity,
+%     \[
+%         \langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle
+%         \ge f(\mathbf{x}_k)-f(\mathbf{x}^\ast).
+%     \]
+%     By $\beta$-smoothness,
+%     \[
+%         \|\nabla f(\mathbf{x}_k)\|_2^2
+%         \le 2\beta\bigl(f(\mathbf{x}_k)-f(\mathbf{x}^\ast)\bigr).
+%     \]
+%     Substituting,
+%     \[
+%         \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2^2
+%         \le
+%         \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2
+%         -2\gamma(1-\beta\gamma)\bigl(f(\mathbf{x}_k)-f(\mathbf{x}^\ast)\bigr).
+%     \]
+%     Since $\gamma\le 1/\beta$, the last term is nonnegative, hence
+%     \[
+%         \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2
+%         \le
+%         \|\mathbf{x}_k-\mathbf{x}^\ast\|_2.
+%     \]
+% \end{proof}
+\begin{proof}
+    Fix $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+    We compute
+    \[
+        \mathbf{x}_{k+1}-\mathbf{x}^\ast
+        =
+        \mathbf{x}_k-\mathbf{x}^\ast
+        -
+        \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Taking squared norms,
+    \[
+        \begin{aligned}
+            \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2^2
+             & =
+            \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2
+            -2\gamma\langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle
+            +\gamma^2\|\nabla f(\mathbf{x}_k)\|_2^2.
+        \end{aligned}
+    \]
+
+    By convexity of $f$,
+    \[
+        \langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle
+        \ge
+        f(\mathbf{x}_k)-f(\mathbf{x}^\ast).
+        \tag{1}
+    \]
+
+    Since $f$ is convex and $\beta$-smooth, the Baillon--Haddad ~\ref{lem:baillon-haddad} implies that
+    $\nabla f$ is $1/\beta$-cocoercive. In particular, using
+    $\nabla f(\mathbf{x}^\ast)=0$, we obtain
+    \[
+        \|\nabla f(\mathbf{x}_k)\|_2^2
+        \le
+        \beta\,
+        \langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle.
+        \tag{2}
+    \]
+
+    Substituting \emph{(1)} and \emph{(2)} into the norm identity yields
+    \[
+        \begin{aligned}
+            \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2^2
+             & \le
+            \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2
+            -2\gamma\langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle
+            +\beta\gamma^2\langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle \\
+             & =
+            \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2
+            -\gamma(2-\beta\gamma)
+            \langle\nabla f(\mathbf{x}_k),\mathbf{x}_k-\mathbf{x}^\ast\rangle.
+        \end{aligned}
+    \]
+
+    Since $\gamma \le 1/\beta$, the coefficient $(2-\beta\gamma)$ is nonnegative, and
+    using \emph{(1)} once more, we conclude
+    \[
+        \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2^2
+        \le
+        \|\mathbf{x}_k-\mathbf{x}^\ast\|_2^2.
+    \]
+    Hence,
+    \[
+        \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2
+        \le
+        \|\mathbf{x}_k-\mathbf{x}^\ast\|_2,
+    \]
+    which proves Fej\'er monotonicity.
+\end{proof}
+
+\begin{lemma}
+    Let $\{\mathbf{x}_k\}$ be Fej\'er monotone with respect to a closed set
+    $\mathcal{C}\subset\mathbb{R}^n$.
+    If there exists a subsequence $\mathbf{x}_{k_j}\to\mathbf{x}^\ast\in\mathcal{C}$,
+    then $\mathbf{x}_k\to\mathbf{x}^\ast$.
+\end{lemma}
+
+\begin{proof}
+    Since $\{\mathbf{x}_k\}$ is Fej\'er monotone with respect to $\mathcal{C}$,
+    it is bounded.
+    Hence, by the Bolzano-Weierstrass theorem, it admits a convergent subsequence
+    $\mathbf{x}_{k_j}\to\mathbf{x}^\ast\in\mathcal{C}$.
+
+    Fix $\mathbf{z}=\mathbf{x}^\ast$.
+    By Fej\'er monotonicity,
+    \[
+        \|\mathbf{x}_{k+1}-\mathbf{x}^\ast\|_2
+        \le
+        \|\mathbf{x}_k-\mathbf{x}^\ast\|_2,
+    \]
+    so the sequence $\|\mathbf{x}_k-\mathbf{x}^\ast\|_2$ is nonincreasing and
+    converges to some $\ell\ge0$.
+
+    Along the subsequence,
+    \[
+        \|\mathbf{x}_{k_j}-\mathbf{x}^\ast\|_2 \to 0,
+    \]
+    hence $\ell=0$.
+    Therefore,
+    \[
+        \mathbf{x}_k \to \mathbf{x}^\ast.
+    \]
+\end{proof}
+
+\begin{lemma}[Fejér monotonicity of gradient descent iterates]
+    Let $f \in C^1_\beta(\mathbb{R}^n)$ be convex and let
+    $\mathbf{x}^\ast \in \arg\min f$.
+    Assume $\gamma \in (0, 1/\beta]$ and consider the gradient descent iteration
+    \[
+        \mathbf{x}_{k+1} = \mathbf{x}_k - \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Then the sequence $\{\mathbf{x}_k\}$ is Fejér monotone with respect to the solution set
+    $\mathcal{X}^\ast := \arg\min f$, i.e.,
+    \[
+        \|\mathbf{x}_{k+1} - \mathbf{x}^\ast\|_2
+        \le
+        \|\mathbf{x}_k - \mathbf{x}^\ast\|_2
+        \quad \text{for all } \mathbf{x}^\ast \in \mathcal{X}^\ast,
+    \]
+    and in particular $\{\mathbf{x}_k\}$ is bounded.
+\end{lemma}
+\begin{proof}
+    Fix $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+    Using the update rule,
+    \[
+        \mathbf{x}_{k+1} - \mathbf{x}^\ast
+        =
+        \mathbf{x}_k - \mathbf{x}^\ast
+        -
+        \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Taking squared norms,
+    \[
+        \begin{aligned}
+            \|\mathbf{x}_{k+1} - \mathbf{x}^\ast\|_2^2
+             & =
+            \|\mathbf{x}_k - \mathbf{x}^\ast\|_2^2
+            - 2\gamma
+            \langle \nabla f(\mathbf{x}_k), \mathbf{x}_k - \mathbf{x}^\ast \rangle
+            + \gamma^2 \|\nabla f(\mathbf{x}_k)\|_2^2.
+        \end{aligned}
+    \]
+    By convexity of $f$ and optimality of $\mathbf{x}^\ast$,
+    \[
+        \langle \nabla f(\mathbf{x}_k), \mathbf{x}_k - \mathbf{x}^\ast \rangle
+        \ge
+        f(\mathbf{x}_k) - f(\mathbf{x}^\ast).
+        \tag{1}
+    \]
+    By $\beta$-smoothness,
+    \[
+        \|\nabla f(\mathbf{x}_k)\|_2^2
+        \le
+        2\beta \bigl(f(\mathbf{x}_k) - f(\mathbf{x}^\ast)\bigr).
+        \tag{2}
+    \]
+    Substituting \emph{(1)} and \emph{(2)} into the squared norm expression yields
+    \[
+        \begin{aligned}
+            \|\mathbf{x}_{k+1} - \mathbf{x}^\ast\|_2^2
+             & \le
+            \|\mathbf{x}_k - \mathbf{x}^\ast\|_2^2
+            - 2\gamma \bigl(f(\mathbf{x}_k) - f(\mathbf{x}^\ast)\bigr)
+            + 2\beta\gamma^2 \bigl(f(\mathbf{x}_k) - f(\mathbf{x}^\ast)\bigr) \\
+             & =
+            \|\mathbf{x}_k - \mathbf{x}^\ast\|_2^2
+            - 2\gamma(1 - \beta\gamma)
+            \bigl(f(\mathbf{x}_k) - f(\mathbf{x}^\ast)\bigr).
+        \end{aligned}
+    \]
+    Since $\gamma \le 1/\beta$, the coefficient
+    $2\gamma(1-\beta\gamma)$ is nonnegative, and hence
+    \[
+        \|\mathbf{x}_{k+1} - \mathbf{x}^\ast\|_2^2
+        \le
+        \|\mathbf{x}_k - \mathbf{x}^\ast\|_2^2.
+    \]
+    Therefore, $\{\mathbf{x}_k\}$ is Fejér monotone with respect to $\mathcal{X}^\ast$.
+    In particular, the sequence $\{\mathbf{x}_k\}$ is bounded.
+\end{proof}
+\begin{lemma}[Convergence of Fej\'er monotone sequences]
+    \label{lem:convergence_fejer_monotone_limit}
+    Let $\mathcal{C} \subset \mathbb{R}^n$ be nonempty and closed, and let
+    $\{\mathbf{x}_k\} \subset \mathbb{R}^n$ be Fej\'er monotone with respect to
+    $\mathcal{C}$, i.e.,
+    \[
+        \|\mathbf{x}_{k+1} - \mathbf{z}\|_2
+        \le
+        \|\mathbf{x}_k - \mathbf{z}\|_2
+        \quad \text{for all } \mathbf{z} \in \mathcal{C},\ \forall k \ge 0.
+    \]
+    If there exists a subsequence $\{\mathbf{x}_{k_j}\}$ and a point
+    $\mathbf{x}^\ast \in \mathcal{C}$ such that
+    \[
+        \mathbf{x}_{k_j} \to \mathbf{x}^\ast,
+    \]
+    then the whole sequence converges:
+    \[
+        \mathbf{x}_k \to \mathbf{x}^\ast.
+    \]
+\end{lemma}
+\begin{proof}
+    Fix $\mathbf{z} = \mathbf{x}^\ast \in \mathcal{C}$.
+    By Fej\'er monotonicity, the sequence
+    \[
+        d_k := \|\mathbf{x}_k - \mathbf{x}^\ast\|_2
+    \]
+    is nonincreasing and bounded below by $0$.
+    Hence, there exists $\ell \ge 0$ such that
+    \[
+        d_k \to \ell.
+    \]
+
+    On the other hand, along the convergent subsequence,
+    \[
+        d_{k_j}
+        =
+        \|\mathbf{x}_{k_j} - \mathbf{x}^\ast\|_2
+        \to 0.
+    \]
+    Therefore, $\ell = 0$.
+    It follows that
+    \[
+        \|\mathbf{x}_k - \mathbf{x}^\ast\|_2 \to 0,
+    \]
+    and hence $\mathbf{x}_k \to \mathbf{x}^\ast$.
+\end{proof}
+
+\begin{lemma}[Convergence via boundedness and Fej\'er monotonicity]
+
+    Let $f \in C^1_\beta(\mathbb{R}^n)$ be convex and let
+    $\mathcal{X}^\ast := \arg\min f \neq \varnothing$.
+    Assume $\gamma \in (0,1/\beta]$ and consider the gradient descent iteration
+    \[
+        \mathbf{x}_{k+1} = \mathbf{x}_k - \gamma \nabla f(\mathbf{x}_k).
+    \]
+    Then the sequence $\{\mathbf{x}_k\}$ converges to a point
+    $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+\end{lemma}
+\begin{proof}
+    By Fej\'er monotonicity with respect to $\mathcal{X}^\ast$, the sequence
+    $\{\mathbf{x}_k\}$ is bounded.
+    Hence, by the Bolzano--Weierstrass theorem, there exists a subsequence
+    $\{\mathbf{x}_{k_j}\}$ and a point $\mathbf{x}^\ast \in \mathbb{R}^n$ such that
+    \[
+        \mathbf{x}_{k_j} \to \mathbf{x}^\ast.
+    \]
+
+    By the descent lemma,
+    \[
+        f(\mathbf{x}_{k+1})
+        \le
+        f(\mathbf{x}_k)
+        -
+        \frac{\gamma}{2}\|\nabla f(\mathbf{x}_k)\|_2^2,
+    \]
+    which implies
+    \[
+        \|\nabla f(\mathbf{x}_k)\|_2 \to 0.
+    \]
+    By continuity of $\nabla f$,
+    \[
+        \nabla f(\mathbf{x}^\ast) = 0.
+    \]
+
+    Since $f$ is convex, this implies $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+
+    By Fej\'er monotonicity and  Lemma~\ref{lem:convergence_fejer_monotone_limit}, the sequence $\{\mathbf{x}_k\}$ converges
+    to $\mathbf{x}^\ast \in \mathcal{X}^\ast$.
+
+\end{proof}
+\begin{lemma}
+    Let $f : \mathbb{R}^n \to \mathbb{R}$ be differentiable.
+    The following statements are equivalent:
+    \begin{enumerate}
+        \item $f$ is convex.
+        \item For all $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+              \[
+                  f(\mathbf{y})
+                  \ge
+                  f(\mathbf{x})
+                  +
+                  \langle \nabla f(\mathbf{x}), \mathbf{y} - \mathbf{x} \rangle.
+              \]
+        \item For all $\mathbf{x}, \mathbf{y} \in \mathbb{R}^n$,
+              \[
+                  \langle \nabla f(\mathbf{x}) - \nabla f(\mathbf{y}),
+                  \mathbf{x} - \mathbf{y} \rangle \ge 0.
+              \]
+    \end{enumerate}
+\end{lemma}

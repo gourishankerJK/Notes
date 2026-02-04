@@ -1,9 +1,14 @@
+% Custom color commands
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\orange}[1]{\textcolor{orange}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
 \usepackage[marginparwidth=4.5cm, marginparsep=0.7cm]{geometry}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{floatrow}
 \floatsetup[widefigure]{margins=hangright,capposition=beside,
-capbesideposition={bottom, right},floatwidth=\textwidth}
+  capbesideposition={bottom, right},floatwidth=\textwidth}
 \usepackage{sidenotes}
 \usepackage[explicit]{titlesec}
 \usepackage[english]{babel}
@@ -31,28 +36,28 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
 \usepackage[skip=10pt plus1pt, indent=20pt]{parskip}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+  colorlinks,
+  citecolor=blue,
+  filecolor=black,
+  linkcolor=black,
+  urlcolor=black
 }
 
 \makeatletter
 \renewcommand{\maketitle}{\bgroup\setlength{\parindent}{30pt}
-\begin{flushleft}
-  {\Huge\sffamily\bfseries\@title}
-  \vskip 1.5em
-  {\sffamily\@author}
-\end{flushleft}\egroup
+  \begin{flushleft}
+    {\Huge\sffamily\bfseries\@title}
+    \vskip 1.5em
+      {\sffamily\@author}
+  \end{flushleft}\egroup
 }
 
 \makeatother
 \usepackage{fancyhdr}
 \renewenvironment{abstract}
-	{\par{\bfseries \noindent \sffamily \abstractname.}}
-	{\vskip 0.1em \medskip\noindent \rule{\linewidth}{.5pt}}
- 
+{\par{\bfseries \noindent \sffamily \abstractname.}}
+{\vskip 0.1em \medskip\noindent \rule{\linewidth}{.5pt}}
+
 \renewcommand*\familydefault{\sfdefault}
 \sectionfont{\sffamily\fontsize{15}{15}\selectfont}
 \subsectionfont{\sffamily\fontsize{11}{5}\selectfont}
@@ -84,7 +89,7 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
 
 %Symbol for the warning environment, designed to be easily scalable
 \newcommand{\warningsign}[1]{\tikz[scale=#1,every node/.style={transform shape}]{\draw[-,line width={#1*0.8mm},red,fill=yellow,rounded corners={#1*2.5mm}] (0,0)--(1,{-sqrt(3)})--(-1,{-sqrt(3)})--cycle;
-\node at (0,-1) {\fontsize{48}{60}\selectfont\bfseries!};}}
+    \node at (0,-1) {\fontsize{48}{60}\selectfont\bfseries!};}}
 
 \tcolorboxenvironment{definition}{boxrule=0pt,boxsep=0pt,colback={yellow!10},left=8pt,right=8pt,enhanced jigsaw,sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip,segmentation style=solid}
 \tcolorboxenvironment{proposition}{boxrule=0pt,boxsep=0pt,colback={brown!5},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{brown},sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
@@ -98,6 +103,23 @@ capbesideposition={bottom, right},floatwidth=\textwidth}
 \tcolorboxenvironment{examples}{boxrule=0pt,boxsep=0pt,blanker,borderline west={2pt}{0pt}{Black},left=8pt,right=8pt,sharp corners,before skip=10pt,after skip=10pt,breakable}
 \tcolorboxenvironment{cthm}{boxrule=0pt,boxsep=0pt,colback={gray!10},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{gray},sharp corners,before skip=10pt,after skip=10pt,breakable}
 
+% Algorithm environment: white background, blue left border, matching definition/proposition style
+\newtcolorbox{algorithmblock}[1][]{
+  colback=white,
+  boxrule=0pt,
+  boxsep=0pt,
+  left=8pt,
+  right=8pt,
+  enhanced jigsaw,
+  borderline west={2pt}{0pt}{blue!80!black},
+  sharp corners,
+  before skip=10pt,
+  after skip=10pt,
+  breakable,
+  fonttitle=\sffamily\bfseries,
+  title=Algorithm,
+  #1
+}
 \newenvironment{talign}{\let\displaystyle\textstyle\align}{\endalign}
 \newenvironment{talign*}{\let\displaystyle\textstyle\csname align*\endcsname}{\endalign}
 
