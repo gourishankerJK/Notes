@@ -1,0 +1,838 @@
+\begin{definition}[Field]
+    A \emph{field} is a nonempty set $\mathbb{F}$ together with two binary operations
+    \[
+        + : \mathbb{F}\times\mathbb{F}\to\mathbb{F},
+        \qquad
+        \cdot : \mathbb{F}\times\mathbb{F}\to\mathbb{F},
+    \]
+    called binary \emph{addition} and binary \emph{multiplication}, satisfying the following axioms.
+\end{definition}
+\begin{enumerate}
+    \item \textbf{Additive structure.}
+          The tuple $(\bb{F},+)$ is an abelian group:
+          \begin{enumerate}
+              \item[\textbf{(A1)}]\label{ax:add_assoc}
+                    $(a+b)+c = a+(b+c)$, \quad $\forall a,b,c\in\bb{F}$
+
+              \item[\textbf{(A2)}]\label{ax:add_comm}
+                    $a+b=b+a$, \quad $\forall a,b\in\bb{F}$
+
+              \item[\textbf{(A3)}]\label{ax:add_id}
+                    $\exists\,0\in\bb{F}$ such that $a+0=a$, \quad $\forall a\in\bb{F}$
+
+              \item[\textbf{(A4)}]\label{ax:add_inv}
+                    $\forall a\in\bb{F},\ \exists\,(-a)\in\bb{F}$ such that $a+(-a)=0$
+          \end{enumerate}
+
+    \item \textbf{Multiplicative structure.}
+          The tuple $(\bb{F}\setminus\{0\},\cdot)$ is an abelian group:
+          \begin{enumerate}
+              \item[\textbf{(M1)}]\label{ax:mul_assoc}
+                    $(a\cdot b)\cdot c = a\cdot(b\cdot c)$,
+                    \quad $\forall a,b,c\in\bb{F}$
+
+              \item[\textbf{(M2)}]\label{ax:mul_comm}
+                    $a\cdot b=b\cdot a$, \quad $\forall a,b\in\bb{F}$
+
+              \item[\textbf{(M3)}]\label{ax:mul_id}
+                    $\exists\,1\in\bb{F}$, $1\neq0$, such that $a\cdot1=a$,
+                    \quad $\forall a\in\bb{F}$
+
+              \item[\textbf{(M4)}]\label{ax:mul_inv}
+                    $\forall a\in\bb{F}\setminus\{0\},\ \exists\,a^{-1}\in\bb{F}$
+                    such that $a\cdot a^{-1}=1$
+          \end{enumerate}
+
+    \item \textbf{Compatibility.}
+          \begin{enumerate}
+              \item[\textbf{(D)}]\label{ax:distrib}
+                    $a\cdot(b+c)=a\cdot b + a\cdot c$,
+                    \quad $\forall a,b,c\in\bb{F}$
+          \end{enumerate}
+\end{enumerate}
+
+\begin{lemma}[Uniqueness of Inverse]\label{lem:unique_inverse}
+    Let $(\bb{F},+)$ be a group and let $a\in\bb{F}$.
+    If $b,c\in\bb{F}$ satisfy
+    \[
+        a+b=0
+        \qquad\text{and}\qquad
+        a+c=0,
+    \]
+    then $b=c$.
+\end{lemma}
+
+\begin{proof}
+    Using associativity and the additive identity,
+    \[
+        b = b+0 = b+(a+c).
+    \]
+    By associativity,
+    \[
+        b+(a+c) = (b+a)+c.
+    \]
+    By commutativity, $b+a = a+b = 0$, hence
+    \[
+        (b+a)+c = 0+c = c.
+    \]
+    Therefore $b=c$.
+\end{proof}
+
+\begin{lemma}[Uniqueness of Multiplicative Inverse]\label{lem:unique_mult_inverse}
+    Let $(\bb{F}\setminus\{0\},\cdot)$ be a group and let $a\neq0$.
+    If $b,c\in\bb{F}$ satisfy
+    \[
+        a\cdot b=1
+        \qquad\text{and}\qquad
+        a\cdot c=1,
+    \]
+    then $b=c$.
+\end{lemma}
+% \begin{lemma}[Zero annihilates multiplication]\label{lem:zero_annihilates}
+%     Let $\bb{F}$ be a field. Then for every $a\in\bb{F}$,
+%     \[
+%         a\cdot 0 = 0\cdot a = 0.
+%     \]
+% \end{lemma}
+
+% \begin{proof}
+%     We first prove $a\cdot 0 = 0$.
+
+%     By the additive identity, $0 = 0 + 0$. Hence
+%     \[
+%         a\cdot 0 = a\cdot(0+0).
+%     \]
+%     Using distributivity,
+%     \[
+%         a\cdot(0+0) = a\cdot 0 + a\cdot 0.
+%     \]
+%     Subtracting $a\cdot 0$ from both sides (using the additive inverse in $(\bb{F},+)$),
+%     \[
+%         a\cdot 0 = 0.
+%     \]
+
+%     Now, by commutativity of multiplication,
+%     \[
+%         0\cdot a = a\cdot 0 = 0.
+%     \]
+% \end{proof}
+\begin{definition}[Vector Space]\label{def:vector_space}
+    Let $\bb{F}$ be a field.
+    A \emph{vector space} over $\bb{F}$ is a nonempty set $V$ together with two operations
+    \[
+        + : V\times V \to V,
+        \qquad
+        \cdot : \bb{F}\times V \to V,
+    \]
+    called \emph{vector addition} and \emph{scalar multiplication}, such that the following axioms hold.
+\end{definition}
+\begin{enumerate}
+    \item \textbf{Additive structure.}
+          The tuple $(V,+)$ is an abelian group:
+          \begin{enumerate}
+              \item[\textbf{(V1)}]\label{ax:v_add_assoc}
+                    $(\mathbf{u}+\mathbf{v})+\mathbf{w}
+                        = \mathbf{u}+(\mathbf{v}+\mathbf{w})$
+
+              \item[\textbf{(V2)}]\label{ax:v_add_comm}
+                    $\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}$
+
+              \item[\textbf{(V3)}]\label{ax:v_add_id}
+                    $\exists\,\mathbf{0}\in V$ such that
+                    $\mathbf{v}+\mathbf{0}=\mathbf{v}$
+
+              \item[\textbf{(V4)}]\label{ax:v_add_inv}
+                    $\forall \mathbf{v}\in V,\ \exists\,(-\mathbf{v})\in V$
+                    such that $\mathbf{v}+(-\mathbf{v})=\mathbf{0}$
+          \end{enumerate}
+
+    \item \textbf{Scalar multiplication axioms.}
+          For all $a,b\in\bb{F}$ and $\mathbf{u},\mathbf{v}\in V$:
+          \begin{enumerate}
+              \item[\textbf{(S1)}]\label{ax:v_scalar_assoc}
+                    $(ab)\mathbf{v}=a(b\mathbf{v})$
+
+              \item[\textbf{(S2)}]\label{ax:v_scalar_id}
+                    $1\mathbf{v}=\mathbf{v}$
+
+              \item[\textbf{(S3)}]\label{ax:v_scalar_dist_vec}
+                    $a(\mathbf{u}+\mathbf{v})=a\mathbf{u}+a\mathbf{v}$
+
+              \item[\textbf{(S4)}]\label{ax:v_scalar_dist_scal}
+                    $(a+b)\mathbf{v}=a\mathbf{v}+b\mathbf{v}$
+          \end{enumerate}
+\end{enumerate}
+
+\begin{example}[$(\bb{F}^n,\bb{F},+,\cdot)$]\label{ex:Fn}
+    Let $\bb{F}$ be a field and $n\in\bb{N}$.
+    Define
+    \[
+        \bb{F}^n := \{(x_1,\dots,x_n) : x_i\in\bb{F}\}.
+    \]
+    Addition and scalar multiplication are defined componentwise:
+    \[
+        (x_1,\dots,x_n)+(y_1,\dots,y_n)
+        := (x_1+y_1,\dots,x_n+y_n),
+    \]
+    \[
+        a(x_1,\dots,x_n)
+        := (ax_1,\dots,ax_n).
+    \]
+    Then $(\bb{F}^n,\bb{F},+,\cdot)$ is a vector space over $\bb{F}$.
+\end{example}
+
+\begin{example}[$(\bb{F}^{m\times n},\bb{F},+,\cdot)$]\label{ex:Fmn}
+    Let $m,n\in\bb{N}$.
+    Define
+    \[
+        \bb{F}^{m\times n}
+        := \{A=(a_{ij}) : a_{ij}\in\bb{F}\}.
+    \]
+    Addition and scalar multiplication are defined entrywise:
+    \[
+        (A+B)_{ij}=a_{ij}+b_{ij},
+        \qquad
+        (aA)_{ij}=a\,a_{ij}.
+    \]
+    Then $(\bb{F}^{m\times n},\bb{F},+,\cdot)$ is a vector space over $\bb{F}$.
+\end{example}
+\begin{example}[$(\bb{P}_n,\bb{F},+,\cdot)$]\label{ex:poly_degree_n}
+    Let $n\in\bb{N}$. Define
+    \[
+        \bb{P}_n
+        := \left\{
+        a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
+        \;\middle|\;
+        a_0,\dots,a_n \in \bb{F}
+        \right\}.
+    \]
+    Addition and scalar multiplication are defined by
+    \[
+        (p+q)(x) := p(x)+q(x),
+        \qquad
+        (a p)(x) := a\,p(x).
+    \]
+    Then $(\bb{P}_n,\bb{F},+,\cdot)$ is a vector space over $\bb{F}$ of dimension $n+1$.
+\end{example}
+\begin{definition}[Linear Combination]\label{def:linear_combination}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let
+    \[
+        \mathbf{v}_1,\dots,\mathbf{v}_k \in V,
+        \qquad
+        a_1,\dots,a_k \in \bb{F}.
+    \]
+    A \emph{linear combination} of $\mathbf{v}_1,\dots,\mathbf{v}_k$ is a vector of the form
+    \[
+        a_1\mathbf{v}_1 + a_2\mathbf{v}_2 + \cdots + a_k\mathbf{v}_k.
+    \]
+\end{definition}
+\begin{definition}[Subspace]\label{def:subspace}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space.
+    A subset $W\subseteq V$ is called a \emph{subspace} of $V$ if
+    $(W,\bb{F},+,\cdot)$ is itself a vector space.
+\end{definition}
+\begin{theorem}[Subspace Criterion]\label{thm:subspace_criterion}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let $S\subseteq V$ be nonempty.
+    Then $S$ is a subspace of $V$ if and only if
+    \[
+        \alpha u + v \in S
+        \quad \text{for all } \alpha\in\bb{F}
+        \text{ and all } u,v\in S.
+    \]
+\end{theorem}
+
+\begin{proof}
+    ($\Rightarrow$)
+    Assume $S$ is a subspace of $V$.
+    Then $S$ is closed under vector addition and scalar multiplication.
+    Hence, for any $\alpha\in\bb{F}$ and any $u,v\in S$,
+    \[
+        \alpha u \in S
+        \quad \text{and} \quad
+        \alpha u + v \in S.
+    \]
+
+    ($\Leftarrow$)
+    Conversely, assume $S\subseteq V$ is nonempty and satisfies
+    \[
+        \alpha u + v \in S
+        \quad \text{for all } \alpha\in\bb{F},\ u,v\in S.
+    \]
+
+    \emph{Closure under scalar multiplication.}
+    Fix $u\in S$ and $\alpha\in\bb{F}$.
+    Since $S$ is nonempty, choose $v\in S$.
+    Taking $v=0u=0\cdot u$, we obtain
+    \[
+        \alpha u = \alpha u + 0 \in S.
+    \]
+
+    \emph{Closure under addition.}
+    Let $u,v\in S$.
+    Taking $\alpha=1$, we have
+    \[
+        u+v = 1\cdot u + v \in S.
+    \]
+
+    \emph{Existence of additive identity.}
+    Let $u\in S$.
+    Taking $\alpha=0$, we obtain
+    \[
+        0 = 0\cdot u + u \in S.
+    \]
+
+    \emph{Existence of additive inverse.}
+    Let $u\in S$.
+    Since $0\in S$, taking $\alpha=-1$ gives
+    \[
+        -\,u = (-1)u + 0 \in S.
+    \]
+
+    Thus $S$ contains $0$, is closed under addition and scalar multiplication,
+    and contains additive inverses. Therefore $(S,+,\cdot)$ is a vector space,
+    and hence $S$ is a subspace of $V$.
+\end{proof}
+\begin{theorem}[Intersection of Subspaces]\label{thm:intersection_subspaces}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let $\cl{S}$ be a nonempty collection
+    of subspaces of $V$.
+    Define
+    \[
+        W := \bigcap_{S \in \cl{S}} S.
+    \]
+    Then $W$ is a subspace of $V$.
+\end{theorem}
+
+\begin{proof}
+    Since each $S\in\cl{S}$ is a subspace, we have $\bd{0}\in S$ for all $S\in\cl{S}$.
+    Hence $\bd{0}\in W$, and thus $W$ is nonempty.
+
+    Let $\bd{u},\bd{v}\in W$ and let $\alpha\in\bb{F}$.
+    Then $\bd{u},\bd{v}\in S$ for every $S\in\cl{S}$.
+    Since each $S$ is a subspace, it is closed under linear combinations, and therefore
+    \[
+        \alpha \bd{u} + \bd{v} \in S
+        \quad \text{for all } S\in\cl{S}.
+    \]
+    Hence $\alpha \bd{u} + \bd{v} \in \bigcap_{S\in\cl{S}} S = W$.
+
+    By the subspace criterion, $W$ is a subspace of $V$.
+\end{proof}
+
+\begin{definition}[Subspace Spanned by a Set]\label{thm:span_as_intersection}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let
+    \[
+        S := \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.
+    \]
+    Let $\cl{S}$ denote the collection of all subspaces of $V$ that contain $S$, and define
+    \[
+        W := \bigcap_{K \in \cl{S}} K.
+    \]
+    Then $W$ is a subspace of $V$, called the \emph{subspace spanned by $S$}, and is denoted by
+    \[
+        W = \text{span}(S).
+    \]
+\end{definition}
+
+\begin{proposition}\label{prop:span_linear_combinations}
+    \[
+        \text{span}(S)
+        =
+        \left\{
+        \sum_{i=1}^n \alpha_i \bd{v}_i
+        \;\middle|\;
+        \alpha_1,\ldots,\alpha_n \in \bb{F}
+        \right\}.
+    \]
+\end{proposition}
+
+\begin{proof}
+    Let
+    \[
+        S=\{\bd{v}_1,\ldots,\bd{v}_n\}\subseteq V,
+    \]
+    and let
+    \[
+        W := \bigcap_{K\in\cl{S}} K,
+    \]
+    where $\cl{S}$ denotes the collection of all subspaces of $V$ containing $S$.
+    Let
+    \[
+        \text{span}(S)
+        :=
+        \left\{
+        \sum_{i=1}^n \alpha_i \bd{v}_i
+        \;\middle|\;
+        \alpha_1,\ldots,\alpha_n\in\bb{F}
+        \right\}.
+    \]
+
+    \medskip
+    \noindent
+    \textbf{Step 1: $\text{span}(S)\subseteq W$.}
+
+    Let $\bd{u}\in\text{span}(S)$.
+    Then
+    \[
+        \bd{u}=\sum_{i=1}^n \alpha_i \bd{v}_i
+        \quad \text{for some } \alpha_1,\ldots,\alpha_n\in\bb{F}.
+    \]
+    Let $K\in\cl{S}$ be arbitrary.
+    Since $K$ is a subspace containing $S$, we have $\bd{v}_i\in K$ for all $i$.
+    By closure of $K$ under linear combinations,
+    \[
+        \bd{u}=\sum_{i=1}^n \alpha_i \bd{v}_i \in K.
+    \]
+    Since this holds for every $K\in\cl{S}$, it follows that
+    \[
+        \bd{u}\in \bigcap_{K\in\cl{S}} K = W.
+    \]
+    Hence $\text{span}(S)\subseteq W$.
+
+    \medskip
+    \noindent
+    \textbf{Step 2: $W\subseteq\text{span}(S)$.}
+
+    We first note that $\text{span}(S)$ is a subspace of $V$ and contains $S$.
+    Therefore,
+    \[
+        \text{span}(S)\in\cl{S}.
+    \]
+    By definition of $W$ as the intersection of all elements of $\cl{S}$,
+    \[
+        W = \bigcap_{K\in\cl{S}} K \subseteq \text{span}(S).
+    \]
+
+    \medskip
+    \noindent
+    Combining the two inclusions, we conclude that
+    \[
+        W=\text{span}(S).
+    \]
+\end{proof}
+
+\begin{definition}[Linear Independence]\label{def:linear_independence}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let
+    \[
+        S := \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.
+    \]
+    The set $S$ is said to be \emph{linearly independent} if
+    \[
+        \alpha_1 \bd{v}_1 + \alpha_2 \bd{v}_2 + \cdots + \alpha_n \bd{v}_n = \bd{0}
+    \]
+    implies
+    \[
+        \alpha_1=\alpha_2=\cdots=\alpha_n=0.
+    \]
+    Otherwise, $S$ is called \emph{linearly dependent}.
+\end{definition}
+\begin{definition}[Basis]\label{def:basis}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and let
+    \[
+        S := \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.
+    \]
+    The set $S$ is called a \emph{basis} of $V$ if
+    \begin{enumerate}
+        \item $S$ is linearly independent, and
+        \item $\text{span}(S) = V$.
+    \end{enumerate}
+\end{definition}
+\begin{remark}\label{rem:finite_dimensional}
+    A vector space $(V,\bb{F},+,\cdot)$ is said to be \emph{finite-dimensional}
+    if there exists a finite set $B\subseteq V$ that forms a basis of $V$.
+\end{remark}
+\begin{remark}\label{rem:dimension}
+    If $S=\{\bd{v}_1,\ldots,\bd{v}_n\}$ is a basis of $V$, then the integer $n$
+    is called the \emph{dimension} of $V$ and is denoted by $\dimn V = n$.
+\end{remark}
+
+\begin{theorem}\label{thm:li_bounded_by_spanning_set}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space and suppose
+    \[
+        V = \text{span}(S), \qquad
+        S=\{\bd{v}_1,\ldots,\bd{v}_m\}.
+    \]
+    Then any linearly independent set of vectors in $V$ is finite and contains
+    at most $m$ vectors.
+\end{theorem}
+
+\begin{proof}
+    Let
+    \[
+        L=\{\bd{u}_1,\ldots,\bd{u}_k\}\subseteq V
+    \]
+    be a linearly independent set.
+    Since $V=\text{span}(S)$, each $\bd{u}_j$ can be written as a linear combination of
+    $\bd{v}_1,\ldots,\bd{v}_m$:
+    \[
+        \bd{u}_j=\sum_{i=1}^m a_{ij}\bd{v}_i,
+        \qquad a_{ij}\in\bb{F}.
+    \]
+
+    Suppose, for contradiction, that $k>m$.
+    Consider a linear combination
+    \[
+        \alpha_1\bd{u}_1+\cdots+\alpha_k\bd{u}_k=\bd{0}.
+    \]
+    Substituting the expressions for $\bd{u}_j$,
+    \[
+        \sum_{j=1}^k \alpha_j \left( \sum_{i=1}^m a_{ij}\bd{v}_i \right)
+        =
+        \sum_{i=1}^m \left( \sum_{j=1}^k \alpha_j a_{ij} \right)\bd{v}_i
+        = \bd{0}.
+    \]
+
+    This is a linear combination of the $m$ vectors
+    $\bd{v}_1,\ldots,\bd{v}_m$.
+    Since there are $k>m$ scalars $\alpha_1,\ldots,\alpha_k$,
+    the homogeneous system
+    \[
+        \sum_{j=1}^k \alpha_j a_{ij}=0,
+        \qquad i=1,\ldots,m,
+    \]
+    has a nontrivial solution.
+    Hence there exist scalars, not all zero, such that
+    \[
+        \alpha_1\bd{u}_1+\cdots+\alpha_k\bd{u}_k=\bd{0},
+    \]
+    contradicting the linear independence of $L$.
+
+    Therefore $k\le m$.
+    Thus every linearly independent set in $V$ is finite and contains
+    no more than $m$ vectors.
+\end{proof}
+\begin{corollary}\label{cor:dimension_well_defined}
+    Let $(V,\bb{F},+,\cdot)$ be a finite-dimensional vector space.
+    Then any two bases of $V$ contain the same number of vectors.
+\end{corollary}
+\begin{proof}
+    Let
+    \[
+        B_1=\{\bd{v}_1,\ldots,\bd{v}_m\},
+        \qquad
+        B_2=\{\bd{u}_1,\ldots,\bd{u}_n\}
+    \]
+    be two bases of $V$.
+    Since $B_1$ spans $V$ and $B_2$ is linearly independent, by
+    Theorem~\ref{thm:li_bounded_by_spanning_set} we have
+    \[
+        n \le m.
+    \]
+    Similarly, since $B_2$ spans $V$ and $B_1$ is linearly independent, the same theorem gives
+    \[
+        m \le n.
+    \]
+    Therefore $m=n$.
+\end{proof}
+
+\begin{definition}[Linear Transformation]\label{def:linear_transformation}
+    Let $(V,\bb{F},+,\cdot)$ and $(W,\bb{F},+,\cdot)$ be vector spaces.
+    A map
+    \[
+        T : V \to W
+    \]
+    is called a \emph{linear transformation} if for all $\bd{u},\bd{v}\in V$
+    and all $\alpha\in\bb{F}$,
+    \begin{enumerate}
+        \item[\textbf{(L1)}] $T(\bd{u}+\bd{v}) = T(\bd{u}) + T(\bd{v})$
+              \hfill (additivity)
+        \item[\textbf{(L2)}] $T(\alpha \bd{u}) = \alpha\, T(\bd{u})$
+              \hfill (homogeneity)
+    \end{enumerate}
+\end{definition}
+\begin{remark}\label{rem:linear_combination_preserving}
+    A map $T:V\to W$ is linear if and only if
+    \[
+        T(\alpha \bd{u}+\bd{v})=\alpha T(\bd{u})+T(\bd{v})
+        \quad
+        \forall\,\alpha\in\bb{F},\ \bd{u},\bd{v}\in V.
+    \]
+\end{remark}
+\begin{proposition}\label{prop:linear_basic_properties}
+    If $T:V\to W$ is linear, then
+    \[
+        T(\bd{0})=\bd{0},
+        \qquad
+        T(-\bd{u})=-T(\bd{u})
+        \quad \forall\,\bd{u}\in V.
+    \]
+\end{proposition}
+
+\begin{definition}[Vector Space Homomorphism]\label{def:homomorphism}
+    Let $(V,\bb{F},+,\cdot)$ and $(W,\bb{F},+,\cdot)$ be vector spaces.
+    A map
+    \[
+        T: V \to W
+    \]
+    is called a \emph{(vector space) homomorphism} if for all
+    $\bd{u},\bd{v}\in V$ and all $\alpha\in\bb{F}$,
+    \[
+        T(\bd{u}+\bd{v}) = T(\bd{u}) + T(\bd{v}),
+        \qquad
+        T(\alpha \bd{u}) = \alpha\, T(\bd{u}).
+    \]
+\end{definition}
+
+\begin{remark}\label{rem:homomorphism_equiv}
+    A map $T:V\to W$ is a homomorphism if and only if
+    \[
+        T(\alpha \bd{u}+\bd{v})
+        =
+        \alpha T(\bd{u}) + T(\bd{v})
+        \quad
+        \forall\,\alpha\in\bb{F},\ \bd{u},\bd{v}\in V.
+    \]
+\end{remark}
+\begin{definition}[Linear Functional]\label{def:linear_functional}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space.
+    A \emph{linear functional} on $V$ is a linear transformation
+    \[
+        f: V \to \bb{F}.
+    \]
+    That is, for all $\bd{u},\bd{v}\in V$ and all $\alpha\in\bb{F}$,
+    \[
+        f(\bd{u}+\bd{v}) = f(\bd{u}) + f(\bd{v}),
+        \qquad
+        f(\alpha \bd{u}) = \alpha\, f(\bd{u}).
+    \]
+\end{definition}
+\begin{example}[Evaluation Functional]\label{ex:eval_functional}
+    Fix $a\in\bb{F}$.
+    Define $f_a : \bb{F}[x] \to \bb{F}$ by
+    \[
+        f_a(p) := p(a).
+    \]
+    Then $f_a$ is a linear functional.
+\end{example}
+\begin{example}[Constant-Coefficient Functional]\label{ex:const_coeff}
+    Define $f_0 : \bb{P}_n \to \bb{F}$ by
+    \[
+        f_0(a_0 + a_1 x + \cdots + a_n x^n) := a_0.
+    \]
+    Then $f_0$ is a linear functional.
+\end{example}
+\begin{remark}\label{rem:dual_space_preview}
+    The set of all linear functionals on $V$ forms a vector space over $\bb{F}$,
+    called the \emph{dual space} and denoted by $V^*$.
+\end{remark}
+
+\begin{definition}[Inner Product]\label{def:inner_product}
+    Let $V$ be a vector space over $\bb{F}$, where $\bb{F}=\bb{R}$ or $\bb{C}$.
+    An \emph{inner product} on $V$ is a map
+    \[
+        \iprod{\cdot}{\cdot} : V\times V \to \bb{F}
+    \]
+    satisfying the following properties for all $\bd{u},\bd{v},\bd{w}\in V$
+    and all $\alpha\in\bb{F}$:
+    \begin{enumerate}
+        \item[\textbf{(IP1)}] $\iprod{\bd{u}}{\bd{v}} = \overline{\iprod{\bd{v}}{\bd{u}}}$
+              \hfill (conjugate symmetry)
+        \item[\textbf{(IP2)}] $\iprod{\alpha\bd{u}+\bd{v}}{\bd{w}}
+                  = \alpha\iprod{\bd{u}}{\bd{w}} + \iprod{\bd{v}}{\bd{w}}$
+              \hfill (linearity in the first argument)
+        \item[\textbf{(IP3)}] $\iprod{\bd{u}}{\bd{u}} \ge 0$ and
+              $\iprod{\bd{u}}{\bd{u}}=0 \iff \bd{u}=\bd{0}$
+              \hfill (positive definiteness)
+    \end{enumerate}
+    If $\bb{F}=\bb{R}$, conjugation is trivial and symmetry reduces to
+    $\iprod{\bd{u}}{\bd{v}}=\iprod{\bd{v}}{\bd{u}}$
+\end{definition}
+
+\begin{definition}[Inner Product Space]\label{def:inner_product_space}
+    An \emph{inner product space} is a pair $(V,\iprod{\cdot}{\cdot})$
+    where $V$ is a vector space over $\bb{F}$ and
+    $\iprod{\cdot}{\cdot}$ is an inner product on $V$.
+\end{definition}
+\begin{example}[$\bb{F}^n$]\label{ex:euclidean_ip}
+    \[
+        \iprod{\bd{x}}{\bd{y}} := \sum_{i=1}^n x_i \overline{y_i}.
+    \]
+\end{example}
+\begin{example}[$\bb{P}_n$]\label{ex:poly_ip}
+    \[
+        \iprod{p}{q} := \int_0^1 p(x)\overline{q(x)}\,dx.
+    \]
+\end{example}
+
+\begin{proposition}\label{prop:ip_basic}
+    For all $\bd{u},\bd{v}\in V$:
+    \[
+        \iprod{\bd{u}}{\bd{v}}=0 \iff \bd{u}\perp\bd{v},
+        \qquad
+        \|\bd{u}\| := \sqrt{\iprod{\bd{u}}{\bd{u}}}.
+    \]
+\end{proposition}
+
+\begin{definition}[Norm]\label{def:norm_from_ip}
+    For $\bd{u}\in V$, define
+    \[
+        \|\bd{u}\| := \sqrt{\iprod{\bd{u}}{\bd{u}}}.
+    \]
+\end{definition}
+
+\begin{definition}[Orthogonality]\label{def:orthogonality}
+    Vectors $\bd{u},\bd{v}\in V$ are said to be \emph{orthogonal},
+    written $\bd{u}\perp\bd{v}$, if
+    \[
+        \iprod{\bd{u}}{\bd{v}}=0.
+    \]
+\end{definition}
+
+\begin{proposition}\label{prop:ip_basic_properties}
+    Let $(V,\iprod{\cdot}{\cdot})$ be an inner product space.
+    Then for all $\bd{u},\bd{v}\in V$:
+    \begin{enumerate}
+        \item $\|\bd{u}\|\ge 0$ and $\|\bd{u}\|=0 \iff \bd{u}=\bd{0}$
+        \item $\|\alpha\bd{u}\| = |\alpha|\,\|\bd{u}\|$
+        \item $\iprod{\bd{u}}{\bd{v}}=0 \iff \bd{u}\perp\bd{v}$
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}[Norm]\label{def:norm}
+    Let $(V,\bb{F},+,\cdot)$ be a vector space, where $\bb{F}=\bb{R}$ or $\bb{C}$.
+    A \emph{norm} on $V$ is a function
+    \[
+        \|\cdot\| : V \to [0,\infty)
+    \]
+    satisfying, for all $\bd{u},\bd{v}\in V$ and all $\alpha\in\bb{F}$,
+    \begin{enumerate}
+        \item[\textbf{(N1)}]\label{ax:norm_pos}
+              $\|\bd{u}\|\ge 0$ and $\|\bd{u}\|=0$ if and only if $\bd{u}=\bd{0}$
+              \hfill (positive definiteness)
+
+        \item[\textbf{(N2)}]\label{ax:norm_hom}
+              $\|\alpha \bd{u}\| = |\alpha|\,\|\bd{u}\|$
+              \hfill (absolute homogeneity)
+
+        \item[\textbf{(N3)}]\label{ax:norm_triangle}
+              $\|\bd{u}+\bd{v}\| \le \|\bd{u}\| + \|\bd{v}\|$
+              \hfill (triangle inequality)
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Normed Vector Space]\label{def:normed_vector_space}
+    A \emph{normed vector space} is a pair $(V,\|\cdot\|)$,
+    where $V$ is a vector space and $\|\cdot\|$ is a norm on $V$.
+\end{definition}
+
+\begin{example}[$\ell^p$-type norms on $\bb{F}^n$]\label{ex:lp_norms}
+    For $\bd{x}=(x_1,\ldots,x_n)\in\bb{F}^n$, define
+    \[
+        \|\bd{x}\|_p :=
+        \begin{cases}
+            \left( \sum_{i=1}^n |x_i|^p \right)^{1/p}, & 1\le p<\infty, \\[6pt]
+            \max_{1\le i\le n} |x_i|,                  & p=\infty.
+        \end{cases}
+    \]
+    Then $(\bb{F}^n,\|\cdot\|_p)$ is a normed vector space.
+\end{example}
+\begin{example}[Norm induced by an inner product]\label{ex:norm_from_ip}
+    Let $(V,\iprod{\cdot}{\cdot})$ be an inner product space.
+    Define
+    \[
+        \|\bd{u}\| := \sqrt{\iprod{\bd{u}}{\bd{u}}}.
+    \]
+    Then $\|\cdot\|$ is a norm on $V$.
+\end{example}
+\begin{example}[Polynomial norm]\label{ex:poly_norm}
+    Let $V=\bb{P}_n$ and $\bb{F}=\bb{R}$.
+    Define
+    \[
+        \|p\| := \max_{x\in[0,1]} |p(x)|.
+    \]
+    Then $(\bb{P}_n,\|\cdot\|)$ is a normed vector space.
+\end{example}
+\begin{proposition}\label{prop:norm_basic}
+    Let $(V,\|\cdot\|)$ be a normed vector space.
+    Then for all $\bd{u},\bd{v}\in V$:
+    \begin{enumerate}
+        \item $\|\bd{u}-\bd{v}\|=0 \iff \bd{u}=\bd{v}$
+        \item $\|\bd{u}-\bd{v}\| \le \|\bd{u}\|+\|\bd{v}\|$
+        \item $|\|\bd{u}\|-\|\bd{v}\|| \le \|\bd{u}-\bd{v}\|$
+    \end{enumerate}
+\end{proposition}
+\begin{remark}\label{rem:norm_vs_ip}
+    Every inner product induces a norm, but not every norm arises from an inner product.
+\end{remark}
+
+\begin{definition}[Metric]\label{def:metric}
+    Let $X$ be a nonempty set.
+    A \emph{metric} on $X$ is a function
+    \[
+        d : X \times X \to [0,\infty)
+    \]
+    satisfying, for all $x,y,z\in X$:
+    \begin{enumerate}
+        \item[\textbf{(M1)}]\label{ax:metric_pos}
+              $d(x,y)\ge 0$ and $d(x,y)=0$ if and only if $x=y$
+              \hfill (non-negativity and identity)
+
+        \item[\textbf{(M2)}]\label{ax:metric_sym}
+              $d(x,y)=d(y,x)$
+              \hfill (symmetry)
+
+        \item[\textbf{(M3)}]\label{ax:metric_triangle}
+              $d(x,z)\le d(x,y)+d(y,z)$
+              \hfill (triangle inequality)
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Metric Space]\label{def:metric_space}
+    A \emph{metric space} is a pair $(X,d)$, where $X$ is a set and
+    $d$ is a metric on $X$.
+\end{definition}
+\begin{example}[Euclidean Metric]\label{ex:euclidean_metric}
+    Let $X=\bb{F}^n$ and define
+    \[
+        d(\bd{x},\bd{y}) := \|\bd{x}-\bd{y}\|_2.
+    \]
+    Then $(\bb{F}^n,d)$ is a metric space.
+\end{example}
+\begin{example}[Discrete Metric]\label{ex:discrete_metric}
+    Let $X$ be any set and define
+    \[
+        d(x,y) :=
+        \begin{cases}
+            0, & x=y,     \\
+            1, & x\neq y.
+        \end{cases}
+    \]
+    Then $(X,d)$ is a metric space.
+\end{example}
+
+\begin{example}[Polynomial Metric]\label{ex:poly_metric}
+    Let $X=\bb{P}_n$ and define
+    \[
+        d(p,q):=\|p-q\|_\infty
+        = \max_{x\in[0,1]} |p(x)-q(x)|.
+    \]
+    Then $(\bb{P}_n,d)$ is a metric space.
+\end{example}
+\begin{proposition}\label{prop:norm_induces_metric}
+    Let $(V,\|\cdot\|)$ be a normed vector space.
+    Define
+    \[
+        d(\bd{u},\bd{v}) := \|\bd{u}-\bd{v}\|.
+    \]
+    Then $d$ is a metric on $V$.
+\end{proposition}
+
+\begin{proof}
+    Non-negativity and symmetry follow directly from properties of the norm.
+    Moreover,
+    \[
+        d(\bd{u},\bd{v})=0
+        \iff \|\bd{u}-\bd{v}\|=0
+        \iff \bd{u}=\bd{v}.
+    \]
+    Finally, by the triangle inequality for the norm,
+    \[
+        d(\bd{u},\bd{w})
+        = \|\bd{u}-\bd{w}\|
+        \le \|\bd{u}-\bd{v}\| + \|\bd{v}-\bd{w}\|
+        = d(\bd{u},\bd{v}) + d(\bd{v},\bd{w}).
+    \]
+\end{proof}
+\begin{remark}\label{rem:metric_vs_norm}
+    Every normed vector space is a metric space, but a metric space
+    need not carry any linear or vector space structure.
+\end{remark}

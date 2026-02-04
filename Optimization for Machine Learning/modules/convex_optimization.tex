@@ -1,0 +1,204 @@
+\begin{definition}[Convex Set]\label{def:convex_set}
+    A set $C\subseteq \bb{R}^n$ is called \emph{convex} if for all
+    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
+    \[
+        \lambda \bd{x} + (1-\lambda)\bd{y} \in C.
+    \]
+\end{definition}
+
+\begin{definition}[Convex Function]\label{def:convex_function}
+    Let $C\subseteq \bb{R}^n$ be a convex set.
+    A function $f:C\to\bb{R}$ is called \emph{convex} if for all
+    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
+    \[
+        f\bigl(\lambda \bd{x} + (1-\lambda)\bd{y}\bigr)
+        \le
+        \lambda f(\bd{x}) + (1-\lambda) f(\bd{y}).
+    \]
+\end{definition}
+\begin{definition}[Convex Program]\label{def:convex_program}
+    A \emph{convex program} is an optimization problem of the form
+    \[
+        \min_{\bd{x}\in C} f(\bd{x}),
+    \]
+    where $C\subseteq\bb{R}^n$ is a convex set and
+    $f:C\to\bb{R}$ is a convex function.
+\end{definition}
+\begin{definition}[Convex Program]\label{def:convex_program}
+    A \emph{convex program} is an optimization problem of the form
+    \[
+        \min_{\bd{x}\in C} f(\bd{x}),
+    \]
+    where $C\subseteq\bb{R}^n$ is a convex set and
+    $f:C\to\bb{R}$ is a convex function.
+\end{definition}
+\begin{definition}[Linear Program]\label{def:linear_program}
+    A \emph{linear program} is an optimization problem of the form
+    \[
+        \min_{\bd{x}\in\bb{R}^n} \;\bd{c}^\TT \bd{x}
+        \quad \text{subject to } A\bd{x}\le \bd{b},
+    \]
+    where $\bd{c}\in\bb{R}^n$, $A\in\bb{R}^{m\times n}$,
+    and $\bd{b}\in\bb{R}^m$.
+\end{definition}
+\begin{remark}
+    Every linear program is a convex program.
+\end{remark}
+\begin{definition}[Affine Set]\label{def:affine_set}
+    A set $A\subseteq\bb{R}^n$ is called \emph{affine} if for all
+    $\bd{x},\bd{y}\in A$ and all $\lambda\in\bb{R}$,
+    \[
+        \lambda \bd{x} + (1-\lambda)\bd{y} \in A.
+    \]
+\end{definition}
+\begin{definition}[Affine Hull]\label{def:affine_hull}
+    Let $S\subseteq\bb{R}^n$.
+    The \emph{affine hull} of $S$, denoted $\operatorname{aff}(S)$,
+    is the smallest affine set containing $S$, equivalently
+    \[
+        \operatorname{aff}(S)
+        =
+        \left\{
+        \sum_{i=1}^k \alpha_i \bd{x}_i
+        \;\middle|\;
+        \bd{x}_i\in S,\;
+        \sum_{i=1}^k \alpha_i = 1
+        \right\}.
+    \]
+\end{definition}
+\begin{definition}[Graph]\label{def:graph}
+    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
+    The \emph{graph} of $f$ is the set
+    \[
+        \operatorname{graph}(f)
+        :=
+        \{(\bd{x},t)\in\bb{R}^{n+1} : t=f(\bd{x}),\ \bd{x}\in C\}.
+    \]
+\end{definition}
+\begin{definition}[Epigraph]\label{def:epigraph}
+    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
+    The \emph{epigraph} of $f$ is the set
+    \[
+        \operatorname{epi}(f)
+        :=
+        \{(\bd{x},t)\in\bb{R}^{n+1} : t\ge f(\bd{x}),\ \bd{x}\in C\}.
+    \]
+\end{definition}
+
+\begin{theorem}\label{thm:epi_convex_implies_f_convex}
+    Let $C\subseteq\bb{R}^n$ be a convex set and let
+    $f:C\to\bb{R}$ be a function.
+    If the epigraph $\operatorname{epi}(f)$ is convex, then $f$ is convex.
+\end{theorem}
+\begin{proof}
+    Assume that $\operatorname{epi}(f)$ is convex.
+    Let $\bd{x},\bd{y}\in C$ and let $\lambda\in[0,1]$.
+
+    By definition of the epigraph,
+    \[
+        (\bd{x},f(\bd{x}))\in\operatorname{epi}(f),
+        \qquad
+        (\bd{y},f(\bd{y}))\in\operatorname{epi}(f).
+    \]
+    Since $\operatorname{epi}(f)$ is convex, their convex combination also belongs
+    to $\operatorname{epi}(f)$:
+    \[
+        \lambda(\bd{x},f(\bd{x})) + (1-\lambda)(\bd{y},f(\bd{y}))
+        \in \operatorname{epi}(f).
+    \]
+    That is,
+    \[
+        \bigl(\lambda\bd{x}+(1-\lambda)\bd{y},
+        \; \lambda f(\bd{x})+(1-\lambda)f(\bd{y})\bigr)
+        \in \operatorname{epi}(f).
+    \]
+
+    By definition of the epigraph, this implies
+    \[
+        f\bigl(\lambda\bd{x}+(1-\lambda)\bd{y}\bigr)
+        \le
+        \lambda f(\bd{x})+(1-\lambda)f(\bd{y}).
+    \]
+
+    Since $\bd{x},\bd{y}\in C$ and $\lambda\in[0,1]$ were arbitrary,
+    $f$ is convex on $C$.
+\end{proof}
+\begin{theorem}[Separating Hyperplane Theorem]\label{thm:separating_hyperplane}
+    Let $C,D \subseteq \bb{R}^n$ be two nonempty, disjoint, convex sets.
+    Assume that $C$ is closed.
+    Then there exist a nonzero vector $\bd{a}\in\bb{R}^n$
+    and a scalar $b\in\bb{R}$ such that
+    \[
+        \bd{a}^\TT \bd{x} \le b
+        \quad \text{for all } \bd{x}\in C,
+        \qquad
+        \bd{a}^\TT \bd{y} \ge b
+        \quad \text{for all } \bd{y}\in D.
+    \]
+    The hyperplane
+    \[
+        H := \{\bd{x}\in\bb{R}^n : \bd{a}^\TT \bd{x} = b\}
+    \]
+    is said to \emph{separate} $C$ and $D$.
+\end{theorem}
+
+\begin{proof}
+    Since $C$ is nonempty, closed, and convex, and $D$ is nonempty and disjoint from $C$,
+    choose an arbitrary point $\bd{y}\in D$.
+    Let
+    \[
+        \bd{p} := \Pi_C(\bd{y})
+    \]
+    denote the (unique) projection of $\bd{y}$ onto $C$.
+
+    By the characterization of projections onto closed convex sets,
+    \[
+        (\bd{y}-\bd{p})^\TT (\bd{x}-\bd{p}) \le 0
+        \quad \text{for all } \bd{x}\in C.
+    \]
+
+    Define
+    \[
+        \bd{a} := \bd{y}-\bd{p},
+        \qquad
+        b := \bd{a}^\TT \bd{p}.
+    \]
+    Note that $\bd{a}\neq \bd{0}$ since $\bd{y}\notin C$.
+
+    For any $\bd{x}\in C$, we have
+    \[
+        \bd{a}^\TT \bd{x}
+        =
+        \bd{a}^\TT \bd{p} + \bd{a}^\TT (\bd{x}-\bd{p})
+        \le
+        \bd{a}^\TT \bd{p}
+        = b.
+    \]
+
+    On the other hand, for $\bd{y}$ itself,
+    \[
+        \bd{a}^\TT \bd{y}
+        =
+        \bd{a}^\TT \bd{p} + \|\bd{a}\|^2
+        >
+        \bd{a}^\TT \bd{p}
+        = b.
+    \]
+
+    By convexity of $D$, the inequality
+    \[
+        \bd{a}^\TT \bd{y} \ge b
+    \]
+    extends to all $\bd{y}\in D$.
+    Thus the hyperplane
+    $\{\bd{x} : \bd{a}^\TT \bd{x} = b\}$
+    separates $C$ and $D$.
+\end{proof}
+\begin{remark}
+    If both $C$ and $D$ are closed and one of them is compact,
+    the separation can be made \emph{strict}.
+\end{remark}
+\begin{remark}
+    This theorem is the geometric foundation of duality,
+    KKT conditions, and optimality certificates in convex optimization.
+\end{remark}
