@@ -1,0 +1,117 @@
+\section{Notions of Nonexpansiveness}
+\begin{definition}[Contraction mapping]
+Let $T:X\rightarrow X$. We say $T$ is a contraction if $\exists \kappa \in [0,1[$ such that
+$$
+    (\forall x,y\in X),\quad \norm{Tx-Ty} \leq \kappa \norm{x-y}.
+$$
+In other words, the operator norm $\norm{T} = \sup_{\norm{x}=1} \norm{Tx} < 1$.
+\end{definition}
+\begin{definition}[Fixed points]
+Let $T:X\rightarrow X$. We say that $x^*\in X$ is a \underline{fixed point} of $T$ is $Tx^* = x^*$. Define
+\begin{align*}
+    \Fix(T) = \{x\in X:Tx=x\}.
+\end{align*}
+\end{definition}
+
+\begin{theorem}[Banach Fixed-point Theorem]
+    Let $T:X\rightarrow X$ be a contraction with $\kappa=\norm{T}<1$. Then, $T$ has a unique fixed point $x^*\in\Fix(T)$ such that $x^*=Tx^*$.
+\end{theorem}
+\solution{
+    \begin{proof}
+        Set $x_0\in X$ and construct a sequence $(x_k)$ that is defined as $x_{k+1}=Tx_k$. The proof follows as:
+        \begin{enumerate}
+            \item Show $(x_k)$ is Cauchy:
+            Consider
+            \begin{align*}
+                \norm{x_{k+1}-x_k} &= \norm{Tx_k-Tx_{k-1}},\\
+                &\leq\kappa\norm{x_k-x_{k-1}}=\kappa\norm{Tx_{k-1}-Tx_{k-2}},\\
+                &\leq\kappa^2\norm{x_{k-1}-x_{k-2}},\\
+                &\vdots\\
+                &\leq\kappa^k\norm{x_1-x_0}.
+            \end{align*}
+            Let $n\geq k$, using triangle inequality, we have
+            \begin{align*}
+                \norm{x_k-x_n}&\leq\norm{x_k-x_{k+1}}+\norm{x_{k+1}-x_{k+2}}+\cdots+\norm{x_{n-1}-x_{n}},\\
+                &\leq(\kappa^k+\kappa^{k+1}+\cdots+\kappa^{n-1})\norm{x_1-x_0},\\
+                &=\kappa^k\frac{1-\kappa^{n-k}}{1-\kappa}\norm{x_1-x_0}.
+            \end{align*}
+            Since $0<\kappa<1$, $1-\kappa^{n-k}<1$. Hence,
+            \begin{align}\label{eq:banach-picard-result}
+                \norm{x_k-x_n}\leq\frac{\kappa^k}{1-\kappa}\norm{x_1-x_0}.
+            \end{align}
+            The upper bound can be made arbitrarily small by choosing $k$ large enough; to show that $(x_k)$ is Cauchy. Therefore, by completeness of $(X,\norm{\cdot})$, there exists a limit point $x^*\in X$ such that $(x_k)\rightarrow x^*$.
+
+            \item Show that the limit point $x^*$ is a fixed point of $T$: Using triangle inequality,
+            \begin{align*}
+                \norm{x^*-Tx^*} &\leq \norm{x^*-x_k} + \norm{x_k-x^*},\\
+                &= \norm{x^*-x_k} + \norm{Tx_{k-1}-Tx^*},\\
+                &\leq \norm{x^*-x_k} + \kappa\norm{x_{k-1}-x^*}.
+            \end{align*}
+            Therefore, by taking $k\rightarrow\infty$, $\norm{x^*-Tx^*}=0\implies x^*=Tx^*$, i.e., $x^*$ is a fixed point of $T$.
+            
+            \item Uniqueness of the fixed point:
+            Suppose there exists $x^*=Tx^*$ and $\hat{x}=T\hat{x}$. Then,
+            \begin{align*}
+                \norm{x^*-\hat{x}}=\norm{Tx^*-T\hat{x}}\leq\kappa\norm{x^*-\hat{x}},
+            \end{align*}
+            which implies that $\norm{x^*-\hat{x}}=0\implies x^*=\hat{x}$, since $0<\kappa<1$.
+        \end{enumerate}
+        Therefore, the $T$ has a fixed point $x^*$ and it is unique.
+    \end{proof}
+}
+
+\begin{corollary}[Banach-Picard Theorem]
+    Let $T:X\rightarrow X$ be a contraction with $\kappa=\norm{T}<1$, and define $(x_k)_{k\in\bb N}$ as $x_{k+1}=Tx_k$. Then,
+    \begin{align*}
+        \norm{x_k-x^*}\leq\kappa^k\norm{x_0-x^*},
+    \end{align*}
+    where $x^*$ is a fixed point of $T$. Further, $\norm{x_k-x^*}\leq\frac{\kappa^k}{1-\kappa}\norm{x_1-x_0}$.
+\end{corollary}
+\solution{
+    \begin{proof}
+        The proof is straightforward following \eqref{eq:banach-picard-result}.
+    \end{proof}
+}
+
+\begin{definition}[Nonexpansive and firmly nonexpansive operators]
+    Let $T:X\rightarrow X$.
+    \begin{enumerate}
+        \item $T$ is \underline{nonexpansive} if $\forall x,y\in X,$
+        $$
+            \norm{Tx-Ty} \leq \norm{x-y},
+        $$
+        \item $T$ is \underline{firmly nonexpansive} if $\forall x,y\in X,$
+        $$
+            \norm{Tx-Ty}^2 + \norm{(I-T)x-(I-T)y}^2 \leq \norm{x-y}^2.
+        $$
+    \end{enumerate}
+\end{definition}
+\begin{definition}[Fejer monotone sequence]
+    A sequence $(x_{k})$ is said to be Fejer monotone with respect to $\Theta\subseteq X$ if
+    $$
+        (\forall k\geq 1,\theta\in\Theta), \quad \norm{x_{k+1}-\theta} \leq \norm{x_{k}-\theta}.
+    $$
+\end{definition}
+\noindent {\bf Remark:} A Fejer monotone sequence is necessarily bounded but need not be convergent.
+
+
+\begin{exercise}[Averaging operator]
+Show that
+\begin{enumerate}
+    \item $T$ is firmly nonexpansive if and only if $2T-I$ is nonexpansive. \\
+    {\bf Remark:} If $T$ is firmly nonexpansive, then $T = \frac{1}{2}(I+G)$ can be written as an averaged operator, where $G = 2T-I$.
+    \item If $T$ is a contraction, then $T$ is firmly nonexpansive.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Let $T$ be firmly nonexpansive. Show that,
+\begin{enumerate}
+    \item $T$ is continuous.
+    \item Let $x^*$ be a fixed point of $T$, and $x_{k+1}=T\{x_{k}\}, \; k>0$. Then,
+    \begin{enumerate}
+        \item $\norm{x_{k+1} - x^*} \leq \norm{x_{k} - x^*}$, i.e., $(x_{k})_{k\geq 0}$ is \underline{Fejer monotone} with respect to $X^*$,
+        \item $\displaystyle\sum_{k=0}^\infty \norm{x_{k+1}-x_{k}}^2 < \infty$.
+    \end{enumerate}
+\end{enumerate}
+\end{exercise}

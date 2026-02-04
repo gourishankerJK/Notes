@@ -1,0 +1,164 @@
+\section{The Gradient-Descent Algorithm}
+\begin{proposition}[Gradient is an ascent direction]
+Let $f\in C^1(\bb R^n)$. Then,
+\begin{equation*}
+    \forall x\in\bb R^n, \; \exists \delta >0, \text{ such that } \forall t\in [0,\delta]: f(x-t\nabla f(x)) < f(x),
+\end{equation*}
+i.e., $-\nabla f(x)$ is a descent direction at $x$.
+\end{proposition}
+\begin{proof}
+    Let $f\in C^1(\bb R^n)$. Using Taylor's theorem, we have
+    \begin{align*}
+        f(x-t\nabla f(x)) &= f(x) + \langle\nabla f(x), -t\nabla f(x)\rangle + o(\abs{t}\norm{\nabla f(x)}), \\
+        &= f(x) - t\norm{\nabla f(x)}^2 + o(t).
+    \end{align*}
+    It is possible to make $t>0$ sufficiently small such that the second term is negative. More concretely, $\exists \delta>0$ such that for $t\in [0,\delta]$, $$\displaystyle\frac{o(t)}{t} < \norm{\nabla f(x)}^2.$$ Then, we have $f(x-t\nabla f(x)) < f(x)$.
+\end{proof}
+
+{
+\indent This is the basis for the \underline{\bf gradient descent algorithm}. The parameter $t$ is called the \underline{step-size}, which is a small positive number, and may vary at every iteration as $\delta=\delta(x)$.\\
+\begin{algorithm}[H]
+\KwIn{Initialisation $x_0\in\bb R^n$, gradient of the objective function $\nabla f$,}
+\KwOut{Minimiser $\displaystyle x^* = \arg\min_{x\in\bb R^n} f(x)$}
+\For{$k=1,2,\ldots,$ until convergence}{
+    Choose a suitable step-size $t_k > 0$ \;
+    $x_{k+1} = x_{k} - t_k \nabla f(x_{k})$
+}
+\Return $x_{k+1}$
+\caption{Gradient descent for unconstrained minimisation of differentiable functions}
+\end{algorithm}
+}
+
+\begin{example}[Convergence of gradient descent for quadratic objective]
+Consider $f(x)=\frac{1}{2}x^2$ the gradient descent iterates
+\begin{align*}
+    x_{k+1} &= x_{k} - \alpha \nabla f(x_{k}), \\
+    &= (1-\alpha) x_{k}.
+\end{align*}
+For convergence, $\alpha \in ]0,2[$, i.e., for convergence of gradient descent, the step-size must be sufficiently small.
+\end{example}
+{\it \noindent Q: Can we ensure gradient descent is a descent method for a fixed step-size?\\
+\noindent A: Yes, if the objective function $f$ is ``smooth''.}
+
+\begin{proposition}[Descent step for $\beta$-smooth functions]\label{prop:gradient_step}
+    Let $f$ be $\beta$-smooth. Then, $\forall x\in\bb R^n, \; \forall 0 < t < \frac{1}{\beta}$,
+    \[
+        f(x-t\nabla f(x)) \leq f(x) - \frac{t}{2} (2-\beta t) \Vert \nabla f(x) \Vert^2 < f(x).
+    \]
+\end{proposition}
+\begin{proof}
+    Using the quadratic majoriser Lemma~\ref{lem:smooth-majoriser}, we have,
+    \begin{align*}
+        f(x-t\nabla f(x)) &\leq f(x) + \langle\nabla f(x), x-t\nabla f(x)-x\rangle + \frac{\beta}{2}\norm{x-t\nabla f(x)-x}^2,\\
+        = f(x) &- t\norm{\nabla f(x)}^2 + \frac{\beta t^2}{2}\norm{\nabla f(x)}^2 = f(x) - \frac{t}{2}(2-\beta t)\norm{f(x)}^2.
+    \end{align*}
+    Suppose the step-size $\displaystyle 0<t<\frac{1}{\beta}$, we get
+    \begin{align*}
+        f(x-t\nabla f(x)) \leq f(x) - \frac{t}{2}(2-\beta t)\norm{\nabla f(x)}^2 < f(x).
+    \end{align*}
+\end{proof}
+
+\begin{corollary}
+Let $f$ be $\beta$-smooth and bounded below. Consider the gradient descent iteration with any $x_{0}\in\bb R^n$, $x_{k+1} = x_{k} - \frac{1}{\beta} \nabla f(x_{k})$. Then,
+$$
+    \forall x_{0}\in\bb R^n : \lim_{k\rightarrow \infty} \nabla f(x_{k}) = 0.
+$$
+In particular, if $x^*$ is a limit point of $(x_{k})$, then $x^*$ is a stationary point, i.e., $\nabla f(x^*) = 0$.
+\end{corollary}
+\begin{proof}
+    We note that, since $f$ is bounded below, $f^*>-\infty$ exists. Using the quadratic majoriser, we have
+    \begin{align*}
+        f(x_{k+1}) &= f\left(x_{k} - \frac{1}{\beta}\nabla f(x_{k})\right)\leq f(x_{k}) - \frac{1}{2\beta}\norm{\nabla f(x_{k})}^2,
+    \end{align*}
+    By rearrangement, we have $\norm{\nabla f(x_{k})}^2\leq 2\beta\left(f(x_{k})-f(x_{k+1})\right)$. In particular, for some $N\in\bb N$, we have
+    \begin{align*}
+        \sum_{k=0}^{N-1} \norm{\nabla f(x_{k})}^2 \leq \sum_{k=0}^{N-1}2\beta\left(f(x_{k})-f(x_{k+1})\right) &\leq 2\beta \left(f(x_{0})-f(x_{N})\right)\\
+        &\leq 2\beta \left(f(x_{0})-f^*\right).
+    \end{align*}
+    Since the partial sum is bounded above, using the limit test for convergent series, we have $\displaystyle\lim_{k\rightarrow \infty} \nabla f(x_{k}) = 0$.
+\end{proof}
+
+{
+\paragraph*{Terminology}
+\begin{enumerate}
+    \item {Objective convergence:} $f(x_{k}) \rightarrow f^*$
+    \item {Iterate convergence:} $x_{k} \rightarrow x^*$
+    \item {Minimising sequence:} $(x_{k})_{k\geq 0}$ is a minimising sequence if $x_{k} \rightarrow x^*$
+\end{enumerate}
+}
+
+{
+\paragraph*{Iterate convergence is stronger than objective convergence}
+If $f$ is $\beta$-smooth, then linear iterate convergence implies linear objective convergence, as
+$$
+    f(x_{k}) - f^* \leq \langle \nabla f(x^*), x_{k} - x^* \rangle + \frac{\beta}{2} \Vert x_{k} - x^* \Vert^2 = \frac{\beta}{2} \Vert x_{k} - x^* \Vert^2.
+$$
+}
+
+
+
+\subsection{Convergence Analysis of Gradient Descent}
+\begin{theorem}[Linear objective convergence of gradient descent for smooth and strongly convex functions]
+    Let $f$ be $\beta$-smooth and $\sigma$-strongly convex. Fix $x_{0}\in\bb R^n$, and let $x_{k+1} = x_{k} - \frac{1}{\beta} \nabla f(x_{k}),\; k>0$. Then, we have objective convergence with an exponential rate (also called linear convergence). More precisely,
+    \[
+        f(x_{k}) - f^* \leq (f(x_{0}) - f^*) \left( 1-\frac{\sigma}{\beta}\right)^k.
+    \]
+\end{theorem}
+\begin{proof}
+    Using Proposition~\ref{prop:gradient_step}, we have $f(x_{k+1}) \leq f(x_{k}) - \frac{1}{2\beta}\norm{\nabla f(x)}^2$. Then, using Lemma~\ref{lem:polyak}, we have:
+    \begin{align*}
+        f(x_{k+1}) - f^* &\leq f(x_{k}) - f^* - \frac{1}{2\beta}\norm{\nabla f(x)}^2, \\
+        &\leq f(x_{k}) - f^* - \frac{1}{2\beta}\cdot 2\sigma (f(x_{k}) - f^*) = \left(1-\frac{\sigma}{\beta}\right)(f(x_{k}) - f^*),\\
+        &\leq \cdots,\\
+        &\leq \left(1-\frac{\sigma}{\beta}\right)^{k+1}(f(x_{0}) - f^*).
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Linear iterate convergence of gradient descent for smooth and strongly convex functions]
+    Let $f$ be $\beta$-smooth and $\sigma$-strongly convex. Fix $x_{0}\in\bb R^n$, and let $x_{k+1} = x_{k} - \frac{1}{\beta} \nabla f(x_{k})\; k>0$. Then, we have iterate convergence with an exponential rate. More precisely,
+    \[
+        \norm{x_{k} - x^*}^2 \leq \left(\frac{\beta-\sigma}{\beta+\sigma}\right)^k \norm{x_{0} - x^*}^2.    
+    \]
+\end{theorem}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}[Convergence of gradient descent for smooth and convex functions]
+Let $f$ be convex and $\beta$-smooth. Fix $x_{0}\in\bb R^n$, and let $x_{k+1} = x_{k} - \frac{1}{\beta} \nabla f(x_{k})$. Then,
+$$
+    f(x_{k}) \leq f^* + o\left(\frac{1}{k}\right) \;\text{and }\; \norm{x_{k}-x^*}\rightarrow 0.
+$$
+\end{theorem}
+
+\subsection{Convergence Analysis of Gradient Descent Using Contraction Mapping Theory}
+\begin{proposition}
+    The sequence defined by $x_{k+1} = x_{k} - \frac{1}{\beta} \nabla f(x_{k})$, for some $x_{0}\in\bb R^n$, is Fejer monotone with respect to $X^* = \{x^*\in X : f(x^*) = \inf_{x\in X}f(x)\}$.
+\end{proposition}
+
+\begin{theorem}
+    $$
+        (x_{k}) \rightarrow x^*
+    $$
+\end{theorem}
+
+\noindent Define $T^f_{\text{grad}}:X\rightarrow X$ given by $\displaystyle T^f_{\text{grad}} = I-\frac{1}{\beta}\nabla f$. Each iteration of gradient descent is an application of this operator, i.e., it is a \underline{fixed-point iteration} of $T^f_{\text{grad}}$ --- $x_{k+1} = T^f_\text{grad}\{x_{k}\}$.
+
+\begin{lemma}
+    Let $f$ be $\beta$-smooth and convex, and define $T^f_{\text{grad}}:X\rightarrow X$ given by $\displaystyle T^f_{\text{grad}} = I-\frac{1}{\beta}\nabla f$. Then,
+    \begin{enumerate}
+        \item $T^f_{\text{grad}}$ is firmly nonexpansive,
+        \item $x^*$ is a minimiser of $f$ $\Leftrightarrow$ $x^*$ is a fixed point of $T^f_{\text{grad}}$.
+    \end{enumerate}
+\end{lemma}
+\begin{proof}
+   
+\end{proof}
+
+\begin{exercise}
+    Let $f$ be $\sigma$-strongly convex. Then, show that $T^f_\text{grad}$ is a contraction.
+\end{exercise}
+
+\begin{theorem}
+    Let $T$ be a firmly nonexpansive operator and let $\text{fix }T\neq\emptyset$. Then, for any $x_{0}\in X$, the sequence $x_{k+1} = T\{x_{k}\}$ converges to a point in $\text{fix }T$.
+\end{theorem}

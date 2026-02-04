@@ -1,0 +1,390 @@
+\section{Convex Sets and Convex Functions}
+
+\begin{definition}[Affine sets and Convex sets]
+    Let $X$ be a linear space (vector space) equipped with an inner product denoted as $\langle\cdot,\cdot\rangle$.
+    \begin{enumerate}
+        \item $C\subseteq X$ is an affine set if
+        $$
+            (\forall x_1,x_2\in C, \forall\theta\in\bb R), \quad \theta x_1 + (1-\theta)x_2 \in C.
+        $$
+        \item $C\subseteq X$ is a convex set if
+        $$
+            (\forall x_1,x_2\in C, \forall\theta\in [0,1]), \quad \theta x_1 + (1-\theta)x_2 \in C.
+        $$
+    \end{enumerate}
+\end{definition}
+\noindent The topology of convex sets may be open, for instance $]0,1[$ or closed, for instance $[0,1]$.
+
+\begin{marginfigure}
+  \includegraphics[width=\linewidth]{figures/convexsets.pdf}
+  \caption{Every line segment of the form $[x_1,x_2]$ are completely inside the set.}
+  \label{fig:convex-set}
+\end{marginfigure}
+\begin{marginfigure}
+  \includegraphics[width=\linewidth]{figures/nonconvexsets.pdf}
+  \caption{There is at least one line segment $[x_1,x_2]$ that is outside the set.}
+  \label{fig:nonconvex-set}
+\end{marginfigure}
+
+\begin{definition}[Convex functions]
+    Let $C$ be a convex set. $f:C\rightarrow\bb R$ is a convex function if
+    $$
+        (\forall x_1,x_2\in X, \forall\theta\in [0,1]), \;\; f(\theta x_1 + (1-\theta)x_2) \leq \theta f(x_1) + (1-\theta) f(x_2).
+    $$
+\end{definition}
+
+\begin{definition}[Optimisation programme, minimum and minimiser]
+    Let $f:C\rightarrow\bb R$. We define an optimisation (minimisation) programme as
+    \begin{equation}\tag{$P$}\label{eq:canonical_problem}
+        \underset{x\in\Omega}{\text{minimise }} f(x).
+    \end{equation}
+    \begin{itemize}
+        \item $f$ is called the objective function,
+        \item $\Omega$ is called the feasible set.
+    \end{itemize}
+\end{definition}
+
+\paragraph*{Remark} Well-posed and solvable optimisation programmes\\
+Consider the canonical optimisation programme \eqref{eq:canonical_problem}.
+\begin{enumerate}
+    \item \eqref{eq:canonical_problem} is \underline{well-posed} if there exists $\displaystyle f^* = \inf_{x\in\Omega} f(x)$. Then, $f^*$ is called the \underline{minimum value} of $f$.
+    \item \eqref{eq:canonical_problem} is \underline{solvable} if there exists $\displaystyle x^* = \arg\min_{x\in\Omega} f(x)$, Then, $x^*$ is called the (global) \underline{minimiser} of $f$.
+\end{enumerate}
+
+\begin{definition}[Local minimiser]
+    Let $f:X\rightarrow\bb R$. $x^*$ is called a local minimiser of $f$ if $\exists\epsilon > 0$ such that
+    $$
+        \forall x\in \cl B(x^*,\epsilon),\; f(x) \geq f(x^*),
+    $$
+    where $\cl B(x^*,\epsilon) = \{y:\norm{y-x^*}<\epsilon\}$ denotes the norm ball with centre $x^*$ and radius $\epsilon$.
+\end{definition}
+
+% ----------------------------------------
+
+\newgeometry{top=20mm,bottom=25mm,right=20mm,left=20mm}
+
+% ----------------------------------------
+\subsection{Differentiable Functions}
+\begin{definition}[Fr\'echet differentiable functions and gradient]\label{def:frechet_differentiable_functions}
+    Let $f:X\rightarrow \bb R$, and $x\in X$. We say $f$ is \underline{Fr\'echet differentiable} at $x\in X$ if $\exists ! g_x\in X$ such that
+    \[
+        \forall h\in X,\; f(x+h) = f(x) + \langle g_x, h\rangle + o(\norm{h}).  
+    \]
+    We write $g_x = \nabla f(x)$.
+\end{definition}
+
+\begin{exercise}[Show $g_x$ is unique]
+    Suppose there exists $g_x, \bar{g}_x \in X$ such that
+    \[
+        \lim_{h\rightarrow 0} \frac{f(x+h)-f(x)-\langle g_x,h\rangle}{\norm{h}},\text{ and }\lim_{h\rightarrow 0} \frac{f(x+h)-f(x)-\langle \bar{g}_x,h\rangle}{\norm{h}}.
+    \]
+    Taking the difference, we have:
+    \[
+        % \forall h\in X,\; %
+        \lim_{h\rightarrow 0}\frac{\langle g_x-\bar{g}_x, h\rangle}{\norm{h}} = 0,
+    \]
+    i.e., a linear functional is identically zero, which implies $g_x = \bar{g}_x$.\qed
+\end{exercise}
+
+% \begin{definition}[$C^k(\bb R)$ functions]
+
+% \end{definition}
+
+% \begin{theorem}[Taylor's theorem]
+
+% \end{theorem}
+% ----------------------------------------
+\subsection{Optima of Convex Functions}
+
+\begin{theorem}[Local minima of convex functions are global minima]
+Let $x^*\in\Omega$ be a local minimiser of a convex function $f:\Omega\rightarrow\bb R$. Then, $x^*$ is the global minimiser of $f$.
+\end{theorem}
+% \begin{proof}
+    
+% \end{proof}
+
+% \begin{theorem}[Canonical nature of convex programmes]
+
+% \end{theorem}
+% ----------------------------------------
+\subsection{First-order Conditions}
+\begin{theorem}[First-order conditions for convexity]\label{thm:first_order_condition}
+Let $f\in C^1(\bb R^n)$. Then, $f$ is convex iff
+\begin{equation*}
+    (\forall x,y\in\bb R^n), \quad f(y) \geq f(x) + \langle \nabla f(x), y-x\rangle
+\end{equation*}
+\end{theorem}
+\solution{
+    \begin{proof}
+        Let $f(y) \geq f(x) + \langle \nabla f(x), y-x\rangle, \forall x,y\in\bb R^n$. Choose $x_1,x_2\in\bb R^n$ and with $\theta\in [0,1]$, define $x_\theta = \theta x_1 + (1-\theta)x_2$. By convexity of $\bb R^n$, $x_\theta\in\bb R^n$, and we have
+        \begin{align*}
+            f(x_1) &\geq f(x_\theta) + \langle\nabla f(x_\theta), x_1-x_\theta\rangle, \\
+            f(x_2) &\geq f(x_\theta) + \langle\nabla f(x_\theta), x_2-x_\theta\rangle.
+        \end{align*}
+        Then,
+        \begin{align*}
+            \theta f(x_1) + (1-\theta) f(x_2) &\geq f(x_\theta) + \langle \nabla f(x_\theta), \theta (x_1-x_\theta) + (1-\theta)(x_2-x_\theta)\rangle
+            = f(x_\theta)    
+        \end{align*}
+        Therefore, $f$ is a convex function. \\
+        \indent Let $f$ be a convex function. Then, by convexity, $\forall\theta\in [0,1], x_1,x_2\in\bb R^n$, $f(\theta x_1 + (1-\theta) x_2)\leq \theta f(x_1) + (1-\theta)f(x_2)$. We have,
+        \begin{align*}
+            &\frac{f(x_2 + \theta(x_1-x_2)) - f(x_2)}{\theta} \leq f(x_1)-f(x_2). \\
+            \implies \; &\langle\nabla f(x_2), x_1-x_2\rangle \leq f(x_1)-f(x_2).
+        \end{align*}
+    \end{proof}
+}
+
+\paragraph*{Geometric interpretation}
+For convex functions $f\in C^1(\bb R)$, the tangent at a point $x_0$:
+$$
+    y(x) = f'(x_0)(x-x_0) + f(x_0) \leq f(x),
+$$
+is a global underestimator to $f$.
+
+
+\begin{corollary}[Stationary points of convex functions]\label{cor:fermats-principle}
+Let $f\in C^1(\bb R^n)$ be convex. Then,
+\[
+	\nabla f(x^*) = 0 \; \Longleftrightarrow \; x^* \in\arg\min_{x\in\bb R^n}f(x).
+\]
+\end{corollary}
+\solution{
+    \begin{proof}
+        Let $x^*\in\bb R^n$ be the minimiser of $f$. Define $t\mapsto g(t)=f(x^* + tv)$, for some unit-vector $v\in\bb R^n$. $g$ is differentiable, and $g(0)\leq g(t), \forall t\in\bb R$, since $x^*$ is the minimiser. From \underline{Fermat's principle}, we have $g'(0) = 0$, i.e.,
+        $$
+            g'(0) = \langle\nabla f(x^*+tv),v\rangle \vert_{t=0} = \langle\nabla f(x^*),v\rangle = 0.
+        $$
+        Since a linear functional is identically zero for all $v\in\bb R^n$, we have $\nabla f(x^*) = 0$.\\
+        \indent Let $\nabla f(x^*) = 0$. From convexity, we have $$(\forall x\in\bb R^n),\quad f(x^* + t(x-x^*)) \leq tf(x) + (1-t)f(x^*).$$ Using Taylor's theorem, we have
+        \begin{align*}
+            f(x^*) + t\langle\nabla f(x^*), x-x^*\rangle + o(\abs{t}\norm{x-x^*}) &\leq tf(x) + (1-t)f(x^*),\\
+            f(x^*) + o(t) &\leq tf(x) + (1-t)f(x^*),
+        \end{align*}
+        $\displaystyle\Rightarrow 0\leq\frac{o(t)}{t}\leq f(x)-f(x^*)$. Hence, $x^*$ is the global mimimiser of $f$.
+    \end{proof}
+}
+
+\begin{corollary}[Convex functions and monotone gradients]\label{cor:monotoncity-convex-functions}
+Let $f\in C^1(\bb R^n)$. Then, $f$ is convex if and only if the mapping $x\mapsto \nabla f(x)$ is monotone, i.e.,
+\begin{equation*}
+    (\forall x,y\in\bb R^n), \quad \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq 0.
+\end{equation*}
+\end{corollary}
+\solution{
+    \begin{proof}
+        Suppose $f\in C^1(\bb R^n)$ is convex. From the first-order condition, we have, using symmetry, $\forall x,y\in\bb R^n$,
+        \begin{align*}
+            f(y) &\geq f(x) + \langle\nabla f(x), y-x\rangle, \\
+            f(x) &\geq f(y) + \langle\nabla f(y), x-y\rangle.
+        \end{align*}
+        Adding the inequalities, we have, $\langle\nabla f(x), y-x\rangle + \langle\nabla f(y), x-y\rangle \leq 0$, which implies
+        \begin{equation*}
+            \forall x,y\in\bb R^n, \; \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq 0.
+        \end{equation*}
+
+        Let $f\in C^1(\bb R^n)$, and let $\nabla f$ be monotone. Then, for $t\in[0,1]$, consider the restriction of $f$ defined by $g(t) = f(x+t(y-x))$. We have $g'(t)=\langle\nabla f(x+t(y-x)),y-x\rangle$.
+        \begin{align*}
+            \left(g'(t)-g'(0)\right)t &= \left(\langle\nabla f(x+t(y-x)),y-x\rangle - \langle\nabla f(x),y-x\rangle\right)t,\\
+            &= \langle\nabla f(x+t(y-x))-\nabla f(x),x + t(y-x) - x\rangle \geq 0,
+        \end{align*}
+        i.e., $g'$ is monotone, i.e., $g'(t)\geq g'(0)$. Using the fundamental theorem of calculus,
+        \begin{align*}
+            g(1) &= g(0) + \int_0^1 g'(t)\dx t \geq g(0) + g'(0),\\
+            \implies f(y) &\geq f(x) + \langle\nabla f(x),y-x\rangle.
+        \end{align*}
+        Therefore, $f$ is convex following Theorem~\ref{thm:first_order_condition}.
+    \end{proof}
+}
+\begin{definition}[Smooth functions]
+    A function $f\in C^1(X)$ is $\beta$-smooth, if $\nabla f$ is Lipschitz, i.e., $\exists \beta >0$ such that,
+    \begin{equation*}
+        \forall x,y\in X, \; \Vert \nabla f(x)-\nabla f(y)\Vert \leq \beta \Vert x-y \Vert.
+    \end{equation*}
+\end{definition}
+    
+\begin{lemma}[Smooth functions have quadratic \emph{majorisers}]\label{lem:smooth-majoriser}
+    Let $f$ be $\beta$-smooth. Then, $\forall x,y\in\bb R^n$,
+    $$
+        f(y) \leq f(x) + \langle \nabla f(x), y-x\rangle + \frac{\beta}{2} \Vert y-x\Vert^2.
+    $$
+    In particular, if $f$ is convex, then, $\nabla f$ is \underline{strongly-monotonic} with
+    \begin{equation*}
+        (\forall x,y\in\bb R^n), \quad \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq \frac{1}{\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2.
+    \end{equation*}
+\end{lemma}
+\solution{
+    \begin{proof}
+        Consider the 1D case. Let $f:\bb R\rightarrow\bb R$ be $\beta$-smooth, i.e., $\abs{f'(y)-f'(x)}\leq\beta\abs{y-x},\;\forall x,y\in\bb R$. Using the fundamental theorem of calculus, we have
+        \begin{equation}\label{eq:1d-smoothness}
+        \begin{split}
+            f(y) - f(x) = \int_{x}^y f'(t)\;\dx t &= \int_{x}^y f'(x) + \left(f'(t)-f'(x)\right)\;\dx t,\\
+            &= f'(x)(y-x) + \int_{x}^y\left(f'(t)-f'(x)\right)\;\dx t,\\
+            &\leq f'(x)(y-x) + \beta\int_{x}^y\left(t-x\right)\;\dx t,\\
+            &\leq f'(x)(y-x) + \frac{\beta}{2}\abs{y-x}^2.
+        \end{split}
+        \end{equation}
+        The multivariate extension can be obtained using the function $g:\bb R\rightarrow\bb R,\; t\mapsto g(t) = f(x+t(y-x))$, where now $f:\bb R^n\rightarrow\bb R$. $g$ is differentiable with
+        \begin{align*}
+            g'(t) = \langle\nabla f(x+t(y-x)), y-x\rangle,
+        \end{align*}
+        and it follows that $g$ is $\beta\norm{y-x}^2$-smooth. From \eqref{eq:1d-smoothness}:
+        \begin{align*}
+            g(1) &\leq g(0) + g'(0)(1-0) + \frac{\beta}{2}\norm{y-x}^2(1-0)^2,\\
+            \implies f(y) &\leq f(x)+\langle\nabla f(x),y-x\rangle + \frac{\beta}{2}\norm{y-x}^2.
+        \end{align*}
+    
+        \indent {\it An alternate proof.} Consider the function $g(x)=\frac{\beta}{2}\norm{x}^2-f(x)$. We want to show that $g$ is convex. Consider,
+        \begin{align*}
+            \langle\nabla g(x)-\nabla g(y), x-y\rangle &= \langle\beta x-\nabla f(x)-\beta y+\nabla f(y),x-y\rangle,\\
+            &=\beta\norm{x-y}^2 - \langle x-y,\nabla f(x)-\nabla f(y)\rangle\geq 0.
+        \end{align*}
+        Therefore, $g$ is convex ($\because$ monotoncity, cf. Corollary~\ref{cor:monotoncity-convex-functions}). Using the first-order condition,
+        \begin{align*}
+            &           &  g(y) &\geq g(x) + \langle\nabla g(x),y-x\rangle,              \\
+            &\implies         &  \frac{\beta}{2}\norm{y}^2-f(y) &\geq \frac{\beta}{2}\norm{x}^2-f(x)+\langle\beta x-\nabla f(x),y-x\rangle,   \\
+            &\implies   &  f(y) &\leq f(x)+\langle\nabla f(x),y-x\rangle + \frac{\beta}{2}\norm{y-x}^2.
+        \end{align*}
+    
+        \indent Further, let $f:\bb R^n\rightarrow\bb R$ be convex. It is necessary to use the fact that it is now possible to obtain descent directions towards a minimiser using the derivative of the function. Formally, define the function $\psi_x(z) = f(z) - \langle\nabla f(x),z\rangle$. $\psi_x$ is convex, and $\beta$-smooth, as a convex function with an affine offset. In particular, $\nabla\psi_x(x) = \nabla f(z)-\nabla f(x) |_{z=x} = 0$, i.e., $x$ is the global minimiser of $\psi_x$. Therefore, for any $y\in\bb R^n$, using the majorisation principle, we have
+        \begin{align*}
+            \psi_x(x) &\leq \psi_x\left(y-\frac{1}{\beta}\nabla\psi_x(y)\right) \leq \psi_x(y) - \frac{1}{2\beta}\norm{\nabla \psi_x(y)}^2.\\
+            \implies\; f(x) - \langle\nabla f(x),x\rangle &\leq f(y) - \langle\nabla f(x),y\rangle - \frac{1}{2\beta}\norm{\nabla f(x)-\nabla f(y)}^2.
+        \end{align*}
+        By symmetry, we also have:
+        \begin{align*}
+            f(y) - \langle\nabla f(y),y\rangle &\leq f(x) - \langle\nabla f(y),x\rangle - \frac{1}{2\beta}\norm{\nabla f(x)-\nabla f(y)}^2.
+        \end{align*}
+        Adding the two inequalities, we have
+        \begin{align*}
+            \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq \frac{1}{\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2.
+        \end{align*}
+    \end{proof}
+}
+
+\begin{definition}[Strongly convex function]
+A function $f:\bb R^n\rightarrow\bb R$ is called $\sigma$-strongly convex, $\sigma > 0$, if the function $f-\frac{\sigma}{2}\norm{\cdot}^2$ is convex.
+\end{definition}
+
+\begin{exercise}
+Let $f$ be $\sigma$-strongly convex and $\beta$-smooth. Show that $\beta \geq \sigma$.\\
+(Checkpoint) Suppose $f\in C^2(\bb R^n)$. Then, it is easy to verify that,
+\begin{enumerate}
+    \item $\beta$-smoothness $\implies\nabla^2 f(x)\leq\beta I,\;\forall x\in\bb R^n$,
+    \item $\sigma$-strongly convex $\implies \nabla^2 g(x) = \nabla^2 f(x) - \sigma I \geq 0, \;\forall x\in\bb R^n$,
+\end{enumerate}
+using the second-order test for convexity. Therefore, we have $$\sigma I\leq \nabla^2 f(x)\leq\beta I, \;\forall x\in\bb R^n,$$ and in particular, $\sigma \leq \beta$. This gives a tractable method to compute the bounds $\sigma,\beta$ using the eigenvalues of the Hessian matrix.
+\end{exercise}
+
+\noindent Can this result be shown in general? While smooth functions have a quadratic majoriser, strongly convex functions have a quadratic minoriser.
+\begin{lemma}[Strongly convex functions have quadratic minorisers]
+    Let $f\in C^1(\bb R)$ and $\sigma$-strongly-convex. Then, $\forall x,y \in\bb R^n$,
+    \[
+        f(y) \geq f(x) + \langle \nabla f(x), y-x\rangle + \frac{\sigma}{2} \Vert y-x\Vert^2.
+    \]
+    Further, if $f$ is  $\beta$-smooth,
+    \[
+        \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq \frac{1}{\sigma+\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2 + \frac{\beta\sigma}{\sigma+\beta}\Vert x-y\Vert^2.
+    \]
+\end{lemma}
+\solution{
+    \begin{proof}
+        By definition, $g = f - \frac{\sigma}{2}\norm{\cdot}^2$ is convex, and $g\in C^1(\bb R^n)$, with $\nabla g(x) = \nabla f(x) - \sigma x$. Then, using the first-order test, $\forall x,y\in\bb R^n$
+        \begin{align*}
+            g(y) &\geq g(x) + \langle\nabla g(x), y-x\rangle,\\
+            f(y)-\frac{\sigma}{2}\norm{y}^2 &\geq f(x)-\frac{\sigma}{2}\norm{x}^2 + \langle\nabla f(x)-\sigma x, y-x\rangle,\\
+            f(y) &\geq f(x) + \frac{\sigma}{2}\left(\norm{x}^2+\norm{y}^2\right) + \langle\nabla f(x),y-x\rangle - \sigma\langle x,y\rangle,\\
+            f(y) &\geq f(x) + \langle\nabla f(x),y-x\rangle + \frac{\sigma}{2}\norm{y-x}^2.
+        \end{align*}
+
+        \noindent (Checkpoint) This result implies that if $f$ is $\beta$-smooth and $\sigma$-strongly convex, then, $\sigma\leq\beta$.\\
+        \indent Show that strongly convex functions are bounded below, and the minimiser is unique. To show existence the function needs to be {\it coercive}, and the quadratic lower bound is coercive.
+
+        \noindent (Claim) $g$ is $(\beta-\sigma)$-smooth. We know $f = g + \frac{\sigma}{2}\norm{\cdot}^2$ is $\beta$-smooth, i.e.,
+        \begin{align*}
+            f(y) &\leq f(x) + \langle\nabla f(x), y-x\rangle + \frac{\beta}{2}\norm{y-x}^2,\\
+            g(y)+\frac{\sigma}{2}\norm{y}^2 &\leq g(x)+\frac{\sigma}{2}\norm{x}^2 + \langle\nabla g(x) + \sigma x,y-x\rangle + \frac{\beta}{2}\norm{y-x}^2,\\
+            g(y) &\leq g(x) + \langle\nabla g(x),y-x\rangle + \frac{\beta-\sigma}{2}\norm{y-x}^2.
+        \end{align*}
+        Then, by monotonocity of $\nabla g$ (cf. Lemma~\ref{lem:smooth-majoriser}),
+        \begin{align*}
+            \langle\nabla g(x)-\nabla g(y), x-y\rangle &\geq \frac{1}{\beta-\sigma}\norm{\nabla g(x)-\nabla g(y)}^2,\\
+            \langle\nabla f(x)-\nabla f(y) - \sigma(x-y), x-y\rangle &\geq \frac{1}{\beta-\sigma}\norm{\nabla f(x)-\nabla f(y) - \sigma(x-y)}^2,\\
+            \left(1+\frac{2\sigma}{\beta-\sigma}\right)\langle\nabla f(x)-\nabla f(y), x-y\rangle &\geq \sigma\norm{x-y}^2 + \frac{1}{\beta-\sigma}\left(\norm{\nabla f(x)-\nabla f(y)}^2 + \sigma^2\norm{x-y}^2\right),\\
+            \langle\nabla f(x)-\nabla f(y), x-y\rangle &\geq \frac{1}{\sigma+\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2 + \frac{\beta\sigma}{\sigma+\beta}\Vert x-y\Vert^2.
+        \end{align*}
+    \end{proof}
+}
+
+\begin{definition}[Strongly convex function]
+    A function $f:\bb R^n\rightarrow\bb R$ is called $\sigma$-strongly convex, $\sigma > 0$, if the function $f-\frac{\sigma}{2}\norm{\cdot}^2$ is convex.
+\end{definition}
+    
+\begin{exercise}
+    Let $f$ be $\sigma$-strongly convex and $\beta$-smooth. Show that $\beta \geq \sigma$.\\
+    (Checkpoint) Suppose $f\in C^2(\bb R^n)$. Then, it is easy to verify that,
+    \begin{enumerate}
+        \item $\beta$-smoothness $\implies\nabla^2 f(x)\leq\beta I,\;\forall x\in\bb R^n$,
+        \item $\sigma$-strongly convex $\implies \nabla^2 g(x) = \nabla^2 f(x) - \sigma I \geq 0, \;\forall x\in\bb R^n$,
+    \end{enumerate}
+    using the second-order test for convexity. Therefore, we have $$\sigma I\leq \nabla^2 f(x)\leq\beta I, \;\forall x\in\bb R^n,$$ and in particular, $\sigma \leq \beta$. This gives a tractable method to compute the bounds $\sigma,\beta$ using the eigenvalues of the Hessian matrix.
+\end{exercise}
+    
+\noindent Can this result be shown in general? While smooth functions have a quadratic majoriser, strongly convex functions have a quadratic minoriser.
+\begin{lemma}[Strongly convex functions have quadratic minorisers]
+    Let $f\in C^1(\bb R)$ and $\sigma$-strongly-convex. Then, $\forall x,y \in\bb R^n$,
+    \[
+        f(y) \geq f(x) + \langle \nabla f(x), y-x\rangle + \frac{\sigma}{2} \Vert y-x\Vert^2.
+    \]
+    Further, if $f$ is  $\beta$-smooth,
+    \[
+        \langle \nabla f(x)-\nabla f(y), x-y\rangle \geq \frac{1}{\sigma+\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2 + \frac{\beta\sigma}{\sigma+\beta}\Vert x-y\Vert^2.
+    \]
+\end{lemma}
+\solution{
+    \begin{proof}
+        By definition, $g = f - \frac{\sigma}{2}\norm{\cdot}^2$ is convex, and $g\in C^1(\bb R^n)$, with $\nabla g(x) = \nabla f(x) - \sigma x$. Then, using the first-order test, $\forall x,y\in\bb R^n$
+        \begin{align*}
+            g(y) &\geq g(x) + \langle\nabla g(x), y-x\rangle,\\
+            f(y)-\frac{\sigma}{2}\norm{y}^2 &\geq f(x)-\frac{\sigma}{2}\norm{x}^2 + \langle\nabla f(x)-\sigma x, y-x\rangle,\\
+            f(y) &\geq f(x) + \frac{\sigma}{2}\left(\norm{x}^2+\norm{y}^2\right) + \langle\nabla f(x),y-x\rangle - \sigma\langle x,y\rangle,\\
+            f(y) &\geq f(x) + \langle\nabla f(x),y-x\rangle + \frac{\sigma}{2}\norm{y-x}^2.
+        \end{align*}
+        
+        \noindent (Checkpoint) This result implies that if $f$ is $\beta$-smooth and $\sigma$-strongly convex, then, $\sigma\leq\beta$.\\
+        \indent Show that strongly convex functions are bounded below, and the minimiser is unique. To show existence the function needs to be {\it coercive}, and the quadratic lower bound is coercive.
+
+        \noindent (Claim) $g$ is $(\beta-\sigma)$-smooth. We know $f = g + \frac{\sigma}{2}\norm{\cdot}^2$ is $\beta$-smooth, i.e.,
+        \begin{align*}
+            f(y) &\leq f(x) + \langle\nabla f(x), y-x\rangle + \frac{\beta}{2}\norm{y-x}^2,\\
+            g(y)+\frac{\sigma}{2}\norm{y}^2 &\leq g(x)+\frac{\sigma}{2}\norm{x}^2 + \langle\nabla g(x) + \sigma x,y-x\rangle + \frac{\beta}{2}\norm{y-x}^2,\\
+            g(y) &\leq g(x) + \langle\nabla g(x),y-x\rangle + \frac{\beta-\sigma}{2}\norm{y-x}^2.
+        \end{align*}
+        Then, by monotonocity of $\nabla g$ (cf. Lemma~\ref{lem:smooth-majoriser}),
+        \begin{align*}
+            \langle\nabla g(x)-\nabla g(y), x-y\rangle &\geq \frac{1}{\beta-\sigma}\norm{\nabla g(x)-\nabla g(y)}^2,\\
+            \langle\nabla f(x)-\nabla f(y) - \sigma(x-y), x-y\rangle &\geq \frac{1}{\beta-\sigma}\norm{\nabla f(x)-\nabla f(y) - \sigma(x-y)}^2,\\
+            \left(1+\frac{2\sigma}{\beta-\sigma}\right)\langle\nabla f(x)-\nabla f(y), x-y\rangle &\geq \sigma\norm{x-y}^2 + \frac{1}{\beta-\sigma}\left(\norm{\nabla f(x)-\nabla f(y)}^2 + \sigma^2\norm{x-y}^2\right),\\
+            \langle\nabla f(x)-\nabla f(y), x-y\rangle &\geq \frac{1}{\sigma+\beta} \Vert \nabla f(x) - \nabla f(y)\Vert^2 + \frac{\beta\sigma}{\sigma+\beta}\Vert x-y\Vert^2.
+        \end{align*}
+    \end{proof}
+}
+
+\begin{lemma}[Polyak-Łojasiewicz inequality]\label{lem:polyak}
+    Let $f$ be $\sigma$-strongly convex and $C^1(\bb R^n)$. Then, $\forall x\in\bb R^n$,
+    \[
+        f(x) - f^* \leq \frac{1}{2\sigma}\norm{\nabla f(x)}^2.
+    \]
+\end{lemma}
+\solution{
+    \begin{proof}
+        Using the quadratic minoriser, we have,
+        \begin{align*}
+            f(z) &\geq f(x) + \langle\nabla f(x),z-x\rangle + \frac{\sigma}{2}\norm{z-x}^2,\\
+            f^* = \inf_{z\in\bb R^n} f(z) &\geq f(x) - \frac{1}{\sigma}\norm{\nabla f(x)}^2 + \frac{1}{2\sigma}\norm{\nabla f(x)}^2,\; z^* = x-\frac{1}{\sigma}\nabla f(x).
+        \end{align*}
+        Therefore, we have, $f(x) - f^* \leq \frac{1}{2\sigma}\norm{\nabla f(x)}^2$.
+    \end{proof}
+}
+\paragraph*{Remark} The sub-optimality gap is controlled by the gradient.\\
+\noindent (Checkpoint) Note that the optimality gap is zero when the gradient is zero, verifying Fermat's principle.

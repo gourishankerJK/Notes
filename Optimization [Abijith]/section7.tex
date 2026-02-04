@@ -1,0 +1,72 @@
+\newgeometry{top=20mm,bottom=25mm,right=70mm,left=20mm}
+
+\section{Fenchel Conjugate}
+\begin{definition}[Fenchel conjugate]
+    Let $f:X\rightarrow\bar{\bb R}$. Then, the conjugate function $f^*:X\rightarrow\bar{\bb R}$ is defined as
+    \begin{align*}
+        f^*(u) = \sup_{x\in X} \; \langle x,u\rangle - f(x)
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    Let $f:X\rightarrow\bar{\bb R}$. Then, $f^*:X\rightarrow\bar{\bb R}$ is convex and lower semicontinuous.
+\end{proposition}
+\solution{
+\begin{proof}
+    Functions of the type $g_x(u)=\langle x,u\rangle-f(x)$ are affine and continuous. Therefore, the supremum over $x\in X$ is convex and lower semicontinuous.
+\end{proof}
+}
+
+\begin{example}
+    Let $C\subseteq X$ and let $f(x)=\iota_C(x)$. Then $f^*(u)=\sigma_C(u)\overset{\text{def.}}{=}\displaystyle\sup_{x\in C}\langle x,u\rangle$.
+\end{example}
+\begin{example}
+    Let $\alpha>0$. Then,
+    \begin{enumerate}
+    \item $(\alpha\abs{\cdot})^*=\iota_{[-\alpha,+\alpha]}$,
+    \item $(\alpha\norm{\cdot}_1)^*=\iota_{\cl B_{\infty,\alpha}}$.
+    \end{enumerate}
+\end{example}
+\begin{example}
+    Let $y\in X$. Then, $\left(\frac12\norm{\cdot-y}^2\right)^*=\frac12\norm{\cdot+y}^2-\frac12\norm{y}^2$
+\end{example}
+
+\subsection{Properness of Fenchel Conjugates}
+\begin{theorem}
+    Let $f:X\rightarrow ]-\infty,+\infty]$ be convex and proper. Then, $f^*$ is convex, lower semicontinuous and proper.
+\end{theorem}
+% \begin{proof}
+    
+% \end{proof}
+
+\begin{theorem}[Fenchel-Young inequality]
+    Let $f:X\rightarrow ]-\infty,+\infty]$. Then,
+    \begin{align*}
+        \forall x,u\in X, \quad f(x) + f^*(u) \geq \langle x,u\rangle.
+    \end{align*}
+\end{theorem}
+
+\subsection{Biconjugate Theorem}
+\begin{lemma}
+    Let $f:X\rightarrow ]-\infty,+\infty]$. Then, $f^{**}\leq f$.
+\end{lemma}
+
+\begin{theorem}
+    Let $f:X\rightarrow ]-\infty,+\infty]$ be proper. Then,
+    \begin{align*}
+        f^{**}=f \Longleftrightarrow f \text{ is convex and lower semicontinuous}.
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}
+    Let $f:X\rightarrow ]-\infty,+\infty]$ be proper and convex, and let $x,u\in X$. Then, the following are equivalent.
+    \begin{enumerate}
+        \item $f(x)+f^*(u)=\langle x,u\rangle$,
+        \item $u\in\partial f(x)$,\\
+        Further, if $f$ is lower semicontinuous,
+        \item $x\in\partial f^*(u)$.
+    \end{enumerate}
+\end{theorem}
+\begin{corollary}
+    Let $f:X\rightarrow ]-\infty,+\infty]\in\Gamma_0(X)$. Then, $\left(\partial f\right)^{-1}=\partial f^*$.
+\end{corollary}

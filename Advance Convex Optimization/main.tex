@@ -1,0 +1,41 @@
+\documentclass[11pt]{article}
+
+\usepackage{../latex_files/sty/kafkanotes}
+\usepackage{../latex_files/sty/preamble}
+\usepackage{../latex_files/sty/metadata}
+
+\title{\doccourse}
+\author{\docauthor}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{empty}
+    \maketitle
+
+    % \begin{abstract}
+    % Some abstract
+    % \end{abstract}
+    \hrule
+    \tableofcontents
+\end{titlepage}
+
+\newgeometry{top=20mm,bottom=25mm,right=75mm,left=20mm}
+
+\newcommand{\conform}{}
+\newcommand{\solution}[1]{\if\conform S {#1} \else {}\fi}
+
+% \clearpage\input{section0.tex}
+% \clearpage\input{section1.tex}
+% \clearpage\input{section2.tex}
+% \clearpage\input{section3.tex}
+% \clearpage\input{section4.tex}
+% \clearpage\input{section5.tex}
+% \clearpage\input{section6.tex}
+% \clearpage\input{section7.tex}
+
+% \clearpage
+% \bibliographystyle{ieeetr}
+% \bibliography{references.bib}
+
+\end{document}

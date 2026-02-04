@@ -1,0 +1,260 @@
+\section{Constrained Optimisation and Projected Gradient Descent}
+\begin{theorem}
+    Let $C\subseteq X$ be nonempty and convex. Let $f:X\rightarrow \bb R$ be convex and differentiable. Then,
+    \[
+        x^* = \arg\min_{x\in C} f(x) \Leftrightarrow \forall x\in C : \langle x-x^*, \nabla f(x^*)\rangle \geq 0.
+    \]
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{definition}[Projection operator]
+    Let $C\subseteq X$ be nonempty. The projection operator on $C$ is defined as
+    \[
+        \Pi_C:X\rightarrow X, \; \Pi_C(x) = \arg\min_{z\in C}\; \norm{z-x}.
+    \]
+\end{definition}
+\noindent {\bf Remark:} Suppose $C=(0,1)$ and $x=0$, $\Pi_C(x)$ is not defined. Closure of the set $C$ is necessary for the projection operator to be well-defined for all points in $X$.
+
+\begin{theorem}
+    Let $C$ be nonempty, closed and convex. Then, $\Pi_C(x)$ is well-defined $\forall x\in X$, i.e., $\Pi_C(x)$ exists and is unique. In particular, the function $z\mapsto \norm{z-x}$ has a unique minimiser over $C$.
+\end{theorem}
+\begin{proof}
+
+\end{proof}
+
+\begin{exercise}[Computing the projection operator]
+    Let $X\in\bb R^n$. Compute $\Pi_C$ when $C$ is the
+    \begin{enumerate}
+        \item closed unit $\ell_2$-ball,
+        \item closed unit $\ell_\infty$-ball,
+        \item $\bb R^n_+$,
+        \item range of $A\in\bb R^{n\times n}$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{lemma}
+    Let $C$ be nonempty, closed and convex. Let $\hat x, x\in X$. Then,
+    \[
+        \hat x = \Pi_C(x) \Leftrightarrow \forall z\in C, \; \langle z-\hat x,x-\hat x\rangle \leq 0.
+    \]
+\end{lemma}
+\noindent \underline{\bf Geometric interpretation:}
+
+\begin{algorithm}[H]
+    \KwIn{Initialisation $x^{(0)}\in\bb R^n$, gradient of the objective function $\nabla f$, projection operator $\Pi_C$ onto the constrain set $C$}
+    \KwOut{Minimiser $\displaystyle x^* = \arg\min_{x\in C} f(x)$}
+    \For{$k=1,2,\ldots,$ until convergence}{
+        Choose a suitable step-size $t_k > 0$ \;
+        $z^{(k+1)} = x^{(k)} - t_k \nabla f(x^{(k)})$ \;
+        $x^{(k+1)} = \Pi_C(z^{(k+1)})$
+    }
+    \Return $x^{(k+1)}$
+    \caption{Projected gradient descent for constrained minimisation of differentiable functions}
+\end{algorithm}
+
+\subsection{Convergence Analysis of Projected Gradient Descent}
+
+\begin{theorem}
+    Let $C$ be a nonempty, closed and convex; and let $f:X\rightarrow \bb R$ be $\beta$-smooth and convex. Then, for any $x^{(0)}\in X$, define
+    \[
+        x^{(k+1)} = \Pi_C\left(x^{(k)} - \frac{1}{\beta} \nabla f(x^{(k)})\right);\; k\geq 0,
+    \]
+    Then, $(x^{(k)})$ converges to the minimiser $x^*$ of $f$ over $C$; and $(f(x^{(k)}))$ converges to $f^*$.
+\end{theorem}
+
+\begin{proposition}
+    Let $C$ be nonempty, closed and convex. Then, the operator $\Pi_C$ is (firmly) nonexpansive.
+\end{proposition}
+\noindent Define $T^f_{\text{proj}}:X\rightarrow X$ given by $\displaystyle T^f_{\text{proj}} = \Pi_C \circ \left(I-\frac{1}{\beta}\nabla f\right)$. Each iteration of projected gradient descent is an application of this operator, i.e., it is a \underline{fixed-point iteration} of $T^f_{\text{proj}}$ --- $x^{(k+1)} = T^f_\text{proj}\{x^{(k)}\}$.
+
+\begin{lemma}
+    Let $f$ be $\beta$-smooth and convex, and define $T^f_{\text{proj}}:X\rightarrow X$ given by
+    \[
+        T^f_{\text{proj}} = \Pi_C \circ \left(I-\frac{1}{\beta}\nabla f\right).    
+    \]
+    Then,
+    \begin{enumerate}
+        \item $x^*\in\displaystyle\arg\min_{x\in X}f(x)\Longleftrightarrow x^*\in \text{Fix}\left(T^f_{\text{proj}}\right)$,
+        \item $T^f_{\text{proj}}$ is firmly nonexpansive.
+    \end{enumerate}
+\end{lemma}
+
+\subsection{Extended-Valued Functions}
+\begin{definition}[Indicator function]
+    Let $C\subseteq X$ be nonempty. The \underline{(0-$\infty$) indicator function} of $C$, $\iota_C:X\rightarrow \bb R\bigcup\{-\infty,+\infty\}\overset{\text{def.}}{=}\bar{\bb R}$ is defined as
+    \[
+        \iota_C(x) = \begin{cases}
+            0,          & x\in C,\\
+            +\infty,    & \text{otherwise}.
+        \end{cases}
+    \]
+\end{definition}
+\noindent {\bf Remark:} Constrained optimisation programmes can now be posed as an unconstrained optimisation programmes as
+\[
+    \inf_C f = \inf_X (f+\iota_C).
+\]
+
+\begin{definition}[Extended reals]
+    The set of extended reals $\bar{\bb R} \triangleq \bb R\bigcup\{-\infty,+\infty\}$ along with operations
+    \begin{enumerate}
+        \item $\forall a\in\bb R,\; a+(\pm\infty) = \pm\infty$,
+        \item $\forall a>0,\; a\cdot(\pm\infty)=\pm\infty$,
+        \item $\forall a<0,\; a\cdot(\pm\infty)=\mp\infty$,
+        \item $0\cdot(\pm\infty) = 0$,
+        \item $\forall a\in \bb R\bigcup\{-\infty\},\; a<+\infty$,
+        \item $\forall a\in \bb R\bigcup\{+\infty\},\; a>-\infty$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Extended real-valued functions, effective domain, epigraph and proper function]
+    An \underline{extended real-valued ($\bar{\bb R}$-valued) function} on $X$ is a function $f:X\rightarrow \bar{\bb R}$. The \underline{(effective) domain} of $f$,
+    \[
+        \text{dom}\{f\} = \{x\in X : f(x)<+\infty\}.
+    \]
+    The \underline{epigraph} of $f$,
+    \[
+        \text{epi}\{f\} = \{(x,t)\in X\times\bb R : f(x)\leq t\}.
+    \]
+    $f$ is \underline{proper} if,
+    \begin{align*}
+        \forall x\in X, &\; f(x)\neq -\infty, \text{ or } f(x) > -\infty,\\ 
+        \exists x\in X, &\; f(x)< +\infty, \text{ or } f(x) \in\bb R.
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Extended-valued convex functions]
+    A proper function $f:X\rightarrow\bar{\bb R}$ is convex if
+    \[
+        \forall x_1,x_2\in X, \forall\theta\in [0,1], \; f(\theta x_1 + (1-\theta)x_2) \leq \theta f(x_1) + (1-\theta) f(x_2).
+    \]
+\end{definition}
+
+\begin{proposition}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper. Then, the following are equivalent.
+    \begin{enumerate}
+        \item $f$ is convex,
+        \item $\text{dom}\{f\}$ is convex, and $f|_{\text{dom}\{f\}}$ is a real-valued convex function,
+        \item $\text{epi}\{f\}$ is convex.
+    \end{enumerate}
+\end{proposition}
+
+\begin{exercise}
+Let $f:X\rightarrow \bb R$ be convex (and continuous). Then, show that $\text{epi}\{f\}$ is closed in $X\times \bb R$.
+\end{exercise}
+
+\begin{example}
+The epigraph of $f=\iota_{[0,1]}$ is not closed. What is the problem here?
+\end{example}
+
+\begin{definition}[Closed functions]
+    A function $f:X\rightarrow \bar{\bb R}$ is \underline{closed} of $\text{epi}\{f\}$ is nonempty and closed.
+\end{definition}
+
+\begin{exercise}
+    $\iota_C$ is closed $\Leftrightarrow$ $C$ is closed in $X$.
+\end{exercise}
+
+\begin{exercise}
+    Show that if $f,g$ is proper and closed, then, $\forall \alpha,\beta\in\bb R : \alpha f + \beta g$ is proper and closed.
+\end{exercise}
+
+\subsection{Lower Semicontinuity}
+\begin{definition}[Lower semicontinuous functions]
+    A function $f:X\rightarrow \bar{\bb R}$ is lower semicontinuous at $x\in X$ if
+    \[
+        \forall (x_n)\subset X, (x_n)\rightarrow x : f(x) \leq \lim\inf f(x_n).
+    \]
+    $f$ is lower semicontinuous if $f$ is lower semicontinuous $\forall x\in X$.
+\end{definition}
+
+\begin{exercise}
+    Show that $f$ is lower semicontinuous at $x\in X$ if and only if
+    \[
+        \forall \epsilon>0, \exists \delta>0, \forall z\in \cl B(x,\delta) : f(z) > f(x)-\epsilon.
+    \]
+\end{exercise}
+
+\begin{exercise}
+    Show that if $(x_n)$ and $\lambda$ are such that $\lim\inf f(x_n) < \lambda$, then $f(x_n)<\lambda$ infinitely often, i.e., $\exists (x_{n_k})_{k\geq 1}, f(x_{n_k}) < \lambda, \; \forall k\geq 1$.
+\end{exercise}
+
+\begin{theorem}
+    Let $f:X\rightarrow \bar{\bb R}$. Then, the following are equivalent.
+    \begin{enumerate}
+        \item $f$ is lower semicontinuous.
+        \item $f$ is closed, i.e., $\text{epi}\{f\}$ is closed in $X\times \bb R$.
+        \item $\forall\lambda\in\bb R, \; \{x:f(x)\leq\lambda\}=\text{lev}_{\lambda}\{f\}$ is closed.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    ($1~\Rightarrow~2$) Let $(x_n,t_n)\in\text{epi}\{f\}$ such that $(x_n,t_n)\rightarrow (x,t)$. We need to show $f(x)\leq t$. However, we have $f(x_n)\leq t_n$. Therefore, $f(x)\leq\lim\inf f(x_n)\leq\lim\inf t_n=t$.\\\\
+    \indent ($1~\Rightarrow~3$) Let $(x_n)$ be in $\{x:f(x)\leq\lambda\}$, i.e., $f(x_n)\leq\lambda$ such that $(x_n)\rightarrow x$. Show $f(x)\leq\lambda$. We have $(x_n,\lambda)\in\text{epi}\{f\}$ and $(x_n,\lambda)\rightarrow (x,\lambda)$. Then, $f(x)\leq \lim\inf f(x_n)\leq\lambda$.\\\\
+    \indent ($2~\Rightarrow~3$) \\\\
+    \indent ($3~\Rightarrow~1$) Suppose $f$ is not lower semicontinuous at $x_0\in X$, i.e., $\forall (x_n)\rightarrow x_0$ such that $f(x_0)>\lim\inf f(x_n)$. This means that $\exists\lambda\in\bb R$ such that $\lim\inf f(x_n)<\lambda<f(x_0)$. We need to show that $\{x:f(x)\leq\lambda\}$ is not closed. Since $\lim\inf f(x_n) < \lambda$, then $\exists (x_{n_k})_{k\geq 1}, f(x_{n_k}) < \lambda, \; \forall k\geq 1$, i.e., $x_{n_k}\in\{x:f(x)\leq\lambda\}$. However, $x_{n_k}\rightarrow x_0$ and $f(x_0)>\lambda$. So, $\{x:f(x)\leq\lambda\}$ is not closed.
+\end{proof}
+
+\begin{proposition}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper. Assume that $\text{dom}\{f\}$ is closed, and $f$ is closed over $\text{dom}\{f\}$. Then, $f$ is closed. In particular, if $f|_{\text{dom}\{f\}}$ is continuous, then $f$ is closed.
+\end{proposition}
+
+\begin{theorem}[Weierstrass Theorem]\label{thm:weierstrass_theorem}
+    Let $f:X\rightarrow\bb R$ be continuous, and let $C\subseteq X$ be compact. Then, $f$ is bounded below on $C$, and $\exists x^*\in C$ such that $f(x^*) = \inf_C f$.
+\end{theorem}
+\begin{proof}
+    See text.
+\end{proof}
+
+\begin{example}[Motivation]
+    Consider the function
+    \[
+        f(x) = \begin{cases}
+            \sqrt{x}, & x>0,\\
+            1,        & x\leq 0.
+        \end{cases}
+    \]
+    The minimisation problem with $f$ as the objective is not solvable.\\
+    \indent \underline{Note:} $f$ is not lower semicontinuous at $x=0$.
+\end{example}
+
+\begin{theorem}
+    Let $f:X\rightarrow\bar{\bb R}$ be closed, and let $C\subseteq X$ be compact. Then, $\exists x^*\in C$ such that $f(x^*)=\inf_C f$.
+\end{theorem}
+\begin{proof}
+    The case when $\inf_C f = \pm\infty$ is easy. Use compactness and lower semicontinuity. Then, consider the case when $C\bigcap\text{dom}\{f\}\neq\emptyset$. Note that $\displaystyle\inf_C f = \inf_{C\bigcap\text{dom}\{f\}}f$, and {\color{red} check,} $\text{dom}\{f\}$ is closed. Therefore, $C\bigcap\text{dom}\{f\}$ is compact. Then, using Theorem~\ref{thm:weierstrass_theorem}, $\exists x^*\in C$ such that $\displaystyle f(x^*) = \inf_{C\bigcap\text{dom}\{f\}} f = \inf_C f$.
+\end{proof}
+
+\begin{definition}[Coervice functions]
+    We say $f:X\rightarrow\bar{\bb R}$ is \underline{coercive} if
+    \[
+        \lim_{\norm{x}\rightarrow+\infty} f(x) = +\infty.
+    \]
+\end{definition}
+\begin{exercise}
+    Prove that any differentiable and strongly-convex function is coercive.
+\end{exercise}
+
+\begin{example}
+    Let $A\in\bb R^{n\times n}$ be symmetric and positive definite. Show that $f(x) = \frac{1}{2}x^\TT Ax$ is coercive. Show that this is NOT true if $A$ is positive semi-definite and not positive definite.
+\end{example}
+
+\begin{corollary}
+    Let $f:X\rightarrow\bar{\bb R}$ be coercive and closed, and let $C\subseteq X$ be closed. Then, $\exists x^*\in C$ such that $f(x^*) = \inf_C f$.
+\end{corollary}
+\begin{proof}
+    Exercise.
+\end{proof}
+
+\begin{definition}[Extended-valued strictly convex function]
+    A proper function $f:X\rightarrow\bar{\bb R}$ is strictly convex if
+    \[
+        \forall x_1,x_2\in X, \forall\theta\in [0,1], \; f(\theta x_1 + (1-\theta)x_2) < \theta f(x_1) + (1-\theta) f(x_2).
+    \]
+\end{definition}
+\begin{example}
+    Prove that any strongly convex function is strictly convex, but the converse is not true.
+\end{example}
+\begin{exercise}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper and strictly convex. Then, for any $C\subseteq X$, $f$ can have at most one (unique) minimiser over $C$.
+\end{exercise}

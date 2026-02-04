@@ -1,0 +1,115 @@
+\usepackage[marginparwidth=4.5cm, marginparsep=0.7cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{floatrow}
+\floatsetup[widefigure]{margins=hangright,capposition=beside,
+capbesideposition={bottom, right},floatwidth=\textwidth}
+\usepackage{sidenotes}
+\usepackage[explicit]{titlesec}
+\usepackage[english]{babel}
+\usepackage{framed}
+\usepackage[normalem]{ulem}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage[italicdiff]{physics}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{lmodern}
+\usepackage{mathrsfs}
+\usepackage[inline,shortlabels]{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[most]{tcolorbox}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage[bottom,multiple]{footmisc}
+\usepackage{mathpazo}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage[T1]{fontenc}
+\usepackage{sectsty}
+\usepackage[skip=10pt plus1pt, indent=20pt]{parskip}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{30pt}
+\begin{flushleft}
+  {\Huge\sffamily\bfseries\@title}
+  \vskip 1.5em
+  {\sffamily\@author}
+\end{flushleft}\egroup
+}
+
+\makeatother
+\usepackage{fancyhdr}
+\renewenvironment{abstract}
+	{\par{\bfseries \noindent \sffamily \abstractname.}}
+	{\vskip 0.1em \medskip\noindent \rule{\linewidth}{.5pt}}
+ 
+\renewcommand*\familydefault{\sfdefault}
+\sectionfont{\sffamily\fontsize{15}{15}\selectfont}
+\subsectionfont{\sffamily\fontsize{11}{5}\selectfont}
+
+\renewcommand{\figurename}{\footnotesize Gambar}
+\renewcommand{\tablename}{\footnotesize Tabel}
+\renewcommand{\contentsname}{Contents}
+
+\newtheoremstyle{mystyle}{}{}{}{}{\sffamily\bfseries}{\newline}{ }{}
+\newtheoremstyle{cstyle}{}{}{}{}{\sffamily\bfseries}{\newline}{ }{\thmnote{#3}}
+\makeatletter
+\renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}{\noindent\normalfont\sffamily\bfseries\topsep6\p@\@plus6\p@\relax #1\@addpunct{.} }}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+\theoremstyle{mystyle}{\newtheorem{definition}{Definition}[section]}
+\theoremstyle{mystyle}{\newtheorem{proposition}[definition]{Proposition}}
+\theoremstyle{mystyle}{\newtheorem{theorem}[definition]{Theorem}}
+\theoremstyle{mystyle}{\newtheorem{lemma}[definition]{Lemma}}
+\theoremstyle{mystyle}{\newtheorem{corollary}[definition]{Corollary}}
+\theoremstyle{mystyle}{\newtheorem*{remark}{Remark}}
+\theoremstyle{mystyle}{\newtheorem*{remarks}{Remarks}}
+\theoremstyle{mystyle}{\newtheorem*{example}{Example}}
+\theoremstyle{mystyle}{\newtheorem*{examples}{Examples}}
+\theoremstyle{definition}{\newtheorem*{exercise}{Exercise}}
+\theoremstyle{cstyle}{\newtheorem*{cthm}{}}
+
+\newtheoremstyle{warn}{}{}{}{}{\normalfont}{}{ }{}
+\theoremstyle{warn}
+\newtheorem*{warning}{\warningsign{0.2}\relax}
+
+%Symbol for the warning environment, designed to be easily scalable
+\newcommand{\warningsign}[1]{\tikz[scale=#1,every node/.style={transform shape}]{\draw[-,line width={#1*0.8mm},red,fill=yellow,rounded corners={#1*2.5mm}] (0,0)--(1,{-sqrt(3)})--(-1,{-sqrt(3)})--cycle;
+\node at (0,-1) {\fontsize{48}{60}\selectfont\bfseries!};}}
+
+\tcolorboxenvironment{definition}{boxrule=0pt,boxsep=0pt,colback={yellow!10},left=8pt,right=8pt,enhanced jigsaw,sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip,segmentation style=solid}
+\tcolorboxenvironment{proposition}{boxrule=0pt,boxsep=0pt,colback={brown!5},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{brown},sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
+\tcolorboxenvironment{theorem}{boxrule=0pt,boxsep=0pt,colback={Cyan!10},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{Cyan},sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
+\tcolorboxenvironment{lemma}{boxrule=0pt,boxsep=0pt,colback={Orange!5},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{Orange!50},sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
+\tcolorboxenvironment{corollary}{boxrule=0pt,boxsep=0pt,colback={violet!5},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{violet},sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
+% \tcolorboxenvironment{proof}{boxrule=0pt,boxsep=0pt,blanker,borderline west={2pt}{0pt}{CadetBlue!80!white},left=8pt,right=8pt,sharp corners,before skip=10pt,after skip=10pt,breakable,before upper=\tcbtitle\par\smallskip}
+\tcolorboxenvironment{remark}{boxrule=0pt,boxsep=0pt,blanker,borderline west={2pt}{0pt}{Green},left=8pt,right=8pt,before skip=10pt,after skip=10pt,breakable}
+\tcolorboxenvironment{remarks}{boxrule=0pt,boxsep=0pt,blanker,borderline west={2pt}{0pt}{Green},left=8pt,right=8pt,before skip=10pt,after skip=10pt,breakable}
+\tcolorboxenvironment{example}{boxrule=0pt,boxsep=0pt,colback={Black!5},left=8pt,right=8pt,sharp corners,before skip=10pt,after skip=10pt,breakable}
+\tcolorboxenvironment{examples}{boxrule=0pt,boxsep=0pt,blanker,borderline west={2pt}{0pt}{Black},left=8pt,right=8pt,sharp corners,before skip=10pt,after skip=10pt,breakable}
+\tcolorboxenvironment{cthm}{boxrule=0pt,boxsep=0pt,colback={gray!10},left=8pt,right=8pt,enhanced jigsaw, borderline west={2pt}{0pt}{gray},sharp corners,before skip=10pt,after skip=10pt,breakable}
+
+\newenvironment{talign}{\let\displaystyle\textstyle\align}{\endalign}
+\newenvironment{talign*}{\let\displaystyle\textstyle\csname align*\endcsname}{\endalign}
+
+\usepackage[explicit]{titlesec}
+\titleformat{\section}{\fontsize{16}{30}\sffamily\bfseries}{\thesection}{20pt}{#1}
+\titleformat{\subsection}{\fontsize{14}{18}\sffamily\bfseries}{\thesubsection}{12pt}{#1}
+\titleformat{\subsubsection}{\fontsize{12}{12}\sffamily\large\bfseries}{\thesubsubsection}{8pt}{#1}
+
+\titlespacing*{\section}{0pt}{5pt}{5pt}
+\titlespacing*{\subsection}{0pt}{5pt}{5pt}
+\titlespacing*{\subsubsection}{0pt}{5pt}{5pt}
+
+\newcommand{\Disp}{\displaystyle}
+\newcommand{\qe}{\hfill\(\bigtriangledown\)}
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}

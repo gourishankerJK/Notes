@@ -1,0 +1,353 @@
+\section{Subgradient Methods}
+\begin{definition}[Class of closed, proper and convex functions]
+    \[
+        \Gamma_0(X) := \left\{f:X\rightarrow\bar{\bb R}\;\big\vert\; f \text{ is closed, proper and convex}\right\}.
+    \]
+\end{definition}
+\noindent \underline{\bf Recall:} For convex, differentiable functions, we have the tangent property Theorem~\ref{thm:first_order_condition}.
+
+\begin{definition}[Subdifferential of a function]
+    Let $f:X\rightarrow\bar{\bb R}$, and $x\in\text{dom}\{f\}$. Then, the \underline{subdifferential of $f$} at $x$ is the set
+    \[
+        \partial f(x) = \left\{\zeta\in X : f(y) \geq f(x) + \langle \zeta, y-x\rangle, \forall y\in X\right\}.
+    \]
+    The elements of $\partial f(x)$ are called \underline{subgradients}, and, the (set-valued) operator $\partial f:X\rightarrow 2^X$ is called the \underline{subdifferential operator}.
+\end{definition}
+\begin{remark}
+    If $f$ is differentiable on $X$, then $\nabla f(x)\in\partial f(x)$, and further, $\partial f(x)=\{\nabla f(x)\}$.
+\end{remark}
+
+\begin{lemma}
+{\color{red}
+    Let $f:X\rightarrow ]-\infty,+\infty]$ be proper, and $x\in\text{dom}\{f\}$. Then,
+    \begin{enumerate}
+        \item $\text{dom}\{\partial f\}\subseteq \text{dom}\{f\}$
+        \item $\partial f(x) = \cup_{y\in\text{dom}\{f\}}\{\zeta\in X : \langle y-x,\zeta\rangle\leq f(y)-f(x)\}$
+        \item $\partial f(x)$ is closed and convex
+    \end{enumerate}
+}
+\end{lemma}
+
+\begin{remark}
+    % If $\text{dom}\{f\}=X$, or $f$ is real valued, then $\partial f(x)\neq\emptyset,\forall x\in X$ and $\text{dom}\{\partial f\} = \{x\in X:\partial f(x)\neq\emptyset\} = X$.
+    {\color{red}
+    If $f\in\Gamma_0(X)$ then $\partial f(x)\neq\emptyset,\forall x\in X$ and $\text{dom}\{\partial f\} = \{x\in X:\partial f(x)\neq\emptyset\} = X$.
+    }
+\end{remark}
+\begin{theorem}[Existence of subgradients for convex functions]\label{thm:subgradient}
+    Let $f:X\rightarrow\bb R$ be convex. Then,
+    \[
+        \forall x\in X, \exists\zeta\in X : \forall y\in X, \; f(y) \geq f(x) + \langle \zeta, y-x\rangle
+    \]
+\end{theorem}
+\begin{remark}
+    {\color{red}
+        Nonconvex functions can have empty subdifferentials. Give an example.
+    }
+\end{remark}
+
+\begin{exercise}
+    Consider $f(x)=\abs{x}$. Show that
+    \[
+        \partial f(x) = \begin{cases}
+            \displaystyle\frac{x}{\abs{x}}, & x\neq 0,\\
+            [-1,+1],           & x=0.
+        \end{cases}
+    \]
+Then, by separable extension,
+\[
+    \partial \norm{x}_1 = \begin{cases}
+        \frac{x}{\norm{x}_1}, & x\neq 0,\\
+        [-1,+1]^n,           & x=0.
+    \end{cases}  
+\]
+\end{exercise}
+
+\begin{theorem}[Separating hyperplane theorem]
+    Exercise.
+\end{theorem}
+\begin{theorem}[Supporting hyperplane theorem]\label{thm:supporting_hyperplane}
+    Let $C\subseteq X$ be closed, convex set, and let $x_0 \in \text{bdd}\{C\}=C\setminus\text{int}\{C\}$. Then,
+    \[
+        \forall \zeta\in X\setminus\{0\}, \forall x\in C : \langle\zeta,x-x_0\rangle\leq 0.
+    \]
+\end{theorem}
+\begin{proof}
+    Since $x_0\in\text{bdd}\{C\}$, there exists $(z_n)\subseteq C$ such that $z_n\rightarrow x_0$. Let $\xi_n=z_n-\Pi_C(z_n)\neq 0$. We have, $\langle x-\Pi_C(z_n),z_n-\Pi_C(z_n)\rangle\leq 0$. Using a renormalisation trick, i.e., using $\hat{\xi}_n\leftarrow \xi_n/\norm{\xi_n}$, we have $\langle x-\Pi_C(z_n),\hat{\xi}_n\rangle\leq 0$. Setting $\displaystyle\zeta = \lim_{k\rightarrow\infty}\hat{\xi}_{n_k}$, and using continuity of inner product functionals, we have $\langle x-x_0,\zeta\rangle\leq 0$. We also have $\norm{\zeta}=1$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:subgradient}]
+    Let $f:X\rightarrow\bb R$ be convex. We need to show $\partial f(x)\neq\emptyset, \forall x\in X$, i.e., $\text{dom}\{\partial f\}=X$. Let $C=\text{epi}\{f\}\in X\times\bb R$ and $x=x_0$. Since $f$ is convex (and therefore continuous), $C$ is closed and convex. Further, $(x, f(x))\in\text{bdd}\{C\}$. Then, using Theorem~\ref{thm:supporting_hyperplane}, $\exists 0\neq (\xi,\alpha)\in X\times\bb R, \forall (y,t)\in\text{epi}\{f\}$
+    \begin{align*}
+        \langle (\xi,\alpha), (y,t)\rangle &\leq \langle (\xi,\alpha), (x,f(x))\rangle, \\
+        \langle \xi, y\rangle + \alpha t &\leq \langle \xi,x\rangle + \alpha f(x).
+    \end{align*}
+    {\bf Claim} $\alpha \neq 0$: Suppose $\alpha=0$, $\forall y\in X$, $\langle \xi, y-x\rangle\leq 0\implies \xi=0$, which is a contradiction.\\
+    {\bf Claim} $\alpha < 0$: Suppose $\alpha > 0$, then, $\forall t\geq f(y), t\leq \gamma$, which is a contradiction.\\
+    Dividing by $\alpha$ and setting $\zeta = -\frac{1}{\alpha}\xi$, we have
+    \begin{align*}
+        \langle -\zeta, y\rangle + t &\geq \langle -\zeta,x\rangle + f(x),
+    \end{align*}
+    and in particular, $f(y)\geq \langle\zeta, y-x\rangle + f(x)$.
+\end{proof}
+
+\begin{exercise}
+    Let $(X,\norm{\cdot})$ be a normed space, and $f:X\rightarrow \bb R$, defined as $f(x) = \norm{x}$. Show that $\partial f(0) = \{\zeta\in X : \norm{\zeta}_*\leq 1\}$, where $\norm{x}_* = \sup_{\norm{\xi}=1}\abs{\langle\xi,x\rangle}$.
+\end{exercise}
+\begin{example}
+    Construct a convex function $f:X\rightarrow\bar{\bb R}$ such that $\partial f(x)=\emptyset$ for some $x\in X$.
+    \[
+        f(x) = \begin{cases}
+            -\sqrt{x}, & x\geq 0,\\
+            +\infty, & x<0.
+        \end{cases}
+    \]
+    (Claim) $\partial f(0)=\emptyset$. Supoose $\xi\in\partial f(0)$. Then,
+    \begin{align*}
+        \forall x>0 : -\sqrt{x} &\geq 0 + \langle\xi,x-0\rangle, \\
+        -\sqrt{x} &\geq \xi x,\\
+        \implies \sqrt{x} &\leq -1/\xi,
+    \end{align*}
+    which is a contradiction.
+\end{example}
+\begin{exercise}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper. Suppose, $\text{dom}\{f\}$ is convex and $\partial f(x)\neq\emptyset, \forall x\in\text{dom}\{f\}$. Then, show that $f$ is convex.
+\end{exercise}
+\begin{exercise}
+    Let $C$ be a closed, convex set, and let $x_0\in C$. Show that
+    \[
+        \partial\iota_C(x_0) = \mathrm{N}_C(x_0) \triangleq \{\zeta\in X : \langle\zeta,x-x_0\rangle\leq 0\},    
+    \]
+    (the normal cone of $C$ at $x_0$), $\forall x_0\in C$.
+\end{exercise}
+\begin{theorem}[Sub-differential inclusion]
+    Let $f:X\rightarrow\bar{\bb R}$ be proper. Then,
+    \[
+        x^* = \arg\min_{x\in X}f(x) \Longleftrightarrow 0\in\partial f(x^*).  
+    \]
+\end{theorem}
+\begin{proof}
+    We have $0\in\partial f(x^*)$ if and only if
+    \begin{align*}
+        \forall x\in X : f(x) &\geq f(x^*) + \langle 0, x-x^*\rangle, \\
+        f(x) &\geq f(x^*),
+    \end{align*}
+    $\Longleftrightarrow x^* = \arg\min_{x\in X}f(x)$.
+\end{proof}
+
+\begin{theorem}
+    Let $f\in\Gamma_0(X)$. Then, $\text{int}(\text{dom}\{f\})\subseteq\text{dom}\{\partial f\}$.
+\end{theorem}
+\begin{proof}
+    {\color{red} Exercise.}
+\end{proof}
+
+\begin{lemma}\label{lem:convexfunctionsarelocallylipschitz}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper and convex. Then, $f$ is locally Lipschitz on $\text{int}(\text{dom}\{f\})$, i.e.,
+    \[
+        \exists\delta_0>0,L_x>0, \forall u,v\in \cl B(x,\delta_0) : \abs{f(u)-f(v)} \leq L_x\norm{u-v}.
+    \]
+\end{lemma}
+\begin{theorem}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper and convex. Then, $\partial f(x)$ is closed and convex if $x\in\text{dom}\{f\}$. Moreover, if $x\in\text{int}(\text{dom}\{f\})$, then $\partial f(x)$ is bounded.
+\end{theorem}
+\begin{proof}
+    We have
+    \[
+        \partial f(x) = \{\zeta\in X : \underbrace{f(y)-f(x)}_{\alpha_y}\geq \langle\zeta,\underbrace{y-x}_{d_y}\rangle\} = \bigcap_{y\in X}H_y,
+    \]
+    where $H_y = \{\zeta\in X:\langle\zeta,d_y\rangle\leq\alpha_y\}$, which is closed and convex, therefore, $\partial f(x)$ is closed and convex. {\color{red} alternatively show using first principles.}\\
+    \indent Using Lemma~\ref{lem:convexfunctionsarelocallylipschitz}, we have
+    \[
+        \exists\delta>0,L_x>0, \forall z\in \cl B(x,\delta) : \abs{f(z)-f(x)} \leq L_x\norm{z-x}.
+    \]
+    and from the definition of the subgradient,
+    \[
+        \forall z\in X : f(z) \geq f(x) + \langle\zeta,z-x\rangle.
+    \]
+    Choose $z = x + \frac{\delta}{2}\frac{\zeta}{\norm{\zeta}}$ (w.l.o.g $\zeta\neq 0$) to show $\norm{\zeta}\leq L_x$.
+\end{proof}
+
+\begin{exercise}
+    Show that any proper, convex function $f:X\rightarrow\bar{\bb R}$ is locally bounded on $\text{int}(\text{dom}\{f\})$, i.e.,
+    \[
+        \forall x_0\in \text{int}(\text{dom}\{f\}), \exists\delta>0 : 0\leq\abs{f(x)} \leq M, \forall x\in\cl B(x_0, \delta).
+    \]
+    Find such an $M$ and a $\delta$.
+\end{exercise}
+\begin{proof}[Proof of Lemma~\ref{lem:convexfunctionsarelocallylipschitz}]
+    Let $\delta_0 = \frac{1}{2}\delta$. {\bf Claim:} $\forall u,v\in \cl B(x,\delta_0) : f(u)-f(v) \leq L_x\norm{u-v}$. Then, using convexity, we have the desired (with the $\abs{\cdot}$) result.\\
+    \indent Let $w = v + \frac{\delta}{2}\frac{v-u}{\norm{v-u}} \triangleq v + \gamma(v-u)$. {\bf Claim:} $\norm{w-x}\leq\delta$ {\color{red}(Show)}.\\
+    \indent Then, $v = \frac{\gamma}{1+\gamma}u + \frac{1}{1+\gamma}w$. By convexity,
+    \begin{align*}
+        f(v)&\leq\frac{\gamma}{1+\gamma}f(u) + \frac{1}{1+\gamma}f(w), \\
+        f(v)-f(u)&\leq\frac{1}{1+\gamma}(f(u)-f(w))\leq\frac{2M}{\delta}=\frac{4M}{\delta}\norm{u-v}.
+    \end{align*}
+    {\color{blue}see the videos on YouTube by the Vietnamese dude.}
+\end{proof}
+
+\begin{corollary}
+    Any real-valued convex function is continuous.
+\end{corollary}
+\begin{proof}
+    
+\end{proof}
+
+\begin{theorem}
+    Let $f:X\rightarrow\bar{\bb R}$ be proper and $C\subseteq X$ be nonempty, closed and convex. Then,
+    \[
+      x^*=\arg\min_C f \Leftrightarrow \exists\xi\in\partial f(x^*) : \langle\xi,x-x^*\rangle\geq 0,\forall x\in C.  
+    \]
+\end{theorem}
+
+\subsection{Directional Derivatives and Support Functions}
+
+\begin{theorem}[Directional derivative]
+    Let $f\in\Gamma_0(X)$ and let $x_0\in\text{int}(\text{dom}\{f\})$. Then, for any $d\in X$, the following exists:
+    \[
+        f'(x;d) = \lim_{t\downarrow 0}\frac{f(x+td)-f(x)}{t}
+    \]
+    and is called the directional derivative of $f$ at $x$ along $d$, and is finite.
+\end{theorem}
+\begin{proof}
+    \[
+        \lim_{t\downarrow 0}\frac{f(x+td)-f(x)}{t} = \inf_{t>0}\frac{f(x+td)-f(x)}{t}
+    \]
+    \begin{exercise}
+        $\forall t_1<0<t_2<t_3, \theta(t_1)\leq\theta(t_2)\leq\theta(t_3)$ $\theta$ is what the limit is taken of
+    \end{exercise}
+\end{proof}
+
+\begin{proposition}
+    Let $f\in\Gamma_0(X)$ and $x\in\text{int}(\text{dom}\{f\})$. Define $\psi:X\rightarrow\bb R$ as $\psi(d) = f'(x;d)$. Then,
+    \begin{enumerate}
+        \item $\psi$ is sub-additive: $\psi(d_1+d_2)\leq\psi(d_1)+\psi(d_2)$
+        \item $\psi$ is positive homogeneous: $\lambda>0$, $\psi(\lambda d) = \lambda\psi(d)$
+    \end{enumerate}
+    In particular, $\psi$ is convex.
+\end{proposition}
+\begin{proof}
+    
+\end{proof}
+
+\begin{exercise}
+    Compute the direction derivative of $f(x) = \abs{x}$. 
+\end{exercise}
+
+\begin{lemma}\label{lem:directional_derivative_of_convex_functions}
+    Let $f\in\Gamma_0(X)$ and $x\in\text{int}(\text{dom}\{f\})$. Then,
+    \[
+        \partial f(x) = \{\zeta\in X : \langle\zeta,d\rangle\leq f'(x;d), \forall d\in X\}.
+    \]
+    Moreover, $\displaystyle f'(x;d) = \max_{\zeta\in\partial f(x)}\langle\zeta,d\rangle$. {\color{red} With this it is easy to show $\psi(d)$ is convex.}
+\end{lemma}
+\begin{proof}
+    
+\end{proof}
+
+\begin{exercise}
+    Let $A\in\bb R^{m\times n}$, $c\in\bb R^n$, $b\in\bb R^m$. Consider the linear programme:
+    \[
+        p = \inf_{x\in\bb R^n} \left\{c^\TT x : Ax=b, x\geq 0\right\}, \; d = \sup_{y\in\bb R^m} \left\{b^\TT y : c-A^\TT y\geq 0\right\}.
+    \]
+    Suppose both are feasible. Then, show, using separating hyperplane theorem, that $p,d$ exist and $p=d$ (strong duality).
+\end{exercise}
+{Solution:} Consider $K = \{(u,t)\in\bb R^m\times \bb R : \exists x\geq 0, s.t., Ax=u, c^\TT x = t\}$. {\color{red}Show $K$ is closed and use separating hyperplane theorem.}
+
+\begin{theorem}
+    Let $f\in\Gamma_0(X)$ and $x\in\text{int}(\text{dom}\{f\})$. Then, $\partial f(x)$ is a singleton if and only if $f$ is differentiable at $x$.
+\end{theorem}
+\begin{proof}
+    ($\Leftarrow$) Suppose $f$ is differentiable at $x$. Then, using Definition~\ref{def:frechet_differentiable_functions}, we know $\nabla f(x)\in\partial f(x)$. We claim that if $\zeta\in\partial f(x)$, then $\zeta=\nabla f(x)$, which would imply $\partial f(x)$ is a singleton. We have
+    \[
+        \forall h\in X : f(x+h) \geq f(x) + \langle\zeta,h\rangle.  
+    \]
+    Since $f$ is differentiable,
+    \[
+        \forall h\in X : f(x+h) = f(x) + \langle\nabla f(x),h\rangle + o(\norm{h}).
+    \]
+    Therefore, we have,
+    \begin{align*}
+        \forall h\in X : f(x) + \langle\nabla f(x),h\rangle + o(\norm{h}) &\geq f(x) + \langle\zeta,h\rangle, \\
+        \langle\nabla f(x),h\rangle + o(\norm{h}) &\geq \langle\zeta,h\rangle,\\
+        o(\norm{h}) &\geq \langle\zeta-\nabla f(x),h\rangle.
+    \end{align*}
+    Put $h = t(\zeta-\nabla f(x)), t>0$,
+    \begin{align*}
+        \frac{o(t)}{t} &\geq \norm{\zeta-\nabla f(x)}^2,
+    \end{align*}
+    and as $t\rightarrow 0^+$, then $\zeta=\nabla f(x)$. \\
+    \indent ($\Rightarrow$) Suppose $\partial f(x)$ is a singleton, i.e., $\partial f(x) = \{\zeta_0\}$. Then, using Lemma~\ref{lem:directional_derivative_of_convex_functions}, $f'(x;d) = \langle\zeta_0,d\rangle, \forall d\in X$, i.e.,
+    \[
+        \langle\zeta_0,d\rangle = \lim_{t\rightarrow 0} \frac{f(x+td)-f(x)}{t}.
+    \]
+    Taking $d$ to be each of the orthonormal basis vectors $\{e_1, e_2, \cdots, e_n\}$, then, we have existence of all the partial derivatives. This implies $f$ is differentiable at $x$. {\color{red} The implication requires convexity.}
+\end{proof}
+
+\begin{lemma}
+    Let $f\in\Gamma_0(X)$. Consider an (ortho) basis $(e_i)_{i\in I}$ of $X$. Then,
+    \[
+        f \text{ is differentiable at } x\in\text{int}(\text{dom}\{f\}) \Leftrightarrow \mathrm{D}f(x;e_i) \text{ exists } \forall i\in I.
+    \]
+\end{lemma}
+\begin{proof}
+    Note that $\mathrm{D}f(x;e_i) = \displaystyle\lim_{t\rightarrow 0}\frac{f(x+te_i)-f(x)}{t}$. ($\Leftarrow$) Suppose $\mathrm{D}f(x;e_i)$ exists $\forall i\in I$, i.e., $\exists\zeta\in X$:
+    \[
+        \forall h\in X : f(x+h) = f(x) + \langle\zeta,h\rangle + o(\norm{h}).
+    \]
+    Claim: $\zeta_i = \mathrm{D}f(x;e_i)$. Weaker form will suffice, i.e., it is enough to show {\color{red}...complete the proof}
+\end{proof}
+
+\begin{exercise}
+    Let $f\in\Gamma_0(X)$. Then, $f$ is $\sigma$-strongly convex if and only if
+    \[
+        \forall x,y\in X, \zeta\in\partial f(x) : f(y) \geq f(x) + \langle\zeta,y-x\rangle + \frac{\sigma}{2}\norm{y-x}^2.
+    \]
+\end{exercise}
+
+\begin{proposition}[Sum rule]
+    Let $f:X\rightarrow\bb R$ be differentiable, and $g\in\Gamma_0(X)$. Then,
+    \begin{enumerate}
+        \item $\text{dom}\{f+g\} = \text{dom}\{g\}$
+        \item $\forall x\in\text{dom}\{\partial g\} : \partial(f+g)(x) = \nabla f(x) + \partial g(x)$
+    \end{enumerate}
+    Note: In general, $f,g\in\Gamma_0(X), \; \partial f + \partial g \subseteq \partial (f+g)$.
+\end{proposition}
+\begin{example}
+    Consider
+    \[
+        f(x) = \begin{cases}
+            -\sqrt{x}, & x\geq 0,\\
+            +\infty, & x<0.
+        \end{cases}, \;
+        g(x) = \iota_{]0,\infty[}(x).
+    \]
+    $\partial (f+g)(0) = \bb R$. But $\partial f(0) + \partial g(0) = \emptyset$.
+\end{example}
+
+\begin{theorem}
+    Let $f,g\in\Gamma_0(X)$ and let $x\in\text{int}(\text{dom}\{f\})\bigcap\text{int}(\text{dom}\{g\})$. Then,
+    \[
+        \partial(f+g)(x) = \partial f(x) + \partial g(x).  
+    \]
+\end{theorem}
+
+\begin{exercise}[Chain rule]
+    Let $f\in\Gamma_0(X)$, and let $A$ be a linear map on $X$. Define $g:X\rightarrow\bar{\bb R}$, as $g(x)=f(Ax)$.
+    \begin{enumerate}
+        \item Show that $g$ is convex and closed.
+        \item Assume $x,Ax\in\text{dom}\{f\}$. Then, show that $\partial g(x) = A^*\partial f(Ax)$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{theorem}
+    Let $f\in\Gamma_0(X)$. Then, the subdifferential operator $\partial f:X\rightarrow 2^X$ is maximal monotone. More precisely,
+    \begin{enumerate}
+        \item $\forall x,y\in X, \zeta\in\partial f(x), \xi\in\partial f(y): \langle\zeta-\xi,x-y\rangle\geq 0$.
+        \item Suppose $z,\nu\in X$:
+        \[
+            \forall x\in X,\zeta\in\partial f(x) : \langle z-x,\nu-\zeta\rangle\geq 0,
+        \]
+        then, $\nu\in\partial f(z)$.
+    \end{enumerate}
+\end{theorem}
