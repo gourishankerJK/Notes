@@ -1,205 +1,258 @@
 \section{Convex Optimization}
-\begin{definition}[Convex Set]\label{def:convex_set}
-    A set $C\subseteq \bb{R}^n$ is called \emph{convex} if for all
-    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
-    \[
-        \lambda \bd{x} + (1-\lambda)\bd{y} \in C.
-    \]
-\end{definition}
-
-\begin{definition}[Convex Function]\label{def:convex_function}
-    Let $C\subseteq \bb{R}^n$ be a convex set.
-    A function $f:C\to\bb{R}$ is called \emph{convex} if for all
-    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
-    \[
-        f\bigl(\lambda \bd{x} + (1-\lambda)\bd{y}\bigr)
-        \le
-        \lambda f(\bd{x}) + (1-\lambda) f(\bd{y}).
-    \]
-\end{definition}
-\begin{definition}[Convex Program]\label{def:convex_program}
-    A \emph{convex program} is an optimization problem of the form
-    \[
-        \min_{\bd{x}\in C} f(\bd{x}),
-    \]
-    where $C\subseteq\bb{R}^n$ is a convex set and
-    $f:C\to\bb{R}$ is a convex function.
-\end{definition}
-\begin{definition}[Convex Program]\label{def:convex_program}
-    A \emph{convex program} is an optimization problem of the form
-    \[
-        \min_{\bd{x}\in C} f(\bd{x}),
-    \]
-    where $C\subseteq\bb{R}^n$ is a convex set and
-    $f:C\to\bb{R}$ is a convex function.
-\end{definition}
-\begin{definition}[Linear Program]\label{def:linear_program}
-    A \emph{linear program} is an optimization problem of the form
-    \[
-        \min_{\bd{x}\in\bb{R}^n} \;\bd{c}^\TT \bd{x}
-        \quad \text{subject to } A\bd{x}\le \bd{b},
-    \]
-    where $\bd{c}\in\bb{R}^n$, $A\in\bb{R}^{m\times n}$,
-    and $\bd{b}\in\bb{R}^m$.
-\end{definition}
-\begin{remark}
-    Every linear program is a convex program.
-\end{remark}
-\begin{definition}[Affine Set]\label{def:affine_set}
-    A set $A\subseteq\bb{R}^n$ is called \emph{affine} if for all
-    $\bd{x},\bd{y}\in A$ and all $\lambda\in\bb{R}$,
-    \[
-        \lambda \bd{x} + (1-\lambda)\bd{y} \in A.
-    \]
-\end{definition}
-\begin{definition}[Affine Hull]\label{def:affine_hull}
-    Let $S\subseteq\bb{R}^n$.
-    The \emph{affine hull} of $S$, denoted $\operatorname{aff}(S)$,
-    is the smallest affine set containing $S$, equivalently
-    \[
-        \operatorname{aff}(S)
-        =
-        \left\{
-        \sum_{i=1}^k \alpha_i \bd{x}_i
-        \;\middle|\;
-        \bd{x}_i\in S,\;
-        \sum_{i=1}^k \alpha_i = 1
-        \right\}.
-    \]
-\end{definition}
-\begin{definition}[Graph]\label{def:graph}
-    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
-    The \emph{graph} of $f$ is the set
-    \[
-        \operatorname{graph}(f)
-        :=
-        \{(\bd{x},t)\in\bb{R}^{n+1} : t=f(\bd{x}),\ \bd{x}\in C\}.
-    \]
-\end{definition}
-\begin{definition}[Epigraph]\label{def:epigraph}
-    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
-    The \emph{epigraph} of $f$ is the set
-    \[
-        \operatorname{epi}(f)
-        :=
-        \{(\bd{x},t)\in\bb{R}^{n+1} : t\ge f(\bd{x}),\ \bd{x}\in C\}.
-    \]
-\end{definition}
-
 \begin{theorem}\label{thm:epi_convex_implies_f_convex}
-    Let $C\subseteq\bb{R}^n$ be a convex set and let
-    $f:C\to\bb{R}$ be a function.
-    If the epigraph $\operatorname{epi}(f)$ is convex, then $f$ is convex.
-\end{theorem}
-\begin{proof}
-    Assume that $\operatorname{epi}(f)$ is convex.
-    Let $\bd{x},\bd{y}\in C$ and let $\lambda\in[0,1]$.
-
-    By definition of the epigraph,
-    \[
-        (\bd{x},f(\bd{x}))\in\operatorname{epi}(f),
-        \qquad
-        (\bd{y},f(\bd{y}))\in\operatorname{epi}(f).
-    \]
-    Since $\operatorname{epi}(f)$ is convex, their convex combination also belongs
-    to $\operatorname{epi}(f)$:
-    \[
-        \lambda(\bd{x},f(\bd{x})) + (1-\lambda)(\bd{y},f(\bd{y}))
-        \in \operatorname{epi}(f).
-    \]
-    That is,
-    \[
-        \bigl(\lambda\bd{x}+(1-\lambda)\bd{y},
-        \; \lambda f(\bd{x})+(1-\lambda)f(\bd{y})\bigr)
-        \in \operatorname{epi}(f).
-    \]
-
-    By definition of the epigraph, this implies
-    \[
-        f\bigl(\lambda\bd{x}+(1-\lambda)\bd{y}\bigr)
-        \le
-        \lambda f(\bd{x})+(1-\lambda)f(\bd{y}).
-    \]
-
-    Since $\bd{x},\bd{y}\in C$ and $\lambda\in[0,1]$ were arbitrary,
-    $f$ is convex on $C$.
-\end{proof}
-\begin{theorem}[Separating Hyperplane Theorem]\label{thm:separating_hyperplane}
-    Let $C,D \subseteq \bb{R}^n$ be two nonempty, disjoint, convex sets.
-    Assume that $C$ is closed.
-    Then there exist a nonzero vector $\bd{a}\in\bb{R}^n$
-    and a scalar $b\in\bb{R}$ such that
-    \[
-        \bd{a}^\TT \bd{x} \le b
-        \quad \text{for all } \bd{x}\in C,
-        \qquad
-        \bd{a}^\TT \bd{y} \ge b
-        \quad \text{for all } \bd{y}\in D.
-    \]
-    The hyperplane
-    \[
-        H := \{\bd{x}\in\bb{R}^n : \bd{a}^\TT \bd{x} = b\}
-    \]
-    is said to \emph{separate} $C$ and $D$.
+    Let $C \subseteq \bb{R}^n$ be a convex set and let $f : C \to \bb{R}$ be a function. The function $f$ is convex if and only if its epigraph $\operatorname{epi}(f)$ is a convex set.
 \end{theorem}
 
 \begin{proof}
-    Since $C$ is nonempty, closed, and convex, and $D$ is nonempty and disjoint from $C$,
-    choose an arbitrary point $\bd{y}\in D$.
-    Let
-    \[
-        \bd{p} := \Pi_C(\bd{y})
-    \]
-    denote the (unique) projection of $\bd{y}$ onto $C$.
+    The proof consists of two directions.
 
-    By the characterization of projections onto closed convex sets,
-    \[
-        (\bd{y}-\bd{p})^\TT (\bd{x}-\bd{p}) \le 0
-        \quad \text{for all } \bd{x}\in C.
-    \]
+    \textbf{Direction 1: $\operatorname{epi}(f)$ is convex $\implies f$ is convex} \\
+    Assume that $\operatorname{epi}(f)$ is convex. Let $\bd{x}, \bd{y} \in C$ and let $\lambda \in [0, 1]$. By the definition of the epigraph:
+    \[ (\bd{x}, f(\bd{x})) \in \operatorname{epi}(f) \quad \text{and} \quad (\bd{y}, f(\bd{y})) \in \operatorname{epi}(f) \]
+    Since $\operatorname{epi}(f)$ is a convex set, the convex combination of these two points must also belong to $\operatorname{epi}(f)$:
+    \[ \lambda(\bd{x}, f(\bd{x})) + (1 - \lambda)(\bd{y}, f(\bd{y})) \in \operatorname{epi}(f) \]
+    Expanding this, we get:
+    \[ (\lambda\bd{x} + (1 - \lambda)\bd{y}, \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y})) \in \operatorname{epi}(f) \]
+    By the definition of the epigraph, if a point $(\bd{z}, t) \in \operatorname{epi}(f)$, then $f(\bd{z}) \le t$. Applying this here:
+    \[ f(\lambda\bd{x} + (1 - \lambda)\bd{y}) \le \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y}) \]
+    Since $\bd{x}, \bd{y} \in C$ and $\lambda \in [0, 1]$ were arbitrary, $f$ is a convex function on $C$.
 
-    Define
-    \[
-        \bd{a} := \bd{y}-\bd{p},
-        \qquad
-        b := \bd{a}^\TT \bd{p}.
-    \]
-    Note that $\bd{a}\neq \bd{0}$ since $\bd{y}\notin C$.
+    \vspace{1em}
 
-    For any $\bd{x}\in C$, we have
-    \[
-        \bd{a}^\TT \bd{x}
-        =
-        \bd{a}^\TT \bd{p} + \bd{a}^\TT (\bd{x}-\bd{p})
-        \le
-        \bd{a}^\TT \bd{p}
-        = b.
-    \]
-
-    On the other hand, for $\bd{y}$ itself,
-    \[
-        \bd{a}^\TT \bd{y}
-        =
-        \bd{a}^\TT \bd{p} + \|\bd{a}\|^2
-        >
-        \bd{a}^\TT \bd{p}
-        = b.
-    \]
-
-    By convexity of $D$, the inequality
-    \[
-        \bd{a}^\TT \bd{y} \ge b
-    \]
-    extends to all $\bd{y}\in D$.
-    Thus the hyperplane
-    $\{\bd{x} : \bd{a}^\TT \bd{x} = b\}$
-    separates $C$ and $D$.
+    \textbf{Direction 2: $f$ is convex $\implies \operatorname{epi}(f)$ is convex} \\
+    Assume $f$ is convex. Let $(\bd{x}, t_1) \in \operatorname{epi}(f)$ and $(\bd{y}, t_2) \in \operatorname{epi}(f)$. This implies:
+    \[ \bd{x}, \bd{y} \in C, \quad f(\bd{x}) \le t_1, \quad \text{and} \quad f(\bd{y}) \le t_2 \]
+    Consider a convex combination of these points for any $\lambda \in [0, 1]$:
+    \[ \bd{P} = \lambda(\bd{x}, t_1) + (1 - \lambda)(\bd{y}, t_2) = (\lambda\bd{x} + (1 - \lambda)\bd{y}, \lambda t_1 + (1 - \lambda)t_2) \]
+    Since $C$ is a convex set, $\lambda\bd{x} + (1 - \lambda)\bd{y} \in C$. Now we check the convexity condition for $f$:
+    \[ f(\lambda\bd{x} + (1 - \lambda)\bd{y}) \le \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y}) \]
+    Because $f(\bd{x}) \le t_1$ and $f(\bd{y}) \le t_2$, it follows that:
+    \[ \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y}) \le \lambda t_1 + (1 - \lambda)t_2 \]
+    By transitivity:
+    \[ f(\lambda\bd{x} + (1 - \lambda)\bd{y}) \le \lambda t_1 + (1 - \lambda)t_2 \]
+    This confirms that the point $\bd{P}$ satisfies the definition of the epigraph. Thus, $(\lambda\bd{x} + (1 - \lambda)\bd{y}, \lambda t_1 + (1 - \lambda)t_2) \in \operatorname{epi}(f)$, proving that $\operatorname{epi}(f)$ is a convex set.
 \end{proof}
-\begin{remark}
-    If both $C$ and $D$ are closed and one of them is compact,
-    the separation can be made \emph{strict}.
-\end{remark}
-\begin{remark}
-    This theorem is the geometric foundation of duality,
-    KKT conditions, and optimality certificates in convex optimization.
-\end{remark}
+
+
+\begin{theorem}[Strict Separation for Closed/Compact Sets]
+    Let $C$ and $D$ be two convex subsets of $\bb{R}^n$ that are both closed. Furthermore, assume that at least one of them is bounded (compact). If $C \cap D = \emptyset$, then there exists a hyperplane that strictly separates $C$ and $D$.
+\end{theorem}
+
+\begin{proof}
+    Since $C$ and $D$ are disjoint, closed, and at least one is bounded, the distance between the sets is strictly positive. We define the distance as:
+    \[
+        \text{dist}(C, D) := \inf \{ \|\bd{x} - \bd{y}\|_2 : \bd{x} \in C, \bd{y} \in D \}
+    \]
+    Because of the closed/bounded assumptions, this infimum is attained. There exist points $\bd{c} \in C$ and $\bd{d} \in D$ such that:
+    \[
+        \|\bd{c} - \bd{d}\| = \text{dist}(C, D) > 0
+    \]
+
+    \subsection*{Construction of the Hyperplane}
+    We define the normal vector $\bd{a}$ and the bias scalar $b$ as follows (using the midpoint construction):
+    \begin{align*}
+        \bd{a} & = \bd{d} - \bd{c}                                                                           \\
+        b      & = \dfrac{\|\bd{d}\|^2 - \|\bd{c}\|^2}{2} = \bd{a}^T \left( \dfrac{\bd{d} + \bd{c}}{2} \right)
+    \end{align*}
+    The separating hyperplane is $H = \{ \bd{x} : \bd{a}^T \bd{x} = b \}$. We claim that for all $\bd{x} \in C$, $\bd{a}^T \bd{x} \le \bd{a}^T \bd{c}$, and for all $\bd{y} \in D$, $\bd{a}^T \bd{y} \ge \bd{a}^T \bd{d}$.
+
+    \subsection*{Proof by Contradiction (Variational Argument)}
+    We show the first part: $\bd{a}^T \bd{x} \le \bd{a}^T \bd{c}$ for all $\bd{x} \in C$.
+
+    Suppose for the sake of contradiction that there exists some $\bd{x} \in C$ such that $\bd{a}^T \bd{x} > \bd{a}^T \bd{c}$.
+    Consider the line segment connecting $\bd{c}$ and $\bd{x}$. Since $C$ is convex, the point $\bd{z}(t)$ belongs to $C$ for any $t \in [0, 1]$:
+    \[
+        \bd{z}(t) = (1-t)\bd{c} + t\bd{x} = \bd{c} + t(\bd{x} - \bd{c})
+    \]
+    We analyze the squared distance from $\bd{d}$ to this point $\bd{z}(t)$:
+    \begin{align*}
+        \|\bd{z}(t) - \bd{d}\|^2 & = \|\bd{c} + t(\bd{x} - \bd{c}) - \bd{d}\|^2                                                   \\
+                                 & = \|(\bd{c} - \bd{d}) + t(\bd{x} - \bd{c})\|^2                                                 \\
+                                 & = \|\bd{c} - \bd{d}\|^2 + 2t (\bd{c} - \bd{d})^T (\bd{x} - \bd{c}) + t^2 \|\bd{x} - \bd{c}\|^2
+    \end{align*}
+    Recall that $\bd{a} = \bd{d} - \bd{c}$, so $\bd{c} - \bd{d} = -\bd{a}$. Substituting this back:
+    \[
+        \|\bd{z}(t) - \bd{d}\|^2 = \|\bd{c} - \bd{d}\|^2 - 2t \bd{a}^T (\bd{x} - \bd{c}) + t^2 \|\bd{x} - \bd{c}\|^2
+    \]
+    From our contradiction assumption, $\bd{a}^T \bd{x} > \bd{a}^T \bd{c}$, which implies $\bd{a}^T(\bd{x} - \bd{c}) > 0$. Let $K = \bd{a}^T(\bd{x} - \bd{c}) > 0$.
+    \[
+        \|\bd{z}(t) - \bd{d}\|^2 = \|\bd{c} - \bd{d}\|^2 - t \left[ 2K - t \|\bd{x} - \bd{c}\|^2 \right]
+    \]
+    Since $K > 0$, we can choose $t$ strictly positive but small enough (specifically $0 < t < \dfrac{2K}{\|\bd{x} - \bd{c}\|^2}$) such that the term in the brackets is positive.
+
+    This implies:
+    \[
+        \|\bd{z}(t) - \bd{d}\|^2 < \|\bd{c} - \bd{d}\|^2
+    \]
+    This contradicts the definition that $\bd{c}$ is the closest point in $C$ to $D$. Therefore, such an $\bd{x}$ cannot exist, and we must have $\bd{a}^T \bd{x} \le \bd{a}^T \bd{c}$ for all $\bd{x} \in C$.
+
+    \subsection*{Final Separation}
+    A symmetric argument shows that $\bd{a}^T \bd{y} \ge \bd{a}^T \bd{d}$ for all $\bd{y} \in D$. Combining these results with the definition of $b$:
+    \[
+        b - \bd{a}^T \bd{c} = \dfrac{\|\bd{d} - \bd{c}\|^2}{2} > 0 \quad \implies \quad \bd{a}^T \bd{c} < b
+    \]
+    \[
+        \bd{a}^T \bd{d} - b = \dfrac{\|\bd{d} - \bd{c}\|^2}{2} > 0 \quad \implies \quad b < \bd{a}^T \bd{d}
+    \]
+    Thus, for all $\bd{x} \in C$ and $\bd{y} \in D$, we have the strict separation:
+    \[
+        \bd{a}^T \bd{x} \le \bd{a}^T \bd{c} < b < \bd{a}^T \bd{d} \le \bd{a}^T \bd{y}
+    \]
+\end{proof}
+
+
+
+\begin{theorem}
+    Let $f: \bb{R}^n \to \bb{R}$ be a convex function. Then $f$ is continuous on $\bb{R}^n$.
+\end{theorem}
+
+\begin{proof}
+    Let $\bd{x}_0 \in \bb{R}^n$ be arbitrary but fixed. We proceed by showing $f$ is continuous at $\bd{x}_0$ using a sequence of claims.
+
+    \begin{claim}
+        $f$ is locally bounded in the neighborhood $B_r(\bd{x}_0)$.
+    \end{claim}
+    Let $\bd{v}_0, \dots, \bd{v}_n$ be an affinely independent set of points in $\bb{R}^n$ such that $\bd{x}_0$ lies in the interior of their convex hull, $\text{conv}(\{\bd{v}_0, \dots, \bd{v}_n\})$. There exists $r > 0$ such that $B_r(\bd{x}_0) \subset \text{conv}(\{\bd{v}_0, \dots, \bd{v}_n\})$.
+    Any $\bd{x} \in B_r(\bd{x}_0)$ can be written as $\bd{x} = \sum \alpha_i \bd{v}_i$ with $\sum \alpha_i = 1, \alpha_i \ge 0$. Since $f$ is convex:
+    \[ f(\bd{x}) \le \sum \alpha_i f(\bd{v}_i) \le \max_i f(\bd{v}_i) := M \]
+    To bound from below, for any $\bd{x} \in B_r(\bd{x}_0)$, let $\bd{z} = 2\bd{x}_0 - \bd{x}$. Then $\bd{x}_0 = \dfrac{1}{2}\bd{z} + \dfrac{1}{2}\bd{x}$. Since $\bd{z} \in B_r(\bd{x}_0)$, we have:
+    \[ f(\bd{x}_0) \le \dfrac{1}{2}f(\bd{z}) + \dfrac{1}{2}f(\bd{x}) \implies f(\bd{x}) \ge 2f(\bd{x}_0) - f(\bd{z}) \ge 2f(\bd{x}_0) - M := m \]
+    Thus, $m \le f(\bd{x}) \le M$ for all $\bd{x} \in B_r(\bd{x}_0)$.
+
+
+    \begin{claim}[Lipschitz Bound]
+        If $\phi : [a, b] \to \bb{R}$ is convex and bounded ($m \le \phi(t) \le M$), then for $s, t \in [a+\delta, b-\delta]$:
+        \[ \dfrac{|\phi(t) - \phi(s)|}{|t - s|} \le \dfrac{M - m}{\delta} \]
+    \end{claim}
+
+    \begin{proof}
+        Let $a < a+\delta \le s < t \le b-\delta < b$. The property of convex functions states that the slope of the chord $S(x, y) = \dfrac{\phi(y) - \phi(x)}{y - x}$ is non-decreasing in both variables.
+
+        \vspace{1em}
+        \noindent We compare the slope on $[s, t]$ with the slopes involving boundary points:
+        \begin{enumerate}
+            \item Comparing with the left boundary $a$: Since $a < s < t$, we have $S(a, s) \le S(s, t)$.
+                  \begin{talign*}
+                      \dfrac{\phi(s) - \phi(a)}{s - a} \le \dfrac{\phi(t) - \phi(s)}{t - s}
+                  \end{talign*}
+                  Since $s \ge a+\delta$, then $s-a \ge \delta$. Also $\phi(s) \ge m$ and $\phi(a) \le M$, so $\phi(s) - \phi(a) \ge m - M$.
+                  \begin{talign*}
+                      \dfrac{m - M}{\delta} \le \dfrac{\phi(s) - \phi(a)}{s - a} \le \dfrac{\phi(t) - \phi(s)}{t - s}
+                  \end{talign*}
+
+            \item Comparing with the right boundary $b$: Since $s < t < b$, we have $S(s, t) \le S(t, b)$.
+                  \begin{talign*}
+                      \dfrac{\phi(t) - \phi(s)}{t - s} \le \dfrac{\phi(b) - \phi(t)}{b - t}
+                  \end{talign*}
+                  Since $t \le b-\delta$, then $b-t \ge \delta$. Also $\phi(b) \le M$ and $\phi(t) \ge m$, so $\phi(b) - \phi(t) \le M - m$.
+                  \begin{talign*}
+                      \dfrac{\phi(t) - \phi(s)}{t - s} \le \dfrac{\phi(b) - \phi(t)}{b - t} \le \dfrac{M - m}{\delta}
+                  \end{talign*}
+        \end{enumerate}
+
+        Combining both inequalities:
+        \begin{talign*}
+            -\dfrac{M - m}{\delta} \le \dfrac{\phi(t) - \phi(s)}{t - s} \le \dfrac{M - m}{\delta}
+        \end{talign*}
+        Taking the absolute value gives the desired linear growth bound:
+        \begin{talign*}
+            \dfrac{|\phi(t) - \phi(s)|}{|t - s|} \le \dfrac{M - m}{\delta}
+        \end{talign*}
+    \end{proof}
+
+    \begin{claim}
+        If $\varphi: [a, b] \to \bb{R}$ is convex and bounded ($m \le \varphi(t) \le M$), then for $s, t \in [a+\delta, b-\delta]$:
+        \[ \dfrac{|\varphi(t) - \varphi(s)|}{|t - s|} \le \dfrac{M - m}{\delta} \]
+    \end{claim}
+    This follows from the property that for a convex function, the slope of the chord is non-decreasing. By comparing the slope on $[s, t]$ with the slopes involving the boundary points $a$ and $b$, we obtain the linear growth bound.
+
+    \begin{claim}
+        $f$ has linear growth in the neighborhood of $\bd{x}_0$.
+    \end{claim}
+    Let $\bd{x} \in B_{r/2}(\bd{x}_0)$. Define $\varphi(t) = f(\bd{x}_0 + t\bd{u})$ where $\bd{u} = \dfrac{\bd{x} - \bd{x}_0}{\|\bd{x} - \bd{x}_0\|}$. $\varphi(t)$ is convex. Applying Claim 2 with $\delta = r/4$ and $t = \|\bd{x} - \bd{x}_0\|, s = 0$:
+    \[ \dfrac{|f(\bd{x}) - f(\bd{x}_0)|}{\|\bd{x} - \bd{x}_0\|} \le \dfrac{M - m}{r/4} = 4\left(\dfrac{M - m}{r}\right) \]
+
+    \begin{claim}
+        $f$ is continuous at $\bd{x}_0$.
+    \end{claim}
+    From Claim 3, $|f(\bd{x}) - f(\bd{x}_0)| \le K \|\bd{x} - \bd{x}_0\|$ where $K = \dfrac{4(M-m)}{r}$. As $\bd{x} \to \bd{x}_0$, $\|\bd{x} - \bd{x}_0\| \to 0$, which implies $f(\bd{x}) \to f(\bd{x}_0)$.
+\end{proof}
+
+\begin{theorem}[Supporting Hyperplane]
+    Let $C \subseteq \bb{R}^n$ be a non-empty convex set. Suppose $\bd{x}_0 \in \partial C$ (the boundary of $C$). Then there exists a non-zero vector $\bd{a} \in \bb{R}^n$ such that the hyperplane $H = \{ \bd{x} : \bd{a}^T \bd{x} = \bd{a}^T \bd{x}_0 \}$ supports $C$ at $\bd{x}_0$.
+    Specifically, the entire set $C$ lies on one side of the hyperplane:
+    \[
+        \bd{a}^T \bd{x} \ge \bd{a}^T \bd{x}_0 \quad \forall \bd{x} \in C
+    \]
+\end{theorem}
+
+\begin{proof}
+    We consider two cases based on the interior of $C$.
+
+    \textbf{Case 1: $\text{int}(C) \neq \emptyset$.} \\
+    Since $\bd{x}_0$ lies on the boundary $\partial C$, it does not belong to the interior, i.e., $\bd{x}_0 \notin \text{int}(C)$.
+    The set $\text{int}(C)$ is open and convex. The singleton set $\{\bd{x}_0\}$ is convex and compact.
+    Since these two sets are disjoint, by the \textbf{Separating Hyperplane Theorem}, there exists a non-zero vector $\bd{a} \in \bb{R}^n$ that separates them. Thus, for all $\bd{y} \in \text{int}(C)$:
+    \[
+        \bd{a}^T \bd{y} \ge \bd{a}^T \bd{x}_0
+    \]
+    (Note: The direction of the inequality depends on the choice of $\bd{a}$, here we assume the direction pointing into the set).
+    Since any point $\bd{x} \in C$ can be approached by a sequence of points in $\text{int}(C)$ (as $\overline{\text{int}(C)} = \overline{C}$ for convex sets with non-empty interior), and the inner product is continuous, the inequality holds for all $\bd{x} \in C$:
+    \[
+        \bd{a}^T \bd{x} \ge \bd{a}^T \bd{x}_0
+    \]
+
+    \textbf{Case 2: $\text{int}(C) = \emptyset$.} \\
+    If the interior is empty, the convex set $C$ must lie in an affine subspace of dimension $k < n$ (its relative interior is non-empty, but its full interior is empty).
+    We can choose a vector $\bd{a}$ that is orthogonal to this affine subspace (treating $\bd{x}_0$ as the origin relative to the subspace).
+    For such a vector, $\bd{a}^T (\bd{x} - \bd{x}_0) = 0$ for all $\bd{x} \in C$, which implies:
+    \[
+        \bd{a}^T \bd{x} = \bd{a}^T \bd{x}_0
+    \]
+    This trivially satisfies the condition $\bd{a}^T \bd{x} \ge \bd{a}^T \bd{x}_0$.
+\end{proof}
+
+
+
+\begin{theorem}[Affine Majorization / Existence of Subgradient]
+    Let $f: \bb{R}^n \to \bb{R}$ be a convex function. For any point $\bd{x}_0$ where $f$ is finite, the subdifferential set $\partial f(\bd{x}_0)$ is non-empty. That is, there exists at least one subgradient $\bd{g}$ such that the affine function $h(\bd{x}) = f(\bd{x}_0) + \bd{g}^T(\bd{x} - \bd{x}_0)$ supports $f$ at $\bd{x}_0$.
+\end{theorem}
+
+\begin{proof}
+    Consider the point $(\bd{x}_0, f(\bd{x}_0)) \in \bb{R}^{n+1}$. This point lies on the boundary of the epigraph, $\operatorname{epi}(f)$. Since $f$ is convex, $\operatorname{epi}(f)$ is a convex set.
+    By the \textbf{Supporting Hyperplane Theorem}, there exists a non-zero normal vector $(\bd{a}, b) \in \bb{R}^n \times \bb{R}$ (where $(\bd{a}, b) \neq (\bd{0}, 0)$) such that the hyperplane passing through $(\bd{x}_0, f(\bd{x}_0))$ supports the epigraph.
+    Thus, for all $(\bd{x}, t) \in \operatorname{epi}(f)$, we have:
+    \begin{align}
+        \begin{bmatrix} \bd{a}^T & b \end{bmatrix} \begin{bmatrix} \bd{x} \\ t \end{bmatrix} & \le \begin{bmatrix} \bd{a}^T & b \end{bmatrix} \begin{bmatrix} \bd{x}_0 \\ f(\bd{x}_0) \end{bmatrix} \nonumber \\
+        \bd{a}^T \bd{x} + b t                                                                & \le \bd{a}^T \bd{x}_0 + b f(\bd{x}_0) \label{eq:support}
+    \end{align}
+
+    \noindent \textbf{Step 1: Show $b \le 0$.} \\
+    Fix $\bd{x} = \bd{x}_0$. For any $t > f(\bd{x}_0)$, the point $(\bd{x}_0, t)$ is in $\operatorname{epi}(f)$. Substituting into (\ref{eq:support}):
+    \[
+        \bd{a}^T \bd{x}_0 + b t \le \bd{a}^T \bd{x}_0 + b f(\bd{x}_0) \implies b(t - f(\bd{x}_0)) \le 0
+    \]
+    Since $t - f(\bd{x}_0) > 0$, we must have $b \le 0$.
+
+    \noindent \textbf{Step 2: Show $b \neq 0$.} \\
+    Suppose for contradiction that $b = 0$. Then $\bd{a} \neq \bd{0}$ (since the normal vector is non-zero). The inequality (\ref{eq:support}) becomes:
+    \[
+        \bd{a}^T \bd{x} \le \bd{a}^T \bd{x}_0 \quad \forall \bd{x} \in \text{dom}(f)
+    \]
+    If $\text{dom}(f) = \bb{R}^n$, this implies that a linear function is bounded above by a constant, which is only possible if $\bd{a} = \bd{0}$. This creates a contradiction (since $(\bd{a}, b) \neq \bd{0}$). Thus, $b < 0$.
+
+    \noindent \textbf{Step 3: Construct the subgradient.} \\
+    Since $b < 0$, we can divide inequality (\ref{eq:support}) by $b$ (reversing the inequality sign):
+    \[
+        \dfrac{\bd{a}^T}{b} \bd{x} + t \ge \dfrac{\bd{a}^T}{b} \bd{x}_0 + f(\bd{x}_0)
+    \]
+    Let $\bd{g} = -\dfrac{1}{b}\bd{a}$. Then for any $\bd{x}$, taking $t = f(\bd{x})$ (which is in the epigraph):
+    \[
+        -\bd{g}^T \bd{x} + f(\bd{x}) \ge -\bd{g}^T \bd{x}_0 + f(\bd{x}_0)
+    \]
+    Rearranging terms yields the subgradient definition:
+    \[
+        f(\bd{x}) \ge f(\bd{x}_0) + \bd{g}^T (\bd{x} - \bd{x}_0)
+    \]
+    Thus, $\bd{g} \in \partial f(\bd{x}_0)$.
+\end{proof}

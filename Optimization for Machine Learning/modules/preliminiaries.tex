@@ -1,0 +1,195 @@
+\section{Definitions}
+
+The following definitions and properties establish the topological groundwork on $\bb{R}^n$ required for convex analysis.
+
+\begin{definition}[Open Ball]
+    Fix a norm $\|\cdot\|$ on $\bb{R}^n$. An \textbf{open ball} of radius $\epsilon > 0$ centered at $\bd{x}$, denoted $B_{\epsilon}(\bd{x})$, is defined as:
+    \[
+        B_{\epsilon}(\bd{x}) := \{ \bd{y} \in \bb{R}^n : \|\bd{x} - \bd{y}\| < \epsilon \}
+    \]
+\end{definition}
+
+\begin{definition}[Open Set]
+    A set $C \subseteq \bb{R}^n$ is said to be \textbf{open} if for every $\bd{x} \in C$, there exists some $\epsilon > 0$ such that the ball is fully contained in the set:
+    \[
+        B_{\epsilon}(\bd{x}) \subseteq C
+    \]
+\end{definition}
+
+\begin{definition}[Closed Set]
+    A set $C \subseteq \bb{R}^n$ is \textbf{closed} if its complement $C^c = \bb{R}^n \setminus C$ is an open set.
+\end{definition}
+
+\subsection*{Sequences and Convergence}
+
+\begin{definition}[Sequence]
+    A sequence is a function from the natural numbers $\bb{N}$ to a set $X$ (here $\bb{R}^n$). It is denoted as $(\bd{x}_k)_{k \ge 1} \subseteq \bb{R}^n$.
+\end{definition}
+
+\begin{definition}[Convergence]
+    A sequence $(\bd{x}_k)_{k \ge 1}$ is said to \textbf{converge} to a limit $\bd{x} \in \bb{R}^n$ (denoted $\bd{x}_k \to \bd{x}$) if for every $\epsilon > 0$, there exists an integer $N \in \bb{N}$ such that:
+    \[
+        \|\bd{x}_k - \bd{x}\| < \epsilon \quad \text{for all } k \ge N
+    \]
+    Equivalently, $\lim_{k \to \infty} \|\bd{x}_k - \bd{x}\| = 0$.
+\end{definition}
+
+\begin{proposition}[Sequential Characterization of Closed Sets]
+    A subset $C \subseteq \bb{R}^n$ is closed if and only if for every convergent sequence $(\bd{x}_k)_{k \ge 1} \subseteq C$ such that $\bd{x}_k \to \bd{x}$, the limit point satisfies $\bd{x} \in C$.
+\end{proposition}
+
+\begin{proof}
+    ($\Rightarrow$) Suppose $C$ is closed and let $(\bd{x}_k) \subseteq C$ converge to $\bd{x}$. We must show $\bd{x} \in C$.
+    Assume for the sake of contradiction that $\bd{x} \notin C$. Then $\bd{x} \in C^c$. Since $C$ is closed, $C^c$ is open.
+    Therefore, there exists $\epsilon > 0$ such that $B_{\epsilon}(\bd{x}) \subseteq C^c$.
+    Since $\bd{x}_k \to \bd{x}$, there exists $N$ such that for all $k \ge N$, $\|\bd{x}_k - \bd{x}\| < \epsilon$, which implies $\bd{x}_k \in B_{\epsilon}(\bd{x})$.
+    This means $\bd{x}_k \in C^c$, which contradicts the fact that the sequence is contained in $C$. Thus, $\bd{x}$ must belong to $C$.
+
+    ($\Leftarrow$) We show that if the limit property holds, $C$ is closed (i.e., $C^c$ is open).
+    Suppose $C^c$ is not open. Then there exists $\bd{x} \in C^c$ such that for every $\epsilon > 0$, $B_{\epsilon}(\bd{x}) \not\subseteq C^c$. This implies $B_{\epsilon}(\bd{x}) \cap C \neq \emptyset$.
+    For each $k \ge 1$, choose $\bd{x}_k \in B_{1/k}(\bd{x}) \cap C$.
+    Then $(\bd{x}_k) \subseteq C$ and $\|\bd{x}_k - \bd{x}\| < 1/k \to 0$, so $\bd{x}_k \to \bd{x}$.
+    By the hypothesis, the limit $\bd{x}$ must be in $C$. But we started with $\bd{x} \in C^c$, a contradiction.
+\end{proof}
+
+\subsection*{Interior, Closure, and Boundary}
+
+\begin{definition}[Interior]
+    The \textbf{interior} of a set $C$, denoted $\text{int}(C)$, is the set of all interior points:
+    \[
+        \text{int}(C) = \{ \bd{x} \in C : \exists \epsilon > 0 \text{ such that } B_{\epsilon}(\bd{x}) \subseteq C \}
+    \]
+\end{definition}
+
+\begin{proposition}
+    For any set $C \subseteq \bb{R}^n$, the interior $\text{int}(C)$ is an open set.
+\end{proposition}
+
+\begin{proof}
+    Let $\bd{x} \in \text{int}(C)$. By definition, there exists $\epsilon > 0$ such that $B_{\epsilon}(\bd{x}) \subseteq C$.
+    We claim that $B_{\epsilon}(\bd{x}) \subseteq \text{int}(C)$.
+    Let $\bd{y} \in B_{\epsilon}(\bd{x})$. Then $\|\bd{x} - \bd{y}\| < \epsilon$.
+    Let $\delta = \epsilon - \|\bd{x} - \bd{y}\| > 0$. We show that $B_{\delta}(\bd{y}) \subseteq C$.
+    Let $\bd{z} \in B_{\delta}(\bd{y})$. Then:
+    \[
+        \|\bd{z} - \bd{x}\| \le \|\bd{z} - \bd{y}\| + \|\bd{y} - \bd{x}\| < \delta + \|\bd{y} - \bd{x}\| = \epsilon
+    \]
+    Thus $\bd{z} \in B_{\epsilon}(\bd{x}) \subseteq C$. This shows $B_{\delta}(\bd{y}) \subseteq C$, so $\bd{y} \in \text{int}(C)$.
+    Since $\bd{y}$ was arbitrary, $B_{\epsilon}(\bd{x}) \subseteq \text{int}(C)$, proving $\text{int}(C)$ is open.
+\end{proof}
+
+\begin{definition}[Closure]
+    The \textbf{closure} of a set $C$, denoted $\overline{C}$, is the set of all points that are "close" to $C$:
+    \[
+        \overline{C} = \{ \bd{x} \in \bb{R}^n : B_{\epsilon}(\bd{x}) \cap C \neq \emptyset, \forall \epsilon > 0 \}
+    \]
+    Intuitively, this set contains all elements of $C$ plus its boundary.
+\end{definition}
+
+\begin{definition}[Boundary]
+    The \textbf{boundary} of a set $C$, denoted $\partial C$, is the set difference between the closure and the interior:
+    \[
+        \partial C := \overline{C} \setminus \text{int}(C)
+    \]
+\end{definition}
+
+\begin{definition}[Continuity at a point]
+    Let $f : \bb{R}^n \to \bb{R}\cup\{+\infty\}$ and let $\bd{x}_0 \in \dom f$.
+    The function $f$ is said to be \emph{continuous at $\bd{x}_0$} if
+    \[
+        \lim_{\bd{x}\to \bd{x}_0} f(\bd{x}) = f(\bd{x}_0),
+    \]
+    that is, for every $\varepsilon > 0$ there exists $\delta > 0$ such that
+    \[
+        \|\bd{x}-\bd{x}_0\| < \delta
+        \;\Longrightarrow\;
+        |f(\bd{x}) - f(\bd{x}_0)| < \varepsilon.
+    \]
+\end{definition}
+\subsection*{Convex Sets and Functions}
+\begin{definition}[Convex Set]\label{def:convex_set}
+    A set $C\subseteq \bb{R}^n$ is called \emph{convex} if for all
+    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
+    \[
+        \lambda \bd{x} + (1-\lambda)\bd{y} \in C.
+    \]
+\end{definition}
+
+\begin{definition}[Convex Function]\label{def:convex_function}
+    Let $C\subseteq \bb{R}^n$ be a convex set.
+    A function $f:C\to\bb{R}$ is called \emph{convex} if for all
+    $\bd{x},\bd{y}\in C$ and all $\lambda\in[0,1]$,
+    \[
+        f\bigl(\lambda \bd{x} + (1-\lambda)\bd{y}\bigr)
+        \le
+        \lambda f(\bd{x}) + (1-\lambda) f(\bd{y}).
+    \]
+\end{definition}
+\begin{definition}[Convex Program]\label{def:convex_program}
+    A \emph{convex program} is an optimization problem of the form
+    \[
+        \min_{\bd{x}\in C} f(\bd{x}),
+    \]
+    where $C\subseteq\bb{R}^n$ is a convex set and
+    $f:C\to\bb{R}$ is a convex function.
+\end{definition}
+\begin{definition}[Linear Program]\label{def:linear_program}
+    A \emph{linear program} is an optimization problem of the form
+    \[
+        \min_{\bd{x}\in\bb{R}^n} \;\bd{c}^\TT \bd{x}
+        \quad \text{subject to } A\bd{x}\le \bd{b},
+    \]
+    where $\bd{c}\in\bb{R}^n$, $A\in\bb{R}^{m\times n}$,
+    and $\bd{b}\in\bb{R}^m$.
+\end{definition}
+\begin{remark}
+    Every linear program is a convex program.
+\end{remark}
+\begin{definition}[Affine Set]\label{def:affine_set}
+    A set $A\subseteq\bb{R}^n$ is called \emph{affine} if for all
+    $\bd{x},\bd{y}\in A$ and all $\lambda\in\bb{R}$,
+    \[
+        \lambda \bd{x} + (1-\lambda)\bd{y} \in A.
+    \]
+\end{definition}
+\begin{definition}[Affine Hull]\label{def:affine_hull}
+    Let $S\subseteq\bb{R}^n$.
+    The \emph{affine hull} of $S$, denoted $\operatorname{aff}(S)$,
+    is the smallest affine set containing $S$, equivalently
+    \[
+        \operatorname{aff}(S)
+        =
+        \left\{
+        \sum_{i=1}^k \alpha_i \bd{x}_i
+        \;\middle|\;
+        \bd{x}_i\in S,\;
+        \sum_{i=1}^k \alpha_i = 1
+        \right\}.
+    \]
+\end{definition}
+\begin{definition}[Graph]\label{def:graph}
+    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
+    The \emph{graph} of $f$ is the set
+    \[
+        \operatorname{graph}(f)
+        :=
+        \{(\bd{x},t)\in\bb{R}^{n+1} : t=f(\bd{x}),\ \bd{x}\in C\}.
+    \]
+\end{definition}
+\begin{definition}[Epigraph]\label{def:epigraph}
+    Let $f:C\subseteq\bb{R}^n\to\bb{R}$.
+    The \emph{epigraph} of $f$ is the set
+    \[
+        \operatorname{epi}(f)
+        :=
+        \{(\bd{x},t)\in\bb{R}^{n+1} : t\ge f(\bd{x}),\ \bd{x}\in C\}.
+    \]
+\end{definition}
+
+\begin{definition}[Subgradient]
+    A vector $\bd{g} \in \bb{R}^n$ is a \textbf{subgradient} of a convex function $f$ at $\bd{x}_0$ if:
+    \[
+        f(\bd{x}) \ge f(\bd{x}_0) + \bd{g}^T (\bd{x} - \bd{x}_0) \quad \forall \bd{x} \in \text{dom}(f)
+    \]
+    The set of all subgradients at $\bd{x}_0$ is denoted $\partial f(\bd{x}_0)$.
+\end{definition}
