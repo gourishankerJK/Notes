@@ -105,3 +105,39 @@ Example:
 ```latex
 \red{Important!} \blue{Note} \orange{Warning} \green{Success}
 ```
+
+### Margin Figures
+
+You can add figures to the margin using the `marginfigure` environment provided by `sidenotes` / `kafkanotes.sty`.
+
+#### Example: TikZ Diagram in Margin
+
+```latex
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        % First plot: |x|
+        \begin{scope}
+            \draw[->] (-1.5,0) -- (1.5,0) node[right] {\footnotesize $x$};
+            \draw[->] (0,-0.5) -- (0,2) node[above] {\footnotesize $|x|$};
+            \draw[thick, blue] (-1.2,1.2) -- (0,0) -- (1.2,1.2);
+        \end{scope}
+        
+        % Second plot: Subgradient of |x| (below the first plot)
+        \begin{scope}[yshift=-3.5cm]
+            \draw[->] (-1.5,0) -- (1.5,0) node[right] {\footnotesize $x$};
+            \draw[->] (0,-1.5) -- (0,1.5) node[above] {\footnotesize $\partial |x|$};
+            \draw[thick, red] (-1.5,-1) -- (0,-1);
+            \draw[thick, red] (0,1) -- (1.5,1);
+            \draw[thick, red] (0,-1) -- (0,1);
+            \fill[red] (0,-1) circle (1.5pt);
+            \fill[red] (0,1) circle (1.5pt);
+            \node[below] at (-0.8,-1) {\scriptsize $-1$};
+            \node[above] at (0.8,1) {\scriptsize $1$};
+        </scope}
+    \end{tikzpicture}
+    \caption{The function $|x|$ and its subdifferential.}
+    \label{fig:abs_subdiff}
+\end{marginfigure}
+```
+

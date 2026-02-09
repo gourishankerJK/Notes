@@ -1,0 +1,594 @@
+\section{Introduction }
+
+\begin{definition}[Optimization Problem and Optimal Value]
+    Consider the optimization problem
+    \[
+        \min_{x \in X} f(x),
+    \]
+    where \( f : X \to \bb{R} \).
+
+    The associated \emph{optimal value} is defined as
+    \[
+        p^\star := \inf_{x \in X} f(x).
+    \]
+
+    The infimum is used instead of the minimum since, in general, the function \( f \) may fail to attain its minimum over the set \( X \). That is, there may exist no point \( x^\star \in X \) such that
+    \[
+        f(x^\star) = \min_{x \in X} f(x).
+    \]
+
+    Nevertheless, the set \( \{ f(x) : x \in X \} \subset \bb{R} \) always admits a greatest lower bound in
+    \( \bb{R} \cup \{-\infty\} \), which is precisely the infimum.
+
+    If there exists a point \( x^\star \in X \) satisfying
+    \[
+        f(x^\star) = \inf_{x \in X} f(x),
+    \]
+    then the infimum is said to be \emph{attained}, and we may equivalently write
+    \[
+        p^\star = \min_{x \in X} f(x).
+    \]
+    In this case, \( x^\star \) is called an \emph{optimal solution}.
+\end{definition}
+\begin{definition}[Constrained optimization problem]
+    Consider the constrained optimization problem
+    \[
+        \begin{aligned}
+            \min_{x \in \bb{R}^n} \quad & f(x)      \\
+            \text{subject to} \quad     & g(x) = 0,
+        \end{aligned}
+    \]
+    where \( f : \bb{R}^n \to \bb{R} \) and \( g : \bb{R}^n \to \bb{R}^m \).
+
+    The associated \emph{feasible set} is defined by
+    \[
+        X := \{ x \in \bb{R}^n : g(x) = 0 \}.
+    \]
+\end{definition}
+
+\begin{definition}[Local minimum (constrained)]
+    A point \( x^\star \in X \) is called a \emph{local minimum} of the constrained optimization problem if there exists \( \delta > 0 \) such that
+    \[
+        f(x^\star) \le f(x)
+        \quad \text{for all } x \in X \cap B(x^\star,\delta),
+    \]
+    where
+    \[
+        B(x^\star,\delta)
+        := \{ x \in \bb{R}^n : \|x - x^\star\| < \delta \}
+    \]
+    denotes the open ball of radius \( \delta \) centered at \( x^\star \).
+
+    Equivalently, \( x^\star \) is a local minimum if no feasible point sufficiently close to \( x^\star \) achieves a strictly smaller objective value.
+\end{definition}
+\begin{center}
+    \begin{tabular}{c|c|c}
+         & \textbf{Smooth}                  & \textbf{Non-smooth} \\
+        \hline
+        \textbf{Convex}
+         & \begin{tabular}{c}
+               Convex Optimization \\
+               \smiley
+           \end{tabular}
+         & \begin{tabular}{c}
+               Advanced Convex Optimization \\
+               (Proximal methods, subgradients)
+           \end{tabular}
+        \\
+        \hline
+        \textbf{Non-convex}
+         & \begin{tabular}{c}
+               Deep Learning
+           \end{tabular}
+         & \begin{tabular}{c}
+               :(
+           \end{tabular}
+    \end{tabular}
+\end{center}
+\begin{marginfigure}
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \begin{scope}
+            \draw[->] (-1.5,0) -- (1.5,0) node[right] {\footnotesize $x$};
+            \draw[->] (0,-0.5) -- (0,2) node[above] {\footnotesize $|x|$};
+            \draw[thick, blue] (-1.2,1.2) -- (0,0) -- (1.2,1.2);
+        \end{scope}
+        \begin{scope}[yshift=-3.5cm]
+            \draw[->] (-1.5,0) -- (1.5,0) node[right] {\footnotesize $x$};
+            \draw[->] (0,-1.5) -- (0,1.5) node[above] {\footnotesize $\partial |x|$};
+            \draw[thick, red] (-1.5,-1) -- (0,-1);
+            \draw[thick, red] (0,1) -- (1.5,1);
+            \draw[thick, red] (0,-1) -- (0,1);
+            \fill[red] (0,-1) circle (1.5pt);
+            \fill[red] (0,1) circle (1.5pt);
+            \node[below] at (-0.8,-1) {\scriptsize $-1$};
+            \node[above] at (0.8,1) {\scriptsize $1$};
+        \end{scope}
+    \end{tikzpicture}
+    \caption{The function $|x|$ and its subdifferential.}
+    \label{fig:abs_subdiff}
+\end{marginfigure}
+\begin{example}[Soft-thresholding via subdifferential calculus]
+    Consider the optimization problem
+    \[
+        \min_{x \in \bb{R}}
+        \left\{
+        \frac{1}{2}(x-a)^2 + \tau |x|
+        \right\},
+        \qquad \tau > 0.
+    \]
+
+    The objective function is convex but non-smooth due to the absolute value term.
+    The subdifferential of \( |x| \) is the set-valued mapping
+    \[
+        \partial |x|
+        =
+        \begin{cases}
+            \{1\},    & x > 0, \\[6pt]
+            [-1,\,1], & x = 0, \\[6pt]
+            \{-1\},   & x < 0.
+        \end{cases}
+    \]
+
+    Define
+    \[
+        \phi(x) := \frac{1}{2}(x-a)^2 + \tau |x|.
+    \]
+    Since \( \phi \) is convex, a point \( x^\star \in \bb{R} \) is optimal if and only if
+    \[
+        0 \in \partial \phi(x^\star)
+        = (x^\star - a) + \tau \partial |x^\star|.
+    \]
+    Equivalently,
+    \[
+        a - x^\star \in \tau \partial |x^\star|.
+    \]
+
+    A case-by-case analysis yields
+    \[
+        x^\star
+        =
+        \begin{cases}
+            a - \tau, & a > \tau,     \\[6pt]
+            0,        & |a| \le \tau, \\[6pt]
+            a + \tau, & a < -\tau.
+        \end{cases}
+    \]
+
+    This solution can be written compactly as the \emph{soft-thresholding operator}
+    \[
+        x^\star
+        = \mathrm{sign}(a)\,\max\{ |a| - \tau,\, 0 \}.
+    \]
+\end{example}
+\section{Inclusion Problems, Convexity, and Smoothness}
+
+\begin{definition}[Inclusion problem]
+    Let \( X \) be a real Euclidean space.
+    An \emph{inclusion problem} consists in finding
+    \[
+        x \in X \quad \text{such that} \quad 0 \in T(x),
+    \]
+    where \( T : X \rightrightarrows X \) is a set-valued operator.
+\end{definition}
+
+\begin{remark}
+    Many convex optimization problems can be written as inclusion problems by taking
+    \( T = \partial f \), where \( \partial f \) denotes the subdifferential of a convex function.
+\end{remark}
+
+\begin{definition}[Convex optimization problem]
+    Let \( C \subset X \) be a convex set and let
+    \( f : X \to \bb{R} \) be a convex function.
+    The problem
+    \[
+        \min_{x \in C} f(x)
+    \]
+    is called a \emph{convex optimization problem}.
+\end{definition}
+
+\begin{proposition}
+    If both the objective function \( f \) and the constraint set \( C \) are convex,
+    then every local minimizer is a global minimizer.
+\end{proposition}
+
+
+\begin{proposition}
+    Let \( f : \bb{R}^n \to \bb{R} \) be twice continuously differentiable.
+    If
+    \[
+        \nabla^2 f(x) \succeq 0
+        \quad \text{for all } x \in \bb{R}^n,
+    \]
+    then \( f \) is convex.
+    If
+    \[
+        \nabla^2 f(x) \succ 0
+        \quad \text{for all } x \in \bb{R}^n,
+    \]
+    then \( f \) is strictly convex.
+\end{proposition}
+
+\subsection{Euclidean spaces and induced norms}
+
+\begin{definition}[Euclidean space]
+    A real Euclidean space \( X \) is a real vector space equipped with an inner product
+    \[
+        \iprod{x}{y}.
+    \]
+    The induced norm is defined by
+    \[
+        \|x\| := \sqrt{\iprod{x}{x}}.
+    \]
+\end{definition}
+
+\begin{remark}
+    The \( \ell^2 \)-norm on \( \bb{R}^n \) is induced by the standard inner product.
+    The \( \ell^1 \)-norm is \emph{not} induced by any inner product.
+\end{remark}
+
+
+\begin{definition}
+    The norm induces a metric
+    \[
+        d(x,y) := \|x-y\|,
+    \]
+    which defines a topology on \( X \).
+\end{definition}
+
+\begin{definition}[Convergence]
+    A sequence \( (x_k) \subset X \) converges to \( x \in X \) if
+    \[
+        \|x_k - x\| \to 0.
+    \]
+\end{definition}
+
+\begin{definition}[Continuity]
+    A function \( f : X \to \bb{R} \) is continuous at \( x \in X \) if
+    \[
+        x_k \to x \quad \Rightarrow \quad f(x_k) \to f(x).
+    \]
+\end{definition}
+
+
+\begin{definition}[Topological space]
+    Let \( X \) be a set and let \( \tau \) be a collection of subsets of \( X \).
+    The pair \( (X,\tau) \) is called a \emph{topological space} if
+    \begin{itemize}
+        \item \( \varnothing \in \tau \) and \( X \in \tau \),
+        \item the union of any collection of sets in \( \tau \) belongs to \( \tau \),
+        \item the intersection of any finite collection of sets in \( \tau \) belongs to \( \tau \).
+    \end{itemize}
+    The elements of \( \tau \) are called \emph{open sets}.
+\end{definition}
+
+\begin{definition}[Convergence in a topological space]
+    Let \( (X,\tau) \) be a topological space and let \( (x_k) \subset X \).
+    We say that \( x_k \) converges to \( x \in X \) if
+    for every open set \( U \in \tau \) such that \( x \in U \),
+    there exists \( N \in \bb{N} \) for which
+    \[
+        x_k \in U
+        \quad \text{for all } k \ge N.
+    \]
+\end{definition}
+
+\begin{remark}
+    This definition of convergence depends only on the topology \( \tau \)
+    and does not require any notion of distance or norm.
+    In particular, convergence can be defined in spaces that are not metric spaces.
+\end{remark}
+
+\begin{proposition}
+    Every convex function
+    \( f : \bb{R}^n \to \bb{R} \)
+    is continuous.
+\end{proposition}
+
+
+\begin{proposition}
+    For \( 0 < p < 1 \), the set
+    \[
+        B_p := \{ x \in \bb{R}^n : \|x\|_p \le 1 \}
+    \]
+    is not convex.
+\end{proposition}
+
+
+\begin{definition}[Differentiability]
+    A function \( f : \bb{R}^n \to \bb{R} \) is said to be differentiable at
+    \( x \in \bb{R}^n \) if there exists \( z \in \bb{R}^n \) such that
+    \[
+        f(x+h)
+        =
+        f(x)
+        + \iprod{z}{h}
+        + o(\|h\|)
+        \quad \text{as } h \to 0.
+    \]
+    In this case, \( z = \nabla f(x) \).
+    where     The term \( o(\|h\|) \) satisfies
+    \[
+        \lim_{\|h\|\to 0}
+        \frac{o(\|h\|)}{\|h\|} = 0.
+    \]
+\end{definition}
+\begin{exercise}[Differentiability and inner products]
+    Let \( f : \bb{R}^n \to \bb{R} \) be differentiable at \( x \in \bb{R}^n \) in the sense that
+    there exists \( z \in \bb{R}^n \) such that
+    \[
+        f(x+h)
+        =
+        f(x)
+        + \iprod{z}{h}
+        + o(\|h\|)
+        \quad \text{as } h \to 0,
+    \]
+    where
+    \[
+        \lim_{\|h\|\to 0} \frac{o(\|h\|)}{\|h\|} = 0.
+    \]
+
+    \begin{enumerate}
+        \item Show that for a fixed inner product \( \iprod{\cdot}{\cdot} \), the vector \( z \) is unique.
+        \item Show that the vector \( z \) depends on the choice of inner product.
+        \item Show that the notion of differentiability does not depend on the choice of inner product on \( \bb{R}^n \).
+        \item Show that all norms on \( \bb{R}^n \) are equivalent.
+        \item Prove the Riesz representation theorem: every linear functional on a Euclidean space can be represented as an inner product.
+    \end{enumerate}
+\end{exercise}
+\begin{proof}[Solution]
+    \begin{enumerate}
+        \item \emph{Uniqueness:}
+              Assume that there exist \( z_1, z_2 \in \bb{R}^n \) such that
+              \[
+                  f(x+h) = f(x) + \iprod{z_1}{h} + o(\|h\|)
+              \]
+              and
+              \[
+                  f(x+h) = f(x) + \iprod{z_2}{h} + o(\|h\|).
+              \]
+              Subtracting the two expressions gives
+              \[
+                  \iprod{z_1 - z_2}{h} = o(\|h\|).
+              \]
+              Dividing by \( \|h\| \) and letting \( h \to 0 \),
+              \[
+                  \frac{\iprod{z_1 - z_2}{h}}{\|h\|} \to 0.
+              \]
+              Choosing \( h = z_1 - z_2 \) yields
+              \[
+                  \|z_1 - z_2\|^2 = 0,
+              \]
+              hence \( z_1 = z_2 \).
+
+        \item \emph{Dependence on inner product:}
+              Let \( f(x) = a^\TT x \), where \( a \in \bb{R}^n \).
+              For the standard inner product,
+              \[
+                  f(x+h) = f(x) + \iprod{a}{h},
+              \]
+              so \( z = a \).
+
+              Now consider a different inner product
+              \[
+                  \iprod{x}{y}_M := \iprod{Mx}{y},
+              \]
+              where \( M \) is symmetric positive definite.
+              Then
+              \[
+                  f(x+h) = f(x) + \iprod{M^{-1}a}{h}_M.
+              \]
+              Hence the representing vector \( z \) changes with the inner product.
+
+        \item \emph{Independence of differentiability:}
+              Differentiability is equivalent to the existence of a linear map
+              \( L : \bb{R}^n \to \bb{R} \) such that
+              \[
+                  f(x+h) = f(x) + L(h) + o(\|h\|).
+              \]
+              This definition does not involve any inner product.
+
+              By the Riesz representation theorem, for any chosen inner product,
+              there exists a unique vector \( z \) such that
+              \[
+                  L(h) = \iprod{z}{h}.
+              \]
+              Thus, while the vector \( z \) depends on the inner product,
+              the existence of the derivative does not.
+
+        \item \emph{Norm equivalence:}
+              Let \( \|\cdot\|_a \) and \( \|\cdot\|_b \) be two norms on \( \bb{R}^n \).
+              To show they are equivalent, we need to find \( c, C > 0 \) such that
+              \( c \|x\|_a \le \|x\|_b \le C \|x\|_a \) for all \( x \).
+
+              The unit sphere \( S = \{x : \|x\|_a = 1\} \) is compact.
+              The function \( x \mapsto \|x\|_b \) is continuous on \( S \),
+              so it attains a minimum \( c > 0 \) and a maximum \( C > 0 \).
+              By homogeneity of norms, the result follows for all \( x \).
+
+        \item \emph{Riesz representation theorem:}
+              Let \( \{e_1,\dots,e_n\} \) be an orthonormal basis of \( X \).
+              Define
+              \[
+                  z := \sum_{i=1}^n L(e_i)\, e_i.
+              \]
+              Then for any \( h = \sum_i h_i e_i \),
+              \[
+                  \iprod{z}{h}
+                  =
+                  \sum_{i=1}^n L(e_i) h_i
+                  =
+                  L(h).
+              \]
+              Uniqueness follows from non-degeneracy of the inner product.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    Let \( X \subset \bb{R}^n \) be a convex set and let
+    \( f : X \to \bb{R} \) be convex and differentiable.
+    If \( x^\star \in X \) satisfies
+    \[
+        \nabla f(x^\star) = 0,
+    \]
+    then \( x^\star \) is a global minimizer of \( f \) on \( X \).
+\end{theorem}
+
+\begin{proof}
+    Since \( f \) is convex, for any \( x, y \in X \) and any \( t \in [0,1] \),
+    \[
+        f(tx + (1-t)y)
+        \le
+        t f(x) + (1-t) f(y).
+    \]
+
+    Fix \( x \in X \) and define the function
+    \[
+        \varphi(t) := f(x^\star + t(x - x^\star)),
+        \qquad t \in [0,1].
+    \]
+    By convexity of \( f \), the function \( \varphi \) is convex on \( [0,1] \).
+
+    Since \( f \) is differentiable, \( \varphi \) is differentiable and
+    \[
+        \varphi'(0)
+        =
+        \iprod{\nabla f(x^\star)}{x - x^\star}.
+    \]
+
+    By assumption, \( \nabla f(x^\star) = 0 \), hence
+    \[
+        \varphi'(0) = 0.
+    \]
+
+    For a convex function on an interval, the derivative is monotone non-decreasing.
+    Therefore, for all \( t \in [0,1] \),
+    \[
+        \varphi(t) \ge \varphi(0).
+    \]
+
+    In particular, at \( t = 1 \),
+    \[
+        f(x) = \varphi(1) \ge \varphi(0) = f(x^\star).
+    \]
+
+    Since \( x \in X \) was arbitrary, \( x^\star \) is a global minimizer of \( f \).
+\end{proof}
+\subsection{Unconstrained and Constrained Optimization}
+
+An \emph{unconstrained optimization problem} is of the form
+\[
+    \min_{x \in X} f(x),
+\]
+where typically \( X = \bb{R}^n \) and
+\( f : \bb{R}^n \to \bb{R} \).
+
+In this case, every point in \( X \) is feasible, and optimality is characterized
+by stationarity conditions such as
+\[
+    \nabla f(x^\star) = 0.
+\]
+
+A \emph{constrained optimization problem} is given by
+\[
+    \min_{x \in C} f(x),
+\]
+where \( C \subset \bb{R}^n \) is a constraint set and
+\( f : \bb{R}^n \to \bb{R} \).
+
+\begin{definition}[Feasible set]
+    The set
+    \[
+        C := \{ x \in \bb{R}^n : \text{all constraints are satisfied} \}
+    \]
+    is called the \emph{feasible set}.
+    Points in \( C \) are called \emph{feasible points}.
+\end{definition}
+
+
+
+\begin{definition}[Indicator function]
+    Let \( C \subset \bb{R}^n \).
+    The indicator function \( \delta_C : \bb{R}^n \to \bb{R} \cup \{+\infty\} \) is defined as
+    \[
+        \delta_C(x)
+        :=
+        \begin{cases}
+            0,       & x \in C,    \\[4pt]
+            +\infty, & x \notin C.
+        \end{cases}
+    \]
+\end{definition}
+
+Then the constrained problem
+\[
+    \min_{x \in C} f(x)
+\]
+is equivalent to the unconstrained problem
+\[
+    \min_{x \in \bb{R}^n} \bigl( f(x) + \delta_C(x) \bigr).
+\]
+
+
+
+
+\begin{definition}[Lagrangian]
+    Consider the constrained problem
+    \[
+        \begin{aligned}
+            \min_{x \in \bb{R}^n} \quad & f(x)        \\
+            \text{subject to} \quad     & g(x) \le 0,
+        \end{aligned}
+    \]
+    where \( g : \bb{R}^n \to \bb{R}^m \).
+    The \emph{Lagrangian} associated with the problem is
+    \[
+        \mathcal{L}(x,\lambda)
+        :=
+        f(x) + \iprod{\lambda}{g(x)},
+        \qquad \lambda \in \bb{R}^m_+.
+    \]
+\end{definition}
+
+
+\begin{proposition}[Optimality and saddle-point property]
+    If \( x^\star \) is a solution of the constrained problem and
+    \( \lambda^\star \ge 0 \) is a corresponding Lagrange multiplier, then
+    \[
+        \mathcal{L}(x^\star,\lambda)
+        \le
+        \mathcal{L}(x^\star,\lambda^\star)
+        \le
+        \mathcal{L}(x,\lambda^\star)
+    \]
+    for all feasible \( x \) and all \( \lambda \ge 0 \).
+\end{proposition}
+
+Thus, optimal solutions correspond to saddle points of the Lagrangian.
+
+
+\begin{remark}[Constraint qualification]
+    Interior-point conditions (such as Slater’s condition) ensure that
+    Lagrange multipliers exist and that optimality conditions are valid.
+\end{remark}
+
+\begin{example}
+    Consider the problem
+    \[
+        \min_{x \in \bb{R}} x
+        \quad \text{subject to} \quad x \ge 0.
+    \]
+    The optimal solution is \( x^\star = 0 \), which lies on the boundary of the feasible set.
+
+    If we perturb the constraint slightly, the gradient of the objective
+    cannot be balanced by any Lagrange multiplier unless the feasible set
+    has nonempty interior.
+    This failure prevents the derivation of meaningful optimality conditions.
+\end{example}
+
+\begin{remark}
+    Interior feasibility guarantees that constraints are not degenerate and
+    ensures the validity of duality and KKT conditions.
+    Without interior points, multipliers may fail to exist or be unbounded.
+\end{remark}
