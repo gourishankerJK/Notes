@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.2.8 Adjoint equation</TITLE>
+<META NAME="description" CONTENT="4.2.8 Adjoint equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node74.html">
+<LINK REL="previous" HREF="node72.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node74.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1472"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1466"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1460"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1468"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1470"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1473"
+  HREF="node74.html">4.2.9 Properties of the</A>
+<B> Up:</B> <A NAME="tex2html1467"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1461"
+  HREF="node72.html">4.2.7 Separating hyperplane</A>
+ &nbsp; <B>  <A NAME="tex2html1469"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1471"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00628000000000000000"></A><A NAME="ss-adjoint"></A>
+<BR>
+4.2.8 Adjoint equation
+</H2>
+
+<P>
+As we already mentioned on page&nbsp;<A HREF="node56.html#p-adjoint"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>, two (time-varying) linear systems of the form <IMG
+ WIDTH="60" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img931.gif"
+ ALT="$ \dot x=Ax$">
+ and <!-- MATH
+ $\dot z=-A^Tz$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img932.gif"
+ ALT="$ \dot z=-A^Tz$">
+
+are called <I>adjoint</I><A NAME="4199"></A> to each other. Solutions of adjoint systems are linked by the property that their inner product <!-- MATH
+ $\langle z(t),x(t)\rangle$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1202.gif"
+ ALT="$ \langle z(t),x(t)\rangle $">
+ remains
+constant, as shown by the following simple calculation: <P><!-- MATH
+ \begin{displaymath}
+\frac d{dt}\langle
+z,x\rangle=\langle \dot z,x\rangle+\langle z,\dot x\rangle
+=(-A^Tz)^Tx+z^TAx=0.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="391" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1203.gif"
+ ALT="$\displaystyle \frac d{dt}\langle
+z,x\rangle=\langle \dot z,x\rangle+\langle z,\dot x\rangle
+=(-A^Tz)^Tx+z^TAx=0.$">
+</DIV><P>
+</P>
+
+<P>
+We now consider a specific pair of adjoint systems on the time
+interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1168.gif"
+ ALT="$ [t_0,t^*]$">
+. As the first system (the <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-system in the
+above discussion) we take the variational
+equation&nbsp;(<A HREF="node69.html#e-psi-vareqn">4.19</A>), described in more detail by the
+equations&nbsp;(<A HREF="node69.html#e-vareq-lin">4.20</A>) and (<A HREF="node69.html#e-A_-detail">4.21</A>). The second,
+adjoint system is then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-z-adj"></A><!-- MATH
+ \begin{equation}
+\dot z=-A_*^T(t)z=
+  \begin{pmatrix}
+    0 & 0\\
+    -\left.{L}_{x}\right|_{*}
+    & -\big.{\left({f}_{x}\right)^T}\big|_*
+  \end{pmatrix}z
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="297" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1204.gif"
+ ALT="$\displaystyle \dot z=-A_*^T(t)z= \begin{pmatrix}0 &amp; 0\\ -\left.{L}_{x}\right\vert _{*} &amp; -\big.{\left({f}_{x}\right)^T}\big\vert _* \end{pmatrix}z$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where in the last expression, obtained from&nbsp;(<A HREF="node69.html#e-A_-detail">4.21</A>), <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ {L}_{x}$">
+ is a column vector (it is the gradient of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+) and
+<!-- MATH
+ $({{f}_{x}})^T$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1205.gif"
+ ALT="$ ({{f}_{x}})^T$">
+ is the transpose of the Jacobian matrix of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+Let us denote the first component of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ by <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1206.gif"
+ ALT="$ p_0$">
+ and the vector of the remaining <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+ components of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ by <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+.<A NAME="4213"></A> Then the first differential equation in&nbsp;(<A HREF="#e-z-adj">4.31</A>) reads <!-- MATH
+ $\dot p_0=0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1207.gif"
+ ALT="$ \dot p_0=0$">
+
+while the rest of the system&nbsp;(<A HREF="#e-z-adj">4.31</A>) becomes
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="12" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1208.gif"
+ ALT="$\displaystyle \dot p$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="176" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1209.gif"
+ ALT="$\displaystyle =-\left.{L}_{x}\right\vert _{*}p_0-\big.{\left({f}_{x}\right)^T}\big\vert _*p$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which, in view of the definition&nbsp;(<A HREF="node63.html#e-H-abnormult">4.2</A>) of the Hamiltonian,
+is equivalent to
+<P><!-- MATH
+ \begin{displaymath}
+\dot p=-{H}_{x}(x^*,u^*,p,p_0).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="174" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1210.gif"
+ ALT="$\displaystyle \dot p=-{H}_{x}(x^*,u^*,p,p_0).
+$">
+</DIV><P>
+</P>
+Now, let us specify the terminal condition for the
+system&nbsp;(<A HREF="#e-z-adj">4.31</A>) at time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ by setting <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1211.gif"
+ ALT="$ z(t^*)$">
+ equal to
+the vector&nbsp;(<A HREF="node72.html#e-normal-def">4.28</A>). Further, we relabel the
+<IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+-component of the solution <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ corresponding to this terminal
+condition as <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+. This gives <!-- MATH
+ $p_0(t)= p_0^*$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1212.gif"
+ ALT="$ p_0(t)= p_0^* $">
+ for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and
+<P><!-- MATH
+ \begin{displaymath}
+\dot p^*=-{H}_{x}(x^*,u^*,p^*,p_0^*)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="184" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1213.gif"
+ ALT="$\displaystyle \dot p^*=-{H}_{x}(x^*,u^*,p^*,p_0^*)
+$">
+</DIV><P>
+</P>
+which is the second canonical equation in&nbsp;(<A HREF="node63.html#e-canon-mp">4.1</A>). With
+a slight abuse of terminology, we will sometimes refer to this
+differential equation as the adjoint equation. It is easy to see that the
+first canonical equation in&nbsp;(<A HREF="node63.html#e-canon-mp">4.1</A>) also holds by the
+definition of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+; thus statement&nbsp;<A HREF="node63.html#i-canon">1</A> of the maximum
+principle has been established. By the aforementioned property of
+adjoint systems, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-constant-innerprod"></A><!-- MATH
+ \begin{equation}
+\left\langle \begin{pmatrix}{p_0^*}\\{p^*(t)}\end{pmatrix},\psi(t)\right\rangle=\left\langle \begin{pmatrix}{p_0^*}\\{p^*(t^*)}\end{pmatrix},\psi(t^*)\right\rangle \qquad\forall\,
+t\in[t_0,t^*]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="426" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1214.gif"
+ ALT="$\displaystyle \left\langle \begin{pmatrix}{p_0^*}\\ {p^*(t)}\end{pmatrix},\psi(...
+...\\ {p^*(t^*)}\end{pmatrix},\psi(t^*)\right\rangle \qquad\forall\, t\in[t_0,t^*]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for every solution <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ of the variational equation&nbsp;(<A HREF="node69.html#e-psi-vareqn">4.19</A>).
+
+<P>
+The vector&nbsp;(<A HREF="node72.html#e-normal-def">4.28</A>), which is normal to the separating hyperplane,
+is nonzero. Since&nbsp;(<A HREF="#e-z-adj">4.31</A>)
+is a homogeneous (unforced) linear time-varying system, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-p0p-nonzero"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+    p_0^* \\
+    p^*(t)
+  \end{pmatrix}\ne 0\qquad \forall\,t\in[t_0,t^*]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="217" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1215.gif"
+ ALT="$\displaystyle \begin{pmatrix}p_0^* \\ p^*(t) \end{pmatrix}\ne 0\qquad \forall\,t\in[t_0,t^*]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+as required in the statement of the maximum principle.
+Geometrically, we can think of the vector in&nbsp;(<A HREF="#e-p0p-nonzero">4.33</A>)
+as the normal vector to a hyperplane passing through <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1216.gif"
+ ALT="$ y^*(t)$">
+. We
+can then associate the solution of the adjoint system to a family
+of hyperplanes that is ``flowing back" along the optimal
+trajectory. In view of&nbsp;(<A HREF="#e-constant-innerprod">4.32</A>), the perturbed
+trajectory associated with <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ always remains on the same side
+of the hyperplane.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1472"
+  HREF="node74.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1466"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1460"
+  HREF="node72.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1468"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1470"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1473"
+  HREF="node74.html">4.2.9 Properties of the</A>
+<B> Up:</B> <A NAME="tex2html1467"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1461"
+  HREF="node72.html">4.2.7 Separating hyperplane</A>
+ &nbsp; <B>  <A NAME="tex2html1469"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1471"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

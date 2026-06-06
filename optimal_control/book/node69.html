@@ -1,0 +1,661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.2.4 Variational equation</TITLE>
+<META NAME="description" CONTENT="4.2.4 Variational equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node70.html">
+<LINK REL="previous" HREF="node68.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node70.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1416"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1410"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1404"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1414"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1417"
+  HREF="node70.html">4.2.5 Terminal cone</A>
+<B> Up:</B> <A NAME="tex2html1411"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1405"
+  HREF="node68.html">4.2.3 Spatial control perturbation</A>
+ &nbsp; <B>  <A NAME="tex2html1413"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1415"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00624000000000000000"></A><A NAME="ss-vareqn"></A>
+<BR>
+4.2.4 Variational equation
+</H2>
+
+<P>
+We are now interested in how the difference between the trajectory
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ arising from a spatial (needle) perturbation and the optimal trajectory
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ propagates after the perturbation stops acting, i.e., for <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1092.gif"
+ ALT="$ t\ge b$">
+.
+To study this question, let us
+begin by writing
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ypsi"></A><!-- MATH
+ \begin{equation}
+y(t)=y^*(t)+\varepsilon \psi(t)+o(\varepsilon )=:y(t,\varepsilon )
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="278" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1093.gif"
+ ALT="$\displaystyle y(t)=y^*(t)+\varepsilon \psi(t)+o(\varepsilon )=:y(t,\varepsilon )$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for <!-- MATH
+ $b\le t\le t^*$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1094.gif"
+ ALT="$ b\le t\le t^*$">
+, where <!-- MATH
+ $\psi:[b,t^*]\to\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1095.gif"
+ ALT="$ \psi:[b,t^*]\to\mathbb{R}^{n+1}$">
+ is a quantity that we want to characterize and <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ is the same as in Section&nbsp;<A HREF="node68.html#ss-needle">4.2.3</A>. We know from&nbsp;(<A HREF="node68.html#e-nu-b">4.14</A>) that <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1096.gif"
+ ALT="$ \psi(b)$">
+ exists and is given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-psi-init"></A><!-- MATH
+ \begin{equation}
+\psi(b)=\nu_b(w)a.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1097.gif"
+ ALT="$\displaystyle \psi(b)=\nu_b(w)a.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We now derive a differential equation that <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ must satisfy on the time interval <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1099.gif"
+ ALT="$ (b,t^*]$">
+, where both <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+
+have the same corresponding control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. It is clear from&nbsp;(<A HREF="#e-ypsi">4.16</A>) that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-psiandy"></A><!-- MATH
+ \begin{equation}
+\psi(t)={y}_{\varepsilon }(t,0)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="110" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1100.gif"
+ ALT="$\displaystyle \psi(t)={y}_{\varepsilon }(t,0)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(the existence of this partial derivative, and therefore of <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+, for <IMG
+ WIDTH="40" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1101.gif"
+ ALT="$ t&gt;b$">
+ will become evident in a moment).
+Let us rewrite the system&nbsp;(<A HREF="node66.html#e-ydot">4.7</A>) as an integral equation:
+<P><!-- MATH
+ \begin{displaymath}
+y(t,\varepsilon )=y(b,\varepsilon )+\int_b^tg(y(s,\varepsilon ),u^*(s))ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="303" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1102.gif"
+ ALT="$\displaystyle y(t,\varepsilon )=y(b,\varepsilon )+\int_b^tg(y(s,\varepsilon ),u^*(s))ds.
+$">
+</DIV><P>
+</P>
+Differentiating both sides of this equation with respect to <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ at <!-- MATH
+ $\varepsilon =0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ \varepsilon =0$">
+ and using&nbsp;(<A HREF="#e-ypsi">4.16</A>) with <IMG
+ WIDTH="40" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1065.gif"
+ ALT="$ t=b$">
+ and&nbsp;(<A HREF="#e-psi-init">4.17</A>),
+we obtain
+<P><!-- MATH
+ \begin{displaymath}
+{y}_{\varepsilon }(t,0)=\nu_b(w)a+\int_b^t {g}_{y}(y(s,0),u^*(s)){y}_{\varepsilon }(s,0)ds
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="372" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1103.gif"
+ ALT="$\displaystyle {y}_{\varepsilon }(t,0)=\nu_b(w)a+\int_b^t {g}_{y}(y(s,0),u^*(s)){y}_{\varepsilon }(s,0)ds
+$">
+</DIV><P>
+</P>
+which, in view of&nbsp;(<A HREF="#e-ypsi">4.16</A>) and&nbsp;(<A HREF="#e-psiandy">4.18</A>), amounts to
+<P><!-- MATH
+ \begin{displaymath}
+\psi(t)=\nu_b(w)a+\int_b^t {g}_{y}(y^*(s),u^*(s))\psi(s)ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="328" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1104.gif"
+ ALT="$\displaystyle \psi(t)=\nu_b(w)a+\int_b^t {g}_{y}(y^*(s),u^*(s))\psi(s)ds.
+$">
+</DIV><P>
+</P>
+Taking the derivative with respect to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, we conclude that <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ satisfies the differential equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-psi-vareqn"></A><!-- MATH
+ \begin{equation}
+\dot \psi={g}_{y}(y^*,u^*)\psi=\left.{g}_{y}\right|_{*}\psi.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="196" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1105.gif"
+ ALT="$\displaystyle \dot \psi={g}_{y}(y^*,u^*)\psi=\left.{g}_{y}\right\vert _{*}\psi.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We will use this equation to describe
+how spatial perturbations propagate with time.
+Pictorially, the role of <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ is illustrated
+in Figure&nbsp;<A HREF="#f-propagation">4.6</A>, with the understanding that the labels
+involving <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ are accurate only up to terms of order <!-- MATH
+ $o(\varepsilon )$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ o(\varepsilon )$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-propagation"></A><A NAME="7833"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Propagation of a spatial perturbation
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="262" HEIGHT="220" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1106.gif"
+ ALT="\includegraphics{figures/propagation.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The equation&nbsp;(<A HREF="#e-psi-vareqn">4.19</A>) can be written in the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-vareq-lin"></A><!-- MATH
+ \begin{equation}
+\dot \psi=A_*(t)\psi
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="91" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1107.gif"
+ ALT="$\displaystyle \dot \psi=A_*(t)\psi$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $A_*(t):=\left.{g}_{y}\right|_{*}(t)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1108.gif"
+ ALT="$ A_*(t):=\left.{g}_{y}\right\vert _{*}(t)$">
+. This system is simply the
+linearization<A NAME="3960"></A> of the original system&nbsp;(<A HREF="node66.html#e-ydot">4.7</A>) around
+the optimal trajectory <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+.  Recall that a more detailed description of the system&nbsp;(<A HREF="node66.html#e-ydot">4.7</A>) is given by&nbsp;(<A HREF="node66.html#e-mp-augmented">4.5</A>). Letting
+<!-- MATH
+ $(\eta^0,\eta)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1109.gif"
+ ALT="$ (\eta^0,\eta)$">
+ be the corresponding components of <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ and writing out the variational equation&nbsp;(<A HREF="#e-psi-vareqn">4.19</A>) in terms of these
+components, we easily arrive at
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="20" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1110.gif"
+ ALT="$\displaystyle \dot\eta^0$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="89" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1111.gif"
+ ALT="$\displaystyle =\big.{\left({L}_{x}\right)^T}\big\vert _*\eta$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1112.gif"
+ ALT="$\displaystyle \dot\eta$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1113.gif"
+ ALT="$\displaystyle =\left.{f}_{x}\right\vert _{*}\eta$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(because <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ do not depend on <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+). Here <!-- MATH
+ $({L}_{x})^T$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1114.gif"
+ ALT="$ ({L}_{x})^T$">
+ is a row vector (the transpose of the gradient of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+) and
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1115.gif"
+ ALT="$ {{f}_{x}}$">
+ is an <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ n\times n$">
+ matrix (the Jacobian matrix of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+). The resulting more explicit formula for <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1117.gif"
+ ALT="$ A_*$">
+ is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-A_-detail"></A><!-- MATH
+ \begin{equation}
+A_*(t)=
+  \begin{pmatrix}
+    0 & \big.{\left({L}_{x}\right)^T}\big|_* \\
+   0 & \left.{f}_{x}\right|_{*}
+  \end{pmatrix}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="183" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1118.gif"
+ ALT="$\displaystyle A_*(t)= \begin{pmatrix}0 &amp; \big.{\left({L}_{x}\right)^T}\big\vert _* \\ 0 &amp; \left.{f}_{x}\right\vert _{*} \end{pmatrix}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The equation&nbsp;(<A HREF="#e-psi-vareqn">4.19</A>) is
+in fact the <I>variational equation</I><A NAME="3980"></A> corresponding to the system&nbsp;(<A HREF="node66.html#e-ydot">4.7</A>), according to the terminology
+introduced in Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>. The equation&nbsp;(<A HREF="node55.html#e-xivareq">3.27</A>) in Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A> is also similar and was similarly derived, although it served a different purpose (it described the effect of a small
+control perturbation on a given trajectory, while here we are studying
+the difference between two nearby trajectories with the same control).
+Also, we see that <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ in the definition of a
+needle perturbation
+essentially corresponds to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ in the variational approach; we chose to use different symbols for these two parameters because of the different specific ways in which they are introduced.
+
+<P>
+The value of <IMG
+ WIDTH="15" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1098.gif"
+ ALT="$ \psi$">
+ at the terminal time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ gives us an approximation of the terminal point <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1119.gif"
+ ALT="$ y(t^*)$">
+
+of the perturbed trajectory. Namely, from&nbsp;(<A HREF="#e-ypsi">4.16</A>) evaluated
+at <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1050.gif"
+ ALT="$ t=t^*$">
+ we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-yt_"></A><!-- MATH
+ \begin{equation}
+y(t^*)=y^*(t^*)+\varepsilon \psi(t^*)+o(\varepsilon ).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="232" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1120.gif"
+ ALT="$\displaystyle y(t^*)=y^*(t^*)+\varepsilon \psi(t^*)+o(\varepsilon ).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let us denote by  <!-- MATH
+ $\Phi_*(\cdot,\cdot)$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img974.gif"
+ ALT="$ \Phi_*(\cdot,\cdot)$">
+ the transition
+matrix<A NAME="3989"></A> for the linear time-varying system&nbsp;(<A HREF="#e-vareq-lin">4.20</A>), so that
+<P><!-- MATH
+ \begin{displaymath}
+\psi(t^*)=\Phi_*(t^*,b)\psi(b).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="167" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1121.gif"
+ ALT="$\displaystyle \psi(t^*)=\Phi_*(t^*,b)\psi(b).
+$">
+</DIV><P>
+</P>
+The initial value <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1096.gif"
+ ALT="$ \psi(b)$">
+ is given by&nbsp;(<A HREF="#e-psi-init">4.17</A>),
+hence
+<P><!-- MATH
+ \begin{displaymath}
+\psi(t^*)=\Phi_*(t^*,b)\nu_b(w)a
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="180" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1122.gif"
+ ALT="$\displaystyle \psi(t^*)=\Phi_*(t^*,b)\nu_b(w)a
+$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1123.gif"
+ ALT="$ \nu_b(w)$">
+ was defined in&nbsp;(<A HREF="node68.html#e-nubdef">4.15</A>).
+Plugging this expression into&nbsp;(<A HREF="#e-yt_">4.22</A>), we obtain
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-wnml"></A><!-- MATH
+ \begin{equation}
+y(t^*)=y^*(t^*)+\varepsilon \Phi_*(t^*,b)\nu_b(w)a +o(\varepsilon ).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="555" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1124.gif"
+ ALT="$\displaystyle  y(t^*)=y^*(t^*)+\varepsilon \Phi_*(t^*,b)\nu_b(w)a +o(\varepsilon ).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let us introduce the notation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-deltawI"></A><!-- MATH
+ \begin{equation}
+\delta(w,I):=\Phi_*(t^*,b)\nu_b(w)a
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="197" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1125.gif"
+ ALT="$\displaystyle \delta(w,I):=\Phi_*(t^*,b)\nu_b(w)a$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+to arrive at the more compact formula
+<P><!-- MATH
+ \begin{displaymath}
+y(t^*)=y^*(t^*)+\varepsilon \delta(w,I)+o(\varepsilon )
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="240" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1126.gif"
+ ALT="$\displaystyle y(t^*)=y^*(t^*)+\varepsilon \delta(w,I)+o(\varepsilon )
+$">
+</DIV><P>
+</P>
+(here the interval <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1069.gif"
+ ALT="$ I$">
+ used for constructing the needle perturbation encodes information about the values of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ and <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ b$">
+).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1416"
+  HREF="node70.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1410"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1404"
+  HREF="node68.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1414"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1417"
+  HREF="node70.html">4.2.5 Terminal cone</A>
+<B> Up:</B> <A NAME="tex2html1411"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1405"
+  HREF="node68.html">4.2.3 Spatial control perturbation</A>
+ &nbsp; <B>  <A NAME="tex2html1413"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1415"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

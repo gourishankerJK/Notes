@@ -1,0 +1,356 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.5.2 Non-integral constraints</TITLE>
+<META NAME="description" CONTENT="2.5.2 Non-integral constraints">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node38.html">
+<LINK REL="up" HREF="node37.html">
+<LINK REL="next" HREF="node40.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html941"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html935"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html931"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html937"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html939"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html942"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+<B> Up:</B> <A NAME="tex2html936"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Previous:</B> <A NAME="tex2html932"
+  HREF="node38.html">2.5.1 Integral constraints</A>
+ &nbsp; <B>  <A NAME="tex2html938"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html940"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00452000000000000000"></A><A NAME="ss-constraint-nonint"></A><A NAME="2049"></A><A NAME="2050"></A>
+<BR>
+2.5.2 Non-integral constraints
+</H2>
+
+<P>
+We now suppose that instead of the integral constraint&nbsp;(<A HREF="node38.html#e-constraint-int">2.45</A>)
+we have an equality constraint which must hold pointwise:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-constraint-nonint"></A><!-- MATH
+ \begin{equation}
+M(x,y(x),y'(x))=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="163" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img531.gif"
+ ALT="$\displaystyle M(x,y(x),y'(x))=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.51)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+. A vector-valued function <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ can be
+used to describe multiple constraints, but here we assume for simplicity that there
+is only one constraint.
+
+<P>
+Let <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ be a test curve. It turns out that the first-order
+necessary condition for
+optimality in this case is similar to that for integral constraints, but
+ the Lagrange multiplier is now a
+function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.<A NAME="2055"></A><A NAME="2056"></A> In other words, the Euler-Lagrange equation must
+ hold for the augmented Lagrangian<A NAME="2057"></A>
+<P><!-- MATH
+ \begin{displaymath}
+L+\lambda^*(x) M
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="97" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img532.gif"
+ ALT="$\displaystyle L+\lambda^*(x) M
+$">
+</DIV><P>
+</P>
+where <!-- MATH
+ $\lambda^*:[a,b]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img533.gif"
+ ALT="$ \lambda^*:[a,b]\to\mathbb{R}$">
+ is some function.
+As in Section&nbsp;<A HREF="node38.html#ss-constraint-int">2.5.1</A>,
+we need a technical assumption to rule out degenerate cases. Here we need to assume that there are at least two degrees of freedom and that
+everywhere along the curve we have <!-- MATH
+ ${M}_{y'}\ne 0$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img534.gif"
+ ALT="$ {M}_{y'}\ne 0$">
+ or, if <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ does not appear in&nbsp;(<A HREF="#e-constraint-nonint">2.52</A>), <!-- MATH
+ ${M}_{y}\ne 0$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img535.gif"
+ ALT="$ {M}_{y}\ne 0$">
+. (This permits us, via the Implicit Function Theorem, to locally solve for one dependent variable component in&nbsp;(<A HREF="#e-constraint-nonint">2.52</A>) in terms of the others and to guarantee the existence of other curves near <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ satisfying the constraint.)
+
+<P>
+We will not give a proof of the above result, and instead
+limit ourselves to an intuitive explanation.
+The integral constraint&nbsp;(<A HREF="node38.html#e-constraint-int">2.45</A>) is global, in the sense that it
+applies to the entire curve. In contrast, the non-integral
+constraint&nbsp;(<A HREF="#e-constraint-nonint">2.52</A>) is local, i.e., applies to each point on the
+curve. Locally around each point, there is no difference between
+the two. This suggests that for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ there should exist a Lagrange
+multiplier, and these can be pieced together
+to give the desired function <!-- MATH
+ $\lambda^*=\lambda^*(x)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img536.gif"
+ ALT="$ \lambda^*=\lambda^*(x)$">
+.
+Another way to see the correspondence between the two problems
+is to follow Lagrange's idea of considering an augmented cost functional
+which coincides with the original one for curves satisfying the constraint.
+For integral constraints this was accomplished by&nbsp;(<A HREF="node38.html#e-Lagrange-augment">2.51</A>),
+while here we can consider the minimization of<A NAME="2069"></A><A NAME="2070"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Lagrange-naive-nonint"></A><!-- MATH
+ \begin{equation}
+\int_a^b Ldx+\int_a^b \lambda(x) Mdx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="181" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img537.gif"
+ ALT="$\displaystyle \int_a^b Ldx+\int_a^b \lambda(x) Mdx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.52)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+over <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+. Note that <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+ no longer needs to
+be constant, since <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ is identically 0.
+(The role of integration in the second term is simply to obtain a cost for the
+whole curve.)
+
+<P>
+What if we want to solve the
+constraint&nbsp;(<A HREF="#e-constraint-nonint">2.52</A>) for <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as a function of
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+? In general, we have fewer constraints than the
+dimension of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+, i.e., the system of equations
+is under-determined. This means that we
+will have some free parameters; denoting by <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ the vector
+of these parameters, we can write the solution in the form
+<P><!-- MATH
+ \begin{displaymath}
+y'=f(x,y,u).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="114" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img538.gif"
+ ALT="$\displaystyle y'=f(x,y,u).
+$">
+</DIV><P>
+</P>
+The reader hopefully recognizes this as
+a control system, in the disguise of a somewhat unfamiliar
+notation compared to&nbsp;(<A HREF="node4.html#e-control-system">1.1</A>).
+For example, if <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.gif"
+ ALT="$ n=2$">
+ (two degrees of freedom) and <!-- MATH
+ $M(x,y,y')=y'_1-y_2$
+ -->
+<IMG
+ WIDTH="161" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img540.gif"
+ ALT="$ M(x,y,y')=y'_1-y_2$">
+,
+then we have
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img541.gif"
+ ALT="$ y'_1=y_2$">
+ and
+<IMG
+ WIDTH="53" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img542.gif"
+ ALT="$ y'_2=u$">
+ (free).
+Incidentally, the case of no constraints (our Basic Calculus of Variations Problem)
+corresponds to <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img543.gif"
+ ALT="$ y'=u$">
+.
+We will turn our attention to control problems later in the book, and the
+present lack
+of depth in our treatment of non-integral constraints will be amply
+compensated
+for.
+In particular,
+the ``distributed" Lagrange multiplier<A NAME="2076"></A> <!-- MATH
+ $\lambda^*(\cdot)$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img544.gif"
+ ALT="$ \lambda^*(\cdot)$">
+ will correspond to
+the adjoint vector, or costate, in the maximum principle.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html943"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html941"
+  HREF="node40.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html935"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html931"
+  HREF="node38.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html937"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html939"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html942"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+<B> Up:</B> <A NAME="tex2html936"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Previous:</B> <A NAME="tex2html932"
+  HREF="node38.html">2.5.1 Integral constraints</A>
+ &nbsp; <B>  <A NAME="tex2html938"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html940"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

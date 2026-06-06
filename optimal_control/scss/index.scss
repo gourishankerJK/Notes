@@ -1,0 +1,537 @@
+// =============================================================
+//  Calculus of Variations & Optimal Control — Fine-Press Edition
+//  Landing page stylesheet  (Ruby Sass 3.7 compatible)
+// =============================================================
+
+@import 'tokens';
+
+// ── Reset ───────────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: $serif;
+  background: $paper;
+  color: $ink;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// ── Paper grain / texture overlay ───────────────────────────
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .5;
+  background-image:
+    radial-gradient(rgba($ink, .025) 1px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+
+// ── Masthead ────────────────────────────────────────────────
+.masthead {
+  position: relative;
+  z-index: 3;
+  max-width: $maxw;
+  margin: 0 auto;
+  padding: 22px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include kicker;
+  color: $ink-3;
+
+  .mast-brand {
+    color: $ink;
+    font-weight: 600;
+    letter-spacing: .18em;
+  }
+  .mast-right { color: $ink-3; }
+  .mast-right-wrap { display: flex; align-items: center; gap: 16px; }
+}
+
+// ── Hero ────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 56px 40px 28px;
+  text-align: center;
+
+  .hero-kicker {
+    @include kicker;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    @include fade-up(.05s);
+
+    &::before, &::after {
+      content: '';
+      width: 38px;
+      height: 1px;
+      background: $gold-soft;
+    }
+  }
+
+  .hero-title {
+    font-family: $display;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+    line-height: 1.07;
+    letter-spacing: -.01em;
+    color: $ink;
+    @include fade-up(.12s);
+
+    .amp {
+      font-style: italic;
+      font-weight: 500;
+      color: $gold;
+    }
+  }
+
+  .hero-sub {
+    font-family: $serif;
+    font-style: italic;
+    font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+    color: $ink-2;
+    margin-top: 18px;
+    @include fade-up(.2s);
+  }
+
+  .hero-byline {
+    margin-top: 34px;
+    @include fade-up(.28s);
+
+    .by-name {
+      font-family: $sans;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: $ink;
+    }
+    .by-affil {
+      font-family: $sans;
+      font-size: 12.5px;
+      color: $ink-3;
+      margin-top: 4px;
+    }
+  }
+
+  .hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include fade-up(.36s);
+  }
+}
+
+// ── Buttons ─────────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 13px 26px;
+  border-radius: 2px;
+  cursor: pointer;
+  @include lift;
+
+  svg { width: 15px; height: 15px; }
+}
+
+.btn-primary {
+  background: $accent;
+  color: #fff;
+  border: 1px solid $accent;
+  &:hover {
+    background: $accent-2;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba($accent, .26);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $ink;
+  border: 1px solid $rule-2;
+  &:hover {
+    border-color: $ink;
+    transform: translateY(-2px);
+  }
+}
+
+// ── Signature Equations band ────────────────────────────────
+.equations {
+  position: relative;
+  z-index: 2;
+  max-width: $maxw;
+  margin: 64px auto 0;
+  padding: 0 40px;
+
+  .eq-head {
+    text-align: center;
+    margin-bottom: 34px;
+    @include fade-up(.1s);
+
+    .eq-kicker { @include kicker; }
+    .eq-title {
+      font-family: $display;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: $ink;
+      margin-top: 8px;
+    }
+  }
+
+  .eq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: $rule;
+    border: 1px solid $rule;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .eq-cell {
+    background: $paper-2;
+    padding: 32px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include lift;
+    position: relative;
+
+    &:hover {
+      background: #fff;
+      z-index: 1;
+      box-shadow: 0 8px 30px rgba($ink, .07);
+    }
+
+    .eq-render {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+      font-size: 1.05rem;
+      color: $ink;
+      overflow-x: auto;
+    }
+
+    .eq-meta {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid $rule;
+      padding-top: 14px;
+    }
+    .eq-name {
+      font-family: $serif;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: $accent;
+    }
+    .eq-ref {
+      font-family: $sans;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: $ink-3;
+      white-space: nowrap;
+    }
+  }
+}
+
+// ── Contents ────────────────────────────────────────────────
+.contents {
+  position: relative;
+  z-index: 2;
+  max-width: $maxw;
+  margin: 84px auto 0;
+  padding: 0 40px;
+
+  .contents-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 8px;
+
+    h2 {
+      font-family: $display;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $ink;
+    }
+    .ch-count {
+      @include kicker;
+      color: $ink-3;
+    }
+    .rule-grow {
+      flex: 1;
+      height: 1px;
+      background: $rule;
+      align-self: center;
+    }
+  }
+
+  .toc {
+    list-style: none;
+  }
+
+  .toc-item {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: baseline;
+    gap: 6px 20px;
+    padding: 24px 14px 22px;
+    border-bottom: 1px solid $rule;
+    @include lift;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: $gold;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .3s $ease;
+    }
+
+    &:hover {
+      background: $paper-2;
+      padding-left: 22px;
+      &::before { transform: scaleY(1); }
+      .toc-num { color: $gold; }
+      .toc-go { opacity: 1; transform: translateX(0); }
+    }
+
+    .toc-num {
+      font-family: $display;
+      font-size: 2.1rem;
+      font-weight: 500;
+      color: $rule-2;
+      line-height: 1;
+      transition: color .3s $ease;
+    }
+
+    .toc-body {
+      .toc-title {
+        font-family: $serif;
+        font-size: 1.32rem;
+        font-weight: 600;
+        color: $ink;
+        line-height: 1.3;
+      }
+      .toc-desc {
+        font-family: $sans;
+        font-size: 13.5px;
+        line-height: 1.6;
+        color: $ink-3;
+        margin-top: 5px;
+        max-width: 62ch;
+      }
+    }
+
+    .toc-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      align-self: center;
+    }
+    .toc-sections {
+      font-family: $sans;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: $ink-3;
+      white-space: nowrap;
+    }
+    .toc-go {
+      color: $accent;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity .3s $ease, transform .3s $ease;
+      svg { width: 22px; height: 22px; display: block; }
+    }
+  }
+}
+
+// ── Front matter ────────────────────────────────────────────
+.frontmatter {
+  position: relative;
+  z-index: 2;
+  max-width: $maxw;
+  margin: 56px auto 0;
+  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  .fm {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-family: $sans;
+    font-size: 13px;
+    color: $ink-2;
+    padding: 10px 18px;
+    border: 1px solid $rule;
+    border-radius: 2px;
+    background: $paper-2;
+    @include lift;
+    svg { width: 14px; height: 14px; color: $gold; }
+    &:hover {
+      border-color: $gold-soft;
+      transform: translateY(-2px);
+      color: $ink;
+    }
+  }
+}
+
+// ── Footer ──────────────────────────────────────────────────
+.site-footer {
+  position: relative;
+  z-index: 2;
+  max-width: $maxw;
+  margin: 80px auto 0;
+  padding: 30px 40px 56px;
+  border-top: 1px solid $rule;
+  text-align: center;
+  font-family: $sans;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: $ink-3;
+
+  em { font-family: $serif; font-style: italic; font-size: 14px; color: $ink-2; }
+  a { color: $accent; &:hover { text-decoration: underline; } }
+}
+
+// ── Responsive ──────────────────────────────────────────────
+@media (max-width: 760px) {
+  .masthead { padding: 18px 24px; }
+  .hero { padding: 36px 24px 20px; }
+  .equations, .contents, .frontmatter { padding-left: 24px; padding-right: 24px; }
+  .equations .eq-grid { grid-template-columns: 1fr; }
+  .contents .toc-item {
+    grid-template-columns: 40px 1fr;
+    .toc-num { font-size: 1.6rem; }
+    .toc-right { grid-column: 2; justify-content: flex-start; margin-top: 8px; }
+  }
+  .hero .hero-kicker::before, .hero .hero-kicker::after { width: 22px; }
+}
+
+// ── Themes ───────────────────────────────────────────────────
+
+@mixin landing-dark {
+  body { background: $d-paper; color: $d-ink; }
+  .grain { opacity: .35; background-image: radial-gradient(rgba(#fff, .02) 1px, transparent 1px); mix-blend-mode: screen; }
+  .masthead { color: $d-ink-3; .mast-brand { color: $d-ink; } }
+  .hero {
+    .hero-kicker { color: $d-gold; &::before, &::after { background: rgba($d-gold, .5); } }
+    .hero-title { color: $d-ink; .amp { color: $d-gold; } }
+    .hero-sub { color: $d-ink-2; }
+    .hero-byline .by-name { color: $d-ink; }
+    .hero-byline .by-affil { color: $d-ink-3; }
+  }
+  .btn-primary { background: $d-accent; border-color: $d-accent; color: #14120f; &:hover { background: lighten($d-accent, 6%); box-shadow: 0 10px 28px rgba($d-accent, .2); } }
+  .btn-ghost { color: $d-ink; border-color: $d-rule; &:hover { border-color: $d-ink-2; } }
+  .equations {
+    .eq-head .eq-title { color: $d-ink; }
+    .eq-grid { background: $d-rule; border-color: $d-rule; }
+    .eq-cell { background: $d-paper-2; &:hover { background: lighten($d-paper-2, 3%); box-shadow: 0 8px 30px rgba(#000, .4); } .eq-render { color: $d-ink; } .eq-meta { border-color: $d-rule; } .eq-name { color: $d-accent; } .eq-ref { color: $d-ink-3; } }
+  }
+  .contents {
+    .contents-head h2 { color: $d-ink; }
+    .contents-head .rule-grow { background: $d-rule; }
+    .toc-item { border-color: $d-rule; &:hover { background: $d-paper-2; } .toc-num { color: $d-rule; } .toc-body .toc-title { color: $d-ink; } .toc-body .toc-desc { color: $d-ink-3; } .toc-sections { color: $d-ink-3; } .toc-go { color: $d-accent; } }
+  }
+  .frontmatter .fm { background: $d-paper-2; border-color: $d-rule; color: $d-ink-2; &:hover { color: $d-ink; } }
+  .site-footer { border-color: $d-rule; color: $d-ink-3; em { color: $d-ink-2; } a { color: $d-accent; } }
+  .theme-toggle { border-color: $d-rule-2; .tt-btn { color: $d-ink-3; &.active { background: $d-paper-2; color: $d-gold; } } }
+}
+
+@mixin landing-paper {
+  body { background: $p-bg; color: $p-ink; }
+  .grain { opacity: .45; background-image: radial-gradient(rgba($p-ink, .025) 1px, transparent 1px); mix-blend-mode: multiply; }
+  .masthead { color: $p-ink3; .mast-brand { color: $p-ink; } }
+  .hero {
+    .hero-kicker { color: $p-gold; &::before, &::after { background: rgba($p-gold, .6); } }
+    .hero-title { color: $p-ink; .amp { color: $p-gold; } }
+    .hero-sub { color: $p-ink2; }
+    .hero-byline .by-name { color: $p-ink; }
+    .hero-byline .by-affil { color: $p-ink3; }
+  }
+  .btn-primary { background: $p-accent; border-color: $p-accent; color: #fff; &:hover { background: lighten($p-accent, 8%); box-shadow: 0 10px 28px rgba($p-accent, .25); } }
+  .btn-ghost { color: $p-ink; border-color: $p-rule2; &:hover { border-color: $p-ink2; } }
+  .equations {
+    .eq-head .eq-title { color: $p-ink; }
+    .eq-grid { background: $p-rule; border-color: $p-rule; }
+    .eq-cell { background: $p-bg2; &:hover { background: lighten($p-bg2, 3%); box-shadow: 0 8px 30px rgba($p-ink, .1); } .eq-render { color: $p-ink; } .eq-meta { border-color: $p-rule; } .eq-name { color: $p-accent; } .eq-ref { color: $p-ink3; } }
+  }
+  .contents {
+    .contents-head h2 { color: $p-ink; }
+    .contents-head .rule-grow { background: $p-rule; }
+    .toc-item { border-color: $p-rule; &:hover { background: $p-bg2; } .toc-num { color: $p-rule2; } .toc-body .toc-title { color: $p-ink; } .toc-body .toc-desc { color: $p-ink3; } .toc-sections { color: $p-ink3; } .toc-go { color: $p-accent; } }
+  }
+  .frontmatter .fm { background: $p-bg2; border-color: $p-rule; color: $p-ink2; &:hover { color: $p-ink; } }
+  .site-footer { border-color: $p-rule; color: $p-ink3; em { color: $p-ink2; } a { color: $p-accent; } }
+  .theme-toggle { border-color: $p-rule2; .tt-btn { color: $p-ink3; &.active { background: $p-bg2; color: $p-gold; } } }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="paper"]) { @include landing-dark; }
+}
+html[data-theme="dark"]  { @include landing-dark; }
+html[data-theme="paper"] { @include landing-paper; }
+
+// ── Theme toggle widget ──────────────────────────────────────
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid $rule-2;
+  border-radius: 30px;
+  padding: 3px 4px;
+  gap: 2px;
+
+  .tt-btn {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    color: $ink-3;
+    cursor: pointer;
+    padding: 0;
+    @include lift;
+
+    svg { width: 13px; height: 13px; display: block; }
+
+    &.active { background: $paper-2; color: $gold; box-shadow: 0 1px 3px rgba($ink, .12); }
+    &:hover:not(.active) { color: $ink-2; }
+  }
+}

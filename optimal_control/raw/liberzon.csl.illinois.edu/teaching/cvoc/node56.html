@@ -1,0 +1,720 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.4.2 First variation</TITLE>
+<META NAME="description" CONTENT="3.4.2 First variation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node57.html">
+<LINK REL="previous" HREF="node55.html">
+<LINK REL="up" HREF="node54.html">
+<LINK REL="next" HREF="node57.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1197"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1191"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1185"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1193"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1195"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1198"
+  HREF="node57.html">3.4.3 Second variation</A>
+<B> Up:</B> <A NAME="tex2html1192"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1186"
+  HREF="node55.html">3.4.1 Preliminaries</A>
+ &nbsp; <B>  <A NAME="tex2html1194"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1196"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00542000000000000000"></A><A NAME="ss-first-var-MP"></A>
+<BR>
+3.4.2 First variation
+</H2>
+
+<P>
+We want to compute and analyze the first variation <!-- MATH
+ $\left.\delta J\right|_{u^*}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img903.gif"
+ ALT="$ \left.\delta J\right\vert _{u^*}$">
+ of the cost functional <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ at the optimal control function <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. To do this, in view of the definition&nbsp;(<A HREF="node15.html#e-1st-variation">1.33</A>), we must isolate the first-order terms with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ in the cost difference between the perturbed control&nbsp;(<A HREF="node55.html#e-u-xi">3.24</A>) and the optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-firstvarrecall"></A><!-- MATH
+ \begin{equation}
+J(u)-J(u^*)=J(u^*+\alpha\xi)-J(u^*)=\left.\delta J\right|_{u^*}(\xi)\alpha+o(\alpha).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="433" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img904.gif"
+ ALT="$\displaystyle J(u)-J(u^*)=J(u^*+\alpha\xi)-J(u^*)=\left.\delta J\right\vert _{u^*}(\xi)\alpha+o(\alpha).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The formula&nbsp;(<A HREF="node55.html#e-JuHam">3.30</A>) suggests regarding the difference  <!-- MATH
+ $J(u)-J(u^*)$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img905.gif"
+ ALT="$ J(u)-J(u^*)$">
+ as being composed of three distinct terms, which we now inspect in more detail.
+We will let <IMG
+ WIDTH="17" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img906.gif"
+ ALT="$ \approx$">
+ denote equality up to
+terms of order <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ o(\alpha)$">
+. For the terminal cost, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-K-firstvar"></A><!-- MATH
+ \begin{equation}
+K(x(t_1))-K(x^*(t_1))=K(x^*(t_1)+\alpha\eta(t_1)+o(\alpha))-K(x^*(t_1)) \approx\left\langle {{K}_{x}}(x^*(t_1)),\alpha\eta(t_1)\right\rangle.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="662" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img907.gif"
+ ALT="$\displaystyle K(x(t_1))-K(x^*(t_1))=K(x^*(t_1)+\alpha\eta(t_1)+o(\alpha))-K(x^*(t_1)) \approx\left\langle {{K}_{x}}(x^*(t_1)),\alpha\eta(t_1)\right\rangle.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+For the Hamiltonian, omitting the <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+-arguments inside <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+
+for brevity, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H-firstvar"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+H(t,x,u,p)-H(t,x^*,u^*,p)&=H(t,x^*+\alpha\eta+o(\alpha),u^*+\alpha\xi,p)-
+H(t,x^*,u^*,p)\\&\approx \left\langle{{H}_{x}}(t,x^*,u^*,p),\alpha\eta\right\rangle+\left\langle{{H}_{u}}(t,x^*,u^*,p),\alpha\xi\right\rangle.
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="597" HEIGHT="55" BORDER="0"
+ SRC="img908.gif"
+ ALT="\begin{displaymath}\begin{split}H(t,x,u,p)-H(t,x^*,u^*,p)&amp;=H(t,x^*+\alpha\eta+o(...
+...angle{{H}_{u}}(t,x^*,u^*,p),\alpha\xi\right\rangle. \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As for the inner product <!-- MATH
+ $\langle p,\dot x-\dot x^*\rangle$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img909.gif"
+ ALT="$ \langle p,\dot x-\dot x^*\rangle $">
+, we use integration by parts as we did several times in calculus of variations:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-bypartsagain"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\int_{t_0}^{t_1}\langle p(t),\dot
+x(t)-\dot x^*(t)\rangle dt&=
+{\left.\langle p(t),
+x(t)- x^*(t)\rangle\right|_{t_0}^{t_1}}-
+\int_{t_0}^{t_1}\langle \dot p(t),
+x(t)- x^*(t)\rangle dt\\&\approx
+\langle p(t_1),
+\alpha\eta(t_1)\rangle-
+\int_{t_0}^{t_1}\langle \dot p(t),
+\alpha\eta(t)\rangle dt
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="567" HEIGHT="101" BORDER="0"
+ SRC="img910.gif"
+ ALT="\begin{displaymath}\begin{split}\int_{t_0}^{t_1}\langle p(t),\dot x(t)-\dot x^*(...
+..._0}^{t_1}\langle \dot p(t), \alpha\eta(t)\rangle dt \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we used the fact that
+<!-- MATH
+ $x(t_0)=x^*(t_0)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img911.gif"
+ ALT="$ x(t_0)=x^*(t_0)$">
+. Combining the formulas&nbsp;(<A HREF="node55.html#e-JuHam">3.30</A>)-(<A HREF="#e-bypartsagain">3.34</A>), we
+readily see that the first variation is given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-dJu_"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{u^*}(\xi)= -\int_{t_0}^{t_1}
+\big(\left\langle \dot p+{{H}_{x}}(t,x^*,u^*,p)
+,\eta\right\rangle+\left\langle {{H}_{u}}(t,x^*,u^*,p),\xi\right\rangle
+\big)dt+\left\langle{K}_{x}(x^*(t_1))+p(t_1),\eta(t_1)\right\rangle
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="727" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img912.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{u^*}(\xi)= -\int_{t_0}^{t_1} \big(\le...
+...ight\rangle \big)dt+\left\langle{K}_{x}(x^*(t_1))+p(t_1),\eta(t_1)\right\rangle$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ is related to <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ via the differential equation&nbsp;(<A HREF="node55.html#e-xivareq">3.27</A>)
+ with the zero initial condition.
+
+<P>
+The familiar first-order necessary condition for optimality
+(from Section&nbsp;<A HREF="node15.html#ss-1st-var">1.3.2</A>) says that we must have <!-- MATH
+ $\left.\delta
+J\right|_{u^*}(\xi)=0$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img913.gif"
+ ALT="$ \left.\delta
+J\right\vert _{u^*}(\xi)=0$">
+ for all <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+.
+This condition is true for every function <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, but becomes
+particularly revealing if we make a special choice of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+.
+Namely, let <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ be
+the solution of the differential equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-p-de"></A><!-- MATH
+ \begin{equation}
+\dot p=-{{H}_{x}}(t,x^*,u^*,p)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="159" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img914.gif"
+ ALT="$\displaystyle \dot p=-{{H}_{x}}(t,x^*,u^*,p)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+satisfying the boundary condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-p-fc"></A><!-- MATH
+ \begin{equation}
+p(t_1)=-{K}_{x}(x^*(t_1)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="163" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img915.gif"
+ ALT="$\displaystyle p(t_1)=-{K}_{x}(x^*(t_1)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that this boundary condition specifies the value of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ at
+the <I>end</I> of the interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+, i.e., it is a final (or terminal)
+condition rather than an initial condition. In case of no terminal
+cost we treat <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ as being equal to 0, which corresponds to
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img916.gif"
+ ALT="$ p(t_1)=0$">
+. We label the function <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ defined
+by&nbsp;(<A HREF="#e-p-de">3.36</A>) and&nbsp;(<A HREF="#e-p-fc">3.37</A>) as <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ from now on, to
+reflect the fact that it is associated with the optimal
+trajectory. We also extend the notation <!-- MATH
+ $\left.\right|_{*}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img890.gif"
+ ALT="$ \left.\right\vert _{*}$">
+ to mean evaluation
+along the optimal trajectory with <IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img918.gif"
+ ALT="$ p=p^*$">
+, so that, for example,
+<!-- MATH
+ $\left. H\right|_{*}(t)=H(t,x^*(t),u^*(t),p^*(t))$
+ -->
+<IMG
+ WIDTH="250" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img919.gif"
+ ALT="$ \left. H\right\vert _{*}(t)=H(t,x^*(t),u^*(t),p^*(t))$">
+. Setting <IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img918.gif"
+ ALT="$ p=p^*$">
+ and
+using the equations&nbsp;(<A HREF="#e-p-de">3.36</A>) and&nbsp;(<A HREF="#e-p-fc">3.37</A>) to simplify
+the right-hand side of&nbsp;(<A HREF="#e-dJu_">3.35</A>), we are left with
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-intHu_0"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{u^*}(\xi)=-\int_{t_0}^{t_1}\left\langle \left.{H}_{u}\right|_{*},\xi\right\rangle dt=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="263" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img920.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{u^*}(\xi)=-\int_{t_0}^{t_1}\left\langle \left.{H}_{u}\right\vert _{*},\xi\right\rangle dt=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+.
+We know from Lemma&nbsp;<A HREF="node28.html#l-dubois-reymond">2.1</A><A NAME="tex2html33"
+  HREF="footnode.html#foot7793"><SUP>3.3</SUP></A> that this implies <!-- MATH
+ $\left.{H}_{u}\right|_{*}\equiv0$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img922.gif"
+ ALT="$ \left.{H}_{u}\right\vert _{*}\equiv0$">
+ or, in more detail,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H_u_0"></A><!-- MATH
+ \begin{equation}
+{H}_{u}(t,x^*(t),u^*(t),p^*(t))= 0\qquad \forall\,t\in[t_0,t_1].
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="337" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img923.gif"
+ ALT="$\displaystyle {H}_{u}(t,x^*(t),u^*(t),p^*(t))= 0\qquad \forall\,t\in[t_0,t_1].$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The meaning of this condition is that the Hamiltonian has a stationary point
+ as a function
+of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ along the optimal trajectory. More precisely,
+ the function <!-- MATH
+ $H(t,x^*(t),\cdot,p^*(t)))$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img924.gif"
+ ALT="$ H(t,x^*(t),\cdot,p^*(t)))$">
+
+ has a stationary point at <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+ for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. This is just a reformulation of the
+ property already discussed in Section&nbsp;<A HREF="node34.html#ss-hamiltonian">2.4.1</A> in the context
+ of calculus of variations.
+
+<P>
+In light of the definition&nbsp;(<A HREF="node55.html#e-hamiltonian-control">3.29</A>) of the Hamiltonian,
+we can rewrite
+our control system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) more compactly
+as <!-- MATH
+ $\dot x={H}_{p}(t,x,u)$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img926.gif"
+ ALT="$ \dot x={H}_{p}(t,x,u)$">
+. Thus the joint
+evolution of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ is governed by the system
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-canonical"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot x^*&=\left.{H}_{p}\right|_{*}\\
+\dot p^*&=\left.-{H}_{x}\right|_{*}
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="90" HEIGHT="55" BORDER="0"
+ SRC="img927.gif"
+ ALT="\begin{displaymath}\begin{split}\dot x^*&amp;=\left.{H}_{p}\right\vert _{*}\\ \dot p^*&amp;=\left.-{H}_{x}\right\vert _{*} \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.39)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which the reader will recognize as the system of Hamilton's
+canonical equations&nbsp;(<A HREF="node34.html#e-hamilton">2.30</A>)<A NAME="3273"></A> from
+Section&nbsp;<A HREF="node34.html#ss-hamiltonian">2.4.1</A>. Let us examine the differential
+equation for <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ in&nbsp;(<A HREF="#e-canonical">3.40</A>) in more detail. We can
+expand it with the help of&nbsp;(<A HREF="node55.html#e-hamiltonian-control">3.29</A>) as
+<P><!-- MATH
+ \begin{displaymath}
+\dot p^*=\big.{-\left({f}_{x}\right)^T}\big|_* p^*+\left.{L}_{x}\right|_{*}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="186" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img928.gif"
+ ALT="$\displaystyle \dot p^*=\big.{-\left({f}_{x}\right)^T}\big\vert _* p^*+\left.{L}_{x}\right\vert _{*}
+$">
+</DIV><P>
+</P>
+where we recall that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$ {f}_{x}$">
+ is the Jacobian matrix of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to 
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. This is a linear time-varying system of the form <!-- MATH
+ $\dot
+p^*=-A_*^T(t)p^*+\left.{L}_{x}\right|_{*}$
+ -->
+<IMG
+ WIDTH="172" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img929.gif"
+ ALT="$ \dot
+p^*=-A_*^T(t)p^*+\left.{L}_{x}\right\vert _{*} $">
+ where <!-- MATH
+ $A_*(\cdot)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img930.gif"
+ ALT="$ A_*(\cdot)$">
+ is the same as in
+the differential equation&nbsp;(<A HREF="node55.html#e-xidot">3.28</A>) derived earlier for the
+first-order state perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. Two linear systems <IMG
+ WIDTH="60" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img931.gif"
+ ALT="$ \dot x=Ax$">
+
+and <!-- MATH
+ $\dot z=-A^Tz$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img932.gif"
+ ALT="$ \dot z=-A^Tz$">
+ are said to be<A NAME="p-adjoint"></A> <I>adjoint</I><A NAME="3283"></A>
+to each other, and for this reason <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ is called the <I>adjoint
+vector</I>;<A NAME="3285"></A> the system-theoretic significance of this concept will
+become clearer in Section&nbsp;<A HREF="node73.html#ss-adjoint">4.2.8</A>. Note also that we can think of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ as <I>acting</I> on the
+state or, more precisely, on the state velocity vector, since it
+always appears inside inner products such as <!-- MATH
+ $\langle p,\dot x\rangle$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img933.gif"
+ ALT="$ \langle p,\dot x\rangle $">
+;
+for this reason, <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ is also called the <I>costate</I><A NAME="3290"></A> (this
+notion will be further explored in
+Section&nbsp;<A HREF="node119.html#s-mp-manifolds">7.1</A>).
+
+<P>
+The purpose of the next two exercises is to recover earlier
+conditions from calculus of variations, namely, the Euler-Lagrange equation
+and the Lagrange multiplier condition (for multiple degrees of
+freedom and several constraints) from the preliminary necessary
+conditions for optimality derived so far, expressed by the
+existence of an adjoint vector <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ satisfying&nbsp;(<A HREF="#e-H_u_0">3.39</A>)
+and&nbsp;(<A HREF="#e-canonical">3.40</A>).
+
+<P>
+<BR>
+<A NAME="z-ELfromMP"></A><IMG
+ WIDTH="555" HEIGHT="149" ALIGN="BOTTOM" BORDER="0"
+ SRC="img934.gif"
+ ALT="\begin{Exercise}
+The standard (unconstrained) calculus of variations problem wit...
+...} {L}_{\dot x_i}={L}_{x_i}$, are satisfied along this trajectory.
+\end{Exercise}">
+<BR>
+
+<P>
+<BR>
+<A NAME="z-plambda"></A><IMG
+ WIDTH="555" HEIGHT="267" ALIGN="BOTTOM" BORDER="0"
+ SRC="img935.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 8963
+Consider now a calculus of variat...
+...t x_n)\big)
+\end{displaymath}are satisfied
+along this trajectory.
+\end{Exercise}">
+<BR>
+
+<P>
+We caution the reader that the transition between the Hamiltonian and the Lagrangian requires some care, especially in the context of Exercise&nbsp;<A HREF="#z-plambda">3.6</A>. The Lagrangian
+explicitly depends on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img835.gif"
+ ALT="$ \dot x$">
+ (and the partial derivatives <!-- MATH
+ ${L}_{\dot x_i}$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img936.gif"
+ ALT="$ {L}_{\dot x_i}$">
+ appear in the Euler-Lagrange 
+equations), whereas the Hamiltonian should
+not (it should be a function of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+). The
+differential equations can be used to put <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ into the right form. A consequence
+of this, in Exercise&nbsp;<A HREF="#z-plambda">3.6</A>, is that <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ will appear inside <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ in several
+different places.
+The Lagrange multipliers
+<!-- MATH
+ $\lambda_i^*$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.gif"
+ ALT="$ \lambda_i^*$">
+ are related to the components of the adjoint vector
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+, but they are not the same.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1197"
+  HREF="node57.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1191"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1185"
+  HREF="node55.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1193"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1195"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1198"
+  HREF="node57.html">3.4.3 Second variation</A>
+<B> Up:</B> <A NAME="tex2html1192"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1186"
+  HREF="node55.html">3.4.1 Preliminaries</A>
+ &nbsp; <B>  <A NAME="tex2html1194"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1196"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

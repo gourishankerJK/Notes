@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.2.2 Canonical equations as characteristics of the HJB
+equation</TITLE>
+<META NAME="description" CONTENT="7.2.2 Canonical equations as characteristics of the HJB
+equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node124.html">
+<LINK REL="up" HREF="node123.html">
+<LINK REL="next" HREF="node126.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2248"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2242"
+  HREF="node123.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2238"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2244"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2246"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2249"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Up:</B> <A NAME="tex2html2243"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Previous:</B> <A NAME="tex2html2239"
+  HREF="node124.html">7.2.1 Method of characteristics</A>
+ &nbsp; <B>  <A NAME="tex2html2245"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2247"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00922000000000000000"></A>
+<A NAME="7125"></A>
+<A NAME="7126"></A>
+<BR>
+7.2.2 Canonical equations as characteristics of the HJB
+equation
+</H2>
+
+<P>
+We will now show that Hamilton's canonical equations arise as the characteristics--or, more precisely, characteristic strips--of the HJB equation. With some abuse of notation, let us write the
+HJB equation as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-abused"></A><!-- MATH
+ \begin{equation}
+{V}_{t}(t,x)-H(t,x,-{V}_{x}(t,x))=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="246" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2101.gif"
+ ALT="$\displaystyle {V}_{t}(t,x)-H(t,x,-{V}_{x}(t,x))=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that we did not include the control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ as an argument in <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+; instead,
+we assume that the control that maximizes the Hamiltonian has already been plugged in. (This formulation also covers the calculus of variations and mechanics settings, where the velocity variable is eliminated via the Legendre transformation.) We know that we can bring the PDE&nbsp;(<A HREF="#e-HJB-abused">7.15</A>) to the form&nbsp;(<A HREF="node124.html#e-pde-again">7.9</A>) by introducing the extra state variable <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+ (cf. Section&nbsp;<A HREF="node104.html#ss-hjb-value">5.3.3</A>). We can thus write down the characteristic equations&nbsp;(<A HREF="node124.html#e-char-strips">7.14</A>) for this particular PDE. Since the time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ is present in&nbsp;(<A HREF="#e-HJB-abused">7.15</A>), we can use it as the independent variable and write <IMG
+ WIDTH="21" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2102.gif"
+ ALT="$ \dot x_1$">
+, etc. We also define the costates <!-- MATH
+ $p_i:=-\xi_i=-{v}_{x_i}$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2103.gif"
+ ALT="$ p_i:=-\xi_i=-{v}_{x_i}$">
+, which is consistent with our earlier convention (see Section&nbsp;<A HREF="node99.html#s-relationships">5.2</A>). Then the equations&nbsp;(<A HREF="node124.html#e-char-strips">7.14</A>) immediately yield
+<P><!-- MATH
+ \begin{displaymath}
+\dot x_i={H}_{p_i},\qquad i=1,\dots,n
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="199" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2104.gif"
+ ALT="$\displaystyle \dot x_i={H}_{p_i},\qquad i=1,\dots,n
+$">
+</DIV><P>
+</P>
+(plus one additional equation <!-- MATH
+ $\dot x_{n+1}=1$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img826.gif"
+ ALT="$ \dot
+x_{n+1}=1$">
+ which is redundant) as well as
+<P><!-- MATH
+ \begin{displaymath}
+\dot p_i=-{H}_{x_i},\qquad i=1,\dots,n+1
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="242" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2105.gif"
+ ALT="$\displaystyle \dot p_i=-{H}_{x_i},\qquad i=1,\dots,n+1
+$">
+</DIV><P>
+</P>
+where we used the fact that <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ does not depend on <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ (hence the term <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2106.gif"
+ ALT="$ {F}_{v}$">
+ in&nbsp;(<A HREF="node124.html#e-char-strips">7.14</A>) vanishes). Thus we have indeed recovered the familiar canonical differential equations.
+
+<P>
+Finally, there is one more equation in&nbsp;(<A HREF="node124.html#e-char-strips">7.14</A>) which describes the evolution of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+. Here it tells us that the value function satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-last-strip"></A><!-- MATH
+ \begin{equation}
+\dot V=\sum_{i=1}^n \xi_i \dot x_i+\xi_{n+1}=H-\sum_{i=1}^n p_i{H}_{p_i}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="282" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2107.gif"
+ ALT="$\displaystyle \dot V=\sum_{i=1}^n \xi_i \dot x_i+\xi_{n+1}=H-\sum_{i=1}^n p_i{H}_{p_i}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we applied the HJB equation&nbsp;(<A HREF="#e-HJB-abused">7.15</A>) one more time to arrive at the second equality. (Actually, it is also easy to obtain this result directly by writing <!-- MATH
+ $\dot V={V}_{t}+\langle {V}_{x},\dot x\rangle$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2108.gif"
+ ALT="$ \dot V={V}_{t}+\langle {V}_{x},\dot x\rangle $">
+.) It is the equation&nbsp;(<A HREF="#e-last-strip">7.16</A>) that enables a solution of the HJB equation via the method of characteristics. We know that the Cauchy problem for the HJB equation is given by
+<!-- MATH
+ $V(t_1,x)=K(x)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1663.gif"
+ ALT="$ V(t_1,x)=K(x)$">
+, where <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ is the terminal cost and <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ is the terminal time (this initial value problem involves flowing backward in time).
+To calculate the value <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ V(t,x)$">
+ for some specific time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and state <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, we must first find a point
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+ such that <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img799.gif"
+ ALT="$ x=x(t)$">
+ where  <!-- MATH
+ $(x(\cdot),p(\cdot))$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2109.gif"
+ ALT="$ (x(\cdot),p(\cdot))$">
+
+is the solution of the system of canonical equations with the boundary conditions
+<!-- MATH
+ $x(t_1)=\bar x$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2110.gif"
+ ALT="$ x(t_1)=\bar x$">
+, <!-- MATH
+ $p(t_1)=-{K}_{x}(\bar x)$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2111.gif"
+ ALT="$ p(t_1)=-{K}_{x}(\bar x)$">
+.
+Then, <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ V(t,x)$">
+ is computed by integration along the corresponding characteristic:
+<P><!-- MATH
+ \begin{displaymath}
+V(t,x(t))=K(\bar x)-\int_t^{t_1}\Big(H(s,x(s),p(s))-\sum_{i=1}^n p_i(s) {H}_{p_i}(s,x(s),p(s))\Big)ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="558" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2112.gif"
+ ALT="$\displaystyle V(t,x(t))=K(\bar x)-\int_t^{t_1}\Big(H(s,x(s),p(s))-\sum_{i=1}^n p_i(s) {H}_{p_i}(s,x(s),p(s))\Big)ds.
+$">
+</DIV><P>
+</P>
+Again, the fact that <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ does not depend on <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is helpful here. Figure&nbsp;<A HREF="#f-characteristics-HJB">7.3</A> illustrates the procedure.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-characteristics-HJB"></A><A NAME="8017"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Solving the HJB equation with the help of characteristics
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="305" HEIGHT="303" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2113.gif"
+ ALT="\includegraphics{figures/characteristics-HJB.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2248"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2242"
+  HREF="node123.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2238"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2244"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2246"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2249"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Up:</B> <A NAME="tex2html2243"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Previous:</B> <A NAME="tex2html2239"
+  HREF="node124.html">7.2.1 Method of characteristics</A>
+ &nbsp; <B>  <A NAME="tex2html2245"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2247"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

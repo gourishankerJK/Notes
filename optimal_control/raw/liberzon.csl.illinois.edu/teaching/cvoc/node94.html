@@ -1,0 +1,599 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.1.2 Principle of optimality</TITLE>
+<META NAME="description" CONTENT="5.1.2 Principle of optimality">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node95.html">
+<LINK REL="previous" HREF="node93.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node95.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1789"
+  HREF="node95.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1783"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1777"
+  HREF="node93.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1785"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1787"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1790"
+  HREF="node95.html">5.1.3 HJB equation</A>
+<B> Up:</B> <A NAME="tex2html1784"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1778"
+  HREF="node93.html">5.1.1 Motivation: the discrete</A>
+ &nbsp; <B>  <A NAME="tex2html1786"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1788"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00712000000000000000"></A><A NAME="ss-princopt-hjb"></A>
+<BR>
+5.1.2 Principle of optimality
+</H2>
+
+<P>
+We now return to the continuous-time optimal control problem that
+we have been studying since Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A>, defined by the
+control system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) and the Bolza cost
+functional&nbsp;(<A HREF="node52.html#e-Bolza">3.21</A>). For concreteness, assume that we are
+dealing with a fixed-time, free-endpoint problem, i.e., the target
+set is <!-- MATH
+ $S=\{t_1\}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ S= \{t_1\}\times\mathbb{R}^n$">
+. (Handling other target sets requires
+some modifications, on which we briefly comment in what follows.) We
+can then write the cost functional as
+<P><!-- MATH
+ \begin{displaymath}
+J(u)=\int_{t_0}^{t_1} L(t,x(t),u(t))dt+K(x(t_1)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="310" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_1} L(t,x(t),u(t))dt+K(x(t_1)).$">
+</DIV><P>
+</P>
+As we already remarked in Section&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A>, a more
+accurate notation for this functional would be <!-- MATH
+ $J(t_0,x_0,u)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1558.gif"
+ ALT="$ J(t_0,x_0,u)$">
+ as
+it depends on the initial data.
+
+<P>
+The basic idea of dynamic programming is to consider, instead of
+the problem of minimizing <!-- MATH
+ $J(t_0,x_0,u)$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1558.gif"
+ ALT="$ J(t_0,x_0,u)$">
+ for given <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ and
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, the <I>family</I> of minimization problems associated
+with the cost functionals
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-costs-family"></A><!-- MATH
+ \begin{equation}
+J(t,x,u)=\int_{t}^{t_1}L( s,x( s),u( s))d s+K(x(t_1))
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="344" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1559.gif"
+ ALT="$\displaystyle J(t,x,u)=\int_{t}^{t_1}L( s,x( s),u( s))d s+K(x(t_1))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ ranges over <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1560.gif"
+ ALT="$ [t_0,t_1)$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ ranges over <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+; here
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ on the right-hand side denotes the state trajectory
+corresponding to the control <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+ and satisfying <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ x(t)=x$">
+. (There is
+a slight abuse of notation here; the second argument <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ in&nbsp;(<A HREF="#e-costs-family">5.1</A>) is a fixed point, and only the third argument <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is a function of time.) In accordance with Bellman's
+roadmap, our goal is to derive a <I>dynamic relationship</I> among
+these problems, and ultimately to solve <I>all of them</I>.
+
+<P>
+To this end, let us introduce the <I>value function</I><A NAME="5293"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V-def"></A><!-- MATH
+ \begin{equation}
+V(t,x):=\inf_{u_{[t,t_1]}} J(t,x,u)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="187" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1562.gif"
+ ALT="$\displaystyle V(t,x):=\inf_{u_{[t,t_1]}} J(t,x,u)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the notation <!-- MATH
+ $u_{[t,t_1]}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1563.gif"
+ ALT="$ u_{[t,t_1]}$">
+ indicates that the control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is
+restricted to the interval <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ [t,t_1]$">
+. Loosely speaking, we can
+think of <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ V(t,x)$">
+ as the optimal cost (cost-to-go) from
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+. It is important to note, however, that the existence of
+an optimal control--and hence of the optimal cost--is not
+actually assumed, which is why we work with an infimum rather than
+a minimum in&nbsp;(<A HREF="#e-V-def">5.2</A>). If an optimal control exists, then
+the infimum turns into a minimum and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ coincides with the
+optimal cost-to-go. In general, the infimum need not be achieved,
+and might even equal <IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ -\infty$">
+ for some <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+.
+
+<P>
+It is clear that the value function must satisfy the boundary
+condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V-bound-cond"></A><!-- MATH
+ \begin{equation}
+V(t_1,x)=K(x)\qquad \forall\,x\in\mathbb{R}^n.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="231" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1566.gif"
+ ALT="$\displaystyle V(t_1,x)=K(x)\qquad \forall\,x\in\mathbb{R}^n.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In particular, if there is no terminal cost
+(<IMG
+ WIDTH="52" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img836.gif"
+ ALT="$ K\equiv0$">
+) then we have <!-- MATH
+ $V(t_1,x)=0$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1567.gif"
+ ALT="$ V(t_1,x)=0$">
+. The boundary
+condition&nbsp;(<A HREF="#e-V-bound-cond">5.3</A>) is of course a consequence of our
+specific problem formulation. If the problem involved a more
+general target set <!-- MATH
+ $S\subset [t_0,\infty)\times \mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img850.gif"
+ ALT="$ S\subset[t_0,\infty)\times\mathbb{R}^n$">
+, then the boundary
+condition would read <!-- MATH
+ $V(t,x)=K(x)$
+ -->
+<IMG
+ WIDTH="118" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1568.gif"
+ ALT="$ V(t,x)=K(x)$">
+ for <!-- MATH
+ $(t,x)\in S$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1569.gif"
+ ALT="$ (t,x)\in S$">
+.
+
+<P>
+The basic principle of dynamic programming for the present case is
+a continuous-time counterpart of the principle of optimality
+formulated in Section&nbsp;<A HREF="node93.html#ss-dynprog-dt">5.1.1</A>, already familiar to us
+from Chapter&nbsp;<A HREF="node61.html#c-mp">4</A>. Here we can state this property as
+follows, calling it again the <B>principle of optimality</B>:<A NAME="5307"></A>
+<I>For every <!-- MATH
+ $(t,x)\in[t_0,t_1)\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="152" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1570.gif"
+ ALT="$ (t,x)\in[t_0,t_1)\times\mathbb{R}^n$">
+ and every <!-- MATH
+ ${\scriptstyle\Delta}t\in(0,t_1-t]$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1571.gif"
+ ALT="$ {\scriptstyle\Delta}t\in(0,t_1-t]$">
+, the value function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ defined in&nbsp;(<A HREF="#e-V-def">5.2</A>) satisfies the relation</I>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V-printopt"></A><!-- MATH
+ \begin{equation}
+V(t,x)=\inf_{u_{[t,t+\Delta t]}}\left\{\int_t^{t+{\scriptstyle\Delta}t} L(
+s,x(s),u(s))d s+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))\right\}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="511" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1572.gif"
+ ALT="$\displaystyle V(t,x)=\inf_{u_{[t,t+\Delta t]}}\left\{\int_t^{t+{\scriptstyle\De...
+...( s,x(s),u(s))d s+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))\right\}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<I>where <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ on the right-hand side is the state
+trajectory corresponding to the control <!-- MATH
+ $u_{[t,t+{\scriptstyle\Delta}t]}$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1573.gif"
+ ALT="$ u_{[t,t+{\scriptstyle\Delta}t]}$">
+ and
+satisfying <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ x(t)=x$">
+</I>. The intuition behind this statement is that
+to search for an optimal control, we can search over a small time
+interval for a control that minimizes the cost over this interval
+plus the subsequent optimal cost-to-go. Thus the minimization
+problem on the interval <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ [t,t_1]$">
+ is split into two, one on
+<!-- MATH
+ $[t,t+{\scriptstyle\Delta}t]$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1574.gif"
+ ALT="$ [t,t+{\scriptstyle\Delta}t]$">
+ and the other on <!-- MATH
+ $[t+{\scriptstyle\Delta}t,t_1]$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1575.gif"
+ ALT="$ [t+{\scriptstyle\Delta}t,t_1]$">
+; see
+Figure&nbsp;<A HREF="#f-ct-princopt">5.3</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-ct-princopt"></A><A NAME="7912"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Continuous time: principle of optimality
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="328" HEIGHT="192" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1576.gif"
+ ALT="\includegraphics{figures/ct-princopt.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The above principle of optimality may seem obvious. However, it is
+important to justify it rigorously, especially since we are using an
+infimum and not assuming existence of optimal controls. We give
+``one half" of the proof by verifying that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-VgebarV"></A><!-- MATH
+ \begin{equation}
+V(t,x)\ge \overline V(t,x)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="130" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1577.gif"
+ ALT="$\displaystyle V(t,x)\ge \overline V(t,x)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $\overline V(t,x)$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1578.gif"
+ ALT="$ \overline V(t,x)$">
+ denotes the right-hand side
+of&nbsp;(<A HREF="#e-V-printopt">5.4</A>):
+<P><!-- MATH
+ \begin{displaymath}
+\overline V(t,x):=\inf_{u_{[t,t+\Delta t]}}\left\{\int_t^{t+{\scriptstyle\Delta}t}
+L( s,x(s),u(s))d s+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))\right\}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="524" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1579.gif"
+ ALT="$\displaystyle \overline V(t,x):=\inf_{u_{[t,t+\Delta t]}}\left\{\int_t^{t+{\scr...
+...s,x(s),u(s))d s+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))\right\}.
+$">
+</DIV><P>
+</P>
+By&nbsp;(<A HREF="#e-V-def">5.2</A>) and the definition of infimum, for every
+<!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+ there exists a control <!-- MATH
+ $u_\varepsilon$
+ -->
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1580.gif"
+ ALT="$ u_\varepsilon $">
+ on <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ [t,t_1]$">
+ such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-epsarb"></A><!-- MATH
+ \begin{equation}
+V(t,x)+\varepsilon \ge J(t,x,u_\varepsilon ). \
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="192" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1581.gif"
+ ALT="$\displaystyle V(t,x)+\varepsilon \ge J(t,x,u_\varepsilon ). \ $"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Writing <!-- MATH
+ $x_\varepsilon$
+ -->
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1582.gif"
+ ALT="$ x_\varepsilon $">
+ for the corresponding state trajectory, we have
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1583.gif"
+ ALT="$\displaystyle J(t,x,u_\varepsilon )$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="418" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1584.gif"
+ ALT="$\displaystyle =\int_t^{t+{\scriptstyle\Delta}t} L(s,x_\varepsilon (s),u_\vareps...
+...+{\scriptstyle\Delta} t,x_\varepsilon (t+{\scriptstyle\Delta}t),u_\varepsilon )$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="471" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1585.gif"
+ ALT="$\displaystyle \ge\int_t^{t+{\scriptstyle\Delta}t}L(s,x_\varepsilon (s),u_\varep...
+...criptstyle\Delta} t,x_\varepsilon (t+{\scriptstyle\Delta}t))\ge\overline V(t,x)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the two inequalities follow directly from the definitions of
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ and <!-- MATH
+ $\overline V$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1586.gif"
+ ALT="$ \overline V$">
+, respectively. Since&nbsp;(<A HREF="#e-epsarb">5.6</A>) holds
+with an arbitrary <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+, the desired
+inequality&nbsp;(<A HREF="#e-VgebarV">5.5</A>) is established.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1587.gif"
+ ALT="\begin{Exercise}
+Complete the proof of the principle of optimality by showing the
+reverse inequality $ V(t,x)\le \overline V(t,x) $.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1789"
+  HREF="node95.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1783"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1777"
+  HREF="node93.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1785"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1787"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1790"
+  HREF="node95.html">5.1.3 HJB equation</A>
+<B> Up:</B> <A NAME="tex2html1784"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1778"
+  HREF="node93.html">5.1.1 Motivation: the discrete</A>
+ &nbsp; <B>  <A NAME="tex2html1786"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1788"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

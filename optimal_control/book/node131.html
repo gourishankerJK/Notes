@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.4.1 Hybrid optimal control problem</TITLE>
+<META NAME="description" CONTENT="7.4.1 Hybrid optimal control problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node132.html">
+<LINK REL="previous" HREF="node130.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node132.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2336"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2330"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2324"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2332"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2334"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2337"
+  HREF="node132.html">7.4.2 Hybrid maximum principle</A>
+<B> Up:</B> <A NAME="tex2html2331"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2325"
+  HREF="node130.html">7.4 Maximum principle for</A>
+ &nbsp; <B>  <A NAME="tex2html2333"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2335"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00941000000000000000"></A>
+<A NAME="7445"></A>
+<BR>
+7.4.1 Hybrid optimal control problem
+</H2>
+
+<P>
+We begin by defining the class of hybrid control systems and associated optimal control problems that we want to study.
+The first ingredient of our hybrid control system is a collection of (time-invariant) control systems
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-collectionQ"></A><!-- MATH
+ \begin{equation}
+\dot x=f_q(x,u),\qquad q\in Q
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="180" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2170.gif"
+ ALT="$\displaystyle \dot x=f_q(x,u),\qquad q\in Q$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ is a finite index set; for simplicity, we assume that all the systems in the collection&nbsp;(<A HREF="#e-collectionQ">7.32</A>) share the same state space <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ and control set <!-- MATH
+ $U\subset\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ U\subset \mathbb{R}^m$">
+. The second ingredient is a collection of <I>switching surfaces</I><A NAME="7451"></A> (or <I>guards</I>)<A NAME="8037"></A> <!-- MATH
+ $S_{q,q'}\subset \mathbb{R}^{2n}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2171.gif"
+ ALT="$ S_{q,q'}\subset \mathbb{R}^{2n}$">
+, one for each pair <!-- MATH
+ $(q,q')\in Q\times Q$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2172.gif"
+ ALT="$ (q,q')\in Q\times Q$">
+. A function <!-- MATH
+ $x:[t_0,t_f]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2173.gif"
+ ALT="$ x:[t_0,t_f]\to\mathbb{R}^n$">
+ is an admissible trajectory of our hybrid system corresponding to a control <!-- MATH
+ $u:[t_0,t_f]\to U$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2174.gif"
+ ALT="$ u:[t_0,t_f]\to U$">
+ if there exist time instants
+<P><!-- MATH
+ \begin{displaymath}
+t_0<t_1<\dots<t_k<t_{k+1}:=t_f
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="234" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2175.gif"
+ ALT="$\displaystyle t_0&lt;t_1&lt;\dots&lt;t_k&lt;t_{k+1}:=t_f
+$">
+</DIV><P>
+</P>
+and indices <!-- MATH
+ $q_0,q_1,\dots,q_k\in Q$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2176.gif"
+ ALT="$ q_0,q_1,\dots,q_k\in Q$">
+
+such that <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-contevol-hybrid"></A><!-- MATH
+ \begin{equation}
+\dot x(t)=f_{q_i}(x(t),u(t))\qquad \forall\,t\in(t_i,t_{i+1}), \ i=0,1,\dots,k
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="411" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2177.gif"
+ ALT="$\displaystyle \dot x(t)=f_{q_i}(x(t),u(t))\qquad \forall\,t\in(t_i,t_{i+1}), \ i=0,1,\dots,k$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P><!-- MATH
+ \begin{displaymath}
+\begin{pmatrix}x(t_i^-)\\x(t_i^+)\end{pmatrix}\in S_{q_{i-1},q_i},\qquad i=1,\dots,k.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="278" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2178.gif"
+ ALT="$\displaystyle \begin{pmatrix}x(t_i^-)\\ x(t_i^+)\end{pmatrix}\in S_{q_{i-1},q_i},\qquad i=1,\dots,k.
+$">
+</DIV><P>
+</P>
+Here <IMG
+ WIDTH="45" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2179.gif"
+ ALT="$ x(t_i^-)$">
+ and <IMG
+ WIDTH="45" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2180.gif"
+ ALT="$ x(t_i^+)$">
+ are the values of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ right before and right after <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2181.gif"
+ ALT="$ t_i$">
+, respectively, and the value <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2182.gif"
+ ALT="$ x(t_i)$">
+ is taken to be equal to one of these one-sided limits, depending on the desired convention. At each possible discontinuity <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2181.gif"
+ ALT="$ t_i$">
+, a <I>discrete transition</I> (or <I>switching event</I>) is said to occur.
+The function <!-- MATH
+ $q:[t_0,t_f]\to Q$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2183.gif"
+ ALT="$ q:[t_0,t_f]\to Q$">
+ defined by <IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2184.gif"
+ ALT="$ q(t):=q_i$">
+ for <!-- MATH
+ $t\in[t_i,t_{i+1})$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2185.gif"
+ ALT="$ t\in[t_i,t_{i+1})$">
+ describes the evolution of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ along the trajectory; <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ is often called the <I>discrete state</I><A NAME="7470"></A> of the hybrid system. We can use it to rewrite&nbsp;(<A HREF="#e-contevol-hybrid">7.33</A>) more concisely as <!-- MATH
+ $\dot x(t)=f_{q(t)}(x(t),u(t))$
+ -->
+<IMG
+ WIDTH="169" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2186.gif"
+ ALT="$ \dot x(t)=f_{q(t)}(x(t),u(t))$">
+ for <IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2187.gif"
+ ALT="$ t\ne t_i$">
+, <!-- MATH
+ $i=1,\dots,k$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2188.gif"
+ ALT="$ i=1,\dots,k$">
+.
+
+<P>
+We consider cost functionals of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-hybrid"></A><!-- MATH
+ \begin{equation}
+J(u,\{t_i\},\{q_i\}):=\sum_{i=0}^k \int_{t_i}^{t_{i+1}}L_{q_i}(x(t),u(t))dt
++\sum_{i=1}^k\Phi_{q_{i-1},q_i}(x(t_i^-),x(t_i^+))
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="543" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2189.gif"
+ ALT="$\displaystyle J(u,\{t_i\},\{q_i\}):=\sum_{i=0}^k \int_{t_i}^{t_{i+1}}L_{q_i}(x(t),u(t))dt +\sum_{i=1}^k\Phi_{q_{i-1},q_i}(x(t_i^-),x(t_i^+))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $L_q:\mathbb{R}^n\times U\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2190.gif"
+ ALT="$ L_q:\mathbb{R}^n\times U\to\mathbb{R}$">
+ is the usual running cost and <!-- MATH
+ $\Phi_{q,q'}:\mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="157" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2191.gif"
+ ALT="$ \Phi_{q,q'}:\mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}$">
+ is the <I>switching cost</I>,<A NAME="7485"></A> for <IMG
+ WIDTH="68" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2192.gif"
+ ALT="$ q,q'\in Q$">
+.
+For simplicity, we do not include a terminal cost (this is no loss of generality, as terminal cost can be easily incorporated into the above running-plus-switching cost along the lines of Section&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A>).
+We also introduce
+an <I>endpoint constraint</I>, characterized by a set <!-- MATH
+ $E_{q,q'}\subset \mathbb{R}^{2n}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2193.gif"
+ ALT="$ E_{q,q'}\subset \mathbb{R}^{2n}$">
+ for each pair <!-- MATH
+ $(q,q')\in Q\times Q$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2172.gif"
+ ALT="$ (q,q')\in Q\times Q$">
+, according to which the trajectory <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ must satisfy
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-endpoint-constraint-hybrid"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}x(t_0)\\x(t_f)\end{pmatrix}\in E_{q_0,q_k}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="137" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2194.gif"
+ ALT="$\displaystyle \begin{pmatrix}x(t_0)\\ x(t_f)\end{pmatrix}\in E_{q_0,q_k}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(Here <!-- MATH
+ $E_{q_0,q_k}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2195.gif"
+ ALT="$ E_{q_0,q_k}$">
+ plays the same role as <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ S_2$">
+ at the end of Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A>.)<A NAME="7499"></A>
+Then, the hybrid optimal control problem consists in finding a control that minimizes the cost&nbsp;(<A HREF="#e-cost-hybrid">7.34</A>) subject to the endpoint constraint&nbsp;(<A HREF="#e-endpoint-constraint-hybrid">7.35</A>). We emphasize that the choice of a control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is accompanied by the choice of two finite sequences <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2196.gif"
+ ALT="$ \{t_i\}$">
+ and <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2197.gif"
+ ALT="$ \{q_i\}$">
+, to which we henceforth refer as the <I>time sequence</I> and <I>switching sequence</I>, respectively.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2336"
+  HREF="node132.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2330"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2324"
+  HREF="node130.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2332"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2334"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2337"
+  HREF="node132.html">7.4.2 Hybrid maximum principle</A>
+<B> Up:</B> <A NAME="tex2html2331"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2325"
+  HREF="node130.html">7.4 Maximum principle for</A>
+ &nbsp; <B>  <A NAME="tex2html2333"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2335"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

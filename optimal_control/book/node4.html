@@ -1,0 +1,370 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>1.1 Optimal control problem</TITLE>
+<META NAME="description" CONTENT="1.1 Optimal control problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html414"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html408"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html402"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html410"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html412"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html415"
+  HREF="node5.html">1.2 Some background on</A>
+<B> Up:</B> <A NAME="tex2html409"
+  HREF="node3.html">1. Introduction</A>
+<B> Previous:</B> <A NAME="tex2html403"
+  HREF="node3.html">1. Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html411"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html413"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00310000000000000000"></A><A NAME="ss-1.1"></A><A NAME="219"></A>
+<BR>
+1.1 Optimal control problem
+</H1>
+We begin by describing, very informally and in general terms, the class of
+optimal control problems that we want to eventually be able to solve.
+The goal of this
+brief motivational discussion is
+to fix the basic concepts and terminology without worrying about technical details.
+
+<P>
+The first basic ingredient of an optimal control problem is a
+<I>control system</I>.<A NAME="221"></A> It generates possible behaviors. In this book, control systems will be described by ordinary
+differential equations (ODEs) of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-control-system"></A><!-- MATH
+ \begin{equation}
+\dot x=f(t,x,u),\qquad x(t_0)=x_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="223" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\displaystyle \dot x=f(t,x,u),\qquad x(t_0)=x_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is the <I>state</I> taking values in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is the
+<I>control input</I> taking
+values in some <I>control set</I><A NAME="228"></A> <!-- MATH
+ $U\subset \mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.gif"
+ ALT="$ U\subset \mathbb{R}^m$">
+, <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ is <I>time</I>,
+<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ is the
+<I>initial time</I>, and <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ is the <I>initial state</I>. Both <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ are
+functions of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, but we will often suppress their time arguments.
+
+<P>
+The second basic ingredient is the <I>cost functional</I>.<A NAME="233"></A> It associates a cost
+with each possible behavior. For a given initial data <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+,
+the behaviors are parameterized by control functions <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Thus, the cost
+functional assigns a cost value to each admissible control. In this book,
+cost functionals will be denoted by <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ and will be of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-first"></A><!-- MATH
+ \begin{equation}
+J(u):=\int_{t_0}^{t_f} L(t,x(t),u(t))dt+K(t_f,x_f)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="314" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$\displaystyle J(u):=\int_{t_0}^{t_f} L(t,x(t),u(t))dt+K(t_f,x_f)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ are given functions (<I>running cost</I><A NAME="240"></A> and
+<I>terminal cost</I>,<A NAME="242"></A> respectively),
+<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ is the <I>final</I> (or <I>terminal</I>) <I>time</I><A NAME="246"></A><A NAME="247"></A> which is
+either free or fixed, and
+<!-- MATH
+ $x_f:=x(t_f)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ x_f:=x(t_f)$">
+ is the <I>final</I> (or <I>terminal</I>) <I>state</I><A NAME="251"></A><A NAME="252"></A> which is either free or fixed or belongs to
+some given target set.
+Note again that <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ itself is a function of time; this is why we say that <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ is a
+<I>functional</I> (a real-valued function on a space of functions).
+
+<P>
+The optimal control problem can then be posed as follows:
+Find a control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ that minimizes <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$ J(u)$">
+ over all
+admissible controls (or at least over
+nearby controls).<A NAME="254"></A>
+Later we will need to come back to this problem formulation
+and fill in some technical details. In particular, we will need to specify
+what regularity properties should be imposed on the function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+and on the admissible controls <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ to ensure that state trajectories of the control
+system are well defined. Several versions of the above problem (depending, for
+example, on the role of the final time and the final state) will be
+stated more precisely when we are ready to study them. The reader who wishes
+to preview this material can find it in Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A>.
+
+<P>
+It can be argued that optimality is a universal principle of life, in the sense
+that
+many--if not most--processes in nature are governed by solutions to some
+optimization problems
+(although we may never know exactly what is being optimized). We will soon see
+that fundamental laws of mechanics can be cast in an optimization context. From
+an engineering point of view, optimality provides a very useful design principle,
+and the cost to be minimized (or the profit to be maximized) is often naturally
+contained in the problem itself. Some examples of optimal control problems arising
+in applications include the following:<A NAME="257"></A>
+
+<P>
+<BR>
+
+<UL>
+<LI>Send a rocket to the moon with minimal fuel consumption;
+</LI>
+<LI>Produce a given amount of chemical in minimal time and/or
+ with minimal amount of catalyst used (or maximize the amount produced
+ in given time);
+</LI>
+<LI>Bring sales of a new product to a desired level
+while minimizing the amount of money spent on the advertising campaign;
+</LI>
+<LI>Maximize communication throughput or accuracy for a given channel
+  bandwidth/capacity.
+</LI>
+</UL>
+<BR>
+The reader will easily think of other examples. Several specific optimal control problems will be examined in detail later in the book. We briefly discuss one simple example here to better illustrate the general problem formulation.
+
+<P>
+<BR>
+<A NAME="x-parking-intro"></A><IMG
+ WIDTH="555" HEIGHT="336" ALIGN="BOTTOM" BORDER="0"
+ SRC="img33.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8118\index{parking problem}
+Consider a ...
+...mplete description of the optimal control requires some work.)~\qed\end{Example}">
+<BR>
+
+<P>
+In this book we focus on the <I>mathematical theory</I> of optimal control.
+We will not
+undertake an in-depth study of any of the applications mentioned above. Instead,
+we will
+concentrate
+on the fundamental aspects common to all of them. After finishing this
+book, the reader familiar with a specific application domain
+should have no difficulty reading papers that deal with
+applications of optimal control theory to that domain, and will be prepared
+to think creatively about new ways of applying the theory.
+
+<P>
+We can view the optimal control problem
+ as that of choosing the best <I>path</I> among all paths
+feasible for the system, with respect to the given cost function. In this
+sense, the problem is <I>infinite-dimensional</I>, because the
+space of paths is an infinite-dimensional function space. This problem
+is also a <I>dynamic</I> optimization problem, in the sense that it involves
+a dynamical system and time.
+However, to gain appreciation for this problem,
+it will be useful to first recall some basic facts about
+the more standard static finite-dimensional optimization problem,
+concerned with finding
+a minimum of a given function <!-- MATH
+ $f:\mathbb{R}^n\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$ f:\mathbb{R}^n\to\mathbb{R}$">
+.
+Then, when we get back to infinite-dimensional optimization, we will
+more clearly see the similarities but also the differences.
+
+<P>
+The subject studied in this book has a rich and beautiful history; the topics
+are ordered in such a way as to allow us to trace its chronological development.
+In particular, we will start with <I>calculus of variations</I>, which deals
+with path optimization but not in the setting of control systems.
+The optimization problems treated by calculus of variations are infinite-dimensional
+but not dynamic. We will then
+make a transition to optimal control theory and develop a truly dynamic
+framework. This modern treatment is based on two key developments, initially
+independent but ultimately closely related and complementary
+to each other: the maximum principle
+and the principle of dynamic programming.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html414"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html408"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html402"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html410"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html412"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html415"
+  HREF="node5.html">1.2 Some background on</A>
+<B> Up:</B> <A NAME="tex2html409"
+  HREF="node3.html">1. Introduction</A>
+<B> Previous:</B> <A NAME="tex2html403"
+  HREF="node3.html">1. Introduction</A>
+ &nbsp; <B>  <A NAME="tex2html411"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html413"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

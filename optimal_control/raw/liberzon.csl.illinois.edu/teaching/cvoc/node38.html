@@ -1,0 +1,714 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.5.1 Integral constraints</TITLE>
+<META NAME="description" CONTENT="2.5.1 Integral constraints">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node39.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node37.html">
+<LINK REL="next" HREF="node39.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html929"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html923"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html917"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html925"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html927"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html930"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+<B> Up:</B> <A NAME="tex2html924"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Previous:</B> <A NAME="tex2html918"
+  HREF="node37.html">2.5 Variational problems with</A>
+ &nbsp; <B>  <A NAME="tex2html926"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html928"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00451000000000000000"></A><A NAME="ss-constraint-int"></A><A NAME="1924"></A><A NAME="1925"></A>
+<BR>
+2.5.1 Integral constraints
+</H2>
+
+<P>
+Suppose that we augment the Basic Calculus of Variations
+Problem with an additional constraint of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-constraint-int"></A><!-- MATH
+ \begin{equation}
+C(y):=\int_a^b M(x,y(x),y'(x))dx=C_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="285" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img506.gif"
+ ALT="$\displaystyle C(y):=\int_a^b M(x,y(x),y'(x))dx=C_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.44)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ stands for the ``constraint" functional, <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ is a function from the same
+class as <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+, and <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$ C_0$">
+ is a given constant. In other words, the problem is
+to minimize the functional
+given by&nbsp;(<A HREF="node25.html#e-cvbasic-J">2.9</A>) over <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+
+satisfying the boundary conditions&nbsp;(<A HREF="node25.html#e-cvbasic-bc">2.8</A>)
+and subject to the integral constraint&nbsp;(<A HREF="#e-constraint-int">2.45</A>).
+For simplicity, we are considering the case of only one
+constraint.
+We already saw examples of such constrained problems, namely,
+Dido's problem and the catenary problem.
+
+<P>
+Assume that a given curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremum.
+What follows is a <I>heuristic argument</I> motivated by our earlier
+derivation of the first-order
+necessary condition for constrained optimality in the finite-dimensional case
+(involving Lagrange multipliers).
+Let us consider perturbed curves of the familiar form
+<P><!-- MATH
+ \begin{displaymath}
+y+\alpha\eta.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img508.gif"
+ ALT="$\displaystyle y+\alpha\eta.
+$">
+</DIV><P>
+</P>
+To be admissible, the perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ must
+preserve the constraint (in addition to vanishing at the endpoints as before). In other words, we must have <!-- MATH
+ $C(y+\alpha\eta)=C_0$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img509.gif"
+ ALT="$ C(y+\alpha\eta)=C_0$">
+ for all <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ sufficiently close to 0. In terms of the first variation of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+, this property is easily seen to imply that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-deltaC"></A><!-- MATH
+ \begin{equation}
+\left.\delta C\right|_{y}(\eta)=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img510.gif"
+ ALT="$\displaystyle \left.\delta C\right\vert _{y}(\eta)=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.45)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Repeating the
+same calculation as in our original derivation of the Euler-Lagrange
+equation, we obtain from this that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-eta-constr"></A><!-- MATH
+ \begin{equation}
+\int_a^b\Big({M}_{y}(x,y(x),y'(x))-
+\frac d{dx}{M}_{y'}(x,y(x),y'(x))\Big)\eta(x)dx=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="456" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img511.gif"
+ ALT="$\displaystyle \int_a^b\Big({M}_{y}(x,y(x),y'(x))- \frac d{dx}{M}_{y'}(x,y(x),y'(x))\Big)\eta(x)dx=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.46)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Now our basic first-order necessary condition&nbsp;(<A HREF="node15.html#e-1st-nec-inf">1.37</A>) implies that
+for every <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ satisfying&nbsp;(<A HREF="#e-eta-constr">2.47</A>), we must have
+<P><!-- MATH
+ \begin{displaymath}
+\left.\delta J\right|_{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),y'(x))-\frac
+d{dx}{L}_{y'}(x,y(x),y'(x))\Big)\eta(x)dx=0.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="529" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img512.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),y'(x))-\frac
+d{dx}{L}_{y'}(x,y(x),y'(x))\Big)\eta(x)dx=0.
+$">
+</DIV><P>
+</P>
+This conclusion can be summarized as follows:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ifMthenL"></A><!-- MATH
+ \begin{equation}
+\int_a^b\left({L}_{y}-\frac
+d{dx}{L}_{y'}\right)\eta(x)dx=0 \qquad \forall\,\eta\  \text{ such
+that }\int_a^b\left({M}_{y}-\frac
+d{dx}{M}_{y'}\right)\eta(x)dx=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="293" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img513.gif"
+ ALT="$\displaystyle \int_a^b\left({L}_{y}-\frac d{dx}{L}_{y'}\right)\eta(x)dx=0 \qquad \forall\,\eta\ $">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="246" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img514.gif"
+ ALT="$\displaystyle \int_a^b\left({M}_{y}-\frac d{dx}{M}_{y'}\right)\eta(x)dx=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.47)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The reader will note that&nbsp;(<A HREF="#e-ifMthenL">2.48</A>)
+is quite similar to the condition&nbsp;(<A HREF="node11.html#e-impl-lmfd">1.21</A>) on
+page&nbsp;<A HREF="node11.html#p-impl-lmfd"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>. It also has a similar consequence, namely, that
+there exists a constant <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ (a <I>Lagrange multiplier</I>)<A NAME="1974"></A>
+such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-passing-to-lambda"></A><!-- MATH
+ \begin{equation}
+\left({L}_{y}-\frac
+d{dx}{L}_{y'}\right)+\lambda^*\left({M}_{y}-\frac
+d{dx}{M}_{y'}\right)=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="315" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img515.gif"
+ ALT="$\displaystyle \left({L}_{y}-\frac d{dx}{L}_{y'}\right)+\lambda^*\left({M}_{y}-\frac d{dx}{M}_{y'}\right)=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.48)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+.
+Rearranging terms,
+we see that
+this is equivalent to
+<P><!-- MATH
+ \begin{displaymath}
+{(L+\lambda^* M)}_{y}=\frac
+d{dx}{(L+\lambda^* M)}_{y'}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="236" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img516.gif"
+ ALT="$\displaystyle {(L+\lambda^* M)}_{y}=\frac
+d{dx}{(L+\lambda^* M)}_{y'}
+$">
+</DIV><P>
+</P>
+which amounts to saying that the Euler-Lagrange equation holds for the augmented
+Lagrangian <!-- MATH
+ $L+\lambda^* M$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img517.gif"
+ ALT="$ L+\lambda^* M$">
+.<A NAME="1993"></A> In other words, <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal of the
+augmented cost functional<A NAME="1994"></A><A NAME="1995"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-int-L+lambdaM"></A><!-- MATH
+ \begin{equation}
+(J+\lambda^* C)(y)=\int_a^b \left(L(x,y(x),y'(x))+\lambda^* M(x,y(x),y'(x))\right)dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="484" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img518.gif"
+ ALT="$\displaystyle (J+\lambda^* C)(y)=\int_a^b \left(L(x,y(x),y'(x))+\lambda^* M(x,y(x),y'(x))\right)dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.49)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A closer inspection of the above argument reveals, however,
+ that we left a couple of gaps.
+First, we did not justify the step of passing from&nbsp;(<A HREF="#e-ifMthenL">2.48</A>)
+to&nbsp;(<A HREF="#e-passing-to-lambda">2.49</A>). In the finite-dimensional case, we had to make
+the corresponding step of passing from&nbsp;(<A HREF="node11.html#e-impl-lmfd">1.21</A>)
+to&nbsp;(<A HREF="node11.html#e-inspan">1.22</A>) which then gave&nbsp;(<A HREF="node11.html#e-lagr-mult">1.25</A>); we
+would need to construct a similar reasoning here, treating the integrals
+in&nbsp;(<A HREF="#e-ifMthenL">2.48</A>) as inner products of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ with the functions in parentheses
+(inner products in <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+). Second, there was actually
+ a more serious logical flaw: the condition&nbsp;(<A HREF="#e-deltaC">2.46</A>) is <I>necessary</I>
+  for
+ the perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ to preserve the constraint&nbsp;(<A HREF="#e-constraint-int">2.45</A>),
+ but we do not know whether
+ it is <I>sufficient</I>. Without this sufficiency, the validity of&nbsp;(<A HREF="#e-ifMthenL">2.48</A>) is
+ in serious doubt. In the finite-dimensional case, to reach&nbsp;(<A HREF="node11.html#e-impl-lmfd">1.21</A>)
+ we used the fact that&nbsp;(<A HREF="node11.html#e-tangent-char">1.20</A>) was a necessary and sufficient
+ condition for <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ to be a tangent vector; we did not, however, give a proof
+ of the sufficiency part (which is not trivial).
+
+<P>
+It is also important to recall that in the finite-dimensional case studied
+in Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>, the first-order
+necessary condition for constrained optimality in terms of Lagrange multipliers
+is valid only when an additional technical assumption holds, namely,
+the extremum must be a regular point of the constraint surface. This assumption
+is needed to rule out degenerate situations (see Exercise&nbsp;<A HREF="node11.html#z-regular">1.2</A>);
+in fact,
+it enables precisely the sufficiency part
+ mentioned in the previous paragraph. It turns out that in the present case,
+ a degenerate situation
+ arises when the test curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ satisfies the constraint but all nearby
+ curves violate it. This can happen if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+
+ is an extremal of the constraint functional <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+,
+ i.e., satisfies the Euler-Lagrange equation for <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+. For example, consider the
+ length constraint
+<!-- MATH
+ $C(y):=\int_0^1
+\sqrt{1+(y')^2}dx=1$
+ -->
+<IMG
+ WIDTH="223" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img519.gif"
+ ALT="$ C(y):=\int_0^1
+\sqrt{1+(y')^2}dx=1$">
+ together with the boundary conditions
+ <!-- MATH
+ $y(0)=y(1)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img520.gif"
+ ALT="$ y(0)=y(1)=0$">
+. Clearly, <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img521.gif"
+ ALT="$ y\equiv 0$">
+ is the only admissible curve
+ (it is the unique global minimum
+ of the constraint functional),
+hence it automatically solves our constrained problem no matter what <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ is.
+The
+second integral in&nbsp;(<A HREF="#e-ifMthenL">2.48</A>) is 0 for every
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ since <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+.
+Thus if&nbsp;(<A HREF="#e-ifMthenL">2.48</A>) were true, it would imply that
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ must be an extremal of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+, but as we just explained this is not necessary.
+We see that if we hope for&nbsp;(<A HREF="#e-ifMthenL">2.48</A>) to be a necessary condition for
+constrained optimality, we need to assume that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is not an extremal of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+,
+so that there exist nearby curves at which <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ takes values both larger
+and smaller than <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$ C_0$">
+.
+
+<P>
+We can now <I>conjecture</I> the following <B>first-order necessary
+condition for constrained optimality</B>:<A NAME="2022"></A><A NAME="2023"></A> <I>If <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+ is an extremum for the
+constrained problem and is not an
+extremal of the constraint functional <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ (i.e., does
+not satisfy the Euler-Lagrange equation for <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+), then it is an extremal of
+the augmented cost functional&nbsp;(<A HREF="#e-int-L+lambdaM">2.50</A>) for some <!-- MATH
+ $\lambda^*\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img522.gif"
+ ALT="$ \lambda^*\in\mathbb{R}$">
+.</I>
+We can also state this condition more succinctly, combining
+the nondegeneracy assumption and the conclusion into one statement: <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ must
+satisfy the Euler-Lagrange equation for
+<!-- MATH
+ $\lambda^*_0L+\lambda^* M$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img523.gif"
+ ALT="$ \lambda^*_0L+\lambda^* M$">
+,
+where <!-- MATH
+ $\lambda^*_0$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ \lambda^*_0$">
+ and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ are constants (not both 0). Indeed,
+this means that either <!-- MATH
+ $\lambda^*_0=0$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img525.gif"
+ ALT="$ \lambda^*_0=0$">
+
+and  <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+, or <!-- MATH
+ $\lambda^*_0\ne 0$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img526.gif"
+ ALT="$ \lambda^*_0\ne 0$">
+ and
+ <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal of <!-- MATH
+ $J+
+(\lambda^*/\lambda^*_0) C$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img527.gif"
+ ALT="$ J+
+(\lambda^*/\lambda^*_0) C$">
+.
+The number
+<!-- MATH
+ $\lambda^*_0$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img524.gif"
+ ALT="$ \lambda^*_0$">
+ is called the <I>abnormal multiplier</I><A NAME="2026"></A> (it also has
+an analog
+in optimal control which will appear in Section&nbsp;<A HREF="node62.html#s-mp-statement">4.1</A>).
+
+<P>
+It turns out that this conjecture is correct.
+However, rather than fixing the above faulty argument, it is easier to
+give an alternative proof by proceeding along the lines of the second proof in
+Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="60" ALIGN="BOTTOM" BORDER="0"
+ SRC="img528.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 8527
+Write down a correct proof of the ...
+...ing the Inverse Function Theorem.\index{inverse function theorem}
+\end{Exercise}">
+<BR>
+
+<P>
+In the unconstrained case, as we noted earlier, the general solution of the
+second-order Euler-Lagrange differential
+equation depends on two arbitrary constants whose values are to be determined
+from the two boundary conditions. Here we have one additional parameter
+<IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ but also one additional constraint&nbsp;(<A HREF="#e-constraint-int">2.45</A>),
+so generically
+we still expect to obtain a unique extremal.<A NAME="2032"></A>
+
+<P>
+The generalization of
+the above necessary condition to problems with several
+constraints is straightforward: we need one Lagrange multiplier for each constraint
+(cf. Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>). The multiple-degrees-of-freedom
+setting also presents no complications.
+
+<P>
+Similarly to the finite-dimensional case, Lagrange's original intuition<A NAME="2035"></A>
+was to replace constrained minimization of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ with
+respect to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ by
+unconstrained minimization of
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Lagrange-augment"></A><!-- MATH
+ \begin{equation}
+\int_a^b Ldx +\lambda \left(\int_a^b Mdx-C_0\right)%=\int (L+\lambda M)-\bar c_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="227" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img529.gif"
+ ALT="$\displaystyle \int_a^b Ldx +\lambda \left(\int_a^b Mdx-C_0\right)%=\int (L+\lambda M)-\bar c_0
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.50)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with respect to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+. For curves satisfying the constraint,
+the values of the two functionals coincide. However, for the same
+reasons as in the discussion on page&nbsp;<A HREF="node11.html#p-lagrange-naive"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>,
+considering this augmented cost (which matches&nbsp;(<A HREF="#e-int-L+lambdaM">2.50</A>) except
+for an additive constant) does not lead to a rigorous justification of
+the necessary condition.
+
+<P>
+Equipped with the above necessary condition for the case of integral
+constraints as well as our previous experience with the Euler-Lagrange equation,
+we can now study Dido's
+isoperimetric problem and the catenary problem.
+
+<P>
+<BR>
+<A NAME="z-dido-catenary"></A><IMG
+ WIDTH="555" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img530.gif"
+ ALT="\begin{Exercise}
+Show that optimal curves for Dido's problem\index{Dido's isoper...
+...enary\index{catenary} problem
+satisfy~\eqref{e-catenary-solution}.\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html929"
+  HREF="node39.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html923"
+  HREF="node37.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html917"
+  HREF="node37.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html925"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html927"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html930"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+<B> Up:</B> <A NAME="tex2html924"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Previous:</B> <A NAME="tex2html918"
+  HREF="node37.html">2.5 Variational problems with</A>
+ &nbsp; <B>  <A NAME="tex2html926"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html928"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

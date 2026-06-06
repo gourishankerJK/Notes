@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3 First-order necessary conditions for weak extrema</TITLE>
+<META NAME="description" CONTENT="2.3 First-order necessary conditions for weak extrema">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node33.html">
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html768"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html762"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html756"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html764"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html766"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html769"
+  HREF="node28.html">2.3.1 Euler-Lagrange equation</A>
+<B> Up:</B> <A NAME="tex2html763"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html757"
+  HREF="node26.html">2.2.1 Weak and strong</A>
+ &nbsp; <B>  <A NAME="tex2html765"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html767"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00430000000000000000"></A><A NAME="s-1st-order-nec"></A>
+<BR>
+2.3 First-order necessary conditions for weak extrema
+</H1>
+
+<P>
+In this section we will derive the most fundamental result in calculus
+ of variations: the Euler-Lagrange equation. Unless stated otherwise,
+ we will be working with the Basic Calculus of Variations Problem defined
+ in Section&nbsp;<A HREF="node25.html#s-cv-basic">2.2</A>. Thus our function space <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is <!-- MATH
+ $\mathcal C^1([a,b],\mathbb{R})$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img349.gif"
+ ALT="$ \mathcal C^1([a,b],\mathbb{R})$">
+,
+ the subset <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ A$">
+ consists of functions <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ y\in V$">
+ satisfying the boundary
+ conditions&nbsp;(<A HREF="node25.html#e-cvbasic-bc">2.8</A>), and the functional <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ to be minimized takes
+ the form&nbsp;(<A HREF="node25.html#e-cvbasic-J">2.9</A>). The Euler-Lagrange equation provides a more explicit characterization of the first-order necessary condition&nbsp;(<A HREF="node15.html#e-1st-nec-inf">1.37</A>) for this situation.
+
+<P>
+In deriving the Euler-Lagrange equation, we will follow the basic variational approach presented in Section&nbsp;<A HREF="node15.html#ss-1st-var">1.3.2</A> and consider
+nearby curves of the  form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-perturbed-var"></A><!-- MATH
+ \begin{equation}
+y+\alpha \eta
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img350.gif"
+ ALT="$\displaystyle y+\alpha \eta$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the perturbation <!-- MATH
+ $\eta:[a,b]\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.gif"
+ ALT="$ \eta:[a,b]\to \mathbb{R}$">
+ is another <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve
+and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ varies in an interval around 0 in <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.gif"
+ ALT="$ \mathbb{R}$">
+. For <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ close to 0, these perturbed curves are close to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in the sense of the 1-norm. For this reason, the resulting first-order necessary condition handles weak extrema.
+However, since a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ strong
+extremum is automatically a weak extremum, every necessary
+condition for the latter is necessary for the former as well.
+Therefore, the Euler-Lagrange equation
+will apply to both weak and strong extrema, as long as we insist
+on working with <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ functions.  As we know,
+using the 0-norm allows us to relax the <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ requirement, but this will in turn necessitate a different approach (i.e., a refined perturbation family) when developing optimality conditions. We will thus refer to the conditions derived in this section as necessary conditions for weak extrema, in order to distinguish them from sharper conditions to be given later which apply specifically to strong extrema.
+Similar remarks apply to other necessary conditions to be derived in this chapter. The sufficient condition of Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>, on the other hand, will apply to weak minima only.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html770"
+  HREF="node28.html">2.3.1 Euler-Lagrange equation</A>
+<LI><A NAME="tex2html771"
+  HREF="node29.html">2.3.2 Historical remarks</A>
+<LI><A NAME="tex2html772"
+  HREF="node30.html">2.3.3 Technical remarks</A>
+<LI><A NAME="tex2html773"
+  HREF="node31.html">2.3.4 Two special cases</A>
+<LI><A NAME="tex2html774"
+  HREF="node32.html">2.3.5 Variable-endpoint problems</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html768"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html762"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html756"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html764"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html766"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html769"
+  HREF="node28.html">2.3.1 Euler-Lagrange equation</A>
+<B> Up:</B> <A NAME="tex2html763"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html757"
+  HREF="node26.html">2.2.1 Weak and strong</A>
+ &nbsp; <B>  <A NAME="tex2html765"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html767"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

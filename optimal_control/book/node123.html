@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.2 HJB equation, canonical equations, and characteristics</TITLE>
+<META NAME="description" CONTENT="7.2 HJB equation, canonical equations, and characteristics">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node126.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node118.html">
+<LINK REL="next" HREF="node124.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2220"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2214"
+  HREF="node118.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2208"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2216"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2218"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2221"
+  HREF="node124.html">7.2.1 Method of characteristics</A>
+<B> Up:</B> <A NAME="tex2html2215"
+  HREF="node118.html">7. Advanced Topics</A>
+<B> Previous:</B> <A NAME="tex2html2209"
+  HREF="node122.html">7.1.3 Symplectic geometry and</A>
+ &nbsp; <B>  <A NAME="tex2html2217"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2219"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00920000000000000000"></A><A NAME="s-characteristics"></A><A NAME="6897"></A><A NAME="6898"></A>
+<BR>
+7.2 HJB equation, canonical equations, and characteristics
+</H1>
+
+<P>
+We know from Section&nbsp;<A HREF="node95.html#ss-HJB">5.1.3</A> that the HJB equation is a PDE and is difficult to solve in general. In Section&nbsp;<A HREF="node99.html#s-relationships">5.2</A> we compared the HJB equation with the necessary conditions of the maximum principle and demonstrated, in particular, how solving the HJB equation for the value function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ formally leads to
+a solution of the canonical equations (via <!-- MATH
+ $p:=-{V}_{x}$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2062.gif"
+ ALT="$ p:=-{V}_{x}$">
+). In this section we discuss an important piece of the PDE theory which enables one, in principle, to solve a PDE with the  help of a suitable system of ODEs called the
+<I>characteristics</I>. We will show that the canonical equations arise as the characteristics of the HJB equation. Thus, compared to Section&nbsp;<A HREF="node99.html#s-relationships">5.2</A>, the method of characteristics takes us in the opposite direction. We will first introduce this method in the context of general PDEs and then specialize it to the setting of the HJB equation.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2222"
+  HREF="node124.html">7.2.1 Method of characteristics</A>
+<LI><A NAME="tex2html2223"
+  HREF="node125.html">7.2.2 Canonical equations as characteristics of the HJB
+equation</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2220"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2214"
+  HREF="node118.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2208"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2216"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2218"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2221"
+  HREF="node124.html">7.2.1 Method of characteristics</A>
+<B> Up:</B> <A NAME="tex2html2215"
+  HREF="node118.html">7. Advanced Topics</A>
+<B> Previous:</B> <A NAME="tex2html2209"
+  HREF="node122.html">7.1.3 Symplectic geometry and</A>
+ &nbsp; <B>  <A NAME="tex2html2217"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2219"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

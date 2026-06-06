@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.3.1.4 Initial sets</TITLE>
+<META NAME="description" CONTENT="4.3.1.4 Initial sets">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node79.html">
+<LINK REL="next" HREF="node84.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1615"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1609"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1605"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1611"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1613"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1616"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Up:</B> <A NAME="tex2html1610"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1606"
+  HREF="node82.html">4.3.1.3 Terminal cost</A>
+ &nbsp; <B>  <A NAME="tex2html1612"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1614"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00631400000000000000">
+4.3.1.4 Initial sets</A>
+</H3>
+
+<P>
+We now want to
+mention how the maximum principle can be extended in another direction. We usually
+assume that the initial state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ is fixed, while the final
+state <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+ may vary within some set <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ S_1$">
+. Here, let us briefly
+consider the possibility that <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ may vary as well, so that we
+have an initial set instead of a fixed initial state.<A NAME="4575"></A> We can
+impose separate constraints on <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ and <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+ or, more generally,
+we can require that <!-- MATH
+ $\Big({\textstyle{x_0}\atop
+\textstyle{x_f}}\Big)$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1324.gif"
+ ALT="$ \Big({\textstyle{x_0}\atop
+\textstyle{x_f}}\Big)$">
+ belong to some surface
+<IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ S_2$">
+ in <!-- MATH
+ $\mathbb{R}^{2n}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1326.gif"
+ ALT="$ \mathbb{R}^{2n}$">
+. The latter formulation allows us to
+capture situations where there is a joint constraint on <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ and
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+; for example, if the trajectory is to be closed--i.e., the
+initial state is free but the trajectory must return to it--then
+<IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ S_2$">
+ is the ``diagonal" in <!-- MATH
+ $\mathbb{R}^{2n}$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1326.gif"
+ ALT="$ \mathbb{R}^{2n}$">
+. The terminal time
+<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ can be either free or fixed, as before.
+
+<P>
+It turns out that this more general set-up can be easily handled
+by modifying the transversality condition, which will now involve
+the values of the costate both at the initial time and at the
+final time. Namely, the transversality condition will now say that
+the vector <!-- MATH
+ $\Big({\textstyle{p^*(t_0)}\atop
+\textstyle{-p^*(t_f)}}\Big)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1327.gif"
+ ALT="$ \Big({\textstyle{p^*(t_0)}\atop
+\textstyle{-p^*(t_f)}}\Big)$">
+ must be orthogonal to the
+tangent space to <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1325.gif"
+ ALT="$ S_2$">
+ at <!-- MATH
+ $\Big({\textstyle{x^*(t_0)}\atop
+\textstyle{x^*(t_f)}}\Big)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1328.gif"
+ ALT="$ \Big({\textstyle{x^*(t_0)}\atop
+\textstyle{x^*(t_f)}}\Big)$">
+:<A NAME="4585"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-transv-initset"></A><!-- MATH
+ \begin{equation}
+\left\langle \begin{pmatrix}
+    p^*(t_0)\\
+    -p^*(t_f)
+  \end{pmatrix},d\right\rangle=0 \qquad \forall\,d\in T_{\small\Big(\begin{matrix}
+   x^*(t_0)\\
+   x^*(t_f)
+  \end{matrix}\Big)}S_2.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="341" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1329.gif"
+ ALT="$\displaystyle \left\langle \begin{pmatrix}p^*(t_0)\\ -p^*(t_f) \end{pmatrix},d\...
+...ll\,d\in T_{\small\Big(\begin{matrix}x^*(t_0)\\ x^*(t_f) \end{matrix}\Big)}S_2.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.46)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The total number of boundary conditions for the system of canonical equations is still <IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1019.gif"
+ ALT="$ 2n$">
+, since each
+additional degree of freedom for <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1330.gif"
+ ALT="$ x^*(t_0)$">
+ leads to one additional constraint on <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1331.gif"
+ ALT="$ p^*(t_0)$">
+.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="59" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1332.gif"
+ ALT="\begin{Exercise}
+Give a heuristic argument in support of the transversality cond...
+...n appropriate modification of the proof of the maximum principle.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1615"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1609"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1605"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1611"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1613"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1616"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Up:</B> <A NAME="tex2html1610"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1606"
+  HREF="node82.html">4.3.1.3 Terminal cost</A>
+ &nbsp; <B>  <A NAME="tex2html1612"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1614"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

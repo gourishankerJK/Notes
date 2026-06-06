@@ -1,0 +1,419 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.4.3 Example: light reflection</TITLE>
+<META NAME="description" CONTENT="7.4.3 Example: light reflection">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node132.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node134.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2362"
+  HREF="node134.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2356"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2352"
+  HREF="node132.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2358"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2360"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2363"
+  HREF="node134.html">7.5 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html2357"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2353"
+  HREF="node132.html">7.4.2 Hybrid maximum principle</A>
+ &nbsp; <B>  <A NAME="tex2html2359"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2361"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00943000000000000000"></A><A NAME="ss-lightreflection-again"></A><A NAME="7554"></A>
+<BR>
+7.4.3 Example: light reflection
+</H2>
+
+<P>
+To illustrate the hybrid maximum principle, we apply it to the familiar light reflection example from Section&nbsp;<A HREF="node22.html#ss-light-reflrefr">2.1.2</A>. We model the propagation of a light ray through the <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+-dimensional space via the control system
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-light-reflection-hybrid"></A><!-- MATH
+ \begin{equation}
+\dot x=c(x)u,\qquad |u|=1
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="172" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2207.gif"
+ ALT="$\displaystyle \dot x=c(x)u,\qquad \vert u\vert=1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+, <!-- MATH
+ $c:\mathbb{R}^n\to(0,\infty)$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2208.gif"
+ ALT="$ c:\mathbb{R}^n\to(0,\infty)$">
+ is a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function that determines the (varying) speed of light, and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ taking values on the unit sphere in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ defines the direction of motion. We assume that the reflecting surface is a hyperplane, and  without loss of generality we take it to be <!-- MATH
+ $S:=\{x: x_n=0\}$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2209.gif"
+ ALT="$ S:=\{x: x_n=0\}$">
+. The initial point and the final point are assumed to lie in the same open half-space relative to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+.
+
+<P>
+We seek to derive a necessary condition for a trajectory <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ that starts at a given initial point <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ at time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+, gets reflected off <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ at some time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, and arrives at a given final point <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+ at time <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ to be locally time-optimal
+with respect to trajectories that hit <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ at nearby points.
+This optimal control problem is not inherently hybrid, since&nbsp;(<A HREF="#e-light-reflection-hybrid">7.38</A>) is a standard control system and it is capable of producing reflected trajectories. However, the classical formulation of the maximum principle does not allow us to incorporate the fact that we are only interested in trajectories that hit <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ along the way.
+With the hybrid formulation, it is easy to do so by considering a hybrid system with a single discrete state location <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ (i.e., <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2210.gif"
+ ALT="$ Q=\{q\}$">
+) and the guard
+<!-- MATH
+ $S_{q,q}:=\Big\{\Big({\textstyle{x}\atop
+\textstyle{x'}}\Big):x=x'\in S\Big\}$
+ -->
+<IMG
+ WIDTH="217" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2211.gif"
+ ALT="$ S_{q,q}:=\Big\{\Big({\textstyle{x}\atop
+\textstyle{x'}}\Big):x=x'\in S\Big\}$">
+. In this hybrid system, discrete transitions occur when the trajectory hits <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+, but the underlying control system&nbsp;(<A HREF="#e-light-reflection-hybrid">7.38</A>) does not change and the trajectory remains continuous. The switching sequence associated with our candidate optimal trajectory <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is <IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2212.gif"
+ ALT="$ \{q,q\}$">
+, and the hybrid maximum principle captures local optimality over nearby trajectories with the same switching sequence--which is precisely what we want.
+
+<P>
+Applying the hybrid maximum principle to this problem entails just a few straightforward computations. The Hamiltonian is <!-- MATH
+ $H=\langle p,c(x)u\rangle +p_0$
+ -->
+<IMG
+ WIDTH="151" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2213.gif"
+ ALT="$ H=\langle p,c(x)u\rangle +p_0$">
+. The Hamiltonian maximization condition gives <!-- MATH
+ $u^*=p^*/|p^*|$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2214.gif"
+ ALT="$ u^*=p^*/\vert p^*\vert$">
+ and <!-- MATH
+ $\left.H\right|_{*}=c(x^*)|p^*|+p_0^*$
+ -->
+<IMG
+ WIDTH="159" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2215.gif"
+ ALT="$ \left.H\right\vert _{*}=c(x^*)\vert p^*\vert+p_0^*$">
+. Since the final time is free, we have <!-- MATH
+ $\left.H\right|_{*}\equiv 0$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ \left .H\right \vert _{*}\equiv 0$">
+ which in view of the nontriviality condition implies that <!-- MATH
+ $p_0^*\ne 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$ p_0^*\ne 0$">
+ and <!-- MATH
+ $p^*(t)\ne 0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1431.gif"
+ ALT="$ p^*(t)\ne 0$">
+ for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. Normalizing them so that <IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img995.gif"
+ ALT="$ p_0^*=-1$">
+, we obtain <!-- MATH
+ $c(x^*)|p^*|\equiv 1$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2216.gif"
+ ALT="$ c(x^*)\vert p^*\vert\equiv 1$">
+ hence <!-- MATH
+ $u^*=p^* c(x^*)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2217.gif"
+ ALT="$ u^*=p^* c(x^*)$">
+. Both the costate <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ and the optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ are continuous except possibly at the switching time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. Since there is no switching cost, the switching condition tells us that
+the vector <!-- MATH
+ $\Big({\textstyle{-p^*(t_1^-)}\atop
+\textstyle{p^*(t_1^+)}}\Big)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2218.gif"
+ ALT="$ \Big({\textstyle{-p^*(t_1^-)}\atop
+\textstyle{p^*(t_1^+)}}\Big)$">
+ must be orthogonal to the
+tangent space to <IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2219.gif"
+ ALT="$ S_{q,q}$">
+ at <!-- MATH
+ $\Big({\textstyle{x^*(t_1)}\atop
+\textstyle{x^*(t_1)}}\Big)$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2220.gif"
+ ALT="$ \Big({\textstyle{x^*(t_1)}\atop
+\textstyle{x^*(t_1)}}\Big)$">
+. This tangent space is <IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2219.gif"
+ ALT="$ S_{q,q}$">
+ itself, and vectors in it have the form <!-- MATH
+ $(x_1,\dots,x_{n-1},0,x_1,\dots,x_{n-1},0)^T$
+ -->
+<IMG
+ WIDTH="253" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2221.gif"
+ ALT="$ (x_1,\dots,x_{n-1},0,x_1,\dots,x_{n-1},0)^T$">
+. It follows that <!-- MATH
+ $p^*_i(t_1^+)=p^*_i(t_1^-)$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2222.gif"
+ ALT="$ p^*_i(t_1^+)=p^*_i(t_1^-)$">
+ for <!-- MATH
+ $i=1,\dots,n-1$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2223.gif"
+ ALT="$ i=1,\dots,n-1$">
+; in other words, <!-- MATH
+ $p^*_1,\dots,p^*_{n-1}$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2224.gif"
+ ALT="$ p^*_1,\dots,p^*_{n-1}$">
+ are continuous at <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, hence so are <!-- MATH
+ $u^*_1,\dots,u^*_{n-1}$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2225.gif"
+ ALT="$ u^*_1,\dots,u^*_{n-1}$">
+. Only the last component of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ can be discontinuous at <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. But since <!-- MATH
+ $|u^*|=\sqrt{(u_1^*)^2+\dots+(u_n^*)^2}$
+ -->
+<IMG
+ WIDTH="213" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2226.gif"
+ ALT="$ \vert u^*\vert=\sqrt{(u_1^*)^2+\dots+(u_n^*)^2}$">
+ is to remain equal to 1, it must be that <!-- MATH
+ $u^*_n(t_1^+)=\pm u^*_n(t_1^-)$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2227.gif"
+ ALT="$ u^*_n(t_1^+)=\pm u^*_n(t_1^-)$">
+, i.e., <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2228.gif"
+ ALT="$ u^*_n$">
+ either stays continuous or flips its sign at <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. Of these two options, only the latter is possible because the light ray cannot pass through <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+. We conclude that the velocity vectors before and after the reflection differ only in the component orthogonal to the reflection surface, and the difference is only in the minus sign. We have of course recovered the well-known law of reflection.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2362"
+  HREF="node134.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2356"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2352"
+  HREF="node132.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2358"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2360"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2363"
+  HREF="node134.html">7.5 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html2357"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2353"
+  HREF="node132.html">7.4.2 Hybrid maximum principle</A>
+ &nbsp; <B>  <A NAME="tex2html2359"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2361"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.2.7 Separating hyperplane</TITLE>
+<META NAME="description" CONTENT="4.2.7 Separating hyperplane">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node73.html">
+<LINK REL="previous" HREF="node71.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node73.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1458"
+  HREF="node73.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1452"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1446"
+  HREF="node71.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1454"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1456"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1459"
+  HREF="node73.html">4.2.8 Adjoint equation</A>
+<B> Up:</B> <A NAME="tex2html1453"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1447"
+  HREF="node71.html">4.2.6 Key topological lemma</A>
+ &nbsp; <B>  <A NAME="tex2html1455"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1457"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00627000000000000000"></A><A NAME="ss-hyperplane"></A>
+<BR>
+4.2.7 Separating hyperplane
+</H2>
+
+<P>
+A standard result in convex
+analysis known as
+the Separating Hyperplane Theorem<A NAME="4133"></A><A NAME="4134"></A> (see, e.g., [<A
+ HREF="node135.html#bertsekas-nonlinear">Ber99</A>, Proposition&nbsp;B.13] or&nbsp;[<A
+ HREF="node135.html#boyd-convexbook">BV04</A>, Section&nbsp;2.5.1]) says that if  <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ are two nonempty disjoint convex sets then there exists a hyperplane that
+<I>separates</I> them; by this we mean that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ is contained in one of the two closed half-spaces created by the hyperplane
+and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is contained in
+  the other.
+The ray <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+ is a convex set,<A NAME="4138"></A> and from the convexity of the terminal cone <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ it is easy to see that its interior is convex as well. Lemma&nbsp;<A HREF="node71.html#l-key">4.1</A> guarantees that <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+ does not intersect the interior of <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+. Therefore, we can apply the Separating Hyperplane Theorem to conclude the existence of a hyperplane separating <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+ from the interior of <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+, and hence from <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ itself.<A NAME="tex2html48"
+  HREF="footnode.html#foot7845"><SUP>4.3</SUP></A>Obviously, this separating hyperplane must pass through the point <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+ which is a common point of <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ and <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+. Such a hyperplane need not be unique.
+The normal to the hyperplane is a nonzero vector in <!-- MATH
+ $\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$ \mathbb{R}^{n+1}$">
+ (it is defined up to a constant multiple once we fix the hyperplane). Let us denote this normal vector by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-normal-def"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="73" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1194.gif"
+ ALT="$\displaystyle \begin{pmatrix}p_0^* \\ p^*(t^*) \end{pmatrix}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $p_0^*\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1195.gif"
+ ALT="$ p_0^*\in\mathbb{R}$">
+ and <!-- MATH
+ $p^*(t^*)\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1196.gif"
+ ALT="$ p^*(t^*)\in\mathbb{R}^n$">
+ are, by definition, its <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+-component and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-component, respectively. Then the equation
+of the hyperplane is
+<P><!-- MATH
+ \begin{displaymath}
+\left\langle\begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix},y\right\rangle=\left\langle\begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix},y^*(t^*)\right\rangle
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="292" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1197.gif"
+ ALT="$\displaystyle \left\langle\begin{pmatrix}
+p_0^* \\
+p^*(t^*)
+\end{pmatrix},y...
+...angle\begin{pmatrix}
+p_0^* \\
+p^*(t^*)
+\end{pmatrix},y^*(t^*)\right\rangle
+$">
+</DIV><P>
+</P>
+and the separation property is formally written as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-delta-le0"></A><!-- MATH
+ \begin{equation}
+\left\langle\begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix},\delta\right\rangle\le 0\qquad\forall\,
+  \delta \ \text{ such that }\, y^*(t^*)+\delta\in C_{t^*}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="212" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1198.gif"
+ ALT="$\displaystyle \left\langle\begin{pmatrix}p_0^* \\ p^*(t^*) \end{pmatrix},\delta\right\rangle\le 0\qquad\forall\, \delta \ $">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1199.gif"
+ ALT="$\displaystyle \, y^*(t^*)+\delta\in C_{t^*}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-mu-ge0"></A><!-- MATH
+ \begin{equation}
+\left\langle\begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix},\mu\right\rangle\ge 0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="152" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1200.gif"
+ ALT="$\displaystyle \left\langle\begin{pmatrix}p_0^* \\ p^*(t^*) \end{pmatrix},\mu\right\rangle\ge 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1175.gif"
+ ALT="$ \mu$">
+ is the vector&nbsp;(<A HREF="node71.html#e-mu-def">4.26</A>) which generates the ray <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+.
+Note that if we were to flip the direction of the normal vector&nbsp;(<A HREF="#e-normal-def">4.28</A>), the inequality signs in&nbsp;(<A HREF="#e-delta-le0">4.29</A>)
+ and&nbsp;(<A HREF="#e-mu-ge0">4.30</A>) would be reversed; the present choice is simply a matter of sign convention (cf. Section&nbsp;<A HREF="node58.html#ss-varappr-comments">3.4.4</A>).
+For an illustration, see Figure&nbsp;<A HREF="#f-hyperplane1">4.11</A> in which the
+shaded object represents the separating hyperplane.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-hyperplane1"></A><A NAME="7848"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A separating hyperplane for the Basic Fixed-Endpoint Control Problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="365" HEIGHT="247" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1201.gif"
+ ALT="\includegraphics{figures/hyperplane1.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In view of the definition&nbsp;(<A HREF="node71.html#e-mu-def">4.26</A>) of <IMG
+ WIDTH="14" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1175.gif"
+ ALT="$ \mu$">
+, the
+inequality&nbsp;(<A HREF="#e-mu-ge0">4.30</A>) simply says that <!-- MATH
+ $p_0^*\le 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img981.gif"
+ ALT="$ p_0^*\le 0$">
+, as
+required by the statement of the maximum principle. This will be
+the only use of&nbsp;(<A HREF="#e-mu-ge0">4.30</A>). The normal
+vector&nbsp;(<A HREF="#e-normal-def">4.28</A>) will serve as the terminal condition
+for the adjoint system, to be defined next.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1458"
+  HREF="node73.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1452"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1446"
+  HREF="node71.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1454"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1456"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1459"
+  HREF="node73.html">4.2.8 Adjoint equation</A>
+<B> Up:</B> <A NAME="tex2html1453"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1447"
+  HREF="node71.html">4.2.6 Key topological lemma</A>
+ &nbsp; <B>  <A NAME="tex2html1455"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1457"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

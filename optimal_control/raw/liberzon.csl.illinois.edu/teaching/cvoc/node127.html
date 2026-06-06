@@ -1,0 +1,739 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.3.1 gain</TITLE>
+<META NAME="description" CONTENT="7.3.1 gain">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node128.html">
+<LINK REL="previous" HREF="node126.html">
+<LINK REL="up" HREF="node126.html">
+<LINK REL="next" HREF="node128.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2279"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2273"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2267"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2275"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2277"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2280"
+  HREF="node128.html">7.3.2 control problem</A>
+<B> Up:</B> <A NAME="tex2html2274"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2268"
+  HREF="node126.html">7.3 Riccati equations and</A>
+ &nbsp; <B>  <A NAME="tex2html2276"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2278"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00931000000000000000">
+7.3.1 <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain</A>
+</H2>
+We consider a linear time-invariant system
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ABC"></A><!-- MATH
+ \begin{equation}
+\dot x=Ax+Bu,\qquad y=Cx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="204" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2114.gif"
+ ALT="$\displaystyle \dot x=Ax+Bu,\qquad y=Cx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and the cost functional
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-gamma"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^\infty \Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="316" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2115.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^\infty \Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2116.gif"
+ ALT="$ \gamma&gt;0$">
+. In this cost, the squared norms of the input and the output inside the integral are multiplied by scalar weights of the opposite signs (and we assume the two weights to have been normalized so that their product equals <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img996.gif"
+ ALT="$ -1$">
+). Consequently, it is clear that the optimal cost will now be nonpositive (just set <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1464.gif"
+ ALT="$ u\equiv 0$">
+). Nevertheless, as we will see, the form of the optimal solution
+is very similar to the one we saw in Section&nbsp;<A HREF="node112.html#s-LQR-infhor">6.2</A> and can be
+established using similar calculations.
+Suppose that there exists a matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ with the following three properties:
+
+<P>
+<BR>
+
+<OL>
+<LI><!-- MATH
+ $P=P^T\ge 0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1950.gif"
+ ALT="$ P=P^T\ge 0$">
+.
+</LI>
+<LI><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is a solution of the ARE
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ARE-wrongsign"></A><!-- MATH
+ \begin{equation}
+PA+A^TP+\frac1\gamma C^TC+\frac1\gamma PBB^TP=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="300" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2117.gif"
+ ALT="$\displaystyle PA+A^TP+\frac1\gamma C^TC+\frac1\gamma PBB^TP=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+</LI>
+<LI>The matrix <!-- MATH
+ $A+\frac1\gamma BB^TP$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2118.gif"
+ ALT="$ A+\frac1\gamma BB^TP$">
+ is <A NAME="7208"></A>Hurwitz.<A NAME="tex2html80"
+  HREF="footnode.html#foot8018"><SUP>7.2</SUP></A>
+</LI>
+</OL>
+<BR>
+Then, we claim that the optimal cost is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-opt-cost-L2gain"></A><!-- MATH
+ \begin{equation}
+V(x_0)=-x_0^TPx_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="137" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2119.gif"
+ ALT="$\displaystyle V(x_0)=-x_0^TPx_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and the optimal control is the linear state feedback
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-opt-control-L2gain"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\frac1\gamma
+B^TPx^*(t).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="158" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2120.gif"
+ ALT="$\displaystyle u^*(t)=\frac1\gamma B^TPx^*(t).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(Notice the ``wrong" signs in the formulas&nbsp;(<A HREF="#e-ARE-wrongsign">7.19</A>)-(<A HREF="#e-opt-control-L2gain">7.21</A>) compared to Section&nbsp;<A HREF="node112.html#s-LQR-infhor">6.2</A>; this sign difference could be reconciled by working with <IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2121.gif"
+ ALT="$ -P$">
+ instead of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ here.)
+
+<P>
+To prove this claim, let us define the function <!-- MATH
+ $\widehat V (x):=x^TP x$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1913.gif"
+ ALT="$ \widehat V (x):=x^TP x$">
+.<A NAME="7223"></A> Its derivative along solutions of the system&nbsp;(<A HREF="#e-ABC">7.17</A>) is
+<!-- MATH
+ $\frac d{dt}\widehat V (x(t))=x^T(t)(PA+A^TP)x(t)+2x^T(t)PBu(t)$
+ -->
+<IMG
+ WIDTH="397" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2122.gif"
+ ALT="$ \frac d{dt}\widehat V (x(t))=x^T(t)(PA+A^TP)x(t)+2x^T(t)PBu(t)
+$">
+, which is easily checked to be equivalent to
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-dV-square"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\frac d{dt}\widehat V (x(t))&=x^T(t)\Big(PA+A^TP+\frac1\gamma C^TC+\frac1\gamma PBB^TP\Big)x(t)\\&-\gamma\Big(u(t)-\frac1\gamma B^TPx(t)\Big)^T\Big(u(t)-\frac1\gamma B^TPx(t)\Big)+\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t).
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="632" HEIGHT="91" BORDER="0"
+ SRC="img2123.gif"
+ ALT="\begin{displaymath}\begin{split}\frac d{dt}\widehat V (x(t))&amp;=x^T(t)\Big(PA+A^TP...
+...t)\Big)+\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t). \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We now
+introduce the auxiliary finite-horizon cost
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Jbar-aux"></A><!-- MATH
+ \begin{equation}
+\bar
+J^{t_1}(u):=\int_{t_0}^{t_1}\Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt-x^T(t_1)Px(t_1).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="456" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2124.gif"
+ ALT="$\displaystyle \bar J^{t_1}(u):=\int_{t_0}^{t_1}\Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt-x^T(t_1)Px(t_1).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Using the formula&nbsp;(<A HREF="#e-dV-square">7.22</A>) and noting that the first term on its right-hand side vanishes by&nbsp;(<A HREF="#e-ARE-wrongsign">7.19</A>), we can rewrite this cost as
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="51" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2125.gif"
+ ALT="$\displaystyle \bar J^{t_1}(u)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="477" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2126.gif"
+ ALT="$\displaystyle =\int_{t_0}^{t_1}\gamma\Big\vert u(t)-\frac1\gamma B^TPx(t)\Big\vert^2dt+\left.x^T(t)Px(t)\right\vert _{t_0}^{t_1}-x^T(t_1)Px(t_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="305" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2127.gif"
+ ALT="$\displaystyle = \int_{t_0}^{t_1}\gamma\Big\vert u(t)-\frac1\gamma B^TPx(t)\Big\vert^2dt-x^T_0Px_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which makes it clear  that&nbsp;(<A HREF="#e-opt-cost-L2gain">7.20</A>) and&nbsp;(<A HREF="#e-opt-control-L2gain">7.21</A>) are the optimal cost and optimal control for the cost functional&nbsp;(<A HREF="#e-Jbar-aux">7.23</A>). We want to show that they are also optimal for the original cost functional&nbsp;(<A HREF="#e-cost-gamma">7.18</A>).
+To this end,
+we first note that
+since <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.gif"
+ ALT="$ P \ge 0$">
+, the following bound holds for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1176.gif"
+ ALT="$\displaystyle J( u)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="316" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2128.gif"
+ ALT="$\displaystyle =\lim_{t_1\to\infty}\int_{t_0}^{t_1} \Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="462" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2129.gif"
+ ALT="$\displaystyle \ge\lim_{t_1\to\infty}\left(\int_{t_0}^{t_1} \Big(\gamma u^T(t)u(t)-\frac 1\gamma y^T(t)y(t)\Big)dt-x^T(t_1)Px(t_1)\right)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="344" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2130.gif"
+ ALT="$\displaystyle = \lim_{t_1\to\infty}J^{t_1}(u)\ge \lim_{t_1\to\infty}(-x_0^TPx_0)=-x_0^TPx_0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+On the other hand, we can pass to the limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+ in the already established relation
+<P><!-- MATH
+ \begin{displaymath}
+\bar J^{t_1}(u^*)=\int_{t_0}^{t_1}\Big(\gamma (u^*)^T(t)u^*(t)-\frac 1\gamma (y^*)^T(t)y^*(t)\Big)dt-(x^*)^T(t_1)Px^*(t_1)=-x_0^TPx_0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="626" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2131.gif"
+ ALT="$\displaystyle \bar J^{t_1}(u^*)=\int_{t_0}^{t_1}\Big(\gamma (u^*)^T(t)u^*(t)-\frac 1\gamma (y^*)^T(t)y^*(t)\Big)dt-(x^*)^T(t_1)Px^*(t_1)=-x_0^TPx_0
+$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2132.gif"
+ ALT="$ y^*:=Cx^*$">
+. In view of the fact that <!-- MATH
+ $A+\frac1\gamma BB^TP$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2118.gif"
+ ALT="$ A+\frac1\gamma BB^TP$">
+ is a Hurwitz matrix, the closed-loop system <!-- MATH
+ $\dot x^*=Ax^*+Bu^*=(A+\frac1\gamma BB^TP)x^*$
+ -->
+<IMG
+ WIDTH="280" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2133.gif"
+ ALT="$ \dot x^*=Ax^*+Bu^*=(A+\frac1\gamma BB^TP)x^*$">
+ is exponentially stable. We thus obtain
+<!-- MATH
+ $J(u^*)=-x_0^TPx_0$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2134.gif"
+ ALT="$ J(u^*)=-x_0^TPx_0$">
+,
+and the desired result is proved.
+
+<P>
+While the formulas appearing here and in Section&nbsp;<A HREF="node112.html#s-LQR-infhor">6.2</A> are similar, the meanings of the two
+problems are very different. The cost&nbsp;(<A HREF="#e-cost-gamma">7.18</A>) no longer reflects the objective of keeping both <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ small. Instead, this cost is small when <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is large relative to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. We can regard <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ here not as a control that regulates the output but as a disturbance that tries to make the output large, with the optimal input being in some sense the worst-case disturbance. Let us try to formulate this idea in more precise terms. The fact that&nbsp;(<A HREF="#e-opt-cost-L2gain">7.20</A>) is the optimal cost for the functional&nbsp;(<A HREF="#e-cost-gamma">7.18</A>) implies that the inequality
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-gamma-cost-ineq"></A><!-- MATH
+ \begin{equation}
+-x_0^TPx_0\le\int_{t_0}^\infty \Big(\gamma
+|u(t)|^2-\frac 1\gamma |y(t)|^2\Big)dt
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="301" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2135.gif"
+ ALT="$\displaystyle -x_0^TPx_0\le\int_{t_0}^\infty \Big(\gamma \vert u(t)\vert^2-\frac 1\gamma \vert y(t)\vert^2\Big)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+holds for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, with the equality achieved by the optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. From now on we focus on the case when <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ x_0=0$">
+. Specializing&nbsp;(<A HREF="#e-gamma-cost-ineq">7.24</A>) to this case, after simple manipulations we reach
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-L2gain_SPMlt__gamma"></A><!-- MATH
+ \begin{equation}
+\sup_{u\in\mathcal L_2\setminus\{0\}}\frac{\sqrt{\int_{t_0}^\infty|y(t)|^2dt}}{\sqrt{\int_{t_0}^\infty
+|u(t)|^2dt}}
+\le\gamma.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="217" HEIGHT="85" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2136.gif"
+ ALT="$\displaystyle \sup_{u\in\mathcal L_2\setminus\{0\}}\frac{\sqrt{\int_{t_0}^\infty\vert y(t)\vert^2dt}}{\sqrt{\int_{t_0}^\infty \vert u(t)\vert^2dt}} \le\gamma.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The fraction on the left-hand side of&nbsp;(<A HREF="#e-L2gain_SPMlt__gamma">7.25</A>) is the ratio of the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ norms<A NAME="tex2html81"
+  HREF="footnode.html#foot8021"><SUP>7.3</SUP></A> of the input and the output, and the supremum is being taken over all nonzero inputs with finite <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ norms. If we
+view the system&nbsp;(<A HREF="#e-ABC">7.17</A>), with the zero initial condition, as an input/output operator from <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ to <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+, then&nbsp;(<A HREF="#e-L2gain_SPMlt__gamma">7.25</A>) says that the induced norm of this operator does not exceed <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+. This induced norm is called the <I><!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain</I><A NAME="7292"></A> of the system.
+
+<P>
+We see that if, for a given value of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, we can find a matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ with the three properties listed at the beginning of this subsection, then the system's <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain is less than or equal to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+. (We do not know whether <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+ is actually achieved by some control; note that the optimal control&nbsp;(<A HREF="#e-opt-control-L2gain">7.21</A>) is excluded in&nbsp;(<A HREF="#e-L2gain_SPMlt__gamma">7.25</A>) because it is identically 0 when <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ x_0=0$">
+.) A converse result also holds: if the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain is less than <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, then a matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ with the indicated properties exists. If we sidestep the original optimal control problem and only seek sufficient conditions for the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain to be less than or equal to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, then it is not hard to see from our earlier derivation that the conditions on the matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ can be relaxed. Namely, it is enough to look for a symmetric positive semidefinite solution of the algebraic Riccati <I>inequality</I><A NAME="7298"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ARI"></A><!-- MATH
+ \begin{equation}
+PA+A^TP+\frac1\gamma C^TC+\frac1\gamma PBB^TP\le 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="300" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2137.gif"
+ ALT="$\displaystyle PA+A^TP+\frac1\gamma C^TC+\frac1\gamma PBB^TP\le 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The formula&nbsp;(<A HREF="#e-dV-square">7.22</A>) then yields
+<P><!-- MATH
+ \begin{displaymath}
+\frac d{dt}\widehat V (x(t))\le\gamma |u(t)|^2-\frac 1\gamma |y(t)|^2.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="246" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2138.gif"
+ ALT="$\displaystyle \frac d{dt}\widehat V (x(t))\le\gamma \vert u(t)\vert^2-\frac 1\gamma \vert y(t)\vert^2.
+$">
+</DIV><P>
+</P>
+Integrating both sides from <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ to an arbitrary time <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+, rearranging terms,
+and using  the definition of <!-- MATH
+ $\widehat V$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \widehat V$">
+ and the fact that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.gif"
+ ALT="$ P \ge 0$">
+,
+we have
+<P><!-- MATH
+ \begin{displaymath}
+\frac1\gamma\int_{t_0}^T |y(t)|^2dt\le\gamma\int_{t_0}^T
+|u(t)|^2dt+\widehat V(0)-\widehat V(x(t))\le\gamma\int_{t_0}^T
+|u(t)|^2dt
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="508" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2139.gif"
+ ALT="$\displaystyle \frac1\gamma\int_{t_0}^T \vert y(t)\vert^2dt\le\gamma\int_{t_0}^T...
+...rt^2dt+\widehat V(0)-\widehat V(x(t))\le\gamma\int_{t_0}^T
+\vert u(t)\vert^2dt
+$">
+</DIV><P>
+</P>
+and in the limit as <!-- MATH
+ $T\to\infty$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1922.gif"
+ ALT="$ T\to\infty$">
+ we again arrive at&nbsp;(<A HREF="#e-L2gain_SPMlt__gamma">7.25</A>).
+
+<P>
+In the
+frequency domain, the system&nbsp;(<A HREF="#e-ABC">7.17</A>) is characterized by the transfer matrix
+<!-- MATH
+ $G(s)=C(Is-A)^{-1}B$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2140.gif"
+ ALT="$ G(s)=C(Is-A)^{-1}B$">
+. Using Parseval's theorem, it can be shown that the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain equals the largest singular value of <!-- MATH
+ $G(j\omega)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2141.gif"
+ ALT="$ G(j\omega)$">
+
+supremized over all frequencies <!-- MATH
+ $\omega\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2142.gif"
+ ALT="$ \omega\in\mathbb{R}$">
+; for systems with scalar inputs and outputs, this is just
+<!-- MATH
+ $\sup_{\omega\in\mathbb{R}} |g(j\omega)|$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2143.gif"
+ ALT="$ \sup_{\omega\in\mathbb{R}} \vert g(j\omega)\vert$">
+ where <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ is the transfer function. In view of this fact, the
+<!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain is also called the <I><!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ norm</I>.<A NAME="7330"></A>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2279"
+  HREF="node128.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2273"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2267"
+  HREF="node126.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2275"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2277"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2280"
+  HREF="node128.html">7.3.2 control problem</A>
+<B> Up:</B> <A NAME="tex2html2274"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2268"
+  HREF="node126.html">7.3 Riccati equations and</A>
+ &nbsp; <B>  <A NAME="tex2html2276"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2278"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

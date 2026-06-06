@@ -1,0 +1,688 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.4.1 Example: double integrator</TITLE>
+<META NAME="description" CONTENT="4.4.1 Example: double integrator">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node86.html">
+<LINK REL="previous" HREF="node84.html">
+<LINK REL="up" HREF="node84.html">
+<LINK REL="next" HREF="node86.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1647"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1641"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1635"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1643"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1645"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1648"
+  HREF="node86.html">4.4.2 Bang-bang principle for</A>
+<B> Up:</B> <A NAME="tex2html1642"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1636"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+ &nbsp; <B>  <A NAME="tex2html1644"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1646"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00641000000000000000"></A><A NAME="ss-double-int"></A>
+<BR>
+4.4.1 Example: double integrator
+</H2>
+
+<P>
+Consider the system
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-double-int"></A><!-- MATH
+ \begin{equation}
+\ddot x=u,\qquad u\in[-1,1]
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="169" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1333.gif"
+ ALT="$\displaystyle \ddot x=u,\qquad u\in[-1,1]$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.47)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which can represent a car with position <!-- MATH
+ $x\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ x\in\mathbb{R}$">
+ and
+with bounded acceleration <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ acting as the control (negative
+acceleration corresponds to braking). Let us study the problem of
+``parking" the car at the origin,<A NAME="4606"></A> i.e., bringing it to rest at
+<IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ x=0$">
+, in minimal time. It is clear--and will follow from the
+analysis we give below--that the system can indeed be brought to
+rest at the origin from every initial condition. However, since the control is bounded, we
+cannot do this arbitrarily fast (we are ignoring the trivial case
+when the system is initialized at the origin). Thus we expect that
+there exists an optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ which achieves the transfer
+in the smallest amount of time. (As we have already mentioned, the
+issue of existence of optimal controls is important and nontrivial
+in general; it will be treated in
+Section&nbsp;<A HREF="node89.html#s-existence-optcontr">4.5</A>.)
+
+<P>
+We know that the dynamics of the double integrator&nbsp;(<A HREF="#e-double-int">4.47</A>) are equivalently
+described by the state-space equations
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-double-int-ss"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot x_1&=x_2\\
+\dot x_2&=u
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="56" HEIGHT="55" BORDER="0"
+ SRC="img1335.gif"
+ ALT="\begin{displaymath}\begin{split}\dot x_1&amp;=x_2\\ \dot x_2&amp;=u \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.48)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we assume that the initial values <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1336.gif"
+ ALT="$ x_1(t_0)$">
+ and <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1337.gif"
+ ALT="$ x_2(t_0)$">
+
+are given. The running cost is <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1278.gif"
+ ALT="$ L\equiv
+1$">
+ (cf. Example&nbsp;<A HREF="node49.html#x-brachistochrone-time">3.2</A> in Section&nbsp;<A HREF="node49.html#s-cvvsoc">3.2</A>
+where we discussed another time-optimal control problem).
+Accordingly, the Hamiltonian is <!-- MATH
+ $H=p_1x_2+p_2u+p_0$
+ -->
+<IMG
+ WIDTH="162" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1338.gif"
+ ALT="$ H=p_1x_2+p_2u+p_0$">
+.
+ Let <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ be an optimal control. Our problem is a special case of
+ the Basic Fixed-Endpoint Control Problem, and we now apply the maximum principle to
+characterize <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. The costate <!-- MATH
+ $p^*=\Big({\textstyle{p_1^*}\atop
+\textstyle{p_2^*}}\Big)$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="53" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1339.gif"
+ ALT="$ p^*=\Big({\textstyle{p_1^*}\atop
+\textstyle{p_2^*}}\Big)$">
+ must
+satisfy the adjoint equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-adj-easy"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+   \dot p_1^*\\
+    \dot p_2^*
+  \end{pmatrix}=\begin{pmatrix}
+   \left.-{H}_{x_1}\right|_{*}\\
+    \left.-{H}_{x_2}\right|_{*}
+  \end{pmatrix}=\begin{pmatrix}
+   0\\
+    -p_1^*
+  \end{pmatrix}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="238" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1340.gif"
+ ALT="$\displaystyle \begin{pmatrix}\dot p_1^*\\ \dot p_2^* \end{pmatrix}=\begin{pmatr...
+...H}_{x_2}\right\vert _{*} \end{pmatrix}=\begin{pmatrix}0\\ -p_1^* \end{pmatrix}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.49)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The first line of&nbsp;(<A HREF="#e-adj-easy">4.49</A>) implies that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1341.gif"
+ ALT="$ p_1^*$">
+ is equal
+to a constant, say <IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1342.gif"
+ ALT="$ c_1$">
+. The second line of&nbsp;(<A HREF="#e-adj-easy">4.49</A>)
+then says that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ is given by <!-- MATH
+ $p_2^*(t)={-c_1}t+c_2$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1344.gif"
+ ALT="$ p_2^*(t)={-c_1}t+c_2$">
+, where
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1345.gif"
+ ALT="$ c_2$">
+ is another constant.
+
+<P>
+Next, from the Hamiltonian maximization condition and the fact that <IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1346.gif"
+ ALT="$ U=[-1,1]$">
+ we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Hmin-softland"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\text{sgn}(p_2^*(t)):=\begin{cases} 1
+\quad&\text{ if }\ p_2^*(t)>0\\
+-1\quad&\text{ if }\ p_2^*(t)<0\\
+?\quad&\text{ if }\ p_2^*(t)=0          \end{cases}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1347.gif"
+ ALT="$\displaystyle u^*(t)=$">sgn<IMG
+ WIDTH="251" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1348.gif"
+ ALT="$\displaystyle (p_2^*(t)):=\begin{cases}1 \quad&amp;\text{ if }\ p_2^*(t)&gt;0\\ -1\quad&amp;\text{ if }\ p_2^*(t)&lt;0\\ ?\quad&amp;\text{ if }\ p_2^*(t)=0 \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.50)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The third case in&nbsp;(<A HREF="#e-Hmin-softland">4.50</A>) is meant to indicate
+that when <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ equals 0
+, making the Hamiltonian independent
+of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, the value of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ can in principle be arbitrary. (By our
+convention that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is continuous either from the left or from
+the right everywhere, we know that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ actually cannot take any
+values other than 1 or <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img996.gif"
+ ALT="$ -1$">
+.) Can <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ be identically 0 over
+some time interval? If this happens, then <!-- MATH
+ $\dot p_2^*=-p_1^*$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1349.gif"
+ ALT="$ \dot p_2^*=-p_1^*$">
+ must
+also be identically 0 on that interval. However, we already saw
+(on page&nbsp;<A HREF="node78.html#p-pnonzero"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>) that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ cannot vanish in a
+time-optimal control problem, because the fact that <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img997.gif"
+ ALT="$ H\equiv 0$">
+
+(statement 3 of the maximum principle) would then imply that
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1282.gif"
+ ALT="$ p_0^*=0$">
+ and the nontriviality condition would be violated.
+Therefore, <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ may only equal 0 at isolated points in time,
+and the formula&nbsp;(<A HREF="#e-Hmin-softland">4.50</A>) defines <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ uniquely
+everywhere away from these times.
+ How many zero crossings can <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ have? We derived a little while ago that
+  <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ is a linear function of time. Thus <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ can cross the
+  value 0 <I>at most once</I>.
+
+<P>
+We conclude that the optimal
+  control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ takes only the values <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1350.gif"
+ ALT="$ \pm1$">
+ and switches
+  between these values at most once. Interpreted
+  in terms of bringing a car to rest
+  at the origin, the optimal control strategy consists in
+  switching between
+  maximal acceleration and maximal braking. The initial sign and the
+  switching time of course depend on the initial condition. The property that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ only switches
+between the extreme values <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1350.gif"
+ ALT="$ \pm1$">
+ is intuitively natural and
+important; such controls are called <I>bang-bang</I>.<A NAME="4649"></A><A NAME="4650"></A>
+
+<P>
+It turns out that for the present problem, the pattern identified
+above uniquely determines the optimal control law for every
+initial condition. To see this, let us plot the solutions of the
+system&nbsp;(<A HREF="#e-double-int">4.47</A>) in the <!-- MATH
+ $(x,\dot x)$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1351.gif"
+ ALT="$ (x,\dot x)$">
+-plane for <!-- MATH
+ $u\equiv \pm
+1$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1352.gif"
+ ALT="$ u\equiv \pm
+1$">
+. For <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$ u\equiv 1$">
+, repeated integration gives <!-- MATH
+ $\dot x(t)=t+a$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1353.gif"
+ ALT="$ \dot x(t)=t+a$">
+ and then
+<!-- MATH
+ $x(t)=\frac12t^2+at+b$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1354.gif"
+ ALT="$ x(t)=\frac12t^2+at+b$">
+ for some constants <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ and <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ b$">
+. The resulting
+relation <!-- MATH
+ $x=\frac12\dot x^2+c$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1355.gif"
+ ALT="$ x=\frac12\dot x^2+c$">
+ (where <IMG
+ WIDTH="97" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1356.gif"
+ ALT="$ c=b-a^2/2$">
+) defines a
+family of parabolas in the <!-- MATH
+ $(x,\dot x)$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1351.gif"
+ ALT="$ (x,\dot x)$">
+-plane parameterized by
+<!-- MATH
+ $c\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.gif"
+ ALT="$ c\in\mathbb{R}$">
+. Similarly, for <!-- MATH
+ $u\equiv -1$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ u\equiv -1$">
+ we obtain the family of parabolas
+<!-- MATH
+ $x=-\frac12\dot x^2+c$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1357.gif"
+ ALT="$ x=-\frac12\dot x^2+c$">
+, <!-- MATH
+ $c\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.gif"
+ ALT="$ c\in\mathbb{R}$">
+. These curves are shown in
+Figure&nbsp;<A HREF="#f-optimal">4.15</A>(a,b), with the
+arrows indicating the direction in which they are traversed. It is
+easy to see that only two of these trajectories hit the origin
+(which is the prescribed final point). Their union is the thick
+curve in Figure&nbsp;<A HREF="#f-optimal">4.15</A>(c), which we call the
+<I>switching curve</I><A NAME="4655"></A> and denote by <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+; it is defined by the relation <!-- MATH
+ $x=-\frac12|\dot x|\dot x$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1359.gif"
+ ALT="$ x=-\frac12\vert\dot x\vert\dot x$">
+. The optimal control
+strategy thus consists in applying <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1360.gif"
+ ALT="$ u= 1$">
+ or <IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1361.gif"
+ ALT="$ u= -1$">
+ depending on
+whether the initial point is below or above <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+, then
+switching the control value exactly on <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+ and subsequently
+following <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+ to the origin; no switching is needed if the
+initial point is already on <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+. (Thinking slightly
+differently, we can generate all possible optimal
+trajectories--which cover the entire plane--by starting at the
+origin and flowing backward in time, first following <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+ and
+then switching at an arbitrary point on <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1358.gif"
+ ALT="$ \Gamma$">
+.) Recalling the
+interpretation of our problem as that of parking a car using
+bounded acceleration/braking, the reader can easily relate the
+optimal trajectories in the <!-- MATH
+ $(x,\dot x)$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1351.gif"
+ ALT="$ (x,\dot x)$">
+-plane with the
+corresponding motions of the car along the <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-axis. Note that if
+the car is initially moving away from the origin, then it begins
+braking until it stops, turns around, and starts accelerating
+(this is a ``false" switch because <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ actually remains constant),
+and then <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ switches sign and the car starts braking again.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-optimal"></A><A NAME="7882"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Bang-bang time-optimal control of the double
+  integrator:
+(a) trajectories for <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$ u\equiv 1$">
+, (b) trajectories for <!-- MATH
+ $u\equiv
+-1$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ u\equiv -1$">
+, (c) the switching curve and optimal trajectories
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+  <IMG
+ WIDTH="764" HEIGHT="203" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1362.gif"
+ ALT="\includegraphics{figures/optimal2.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The optimal control law that we just found has two important
+features. First, as we already said, it is bang-bang. Second, we
+see that it can be described in the form of a <I>state feedback
+law</I>.<A NAME="4673"></A> This is interesting because in general, the maximum principle only provides an
+open-loop description of an optimal control; indeed, <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+
+depends, besides the state <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ x^*(t)$">
+, on the costate <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1276.gif"
+ ALT="$ p^*(t)$">
+, but
+we managed to eliminate this latter dependence here. It is natural
+to ask for what more general classes of systems time-optimal
+controls have these two properties, i.e., are bang-bang and take
+the state feedback form. The bang-bang property will be examined
+in detail in the next two subsections. The problem of representing
+optimal controls as state feedback laws is rather intricate and
+will not be treated in this book, except for the two exercises
+below.
+
+<P>
+<BR>
+<A NAME="z-hard-landing"></A><IMG
+ WIDTH="555" HEIGHT="147" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1364.gif"
+ ALT="\begin{Exercise}
+Suppose that we modify the
+above problem by removing the requir...
+...t x)$-plane? Include an explanation of the car's optimal
+motions.
+\end{Exercise}">
+<BR>
+
+<P>
+The next exercise is along the same lines but the solution is less
+obvious.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="77" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1365.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9375
+Consider the problem of bringing t...
+...$.
+Answer the same questions as in
+Exercise~\ref{z-hard-landing}. \end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1647"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1641"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1635"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1643"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1645"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1648"
+  HREF="node86.html">4.4.2 Bang-bang principle for</A>
+<B> Up:</B> <A NAME="tex2html1642"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1636"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+ &nbsp; <B>  <A NAME="tex2html1644"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1646"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

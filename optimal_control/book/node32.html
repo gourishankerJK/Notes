@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.3.5 Variable-endpoint problems</TITLE>
+<META NAME="description" CONTENT="2.3.5 Variable-endpoint problems">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node31.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node33.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html841"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html835"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html831"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html837"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html839"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html842"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Up:</B> <A NAME="tex2html836"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html832"
+  HREF="node31.html">2.3.4 Two special cases</A>
+ &nbsp; <B>  <A NAME="tex2html838"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html840"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00435000000000000000"></A><A NAME="ss-vtp"></A><A NAME="1618"></A>
+<BR>
+2.3.5 Variable-endpoint problems
+</H2>
+
+<P>
+So far we have been considering the Basic Calculus of Variations Problem, in which
+the curves have both their endpoints fixed by the boundary
+conditions&nbsp;(<A HREF="node25.html#e-cvbasic-bc">2.8</A>). Accordingly, the class of admissible perturbations
+is restricted to those vanishing at the endpoints. This fact, reflected
+in&nbsp;(<A HREF="node28.html#e-E-L-boundcond">2.11</A>), was explicitly used in the derivation of the Euler-Lagrange 
+equation&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>). Indeed,
+the first-order necessary condition&nbsp;(<A HREF="node15.html#e-1st-nec-inf">1.37</A>)--which serves as
+ the basis
+for the Euler-Lagrange equation--need only
+hold for admissible perturbations.
+
+<P>
+If we change the boundary conditions for the curves of interest, then the class of
+admissible
+perturbations will also change, and in general the necessary condition for
+optimality will be different. To give an example of such a situation,
+we now consider
+a simple variable-endpoint problem.
+Suppose that the cost functional takes the same form&nbsp;(<A HREF="node25.html#e-cvbasic-J">2.9</A>)
+as before, the initial point
+of the curve is still fixed by the boundary condition <IMG
+ WIDTH="75" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img307.gif"
+ ALT="$ y(a)=y_0$">
+, but the terminal
+point <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img428.gif"
+ ALT="$ y(b)$">
+ is free. The resulting family of curves is depicted in
+Figure&nbsp;<A HREF="#f-variable">2.9</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-variable"></A><A NAME="7732"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Variable terminal point
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="304" HEIGHT="183" ALIGN="BOTTOM" BORDER="0"
+ SRC="img429.gif"
+ ALT="\includegraphics{figures/variable.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ must still satisfy <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.gif"
+ ALT="$ \eta(a)=0$">
+ but <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img431.gif"
+ ALT="$ \eta(b)$">
+
+can be arbitrary. In view of&nbsp;(<A HREF="node28.html#e-1stvar-ab">2.15</A>), the first variation is
+then given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1stvar-bonly"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),y'(x))-\frac d{dx}{L}_{
+z}(x,y(x),y'(x))\Big)\eta(x)dx+{L}_{z}(b,y(b),y'(b))\eta(b)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="656" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img432.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),...
+...))-\frac d{dx}{L}_{ z}(x,y(x),y'(x))\Big)\eta(x)dx+{L}_{z}(b,y(b),y'(b))\eta(b)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and this must be 0 if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is to be an extremum.
+Perturbations such that <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img433.gif"
+ ALT="$ \eta(b)=0$">
+ are still allowed; let us consider them first.
+They make the last term in&nbsp;(<A HREF="#e-1stvar-bonly">2.26</A>) disappear, leaving us
+with&nbsp;(<A HREF="node28.html#e-EL-with-eta">2.16</A>). Exactly as before, we deduce from this that
+the
+Euler-Lagrange equation must hold, i.e., it is still a
+necessary condition
+for optimality. The Euler-Lagrange equation says that the expression
+in the large parentheses
+inside the integral in&nbsp;(<A HREF="#e-1stvar-bonly">2.26</A>) is 0. But this means that the entire
+integral is 0, for <I>all</I> admissible <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ (not just those vanishing at <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img370.gif"
+ ALT="$ x=b$">
+).
+The last term in&nbsp;(<A HREF="#e-1stvar-bonly">2.26</A>) must then also vanish, which gives us
+an additional necessary condition for optimality:
+<P><!-- MATH
+ \begin{displaymath}
+{L}_{ z}(b,y(b),y'(b))\eta(b)=0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="187" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img434.gif"
+ ALT="$\displaystyle {L}_{ z}(b,y(b),y'(b))\eta(b)=0
+$">
+</DIV><P>
+</P>
+or, since <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img431.gif"
+ ALT="$ \eta(b)$">
+ is arbitrary,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Lz_0"></A><!-- MATH
+ \begin{equation}
+{L}_{ z}(b,y(b),y'(b))=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="161" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img435.gif"
+ ALT="$\displaystyle {L}_{ z}(b,y(b),y'(b))=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+We can think of&nbsp;(<A HREF="#e-Lz_0">2.27</A>) as replacing the boundary condition <IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img308.gif"
+ ALT="$ y(b)=y_1$">
+.
+Recall that we want to have two
+boundary conditions to uniquely specify an extremal. Comparing
+with the Basic Calculus of Variations Problem, here we
+have only one endpoint fixed a priori, but on the other hand we have a richer
+perturbation family which allows us to obtain one extra condition&nbsp;(<A HREF="#e-Lz_0">2.27</A>).<A NAME="1667"></A>
+
+<P>
+<BR>
+<A NAME="x-cv-transv"></A><IMG
+ WIDTH="555" HEIGHT="186" ALIGN="BOTTOM" BORDER="0"
+ SRC="img436.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8435Consider again the length functiona...
+...is a
+horizontal line, which is of course the optimal solution. \qed\end{Example}">
+<BR>
+
+<P>
+<BR>
+<A NAME="z-vtp"></A><IMG
+ WIDTH="555" HEIGHT="185" ALIGN="BOTTOM" BORDER="0"
+ SRC="img437.gif"
+ ALT="\begin{Exercise}
+Consider a more general version of
+the above variable-terminal-...
+...or variations in $x_f$\ and which explicitly
+involves $\varphi'$.
+\end{Exercise}">
+<BR>
+
+<P>
+Working on this exercise, the reader will realize that
+obtaining a transversality condition
+ in the specified form requires a somewhat more advanced
+analysis than what we have done so far. We will employ similar
+techniques again soon when deriving conditions for strong minima
+in Section&nbsp;<A HREF="node47.html#ss-WE">3.1.1</A>. The transversality condition itself is
+essentially a preview of what we will see later in the context of
+the maximum principle. More general variable-endpoint problems in which the initial point is allowed to vary as well, and the resulting transversality conditions, will also be mentioned in the optimal control setting (at the end of Section&nbsp;<A HREF="node78.html#s-mp-discussion">4.3</A>).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html841"
+  HREF="node33.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html835"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html831"
+  HREF="node31.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html837"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html839"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html842"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Up:</B> <A NAME="tex2html836"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html832"
+  HREF="node31.html">2.3.4 Two special cases</A>
+ &nbsp; <B>  <A NAME="tex2html838"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html840"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

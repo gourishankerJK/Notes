@@ -1,0 +1,562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.4.2 Legendre transformation</TITLE>
+<META NAME="description" CONTENT="2.4.2 Legendre transformation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node33.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html886"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html880"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html874"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html882"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html884"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html887"
+  HREF="node36.html">2.4.3 Principle of least</A>
+<B> Up:</B> <A NAME="tex2html881"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html875"
+  HREF="node34.html">2.4.1 Hamilton's canonical equations</A>
+ &nbsp; <B>  <A NAME="tex2html883"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html885"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00442000000000000000"></A><A NAME="ss-legendre"></A><A NAME="1756"></A>
+<BR>
+2.4.2 Legendre transformation
+</H2>
+
+<P>
+Consider a function <!-- MATH
+ $f:\mathbb{R}\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img451.gif"
+ ALT="$ f:\mathbb{R}\to\mathbb{R}$">
+, whose argument we denote by <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ (the
+curve in Figure&nbsp;<A HREF="#f-legendre">2.10</A> is a possible graph of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+).
+For simplicity we are considering the scalar case, but
+the extension to <!-- MATH
+ $f: \mathbb{R}^n \to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$ f:\mathbb{R}^n\to\mathbb{R}$">
+ is straightforward. The
+<I>Legendre transform</I> of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ will be a new function, <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.gif"
+ ALT="$ f^*$">
+, of a new
+variable, <!-- MATH
+ $p\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img453.gif"
+ ALT="$ p\in\mathbb{R}$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-legendre"></A><A NAME="7734"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Legendre transformation
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="218" HEIGHT="194" ALIGN="BOTTOM" BORDER="0"
+ SRC="img454.gif"
+ ALT="\includegraphics{figures/legendre.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Let <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ be given. Draw a line through the origin with slope <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+.
+Take a point <!-- MATH
+ $\xi=\xi(p)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img455.gif"
+ ALT="$ \xi=\xi(p)$">
+ at which the (directed) vertical distance
+from the graph of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+to this line is maximized:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-leg-argmax"></A><!-- MATH
+ \begin{equation}
+\xi(p):=\arg\max_\xi\{p\xi-f(\xi)\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="215" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img456.gif"
+ ALT="$\displaystyle \xi(p):=\arg\max_\xi\{p\xi-f(\xi)\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(Note that
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$ \xi(p)$">
+ may not exist, so the domain of <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.gif"
+ ALT="$ f^*$">
+ is not known a
+priori. Also, <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$ \xi(p)$">
+ is not necessarily unique unless <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is a strictly convex
+function.)
+Now, define <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img458.gif"
+ ALT="$ f^*(p)$">
+ to be this maximal value of the
+gap between <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img459.gif"
+ ALT="$ p\xi$">
+ and <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img460.gif"
+ ALT="$ f(\xi)$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-LTdef"></A><!-- MATH
+ \begin{equation}
+f^*(p):=p\xi(p)-f(\xi(p))=\max_\xi\{p\xi-f(\xi)\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="336" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img461.gif"
+ ALT="$\displaystyle f^*(p):=p\xi(p)-f(\xi(p))=\max_\xi\{p\xi-f(\xi)\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We can also write this definition more symmetrically as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-legendre-symmetric"></A><!-- MATH
+ \begin{equation}
+f^*(p)+f(\xi)=p\xi
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img462.gif"
+ ALT="$\displaystyle f^*(p)+f(\xi)=p\xi$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ and <!-- MATH
+ $\xi=\xi(p)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img455.gif"
+ ALT="$ \xi=\xi(p)$">
+ are related via&nbsp;(<A HREF="#e-leg-argmax">2.34</A>).
+When <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is differentiable,
+the maximization condition&nbsp;(<A HREF="#e-leg-argmax">2.34</A>) implies that the
+derivative of <!-- MATH
+ $p\xi-f(\xi)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img463.gif"
+ ALT="$ p\xi-f(\xi)$">
+ with respect to <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ must equal 0 at <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$ \xi(p)$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-LT-derivative"></A><!-- MATH
+ \begin{equation}
+p-f'(\xi(p))=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="130" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img464.gif"
+ ALT="$\displaystyle p-f'(\xi(p))=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Geometrically, the tangent line to the graph of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+at <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img457.gif"
+ ALT="$ \xi(p)$">
+ must have slope <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, i.e., it must be parallel
+to the original line through the origin (see Figure&nbsp;<A HREF="#f-legendre">2.10</A>). If <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is convex then&nbsp;(<A HREF="#e-leg-argmax">2.34</A>) and&nbsp;(<A HREF="#e-LT-derivative">2.37</A>) are equivalent.
+
+<P>
+The Legendre transformation has some nice properties.
+For example, <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.gif"
+ ALT="$ f^*$">
+ is a convex function even if <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is not convex. The reason is
+that <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img452.gif"
+ ALT="$ f^*$">
+ is a pointwise maximum of functions that are
+  affine in <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, as is clear from&nbsp;(<A HREF="#e-LTdef">2.35</A>).
+   Also, for convex functions
+    the Legendre transformation is involutive: if <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is convex, then
+  <IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img465.gif"
+ ALT="$ f^{**}=f$">
+.
+
+<P>
+Now let us return to the Hamiltonian <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ defined in&nbsp;(<A HREF="node34.html#e-H-def">2.29</A>).
+We claim that it can be obtained by applying the Legendre
+transformation to the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+. More precisely, for arbitrary
+fixed <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+
+let us consider <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.gif"
+ ALT="$ L(x,y,y')$">
+ as a function of <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img467.gif"
+ ALT="$ \xi=y'$">
+. The
+relation&nbsp;(<A HREF="#e-LT-derivative">2.37</A>) between <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ and <!-- MATH
+ $\xi(p)=y'(p)$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img468.gif"
+ ALT="$ \xi(p)=y'(p)$">
+ becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-implicit"></A><!-- MATH
+ \begin{equation}
+p-{L}_{ y'}(x,y,y'(p))=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="174" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img469.gif"
+ ALT="$\displaystyle p-{L}_{ y'}(x,y,y'(p))=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which corresponds to our earlier definition&nbsp;(<A HREF="node34.html#e-p-def">2.28</A>) of the
+momentum <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+. Next,
+(<A HREF="#e-LTdef">2.35</A>) gives
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H_L__"></A><!-- MATH
+ \begin{equation}
+L^*(x,y,p)=py'(p)-L(x,y,y'(p))
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="265" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img470.gif"
+ ALT="$\displaystyle L^*(x,y,p)=py'(p)-L(x,y,y'(p))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is essentially our earlier definition&nbsp;(<A HREF="node34.html#e-H-def">2.29</A>) of the Hamiltonian
+<IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+. But there is a
+ difference: in&nbsp;(<A HREF="node34.html#e-H-def">2.29</A>) we had <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as an independent
+argument of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+, while in&nbsp;(<A HREF="#e-H_L__">2.39</A>) <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ is a dependent variable
+ expressed in terms of
+<IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img471.gif"
+ ALT="$ x,y,p$">
+ by the implicit relation&nbsp;(<A HREF="#e-implicit">2.38</A>).
+In other words, the Legendre transform of <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img466.gif"
+ ALT="$ L(x,y,y')$">
+ as a function of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+
+(with <IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img472.gif"
+ ALT="$ x,y$">
+ fixed) is
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img473.gif"
+ ALT="$ H(x,y,p)$">
+, which is a function of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ (with <IMG
+ WIDTH="30" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img472.gif"
+ ALT="$ x,y$">
+ fixed)
+and no longer has <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as an argument.
+Note that the above derivation is formal, i.e., we are ignoring the question
+of whether or not&nbsp;(<A HREF="#e-implicit">2.38</A>) can indeed be solved for <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+. This issue
+did not arise earlier when we were working with the Hamiltonian <!-- MATH
+ $H=H(x,y,y',p)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img474.gif"
+ ALT="$ H=H(x,y,y',p)$">
+.<A NAME="1811"></A>
+
+<P>
+The above approach has another, more important drawback.
+Recall the observation based on&nbsp;(<A HREF="node34.html#e-H_y_">2.31</A>) that <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+
+has a stationary point as a function of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ along an optimal
+curve. This property will be crucial
+later; combined with the canonical equations&nbsp;(<A HREF="node34.html#e-hamilton">2.30</A>),
+it will lead us to the maximum principle.
+But it only makes sense when we treat <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as an independent
+variable in the definition of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+. On the other hand,
+Hamilton and other 19th century mathematicians
+did not write the Hamiltonian in this way; they followed the convention of
+viewing <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as a dependent variable defined implicitly
+by&nbsp;(<A HREF="#e-implicit">2.38</A>). This is probably why it was not until the late
+1950s that the maximum principle was discovered.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html886"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html880"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html874"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html882"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html884"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html887"
+  HREF="node36.html">2.4.3 Principle of least</A>
+<B> Up:</B> <A NAME="tex2html881"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html875"
+  HREF="node34.html">2.4.1 Hamilton's canonical equations</A>
+ &nbsp; <B>  <A NAME="tex2html883"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html885"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

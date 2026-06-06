@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.2 Calculus of variations versus optimal control</TITLE>
+<META NAME="description" CONTENT="3.2 Calculus of variations versus optimal control">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node50.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node45.html">
+<LINK REL="next" HREF="node50.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1093"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1087"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1081"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1089"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1091"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1094"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Up:</B> <A NAME="tex2html1088"
+  HREF="node45.html">3. From Calculus of</A>
+<B> Previous:</B> <A NAME="tex2html1082"
+  HREF="node48.html">3.1.2 Weierstrass excess function</A>
+ &nbsp; <B>  <A NAME="tex2html1090"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1092"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00520000000000000000"></A><A NAME="s-cvvsoc"></A>
+<BR>
+3.2 Calculus of variations versus optimal control
+</H1>
+
+<P>
+Problems in calculus of variations that we have treated so far are concerned
+with
+minimizing a cost functional of the form <!-- MATH
+ $J(y)=\int_a^b L(x,y(x),y'(x))dx$
+ -->
+<IMG
+ WIDTH="222" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img790.gif"
+ ALT="$ J(y)=\int_a^b L(x,y(x),y'(x))dx$">
+
+ over a given family of
+curves <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+--such as, e.g., all <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves with fixed endpoints. Optimal control
+theory studies similar problems but from a more <I>dynamic</I> viewpoint, which
+can be explained as follows. Rather
+than regarding the curves as given a priori, let us imagine a particle
+moving in the
+<IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$ (x,y)$">
+-space and ``drawing a trace" of its motion.
+The choice of the slope <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+ at each point on the curve
+can be thought of as an infinitesimal decision, or control. The
+resulting curve is thus a trajectory of a simple control system, which we can
+write as <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img543.gif"
+ ALT="$ y'=u$">
+. In order for this curve to minimize the overall integral cost,
+optimal control decisions must be
+taken everywhere along the curve; this is simply a restatement of a principle
+that we have already discussed several times in Chapter&nbsp;<A HREF="node19.html#c-cv">2</A>
+(see, in particular, pages&nbsp;<A HREF="node28.html#p-pointwise"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> and&nbsp;<A HREF="node36.html#p-least-action"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>).
+
+<P>
+In realistic scenarios, not all velocities may be feasible everywhere. In calculus
+of variations, constraints on available velocities may be modeled as equalities
+of the form
+<!-- MATH
+ $M(x,y(x),y'(x))=0$
+ -->
+<IMG
+ WIDTH="163" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img791.gif"
+ ALT="$ M(x,y(x),y'(x))=0$">
+.
+We already know from Section&nbsp;<A HREF="node39.html#ss-constraint-nonint">2.5.2</A> that if we solve such
+a constraint for <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ and parameterize the solution in terms of free variables
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, we arrive at a control system
+<!-- MATH
+ $y'=f(x,y,u)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img792.gif"
+ ALT="$ y'=f(x,y,u)
+$">
+. This dynamic description is consistent with the idea of moving along the curve
+(and incurring a cost along the way).
+
+<P>
+The set in which the controls <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ take
+values might also be constrained by some practical considerations,
+such as inherent bounds on physical quantities (velocities, forces, and so on).
+In the optimal control formulation, such constraints are incorporated very
+naturally by working with an appropriate control set. In calculus of variations, on the other hand, they would
+ make the description
+of the space of admissible curves quite cumbersome.
+
+<P>
+Finally, once we adopt the dynamic viewpoint of a moving particle,
+it is natural to consider another transformation which we already
+encountered in Section&nbsp;<A HREF="node36.html#ss-least-action">2.4.3</A>. Namely, it makes
+sense to parameterize the curves by <I>time</I> rather than
+ by the spatial variable <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Besides being more intuitive,
+ this new formulation is also more descriptive because it allows us to distinguish
+ between two geometrically identical curves traversed with different
+ speeds. In addition, the curves no longer need to be graphs of single-valued
+ functions of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+
+<P>
+<BR>
+<A NAME="e-L_1"></A><A NAME="x-brachistochrone-time"></A><IMG
+ WIDTH="560" HEIGHT="735" ALIGN="BOTTOM" BORDER="0"
+ SRC="img793.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8841
+[Brachistochrone revisited]
+The brac...
+... cost functional to the right-hand side of the control system.
+\qed\end{Example}">
+<BR>
+
+<P>
+From this point onward, we will start using <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ as the independent
+variable. We will write
+<!-- MATH
+ $x=(x_1,\dots,x_n)^T$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img794.gif"
+ ALT="$ x=(x_1,\dots,x_n)^T$">
+ for the (dependent) state variables, <!-- MATH
+ $\dot x=
+(\dot x_1,\dots,\dot x_n)^T$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img795.gif"
+ ALT="$ \dot x=
+(\dot x_1,\dots,\dot x_n)^T$">
+
+for their time derivatives, and
+<!-- MATH
+ $u=(u_1,\dots,u_m)^T$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img796.gif"
+ ALT="$ u=(u_1,\dots,u_m)^T$">
+ for the controls. The controls will take values
+in some control set, such as the unit circle in the above example. Of course, the simplicity of the  Lagrangian in&nbsp;(<A HREF="#e-L_1">3.17</A>) is due to the fact that the cost being minimized is the time (this is a <I>time-optimal</I> control problem);<A NAME="2946"></A> in general, both the control system and
+the cost functional may be complex.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1093"
+  HREF="node50.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1087"
+  HREF="node45.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1081"
+  HREF="node48.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1089"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1091"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1094"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Up:</B> <A NAME="tex2html1088"
+  HREF="node45.html">3. From Calculus of</A>
+<B> Previous:</B> <A NAME="tex2html1082"
+  HREF="node48.html">3.1.2 Weierstrass excess function</A>
+ &nbsp; <B>  <A NAME="tex2html1090"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1092"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

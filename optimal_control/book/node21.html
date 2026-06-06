@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.1.1 Dido's isoperimetric problem</TITLE>
+<META NAME="description" CONTENT="2.1.1 Dido's isoperimetric problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node22.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node22.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html687"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html681"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html675"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html683"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html685"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html688"
+  HREF="node22.html">2.1.2 Light reflection and</A>
+<B> Up:</B> <A NAME="tex2html682"
+  HREF="node20.html">2.1 Examples of variational</A>
+<B> Previous:</B> <A NAME="tex2html676"
+  HREF="node20.html">2.1 Examples of variational</A>
+ &nbsp; <B>  <A NAME="tex2html684"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html686"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00411000000000000000"></A><A NAME="1024"></A>
+<BR>
+2.1.1 Dido's isoperimetric problem
+</H2>
+
+<P>
+According to a legend about the
+foundation of Carthage (around 850 B.C.), Dido purchased from a
+local king the land
+ along the North African coastline that could be enclosed by the hide of an ox.
+She sliced the hide into very thin strips, tied them
+together, and was able to enclose a sizable area which became the city of
+Carthage.
+
+<P>
+Let us formulate this as an optimization problem. Assume that the coast is a
+straight line (represented by the <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-axis in Figure&nbsp;<A HREF="#f-dido">2.1</A>). The hide strips tied together
+correspond to a curve of a fixed length.
+The problem is to maximize the area under this curve.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-dido"></A><A NAME="7701"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Dido's problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="306" HEIGHT="181" ALIGN="BOTTOM" BORDER="0"
+ SRC="img292.gif"
+ ALT="\includegraphics{figures/dido.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+More formally, admissible curves are graphs of continuous functions<A NAME="tex2html12"
+  HREF="footnode.html#foot7702"><SUP>2.1</SUP></A> <!-- MATH
+ $y:[a,b]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$ y:[a,b]\to\mathbb{R}$">
+
+satisfying the endpoint constraints <!-- MATH
+ $y(a)=y(b)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img294.gif"
+ ALT="$ y(a)=y(b)=0$">
+.
+The area under such a curve is <P><!-- MATH
+ \begin{displaymath}
+J(y)=\int_a^b y(x)dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="139" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img295.gif"
+ ALT="$\displaystyle J(y)=\int_a^b y(x)dx$">
+</DIV><P>
+</P>
+which is the quantity to be maximized. Of course, it is easy to convert this to a minimization problem by working with <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.gif"
+ ALT="$ -J$">
+. Keeping in mind the original problem context, we should actually restrict <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ to be nonnegative (so it does not go into
+the ocean) or at least replace <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ by <!-- MATH
+ $\max\{0,y\}$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img297.gif"
+ ALT="$ \max\{0,y\}$">
+ in the definition of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+; but even without these modifications, it is clear that only nonnegative <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ can be optimal.
+Assuming that the curve is differentiable (at least almost everywhere), we can write the length constraint as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-arclength"></A><!-- MATH
+ \begin{equation}
+\int_a^b \sqrt{1+(y'(x))^2}dx=C_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="198" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img298.gif"
+ ALT="$\displaystyle \int_a^b \sqrt{1+(y'(x))^2}dx=C_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$ C_0$">
+ is a fixed constant. Indeed, by the Pythagorean
+Theorem the integrand in&nbsp;(<A HREF="#e-arclength">2.1</A>) is precisely the arclength
+ element.<A NAME="1049"></A>
+
+<P>
+At this point the reader can probably guess what the optimal curve should
+be.
+It is an arc of a circle.
+This solution was known to Zenodorus (2nd century B.C.), although its rigorous derivation requires tools from calculus of variations which will be presented in this chapter.
+
+<P>
+Note that since we are representing admissible curves by graphs of
+functions <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, we are excluding circular arcs that are longer than a semicircle.
+In
+the context of Dido's problem, we can think of
+the interval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ as not actually being specified in advance but instead as being chosen based on the length constraint. Then, once we know that the optimal curve must be a circular arc, it is straightforward to check that the optimal choice
+of the interval is the one in which the circular arc of length <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img299.gif"
+ ALT="$ C_0$">
+ is precisely a semicircle, with the interval serving as the circle's diameter (and thus having length <IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img300.gif"
+ ALT="$ 2C_0/\pi$">
+).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html687"
+  HREF="node22.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html681"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html675"
+  HREF="node20.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html683"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html685"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html688"
+  HREF="node22.html">2.1.2 Light reflection and</A>
+<B> Up:</B> <A NAME="tex2html682"
+  HREF="node20.html">2.1 Examples of variational</A>
+<B> Previous:</B> <A NAME="tex2html676"
+  HREF="node20.html">2.1 Examples of variational</A>
+ &nbsp; <B>  <A NAME="tex2html684"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html686"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>6.1.3 Value function and optimality</TITLE>
+<META NAME="description" CONTENT="6.1.3 Value function and optimality">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node111.html">
+<LINK REL="previous" HREF="node109.html">
+<LINK REL="up" HREF="node107.html">
+<LINK REL="next" HREF="node111.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2023"
+  HREF="node111.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2017"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2011"
+  HREF="node109.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2019"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2021"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2024"
+  HREF="node111.html">6.1.4 Global existence of</A>
+<B> Up:</B> <A NAME="tex2html2018"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2012"
+  HREF="node109.html">6.1.2 Riccati differential equation</A>
+ &nbsp; <B>  <A NAME="tex2html2020"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2022"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00813000000000000000"></A><A NAME="ss-LQR-optcost"></A>
+<BR>
+6.1.3 Value function and optimality
+</H2>
+
+<P>
+We now proceed to show that the control law&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) identified by the maximum principle is globally optimal. We already asked the reader to examine this issue via a direct analysis of the second variation in part b) of Exercise&nbsp;<A HREF="node58.html#z-MP-LQR">3.8</A>. Since then, however, we learned a general method for establishing optimality--namely, the sufficient condition for
+optimality from Section&nbsp;<A HREF="node97.html#ss-HJB-suff">5.1.4</A>--and it is instructive to see it in action here.
+
+<P>
+Specialized to our present LQR problem, the
+HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>) becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-LQR"></A><!-- MATH
+ \begin{equation}
+-{V}_{t}(t,x)=\inf_{u\in\mathbb{R}^m}\left\{x^TQ(t)x+u^TR(t)u+\left\langle {V}_{x}(t,x),A(t)x+B(t)u\right\rangle \right\}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="510" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1831.gif"
+ ALT="$\displaystyle -{V}_{t}(t,x)=\inf_{u\in\mathbb{R}^m}\left\{x^TQ(t)x+u^TR(t)u+\left\langle {V}_{x}(t,x),A(t)x+B(t)u\right\rangle \right\}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and the boundary condition&nbsp;(<A HREF="node94.html#e-V-bound-cond">5.3</A>) reads
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Vt1M"></A><!-- MATH
+ \begin{equation}
+V(t_1,x)= x^TMx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="140" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1832.gif"
+ ALT="$\displaystyle V(t_1,x)= x^TMx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1833.gif"
+ ALT="$ R(t)&gt;0$">
+, it is easy to see that the infimum of the quadratic function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ in&nbsp;(<A HREF="#e-HJB-LQR">6.16</A>) is a minimum and to calculate (similarly to how we arrived at the formula&nbsp;(<A HREF="node108.html#e-u_-LQR">6.3</A>) earlier) that the minimizing control is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-uhat-LQR"></A><!-- MATH
+ \begin{equation}
+u=-\frac12 R^{-1}(t)B^T(t){V}_{x}(t,x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="219" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1834.gif"
+ ALT="$\displaystyle u=-\frac12 R^{-1}(t)B^T(t){V}_{x}(t,x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We substitute this control into&nbsp;(<A HREF="#e-HJB-LQR">6.16</A>) and, after some term cancellations, bring the HJB equation to the following form:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-LQR-simplified"></A><!-- MATH
+ \begin{equation}
+-{V}_{t}(t,x)=x^TQ(t)x-\frac 14\left({V}_{x}(t,x)\right)^T\!B(t)R^{-1}(t)B^T(t){V}_{x}(t,x)+\left({V}_{x}(t,x)\right)^T\!A(t)x.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="607" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1835.gif"
+ ALT="$\displaystyle -{V}_{t}(t,x)=x^TQ(t)x-\frac 14\left({V}_{x}(t,x)\right)^T\!B(t)R^{-1}(t)B^T(t){V}_{x}(t,x)+\left({V}_{x}(t,x)\right)^T\!A(t)x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+In order to apply the sufficient condition for optimality proved in Section&nbsp;<A HREF="node97.html#ss-HJB-suff">5.1.4</A>, we need to find a solution <!-- MATH
+ $V(\cdot,\cdot)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1836.gif"
+ ALT="$ V(\cdot,\cdot)$">
+ of&nbsp;(<A HREF="#e-HJB-LQR-simplified">6.19</A>). Then, for the feedback law&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) to be optimal, it should match the feedback law given by&nbsp;(<A HREF="#e-uhat-LQR">6.18</A>) for this <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+. (The precise meaning of the last statement is provided by the formula&nbsp;(<A HREF="node97.html#e-Hmax-long">5.22</A>) on page&nbsp;<A HREF="node97.html#p-suff-HJB"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>.) This will in turn be true if we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Vx_P"></A><!-- MATH
+ \begin{equation}
+\frac12{V}_{x}(t,x)=P(t)x
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="139" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1837.gif"
+ ALT="$\displaystyle \frac12{V}_{x}(t,x)=P(t)x$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. The equation&nbsp;(<A HREF="#e-Vx_P">6.20</A>) suggests that we should look for a function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ that is defined in terms of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+. Another observation that supports this idea is that in view of&nbsp;(<A HREF="node108.html#e-RDE-boundcond">6.11</A>), the boundary condition&nbsp;(<A HREF="#e-Vt1M">6.17</A>) for the HJB equation can be written as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V_xPx"></A><!-- MATH
+ \begin{equation}
+V(t_1,x)= x^TP(t_1)x.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="162" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1838.gif"
+ ALT="$\displaystyle V(t_1,x)= x^TP(t_1)x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Armed with these facts, let us apply a certain amount of ``wishful thinking" in solving the partial differential equation&nbsp;(<A HREF="#e-HJB-LQR-simplified">6.19</A>). Namely, let us try to <I>guess</I> a function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ that satisfies the simple conditions&nbsp;(<A HREF="#e-Vx_P">6.20</A>) and&nbsp;(<A HREF="#e-V_xPx">6.21</A>), and then see if it satisfies the complicated equation&nbsp;(<A HREF="#e-HJB-LQR-simplified">6.19</A>). If it does, then it must be the value function and by the previous reasoning our control&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) must be optimal, hence everything will be proved. (In this last step, we are using the fact that&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) is a  feedback law which does not depend on the initial condition; see the remarks immediately following the proof of the sufficient condition for optimality on page&nbsp;<A HREF="node97.html#p-vafu"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>.)
+
+<P>
+For the moment, let us proceed under the assumption (which will be validated momentarily) that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is symmetric for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. A guess for <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is actually fairly obvious, and might have already occurred to the reader:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-guess-LQR"></A><!-- MATH
+ \begin{equation}
+V(t,x)=x^TP(t)x.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="147" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1839.gif"
+ ALT="$\displaystyle V(t,x)=x^TP(t)x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This function clearly satisfies&nbsp;(<A HREF="#e-V_xPx">6.21</A>), and since its gradient with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is <!-- MATH
+ ${V}_{x}(t,x)=2P(t)x$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1840.gif"
+ ALT="$ {V}_{x}(t,x)=2P(t)x
+$">
+ we see that&nbsp;(<A HREF="#e-Vx_P">6.20</A>) is also fulfilled. Now, let us check whether the function&nbsp;(<A HREF="#e-guess-LQR">6.22</A>) satisfies&nbsp;(<A HREF="#e-HJB-LQR-simplified">6.19</A>). Since <!-- MATH
+ $V\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1680.gif"
+ ALT="$ V\in\mathcal C^1$">
+, the viscosity solution concept is not needed here.
+Noting that
+<!-- MATH
+ ${V}_{t}(t,x)=x^T\dot P(t)x$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1841.gif"
+ ALT="$ {V}_{t}(t,x)=x^T\dot P(t)x
+$">
+
+and plugging the two expressions for the partial derivatives of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ into&nbsp;(<A HREF="#e-HJB-LQR-simplified">6.19</A>), we obtain
+<P><!-- MATH
+ \begin{displaymath}
+-x^T\dot P(t)x=
+x^TQ(t)x-x^TP(t)B(t)R^{-1}(t)B^T(t)P(t)x+
+{2x^TP(t)A(t)x}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="544" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1842.gif"
+ ALT="$\displaystyle -x^T\dot P(t)x=
+x^TQ(t)x-x^TP(t)B(t)R^{-1}(t)B^T(t)P(t)x+
+{2x^TP(t)A(t)x}
+$">
+</DIV><P>
+</P>
+or, equivalently,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-true"></A><!-- MATH
+ \begin{equation}
+-x^T\dot P(t)x=x^T\big(Q(t)-
+P(t)B(t)R^{-1}(t)B^T(t)P(t)+P(t)A(t)+A^T(t)P(t)\big)x.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="590" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1843.gif"
+ ALT="$\displaystyle -x^T\dot P(t)x=x^T\big(Q(t)- P(t)B(t)R^{-1}(t)B^T(t)P(t)+P(t)A(t)+A^T(t)P(t)\big)x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ satisfies the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>), it immediately follows that&nbsp;(<A HREF="#e-true">6.23</A>) is a true identity. We conclude that, indeed, the function&nbsp;(<A HREF="#e-guess-LQR">6.22</A>) is the value function (optimal cost-to-go) and the linear feedback law&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) is the optimal control. (We already know from Section&nbsp;<A HREF="node108.html#ss-opt-feedback-LQR">6.1.1</A> that an optimal control must be unique, and we also know that the sufficient condition of Section&nbsp;<A HREF="node97.html#ss-HJB-suff">5.1.4</A> guarantees global optimality.)
+
+<P>
+It is useful to reflect on how we found the optimal control.
+First, we singled out a candidate optimal control by using the maximum principle. Second, we identified a candidate value function and verified that this function and the candidate control satisfy the sufficient condition for optimality. Thus we followed the typical path outlined in Section&nbsp;<A HREF="node97.html#ss-HJB-suff">5.1.4</A>.
+The next exercise takes a closer look at properties of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ and closes a gap that we left in the above argument.
+
+<P>
+<BR>
+<A NAME="z-LQR-P"></A><IMG
+ WIDTH="554" HEIGHT="124" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1844.gif"
+ ALT="\begin{Exercise}
+Let $t\le t_1$\ be an arbitrary time at which the solution $P(t...
+...ou prove this
+by strengthening one of the standing
+assumptions?
+\end{Exercise}">
+<BR>
+
+<P>
+It was both insightful and convenient to employ the sufficient condition for optimality in terms of the HJB equation to find the expression for the optimal cost and confirm optimality of the control&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>). However, having the solution <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ of the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>)
+with the boundary condition&nbsp;(<A HREF="node108.html#e-RDE-boundcond">6.11</A>) in hand, it is also possible to solve the LQR problem by direct algebraic manipulations without relying on any prior theory.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1845.gif"
+ ALT="\begin{Exercise}Confirm the facts that~\eqref{e-oplife} is the unique optimal co...
+... is the value function using nothing more than square completion.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2023"
+  HREF="node111.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2017"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2011"
+  HREF="node109.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2019"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2021"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2024"
+  HREF="node111.html">6.1.4 Global existence of</A>
+<B> Up:</B> <A NAME="tex2html2018"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2012"
+  HREF="node109.html">6.1.2 Riccati differential equation</A>
+ &nbsp; <B>  <A NAME="tex2html2020"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2022"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,714 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>6.1.1 Candidate optimal feedback law</TITLE>
+<META NAME="description" CONTENT="6.1.1 Candidate optimal feedback law">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node107.html">
+<LINK REL="up" HREF="node107.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1995"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1989"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1983"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1991"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1993"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1996"
+  HREF="node109.html">6.1.2 Riccati differential equation</A>
+<B> Up:</B> <A NAME="tex2html1990"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html1984"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+ &nbsp; <B>  <A NAME="tex2html1992"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1994"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00811000000000000000"></A><A NAME="ss-opt-feedback-LQR"></A>
+<BR>
+6.1.1 Candidate optimal feedback law
+</H2>
+
+<P>
+We begin our analysis of the LQR problem by inspecting the necessary conditions for optimality provided by the maximum principle. After some further manipulation, these conditions will reveal that an optimal control must be a linear state feedback law.
+The Hamiltonian is given by
+<P><!-- MATH
+ \begin{displaymath}
+H(t,x,u,p)=p^TA(t)x+p^TB(t)u-x^TQ(t)x-u^TR(t)u.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="436" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1781.gif"
+ ALT="$\displaystyle H(t,x,u,p)=p^TA(t)x+p^TB(t)u-x^TQ(t)x-u^TR(t)u.
+$">
+</DIV><P>
+</P>
+Note that, compared to the general formula&nbsp;(<A HREF="node81.html#e-Ham-td">4.40</A>) for the Hamiltonian, we took the
+abnormal multiplier <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1206.gif"
+ ALT="$ p_0$">
+ to be equal to <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img996.gif"
+ ALT="$ -1$">
+. This is no loss of generality because, for the present free-endpoint problem in the Bolza form, a combination of the results in Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A> would give us the transversality condition <!-- MATH
+ $0=p^*(t_1)-p_0^*{K}_{x}(x^*(t_1))=p^*(t_1)-2p_0^*Mx^*(t_1)$
+ -->
+<IMG
+ WIDTH="375" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1782.gif"
+ ALT="$ 0=p^*(t_1)-p_0^*{K}_{x}(x^*(t_1))=p^*(t_1)-2p_0^*Mx^*(t_1)$">
+ which, in light of the nontriviality condition, guarantees that <!-- MATH
+ $p_0^*\ne 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$ p_0^*\ne 0$">
+.
+It is also useful to observe that the LQR problem can be adequately treated with the variational approach of Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A>, which yields essentially the same necessary conditions as the maximum principle  but without the abnormal multiplier appearing. Indeed, the control is unconstrained, the final state is free, and <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is quadratic--hence twice differentiable--in <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+; therefore, the technical issues discussed in Section&nbsp;<A HREF="node59.html#ss-varappr-critique">3.4.5</A> do not arise here. In Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A> we proved that along an optimal trajectory we must have <!-- MATH
+ $\left.{H}_{u}\right|_{*}=0$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1783.gif"
+ ALT="$ \left.{H}_{u}\right\vert _{*}=0$">
+ and <!-- MATH
+ $\left.{H}_{{u}{u}}\right|_{*}\le 0$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1784.gif"
+ ALT="$ \left.{H}_{{u}{u}}\right\vert _{*}\le 0$">
+, which is in general different from the Hamiltonian maximization condition, but in the present LQR setting this difference disappears as we will see in a moment. In fact, when solving part a) of Exercise&nbsp;<A HREF="node58.html#z-MP-LQR">3.8</A>, the reader should have already written down the necessary conditions for optimality from Section&nbsp;<A HREF="node57.html#ss-varappr-2ndvar">3.4.3</A> for the LQR problem (with <IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1785.gif"
+ ALT="$ M=0$">
+). We will now rederive these necessary conditions and examine their consequences in more detail.
+
+<P>
+The gradient of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is
+<!-- MATH
+ ${H}_{u}=B^T(t)p-2R(t)u$
+ -->
+<IMG
+ WIDTH="176" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1786.gif"
+ ALT="$ {H}_{u}=B^T(t)p-2R(t)u$">
+, and along an optimal trajectory it must vanish. Using our assumption that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1787.gif"
+ ALT="$ R(t)$">
+ is invertible for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, we can solve the resulting equation for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and conclude that an optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ (if it exists) must satisfy
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-u_-LQR"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\frac12 R^{-1}(t)B^T(t)p^*(t).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="213" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1788.gif"
+ ALT="$\displaystyle u^*(t)=\frac12 R^{-1}(t)B^T(t)p^*(t).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Moreover, since
+<!-- MATH
+ ${H}_{{ u}{u}}=-2R(t)<0$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1789.gif"
+ ALT="$ {H}_{{ u}{u}}=-2R(t)&lt;0$">
+, the above control indeed maximizes the Hamiltonian (globally). We see that&nbsp;(<A HREF="#e-u_-LQR">6.3</A>) is the unique control satisfying the necessary conditions, although we have not yet verified that it is optimal.
+
+<P>
+Since the formula&nbsp;(<A HREF="#e-u_-LQR">6.3</A>) expresses <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ in terms of the costate <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+, let us
+look at <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ more closely. It satisfies the adjoint equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-adjoint-LQR"></A><!-- MATH
+ \begin{equation}
+\dot p^*=\left.-{H}_{x}\right|_{*}=2Q(t)x^*-A^T(t)p^*
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="258" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1790.gif"
+ ALT="$\displaystyle \dot p^*=\left.-{H}_{x}\right\vert _{*}=2Q(t)x^*-A^T(t)p^*$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with the boundary condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-termcond-LQR"></A><!-- MATH
+ \begin{equation}
+p^*(t_1)=-{K}_{x}(x^*(t_1))=-2Mx^*(t_1)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="275" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1791.gif"
+ ALT="$\displaystyle p^*(t_1)=-{K}_{x}(x^*(t_1))=-2Mx^*(t_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+ (see Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A>), where <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is the optimal state trajectory. Our next goal is to show that
+a linear relation of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="p_-Px"></A><!-- MATH
+ \begin{equation}
+p^*(t)=-2P(t) x^*(t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="156" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1792.gif"
+ ALT="$\displaystyle p^*(t)=-2P(t) x^*(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+holds for
+all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and not just for <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1604.gif"
+ ALT="$ t=t_1$">
+, where <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1793.gif"
+ ALT="$ P(\cdot)$">
+ is some matrix-valued function to be determined. Putting together the dynamics&nbsp;(<A HREF="node107.html#e-LTV-LQR">6.1</A>) of the state, the control law&nbsp;(<A HREF="#e-u_-LQR">6.3</A>), and the dynamics&nbsp;(<A HREF="#e-adjoint-LQR">6.4</A>) of the costate, we can write the system of canonical equations in the following combined closed-loop form:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-canon-cloo"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+  \dot x^*\\
+  \dot p^* \\
+\end{pmatrix}= \begin{pmatrix}
+ A(t)& \frac12 B(t)R^{-1}(t)B^T(t)\\
+  2Q(t) & -A^T(t)\\
+\end{pmatrix} \begin{pmatrix}
+ x^*\\
+ p^* \\
+\end{pmatrix}=:\mathcal H(t)\begin{pmatrix}
+ x^*\\
+ p^* \\
+\end{pmatrix}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="457" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1794.gif"
+ ALT="$\displaystyle \begin{pmatrix}\dot x^*\\ \dot p^* \\ \end{pmatrix}= \begin{pmatr...
+...\ p^* \\ \end{pmatrix}=:\mathcal H(t)\begin{pmatrix}x^*\\ p^* \\ \end{pmatrix}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The matrix <!-- MATH
+ $\mathcal H(t)$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1795.gif"
+ ALT="$ \mathcal H(t)$">
+ is sometimes called the <I>Hamiltonian matrix</I>.<A NAME="6065"></A>
+Let us denote the transition matrix for the linear time-varying system&nbsp;(<A HREF="#e-canon-cloo">6.7</A>) by <!-- MATH
+ $\Phi(\cdot,\cdot)$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1796.gif"
+ ALT="$ \Phi(\cdot,\cdot)$">
+. Then we have, in particular, <!-- MATH
+ $\Big({\textstyle{x^*(t)}\atop
+\textstyle{ p^*(t)}}\Big)=\Phi(t,t_1)\Big({\textstyle{x^*(t_1)}\atop
+\textstyle{ p^*(t_1)}}\Big)$
+ -->
+<IMG
+ WIDTH="212" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1797.gif"
+ ALT="$ \Big({\textstyle{x^*(t)}\atop
+\textstyle{ p^*(t)}}\Big)=\Phi(t,t_1)\Big({\textstyle{x^*(t_1)}\atop
+\textstyle{ p^*(t_1)}}\Big)$">
+; here <!-- MATH
+ $\Phi(t,t_1)=\Phi^{-1}(t_1,t)$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1798.gif"
+ ALT="$ \Phi(t,t_1)=\Phi^{-1}(t_1,t)$">
+ propagates the solutions backward in time from <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+.
+Partitioning <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1799.gif"
+ ALT="$ \Phi$">
+ into <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ n\times n$">
+ blocks as
+<P><!-- MATH
+ \begin{displaymath}
+\Phi=\begin{pmatrix}
+ \Phi_{11}&  \Phi_{12}\\
+   \Phi_{21} &  \Phi_{22}\\
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="135" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1800.gif"
+ ALT="$\displaystyle \Phi=\begin{pmatrix}
+\Phi_{11}&amp; \Phi_{12}\\
+\Phi_{21} &amp; \Phi_{22}\\
+\end{pmatrix}$">
+</DIV><P>
+</P>
+gives the more detailed relation
+<P><!-- MATH
+ \begin{displaymath}
+\begin{pmatrix}
+ x^*(t)\\
+ p^*(t) \\
+\end{pmatrix}= \begin{pmatrix}
+ \Phi_{11}(t,t_1)&  \Phi_{12}(t,t_1)\\
+   \Phi_{21}(t,t_1) &  \Phi_{22}(t,t_1)\\
+\end{pmatrix} \begin{pmatrix}
+ x^*(t_1)\\
+ p^*(t_1) \\
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="341" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1801.gif"
+ ALT="$\displaystyle \begin{pmatrix}
+x^*(t)\\
+p^*(t) \\
+\end{pmatrix}= \begin{pmat...
+...,t_1)\\
+\end{pmatrix} \begin{pmatrix}
+x^*(t_1)\\
+p^*(t_1) \\
+\end{pmatrix}$">
+</DIV><P>
+</P>
+which, in view of the terminal condition&nbsp;(<A HREF="#e-termcond-LQR">6.5</A>), can be written as
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1802.gif"
+ ALT="$\displaystyle x^*(t)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="266" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1803.gif"
+ ALT="$\displaystyle =(\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M)x^*(t_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="e-detailed-top">(6.8)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1804.gif"
+ ALT="$\displaystyle p^*(t)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="266" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1805.gif"
+ ALT="$\displaystyle =(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M)x^*(t_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="e-detailed-bot">(6.9)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Solving&nbsp;(<A HREF="#e-detailed-top">6.8</A>) for <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1806.gif"
+ ALT="$ x^*(t_1)$">
+ and plugging the result into&nbsp;(<A HREF="#e-detailed-bot">6.9</A>),
+we obtain
+<P><!-- MATH
+ \begin{displaymath}
+p^*(t)=
+\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big)
+\big(\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M\big)^{-1}x^*(t).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="526" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1807.gif"
+ ALT="$\displaystyle p^*(t)=
+\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big)
+\big(\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M\big)^{-1}x^*(t).
+$">
+</DIV><P>
+</P>
+We have thus established&nbsp;(<A HREF="#p_-Px">6.6</A>) with
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Ptdef"></A><!-- MATH
+ \begin{equation}
+P(t):=-\frac12\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big)
+\big(\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M\big)^{-1}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="517" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1808.gif"
+ ALT="$\displaystyle P(t):=-\frac12\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big) \big(\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M\big)^{-1}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+A couple of remarks are in order. First, we have not yet justified
+the existence of the inverse in the definition of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+. For now, we note that
+<!-- MATH
+ $\Phi(t_1,t_1)=I_{2n\times 2n}$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1810.gif"
+ ALT="$ \Phi(t_1,t_1)=I_{2n\times 2n}$">
+, hence <!-- MATH
+ $\Phi_{11}(t_1,t_1)=I_{n\times n}$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1811.gif"
+ ALT="$ \Phi_{11}(t_1,t_1)=I_{n\times n}$">
+, <!-- MATH
+ $\Phi_{12}(t_1,t_1)=0_{n\times n}$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1812.gif"
+ ALT="$ \Phi_{12}(t_1,t_1)=0_{n\times n}
+$">
+, and
+so <!-- MATH
+ $\Phi_{11}(t_1,t_1)-2\Phi_{12}(t_1,t_1)M=I_{n\times n}$
+ -->
+<IMG
+ WIDTH="263" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1813.gif"
+ ALT="$ \Phi_{11}(t_1,t_1)-2\Phi_{12}(t_1,t_1)M=I_{n\times n}$">
+. By continuity, <!-- MATH
+ $\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M$
+ -->
+<IMG
+ WIDTH="189" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1814.gif"
+ ALT="$ \Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M$">
+ stays invertible for <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ close enough to <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, which means that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is well defined at least
+for <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ near <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. Second, the minus sign and the factor of <IMG
+ WIDTH="30" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1815.gif"
+ ALT="$ 1/2$">
+ in&nbsp;(<A HREF="#e-Ptdef">6.10</A>), which stem from the factor of <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1816.gif"
+ ALT="$ -2$">
+ in&nbsp;(<A HREF="#p_-Px">6.6</A>), appear to be somewhat arbitrary at this point. We see from&nbsp;(<A HREF="#e-termcond-LQR">6.5</A>)
+and&nbsp;(<A HREF="#p_-Px">6.6</A>) that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-RDE-boundcond"></A><!-- MATH
+ \begin{equation}
+P(t_1)=M.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1817.gif"
+ ALT="$\displaystyle P(t_1)=M.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The reason for the above conventions will become clear later, when we show that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is symmetric positive semidefinite for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ (not just for <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1604.gif"
+ ALT="$ t=t_1$">
+) and is directly related to the optimal cost.
+
+<P>
+Combining&nbsp;(<A HREF="#e-u_-LQR">6.3</A>) and&nbsp;(<A HREF="#p_-Px">6.6</A>),
+we deduce that the optimal
+control must take the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-oplife"></A><!-- MATH
+ \begin{equation}
+\fbox{$u^*(t)=-R^{-1}(t)B^T(t)P(t)x^*(t)$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="255" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1818.gif"
+ ALT="$\displaystyle \fbox{$u^*(t)=-R^{-1}(t)B^T(t)P(t)x^*(t)$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which, as we announced earlier, is a <I>linear state feedback law</I>.<A NAME="6141"></A> This is a remarkable conclusion, as it shows that the optimal closed-loop system must be linear.<A NAME="tex2html72"
+  HREF="footnode.html#foot7950"><SUP>6.1</SUP></A> Note that the feedback gain
+in&nbsp;(<A HREF="#e-oplife">6.12</A>) is time-varying even if the system&nbsp;(<A HREF="node107.html#e-LTV-LQR">6.1</A>) is time-invariant, because <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ from&nbsp;(<A HREF="#e-Ptdef">6.10</A>) is always time-varying.
+We remark that we could just as easily derive an open-loop formula for <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ by writing&nbsp;(<A HREF="#e-detailed-top">6.8</A>) with <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ in place of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, i.e.,
+<!-- MATH
+ $x_0=(\Phi_{11}(t_0,t_1)-2\Phi_{12}(t_0,t_1)M)x^*(t_1)$
+ -->
+<IMG
+ WIDTH="303" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1819.gif"
+ ALT="$ x_0=(\Phi_{11}(t_0,t_1)-2\Phi_{12}(t_0,t_1)M)x^*(t_1)
+$">
+,
+solving it for <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1806.gif"
+ ALT="$ x^*(t_1)$">
+ and plugging the result into&nbsp;(<A HREF="#e-detailed-bot">6.9</A>) to arrive at
+<P><!-- MATH
+ \begin{displaymath}
+p^*(t)=\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big)
+\big(\Phi_{11}(t_0,t_1)-2\Phi_{12}(t_0,t_1)M\big)^{-1}x_0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="517" HEIGHT="44" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1820.gif"
+ ALT="$\displaystyle p^*(t)=\big(\Phi_{21}(t,t_1)-2\Phi_{22}(t,t_1)M\big)
+\big(\Phi_{11}(t_0,t_1)-2\Phi_{12}(t_0,t_1)M\big)^{-1}x_0
+$">
+</DIV><P>
+</P>
+(provided that the inverse exists), and then using this expression in&nbsp;(<A HREF="#e-u_-LQR">6.3</A>). However, the feedback form of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is theoretically revealing and leads to a more compact description of the closed-loop system.
+
+<P>
+As we said, there are two things that we still need to check: optimality of the control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ that we found, and global existence of the matrix <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+. These issues will be tackled in Sections&nbsp;<A HREF="node110.html#ss-LQR-optcost">6.1.3</A> and&nbsp;<A HREF="node111.html#ss-RDE-exist">6.1.4</A>, respectively. But first, we want to obtain a nicer description for the matrix <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+, as the formula&nbsp;(<A HREF="#e-Ptdef">6.10</A>) is rather clumsy and not very useful (since calculating the transition matrix <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1799.gif"
+ ALT="$ \Phi$">
+ analytically is in general impossible).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1995"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1989"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1983"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1991"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1993"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1996"
+  HREF="node109.html">6.1.2 Riccati differential equation</A>
+<B> Up:</B> <A NAME="tex2html1990"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html1984"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+ &nbsp; <B>  <A NAME="tex2html1992"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1994"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

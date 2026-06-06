@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3.3 Target set</TITLE>
+<META NAME="description" CONTENT="3.3.3 Target set">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node52.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node54.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1150"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1144"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1140"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1146"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1148"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1151"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Up:</B> <A NAME="tex2html1145"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1141"
+  HREF="node52.html">3.3.2 Cost functional</A>
+ &nbsp; <B>  <A NAME="tex2html1147"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1149"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00533000000000000000"></A><A NAME="ss-target-set"></A>
+<BR>
+3.3.3 Target set
+</H2>
+
+<P>
+As we noted before, the cost functional&nbsp;(<A HREF="node52.html#e-Bolza">3.21</A>) depends on the choice
+of <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+, <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, and <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+. We take the initial time
+<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ and the initial state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ to be fixed as part of the control
+system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>). We now need to explain how to define
+ the final time <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ (which in turn determines
+  the corresponding final state <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+).  Depending on the control
+  objective, the final time and final state can
+be free or fixed, or can belong to some set. All these
+possibilities are captured by introducing a <I>target set</I><A NAME="3067"></A>
+<!-- MATH
+ $S\subset[t_0,\infty)\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img850.gif"
+ ALT="$ S\subset[t_0,\infty)\times\mathbb{R}^n$">
+ and letting <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ be the smallest time such that
+<!-- MATH
+ $(t_f,x_f)\in S$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img851.gif"
+ ALT="$ (t_f,x_f)\in S$">
+. It is clear that <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ defined in this way
+in general depends on the choice of the control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. We will take <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ to
+be a closed set; hence,
+if <IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img853.gif"
+ ALT="$ (t,x(t))$">
+ ever enters <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+, the time <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ is well defined. If a trajectory
+is such that <IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img853.gif"
+ ALT="$ (t,x(t))$">
+ does not belong to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ for any <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, then we consider
+its cost as being infinite (or undefined). Note that here we do not allow the option
+that <!-- MATH
+ $t_f=\infty$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img854.gif"
+ ALT="$ t_f=\infty$">
+ may give a valid finite cost, although we will
+study such ``infinite-horizon" problems<A NAME="3069"></A> later (in
+Chapters&nbsp;<A HREF="node91.html#c-hjb">5</A> and&nbsp;<A HREF="node106.html#c-lqr">6</A>).
+ Below are some examples of target sets that we will
+encounter in the sequel.
+
+<P>
+The target set <!-- MATH
+ $S=[t_0,\infty)\times\{x_1\}$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ S=[t_0,\infty)\times\{x_1\} $">
+, where <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ is
+a fixed point in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+,
+  gives a <A NAME="3073"></A><I>free-time, fixed-endpoint problem</I>. A generalization of this
+  is to consider a target set of the form
+  <!-- MATH
+ $S=[t_0,\infty)\times S_1$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img857.gif"
+ ALT="$ S=[t_0,\infty)\times S_1 $">
+, where <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ S_1$">
+ is a surface
+  (manifold) in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+.
+Another natural target set is
+ <!-- MATH
+ $S= \{t_1\}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ S= \{t_1\}\times\mathbb{R}^n$">
+, where <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ is a fixed time in <!-- MATH
+ $[t_0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img861.gif"
+ ALT="$ [t_0,\infty)$">
+; this
+  gives a <I>fixed-time, free-endpoint problem</I>.<A NAME="3077"></A>
+It is useful to observe that if we
+  start with a fixed-time, free-endpoint  problem and consider again the
+  auxiliary state <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+, we recover the previous case with
+  <!-- MATH
+ $S_1\subset \mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img862.gif"
+ ALT="$ S_1\subset \mathbb{R}^{n+1}$">
+ given by <!-- MATH
+ $\{x\in\mathbb{R}^{n+1}: x_{n+1}=t_1\}$
+ -->
+<IMG
+ WIDTH="179" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img863.gif"
+ ALT="$ \{x\in\mathbb{R}^{n+1}: x_{n+1}=t_1\}$">
+.
+ A target set <!-- MATH
+ $S=T\times S_1$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img864.gif"
+ ALT="$ S=T\times S_1$">
+, where
+  <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ is some subset of <!-- MATH
+ $[t_0,\infty)$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img861.gif"
+ ALT="$ [t_0,\infty)$">
+ and <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ S_1$">
+ is some surface in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+,
+  includes as special cases all the target sets mentioned above. It also
+  includes target sets of the form <!-- MATH
+ $S=\{t_1\}\times \{x_1\}$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img865.gif"
+ ALT="$ S=\{t_1\}\times \{x_1\}$">
+, which corresponds to
+   the most restrictive case of a
+  <I>fixed-time, fixed-endpoint problem</I>. As the opposite extreme, we can have
+<!-- MATH
+ $S=[t_0,\infty)\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img866.gif"
+ ALT="$ S=[t_0,\infty)\times\mathbb{R}^n$">
+, i.e., a <I>free-time, free-endpoint problem</I>.
+(The reader may wonder about the sensibility of this latter problem formulation:
+when will the motion stop, or why would it even begin in the first place?
+To answer these questions, we have to keep in mind that the control objective is to
+minimize the cost&nbsp;(<A HREF="node52.html#e-Bolza">3.21</A>). In the case of the Mayer problem, for example,
+<IMG
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img867.gif"
+ ALT="$ (t_f,x_f)$">
+ will be a point where the terminal cost is minimized,
+and if this minimum is unique then we do not
+need to
+ specify a target set a priori. In the presence of a running cost <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+  taking both positive and negative values, it is clear that remaining
+ at rest at the initial state
+ may not be optimal--and we also know that we can always bring
+ such a problem
+ to the Mayer form. When one says ``cost" one may often think of it
+ implicitly as a positive quantity, but remember that this need not be the case;
+ we may be making a ``profit" instead.)
+Many other target sets can be envisioned. For example,
+ <!-- MATH
+ $S=\{(t,g(t)):t\in[t_0,\infty)\}$
+ -->
+<IMG
+ WIDTH="205" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img868.gif"
+ ALT="$ S=\{(t,g(t)):t\in[t_0,\infty)\}$">
+ for some continuous function <!-- MATH
+ $g:\mathbb{R}\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img869.gif"
+ ALT="$ g:\mathbb{R}\to\mathbb{R}^n$">
+
+  corresponds to hitting a moving target. A point target
+  can be generalized to a set by making <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ set-valued.  The familiar trick
+ of incorporating
+  time as an extra state variable allows us to reduce such target sets to
+  the ones we already discussed, and so we will not specifically consider them.
+
+<P>
+We now have a refined formulation of the optimal control problem: given a control
+system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) satisfying the
+assumptions of Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A>, a cost functional
+given by&nbsp;(<A HREF="node52.html#e-Bolza">3.21</A>),
+and a target set <!-- MATH
+ $S\subset[t_0,\infty)\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img850.gif"
+ ALT="$ S\subset[t_0,\infty)\times\mathbb{R}^n$">
+, find a
+control <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+ that minimizes the cost. Unlike in calculus of variations, we will usually interpret optimality in the global
+sense.<A NAME="3089"></A> (The necessary conditions for optimality furnished by the maximum principle
+apply to locally optimal controls as well, provided that we work with
+an appropriate norm; see Section&nbsp;<A HREF="node78.html#s-mp-discussion">4.3</A> for details.)
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1150"
+  HREF="node54.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1144"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1140"
+  HREF="node52.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1146"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1148"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1151"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Up:</B> <A NAME="tex2html1145"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1141"
+  HREF="node52.html">3.3.2 Cost functional</A>
+ &nbsp; <B>  <A NAME="tex2html1147"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1149"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

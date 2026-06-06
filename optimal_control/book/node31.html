@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.3.4 Two special cases</TITLE>
+<META NAME="description" CONTENT="2.3.4 Two special cases">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html829"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html823"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html817"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html825"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html827"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html830"
+  HREF="node32.html">2.3.5 Variable-endpoint problems</A>
+<B> Up:</B> <A NAME="tex2html824"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html818"
+  HREF="node30.html">2.3.3 Technical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html826"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html828"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00434000000000000000"></A><A NAME="ss-EL-specialcases"></A>
+<BR>
+2.3.4 Two special cases
+</H2>
+
+<P>
+We know from the discussion given towards the end of Section&nbsp;<A HREF="node28.html#ss-EL-derivation">2.3.1</A>--see the formula&nbsp;(<A HREF="node28.html#e-ddxLz-expanded">2.19</A>) in particular--that the Euler-Lagrange equation&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>) is a second-order differential equation for <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+; indeed, it can be written in more detail as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-long-informal"></A><!-- MATH
+ \begin{equation}
+{L}_{ y}={L}_{{y'}{x}}+{L}_{{ y'}{ y}}y'+{L}_{{ y'}{y'}}y''.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="223" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img414.gif"
+ ALT="$\displaystyle {L}_{ y}={L}_{{y'}{x}}+{L}_{{ y'}{ y}}y'+{L}_{{ y'}{y'}}y''.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that we are being somewhat informal in denoting the third argument of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ by <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+, and also in omitting the <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-arguments.
+We now discuss two special
+cases in which&nbsp;(<A HREF="#e-EL-long-informal">2.24</A>)
+ can be reduced to a differential equation that is of first order, and therefore more tractable.
+
+<P>
+S<SMALL>PECIAL CASE 1</SMALL> (``no <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+"). This refers to the situation where the Lagrangian does not depend on <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, i.e., <IMG
+ WIDTH="95" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img415.gif"
+ ALT="$ L=L(x,y')$">
+.
+The
+Euler-Lagrange equation&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>) becomes
+<!-- MATH
+ $\frac d{dx}{L}_{ y'}=0,$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img416.gif"
+ ALT="$ \frac d{dx}{L}_{ y'}=0,
+$">
+
+which means that <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+ must stay constant. In other words, extremals are solutions of the first-order differential equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-noy"></A><!-- MATH
+ \begin{equation}
+{L}_{ y'}(x,y'(x))=c
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="127" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img417.gif"
+ ALT="$\displaystyle {L}_{ y'}(x,y'(x))=c$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for various values of <!-- MATH
+ $c\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.gif"
+ ALT="$ c\in\mathbb{R}$">
+. We already encountered such a situation in
+Example&nbsp;<A HREF="node28.html#x-straight">2.2</A>, where we actually had <IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img419.gif"
+ ALT="$ L=L(y')$">
+. Due to the presence of the parameter <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+, we expect that the family of solutions of&nbsp;(<A HREF="#e-EL-noy">2.25</A>) is rich enough to contain one (and only one) extremal that passes through two given points.
+
+<P>
+The quantity <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+, evaluated along a given curve, is called
+the <I>momentum</I>.<A NAME="1574"></A> This terminology will be justified in Section&nbsp;<A HREF="node33.html#s-canvar">2.4</A>.
+
+<P>
+S<SMALL>PECIAL CASE 2</SMALL> (``no <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+"). Suppose now that the Lagrangian does not depend on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, i.e., <IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img420.gif"
+ ALT="$ L=L(y,y')$">
+.
+In this case the partial derivative <!-- MATH
+ ${L}_{{y'}{x}}$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img421.gif"
+ ALT="$ {L}_{{y'}{x}}$">
+ vanishes from&nbsp;(<A HREF="#e-EL-long-informal">2.24</A>), and the Euler-Lagrange equation becomes
+<P><!-- MATH
+ \begin{displaymath}
+0=%\frac d{dx}\dd{L}{ y'}-\dd{L}{ y}=
+{L}_{{ y'}{y}}y'+{L}_{{y'}{y'}}y''-{L}_{ y}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="200" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img422.gif"
+ ALT="$\displaystyle 0=%\frac d{dx}\dd{L}{ y'}-\dd{L}{ y}=
+{L}_{{ y'}{y}}y'+{L}_{{y'}{y'}}y''-{L}_{ y}.
+$">
+</DIV><P>
+</P>
+Multiplying both sides by <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+, we have
+<P><!-- MATH
+ \begin{displaymath}
+0={L}_{{ y'}{ y}}(y')^2+{L}_{{ y'}{y'}}y'y''-{L}_{ y}y'=\frac
+d{dx}\left({L}_{ y'}y'-L\right)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="380" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img423.gif"
+ ALT="$\displaystyle 0={L}_{{ y'}{ y}}(y')^2+{L}_{{ y'}{y'}}y'y''-{L}_{ y}y'=\frac
+d{dx}\left({L}_{ y'}y'-L\right)
+$">
+</DIV><P>
+</P>
+where the last equality is easily verified (the <!-- MATH
+ ${L}_{ y'}y''$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img424.gif"
+ ALT="$ {L}_{ y'}y''$">
+ terms cancel
+out). This means that <!-- MATH
+ ${L}_{ y'}y'-L$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.gif"
+ ALT="$ {L}_{ y'}y'-L$">
+ must remain constant. Thus,
+similarly to Case&nbsp;1, extremals are described by the family of first-order differential equations
+<P><!-- MATH
+ \begin{displaymath}
+{L}_{ y'}(y(x),y'(x))y'(x)-L(y(x),y'(x))=c
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="311" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img426.gif"
+ ALT="$\displaystyle {L}_{ y'}(y(x),y'(x))y'(x)-L(y(x),y'(x))=c
+$">
+</DIV><P>
+</P>
+parameterized by <!-- MATH
+ $c\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img418.gif"
+ ALT="$ c\in\mathbb{R}$">
+.
+
+<P>
+The quantity <!-- MATH
+ ${L}_{ y'}y'-L$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img425.gif"
+ ALT="$ {L}_{ y'}y'-L$">
+ is called the <I>Hamiltonian</I>.<A NAME="1610"></A>
+Although its significance is not yet clear at this point, it will
+play a crucial role throughout the rest of the book.
+
+<P>
+<BR>
+<A NAME="z-brachistochrone"></A><IMG
+ WIDTH="554" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img427.gif"
+ ALT="\begin{Exercise}
+Use the above \lq\lq no $x$'' result to show that extremals for the ...
+... indeed given by the
+equations~\eqref{e-brachistochrone-solution}.\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html829"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html823"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html817"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html825"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html827"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html830"
+  HREF="node32.html">2.3.5 Variable-endpoint problems</A>
+<B> Up:</B> <A NAME="tex2html824"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html818"
+  HREF="node30.html">2.3.3 Technical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html826"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html828"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

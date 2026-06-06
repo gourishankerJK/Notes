@@ -1,0 +1,471 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.2.1 From Lagrange to Mayer form</TITLE>
+<META NAME="description" CONTENT="4.2.1 From Lagrange to Mayer form">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node67.html">
+<LINK REL="previous" HREF="node65.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node67.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1374"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1368"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1362"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1370"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1372"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1375"
+  HREF="node67.html">4.2.2 Temporal control perturbation</A>
+<B> Up:</B> <A NAME="tex2html1369"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1363"
+  HREF="node65.html">4.2 Proof of the</A>
+ &nbsp; <B>  <A NAME="tex2html1371"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1373"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00621000000000000000"></A><A NAME="ss-lagr-to-mayer"></A>
+<BR>
+4.2.1 From Lagrange to Mayer form
+</H2>
+
+<P>
+As in Section&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A>, we define an additional state variable, <!-- MATH
+ $x^0\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1023.gif"
+ ALT="$ x^0\in\mathbb{R}$">
+, to be the solution
+of
+<P><!-- MATH
+ \begin{displaymath}
+\dot x^0=L(x,u),\qquad x^0(t_0)=0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="217" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1024.gif"
+ ALT="$\displaystyle \dot x^0=L(x,u),\qquad x^0(t_0)=0
+$">
+</DIV><P>
+</P>
+and arrive at the augmented system<A NAME="3684"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-mp-augmented"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot x^0&=L(x,u)\\
+\dot x&=f(x,u)
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="91" HEIGHT="55" BORDER="0"
+ SRC="img1025.gif"
+ ALT="\begin{displaymath}\begin{split}\dot x^0&amp;=L(x,u)\\ \dot x&amp;=f(x,u) \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with the initial condition <!-- MATH
+ $\Big({\textstyle{0}\atop
+\textstyle{x_0}}\Big)$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1026.gif"
+ ALT="$ \Big({\textstyle{0}\atop
+\textstyle{x_0}}\Big)$">
+. The cost can then be
+rewritten as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Jx_0"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^{t_f}\dot x^0(t) dt=x^0(t_f)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="217" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1027.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_f}\dot x^0(t) dt=x^0(t_f)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which means that in the new coordinates the problem is in the Mayer form
+ (there is a terminal cost and no running
+cost). Also, the target set becomes <!-- MATH
+ $[t_0,\infty)\times
+\mathbb{R}\times\{x_1\}=: [t_0,\infty)\times S'$
+ -->
+<IMG
+ WIDTH="260" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1028.gif"
+ ALT="$ [t_0,\infty)\times
+\mathbb{R}\times\{x_1\}=: [t_0,\infty)\times S'$">
+; here <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1029.gif"
+ ALT="$ S'$">
+ is the line in
+<!-- MATH
+ $\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$ \mathbb{R}^{n+1}$">
+ that passes through <!-- MATH
+ $\Big({\textstyle{0}\atop
+\textstyle{x_1}}\Big)$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1031.gif"
+ ALT="$ \Big({\textstyle{0}\atop
+\textstyle{x_1}}\Big)$">
+ and is parallel to
+the <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+-axis. To simplify the
+ notation, we define
+<P><!-- MATH
+ \begin{displaymath}
+y:=\begin{pmatrix}x^0\\x\end{pmatrix}\in\mathbb{R}^{n+1}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="144" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1032.gif"
+ ALT="$\displaystyle y:=\begin{pmatrix}x^0\\ x\end{pmatrix}\in\mathbb{R}^{n+1}
+$">
+</DIV><P>
+</P>
+and write the system&nbsp;(<A HREF="#e-mp-augmented">4.5</A>) more compactly as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ydot"></A><!-- MATH
+ \begin{equation}
+\dot y=\begin{pmatrix}
+    L(x,u) \\
+    f(x,u)
+  \end{pmatrix}=:g(y,u)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="192" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1033.gif"
+ ALT="$\displaystyle \dot y=\begin{pmatrix}L(x,u) \\ f(x,u) \end{pmatrix}=:g(y,u)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(the right-hand side actually does not depend on <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+). Note that
+this system is well posed because we assumed that <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ has the same
+regularity properties as <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+.
+
+<P>
+An optimal trajectory
+<!-- MATH
+ $x^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$ x^*(\cdot)$">
+ of the original system in
+<!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ corresponds in an obvious way to an optimal
+ trajectory <!-- MATH
+ $y^*(\cdot)$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1034.gif"
+ ALT="$ y^*(\cdot)$">
+ of the augmented system in <!-- MATH
+ $\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$ \mathbb{R}^{n+1}$">
+. The first
+ component <IMG
+ WIDTH="31" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1035.gif"
+ ALT="$ x^{0,*}$">
+ of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ describes the evolution of the cost
+ in the original problem, and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is recovered from <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+
+by projection onto <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ parallel to the <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+-axis. This situation is
+depicted in Figure&nbsp;<A HREF="#f-projection">4.1</A> (note that <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ is not
+necessarily positive, so <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+ need not actually be increasing
+along <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+). In this and all subsequent figures, the <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+-axis
+will be vertical.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-projection"></A><A NAME="7816"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The optimal trajectory of the augmented system
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="324" HEIGHT="310" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1036.gif"
+ ALT="\includegraphics{figures/projection.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+From now on, we let <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ denote the terminal time of the optimal
+trajectory <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ (or, what is the same, of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+). The next exercise offers a
+geometric interpretation of optimality; it will not be directly used in the current proof,
+but we will see a related idea in Section&nbsp;<A HREF="node71.html#ss-keylemma">4.2.6</A>.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="137" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1038.gif"
+ ALT="\begin{Exercise}Let $t_1$\ and $t_2$\ be arbitrary time
+instants satisfying $t_0...
+...x^{*}(t_2)}}\Big)$\ at any time $t_3$,
+even different from~$t_2$.
+\end{Exercise}">
+<BR>
+
+<P>
+In the particular case when <IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1039.gif"
+ ALT="$ t_2=t^*$">
+, the claim in the exercise should be
+obvious:
+ no other trajectory starting from some point
+<IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1040.gif"
+ ALT="$ y^*(t_1)$">
+ on the optimal trajectory can hit the line <IMG
+ WIDTH="20" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1029.gif"
+ ALT="$ S'$">
+ at a
+point lower than <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+. In other words, a final portion of
+the optimal trajectory must itself be optimal with respect to its starting
+point as the initial condition. This idea, known as the
+<I>principle of optimality</I>,<A NAME="p-poo"></A><A NAME="3745"></A> is illustrated in
+Figure&nbsp;<A HREF="#f-nocone-optimality">4.2</A>. (The reader will notice that we
+are using different axes in different figures.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-nocone-optimality"></A><A NAME="7823"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Principle of optimality
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="260" HEIGHT="220" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1042.gif"
+ ALT="\includegraphics{figures/nocone-optimality.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Another simple observation, which will be useful later, is that
+the Hamiltonian&nbsp;(<A HREF="node63.html#e-H-abnormult">4.2</A>) can be equivalently
+represented as the following inner product in <!-- MATH
+ $\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$ \mathbb{R}^{n+1}$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H-as-ip"></A><!-- MATH
+ \begin{equation}
+H(x,u,p,p_0)=\left\langle\begin{pmatrix}
+    p_0 \\
+    p
+  \end{pmatrix},\begin{pmatrix}
+    L(x,u) \\
+    f(x,u)
+  \end{pmatrix}\right\rangle.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="290" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1043.gif"
+ ALT="$\displaystyle H(x,u,p,p_0)=\left\langle\begin{pmatrix}p_0 \\ p \end{pmatrix},\begin{pmatrix}L(x,u) \\ f(x,u) \end{pmatrix}\right\rangle.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1374"
+  HREF="node67.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1368"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1362"
+  HREF="node65.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1370"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1372"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1375"
+  HREF="node67.html">4.2.2 Temporal control perturbation</A>
+<B> Up:</B> <A NAME="tex2html1369"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1363"
+  HREF="node65.html">4.2 Proof of the</A>
+ &nbsp; <B>  <A NAME="tex2html1371"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1373"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

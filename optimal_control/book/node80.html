@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.3.1.1 Fixed terminal time</TITLE>
+<META NAME="description" CONTENT="4.3.1.1 Fixed terminal time">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node81.html">
+<LINK REL="previous" HREF="node79.html">
+<LINK REL="up" HREF="node79.html">
+<LINK REL="next" HREF="node81.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1575"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1569"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1563"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1571"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1573"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1576"
+  HREF="node81.html">4.3.1.2 Time-dependent system and</A>
+<B> Up:</B> <A NAME="tex2html1570"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1564"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+ &nbsp; <B>  <A NAME="tex2html1572"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1574"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00631100000000000000"></A>
+<A NAME="4470"></A>
+<BR>
+4.3.1.1 Fixed terminal time
+</H3>
+Suppose that the terminal time <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ is fixed, so that the terminal time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ of the optimal trajectory <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ considered in the proof must equal a given value <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. Temporal control
+perturbations are then no longer admissible. Accordingly, the line <IMG
+ WIDTH="13" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1057.gif"
+ ALT="$ \vec\rho$">
+ formed by the
+perturbation directions <!-- MATH
+ $\delta(\tau)$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ \delta(\tau)$">
+ defined
+in&nbsp;(<A HREF="node67.html#e-deltatau">4.9</A>) must not be used when generating the terminal cone <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+. We now invite the reader to check exactly
+where these perturbation directions <!-- MATH
+ $\delta(\tau)$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ \delta(\tau)$">
+ were used in
+the proof of the maximum principle. As a matter of fact, they were
+used in one place only: to show that <!-- MATH
+ $\left.H\right|_{*}(t^*)=0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1283.gif"
+ ALT="$ \left.H\right\vert _{*}(t^*)=0$">
+. Thus we
+conclude that the Hamiltonian will now be constant but not
+necessarily 0 along the optimal trajectory, while all the other
+conditions remain unchanged.
+
+<P>
+Let us confirm this fact by reducing the fixed-time problem to a
+free-time one via the familiar trick of introducing the extra
+state variable  <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+. The system becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-with-xn+1"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+&\dot x=f(x,u),\qquad x(t_0)=x_0\\
+&\dot x_{n+1}=1, \qquad x_{n+1}(t_0)=t_0
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="209" HEIGHT="55" BORDER="0"
+ SRC="img1284.gif"
+ ALT="\begin{displaymath}\begin{split}&amp;\dot x=f(x,u),\qquad x(t_0)=x_0\\ &amp;\dot x_{n+1}=1, \qquad x_{n+1}(t_0)=t_0 \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.39)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If the original target set was <!-- MATH
+ $\{t_1\}\times S_1$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1285.gif"
+ ALT="$ \{t_1\}\times S_1$">
+, then for the
+new system we can write the target set as <!-- MATH
+ $[t_0,\infty)\times
+S_1\times \{t_1\}$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1286.gif"
+ ALT="$ [t_0,\infty)\times
+S_1\times \{t_1\}$">
+, with the terminal time no longer explicitly
+constrained. The maximum principle for the Basic Variable-Endpoint
+Control Problem can now be applied. The Hamiltonian for the new
+problem is <!-- MATH
+ $\overline H=\langle p,f\rangle +p_{n+1}+p_0L=H+p_{n+1}$
+ -->
+<IMG
+ WIDTH="284" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1287.gif"
+ ALT="$ \overline H=\langle p,f\rangle +p_{n+1}+p_0L=H+p_{n+1} $">
+,
+where <!-- MATH
+ $H=\langle p,f\rangle +p_0L$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1288.gif"
+ ALT="$ H=\langle p,f\rangle +p_0L$">
+ is the Hamiltonian for the original fixed-time
+problem. Clearly,
+the differential equation for <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ is the same as before and the
+Hamiltonian maximization condition for <!-- MATH
+ $\overline H$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1289.gif"
+ ALT="$ \overline H$">
+ implies the
+one for <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+.  We know that <!-- MATH
+ $\left.\overline H\right|_{*}=\left.H\right|_{*}+p_{n+1}^*\equiv 0$
+ -->
+<IMG
+ WIDTH="176" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1290.gif"
+ ALT="$ \left.\overline H\right\vert _{*}=\left.H\right\vert _{*}+p_{n+1}^*\equiv 0$">
+.
+  Moreover, we have <!-- MATH
+ $\dot
+p^*_{n+1}=\left.-{\overline H}_{x_{n+1}}\right|_{*}=\left.-{H}_{t}\right|_{*}=0$
+ -->
+<IMG
+ WIDTH="241" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1291.gif"
+ ALT="$ \dot
+p^*_{n+1}=\left.-{\overline H}_{x_{n+1}}\right\vert _{*}=\left.-{H}_{t}\right\vert _{*}=0$">
+ (since <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ does not depend on <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+) hence <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1292.gif"
+ ALT="$ p^*_{n+1}$">
+
+is constant. Thus <!-- MATH
+ $\left.H\right|_{*}$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1232.gif"
+ ALT="$ \left.H\right\vert _{*}$">
+ is indeed equal to a constant,
+namely, <!-- MATH
+ $-p^*_{n+1}$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1293.gif"
+ ALT="$ -p^*_{n+1}$">
+. It is no longer guaranteed to be 0; in fact,
+since the final value of <IMG
+ WIDTH="40" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1294.gif"
+ ALT="$ x_{n+1}$">
+ is fixed, the transversality
+condition gives us no information about <IMG
+ WIDTH="38" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1292.gif"
+ ALT="$ p^*_{n+1}$">
+. This property of the Hamiltonian is also consistent with what we saw in Section&nbsp;<A HREF="node58.html#ss-varappr-comments">3.4.4</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1575"
+  HREF="node81.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1569"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1563"
+  HREF="node79.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1571"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1573"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1576"
+  HREF="node81.html">4.3.1.2 Time-dependent system and</A>
+<B> Up:</B> <A NAME="tex2html1570"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1564"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+ &nbsp; <B>  <A NAME="tex2html1572"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1574"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

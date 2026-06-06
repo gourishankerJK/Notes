@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>6.2.1 Existence and properties of the limit</TITLE>
+<META NAME="description" CONTENT="6.2.1 Existence and properties of the limit">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node114.html">
+<LINK REL="previous" HREF="node112.html">
+<LINK REL="up" HREF="node112.html">
+<LINK REL="next" HREF="node114.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2067"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2061"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2055"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2063"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2065"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2068"
+  HREF="node114.html">6.2.2 Infinite-horizon problem and</A>
+<B> Up:</B> <A NAME="tex2html2062"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2056"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+ &nbsp; <B>  <A NAME="tex2html2064"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2066"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00821000000000000000"></A><A NAME="ss-limit-exist"></A>
+<BR>
+6.2.1 Existence and properties of the limit
+</H2>
+
+<P>
+We begin by making a series of observations about the behavior of <!-- MATH
+ $P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$ P(t_0,t_1)$">
+ as a function of <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, with the goal of establishing that
+<!-- MATH
+ $\lim_{t_1\to\infty}P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.gif"
+ ALT="$ \lim_{t_1\to\infty}P(t_0,t_1)$">
+ exists  (under the additional assumption of controllability) and has some interesting properties. This path will eventually lead us to a complete solution of the infinite-horizon LQR problem.
+
+<P>
+M<SMALL>ONOTONICITY.</SMALL>  It is not hard to see that <I>the finite-horizon optimal cost <!-- MATH
+ $x_0^TP(t_0,t_1)x_0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0$">
+ is a
+monotonically nondecreasing function of the final time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+.</I> Indeed, let <IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1886.gif"
+ ALT="$ t_2&gt;t_1$">
+. Using&nbsp;(<A HREF="node112.html#e-V_Pt_1">6.25</A>), the definition of the value function, and the standing assumptions that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1887.gif"
+ ALT="$ Q\ge 0$">
+ and
+<IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1888.gif"
+ ALT="$ R&gt;0$">
+, we have
+<P></P>
+<DIV ALIGN="CENTER"><!-- MATH
+ \begin{multline*}
+x_0^TP(t_0,t_2)x_0=V^{t_2}(t_0,x_0)=\int_{t_0}^{t_2}
+\left((x^*_{t_2})^T(t)Qx^*_{t_2}(t)+(u^*_{t_2})^T(t)Ru^*_{t_2}(t)\right)dt\\\ge \int_{t_0}^{t_1}
+\left((x^*_{t_2})^T(t)Qx^*_{t_2}(t)+(u^*_{t_2})^T(t)Ru^*_{t_2}(t)\right)dt\ge V^{t_1}(t_0,x_0)=x_0^TP(t_0, t_1)x_0.
+\end{multline*}
+ -->
+<IMG
+ WIDTH="579" HEIGHT="106" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1889.gif"
+ ALT="\begin{multline*}
+x_0^TP(t_0,t_2)x_0=V^{t_2}(t_0,x_0)=\int_{t_0}^{t_2}
+\left((x^...
+...)Ru^*_{t_2}(t)\right)dt\ge V^{t_1}(t_0,x_0)=x_0^TP(t_0, t_1)x_0.
+\end{multline*}"></DIV>
+<BR CLEAR="ALL">
+<P><P></P>
+
+<P>
+B<SMALL>OUNDEDNESS.</SMALL> It is not true in general that the optimal cost <!-- MATH
+ $x_0^TP(t_0,t_1)x_0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0$">
+ remains bounded as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+. For example, if the system is <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1671.gif"
+ ALT="$ \dot x=x$">
+ (no control) then its solutions are growing exponentials and the infinite-horizon cost is clearly unbounded. However, we now show that <I>the finite-horizon optimal cost <!-- MATH
+ $x_0^TP(t_0,t_1)x_0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0$">
+ remains bounded as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+ assuming that
+<IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1890.gif"
+ ALT="$ (A,B)$">
+ is a controllable pair.</I><A NAME="6411"></A>
+Indeed, controllability guarantees the existence of a time <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+ and a control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1891.gif"
+ ALT="$ \bar u$">
+ that steers the state
+from <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ at time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ to 0 at time <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+. After time <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+, set <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1891.gif"
+ ALT="$ \bar u$">
+ equal to 0.
+This control yields a state trajectory <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+ satisfying <!-- MATH
+ $\bar x(t)=0$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1892.gif"
+ ALT="$ \bar x(t)=0$">
+ for all <!-- MATH
+ $t\ge \bar t$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1893.gif"
+ ALT="$ t\ge \bar t$">
+, and we have
+<P><!-- MATH
+ \begin{displaymath}
+x_0^TP(t_0,t_1)x_0=V^{t_1}(t_0,x_0)\le J(\bar u)=\int_{t_0}^{\bar t}
+\left(\bar x^T(t)Q\bar
+x(t)+\bar u^T(t)R\bar u(t)\right)dt\qquad \forall\,t_1\ge \bar t.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="629" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1894.gif"
+ ALT="$\displaystyle x_0^TP(t_0,t_1)x_0=V^{t_1}(t_0,x_0)\le J(\bar u)=\int_{t_0}^{\bar...
+... x^T(t)Q\bar
+x(t)+\bar u^T(t)R\bar u(t)\right)dt\qquad \forall\,t_1\ge \bar t.
+$">
+</DIV><P>
+</P>
+Since the above integral does not depend on <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, it provides a uniform bound for the optimal cost--a single bound that is valid for all sufficiently large <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, as desired.
+We leave the controllability assumption in force for the rest of this chapter (except for Exercise&nbsp;<A HREF="node116.html#z-controbs-_SPMgt_stabdet">6.5</A> on page&nbsp;<A HREF="node116.html#z-controbs-_SPMgt_stabdet"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> where its necessity will be re-examined).
+
+<P>
+E<SMALL>XISTENCE OF THE LIMIT.</SMALL> From the previous two claims it immediately follows that <!-- MATH
+ $x_0^TP(t_0,t_1)x_0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0$">
+ has a limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+.
+It turns out that more is true, namely,
+<I>the matrix
+<!-- MATH
+ $\lim_{t_1\to\infty}P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.gif"
+ ALT="$ \lim_{t_1\to\infty}P(t_0,t_1)$">
+ is well defined</I>. To see why, let us consider some specific initial conditions <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ (we can do this because all the facts established so far are valid for arbitrary <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+). First, let <IMG
+ WIDTH="58" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1895.gif"
+ ALT="$ x_0=e_i$">
+ with <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1863.gif"
+ ALT="$ e_i$">
+ as defined on page&nbsp;<A HREF="node111.html#p-ei"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> for some <!-- MATH
+ $i\in\{1,\dots,n\}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1896.gif"
+ ALT="$ i\in\{1,\dots,n\}$">
+. Then <!-- MATH
+ $x_0^TP(t_0,t_1)x_0=P_{ii}(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="198" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1897.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0=P_{ii}(t_0,t_1)$">
+,
+implying that each diagonal entry of <!-- MATH
+ $P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$ P(t_0,t_1)$">
+ has a limit as <!-- MATH
+ ${t_1\to\infty}$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1898.gif"
+ ALT="$ {t_1\to\infty}$">
+. Next,
+let <!-- MATH
+ $x_0=e_i+e_j$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1899.gif"
+ ALT="$ x_0=e_i+e_j$">
+ for some <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1900.gif"
+ ALT="$ i\ne j$">
+. Recalling that <!-- MATH
+ $P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$ P(t_0,t_1)$">
+ is symmetric (Exercise&nbsp;<A HREF="node110.html#z-LQR-P">6.2</A>), we have  <!-- MATH
+ $x_0^TP(t_0,t_1)x_0=P_{ii}(t_0,t_1)+2P_{ij}(t_0,t_1)+P_{jj}(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="394" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1901.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0=P_{ii}(t_0,t_1)+2P_{ij}(t_0,t_1)+P_{jj}(t_0,t_1)$">
+, from which we can deduce that the off-diagonal entries of <!-- MATH
+ $P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$ P(t_0,t_1)$">
+ converge as well. We can think of <!-- MATH
+ $\lim_{t_1\to\infty}P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.gif"
+ ALT="$ \lim_{t_1\to\infty}P(t_0,t_1)$">
+ as the solution of the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>) that, starting from the zero matrix, has flown backward for infinite time and reached <I>steady state</I>;<A NAME="6430"></A> Figure&nbsp;<A HREF="#f-are-limit">6.1</A> should help visualize this situation.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-are-limit"></A><A NAME="7962"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Steady-state solution of the RDE
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="594" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1902.gif"
+ ALT="\includegraphics{figures/are-limit.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+P<SMALL>ROPERTIES OF THE LIMIT.</SMALL> Since the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>) is now a time-invariant differential equation, its solution <!-- MATH
+ $P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1883.gif"
+ ALT="$ P(t_0,t_1)$">
+ actually depends only on the difference <IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1903.gif"
+ ALT="$ t_1-t_0$">
+. Thus it is clear that the steady-state solution <!-- MATH
+ $\lim_{t_1\to\infty}P(t_0,t_1)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1884.gif"
+ ALT="$ \lim_{t_1\to\infty}P(t_0,t_1)$">
+, whose existence we just established, does not depend on <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+, i.e., it is a <I>constant matrix</I>.
+Denoting it simply by <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-P-ssdef"></A><!-- MATH
+ \begin{equation}
+P=\lim_{t_1\to\infty} P(t,t_1) \qquad \forall\,t.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="195" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1904.gif"
+ ALT="$\displaystyle P=\lim_{t_1\to\infty} P(t,t_1) \qquad \forall\,t.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Next, passing to the limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+ on both sides of the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>), we see that <!-- MATH
+ $\lim_{t_1\to\infty} \dot P(t,t_1)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1905.gif"
+ ALT="$ \lim_{t_1\to\infty} \dot P(t,t_1)$">
+ must also exist and be
+a constant matrix, which must then necessarily be the zero
+matrix. We thus conclude that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is a solution of the <B>algebraic Riccati equation (ARE)</B><A NAME="6458"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ARE"></A><!-- MATH
+ \begin{equation}
+\fbox{$P  A+A^TP +Q-P  BR^{-1}B^TP =0$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="285" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1906.gif"
+ ALT="$\displaystyle \fbox{$P A+A^TP +Q-P BR^{-1}B^TP =0$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Conceptually, the step of passing from the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>), which is a matrix differential equation, to the ARE&nbsp;(<A HREF="#e-ARE">6.28</A>), which is a <I>static</I> matrix equation, mirrors our earlier step of passing from the general HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>) to its infinite-horizon counterpart&nbsp;(<A HREF="node96.html#e-HJB-ih">5.19</A>). In both cases, the time derivative is eliminated; in the present case, we are left with no derivatives at
+all! The ARE&nbsp;(<A HREF="#e-ARE">6.28</A>) can be solved analytically or numerically without
+difficulties. It may happen that the ARE has ``spurious" extra solutions other than&nbsp;(<A HREF="#e-P-ssdef">6.27</A>). In this regard, it is useful to note that the matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ given by&nbsp;(<A HREF="#e-P-ssdef">6.27</A>) must be <I>symmetric positive semidefinite</I> (because so is <IMG
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1876.gif"
+ ALT="$ P(t,t_1)$">
+ for each <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+). We can hope that the ARE has only one solution with this additional property. This is the case in the next exercise, and we will show in Section&nbsp;<A HREF="node116.html#ss-LQRih-theorem">6.2.4</A> that this is always the case under appropriate assumptions.
+
+<P>
+<BR>
+<A NAME="z-solving-ARE"></A><IMG
+ WIDTH="555" HEIGHT="104" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1907.gif"
+ ALT="\begin{Exercise}
+Consider the double integrator $\dot x_1=x_2$, $\dot x_2=u$\ an...
+...nging the terminal condition for the RDE (i.e., picking $M\ne 0$)?\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2067"
+  HREF="node114.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2061"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2055"
+  HREF="node112.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2063"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2065"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2068"
+  HREF="node114.html">6.2.2 Infinite-horizon problem and</A>
+<B> Up:</B> <A NAME="tex2html2062"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2056"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+ &nbsp; <B>  <A NAME="tex2html2064"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2066"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

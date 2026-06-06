@@ -1,0 +1,308 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.2.1 Example: nondifferentiable value function</TITLE>
+<META NAME="description" CONTENT="5.2.1 Example: nondifferentiable value function">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node99.html">
+<LINK REL="next" HREF="node101.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1869"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1863"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1859"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1865"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1867"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1870"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Up:</B> <A NAME="tex2html1864"
+  HREF="node99.html">5.2 HJB equation versus</A>
+<B> Previous:</B> <A NAME="tex2html1860"
+  HREF="node99.html">5.2 HJB equation versus</A>
+ &nbsp; <B>  <A NAME="tex2html1866"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1868"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00721000000000000000"></A><A NAME="ss-V-nonsmooth"></A><A NAME="5665"></A>
+<BR>
+5.2.1 Example: nondifferentiable value function
+</H2>
+
+<P>
+For the scalar system
+<P><!-- MATH
+ \begin{displaymath}
+\dot x=xu
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="57" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1665.gif"
+ ALT="$\displaystyle \dot x=xu
+$">
+</DIV><P>
+</P>
+with <!-- MATH
+ $x\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1334.gif"
+ ALT="$ x\in\mathbb{R}$">
+ and <!-- MATH
+ $u\in[-1,1]$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1470.gif"
+ ALT="$ u\in[-1,1]$">
+, consider a fixed-time, free-endpoint problem with the cost <!-- MATH
+ $J(u)=x(t_1)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1666.gif"
+ ALT="$ J(u)=x(t_1)$">
+.
+The optimal solution is easily
+found by inspection: if <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1667.gif"
+ ALT="$ x_0&gt;0$">
+ then apply <!-- MATH
+ $u\equiv -1$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.gif"
+ ALT="$ u\equiv -1$">
+ which results in <IMG
+ WIDTH="60" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1668.gif"
+ ALT="$ \dot x=-x$">
+, hence
+the cost is <!-- MATH
+ $x(t_1)=e^{-(t_1-t_0)}x_0$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1669.gif"
+ ALT="$ x(t_1)=e^{-(t_1-t_0)}x_0$">
+; if <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1670.gif"
+ ALT="$ x_0&lt;0$">
+ then use <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.gif"
+ ALT="$ u\equiv 1$">
+ which gives <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1671.gif"
+ ALT="$ \dot x=x$">
+ and the cost is
+<!-- MATH
+ $x(t_1)=e^{t_1-t_0}x_0$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1672.gif"
+ ALT="$ x(t_1)=e^{t_1-t_0}x_0$">
+; finally, if <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ x_0=0$">
+ then <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1674.gif"
+ ALT="$ x\equiv 0$">
+ for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and the cost is 0.
+We see that the value function is given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V-nonsmooth"></A><!-- MATH
+ \begin{equation}
+V(t,x)=\begin{cases} e^{-(t_1-t)}x
+\quad&\text{ if }\ x>0\\
+e^{t_1-t}x\quad&\text{ if }\ x<0\\
+0\quad&\text{ if }\ x=0          \end{cases}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="267" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1675.gif"
+ ALT="$\displaystyle V(t,x)=\begin{cases}e^{-(t_1-t)}x \quad&amp;\text{ if }\ x&gt;0\\ e^{t_1-t}x\quad&amp;\text{ if }\ x&lt;0\\ 0\quad&amp;\text{ if }\ x=0 \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Away from <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ x=0$">
+ it indeed satisfies the HJB equation for this example, which is <!-- MATH
+ $-{V}_{t}=\inf_{u}\left\{{V}_{x}\, xu\right\}=-\left|{V}_{x}\,
+x\right|$
+ -->
+<IMG
+ WIDTH="228" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1676.gif"
+ ALT="$ -{V}_{t}=\inf_{u}\left\{{V}_{x}\, xu\right\}=-\left\vert{V}_{x}\,
+x\right\vert
+$">
+, with the boundary condition <!-- MATH
+ $V(t_1,x)=x$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1677.gif"
+ ALT="$ V(t_1,x)=x$">
+.
+For a fixed <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1678.gif"
+ ALT="$ t&lt;t_1$">
+, the graph of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ as a function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is plotted in Figure&nbsp;<A HREF="#f-lipschitz">5.4</A>. At <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ x=0$">
+ this function is Lipschitz but not <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+. It can actually be shown that the above HJB equation does not admit any <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ solution.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-lipschitz"></A><A NAME="7929"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Value function nondifferentiable at <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img12.gif"
+ ALT="$ x=0$">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="197" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1679.gif"
+ ALT="\includegraphics{figures/lipschitz.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It turns out that this state of affairs is not an exception; in fact, it is quite
+typical for problems with bounded controls and terminal cost to have nondifferentiable value functions.  On the other hand, the local Lipschitz property--which the function&nbsp;(<A HREF="#e-V-nonsmooth">5.30</A>) does possess--is a known attribute of value functions for some reasonably general classes of optimal control problems (we will say more on this below).
+
+<P>
+The above example clarifies why we cannot derive the maximum principle from the HJB equation. There really is no ``easy" proof of the maximum principle (except in settings much less general than the one we considered). More importantly, the difficulty that we just exposed
+has implications not only for relating the HJB equation and the maximum principle, but for
+the HJB theory itself. Namely, we need to reconsider the assumption that
+<!-- MATH
+ $V\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1680.gif"
+ ALT="$ V\in\mathcal C^1$">
+ and instead work with some generalized concept of a solution to the HJB partial differential equation.<A NAME="tex2html66"
+  HREF="footnode.html#foot7930"><SUP>5.3</SUP></A>Because of this difficulty, the theory of dynamic programming did not become rigorous until the early
+1980s when, after a series of related developments, the notion of a
+<I>viscosity solution</I> was introduced by Crandall and Lions; that work completes the historical timeline of key contributions
+listed in Section&nbsp;<A HREF="node98.html#ss-HJB-history">5.1.5</A>. (The maximum principle, on the other hand, was on solid technical ground from the beginning.) We turn to viscosity solutions in the next section, postponing a discussion of further links between the HJB equation and the maximum principle until Section&nbsp;<A HREF="node123.html#s-characteristics">7.2</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1869"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1863"
+  HREF="node99.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1859"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1865"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1867"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1870"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Up:</B> <A NAME="tex2html1864"
+  HREF="node99.html">5.2 HJB equation versus</A>
+<B> Previous:</B> <A NAME="tex2html1860"
+  HREF="node99.html">5.2 HJB equation versus</A>
+ &nbsp; <B>  <A NAME="tex2html1866"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1868"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

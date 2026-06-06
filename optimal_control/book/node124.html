@@ -1,0 +1,676 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.2.1 Method of characteristics</TITLE>
+<META NAME="description" CONTENT="7.2.1 Method of characteristics">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node125.html">
+<LINK REL="previous" HREF="node123.html">
+<LINK REL="up" HREF="node123.html">
+<LINK REL="next" HREF="node125.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2236"
+  HREF="node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2230"
+  HREF="node123.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2224"
+  HREF="node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2232"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2234"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2237"
+  HREF="node125.html">7.2.2 Canonical equations as</A>
+<B> Up:</B> <A NAME="tex2html2231"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Previous:</B> <A NAME="tex2html2225"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+ &nbsp; <B>  <A NAME="tex2html2233"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2235"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00921000000000000000">
+7.2.1 Method of characteristics</A>
+</H2>
+
+<P>
+Suppose that we are looking for a function <!-- MATH
+ $v:\mathbb{R}^n\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1681.gif"
+ ALT="$ v:\mathbb{R}^n\to
+\mathbb{R}$">
+ that
+solves the PDE<A NAME="6904"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-pde-again"></A><!-- MATH
+ \begin{equation}
+F(x,v(x),\nabla v(x))=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="168" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1727.gif"
+ ALT="$\displaystyle F(x,v(x),\nabla v(x))=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $F:\mathbb{R}^n\times \mathbb{R}\times \mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1728.gif"
+ ALT="$ F:\mathbb{R}^n\times \mathbb{R}\times \mathbb{R}^n\to \mathbb{R}$">
+ is a given continuous function.
+This is the same equation as&nbsp;(<A HREF="node103.html#e-pde2stars">5.34</A>) but here we assume that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is differentiable in the classical sense. We are especially interested in the situation where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ depends linearly on <IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2063.gif"
+ ALT="$ \nabla v$">
+; such PDEs are calledpartial differential equation (PDE)!quasi-linear <I>quasi-linear</I>. In addition, for simplicity and better geometric intuition, we start with the case when
+<IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.gif"
+ ALT="$ n=2$">
+. Then&nbsp;(<A HREF="#e-pde-again">7.9</A>) takes the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-pde-linear"></A><!-- MATH
+ \begin{equation}
+a(x_1,x_2,v){v}_{x_1}+b(x_1,x_2,v)v_{x_2}=c(x_1,x_2,v)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="339" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2064.gif"
+ ALT="$\displaystyle a(x_1,x_2,v){v}_{x_1}+b(x_1,x_2,v)v_{x_2}=c(x_1,x_2,v)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for some functions <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+, <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ b$">
+, and <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+. Here and below, we omit some or all arguments of functions wherever convenient.
+
+<P>
+The graph of a solution <!-- MATH
+ $v=v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.gif"
+ ALT="$ v=v(x_1,x_2)$">
+ to&nbsp;(<A HREF="#e-pde-linear">7.10</A>) is a surface in the <!-- MATH
+ $(x_1,x_2,v)$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2066.gif"
+ ALT="$ (x_1,x_2,v)$">
+-space defined by the equation <!-- MATH
+ $h(x_1,x_2,v):=v(x_1,x_2)-v=0$
+ -->
+<IMG
+ WIDTH="242" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2067.gif"
+ ALT="$ h(x_1,x_2,v):=v(x_1,x_2)-v=0$">
+. The gradient vector <!-- MATH
+ $\nabla h=({v}_{x_1},{v}_{x_2},-1)^T$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2068.gif"
+ ALT="$ \nabla h=({v}_{x_1},{v}_{x_2},-1)^T$">
+ is normal to this surface at each point. Noting that the PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>) can be equivalently written as
+<P><!-- MATH
+ \begin{displaymath}
+\left\langle \left(\begin{matrix}
+          a \vspace*{-.25ex}\\
+          b \vspace*{-.5ex}\\
+          c \vspace*{-.25ex}\\
+        \end{matrix}\right),\begin{pmatrix}
+          v_{x_1} \vspace*{-.65ex}\\
+          v_{x_2} \vspace*{-.ex}\\
+          -1 \vspace*{-.35ex}\\
+        \end{pmatrix}\right\rangle =0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="162" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2069.gif"
+ ALT="$\displaystyle \left\langle \left(\begin{matrix}
+a \vspace*{-.25ex}\\
+b \vspa...
+...{x_2} \vspace*{-.ex}\\
+-1 \vspace*{-.35ex}\\
+\end{pmatrix}\right\rangle =0
+$">
+</DIV><P>
+</P>
+we conclude that the vector <IMG
+ WIDTH="67" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2070.gif"
+ ALT="$ (a,b,c)^T$">
+ is everywhere orthogonal
+to the normal <IMG
+ WIDTH="28" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2071.gif"
+ ALT="$ \nabla h$">
+, hence it lies in the tangent space to the
+solution surface. This is the geometric interpretation of the quasi-linear PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>): the vector field <IMG
+ WIDTH="67" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2070.gif"
+ ALT="$ (a,b,c)^T$">
+ is tangent to the solution
+surface <!-- MATH
+ $v=v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.gif"
+ ALT="$ v=v(x_1,x_2)$">
+ at each point. The system of ODEs associated with this vector field can be written as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-char3"></A><!-- MATH
+ \begin{equation}
+\frac{dx_1}{ds}=a(x_1,x_2,v),\qquad
+    \frac{dx_2}{ds}=b(x_1,x_2,v),\qquad
+      \frac{dv}{ds}=c(x_1,x_2,v).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="490" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2072.gif"
+ ALT="$\displaystyle \frac{dx_1}{ds}=a(x_1,x_2,v),\qquad \frac{dx_2}{ds}=b(x_1,x_2,v),\qquad \frac{dv}{ds}=c(x_1,x_2,v).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+These are called the <I>characteristic ODEs</I> of the PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>), and their solution curves are called the
+<I>characteristics</I>.<A NAME="6963"></A> With a slight abuse of terminology, we sometimes use the term ``characteristics" not only for the solution curves of the equations&nbsp;(<A HREF="#e-char3">7.11</A>) but also for these equations themselves.
+
+<P>
+The characteristic curves ``fill" our solution surface <!-- MATH
+ $v=v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.gif"
+ ALT="$ v=v(x_1,x_2)$">
+; skipping ahead to Figure&nbsp;<A HREF="#f-characteristics">7.2</A> may help the reader visualize this situation. As an example, it is useful to think about the case when <IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2073.gif"
+ ALT="$ c\equiv 0$">
+. Then&nbsp;(<A HREF="#e-pde-linear">7.10</A>) says that the derivative of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ in the direction of the vector <IMG
+ WIDTH="52" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2074.gif"
+ ALT="$ (a,b)^T$">
+ is 0, implying that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ stays constant along solutions of the equations <!-- MATH
+ $\dot x_1=a$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2075.gif"
+ ALT="$ \dot x_1=a$">
+, <!-- MATH
+ $\dot x_2=b$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2076.gif"
+ ALT="$ \dot x_2=b$">
+.
+Every function <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ whose level sets are solution curves of these two equations in the <IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.gif"
+ ALT="$ (x_1,x_2)$">
+-plane is a solution of the PDE, and
+the characteristics are horizontal slices of the corresponding solution surface.
+Of course, in general (for nonzero <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+) characteristics are
+not horizontal.
+
+<P>
+Now, in principle we should be able to solve the characteristic ODEs and obtain the
+characteristics. How does this help us
+solve the original PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>)? Without additional specifications, there are ``too many" characteristics to identify a desired solution surface <!-- MATH
+ $v=v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.gif"
+ ALT="$ v=v(x_1,x_2)$">
+; indeed, there is a characteristic passing through every point  in the <!-- MATH
+ $(x_1,x_2,v)$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2066.gif"
+ ALT="$ (x_1,x_2,v)$">
+-space, so they fill the entire space. We know that
+for ODEs, to fix a particular solution we must specify a point through
+which it passes (an initial condition). The counterpart of this for the PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>) is that we must
+specify a suitable <I>curve</I> in the <!-- MATH
+ $(x_1,x_2,v)$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2066.gif"
+ ALT="$ (x_1,x_2,v)$">
+-space through which the
+solution surface passes; we then obtain what is called a <I>Cauchy (initial value) problem</I>.<A NAME="6985"></A> Geometrically, the idea is that characteristics that pass
+through points on this initial curve will determine the solution surface of the PDE, as illustrated in Figure&nbsp;<A HREF="#f-characteristics">7.2</A> (with the thick curve representing an initial curve).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-characteristics"></A><A NAME="7998"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Characteristics for an initial value problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="332" HEIGHT="301" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2078.gif"
+ ALT="\includegraphics{figures/characteristics.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+An initial curve can be defined in parametric form as
+<P><!-- MATH
+ \begin{displaymath}
+x_1=x_1(r),\qquad x_2=x_2(r),\qquad v=v(r)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="312" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2079.gif"
+ ALT="$\displaystyle x_1=x_1(r),\qquad x_2=x_2(r),\qquad v=v(r)
+$">
+</DIV><P>
+</P>
+where <!-- MATH
+ $r\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2080.gif"
+ ALT="$ r\in\mathbb{R}$">
+.
+Then, the desired characteristics--i.e., the solutions of the characteristic equations&nbsp;(<A HREF="#e-char3">7.11</A>) whose initial conditions lie on this initial curve--are
+given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-surface-rs"></A><!-- MATH
+ \begin{equation}
+x_1=x_1(r,s),\qquad x_2=x_2(r,s),\qquad v=v(r,s)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="357" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2081.gif"
+ ALT="$\displaystyle x_1=x_1(r,s),\qquad x_2=x_2(r,s),\qquad v=v(r,s)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which yields a description of the solution surface of our PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>).
+However, we are looking for a different representation of this surface, namely,
+<!-- MATH
+ $v=v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2065.gif"
+ ALT="$ v=v(x_1,x_2)$">
+. To bring&nbsp;(<A HREF="#e-surface-rs">7.12</A>) to the desired form, we need to
+express <IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2082.gif"
+ ALT="$ r,s$">
+ as functions of <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2083.gif"
+ ALT="$ x_1,x_2$">
+
+and plug them into <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2084.gif"
+ ALT="$ v(r,s)$">
+. For this to be possible, the map
+<!-- MATH
+ $(r,s)\mapsto (x_1(r,s),x_2(r,s))$
+ -->
+<IMG
+ WIDTH="197" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2085.gif"
+ ALT="$ (r,s)\mapsto (x_1(r,s),x_2(r,s))
+$">
+
+must be invertible. It follows from the Inverse Function Theorem that invertibility of this map, at least in some neighborhood of the initial curve, is in turn guaranteed if the corresponding Jacobian matrix
+<P><!-- MATH
+ \begin{displaymath}
+\begin{pmatrix}
+  {(x_1)}_{r} &  {(x_1)}_{s}  \\
+   {(x_2)}_{r} & {(x_2)}_{s}  \\
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="121" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2086.gif"
+ ALT="$\displaystyle \begin{pmatrix}
+{(x_1)}_{r} &amp; {(x_1)}_{s} \\
+{(x_2)}_{r} &amp; {(x_2)}_{s} \\
+\end{pmatrix}$">
+</DIV><P>
+</P>
+is nonsingular along the initial curve.
+What is the geometric significance of this latter condition?
+The columns of the above Jacobian matrix are the <IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.gif"
+ ALT="$ (x_1,x_2)$">
+-components of the tangent vectors to the initial curve and to a characteristic, respectively, and they must be linearly independent. In other words, when projected onto the <IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.gif"
+ ALT="$ (x_1,x_2)$">
+-plane, the characteristics and the initial curve must be <I>transversal</I> to each other. We conclude that under this
+transversality condition,<A NAME="7012"></A> the Cauchy problem
+for&nbsp;(<A HREF="#e-pde-linear">7.10</A>) is (locally) uniquely solvable, at least in principle, via the method of
+characteristics.
+To calculate the actual value of <!-- MATH
+ $v(x_1,x_2)$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2087.gif"
+ ALT="$ v(x_1,x_2)$">
+ for some specific <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ and <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2088.gif"
+ ALT="$ x_2$">
+, we need to find a characteristic that connects the initial curve to a point with these <IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2077.gif"
+ ALT="$ (x_1,x_2)$">
+-coordinates and then integrate the last equation in&nbsp;(<A HREF="#e-char3">7.11</A>) along that characteristic segment. We will discuss this procedure in more detail later
+ for the case of the HJB equation.
+
+<P>
+Characteristics can also be defined for the general PDE&nbsp;(<A HREF="#e-pde-again">7.9</A>) which for <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.gif"
+ ALT="$ n=2$">
+ takes the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-pde-general-n_2"></A><!-- MATH
+ \begin{equation}
+F(x_1,x_2,v,v_{x_1},v_{x_2})=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="190" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2089.gif"
+ ALT="$\displaystyle F(x_1,x_2,v,v_{x_1},v_{x_2})=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In the case of the quasi-linear PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>), we saw that the tangent vector <IMG
+ WIDTH="67" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2070.gif"
+ ALT="$ (a,b,c)^T$">
+ to the solution surface does not depend on
+the partial derivatives <IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2090.gif"
+ ALT="$ {v}_{x_1}$">
+ and <IMG
+ WIDTH="27" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2091.gif"
+ ALT="$ {v}_{x_2}$">
+ (which give the first two components of the normal vector <!-- MATH
+ $({v}_{x_1},{v}_{x_2},-1)^T$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2092.gif"
+ ALT="$ ({v}_{x_1},{v}_{x_2},-1)^T$">
+ to this surface); consequently, the characteristic equations&nbsp;(<A HREF="#e-char3">7.11</A>) involve <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+, <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2088.gif"
+ ALT="$ x_2$">
+, and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ only. For the more general PDE&nbsp;(<A HREF="#e-pde-general-n_2">7.13</A>), this is no longer guaranteed and
+so five differential equations--describing the joint evolution of the variables <!-- MATH
+ $x_1,x_2,v,v_{x_1},v_{x_2}$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2093.gif"
+ ALT="$ x_1,x_2,v,v_{x_1},v_{x_2}$">
+--are needed instead of three. The solution curves of these equations are called the <A NAME="7030"></A><I>characteristic strips</I>. To simplify the notation, let us introduce the symbols
+<P><!-- MATH
+ \begin{displaymath}
+\xi_1:=v_{x_1},\qquad \xi_2:=v_{x_2}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="184" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2094.gif"
+ ALT="$\displaystyle \xi_1:=v_{x_1},\qquad \xi_2:=v_{x_2}.
+$">
+</DIV><P>
+</P>
+Then the characteristic strips are defined by the following equations:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-char-strips"></A><!-- MATH
+ \begin{equation}
+\frac{dx_1}{ds}=F_{\xi_1},\quad
+\frac{dx_2}{ds}=F_{\xi_2},\quad
+\frac{dv}{ds}=\xi_1F_{\xi_1}+\xi_2F_{\xi_2},\quad
+\frac{d\xi_1}{ds}=-F_{x_1}-\xi_1F_v,\quad
+\frac{d\xi_2}{ds}=-F_{x_2}-\xi_2F_v.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="702" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2095.gif"
+ ALT="$\displaystyle \frac{dx_1}{ds}=F_{\xi_1},\quad \frac{dx_2}{ds}=F_{\xi_2},\quad \...
+... \frac{d\xi_1}{ds}=-F_{x_1}-\xi_1F_v,\quad \frac{d\xi_2}{ds}=-F_{x_2}-\xi_2F_v.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We do not give a complete derivation of&nbsp;(<A HREF="#e-char-strips">7.14</A>) but note that the first three equations in&nbsp;(<A HREF="#e-char-strips">7.14</A>) reduce to the earlier characteristic equations&nbsp;(<A HREF="#e-char3">7.11</A>) in the case of the quasi-linear PDE&nbsp;(<A HREF="#e-pde-linear">7.10</A>), whereas to arrive at the fourth equation in&nbsp;(<A HREF="#e-char-strips">7.14</A>) it is enough to write <!-- MATH
+ $\frac{d\xi_1}{ds}={(\xi_1)}_{x_1}\frac{dx_1}{ds}+
+{(\xi_1)}_{x_2}\frac{dx_2}{ds}$
+ -->
+<IMG
+ WIDTH="209" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2096.gif"
+ ALT="$ \frac{d\xi_1}{ds}={(\xi_1)}_{x_1}\frac{dx_1}{ds}+
+{(\xi_1)}_{x_2}\frac{dx_2}{ds}$">
+, use the first two characteristic equations to rewrite this result as <!-- MATH
+ ${(\xi_1)}_{x_1}{F}_{\xi_1}+
+{(\xi_1)}_{x_2}{F}_{\xi_2}$
+ -->
+<IMG
+ WIDTH="161" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2097.gif"
+ ALT="$ {(\xi_1)}_{x_1}{F}_{\xi_1}+
+{(\xi_1)}_{x_2}{F}_{\xi_2}$">
+, and then apply the identity <!-- MATH
+ ${F}_{x_1}+{F}_{v}\xi_1+{F}_{\xi_1}{(\xi_1)}_{x_1}+{F}_{\xi_2}{(\xi_2)}_{x_1}$
+ -->
+<IMG
+ WIDTH="264" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2098.gif"
+ ALT="$ {F}_{x_1}+{F}_{v}\xi_1+{F}_{\xi_1}{(\xi_1)}_{x_1}+{F}_{\xi_2}{(\xi_2)}_{x_1}$">
+ which follows by differentiating the PDE&nbsp;(<A HREF="#e-pde-general-n_2">7.13</A>) with respect to <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+; the last equation in&nbsp;(<A HREF="#e-char-strips">7.14</A>) is derived in the same manner.
+The last two equations in&nbsp;(<A HREF="#e-char-strips">7.14</A>), which describe the evolution of the normal vector to the solution surface of the PDE, will play an important role in the next subsection where we turn to the HJB equation.
+
+<P>
+In the above discussion we assumed that the independent variable <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ lives in the plane (i.e., <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.gif"
+ ALT="$ n=2$">
+). However, it is straightforward to write down the equations of the characteristic strips for a general dimension <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2099.gif"
+ ALT="$ n\ge 2$">
+: we must simply replace the indices <IMG
+ WIDTH="29" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2100.gif"
+ ALT="$ 1,2$">
+ in&nbsp;(<A HREF="#e-char-strips">7.14</A>) by <!-- MATH
+ $i\in\{1,\dots,n\}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1896.gif"
+ ALT="$ i\in\{1,\dots,n\}$">
+. In the next subsection we will work in this more general setting.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2236"
+  HREF="node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2230"
+  HREF="node123.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2224"
+  HREF="node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2232"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2234"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2237"
+  HREF="node125.html">7.2.2 Canonical equations as</A>
+<B> Up:</B> <A NAME="tex2html2231"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Previous:</B> <A NAME="tex2html2225"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+ &nbsp; <B>  <A NAME="tex2html2233"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2235"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

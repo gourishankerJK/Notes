@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.1.4 Brachistochrone</TITLE>
+<META NAME="description" CONTENT="2.1.4 Brachistochrone">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node23.html">
+<LINK REL="up" HREF="node20.html">
+<LINK REL="next" HREF="node25.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html727"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html721"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html717"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html723"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html725"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html728"
+  HREF="node25.html">2.2 Basic calculus of</A>
+<B> Up:</B> <A NAME="tex2html722"
+  HREF="node20.html">2.1 Examples of variational</A>
+<B> Previous:</B> <A NAME="tex2html718"
+  HREF="node23.html">2.1.3 Catenary</A>
+ &nbsp; <B>  <A NAME="tex2html724"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html726"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00414000000000000000"></A><A NAME="ss-brachistochrone"></A><A NAME="1122"></A>
+<BR>
+2.1.4 Brachistochrone
+</H2>
+
+<P>
+Given two fixed points in a vertical plane, we want to find a path between them such that a particle sliding without friction along this path
+takes the shortest possible time to travel from one point to the other (see Figure&nbsp;<A HREF="#f-brachistochrone">2.4</A>).
+The name ``brachistochrone" was given to this problem by Johann Bernoulli; it comes from the Greek words <!-- MATH
+ $\beta\rho\acute{\alpha}\chi\iota\sigma\tau o\varsigma$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img317.gif"
+ ALT="$ \beta\rho\acute{\alpha}\chi\iota\sigma\tau o\varsigma$">
+ (shortest) and <!-- MATH
+ $\chi\rho \acute{o}\nu o\varsigma$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img318.gif"
+ ALT="$ \chi\rho \acute{o}\nu o\varsigma$">
+ (time). 
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-brachistochrone"></A><A NAME="7709"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The brachistochrone problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="370" HEIGHT="184" ALIGN="BOTTOM" BORDER="0"
+ SRC="img319.gif"
+ ALT="\includegraphics{figures/brachistochrone.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It is tempting to think that the solution is a straight line, but this is not the case. For example, if the two points are at the same height,
+then the particle will not move if placed on the horizontal line (we
+are assuming that the particle is initially at rest); on the other hand, traveling along a lower semicircle, the particle will reach the other point in finite time. Galileo, who studied this problem in 1638, showed that for points at different heights, it is also true that sliding down a straight line is slower than along an arc of a circle. Galileo thought that an arc of a circle is the optimal path, but this is not true either.
+
+<P>
+The travel time along a path is given by the integral of the ratio of the arclength to the particle's speed. We already know the expression for the arclength from&nbsp;(<A HREF="node21.html#e-arclength">2.1</A>).
+To obtain a formula for the speed, we use the law of conservation of energy. Let us choose coordinates as shown in Figure&nbsp;<A HREF="#f-brachistochrone">2.4</A>: the <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+-axis points downward and the <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-axis passes through the initial point (the higher one). Then the kinetic and potential energy are both 0 initially, thus the total energy is always 0 and we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-lce"></A><!-- MATH
+ \begin{equation}
+\frac{mv^2}2-mgy=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="126" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img320.gif"
+ ALT="$\displaystyle \frac{mv^2}2-mgy=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is the particle's speed, <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ m$">
+ is its mass, and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ is the gravitational constant.
+Choosing suitable units, we can assume without loss of generality that <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img163.gif"
+ ALT="$ m=1$">
+ and
+<IMG
+ WIDTH="62" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img322.gif"
+ ALT="$ g=1/2$">
+. Then&nbsp;(<A HREF="#e-lce">2.4</A>) simplifies to
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-v_sqrty"></A><!-- MATH
+ \begin{equation}
+v=\sqrt{y}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img323.gif"
+ ALT="$\displaystyle v=\sqrt{y}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and so our problem becomes that of minimizing the value of the functional
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-J-brach"></A><!-- MATH
+ \begin{equation}
+J(y)=\int_a^b\frac{\sqrt{1+(y'(x))^2}}{\sqrt{y(x)}}dx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="216" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img324.gif"
+ ALT="$\displaystyle J(y)=\int_a^b\frac{\sqrt{1+(y'(x))^2}}{\sqrt{y(x)}}dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+over all (almost everywhere) differentiable  curves <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ connecting the two given points
+with <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-coordinates
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ and <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img326.gif"
+ ALT="$ b$">
+.
+
+<P>
+Johann Bernoulli<A NAME="1162"></A> posed the brachistochrone problem in 1696 as a challenge to his contemporaries. Besides Bernoulli himself, correct solutions were obtained by Leibniz, Newton, Johann's brother Jacob Bernoulli, and others.
+The optimal curves are <I>cycloids</I>,<A NAME="1164"></A> defined by the parametric equations
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-brachistochrone-solution"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+x(\theta)&=a+c(\theta-\sin \theta)\\
+y(\theta)&=c(1-\cos \theta)
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="167" HEIGHT="55" BORDER="0"
+ SRC="img327.gif"
+ ALT="\begin{displaymath}\begin{split}x(\theta)&amp;=a+c(\theta-\sin \theta)\\ y(\theta)&amp;=c(1-\cos \theta) \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the parameter <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img328.gif"
+ ALT="$ \theta$">
+ takes values between 0 and <IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img329.gif"
+ ALT="$ 2\pi$">
+ and <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img330.gif"
+ ALT="$ c&gt;0$">
+ is a constant. These equations describe the curve traced by a point on a circle of radius <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+
+as this circle rolls without slipping on the horizontal axis (see Figure&nbsp;<A HREF="#f-bicycle">2.5</A>). A somewhat surprising outcome is that the fastest motion may involve dipping below the desired height to build speed and then coming back up (whether or not this happens depends on the relative location of the two points). This principle also applies to changing an airplane's altitude.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-bicycle"></A><A NAME="7713"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A cycloid
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="445" HEIGHT="112" ALIGN="BOTTOM" BORDER="0"
+ SRC="img332.gif"
+ ALT="\includegraphics{figures/bicycle_v5.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It is interesting to note that Johann Bernoulli's original
+solution to the brachistochrone problem was based on Snell's law&nbsp;(<A HREF="node22.html#e-snell">2.2</A>)
+for light refraction.<A NAME="1177"></A><A NAME="1178"></A>
+In view of equation&nbsp;(<A HREF="#e-v_sqrty">2.5</A>), we can treat the particle as a light
+ray traveling in a medium where the speed of light is
+proportional to the square root of the height. In a discretized version
+of this situation, the vertical plane is divided into horizontal strips
+and the speed of light is constant in each strip. The light ray follows
+a straight line within each strip and bends at the boundaries according
+to Snell's law. From this piecewise linear path, a cycloid is obtained
+in the limit as the heights of the strips tend to 0. This solution can be
+obtained more easily (and more rigorously) using methods from calculus of
+variations and optimal control theory.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="78" ALIGN="BOTTOM" BORDER="0"
+ SRC="img333.gif"
+ ALT="\begin{Exercise}Find another example of a variational problem. Describe it verba...
+...tional to be minimized or maximized. You do not need to solve it.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html727"
+  HREF="node25.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html721"
+  HREF="node20.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html717"
+  HREF="node23.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html723"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html725"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html728"
+  HREF="node25.html">2.2 Basic calculus of</A>
+<B> Up:</B> <A NAME="tex2html722"
+  HREF="node20.html">2.1 Examples of variational</A>
+<B> Previous:</B> <A NAME="tex2html718"
+  HREF="node23.html">2.1.3 Catenary</A>
+ &nbsp; <B>  <A NAME="tex2html724"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html726"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

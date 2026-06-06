@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){var t=localStorage.getItem('cvoc-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculus of Variations and Optimal Control Theory — Daniel Liberzon</title>
+  <meta name="description" content="A Concise Introduction to the Calculus of Variations and Optimal Control Theory by Daniel Liberzon.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for crisp signature equations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="assets/index.css">
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <!-- ── Masthead ──────────────────────────────────────────── -->
+  <header class="masthead">
+    <span class="mast-brand">D. Liberzon</span>
+    <div class="mast-right-wrap">
+      <span class="mast-right">UIUC · Systems &amp; Control</span>
+      <div class="theme-toggle" id="landing-theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-kicker">A Concise Introduction</div>
+    <h1 class="hero-title">Calculus of Variations<br><span class="amp">&amp;</span> Optimal Control Theory</h1>
+    <p class="hero-sub">From the brachistochrone to the maximum principle — one continuous thread.</p>
+    <div class="hero-byline">
+      <div class="by-name">Daniel Liberzon</div>
+      <div class="by-affil">Coordinated Science Laboratory · University of Illinois at Urbana–Champaign</div>
+    </div>
+    <div class="hero-actions">
+      <a href="book/node3.html" class="btn btn-primary">
+        Begin Reading
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+      <a href="book/node1.html" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+        Table of Contents
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Signature Equations ───────────────────────────────── -->
+  <section class="equations">
+    <div class="eq-head">
+      <div class="eq-kicker">The Thread of the Book</div>
+      <div class="eq-title">Four Equations</div>
+    </div>
+    <div class="eq-grid">
+      <a class="eq-cell" href="book/node28.html">
+        <div class="eq-render" data-tex="\frac{\partial L}{\partial x} - \frac{d}{dt}\,\frac{\partial L}{\partial x'} = 0"></div>
+        <div class="eq-meta">
+          <span class="eq-name">The Euler–Lagrange Equation</span>
+          <span class="eq-ref">Ch. 2</span>
+        </div>
+      </a>
+      <a class="eq-cell" href="book/node62.html">
+        <div class="eq-render" data-tex="H\big(x^*,u^*,p^*\big) = \max_{u\in U}\, H\big(x^*,u,p^*\big)"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Pontryagin's Maximum Principle</span>
+          <span class="eq-ref">Ch. 4</span>
+        </div>
+      </a>
+      <a class="eq-cell" href="book/node95.html">
+        <div class="eq-render" data-tex="-V_t = \inf_{u\in U}\Big\{ L(x,u) + \langle V_x,\, f(x,u)\rangle \Big\}"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Hamilton–Jacobi–Bellman</span>
+          <span class="eq-ref">Ch. 5</span>
+        </div>
+      </a>
+      <a class="eq-cell" href="book/node109.html">
+        <div class="eq-render" data-tex="\dot P = -PA - A^{\!\top} P - Q + PBR^{-1}B^{\!\top} P"></div>
+        <div class="eq-meta">
+          <span class="eq-name">The Riccati Equation</span>
+          <span class="eq-ref">Ch. 6</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Contents ──────────────────────────────────────────── -->
+  <section class="contents">
+    <div class="contents-head">
+      <h2>Contents</h2>
+      <span class="ch-count">Seven Chapters</span>
+      <span class="rule-grow"></span>
+    </div>
+
+    <ol class="toc">
+      <li><a class="toc-item" href="book/node3.html">
+        <span class="toc-num">I</span>
+        <span class="toc-body">
+          <span class="toc-title">Introduction</span>
+          <span class="toc-desc">The optimal control problem, finite-dimensional optimization background, and a first preview of infinite-dimensional methods.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">4 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node19.html">
+        <span class="toc-num">II</span>
+        <span class="toc-body">
+          <span class="toc-title">Calculus of Variations</span>
+          <span class="toc-desc">Classical variational problems, the Euler–Lagrange equation, Hamiltonian formalism and mechanics, constraints, and second-order conditions.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">7 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node45.html">
+        <span class="toc-num">III</span>
+        <span class="toc-body">
+          <span class="toc-title">From Calculus of Variations to Optimal Control</span>
+          <span class="toc-desc">Strong extrema, the Weierstrass conditions, and the conceptual bridge from classical variational methods to modern optimal control.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">5 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node61.html">
+        <span class="toc-num">IV</span>
+        <span class="toc-body">
+          <span class="toc-title">The Maximum Principle</span>
+          <span class="toc-desc">Pontryagin's maximum principle: full statement, a complete proof, time-optimal control, and the existence of optimal controls.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">6 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node91.html">
+        <span class="toc-num">V</span>
+        <span class="toc-body">
+          <span class="toc-title">The Hamilton–Jacobi–Bellman Equation</span>
+          <span class="toc-desc">Dynamic programming and the HJB equation, its relationship to the maximum principle, and viscosity solutions.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">4 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node106.html">
+        <span class="toc-num">VI</span>
+        <span class="toc-body">
+          <span class="toc-title">The Linear Quadratic Regulator</span>
+          <span class="toc-desc">Finite- and infinite-horizon LQR, the Riccati differential equation, and closed-loop stability of the optimal feedback law.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">3 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+
+      <li><a class="toc-item" href="book/node118.html">
+        <span class="toc-num">VII</span>
+        <span class="toc-body">
+          <span class="toc-title">Advanced Topics</span>
+          <span class="toc-desc">The maximum principle on manifolds, symplectic geometry, Riccati inequalities in robust control, and hybrid control systems.</span>
+        </span>
+        <span class="toc-right">
+          <span class="toc-sections">5 sections</span>
+          <span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </span>
+      </a></li>
+    </ol>
+  </section>
+
+  <!-- ── Front matter ──────────────────────────────────────── -->
+  <nav class="frontmatter">
+    <a class="fm" href="book/cvoc.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      Cover
+    </a>
+    <a class="fm" href="book/node2.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Preface
+    </a>
+    <a class="fm" href="book/node1.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+      Full Contents
+    </a>
+    <a class="fm" href="book/node135.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Bibliography
+    </a>
+    <a class="fm" href="book/node136.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/></svg>
+      Index
+    </a>
+  </nav>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p><em>Calculus of Variations and Optimal Control Theory: A Concise Introduction</em><br>
+    by Daniel Liberzon. Typeset for the web with KaTeX. Original source:
+    <a href="https://liberzon.csl.illinois.edu/teaching/cvoc/" target="_blank" rel="noopener">liberzon.csl.illinois.edu</a></p>
+  </footer>
+
+  <!-- ── Render signature equations ────────────────────────── -->
+  <script>
+    window.addEventListener('load', function () {
+      if (!window.katex) return;
+      document.querySelectorAll('.eq-render[data-tex]').forEach(function (el) {
+        try {
+          katex.render(el.getAttribute('data-tex'), el, {
+            throwOnError: false,
+            displayMode: true
+          });
+        } catch (e) {}
+      });
+    });
+  </script>
+
+  <!-- ── Theme toggle ──────────────────────────────────────── -->
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('landing-theme-toggle');
+    if (!toggle) return;
+
+    function getTheme() { return localStorage.getItem('cvoc-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('cvoc-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('cvoc-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+</body>
+</html>

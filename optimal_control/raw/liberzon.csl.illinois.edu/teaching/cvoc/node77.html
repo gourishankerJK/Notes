@@ -1,0 +1,779 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.2.10 Transversality
+condition</TITLE>
+<META NAME="description" CONTENT="4.2.10 Transversality
+condition">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node74.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1526"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1520"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1516"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1522"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1524"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1527"
+  HREF="node78.html">4.3 Discussion of the</A>
+<B> Up:</B> <A NAME="tex2html1521"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1517"
+  HREF="node76.html">4.2.9.2 Statement&nbsp;3:</A>
+ &nbsp; <B>  <A NAME="tex2html1523"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1525"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION006210000000000000000"></A><A NAME="ss-transv"></A><A NAME="4323"></A>
+<BR>
+4.2.10 Transversality
+condition
+</H2>
+
+<P>
+We now turn to the Basic Variable-Endpoint Control Problem. In this case there
+is an additional statement to be proved, which is
+the transversality
+condition&nbsp;(<A HREF="node64.html#e-transversality">4.3</A>). In
+Section&nbsp;<A HREF="node71.html#ss-keylemma">4.2.6</A> we had that the terminal cone
+ <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ was separated from the ray <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+; the reason for this was that
+hitting a point on <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+ below <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+ contradicted
+optimality. When the fixed endpoint <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ is replaced by the
+surface <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ S_1$">
+, we would instead have a contradiction with
+optimality if we were able to hit a point with a cost lower than
+<!-- MATH
+ $x^{0,*}(t^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1252.gif"
+ ALT="$ x^{0,*}(t^*)$">
+ whose <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-component is in <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img858.gif"
+ ALT="$ S_1$">
+
+(but is not necessarily <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1253.gif"
+ ALT="$ x^*(t^*)$">
+). Let us denote the set of such
+points by <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. We are looking to establish separation between
+convex sets; for this reason, just as we replace the actual set of
+terminal points with its linear approximation <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+, we will
+consider the linear approximation of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ given by the linear span
+of <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+ and the tangent space
+ <!-- MATH
+ $T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1254.gif"
+ ALT="$ T_{x^*(t^*)}S_1$">
+, i.e., the set
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-T-def"></A><!-- MATH
+ \begin{equation}
+T:=\left\{y\in\mathbb{R}^{n+1}:y=y^*(t^*)+\begin{pmatrix}{0}\\{d}\end{pmatrix}+\beta\mu,\ d\in
+T_{x^*(t^*)}S_1,\, \beta\ge 0\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="500" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1255.gif"
+ ALT="$\displaystyle T:=\left\{y\in\mathbb{R}^{n+1}:y=y^*(t^*)+\begin{pmatrix}{0}\\ {d}\end{pmatrix}+\beta\mu,\ d\in T_{x^*(t^*)}S_1,\, \beta\ge 0\right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In Figure&nbsp;<A HREF="#f-transversality">4.12</A>, <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ is the shaded ``semi-plane."
+The subspace <!-- MATH
+ $T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1254.gif"
+ ALT="$ T_{x^*(t^*)}S_1$">
+, when translated to <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+,
+gives the upper line in the figure. <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is the surface (more precisely, the open semi-surface) consisting of points which lie ``directly under"
+the upper curve in the figure. <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ is tangent to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ along
+<IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+; both <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ are bounded from above but extend
+infinitely far down (and <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ includes its upper boundary while <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ does not).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-transversality"></A><A NAME="7860"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Illustrating the construction of the set <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="425" HEIGHT="396" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1256.gif"
+ ALT="\includegraphics{figures/transversality.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR>
+<A NAME="l-key-transv"></A><IMG
+ WIDTH="475" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1257.gif"
+ ALT="\begin{Lemma}
+$T$\ does not intersect the interior of the cone $C_{t^*}$.
+\end{Lemma}">
+<BR>
+
+<P>
+This lemma is proved by an appropriate generalization of the
+argument we used to prove Lemma&nbsp;<A HREF="node71.html#l-key">4.1</A>. Suppose that the
+statement is not true. Then we can find a point in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ which is
+contained in <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ together with some <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+-ball <!-- MATH
+ $B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ B_\varepsilon $">
+ around
+it. We can write this point as
+<P><!-- MATH
+ \begin{displaymath}
+\hat y_\varepsilon =y^*(t^*)+\varepsilon \begin{pmatrix}{0}\\{d}\end{pmatrix}+\varepsilon \beta\mu
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="204" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1258.gif"
+ ALT="$\displaystyle \hat y_\varepsilon =y^*(t^*)+\varepsilon \begin{pmatrix}{0}\\ {d}\end{pmatrix}+\varepsilon \beta\mu
+$">
+</DIV><P>
+</P>
+for suitable <!-- MATH
+ $d\in T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ d\in T_{x^*(t^*)}S_1$">
+ and <IMG
+ WIDTH="46" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1174.gif"
+ ALT="$ \beta&gt;0$">
+ (moving <!-- MATH
+ $\hat y_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.gif"
+ ALT="$ \hat
+y_\varepsilon $">
+ slightly down if necessary, we can ensure that it does not lie on the upper boundary of <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+). Since
+<!-- MATH
+ $B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ B_\varepsilon $">
+ belongs to <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+, each point in <!-- MATH
+ $B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ B_\varepsilon $">
+ is given by
+<!-- MATH
+ $y^*(t^*)+\varepsilon \nu$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1184.gif"
+ ALT="$ y^*(t^*)+\varepsilon \nu$">
+ where <!-- MATH
+ $\varepsilon \nu$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1185.gif"
+ ALT="$ \varepsilon \nu$">
+ is a first-order terminal state
+perturbation arising from a temporal and/or spatial control
+perturbation. We know that the corresponding exact terminal states
+are of the form <!-- MATH
+ $y^*(t^*)+\varepsilon \nu+o(\varepsilon )$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1260.gif"
+ ALT="$ y^*(t^*)+\varepsilon \nu+o(\varepsilon )$">
+ and form a ``warped"
+version of <!-- MATH
+ $B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ B_\varepsilon $">
+, which we denote by <!-- MATH
+ $\widetilde B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \widetilde B_\varepsilon $">
+.
+
+<P>
+This construction remains valid as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+. The ball <!-- MATH
+ $B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1182.gif"
+ ALT="$ B_\varepsilon $">
+
+is centered at <!-- MATH
+ $\hat y_\varepsilon \in T$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1261.gif"
+ ALT="$ \hat y_\varepsilon \in T$">
+, its radius is <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, and the
+``warping" that produces <!-- MATH
+ $\widetilde B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \widetilde B_\varepsilon $">
+ is of order
+<!-- MATH
+ $o(\varepsilon )$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ o(\varepsilon )$">
+. As in Exercise&nbsp;<A HREF="node71.html#x-brouwer">4.5</A>, it can be shown that
+<!-- MATH
+ $\widetilde B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \widetilde B_\varepsilon $">
+ contains a ball centered at <!-- MATH
+ $\hat y_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.gif"
+ ALT="$ \hat
+y_\varepsilon $">
+
+whose radius is of order <!-- MATH
+ $\varepsilon -o(\varepsilon )$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1192.gif"
+ ALT="$ \varepsilon -o(\varepsilon )$">
+. Furthermore, since  <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ are tangent to
+each other along <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+, the distance from <!-- MATH
+ $\hat
+y_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.gif"
+ ALT="$ \hat
+y_\varepsilon $">
+ to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is also of order <!-- MATH
+ $o(\varepsilon )$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1072.gif"
+ ALT="$ o(\varepsilon )$">
+. Hence, for
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ small enough, <!-- MATH
+ $\widetilde B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \widetilde B_\varepsilon $">
+ actually intersects <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. But this, as we already noted, contradicts
+optimality of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+, and the lemma is established. The preceding
+argument is illustrated in Figure&nbsp;<A HREF="#f-ball2">4.13</A>, where the plane
+and the curved surface represent <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+, respectively, the
+shaded object is the portion of <!-- MATH
+ $\widetilde B_\varepsilon$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1187.gif"
+ ALT="$ \widetilde B_\varepsilon $">
+ that lies between <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+, and the ray in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+
+containing <!-- MATH
+ $\hat y_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1189.gif"
+ ALT="$ \hat
+y_\varepsilon $">
+, <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+ is also shown.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-ball2"></A><A NAME="7862"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Proving Lemma&nbsp;<A HREF="#l-key-transv">4.2</A>
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+</FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+By Lemma&nbsp;<A HREF="#l-key-transv">4.2</A> and the Separating Hyperplane Theorem, there exists a hyperplane<A NAME="4386"></A><A NAME="4387"></A>
+that separates <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+. We denote its normal vector
+by&nbsp;(<A HREF="node72.html#e-normal-def">4.28</A>) as before. In view of the
+definition&nbsp;(<A HREF="#e-T-def">4.37</A>) of <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ and the fact that <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1263.gif"
+ ALT="$ d=0$">
+ belongs
+to <!-- MATH
+ $T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1254.gif"
+ ALT="$ T_{x^*(t^*)}S_1$">
+, the separation property still gives us the
+inequalities&nbsp;(<A HREF="node72.html#e-delta-le0">4.29</A>) and&nbsp;(<A HREF="node72.html#e-mu-ge0">4.30</A>). Thus all
+the constructions
+and conclusions of Sections&nbsp;<A HREF="node73.html#ss-adjoint">4.2.8</A> and&nbsp;<A HREF="node74.html#ss-Hamprop">4.2.9</A> still apply, and so we know that the first three
+statements of the maximum principle are true. On the other hand,
+writing the separation property for vectors in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ with <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1190.gif"
+ ALT="$ \beta$">
+
+(the <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1170.gif"
+ ALT="$ \vec\mu$">
+-component) equal to 0, we obtain the additional
+inequality
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-transv_SPMgt__0"></A><!-- MATH
+ \begin{equation}
+\left\langle
+  \begin{pmatrix}
+    p_0^* \\
+    p^*(t^*)
+  \end{pmatrix},\begin{pmatrix}
+    0 \\
+    d
+  \end{pmatrix}\right\rangle=\langle p^*(t^*),d\rangle \ge 0\qquad\forall\,
+  d\in T_{x^*(t^*)}S_1.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="422" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1264.gif"
+ ALT="$\displaystyle \left\langle \begin{pmatrix}p_0^* \\ p^*(t^*) \end{pmatrix},\begi...
+...ght\rangle=\langle p^*(t^*),d\rangle \ge 0\qquad\forall\, d\in T_{x^*(t^*)}S_1.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+For each <!-- MATH
+ $d\in T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ d\in T_{x^*(t^*)}S_1$">
+ we also have <!-- MATH
+ $-d\in
+T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1265.gif"
+ ALT="$ -d\in
+T_{x^*(t^*)}S_1$">
+, as is clear from&nbsp;(<A HREF="node64.html#e-tang-space">4.4</A>). This fact and&nbsp;(<A HREF="#e-transv_SPMgt__0">4.38</A>) imply that actually <!-- MATH
+ $\langle
+p^*(t^*),d\rangle=0$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1266.gif"
+ ALT="$ \langle
+p^*(t^*),d\rangle=0$">
+ for all <!-- MATH
+ $d\in T_{x^*(t^*)}S_1$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1259.gif"
+ ALT="$ d\in T_{x^*(t^*)}S_1$">
+, which is
+precisely the desired transversality
+condition&nbsp;(<A HREF="node64.html#e-transversality">4.3</A>). Figure&nbsp;<A HREF="#f-hyperplane2">4.14</A>
+depicts <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+, <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+, and the separating hyperplane. Our proof of the maximum principle for the Basic Variable-Endpoint Control Problem is now complete.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-hyperplane2"></A><A NAME="7866"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A separating hyperplane for the Basic Variable-Endpoint Control Problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="366" HEIGHT="362" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1267.gif"
+ ALT="\includegraphics{figures/hyperplane2.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Note that in the special case when <!-- MATH
+ $S_1=\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1005.gif"
+ ALT="$ S_1=\mathbb{R}^n$">
+ (a free-time, free-endpoint problem),
+   the hyperplane must separate <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ from the entire
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1268.gif"
+ ALT="$ (n+1)$">
+-dimensional half-space that lies below <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+. Clearly, this
+hyperplane must be horizontal, hence its normal must be vertical
+and we conclude that <!-- MATH
+ $p^*(t^*)=0$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1269.gif"
+ ALT="$ p^*(t^*)=0$">
+. This is consistent
+with&nbsp;(<A HREF="node64.html#e-transversality">4.3</A>) because <!-- MATH
+ $T_{x^*(t^*)}S_1=\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1270.gif"
+ ALT="$ T_{x^*(t^*)}S_1=\mathbb{R}^n$">
+ in
+this case.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1526"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1520"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1516"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1522"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1524"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1527"
+  HREF="node78.html">4.3 Discussion of the</A>
+<B> Up:</B> <A NAME="tex2html1521"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1517"
+  HREF="node76.html">4.2.9.2 Statement&nbsp;3:</A>
+ &nbsp; <B>  <A NAME="tex2html1523"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1525"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

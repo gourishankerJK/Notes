@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.1.3 Symplectic geometry and Hamiltonian flows</TITLE>
+<META NAME="description" CONTENT="7.1.3 Symplectic geometry and Hamiltonian flows">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node121.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node123.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2206"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2200"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2196"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2202"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2204"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2207"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Up:</B> <A NAME="tex2html2201"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2197"
+  HREF="node121.html">7.1.2 Re-interpreting the maximum</A>
+ &nbsp; <B>  <A NAME="tex2html2203"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2205"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00913000000000000000"></A><A NAME="ss-symplectic"></A>
+<BR>
+7.1.3 Symplectic geometry and Hamiltonian flows
+</H2>
+
+<P>
+In our discussion of Hamiltonian mechanics in Section&nbsp;<A HREF="node33.html#s-canvar">2.4</A>, the Hamiltonian was given a clear physical interpretation as the total energy of the system. Hamilton's canonical differential equations, on the other hand, were derived formally from the Euler-Lagrange equation and we never paused to consider their intrinsic meaning. We fill this gap here by exposing the important connection between symplectic geometry and Hamiltonian flows, which provides one further insight into the geometric formulation of the maximum principle.
+
+<P>
+Let us return to the cotangent bundle <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ which, as explained at the end of Section&nbsp;<A HREF="node120.html#ss-manifolds">7.1.1</A>, is a <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1995.gif"
+ ALT="$ 2k$">
+-dimensional manifold equipped with canonical local coordinates. On this manifold there is a natural differential 2-form <IMG
+ WIDTH="22" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2044.gif"
+ ALT="$ \omega^2$">
+, called a <I>symplectic form</I><A NAME="6861"></A> (or <I>symplectic structure</I>). This is a bilinear skew-symmetric form on the tangent space to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ at each point; in other words, it acts on pairs of tangent vectors to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ (and, moreover, it depends smoothly on the choice of a point in <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+). In canonical coordinates <!-- MATH
+ $(x,p)=(x_1,\dots,x_k,p_1,\dots,p_k)$
+ -->
+<IMG
+ WIDTH="234" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2045.gif"
+ ALT="$ (x,p)=(x_1,\dots,x_k,p_1,\dots,p_k)$">
+ on <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+, the symplectic form that we consider here is given by <P><!-- MATH
+ \begin{displaymath}
+\omega^2:=dx_1\wedge dp_1+\dots+dx_k\wedge dp_k
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="257" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2046.gif"
+ ALT="$\displaystyle \omega^2:=dx_1\wedge dp_1+\dots+dx_k\wedge dp_k$">
+</DIV><P>
+</P>
+where the exterior multiplication <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2047.gif"
+ ALT="$ \wedge$">
+ is defined by
+<P><!-- MATH
+ \begin{displaymath}
+(\omega_1\wedge\omega_2)(\xi_1,\xi_2):=
+                                            \omega_1(\xi_1)\omega_2(\xi_2)-  \omega_2(\xi_1)
+                                             \omega_1(\xi_2).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="368" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2048.gif"
+ ALT="$\displaystyle (\omega_1\wedge\omega_2)(\xi_1,\xi_2):=
+\omega_1(\xi_1)\omega_2(\xi_2)- \omega_2(\xi_1)
+\omega_1(\xi_2).
+$">
+</DIV><P>
+</P> (The exterior product is the oriented area spanned by the vectors <!-- MATH
+ $\Big({\textstyle{\omega_1(\xi_1)}\atop
+\textstyle{\omega_1(\xi_2)}}\Big)$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2049.gif"
+ ALT="$ \Big({\textstyle{\omega_1(\xi_1)}\atop
+\textstyle{\omega_1(\xi_2)}}\Big)$">
+ and <!-- MATH
+ $\Big({\textstyle{\omega_2(\xi_1)}\atop
+\textstyle{\omega_2(\xi_2)}}\Big)$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2050.gif"
+ ALT="$ \Big({\textstyle{\omega_2(\xi_1)}\atop
+\textstyle{\omega_2(\xi_2)}}\Big)$">
+, or the determinant of the corresponding matrix.) Given two tangent vectors to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ with components <!-- MATH
+ $(y,q)=(y_1,\dots,y_k,q_1,\dots,q_k)$
+ -->
+<IMG
+ WIDTH="228" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2051.gif"
+ ALT="$ (y,q)=(y_1,\dots,y_k,q_1,\dots,q_k)$">
+ and <!-- MATH
+ $(z,r)=(z_1,\dots,z_k,r_1,\dots,r_k)$
+ -->
+<IMG
+ WIDTH="227" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2052.gif"
+ ALT="$ (z,r)=(z_1,\dots,z_k,r_1,\dots,r_k)$">
+, it is straightforward to check that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-omega_2-i"></A><!-- MATH
+ \begin{equation}
+\omega^2\big((y,q),(z,r)\big)=\sum_{i=1}^k(y_ir_i-q_iz_i).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="266" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2053.gif"
+ ALT="$\displaystyle \omega^2\big((y,q),(z,r)\big)=\sum_{i=1}^k(y_ir_i-q_iz_i).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The symplectic form allows us to establish a one-to-one correspondence between tangent vectors to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ and covectors on <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+, as follows. To a tangent vector <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ (at a fixed point of <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+) we associate a covector <!-- MATH
+ $\omega^1_\xi$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2054.gif"
+ ALT="$ \omega^1_\xi$">
+ which acts on another tangent vector <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ according to
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-omega_1"></A><!-- MATH
+ \begin{equation}
+\omega^1_\xi(\eta):=\omega^2(\xi,\eta).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2055.gif"
+ ALT="$\displaystyle \omega^1_\xi(\eta):=\omega^2(\xi,\eta).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The map <!-- MATH
+ $\xi\mapsto\omega^1_\xi$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2056.gif"
+ ALT="$ \xi\mapsto\omega^1_\xi$">
+ is a linear map between vector spaces, whose matrix with respect to the canonical basis is <!-- MATH
+ $\begin{pmatrix}
+                                            0 & -I \\
+                                             I & 0\\
+\end{pmatrix}$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2057.gif"
+ ALT="$ \begin{pmatrix}
+0 &amp; -I \\
+I &amp; 0\\
+\end{pmatrix}$">
+.
+
+<P>
+Now, we can view our Hamiltonian&nbsp;(<A HREF="node121.html#e-Ham-redefined">7.5</A>) as a function on the cotangent bundle <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ (i.e., a function of the variables <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+) parameterized additionally by the controls <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Then the
+differential <IMG
+ WIDTH="28" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2058.gif"
+ ALT="$ dH$">
+ of the Hamiltonian gives us a covector on <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ at each point. Applying the inverse of the map constructed above to this covector, we obtain a tangent vector at each point of <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+, or a vector field on <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+.  This vector field is called the <I>Hamiltonian
+vector field</I> and is denoted by <IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2059.gif"
+ ALT="$ \vec H$">
+. In canonical coordinates, the flow along <IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2059.gif"
+ ALT="$ \vec H$">
+ is described by the familiar differential equations<A NAME="6881"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-canon-yet-again"></A><!-- MATH
+ \begin{equation}
+\dot x={H}_{p},\qquad \dot p=-{H}_{x}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="175" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2060.gif"
+ ALT="$\displaystyle \dot x={H}_{p},\qquad \dot p=-{H}_{x}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Indeed, for an arbitrary tangent vector <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ to <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ with components  <!-- MATH
+ $(z,r)=(z_1,\dots,z_k,r_1,\dots,r_k)$
+ -->
+<IMG
+ WIDTH="227" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2052.gif"
+ ALT="$ (z,r)=(z_1,\dots,z_k,r_1,\dots,r_k)$">
+, we can easily check using&nbsp;(<A HREF="#e-omega_2-i">7.6</A>) that with <IMG
+ WIDTH="19" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2059.gif"
+ ALT="$ \vec H$">
+ defined via&nbsp;(<A HREF="#e-canon-yet-again">7.8</A>) we have
+<P><!-- MATH
+ \begin{displaymath}
+\omega^2(\vec H,\eta)=\sum_{i=1}^k ({H}_{x_i}z_i+ {H}_{p_i}r_i)=dH(\eta)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="305" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2061.gif"
+ ALT="$\displaystyle \omega^2(\vec H,\eta)=\sum_{i=1}^k ({H}_{x_i}z_i+ {H}_{p_i}r_i)=dH(\eta)
+$">
+</DIV><P>
+</P>
+and the desired conclusion follows from&nbsp;(<A HREF="#e-omega_1">7.7</A>).
+Therefore, the statement of the maximum principle about the existence of a costate satisfying the adjoint equation (the second canonical equation)
+can be reformulated as saying that an optimal state trajectory
+can be <I>lifted</I> to an integral curve of the Hamiltonian vector field. (The control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ remains an argument on the right-hand side of&nbsp;(<A HREF="#e-canon-yet-again">7.8</A>), but the maximum principle is of course applied with an optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ plugged in.)
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2206"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2200"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2196"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2202"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2204"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2207"
+  HREF="node123.html">7.2 HJB equation, canonical</A>
+<B> Up:</B> <A NAME="tex2html2201"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2197"
+  HREF="node121.html">7.1.2 Re-interpreting the maximum</A>
+ &nbsp; <B>  <A NAME="tex2html2203"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2205"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

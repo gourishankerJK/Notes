@@ -1,0 +1,479 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.4.1 Hamilton's canonical equations</TITLE>
+<META NAME="description" CONTENT="2.4.1 Hamilton's canonical equations">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node35.html">
+<LINK REL="previous" HREF="node33.html">
+<LINK REL="up" HREF="node33.html">
+<LINK REL="next" HREF="node35.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html872"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html866"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html860"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html868"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html870"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html873"
+  HREF="node35.html">2.4.2 Legendre transformation</A>
+<B> Up:</B> <A NAME="tex2html867"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html861"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+ &nbsp; <B>  <A NAME="tex2html869"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html871"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00441000000000000000"></A><A NAME="ss-hamiltonian"></A>
+<BR>
+2.4.1 Hamilton's canonical equations
+</H2>
+
+<P>
+In
+Section&nbsp;<A HREF="node31.html#ss-EL-specialcases">2.3.4</A> we came across two quantities, which
+we recall here
+and for which we now introduce special symbols.
+The first one was the <I>momentum</I><A NAME="1689"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-p-def"></A><!-- MATH
+ \begin{equation}
+p:={L}_{ y'}(x,y,y')
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="126" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img438.gif"
+ ALT="$\displaystyle p:={L}_{ y'}(x,y,y')$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which we will usually regard as a function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ associated to a given curve
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.gif"
+ ALT="$ y=y(x)$">
+.
+The second object was the <I>Hamiltonian</I><A NAME="1696"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H-def"></A><!-- MATH
+ \begin{equation}
+H(x,y,y',p):=p\cdot y'-L(x,y,y')
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="256" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img439.gif"
+ ALT="$\displaystyle H(x,y,y',p):=p\cdot y'-L(x,y,y')$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is written here as a general function of four variables but also becomes
+a function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ alone when evaluated along a curve. The inner product
+sign <IMG
+ WIDTH="8" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ \cdot$">
+ in the definition of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ reflects the fact that in
+the multiple-degrees-of-freedom case,
+<IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ are vectors.
+
+<P>
+The variables <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ are called the <A NAME="1700"></A><I>canonical variables</I>.
+Suppose now that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal, i.e., satisfies
+the Euler-Lagrange equation&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>). It turns out that the differential equations
+describing the evolution
+of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ along such a curve, when written in terms of the Hamiltonian <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+,
+take a particularly nice form. For <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, we have
+<P><!-- MATH
+ \begin{displaymath}
+\frac{dy}{dx}=y'(x)={H}_{ p}(x,y(x),y'(x)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="246" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img441.gif"
+ ALT="$\displaystyle \frac{dy}{dx}=y'(x)={H}_{ p}(x,y(x),y'(x)).
+$">
+</DIV><P>
+</P>
+For <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, we have
+<P><!-- MATH
+ \begin{displaymath}
+\frac{dp}{dx}=\frac d{dx}{L}_{
+y'}(x,y(x),y'(x))={L}_{ y}(x,y(x),y'(x))=-{H}_{ y}(x,y(x),y'(x))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="525" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img442.gif"
+ ALT="$\displaystyle \frac{dp}{dx}=\frac d{dx}{L}_{
+y'}(x,y(x),y'(x))={L}_{ y}(x,y(x),y'(x))=-{H}_{ y}(x,y(x),y'(x))
+$">
+</DIV><P>
+</P>
+where the second equality is the Euler-Lagrange equation.
+In more concise form, the result
+is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-hamilton"></A><!-- MATH
+ \begin{equation}
+\fbox{$y'={H}_{p}, \quad p'=-{H}_{y}$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="171" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img443.gif"
+ ALT="$\displaystyle \fbox{$y'={H}_{p}, \quad p'=-{H}_{y}$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is known as the system of <I>Hamilton's canonical equations</I>.<A NAME="1722"></A>
+This reformulation of the Euler-Lagrange equation was proposed by Hamilton in
+1835.
+Since we are not assuming here that we are in the ``no <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+" case or the ``no <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+" case of Section&nbsp;<A HREF="node31.html#ss-EL-specialcases">2.3.4</A>, the momentum <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ and the Hamiltonian <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ need not be constant along extremals.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="60" ALIGN="BOTTOM" BORDER="0"
+ SRC="img444.gif"
+ ALT="\begin{Exercise}
+Confirm directly from the equations~\eqref{e-p-def}--\eqref{e-h...
+...mals and in the \lq\lq no $x$'' case $H$\ is constant along extremals.
+\end{Exercise}">
+<BR>
+
+<P>
+An important additional observation is that the partial derivative of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+
+with respect to <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+
+is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H_y_"></A><!-- MATH
+ \begin{equation}
+{H}_{y'}(x,y,y',p)=p-{L}_{y'}(x,y,y')=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="280" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img445.gif"
+ ALT="$\displaystyle {H}_{y'}(x,y,y',p)=p-{L}_{y'}(x,y,y')=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the last equality follows from the definition&nbsp;(<A HREF="#e-p-def">2.28</A>)
+ of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+. This suggests that,
+in addition to the canonical equations&nbsp;(<A HREF="#e-hamilton">2.30</A>), another
+necessary condition
+for optimality should be that
+<IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ has a stationary point as a function of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ along an optimal curve. To make
+this statement more precise, let us plug the following arguments into the
+Hamiltonian: an arbitrary <!-- MATH
+ $x\in [a,b]$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+; for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, the corresponding position <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.gif"
+ ALT="$ y(x)$">
+
+of the optimal curve; for <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, the corresponding value of the momentum
+<!-- MATH
+ $p(x)={L}_{ y'}(x,y(x),y'(x))$
+ -->
+<IMG
+ WIDTH="192" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img447.gif"
+ ALT="$ p(x)={L}_{ y'}(x,y(x),y'(x))$">
+. Let us keep
+the last remaining argument, <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+, as a free variable, and relabel
+it as <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ for clarity. This yields the function
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Hofz"></A><!-- MATH
+ \begin{equation}
+H^*(z):={L}_{ y'}(x,y(x),y'(x))\cdot z-L(x,y(x),z).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="350" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img448.gif"
+ ALT="$\displaystyle H^*(z):={L}_{ y'}(x,y(x),y'(x))\cdot z-L(x,y(x),z).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Our claim is that this function has a stationary point when <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ equals <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+,
+the velocity of the optimal curve at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Indeed, it is immediate to check that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-dHdz"></A><!-- MATH
+ \begin{equation}
+\frac{dH^*}{dz}(y'(x))=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="127" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img449.gif"
+ ALT="$\displaystyle \frac{dH^*}{dz}(y'(x))=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+ <A NAME="1748"></A>Later we
+will see that in the context of the maximum principle  this
+stationary point is actually an extremum, in fact, a
+maximum. Moreover, the statement
+about the maximum remains true when <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is not necessarily
+differentiable
+  or when
+  <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ takes values in a set with a
+  boundary and <!-- MATH
+ ${H}_{y'}\ne 0$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img450.gif"
+ ALT="$ {H}_{y'}\ne 0$">
+ on this boundary;
+  the basic property
+  is not that the derivative vanishes but that <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ achieves the
+  maximum in the above sense.
+
+<P>
+Mathematically, the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and the Hamiltonian <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ are
+related via a construction known as the <I>Legendre transformation</I>.
+Since this transformation is classical and finds applications
+in many diverse areas (optimization, geometry, physics),
+we now proceed to describe it.
+However, we will see that it does not quite provide the right point of view
+for our future developments, and it is included here mainly for historical
+reasons.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html872"
+  HREF="node35.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html866"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html860"
+  HREF="node33.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html868"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html870"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html873"
+  HREF="node35.html">2.4.2 Legendre transformation</A>
+<B> Up:</B> <A NAME="tex2html867"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html861"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+ &nbsp; <B>  <A NAME="tex2html869"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html871"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

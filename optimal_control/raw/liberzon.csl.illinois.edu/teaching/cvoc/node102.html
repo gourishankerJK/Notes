@@ -1,0 +1,829 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.3.1 One-sided differentials</TITLE>
+<META NAME="description" CONTENT="5.3.1 One-sided differentials">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node103.html">
+<LINK REL="previous" HREF="node101.html">
+<LINK REL="up" HREF="node101.html">
+<LINK REL="next" HREF="node103.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1900"
+  HREF="node103.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1894"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1888"
+  HREF="node101.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1896"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1898"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1901"
+  HREF="node103.html">5.3.2 Viscosity solutions of</A>
+<B> Up:</B> <A NAME="tex2html1895"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1889"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+ &nbsp; <B>  <A NAME="tex2html1897"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1899"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00731000000000000000"></A><A NAME="ss-one-sided-diff"></A>
+<BR>
+5.3.1 One-sided differentials
+</H2>
+
+<P>
+Let <!-- MATH
+ $v:\mathbb{R}^n\to
+\mathbb{R}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1681.gif"
+ ALT="$ v:\mathbb{R}^n\to
+\mathbb{R}$">
+ be a continuous function (nothing beyond continuity is required from <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+).
+A vector <!-- MATH
+ $\xi\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1682.gif"
+ ALT="$ \xi\in\mathbb{R}^n$">
+ is called a <I>super-differential</I><A NAME="5713"></A> of
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at a given point <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ if for all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ near <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ we have the relation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-super-def"></A><!-- MATH
+ \begin{equation}
+v(y)\le v(x)+\langle \xi,y-x\rangle +o(|y-x|).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="281" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1683.gif"
+ ALT="$\displaystyle v(y)\le v(x)+\langle \xi,y-x\rangle +o(\vert y-x\vert).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Geometrically, <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is a super-differential if the graph of the linear function <!-- MATH
+ $y\mapsto v(x)+\langle \xi,y-x\rangle$
+ -->
+<IMG
+ WIDTH="164" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1684.gif"
+ ALT="$ y\mapsto v(x)+\langle \xi,y-x\rangle $">
+, which has <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ as its gradient and takes the value <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1685.gif"
+ ALT="$ v(x)$">
+ at <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1686.gif"
+ ALT="$ y=x$">
+, lies above the graph of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at least locally near <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ (or is tangent to the graph of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+).
+Figure&nbsp;<A HREF="#f-superdiff">5.5</A>(a) illustrates this situation for the scalar case (<IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1687.gif"
+ ALT="$ n=1$">
+), in which <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is the slope of the line. A super-differential <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is in general not unique; we thus have a <I>set</I> of
+super-differentials of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, which is denoted by <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1688.gif"
+ ALT="$ D^+v(x)$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-superdiff"></A><A NAME="7932"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">(a) super-differential, (b) sub-differential
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1"><IMG
+ WIDTH="283" HEIGHT="195" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1690.gif"
+ ALT="\includegraphics{figures/superdiff.eps}">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT SIZE="-1"><IMG
+ WIDTH="283" HEIGHT="195" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1689.gif"
+ ALT="\includegraphics{figures/subdiff.eps}"></FONT></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Similarly, we say that <!-- MATH
+ $\xi\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1682.gif"
+ ALT="$ \xi\in\mathbb{R}^n$">
+ is a <I>sub-differential</I><A NAME="5738"></A> of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+
+if
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-sub-def"></A><!-- MATH
+ \begin{equation}
+v(y)\ge v(x)+\langle \xi,y-x\rangle -o(|y-x|).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="281" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1691.gif"
+ ALT="$\displaystyle v(y)\ge v(x)+\langle \xi,y-x\rangle -o(\vert y-x\vert).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The graph of the linear function with gradient <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ touching the graph of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ must now lie <I>below</I> the graph of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ in a vicinity of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ (or be tangent to it at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+); see Figure&nbsp;<A HREF="#f-superdiff">5.5</A>(b).
+The set of sub-differentials of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is denoted by <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1692.gif"
+ ALT="$ D^-v(x)$">
+.
+
+<P>
+<BR>
+<A NAME="x-squareroot"></A><IMG
+ WIDTH="555" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1693.gif"
+ ALT="\begin{Example}
+% latex2html id marker 9670For the function
+\begin{displaymath...
+...t differentiable are the only \lq\lq interesting'' points to check. \qed\end{Example}">
+<BR>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-squareroot"></A><A NAME="7934"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The function in Example&nbsp;<A HREF="#x-squareroot">5.3</A>
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1"><IMG
+ WIDTH="398" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1694.gif"
+ ALT="\includegraphics{figures/squareroot.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We now establish some useful properties of super- and sub-differentials.
+
+<P>
+T<SMALL>EST FUNCTIONS.</SMALL> <!-- MATH
+ $\xi\in D^+ v(x)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1695.gif"
+ ALT="$ \xi\in D^+ v(x)$">
+ if and only if there exists a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <!-- MATH
+ $\varphi:\mathbb{R}^n\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1696.gif"
+ ALT="$ \varphi:\mathbb{R}^n\to\mathbb{R}$">
+
+such that <!-- MATH
+ $\nabla \varphi(x)=\xi$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1697.gif"
+ ALT="$ \nabla \varphi(x)=\xi$">
+, <!-- MATH
+ $\varphi(x)=v(x)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1698.gif"
+ ALT="$ \varphi(x)=v(x)$">
+, and <!-- MATH
+ $\varphi(y)\ge v(y)$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1699.gif"
+ ALT="$ \varphi(y)\ge v(y)$">
+ for all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ near
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, i.e., <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a
+local minimum at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Similarly, <!-- MATH
+ $\xi\in D^- v(x)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1701.gif"
+ ALT="$ \xi\in D^- v(x)$">
+ if and only if there exists a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+
+such that <!-- MATH
+ $\nabla \varphi(x)=\xi$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1697.gif"
+ ALT="$ \nabla \varphi(x)=\xi$">
+ and <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a
+local <I>maximum</I> at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. (Note that we can always arrange to have <!-- MATH
+ $\varphi(x)=v(x)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1698.gif"
+ ALT="$ \varphi(x)=v(x)$">
+ by adding a constant to <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+, which does not affect the other conditions.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-testfcn"></A><A NAME="7936"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Characterization of a super-differential via a test function
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1"><IMG
+ WIDTH="283" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1702.gif"
+ ALT="\includegraphics{figures/testfcn.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ is sometimes called a <A NAME="5785"></A><I>test function</I>. For the case of <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1688.gif"
+ ALT="$ D^+v(x)$">
+, an example of such a function is shown in Figure&nbsp;<A HREF="#f-testfcn">5.7</A>. The above result, whose proof we will not give, will be used for proving the other facts that follow.
+
+<P>
+R<SMALL>ELATION WITH CLASSICAL DIFFERENTIALS.</SMALL> If <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is differentiable at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-rcdiffs"></A><!-- MATH
+ \begin{equation}
+D^+v(x)=D^-v(x)=\{\nabla
+  v(x)\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="237" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1703.gif"
+ ALT="$\displaystyle D^+v(x)=D^-v(x)=\{\nabla v(x)\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1688.gif"
+ ALT="$ D^+v(x)$">
+ and <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1692.gif"
+ ALT="$ D^-v(x)$">
+ are both nonempty, then <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is
+  differentiable at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and the relation&nbsp;(<A HREF="#e-rcdiffs">5.33</A>) holds.
+
+<P>
+We prove both claims with the help of test functions. First, suppose that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is differentiable at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. It is clear that the gradient <!-- MATH
+ $\nabla v(x)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1704.gif"
+ ALT="$ \nabla v(x)$">
+ is both a super-differential and a sub-differential of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ (indeed, with <!-- MATH
+ $\xi=\nabla v(x)$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1705.gif"
+ ALT="$ \xi=\nabla v(x)$">
+ both&nbsp;(<A HREF="#e-super-def">5.31</A>) and&nbsp;(<A HREF="#e-sub-def">5.32</A>) become equalities).
+If <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a local minimum or maximum at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ for some <!-- MATH
+ $\varphi\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1706.gif"
+ ALT="$ \varphi\in\mathcal C^1$">
+, then
+<!-- MATH
+ $\nabla(\varphi-v)(x)=0$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1707.gif"
+ ALT="$ \nabla(\varphi-v)(x)=0$">
+ hence <!-- MATH
+ $\nabla \varphi(x)=\nabla v(x)$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1708.gif"
+ ALT="$ \nabla \varphi(x)=\nabla v(x)$">
+. This shows that <!-- MATH
+ $\xi=\nabla v(x)$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1705.gif"
+ ALT="$ \xi=\nabla v(x)$">
+ is the only element in <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1688.gif"
+ ALT="$ D^+v(x)$">
+ and <IMG
+ WIDTH="62" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1692.gif"
+ ALT="$ D^-v(x)$">
+.
+
+<P>
+To prove the second claim,
+let <!-- MATH
+ $\varphi_1,\varphi_2\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1709.gif"
+ ALT="$ \varphi_1,\varphi_2\in\mathcal C^1$">
+ be such that
+  <!-- MATH
+ $\varphi_1(x)=v(x)=\varphi_2(x)$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1710.gif"
+ ALT="$ \varphi_1(x)=v(x)=\varphi_2(x)$">
+ and <!-- MATH
+ $\varphi_1(y)\le v(y)\le\varphi_2(y)$
+ -->
+<IMG
+ WIDTH="165" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1711.gif"
+ ALT="$ \varphi_1(y)\le v(y)\le\varphi_2(y)$">
+
+  for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ near <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Then <!-- MATH
+ $\varphi_1-\varphi_2$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1712.gif"
+ ALT="$ \varphi_1-\varphi_2$">
+ has a local maximum at
+  <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, implying that <!-- MATH
+ $\nabla(\varphi_1-\varphi_2)(x)=0$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1713.gif"
+ ALT="$ \nabla(\varphi_1-\varphi_2)(x)=0$">
+ hence <!-- MATH
+ $\nabla\varphi_1(x)=\nabla\varphi_2(x)$
+ -->
+<IMG
+ WIDTH="141" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1714.gif"
+ ALT="$ \nabla\varphi_1(x)=\nabla\varphi_2(x)$">
+.
+  For <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1715.gif"
+ ALT="$ y&gt;x$">
+ (the case <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1716.gif"
+ ALT="$ y&lt;x$">
+ is completely analogous) we can write
+  <P><!-- MATH
+ \begin{displaymath}
+\frac{\varphi_1(y)-\varphi_1(x)}{y-x}\le \frac{v(y)-v(x)}{y-x}\le
+\frac{\varphi_2(y)-\varphi_2(x)}{y-x}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="363" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1717.gif"
+ ALT="$\displaystyle \frac{\varphi_1(y)-\varphi_1(x)}{y-x}\le \frac{v(y)-v(x)}{y-x}\le
+\frac{\varphi_2(y)-\varphi_2(x)}{y-x}.
+$">
+</DIV><P>
+</P>
+As <IMG
+ WIDTH="50" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1718.gif"
+ ALT="$ y\to x$">
+, the first fraction approaches <!-- MATH
+ $\nabla\varphi_1(x)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1719.gif"
+ ALT="$ \nabla\varphi_1(x)$">
+, the last one
+approaches <!-- MATH
+ $\nabla\varphi_2(x)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1720.gif"
+ ALT="$ \nabla\varphi_2(x)$">
+, and we know that the two gradients are equal. Therefore, by  the ``Sandwich Theorem" the limit of the middle
+fraction exists and equals the other two. This limit must be <!-- MATH
+ $\nabla v(x)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1704.gif"
+ ALT="$ \nabla v(x)$">
+, and
+everything is proved.
+
+<P>
+N<SMALL>ON-EMPTINESS AND DENSENESS.</SMALL> The sets <!-- MATH
+ $\{x: D^+v(x)\ne\emptyset\}$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1721.gif"
+ ALT="$ \{x: D^+v(x)\ne\emptyset\}$">
+ and <!-- MATH
+ $\{x: D^-v(x)\ne\emptyset\}$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1722.gif"
+ ALT="$ \{x: D^-v(x)\ne\emptyset\}$">
+
+are both nonempty, and actually dense in the domain of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+.
+
+<P>
+The idea of the proof is sketched in Figure&nbsp;<A HREF="#f-dense">5.8</A>. The highly irregular graph in the figure is that of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+. Take an arbitrary point <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+. Choosing a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ steep enough (see the solid curve in the figure), we can force
+<IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ to have a local maximum at a nearby point <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, as close to
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ as we want. (For clarity, we also shift the graph of <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ vertically to produce the dotted curve in the figure which touches the graph of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.) We then have <!-- MATH
+ $\nabla\varphi(x)\in D^-v(x)$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1723.gif"
+ ALT="$ \nabla\varphi(x)\in D^-v(x)$">
+. A similar argument works for <IMG
+ WIDTH="30" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1724.gif"
+ ALT="$ D^+$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-dense"></A><A NAME="7939"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Proving denseness
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1"><IMG
+ WIDTH="283" HEIGHT="231" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1725.gif"
+ ALT="\includegraphics{figures/dense.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1726.gif"
+ ALT="\begin{Exercise}Give an example of a continuous function $v$\ with the property ...
+... some $x$\ in its domain
+both $D^+v(x)$\ and $D^-v(x)$\ are empty.\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1900"
+  HREF="node103.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1894"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1888"
+  HREF="node101.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1896"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1898"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1901"
+  HREF="node103.html">5.3.2 Viscosity solutions of</A>
+<B> Up:</B> <A NAME="tex2html1895"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1889"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+ &nbsp; <B>  <A NAME="tex2html1897"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1899"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

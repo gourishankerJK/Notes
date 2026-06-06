@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.3.1.3 Terminal cost</TITLE>
+<META NAME="description" CONTENT="4.3.1.3 Terminal cost">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node79.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1603"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1597"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1591"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1599"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1601"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1604"
+  HREF="node83.html">4.3.1.4 Initial sets</A>
+<B> Up:</B> <A NAME="tex2html1598"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1592"
+  HREF="node81.html">4.3.1.2 Time-dependent system and</A>
+ &nbsp; <B>  <A NAME="tex2html1600"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1602"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00631300000000000000"></A>
+<A NAME="4526"></A>
+<BR>
+4.3.1.3 Terminal cost
+</H3>
+Let us now consider a situation where a terminal cost of the form
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img871.gif"
+ ALT="$ K=K(x_f)$">
+ is present. To illustrate just one simple case, we
+suppose that we are dealing with a free-time, free-endpoint
+  problem in the Mayer form, i.e., there is no running
+ cost (<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img837.gif"
+ ALT="$ L\equiv
+0$">
+). We assume the function <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ to be differentiable as many times as desired;
+ everything else is as in the Basic
+ Variable-Endpoint Control Problem.
+
+<P>
+Since <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img837.gif"
+ ALT="$ L\equiv
+0$">
+,  there is no need to consider the <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+-coordinate. Temporal and spatial control
+ perturbations can be used to construct the terminal cone <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ as
+ before, except that it now lives in the original <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-space:
+ <!-- MATH
+ $C_{t^*}\subset
+\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1304.gif"
+ ALT="$ C_{t^*}\subset
+\mathbb{R}^n$">
+. By optimality, and since the terminal state is free, no
+perturbed state
+trajectory can have a terminal cost lower than <!-- MATH
+ $K(x^*(t^*))$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1305.gif"
+ ALT="$ K(x^*(t^*))$">
+, the terminal cost
+of the candidate optimal trajectory. Thus we expect that <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+
+should not decrease along any direction in <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+, a property that
+we can write as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Kxnormal"></A><!-- MATH
+ \begin{equation}
+\left\langle -{K}_{x}(x^*(t^*)),\delta\right\rangle\le 0\qquad
+\forall\,\delta \ \text{ such that }\, x^*(t^*)+\delta\in C_{t^*}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="222" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1306.gif"
+ ALT="$\displaystyle \left\langle -{K}_{x}(x^*(t^*)),\delta\right\rangle\le 0\qquad \forall\,\delta \ $">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1307.gif"
+ ALT="$\displaystyle \, x^*(t^*)+\delta\in C_{t^*}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.42)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Geometrically, this means that <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1163.gif"
+ ALT="$ C_{t^*}$">
+ lies on one side of the
+hyperplane passing through <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1253.gif"
+ ALT="$ x^*(t^*)$">
+ with normal <!-- MATH
+ $-{K}_{x}(x^*(t^*))$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1308.gif"
+ ALT="$ -{K}_{x}(x^*(t^*))$">
+, which we henceforth assume to be a nonzero vector.
+A comparison of&nbsp;(<A HREF="#e-Kxnormal">4.42</A>) with&nbsp;(<A HREF="node72.html#e-delta-le0">4.29</A>)
+unmistakably suggests that we should define
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ptermdefKx"></A><!-- MATH
+ \begin{equation}
+p^*(t^*):=-{K}_{x}(x^*(t^*)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="175" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1309.gif"
+ ALT="$\displaystyle p^*(t^*):=-{K}_{x}(x^*(t^*)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.43)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Indeed, we know that in a
+free-endpoint problem the final value of the costate should be
+completely constrained (to give the correct total number of
+boundary conditions for the system of canonical equations). With
+the above definition of <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.gif"
+ ALT="$ p^*(t^*)$">
+ the
+inequality&nbsp;(<A HREF="#e-Kxnormal">4.42</A>) matches&nbsp;(<A HREF="node72.html#e-delta-le0">4.29</A>), following
+which the adjoint equation and the analysis of the
+Hamiltonian
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HnoL"></A><!-- MATH
+ \begin{equation}
+H(x,u,p)=\langle p,f(x,u)\rangle
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="182" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1311.gif"
+ ALT="$\displaystyle H(x,u,p)=\langle p,f(x,u)\rangle$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.44)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+are developed in the same fashion as before. The
+companion inequality&nbsp;(<A HREF="node72.html#e-mu-ge0">4.30</A>) in our earlier proof of the
+maximum principle was only needed to show that <!-- MATH
+ $p_0^*\le 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img981.gif"
+ ALT="$ p_0^*\le 0$">
+; here
+we do not have such an inequality, and we do not need it because
+there is no <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.gif"
+ ALT="$ p_0^*$">
+.
+
+<P>
+The above argument is of course not rigorous, so let us again
+validate our conjecture by formally reducing the present scenario
+to the Basic Variable-Endpoint Control Problem. A transformation
+that accomplishes this goal is provided by the formula
+<P><!-- MATH
+ \begin{displaymath}
+K(x_f)=K(x_0)+\int_{t_0}^{t_f}\left\langle {K}_{x}(x(t)),f(x(t),u(t))\right\rangle dt.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="379" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1312.gif"
+ ALT="$\displaystyle K(x_f)=K(x_0)+\int_{t_0}^{t_f}\left\langle {K}_{x}(x(t)),f(x(t),u(t))\right\rangle dt.
+$">
+</DIV><P>
+</P>
+Ignoring <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1313.gif"
+ ALT="$ K(x_0)$">
+ which is a known constant, we arrive at an
+equivalent problem in the Lagrange form with <!-- MATH
+ $L=\left\langle {K}_{x}, f\right\rangle$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1314.gif"
+ ALT="$ L=\left\langle {K}_{x}, f\right\rangle $">
+. For this modified problem, the Hamiltonian
+is <!-- MATH
+ $\overline H=\langle \bar p,f\rangle+p_0\left\langle {K}_{x},
+f\right\rangle=\left\langle \bar p+p_0{K}_{x}, f\right\rangle$
+ -->
+<IMG
+ WIDTH="303" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1315.gif"
+ ALT="$ \overline H=\langle \bar p,f\rangle+p_0\left\langle {K}_{x},
+f\right\rangle=\left\langle \bar p+p_0{K}_{x}, f\right\rangle $">
+
+where <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1316.gif"
+ ALT="$ \bar p$">
+ is the costate. Applying the maximum principle, we
+obtain the differential equation <!-- MATH
+ $\dot{\bar
+p}^*=\left.-{\overline H}_{x}\right|_{*}=-\big.{\left({f}_{x}\right)^T}\big|_*\bar p^*-p_0^*\left.{K}_{{
+x}{x}}\right|_{*}\left.f\right|_{*}-p_0^*\big.{\left({f}_{x}\right)^T}\big|_*\left.{K}_{x}\right|_{*}$
+ -->
+<IMG
+ WIDTH="449" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1317.gif"
+ ALT="$ \dot{\bar
+p}^*=\left.-{\overline H}_{x}\right\vert _{*}=-\big.{\left({f}_{x}\r...
+...{*}-p_0^*\big.{\left({f}_{x}\right)^T}\big\vert _*\left.{K}_{x}\right\vert _{*}$">
+ with the boundary condition
+<!-- MATH
+ $\bar p^*(t_f)=0$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1318.gif"
+ ALT="$ \bar p^*(t_f)=0$">
+. The latter tells us, by the way, that <!-- MATH
+ $p_0^*\ne
+0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$ p_0^*\ne 0$">
+, hence from now on we assume <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.gif"
+ ALT="$ p_0^*$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1319.gif"
+ ALT="$ \bar p^*$">
+ to have
+been normalized so that <IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img995.gif"
+ ALT="$ p_0^*=-1$">
+. Now, matching the expression
+for <!-- MATH
+ $\overline H$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1289.gif"
+ ALT="$ \overline H$">
+ with&nbsp;(<A HREF="#e-HnoL">4.44</A>), let us define the costate for our original problem to be
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-p-defpbar"></A><!-- MATH
+ \begin{equation}
+p^*(t):=\bar p^*(t)-{K}_{x}(x^*(t)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="204" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1320.gif"
+ ALT="$\displaystyle p^*(t):=\bar p^*(t)-{K}_{x}(x^*(t)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.45)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Its final value is
+consistent with&nbsp;(<A HREF="#e-ptermdefKx">4.43</A>). We can check that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+
+defined in this way satisfies the correct canonical equation.
+
+<P>
+<BR>
+<A NAME="z-terminal"></A><IMG
+ WIDTH="555" HEIGHT="62" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1321.gif"
+ ALT="\begin{Exercise}
+Verify that $p^*$\ given
+by~\eqref{e-p-defpbar} satisfies the d...
+...onian~\eqref{e-HnoL}. Show
+also that $p^*(t)\ne 0$\ for all $t$.
+\end{Exercise}">
+<BR>
+
+<P>
+By construction, <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is maximized and equals 0 along the optimal
+trajectory because these properties hold for <!-- MATH
+ $\overline H$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1289.gif"
+ ALT="$ \overline H$">
+. We
+thus conclude that the statement of the maximum principle for the
+present case, with respect to the Hamiltonian&nbsp;(<A HREF="#e-HnoL">4.44</A>), is
+obtained from that for the Basic Variable-Endpoint Control Problem
+by eliminating <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.gif"
+ ALT="$ p_0^*$">
+ and changing the transversality condition
+to <!-- MATH
+ $p^*(t_f)=-{K}_{x}(x^*(t_f))$
+ -->
+<IMG
+ WIDTH="168" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1322.gif"
+ ALT="$ p^*(t_f)=-{K}_{x}(x^*(t_f))$">
+. Recall that we already saw such a boundary condition for the costate in&nbsp;(<A HREF="node56.html#e-p-fc">3.37</A>).
+
+<P>
+<BR>
+<A NAME="z-chofvar"></A><IMG
+ WIDTH="555" HEIGHT="123" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1323.gif"
+ ALT="\begin{Exercise}
+Consider the following
+more general problem: the system is $ \d...
+...nd arrive at a precise statement
+of the maximum principle for it.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1603"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1597"
+  HREF="node79.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1591"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1599"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1601"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1604"
+  HREF="node83.html">4.3.1.4 Initial sets</A>
+<B> Up:</B> <A NAME="tex2html1598"
+  HREF="node79.html">4.3.1 Changes of variables</A>
+<B> Previous:</B> <A NAME="tex2html1592"
+  HREF="node81.html">4.3.1.2 Time-dependent system and</A>
+ &nbsp; <B>  <A NAME="tex2html1600"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1602"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

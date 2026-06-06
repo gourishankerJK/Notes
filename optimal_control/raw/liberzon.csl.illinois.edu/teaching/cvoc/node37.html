@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.5 Variational problems with constraints</TITLE>
+<META NAME="description" CONTENT="2.5 Variational problems with constraints">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node33.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node38.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html912"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html906"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html900"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html908"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html910"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html913"
+  HREF="node38.html">2.5.1 Integral constraints</A>
+<B> Up:</B> <A NAME="tex2html907"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html901"
+  HREF="node36.html">2.4.3 Principle of least</A>
+ &nbsp; <B>  <A NAME="tex2html909"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html911"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00450000000000000000"></A><A NAME="s-var-constr"></A>
+<BR>
+2.5 Variational problems with constraints
+</H1>
+
+<P>
+In Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A> we showed that the Euler-Lagrange equation is a necessary
+condition for optimality in the context of the Basic Calculus of Variations
+Problem, where the boundary points are fixed but the curves are otherwise
+unconstrained.
+In this section we generalize that result to situations
+where equality constraints are imposed on the admissible curves.
+Before proceeding, the reader should find it helpful to review the material
+in Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A> devoted to constrained optimality
+and the method of Lagrange multipliers for finite-dimensional problems. It is also
+useful to recall the general definitions of an extremum from Section&nbsp;<A HREF="node14.html#ss-snm">1.3.1</A>
+and of an admissible perturbation from Section&nbsp;<A HREF="node15.html#ss-1st-var">1.3.2</A>; here
+the function space <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is the same as at the beginning of Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A>
+while the subset <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ A$">
+ is smaller because it reflects additional constraints (to be
+specified below). Finally, the explanation given at the beginning of
+Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A> applies here as well: the conditions
+in this section are developed mainly with the 1-norm in mind, i.e., they are primarily designed
+to test for weak rather than strong minima.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html914"
+  HREF="node38.html">2.5.1 Integral constraints</A>
+<LI><A NAME="tex2html915"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+<UL>
+<LI><A NAME="tex2html916"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html912"
+  HREF="node38.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html906"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html900"
+  HREF="node36.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html908"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html910"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html913"
+  HREF="node38.html">2.5.1 Integral constraints</A>
+<B> Up:</B> <A NAME="tex2html907"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html901"
+  HREF="node36.html">2.4.3 Principle of least</A>
+ &nbsp; <B>  <A NAME="tex2html909"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html911"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

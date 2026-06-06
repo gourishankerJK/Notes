@@ -1,0 +1,723 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>7.1.1 Differentiable manifolds</TITLE>
+<META NAME="description" CONTENT="7.1.1 Differentiable manifolds">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node121.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node121.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2180"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2174"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2168"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2176"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2178"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2181"
+  HREF="node121.html">7.1.2 Re-interpreting the maximum</A>
+<B> Up:</B> <A NAME="tex2html2175"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2169"
+  HREF="node119.html">7.1 Maximum principle on</A>
+ &nbsp; <B>  <A NAME="tex2html2177"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2179"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00911000000000000000"></A><A NAME="ss-manifolds"></A>
+<BR>
+7.1.1 Differentiable manifolds
+</H2>
+
+<P>
+We say that <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ is a <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional differentiable manifold embedded in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, or simply a <I>manifold</I>,<A NAME="6672"></A> if it is given
+by<A NAME="6673"></A><A NAME="6674"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-M-constraints"></A><!-- MATH
+ \begin{equation}
+M=\{x\in\mathbb{R}^n: h_1(x)=h_2(x)=\dots=h_{n-k}(x)=0\}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="395" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1980.gif"
+ ALT="$\displaystyle M=\{x\in\mathbb{R}^n: h_1(x)=h_2(x)=\dots=h_{n-k}(x)=0\}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img115.gif"
+ ALT="$ h_i$">
+, <!-- MATH
+ $i=1, \dots, n-k$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.gif"
+ ALT="$ i=1, \dots, n-k$">
+ are <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ functions from <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ to <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.gif"
+ ALT="$ \mathbb{R}$">
+ such that the gradient vectors <!-- MATH
+ $\nabla h_i(x)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1981.gif"
+ ALT="$ \nabla h_i(x)$">
+, <!-- MATH
+ $i=1,\dots,n-k$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1002.gif"
+ ALT="$ i=1, \dots, n-k$">
+ are linearly independent
+for each <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.gif"
+ ALT="$ x\in M$">
+. This is actually not a new object for us: it is just a <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional surface<A NAME="6680"></A> in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ already considered in Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A> and later in the formulation of the Basic Variable-Endpoint Control Problem in Chapter&nbsp;<A HREF="node61.html#c-mp">4</A>. The linear independence assumption imposed on the gradients means, in the terminology of Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>, that all points of <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ are regular.
+
+<P>
+Intuitively speaking, a <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional
+ manifold <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ is a subset of <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ that locally ``looks like"
+<!-- MATH
+ $\mathbb{R}^k$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1983.gif"
+ ALT="$ \mathbb{R}^k$">
+. This idea can be made precise by equipping <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ with <I>local coordinates</I>,<A NAME="6686"></A> as follows. Fix an arbitrary <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.gif"
+ ALT="$ x\in M$">
+. Since by assumption the (nonsquare) Jacobian matrix
+<P><!-- MATH
+ \begin{displaymath}
+\begin{pmatrix} {(h_1)}_{x_1}(x)&\cdots&{(h_1)}_{x_n}(x)\\
+\vdots&\ddots&\vdots\\
+{(h_{n-k})}_{x_1}(x)&\cdots&{(h_{n-k})}_{x_n}(x)
+\end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="269" HEIGHT="91" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1984.gif"
+ ALT="$\displaystyle \begin{pmatrix}{(h_1)}_{x_1}(x)&amp;\cdots&amp;{(h_1)}_{x_n}(x)\\
+\vdots&amp;\ddots&amp;\vdots\\
+{(h_{n-k})}_{x_1}(x)&amp;\cdots&amp;{(h_{n-k})}_{x_n}(x)
+\end{pmatrix}$">
+</DIV><P>
+</P>
+is of rank <IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1020.gif"
+ ALT="$ n-k$">
+, it has <IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1020.gif"
+ ALT="$ n-k$">
+ linearly independent columns; shuffling the variables <!-- MATH
+ $x_1,\dots,x_n$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1985.gif"
+ ALT="$ x_1,\dots,x_n$">
+ if necessary, we can assume that these are the last <IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1020.gif"
+ ALT="$ n-k$">
+ columns. Using the Implicit Function Theorem, we can then solve the equations in&nbsp;(<A HREF="#e-M-constraints">7.1</A>) for the variables <!-- MATH
+ $x_{k+1},\dots,x_n$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1986.gif"
+ ALT="$ x_{k+1},\dots,x_n$">
+ in terms of <!-- MATH
+ $x_1,\dots,x_k$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1987.gif"
+ ALT="$ x_1,\dots,x_k$">
+ in some neighborhood of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Consequently, the components <!-- MATH
+ $x_1,\dots,x_k$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1987.gif"
+ ALT="$ x_1,\dots,x_k$">
+ can be used to describe points in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ near <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, i.e., they provide a local coordinate chart<A NAME="6700"></A> for <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+. A simple  example of a 1-dimensional manifold in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1460.gif"
+ ALT="$ \mathbb{R}^2$">
+ is the unit circle, for which we invite the reader to work out the above construction.
+
+<P>
+The standard definition of a manifold is actually stated in terms of the existence of local coordinate charts satisfying suitable compatibility conditions, without any explicit reference to the ambient space <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+. However, it is known that every manifold defined in this way can be embedded in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ for some <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+ large enough. The above more concrete notion of an embedded manifold is sufficient for our purposes, but the concept of local coordinates will be useful for us as well. Basically, we have the choice of representing points in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ as <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+-vectors or locally as <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-vectors (cf. the discussion of holonomic constraints in Section&nbsp;<A HREF="node39.html#ss-constraint-nonint">2.5.2</A>).
+
+<P>
+Let <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ be a <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional manifold. We know that at each point <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.gif"
+ ALT="$ x\in M$">
+ we can define the
+<I>tangent space</I><A NAME="6704"></A> <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+ (see page&nbsp;<A HREF="node11.html#p-TxM"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>).
+This is a <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional linear vector space, spanned by the tangent vectors
+associated with all possible curves in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ passing through <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Recall that for a curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ lying in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+, with
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1989.gif"
+ ALT="$ x(0)=x$">
+, the corresponding tangent vector is <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1990.gif"
+ ALT="$ \dot x(0)$">
+. In local coordinates, if the curve has components <!-- MATH
+ $x_1(\cdot),\dots,x_k(\cdot)$
+ -->
+<IMG
+ WIDTH="115" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1991.gif"
+ ALT="$ x_1(\cdot),\dots,x_k(\cdot)$">
+ then the components of the tangent vector <!-- MATH
+ $\xi=\dot x(0)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1992.gif"
+ ALT="$ \xi=\dot x(0)$">
+ are <!-- MATH
+ $(\xi_1,\dots,\xi_k)=(\dot x_1(0),\dots,\dot x_k(0))$
+ -->
+<IMG
+ WIDTH="242" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1993.gif"
+ ALT="$ (\xi_1,\dots,\xi_k)=(\dot x_1(0),\dots,\dot x_k(0))$">
+.
+It is also useful to consider the union
+<P><!-- MATH
+ \begin{displaymath}
+TM:=\bigcup_{x\in M} T_x M
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="134" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1994.gif"
+ ALT="$\displaystyle TM:=\bigcup_{x\in M} T_x M
+$">
+</DIV><P>
+</P>
+which is called the <I>tangent bundle</I><A NAME="6710"></A> of <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+. This is a manifold of dimension <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1995.gif"
+ ALT="$ 2k$">
+. We note that in general, <IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1996.gif"
+ ALT="$ TM$">
+ is not globally diffeomorphic to the direct product <!-- MATH
+ $M\times \mathbb{R}^k$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1997.gif"
+ ALT="$ M\times \mathbb{R}^k$">
+ (well-known counterexamples are obtained by taking <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ to be the two-dimensional sphere or the Mobius band). It is convenient to think of vector fields on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ as <I>sections</I> of the
+tangent bundle, i.e., functions <IMG
+ WIDTH="106" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1998.gif"
+ ALT="$ f:M\to TM$">
+ such that <!-- MATH
+ $f(x)\in T_x M$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1999.gif"
+ ALT="$ f(x)\in T_x M$">
+ for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+
+<P>
+Given a point <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ on a manifold <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+,
+the linear vector space of linear <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.gif"
+ ALT="$ \mathbb{R}$">
+-valued functions on <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+ is called
+the <I>cotangent space</I><A NAME="6714"></A> to <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, and is denoted by <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2000.gif"
+ ALT="$ T_x^* M$">
+. This is the <A NAME="6715"></A><I>dual space</I><A NAME="tex2html76"
+  HREF="footnode.html#foot6717"><SUP>7.1</SUP></A> to <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+; its elements are called <I>cotangent vectors</I>,<A NAME="7968"></A> or simply <I>covectors</I>.<A NAME="6721"></A>
+The simplest example of a covector is the differential of a
+function.<A NAME="6722"></A> Let <!-- MATH
+ $g: M\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2001.gif"
+ ALT="$ g: M\to \mathbb{R}$">
+ be a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function. For each <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.gif"
+ ALT="$ x\in M$">
+, the linear function
+<!-- MATH
+ $\left.dg\right|_{x}: T_x M\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2002.gif"
+ ALT="$ \left.dg\right\vert _{x}: T_x M\to \mathbb{R}
+$">
+
+is defined as follows. Given a tangent vector <!-- MATH
+ $\xi\in T_x M$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2003.gif"
+ ALT="$ \xi\in T_x M$">
+ and an arbitrary
+curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ with <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1989.gif"
+ ALT="$ x(0)=x$">
+ having <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ as its tangent vector (so that <!-- MATH
+ $\dot x(0)=\xi$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2004.gif"
+ ALT="$ \dot x(0)=\xi$">
+), let
+<P><!-- MATH
+ \begin{displaymath}
+\left.dg\right|_{x}(\xi):=\left.\frac{d}{d\alpha}\right|_{\alpha=0} g(x(\alpha)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="213" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2005.gif"
+ ALT="$\displaystyle \left.dg\right\vert _{x}(\xi):=\left.\frac{d}{d\alpha}\right\vert _{\alpha=0} g(x(\alpha)).
+$">
+</DIV><P>
+</P>
+In local coordinates this is given by
+<!-- MATH
+ $\left.dg\right|_{x}(\xi)=\sum_{i=1}^k {g}_{x_i}(x)\dot x_i(0)=\sum_{i=1}^k {g}_{x_i}(x)\xi_i$
+ -->
+<IMG
+ WIDTH="337" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2006.gif"
+ ALT="$ \left.dg\right\vert _{x}(\xi)=\sum_{i=1}^k {g}_{x_i}(x)\dot x_i(0)=\sum_{i=1}^k {g}_{x_i}(x)\xi_i
+$">
+, which clearly does not depend on the choice of a specific curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+.  The map <!-- MATH
+ $\left.dg\right|_{x}$
+ -->
+<IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2007.gif"
+ ALT="$ \left.dg\right\vert _{x}$">
+ assigns to each tangent vector <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ the derivative of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ in the direction of <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+. If <!-- MATH
+ $x_1,\dots, x_k$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1987.gif"
+ ALT="$ x_1,\dots,x_k$">
+ are local coordinates on
+<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+, then the corresponding differentials <!-- MATH
+ $dx_1, \dots, dx_k$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2008.gif"
+ ALT="$ dx_1, \dots, dx_k$">
+ form a basis for <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2000.gif"
+ ALT="$ T_x^* M$">
+ and hence yield local coordinates
+on the cotangent space. For a tangent vector <!-- MATH
+ $\xi\in
+T_x M$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2003.gif"
+ ALT="$ \xi\in T_x M$">
+, the numbers <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2009.gif"
+ ALT="$ dx_i(\xi)$">
+ give the components <IMG
+ WIDTH="16" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2010.gif"
+ ALT="$ \xi_i$">
+ of <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+.
+One also defines the <I>cotangent bundle</I><A NAME="6739"></A>
+<P><!-- MATH
+ \begin{displaymath}
+T^*M=\bigcup_{x\in M} T^*_x M
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="139" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2011.gif"
+ ALT="$\displaystyle T^*M=\bigcup_{x\in M} T^*_x M
+$">
+</DIV><P>
+</P>
+which is itself a manifold, of dimension <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1995.gif"
+ ALT="$ 2k$">
+. Combining local coordinates
+<!-- MATH
+ $x_1,\dots,x_k$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1987.gif"
+ ALT="$ x_1,\dots,x_k$">
+ on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ with local coordinates on <IMG
+ WIDTH="42" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2000.gif"
+ ALT="$ T_x^* M$">
+ relative to the basis given by <!-- MATH
+ $dx_1,\dots,dx_k$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2008.gif"
+ ALT="$ dx_1, \dots, dx_k$">
+, one obtains local coordinates on the cotangent bundle <IMG
+ WIDTH="42" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2012.gif"
+ ALT="$ T^* M$">
+ known as <A NAME="6741"></A><A NAME="6742"></A><I>canonical coordinates</I>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2180"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2174"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2168"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2176"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2178"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2181"
+  HREF="node121.html">7.1.2 Re-interpreting the maximum</A>
+<B> Up:</B> <A NAME="tex2html2175"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2169"
+  HREF="node119.html">7.1 Maximum principle on</A>
+ &nbsp; <B>  <A NAME="tex2html2177"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2179"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

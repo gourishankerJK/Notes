@@ -1,0 +1,607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>5.1.4 Sufficient condition for optimality</TITLE>
+<META NAME="description" CONTENT="5.1.4 Sufficient condition for optimality">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node98.html">
+<LINK REL="previous" HREF="node95.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node98.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1830"
+  HREF="node98.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1824"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1818"
+  HREF="node96.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1826"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1828"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1831"
+  HREF="node98.html">5.1.5 Historical remarks</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node96.html">5.1.3.1 Infinite-horizon problem</A>
+ &nbsp; <B>  <A NAME="tex2html1827"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1829"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00714000000000000000"></A><A NAME="ss-HJB-suff"></A>
+<BR>
+5.1.4 Sufficient condition for optimality
+</H2>
+
+<P>
+Together, the HJB equation--written as&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>) or&nbsp;(<A HREF="node95.html#e-HJB-ham">5.12</A>)--and the Hamiltonian maximization condition&nbsp;(<A HREF="node95.html#e-ustar">5.14</A>) constitute necessary conditions for
+optimality. It should be clear that all we proved so far is their
+necessity. Indeed, defining <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ to be the value function, we
+showed that it must satisfy the HJB equation.
+Assuming further that an optimal control exists, we showed that it
+must maximize the Hamiltonian along the optimal trajectory. However, we will see next that these conditions
+are also sufficient for optimality.
+Namely, we will establish the following <B>sufficient condition for optimality</B>:<A NAME="5510"></A> <I>Suppose that
+a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <!-- MATH
+ $\widehat V:[t_0,t_1]\times \mathbb{R}^n\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1627.gif"
+ ALT="$ \widehat V:[t_0,t_1]\times \mathbb{R}^n\to\mathbb{R}$">
+ satisfies the HJB equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJBhat"></A><!-- MATH
+ \begin{equation}
+-{\widehat V}_{t}(t,x)=\inf_{u\in U} \big\{L(t,x,u)+\big\langle {\widehat V}_{x}(t,x),
+f(t,x,u)\big\rangle \big\}% \qquad \foral t\in[t_0,t_1),\ \foral x\in\R^n
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="379" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1628.gif"
+ ALT="$\displaystyle -{\widehat V}_{t}(t,x)=\inf_{u\in U} \big\{L(t,x,u)+\big\langle {...
+...,x), f(t,x,u)\big\rangle \big\}% \qquad \foral t\in[t_0,t_1),\ \foral x\in\R^n
+$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(for all <!-- MATH
+ $t\in[t_0,t_1)$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1603.gif"
+ ALT="$ t\in[t_0,t_1)$">
+
+ and all <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+) and the boundary
+condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-bound-suff"></A><!-- MATH
+ \begin{equation}
+\widehat V(t_1,x)=K(x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="130" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1629.gif"
+ ALT="$\displaystyle \widehat V(t_1,x)=K(x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Suppose
+that a control <!-- MATH
+ $\hat u:[t_0,t_1]\to U$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1630.gif"
+ ALT="$ \hat u:[t_0,t_1]\to U$">
+ and the corresponding trajectory <!-- MATH
+ $\hat x:[t_0,t_1]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1631.gif"
+ ALT="$ \hat x:[t_0,t_1]\to\mathbb{R}^n$">
+, with the given initial condition <!-- MATH
+ $\hat x(t_0)=x_0$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1632.gif"
+ ALT="$ \hat x(t_0)=x_0$">
+,
+satisfy everywhere the equation<A NAME="p-suff-HJB"></A><P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Hmax-long"></A><!-- MATH
+ \begin{equation}
+L(t,\hat x(t),\hat u(t))+\big\langle {\widehat V}_{x}(t,\hat x(t)),
+f(t,\hat x(t),\hat u(t))\big\rangle =\min_{u\in U} \big\{L(t,\hat x(t),u)+\big\langle {\widehat V}_{x}(t,\hat x(t)),
+f(t,\hat x(t),u)\big\rangle \big\}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="704" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1633.gif"
+ ALT="$\displaystyle L(t,\hat x(t),\hat u(t))+\big\langle {\widehat V}_{x}(t,\hat x(t)...
+...)+\big\langle {\widehat V}_{x}(t,\hat x(t)), f(t,\hat x(t),u)\big\rangle \big\}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is equivalent to
+the Hamiltonian maximization condition
+<P><!-- MATH
+ \begin{displaymath}
+H(t,\hat x(t),\hat u(t),-{\widehat V}_{x}(t,\hat x(t)))=\max_{u\in U}
+H(t,\hat x(t),u,-{\widehat V}_{x}(t,\hat x(t))).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="463" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1634.gif"
+ ALT="$\displaystyle H(t,\hat x(t),\hat u(t),-{\widehat V}_{x}(t,\hat x(t)))=\max_{u\in U}
+H(t,\hat x(t),u,-{\widehat V}_{x}(t,\hat x(t))).
+$">
+</DIV><P>
+</P>
+Then <!-- MATH
+ $\widehat V(t_0,x_0)$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1635.gif"
+ ALT="$ \widehat V(t_0,x_0)$">
+ is the optimal cost (i.e., <!-- MATH
+ $\widehat V(t_0,x_0)=V(t_0,x_0)$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1636.gif"
+ ALT="$ \widehat V(t_0,x_0)=V(t_0,x_0)$">
+ where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is the value function) and
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1637.gif"
+ ALT="$ \hat u$">
+ is an optimal control.</I> (Note that this optimal control is not
+claimed to be unique; there can be multiple controls giving the same cost.)
+
+<P>
+To prove this result, let us first apply&nbsp;(<A HREF="#e-HJBhat">5.20</A>) with <!-- MATH
+ $x=\hat x(t)$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1638.gif"
+ ALT="$ x=\hat x(t)$">
+. We know from&nbsp;(<A HREF="#e-Hmax-long">5.22</A>) that
+along <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \hat x$">
+, the infimum is a minimum and it is achieved at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1637.gif"
+ ALT="$ \hat u$">
+; hence we have, similarly to&nbsp;(<A HREF="node95.html#e-min-achieved">5.13</A>),
+<P><!-- MATH
+ \begin{displaymath}
+-{\widehat V}_{t}(t,\hat x(t))=
+L(t,\hat x(t),\hat u(t))+\big\langle {\widehat V}_{x}(t,\hat x(t)),f(t,\hat x(t),\hat u(t))\big\rangle .
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="452" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1640.gif"
+ ALT="$\displaystyle -{\widehat V}_{t}(t,\hat x(t))=
+L(t,\hat x(t),\hat u(t))+\big\langle {\widehat V}_{x}(t,\hat x(t)),f(t,\hat x(t),\hat u(t))\big\rangle .
+$">
+</DIV><P>
+</P>
+We can move the <!-- MATH
+ ${\widehat V}_{t}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1641.gif"
+ ALT="$ {\widehat V}_{t}$">
+ term to the right-hand side and note that together with the inner product of <!-- MATH
+ ${\widehat V}_{x}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1642.gif"
+ ALT="$ {\widehat V}_{x}$">
+ and <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ it forms the total time derivative of <!-- MATH
+ ${\widehat V}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1643.gif"
+ ALT="$ {\widehat V}$">
+ along <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \hat x$">
+:
+<P><!-- MATH
+ \begin{displaymath}
+0=L(t,\hat x(t),\hat u(t))+{\frac{d}{dt}}\,{\widehat V}(t,\hat x(t)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="262" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1644.gif"
+ ALT="$\displaystyle 0=L(t,\hat x(t),\hat u(t))+{\frac{d}{dt}}\,{\widehat V}(t,\hat x(t)).
+$">
+</DIV><P>
+</P>
+Integrating this equality with respect to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ from <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ to
+<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, we have
+<P><!-- MATH
+ \begin{displaymath}
+0=\int_{t_0}^{t_1}
+L(t,\hat x(t),\hat u(t))dt+{\widehat V}(t_1,\hat x(t_1))
+-{\widehat V}(t_0,\hat x(t_0))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="406" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1645.gif"
+ ALT="$\displaystyle 0=\int_{t_0}^{t_1}
+L(t,\hat x(t),\hat u(t))dt+{\widehat V}(t_1,\hat x(t_1))
+-{\widehat V}(t_0,\hat x(t_0))
+$">
+</DIV><P>
+</P>
+which, in view of the boundary condition for <!-- MATH
+ ${\widehat V}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1643.gif"
+ ALT="$ {\widehat V}$">
+ and the initial condition for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \hat x$">
+,
+gives
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Vt0x0_"></A><!-- MATH
+ \begin{equation}
+{\widehat V}(t_0,x_0)=\int_{t_0}^{t_1}
+L(t,\hat x(t),\hat u(t))dt+K(\hat x(t_1))=J(t_0,x_0,\hat u).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="446" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1646.gif"
+ ALT="$\displaystyle {\widehat V}(t_0,x_0)=\int_{t_0}^{t_1} L(t,\hat x(t),\hat u(t))dt+K(\hat x(t_1))=J(t_0,x_0,\hat u).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+On the other hand, if <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is another trajectory with the same initial condition corresponding to an arbitrary control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, then&nbsp;(<A HREF="#e-HJBhat">5.20</A>) implies that
+<P><!-- MATH
+ \begin{displaymath}
+-{\widehat V}_{t}(t,  x(t))\le L(t,  x(t),  u(t))+\langle {\widehat V}_{x}(t,  x(t)),
+f(t,  x(t),  u(t))\rangle
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="444" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1647.gif"
+ ALT="$\displaystyle -{\widehat V}_{t}(t, x(t))\le L(t, x(t), u(t))+\langle {\widehat V}_{x}(t, x(t)),
+f(t, x(t), u(t))\rangle
+$">
+</DIV><P>
+</P>
+or
+<P><!-- MATH
+ \begin{displaymath}
+0\le L(t,  x(t),  u(t))+{\frac{d}{dt}}\,{\widehat V}(t,x(t)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="262" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1648.gif"
+ ALT="$\displaystyle 0\le L(t, x(t), u(t))+{\frac{d}{dt}}\,{\widehat V}(t,x(t)).
+$">
+</DIV><P>
+</P>
+Integrating over <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+ as before, we obtain
+<P><!-- MATH
+ \begin{displaymath}
+0\le\int_{t_0}^{t_1} L(t,  x(t),  u(t))dt+{\widehat V}(t_1,
+x(t_1)) -{\widehat V}(t_0,x(t_0))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="406" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1649.gif"
+ ALT="$\displaystyle 0\le\int_{t_0}^{t_1} L(t, x(t), u(t))dt+{\widehat V}(t_1,
+x(t_1)) -{\widehat V}(t_0,x(t_0))
+$">
+</DIV><P>
+</P>
+or
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Vt0x0_SPMlt_"></A><!-- MATH
+ \begin{equation}
+{\widehat V}(t_0,x_0)\le\int_{t_0}^{t_1} L(t,  x(t),  u(t))dt+K(
+x(t_1))=J(t_0,x_0,  u).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="446" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1650.gif"
+ ALT="$\displaystyle {\widehat V}(t_0,x_0)\le\int_{t_0}^{t_1} L(t, x(t), u(t))dt+K( x(t_1))=J(t_0,x_0, u).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The equation&nbsp;(<A HREF="#e-Vt0x0_">5.23</A>) and the inequality&nbsp;(<A HREF="#e-Vt0x0_SPMlt_">5.24</A>) show that <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1637.gif"
+ ALT="$ \hat u$">
+ gives the cost <!-- MATH
+ ${\widehat V}(t_0,x_0)$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1651.gif"
+ ALT="$ {\widehat V}(t_0,x_0)$">
+ while no other control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ can produce
+a smaller cost. Thus we have confirmed that <!-- MATH
+ ${\widehat V}$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1643.gif"
+ ALT="$ {\widehat V}$">
+ is the optimal cost and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1637.gif"
+ ALT="$ \hat u$">
+ is an optimal control.
+
+<P>
+We can regard the function <!-- MATH
+ $\widehat V$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \widehat V$">
+ as providing a tool for verifying optimality of candidate optimal controls (obtained, for example, from the maximum principle).<A NAME="p-caratheodory"></A> This optimality is automatically global. A simple modification of the above argument yields that <!-- MATH
+ $\widehat V(t,\hat x(t))$
+ -->
+<IMG
+ WIDTH="75" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1653.gif"
+ ALT="$ \widehat V(t,\hat x(t))$">
+ is the optimal cost-to-go from an arbitrary point <!-- MATH
+ $(t,\hat x(t))$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1654.gif"
+ ALT="$ (t,\hat x(t))$">
+ on the trajectory <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1639.gif"
+ ALT="$ \hat x$">
+.
+More generally, since <!-- MATH
+ $\widehat V$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \widehat V$">
+ is defined for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, we could use an arbitrary pair <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+ in place of <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ and obtain optimality with respect to <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ x(t)=x$">
+ as the initial condition in the same way.<A NAME="p-vafu"></A> Thus, if we have a family of controls parameterized by <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+, each fulfilling the Hamiltonian maximization condition along the corresponding trajectory which starts at <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ x(t)=x$">
+, then <!-- MATH
+ $\widehat V$
+ -->
+<IMG
+ WIDTH="17" HEIGHT="20" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1652.gif"
+ ALT="$ \widehat V$">
+ is the value function and it lets us establish optimality of all these controls. A typical way in which such a control family can arise is from a state feedback law description; we will encounter a scenario of this kind in Chapter&nbsp;<A HREF="node106.html#c-lqr">6</A>.
+The next two exercises offer somewhat different twists on the above sufficient condition for optimality.
+
+<P>
+<BR>
+<A NAME="z-suff-alt"></A><IMG
+ WIDTH="555" HEIGHT="126" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1655.gif"
+ ALT="\begin{Exercise}
+Suppose that a control $\hat u:[t_0,t_1]\to U$, the correspondi...
+...0,x_0)$\ is the optimal cost and $\hat u$\ is an optimal control.
+\end{Exercise}">
+<BR>
+
+<P>
+<BR>
+<A NAME="z-suff-ih"></A><IMG
+ WIDTH="554" HEIGHT="57" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1656.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9642Formulate and prove a sufficient c...
+...ite-horizon problem described at the end of Section~\ref{ss-HJB}.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1830"
+  HREF="node98.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1824"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1818"
+  HREF="node96.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1826"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1828"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1831"
+  HREF="node98.html">5.1.5 Historical remarks</A>
+<B> Up:</B> <A NAME="tex2html1825"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1819"
+  HREF="node96.html">5.1.3.1 Infinite-horizon problem</A>
+ &nbsp; <B>  <A NAME="tex2html1827"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1829"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

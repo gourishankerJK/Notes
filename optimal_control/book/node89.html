@@ -1,0 +1,999 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.5 Existence of optimal controls</TITLE>
+<META NAME="description" CONTENT="4.5 Existence of optimal controls">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node90.html">
+<LINK REL="previous" HREF="node84.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node90.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1701"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1695"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1689"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1697"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1699"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1702"
+  HREF="node90.html">4.6 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1696"
+  HREF="node61.html">4. The Maximum Principle</A>
+<B> Previous:</B> <A NAME="tex2html1690"
+  HREF="node88.html">4.4.4 Fuller's problem</A>
+ &nbsp; <B>  <A NAME="tex2html1698"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1700"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00650000000000000000"></A><A NAME="s-existence-optcontr"></A><A NAME="4996"></A>
+<BR>
+4.5 Existence of optimal controls
+</H1>
+
+<P>
+To motivate the
+subject of this section, let us consider the following (obviously
+absurd) claim: <I>The largest positive integer is 1.</I> To
+``prove" this statement, let <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ be the largest positive integer
+and suppose that <IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1492.gif"
+ ALT="$ N\ne 1$">
+. Then we have <IMG
+ WIDTH="66" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1493.gif"
+ ALT="$ N^2&gt;N$">
+, which contradicts
+the property of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ being the largest positive integer. Therefore,
+<IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1494.gif"
+ ALT="$ N=1$">
+.
+
+<P>
+This argument is known as <A NAME="4999"></A><I>Perron's paradox</I>. Although clearly
+farcical, it highlights a serious issue which we have been dodging
+up until now: it warns us about the danger of assuming the
+existence of an optimal solution. Indeed, finding the largest
+positive integer is an optimization problem. Of course, a solution
+to this problem does not exist. In the language of this book,
+the above reasoning correctly shows that <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1494.gif"
+ ALT="$ N=1$">
+ is a
+<I>necessary condition</I> for optimality. Thus a necessary
+condition can be useless--even misleading--unless we know that a
+solution exists.
+
+<P>
+We know very well that the maximum principle only provides necessary conditions for
+optimality. The same is true for the Euler-Lagrange equation and several
+other results that we have derived along the way. We have said
+repeatedly that fulfillment of necessary conditions alone does not
+guarantee optimality. However, the basic question of whether an
+optimal solution even exists has not been systematically addressed
+yet, and it is time to do it now.
+
+<P>
+Suppose that we are given an optimal control problem which falls
+into the general class of problems formulated in
+Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A>. How can we ensure the existence of an
+optimal control? For a start, we must assume that there exists at
+least one control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ that drives the state of the system from the
+initial condition to the target set <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+ (more precisely, the pair
+<IMG
+ WIDTH="61" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img853.gif"
+ ALT="$ (t,x(t))$">
+ should evolve from <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+). Otherwise, the
+problem is ill posed (has infinite cost). We can view this as a
+type of controllability assumption. It may be nontrivial to check,
+especially for general control sets <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. Still, it would be nice
+if this controllability assumption were enough to guarantee the
+existence of an optimal control. Simple examples show that
+unfortunately this is not the case.
+
+<P>
+<BR>
+<A NAME="x-not-bdd"></A><IMG
+ WIDTH="555" HEIGHT="102" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1495.gif"
+ ALT="\begin{Example}
+For the standard integrator $\dot x=u$, with
+$x,u\in\mathbb{R}$,...
+...vable, but accomplishing the transfer in time 0 is
+impossible. \qed\end{Example}">
+<BR>
+
+<P>
+Observe that in the above example, arbitrarily fast transfer is
+possible because the control set <!-- MATH
+ $U=\mathbb{R}$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1496.gif"
+ ALT="$ U=\mathbb{R}$">
+ is unbounded. Let us see
+if the problem becomes well posed when <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ is taken to be
+bounded.
+
+<P>
+<BR>
+<A NAME="x-not-closed"></A><IMG
+ WIDTH="555" HEIGHT="80" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1497.gif"
+ ALT="\begin{Example}
+% latex2html id marker 9462Consider the same problem as in
+Exa...
+...er in time 1. Hence, an optimal
+solution again does not exist. \qed\end{Example}">
+<BR>
+
+<P>
+This time, the difficulty is caused by the fact that the control
+set is not closed. The reader is probably beginning to guess that
+we want to have both boundedness and closedness, i.e.,
+<I>compactness</I>. To make this statement precise, however, we
+should be working not with the control set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ itself but with
+the set of all points reachable from <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ using controls that
+take values in <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. For <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1392.gif"
+ ALT="$ t\ge t_0$">
+, let us denote by <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+
+the set of points reachable from <!-- MATH
+ $x(t_0)=x_0$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1393.gif"
+ ALT="$ x(t_0)=x_0$">
+ at time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ (for a given control set
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+).<A NAME="5008"></A> We already worked with reachable sets on
+page&nbsp;<A HREF="node86.html#p-reach-set"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>, in the context of linear systems. We
+saw there that if <IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1498.gif"
+ ALT="$ t^*-t_0$">
+ is the fastest transfer time from
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ to <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+, then <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ must be a boundary point of
+<!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+; this situation is illustrated in
+Figure&nbsp;<A HREF="#f-reachprop">4.18</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-reachprop"></A><A NAME="7897"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Propagation of reachable sets <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+,
+  <!-- MATH
+ $t_0\le t\le t^*$
+ -->
+<IMG
+ WIDTH="84" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.gif"
+ ALT="$ t_0\le t\le t^*$">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="320" HEIGHT="139" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1499.gif"
+ ALT="\includegraphics{figures/reachprop.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In the two scalar examples considered earlier, the reachable set
+computation is straightforward and the negative conclusions are
+readily explained by the above property being impossible to
+satisfy. In Example&nbsp;<A HREF="#x-not-bdd">4.3</A>, <!-- MATH
+ $R^t(x_0)=\mathbb{R}$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1500.gif"
+ ALT="$ R^t(x_0)=\mathbb{R}$">
+ for all <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1501.gif"
+ ALT="$ t&gt;0$">
+,
+which is unbounded and cannot contain <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1502.gif"
+ ALT="$ x_1=1$">
+ on its boundary. In
+Example&nbsp;<A HREF="#x-not-closed">4.4</A>, <!-- MATH
+ $R^1(x_0)=[0,1)$
+ -->
+<IMG
+ WIDTH="116" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1503.gif"
+ ALT="$ R^1(x_0)=[0,1)$">
+ which is not closed
+and does not include the boundary point <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img229.gif"
+ ALT="$ 1$">
+, while for each <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1504.gif"
+ ALT="$ t&gt;1$">
+
+the set <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+ already contains <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img229.gif"
+ ALT="$ 1$">
+ in its interior. We can
+now formulate a refined guess saying that for optimal controls to
+exist, we want to have compact reachable sets. We could generalize
+this discussion to target sets instead of fixed terminal points;
+we will also see that compactness of reachable sets is relevant
+not only for time-optimal control problems.
+
+<P>
+For nonlinear systems, explicit computation of reachable sets is
+usually not feasible. Instead, we can rely on the following
+general result known as <B>Filippov's theorem</B>:<A NAME="5023"></A><A NAME="5024"></A> <I>Given a
+control system in the standard form&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) with
+<IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1008.gif"
+ ALT="$ u\in U$">
+, assume that its solutions exist on a time interval
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1505.gif"
+ ALT="$ [t_0,t_f]$">
+ for all controls <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+ and that for every pair
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+ the set <!-- MATH
+ $\{f(t,x,u):u\in U\}$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1507.gif"
+ ALT="$ \{f(t,x,u):u\in U\}$">
+ is compact and convex. Then
+the reachable set <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+ is compact for each <!-- MATH
+ $t\in[t_0,t_f]$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img983.gif"
+ ALT="$ t\in[t_0,t_f]$">
+.</I>
+
+<P>
+We do not prove this theorem but make some comments on it. For the
+result to be valid, controls must a priori be understood as
+measurable  functions from <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1505.gif"
+ ALT="$ [t_0,t_f]$">
+ to <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+; see the discussion
+on page&nbsp;<A HREF="node51.html#p-measurable"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>. (We can hope to show afterwards
+that <I>optimal</I> controls belong to a nicer class of functions,
+e.g., that they enjoy the bang-bang property.) It is important to
+note that the first hypothesis in the theorem (existence of
+solutions on a given interval) is not implied by the second
+hypothesis (compactness and convexity of the right-hand side); for
+example, solutions of <!-- MATH
+ $\dot
+  x=x^2+u$
+ -->
+<IMG
+ WIDTH="85" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1508.gif"
+ ALT="$ \dot
+x=x^2+u$">
+ blow up in finite time even for <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1509.gif"
+ ALT="$ U=\{0\}$">
+.
+Filippov's theorem actually has a stronger statement, from which
+compactness of <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+ follows: it says that the set of all
+  trajectories of the system, as a subset of
+  <!-- MATH
+ $\mathcal C^0([t_0,t_f],\mathbb{R}^n)$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1510.gif"
+ ALT="$ \mathcal C^0([t_0,t_f],\mathbb{R}^n)$">
+, is compact with respect to the topology induced by the
+  0-norm
+  <!-- MATH
+ $\|\cdot\|_0$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1511.gif"
+ ALT="$ \Vert\cdot\Vert _0$">
+, i.e., the topology of uniform convergence. Boundedness of the reachable sets can be shown
+  without the convexity assumption, but convexity is crucial for
+  establishing closedness (the argument relies on the separating
+  hyperplane theorem).
+   The next exercise should help clarify the role of the convexity assumption.
+<A NAME="5030"></A>
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="163" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1512.gif"
+ ALT="\begin{Exercise}Consider the
+planar system
+\begin{align*}
+\dot x_1&amp;=u\\
+\dot x_...
+...ify'' the problem
+by redefining $U$\ to be the interval
+$[-1,1]$. \end{Exercise}">
+<BR>
+
+<P>
+Filippov's theorem applies to useful classes of systems, most
+notably, to systems affine in controls given by&nbsp;(<A HREF="node87.html#e-affine">4.59</A>)
+with compact and convex control sets <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. For such systems, the
+set <!-- MATH
+ $\{f(x)+G(x)u:u\in U\}$
+ -->
+<IMG
+ WIDTH="183" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1513.gif"
+ ALT="$ \{f(x)+G(x)u:u\in U\}$">
+ is compact and convex for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ as
+the image of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ under an affine map. As we already warned the
+reader, existence of solutions on a time interval of interest
+needs to be assumed separately. In the special case of linear
+systems&nbsp;(<A HREF="node86.html#e-linear-control">4.51</A>), though, global existence of
+solutions is automatic. The right-hand side of the system is
+allowed to depend on time as well. For
+linear systems the reachable set <IMG
+ WIDTH="54" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.gif"
+ ALT="$ R^t(x_0)$">
+ is also convex, as can
+be easily seen from convexity of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ and the
+variation-of-constants formula for solutions.
+
+<P>
+Filippov's theorem provides sufficient conditions for compactness
+of reachable sets. Earlier, we argued that compactness of
+reachable sets should be useful for proving existence of optimal
+controls. Let us now confirm that this is indeed true, at least
+for certain classes of problems. The connection between
+compactness of reachable sets and existence of optimal controls is
+especially easy to see for problems in the Mayer form<A NAME="5036"></A> (terminal
+cost only). Suppose that the control system satisfies the
+hypotheses of Filippov's
+  theorem, that the cost is
+<!-- MATH
+ $J(u)=K(x_f)$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1514.gif"
+ ALT="$ J(u)=K(x_f)$">
+ with <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ a continuous function, and--in order to
+arrive at the simplest case--that the target set is
+<!-- MATH
+ $S=\{t_1\}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ S= \{t_1\}\times\mathbb{R}^n$">
+ (a fixed-time, free-endpoint
+problem). Since
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ is a continuous function and <!-- MATH
+ $R^{t_1}(x_0)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1515.gif"
+ ALT="$ R^{t_1}(x_0)$">
+ is a compact set,
+the Weierstrass Theorem (see page&nbsp;<A HREF="node9.html#p-WT"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>) guarantees that
+<IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ has a global minimum over <!-- MATH
+ $R^{t_1}(x_0)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1515.gif"
+ ALT="$ R^{t_1}(x_0)$">
+. By the definition of
+<!-- MATH
+ $R^{t_1}(x_0)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1515.gif"
+ ALT="$ R^{t_1}(x_0)$">
+, there exists at least one control that steers the
+state to this minimum at time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+, and every such control is
+optimal.
+
+<P>
+For certain fixed-time problems in the Bolza form, it is possible
+to establish existence of optimal controls by combining
+compactness of the set of system trajectories (provided by the
+stronger form of Filippov's theorem) with continuity of the cost
+functional on this set and invoking the infinite-dimensional
+version of the Weierstrass Theorem (see
+page&nbsp;<A HREF="node17.html#p-WTinf"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>).
+Alternatively, one can reduce the problem to the Mayer form (as in
+Section&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A>) and then use the previous result. In
+general, the argument needs to be tailored to a particular type of
+problem at hand. We will now
+show in detail how existence of optimal controls can be proved for
+linear time-optimal control problems, based on
+compactness--actually, just closedness--of reachable sets. The next result says that compactness and convexity of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ and
+ a controllability assumption (the existence of some control achieving the desired transfer) is all
+we need for an
+ optimal control to exist. (As we know from
+ Section&nbsp;<A HREF="node86.html#ss-bang-bang-linear">4.4.2</A>,
+such an optimal control is automatically bang-bang if <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ is a
+hypercube, or can be chosen to be bang-bang if <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ is an
+arbitrary convex polyhedron.)
+
+<P>
+<A NAME="5047"></A>
+<BR>
+<A NAME="t-opt-exist"></A><IMG
+ WIDTH="594" HEIGHT="105" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1516.gif"
+ ALT="\begin{Theorem}[Existence of time-optimal controls for linear
+systems]
+\index{ex...
+...0)$
+for some $t\ge t_0$. Then there exists a time-optimal control.
+\end{Theorem}">
+<BR>
+
+<P>
+P<SMALL>ROOF</SMALL>. Let <!-- MATH
+ $t^*:=\inf \{t\ge t_0:x_1\in R^t(x_0)\}$
+ -->
+<IMG
+ WIDTH="231" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1517.gif"
+ ALT="$ t^*:=\inf \{t\ge t_0:x_1\in R^t(x_0)\}$">
+. The time
+<IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ is well defined because by the theorem's hypothesis the set
+over which the infimum is being taken is nonempty. (We note that,
+in view of boundedness of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+, we have <IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1518.gif"
+ ALT="$ t^*&gt;t_0$">
+ unless
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1519.gif"
+ ALT="$ x_1=x_0$">
+.) We will be done if we show that <!-- MATH
+ $x_1\in R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1520.gif"
+ ALT="$ x_1\in R^{t^*}(x_0)$">
+,
+i.e., that <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ is actually a minimum.<A NAME="tex2html59"
+  HREF="footnode.html#foot7900"><SUP>4.6</SUP></A> This
+will mean that there exists a control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ that transfers <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+
+to <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ at time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+, and by the definition of <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ no control does
+it faster.
+
+<P>
+By the definition of infimum, there exists a sequence <!-- MATH
+ $t_k\searrow
+t^*$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1521.gif"
+ ALT="$ t_k\searrow
+t^*$">
+ such that <!-- MATH
+ $x_1\in R^{t_k}(x_0)$
+ -->
+<IMG
+ WIDTH="100" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1522.gif"
+ ALT="$ x_1\in R^{t_k}(x_0)$">
+ for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+. Then, by the
+definition of <!-- MATH
+ $R^{t_k}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1523.gif"
+ ALT="$ R^{t_k}(x_0)$">
+, for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+ there is a control
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ u_k$">
+ such that
+<P><!-- MATH
+ \begin{displaymath}
+x_1=e^{A(t_k-t_0)}x_0+\int_{t_0}^{t_k}e^{A(t_k-s)}Bu_k(s)ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="315" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1525.gif"
+ ALT="$\displaystyle x_1=e^{A(t_k-t_0)}x_0+\int_{t_0}^{t_k}e^{A(t_k-s)}Bu_k(s)ds.
+$">
+</DIV><P>
+</P>
+The above equation shows that the same point <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ belongs to the
+reachable sets <!-- MATH
+ $R^{t_k}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1523.gif"
+ ALT="$ R^{t_k}(x_0)$">
+ for different <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+. To be able to use
+the closedness property of reachable sets (guaranteed by
+Filippov's theorem), we would rather work with different points
+belonging to the same reachable set. To this end, let us truncate
+the trajectories corresponding to the controls <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ u_k$">
+ at time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+
+and define, for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-x_k"></A><!-- MATH
+ \begin{equation}
+x^k:=e^{A(t^*-t_0)}x_0+\int_{t_0}^{t^*}e^{A(t^*-s)}Bu_k(s)ds.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="319" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1526.gif"
+ ALT="$\displaystyle x^k:=e^{A(t^*-t_0)}x_0+\int_{t_0}^{t^*}e^{A(t^*-s)}Bu_k(s)ds.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.68)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+All these points by construction belong to the same reachable set
+<!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+.
+
+<P>
+We now claim that the sequence of points <IMG
+ WIDTH="22" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1527.gif"
+ ALT="$ x^k$">
+ converges to <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+.
+If we establish this fact then the proof will be finished, because
+the closedness of the reachable set <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+ will imply
+that <!-- MATH
+ $x_1\in R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1520.gif"
+ ALT="$ x_1\in R^{t^*}(x_0)$">
+ as needed. To prove the
+convergence claim, let us write
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="60" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1528.gif"
+ ALT="$\displaystyle x_1-x^k$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="697" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1529.gif"
+ ALT="$\displaystyle =\big(e^{A(t_k-t^*)}-I\big)e^{A(t^*-t_0)}x_0+\left( e^{A(t_k-t^*)...
+...ht)\int_{t_0}^{t^*}e^{A(t^*-s)}Bu_k(s)ds+\int_{t^*}^{t_k}e^{A(t_k-s)} Bu_k(s)ds$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="348" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1530.gif"
+ ALT="$\displaystyle =\left(e^{A\varepsilon _k}-I\right)x^k+\int_0^{\varepsilon _k}e^{A(\varepsilon _k-\tau)} Bu_k(t^*+\tau)d\tau$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we defined <!-- MATH
+ $\varepsilon _k:=t_k-t^*$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1531.gif"
+ ALT="$ \varepsilon _k:=t_k-t^*$">
+ and made the substitution
+<!-- MATH
+ $s=t^*+\tau$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1532.gif"
+ ALT="$ s=t^*+\tau$">
+. Taking the norm on both sides, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-x_1-x_k"></A><!-- MATH
+ \begin{equation}
+|x_1-x^k|\le \big\|e^{A\varepsilon _k}-I\big\||x^k|+\varepsilon _k
+\max\big\{|e^{A\delta }Bu|:\delta \in[0,\varepsilon _k],\,u\in U\big\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="506" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1533.gif"
+ ALT="$\displaystyle \vert x_1-x^k\vert\le \big\Vert e^{A\varepsilon _k}-I\big\Vert\ve...
+...max\big\{\vert e^{A\delta }Bu\vert:\delta \in[0,\varepsilon _k],\,u\in U\big\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.69)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Similarly, we can take the norm on both sides of&nbsp;(<A HREF="#e-x_k">4.69</A>) to
+obtain the bound
+<P><!-- MATH
+ \begin{displaymath}
+|x^k|\le\big\|e^{A(t^*-t_0)}\big\| |x_0|+(t^*-t_0)\max\big\{
+|e^{A\delta }Bu|:\delta \in[0,t^*-t_0],\,u\in U\big\}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="541" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1534.gif"
+ ALT="$\displaystyle \vert x^k\vert\le\big\Vert e^{A(t^*-t_0)}\big\Vert \vert x_0\vert...
+...-t_0)\max\big\{
+\vert e^{A\delta }Bu\vert:\delta \in[0,t^*-t_0],\,u\in U\big\}
+$">
+</DIV><P>
+</P>
+which is independent of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+, implying that the sequence <IMG
+ WIDTH="31" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1535.gif"
+ ALT="$ \vert x^k\vert$">
+ is
+uniformly bounded. Using this fact in&nbsp;(<A HREF="#e-x_1-x_k">4.70</A>) and noting
+that <!-- MATH
+ $\varepsilon _k\to 0$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1536.gif"
+ ALT="$ \varepsilon _k\to 0$">
+ hence also <!-- MATH
+ $\|e^{A\varepsilon _k}-I\|\to 0$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1537.gif"
+ ALT="$ \Vert e^{A\varepsilon _k}-I\Vert\to 0$">
+, we
+conclude that <IMG
+ WIDTH="70" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1538.gif"
+ ALT="$ \vert x_1-x^k\vert$">
+ converges to 0 as claimed.&nbsp;
+
+<P>
+Existence results are also available for other, more general
+classes of control problems (see Section&nbsp;<A HREF="node90.html#s-notes-chap4">4.6</A> for
+further information). Although the proofs of such results are
+usually not constructive, the knowledge that a solution exists
+rules out the risks suggested by Perron's paradox and provides a
+basis for applying the maximum principle--which, as we have seen,
+often allows one to actually find an optimal control.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1701"
+  HREF="node90.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1695"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1689"
+  HREF="node88.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1697"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1699"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1702"
+  HREF="node90.html">4.6 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1696"
+  HREF="node61.html">4. The Maximum Principle</A>
+<B> Previous:</B> <A NAME="tex2html1690"
+  HREF="node88.html">4.4.4 Fuller's problem</A>
+ &nbsp; <B>  <A NAME="tex2html1698"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1700"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

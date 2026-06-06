@@ -1,0 +1,516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.3.2 control problem</TITLE>
+<META NAME="description" CONTENT="7.3.2 control problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node129.html">
+<LINK REL="previous" HREF="node127.html">
+<LINK REL="up" HREF="node126.html">
+<LINK REL="next" HREF="node129.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2293"
+  HREF="node129.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2287"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2281"
+  HREF="node127.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2289"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2291"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2294"
+  HREF="node129.html">7.3.3 Riccati inequalities and</A>
+<B> Up:</B> <A NAME="tex2html2288"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2282"
+  HREF="node127.html">7.3.1 gain</A>
+ &nbsp; <B>  <A NAME="tex2html2290"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2292"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00932000000000000000">
+7.3.2 <!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ control problem</A>
+</H2>
+
+<P>
+We saw in the previous subsection how <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ can play the role of a disturbance input, in contrast with the standard LQR setting of Chapter&nbsp;<A HREF="node106.html#c-lqr">6</A> where, as in the rest of this book, it plays the role of a control input. Now, let us make the situation more interesting by allowing both types of inputs to be present in the system, the task of the control being to stabilize the system and attenuate the unknown disturbance<A NAME="7333"></A> in some sense. Such control problems fall into the general framework of <I>robust control theory</I>,<A NAME="7335"></A> which deals with control design methods for providing a desired behavior in the presence of uncertainty. (We can also think of the control and the disturbance as two opposing players in a <A NAME="7336"></A>differential game.) In the specific problem considered in this subsection, the level of disturbance attenuation will be measured by the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain (or <!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ norm) of the closed-loop system.
+
+<P>
+The <!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ control problem<A NAME="7337"></A> concerns itself with a system of the form
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="13" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2144.gif"
+ ALT="$\displaystyle \dot x$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="337" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2145.gif"
+ ALT="$\displaystyle =Ax+Bu+Dw,\qquad y=Cx,\qquad z=Ex$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is the  control input, <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ is the disturbance input, <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is the measured output (the quantity available for feedback), and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ is the controlled output (the quantity to be regulated); for simplicity, we assume here that there are no feedthrough terms from <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+. The corresponding feedback control diagram is shown in Figure&nbsp;<A HREF="#f-robustcontrol">7.4</A>. We will first consider the simpler case of <I>state feedback</I>, obtained by setting <IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2146.gif"
+ ALT="$ C:=I$">
+ so that <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1686.gif"
+ ALT="$ y=x$">
+. In this case, we also restrict our attention to controllers that take the static linear state feedback form <IMG
+ WIDTH="63" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2147.gif"
+ ALT="$ u=Kx$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-robustcontrol"></A><A NAME="8025"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1"><IMG
+ WIDTH="32" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.gif"
+ ALT="$ H_\infty $">
+ control problem setting
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="296" HEIGHT="224" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2148.gif"
+ ALT="\includegraphics{figures/robustcontrol.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The control objective is to
+stabilize the internal dynamics and attenuate <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ in the
+<!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ sense. More specifically, we want to design the feedback gain matrix <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ so that the following two properties hold:
+
+<P>
+<BR>
+
+<OL>
+<LI>The closed-loop system matrix <!-- MATH
+ $A_{\text{cl}}:=A+BK$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2149.gif"
+ ALT="$ A_{\text{cl}}:=A+BK$">
+ is Hurwitz.
+</LI>
+<LI>The <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain of the closed-loop system from <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ to <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ (or, what is the same,
+  the <!-- MATH
+ $\mathcal H_\infty$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.gif"
+ ALT="$ \mathcal H_\infty $">
+ norm of the closed-loop transfer matrix
+  <!-- MATH
+ $G(s)=E(Is-A_{\text{cl}})^{-1}D$
+ -->
+<IMG
+ WIDTH="185" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2150.gif"
+ ALT="$ G(s)=E(Is-A_{\text{cl}})^{-1}D$">
+) does not exceed a prespecified value <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2116.gif"
+ ALT="$ \gamma&gt;0$">
+.
+</LI>
+</OL>
+<BR>
+Note that this is not an optimal control problem because we are not asking to minimize the gain <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+ (although ideally of course we would like <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+ to be as small as possible). Controls solving problems of this kind are known as <I>suboptimal</I>.<A NAME="7378"></A>
+
+<P>
+It follows from the results of the previous subsection--applied with the change of notation from <IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2151.gif"
+ ALT="$ A,B,C,u,y$">
+ to <!-- MATH
+ $A_{\text{cl}},D,E,w,z$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2152.gif"
+ ALT="$ A_{\text{cl}},D,E,w,z$">
+, respectively--that to have property&nbsp;2 (the bound on the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain) it is sufficient to find a positive semidefinite solution of the Riccati inequality<A NAME="7380"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-riccati-ineq"></A><!-- MATH
+ \begin{equation}
+PA_{\text{cl}}+A_{\text{cl}}^TP+\frac 1\gamma
+E^TE+\frac 1\gamma PDD^TP\le 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="312" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2153.gif"
+ ALT="$\displaystyle PA_{\text{cl}}+A_{\text{cl}}^TP+\frac 1\gamma E^TE+\frac 1\gamma PDD^TP\le 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+To also guarantee property&nbsp;1 (internal stability of the closed-loop system) requires slightly stronger conditions: <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ needs to be positive definite and the inequality in&nbsp;(<A HREF="#e-riccati-ineq">7.27</A>) needs to be strict. The latter condition can be encoded via the Riccati  equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-riccati-eq-epsQ"></A><!-- MATH
+ \begin{equation}
+PA_{\text{cl}}+A_{\text{cl}}^TP+\frac 1\gamma
+E^TE+\frac 1\gamma PDD^TP+\varepsilon Q= 0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="351" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2154.gif"
+ ALT="$\displaystyle PA_{\text{cl}}+A_{\text{cl}}^TP+\frac 1\gamma E^TE+\frac 1\gamma PDD^TP+\varepsilon Q= 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="97" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2155.gif"
+ ALT="$ Q=Q^T&gt;0$">
+ and <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+. (This implies <!-- MATH
+ $PA_{\text{cl}}+A_{\text{cl}}^TP<0$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2156.gif"
+ ALT="$ PA_{\text{cl}}+A_{\text{cl}}^TP&lt;0$">
+ which is the well-known Lyapunov condition for <!-- MATH
+ $A_{\text{cl}}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2157.gif"
+ ALT="$ A_{\text{cl}}$">
+ to be a Hurwitz matrix.) Next, we need to convert&nbsp;(<A HREF="#e-riccati-eq-epsQ">7.28</A>) into a condition that is verifiable in terms of the original open-loop system data. Introducing a matrix <IMG
+ WIDTH="96" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2158.gif"
+ ALT="$ R=R^T&gt;0$">
+ as another design parameter (in addition to <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ and <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+), suppose that there exists a solution <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ P&gt;0$">
+ to the Riccati  equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-riccati-RepsQ"></A><!-- MATH
+ \begin{equation}
+PA+A^TP+\frac1\gamma
+E^TE+\frac1\gamma PDD^TP-\frac1\varepsilon PBR^{-1}B^TP+\varepsilon Q=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="476" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2159.gif"
+ ALT="$\displaystyle PA+A^TP+\frac1\gamma E^TE+\frac1\gamma PDD^TP-\frac1\varepsilon PBR^{-1}B^TP+\varepsilon Q=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Then, if we let
+<!-- MATH
+ $K:=-\frac1{2\varepsilon }R^{-1}B^TP$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2160.gif"
+ ALT="$ K:=-\frac1{2\varepsilon }R^{-1}B^TP$">
+, a straightforward calculation shows that the feedback law <IMG
+ WIDTH="63" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2147.gif"
+ ALT="$ u=Kx$">
+ enforces&nbsp;(<A HREF="#e-riccati-eq-epsQ">7.28</A>) and thus achieves both of our control objectives. Conversely, it can be shown that if the system is stabilizable with an <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain less than <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, then&nbsp;(<A HREF="#e-riccati-RepsQ">7.29</A>) is solvable for <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ P&gt;0$">
+.
+
+<P>
+The general case--when the full state is not measured and the controller is a dynamic output feedback--is more interesting and more complicated. Without going into details, we mention that a complete solution to this problem, in the form of necessary and sufficient conditions for the existence of a controller achieving an <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+ gain less than <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, is available and consists of the following ingredients:
+
+<P>
+<BR>
+
+<OL>
+<LI>Finding a solution <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2161.gif"
+ ALT="$ P_1$">
+ of a Riccati equation from
+  the state feedback case.
+
+<P>
+</LI>
+<LI>Finding a solution <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2162.gif"
+ ALT="$ P_2$">
+ of another Riccati equation obtained from the first one by the substitutions <!-- MATH
+ $B\rightarrow C$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2163.gif"
+ ALT="$ B\rightarrow C$">
+ and <!-- MATH
+ $D\leftrightarrow E$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2164.gif"
+ ALT="$ D\leftrightarrow E$">
+.
+
+<P>
+</LI>
+<LI>Checking that the largest singular value of the product <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2165.gif"
+ ALT="$ P_1P_2$">
+ is less than <IMG
+ WIDTH="21" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2166.gif"
+ ALT="$ \gamma^2$">
+.
+
+<P>
+</LI>
+</OL>
+<BR>
+These elegant conditions in terms of two coupled Riccati equations yield a controller that can be interpreted as a state feedback law combined with an estimator (observer).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2293"
+  HREF="node129.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2287"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2281"
+  HREF="node127.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2289"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2291"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2294"
+  HREF="node129.html">7.3.3 Riccati inequalities and</A>
+<B> Up:</B> <A NAME="tex2html2288"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2282"
+  HREF="node127.html">7.3.1 gain</A>
+ &nbsp; <B>  <A NAME="tex2html2290"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2292"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

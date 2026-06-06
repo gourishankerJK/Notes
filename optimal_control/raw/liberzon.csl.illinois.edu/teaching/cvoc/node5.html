@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.2 Some background on finite-dimensional optimization</TITLE>
+<META NAME="description" CONTENT="1.2 Some background on finite-dimensional optimization">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html428"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html422"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html416"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html424"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html426"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html429"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Up:</B> <A NAME="tex2html423"
+  HREF="node3.html">1. Introduction</A>
+<B> Previous:</B> <A NAME="tex2html417"
+  HREF="node4.html">1.1 Optimal control problem</A>
+ &nbsp; <B>  <A NAME="tex2html425"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html427"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00320000000000000000"></A><A NAME="s-findim"></A><A NAME="280"></A>
+<BR>
+1.2 Some background on finite-dimensional optimization
+</H1>
+
+<P>
+Consider a function
+<!-- MATH
+ $f:\mathbb{R}^n\to\mathbb{R}.$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img35.gif"
+ ALT="$ f:\mathbb{R}^n\to\mathbb{R}.
+$">
+
+Let <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ be some subset of <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, which could be
+the entire <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+. We denote by <IMG
+ WIDTH="26" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img37.gif"
+ ALT="$ \vert\cdot\vert$">
+ the standard Euclidean norm
+on <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+.
+
+<P>
+A point <IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$ x^*\in D$">
+ is a <I>local minimum</I><A NAME="p-locmin"></A><A NAME="283"></A><A NAME="284"></A> of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ if there exists an <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+ such that for all <IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$ x\in D$">
+ satisfying <!-- MATH
+ $|x-x^*|<\varepsilon$
+ -->
+<IMG
+ WIDTH="93" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img41.gif"
+ ALT="$ \vert x-x^*\vert&lt;\varepsilon $">
+ we
+have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-def-min"></A><!-- MATH
+ \begin{equation}
+f(x^*)\le f(x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img42.gif"
+ ALT="$\displaystyle f(x^*)\le f(x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In other words, <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a local minimum if in some ball around it,
+<IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ does not
+attain a value smaller than <IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.gif"
+ ALT="$ f(x^*)$">
+. Note that this refers
+only to points in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+; the behavior of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ outside <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is irrelevant,
+and in fact we could have taken the domain of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ to be <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+
+rather than <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+.
+
+<P>
+If the inequality in&nbsp;(<A HREF="#e-def-min">1.3</A>)
+ is strict for <IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img45.gif"
+ ALT="$ x\ne x^*$">
+, then we have a <I>strict</I> local<A NAME="290"></A><A NAME="291"></A>
+minimum.
+If&nbsp;(<A HREF="#e-def-min">1.3</A>) holds for <I>all</I> <IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$ x\in D$">
+, then the minimum is
+<I>global</I><A NAME="295"></A><A NAME="296"></A> over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. By default, when we say ``a minimum" we mean a local minimum.
+Obviously, a minimum need not be unique unless it is both strict and
+global.
+
+<P>
+The notions of a (local, strict, global) <I>maximum</I><A NAME="298"></A> are defined similarly.
+If a point is either a maximum or a minimum, it is called an <I>extremum</I>.<A NAME="300"></A>
+Observe that maxima of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+are minima of <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ -f$">
+, so there is no need to develop separate results for
+both. We focus on the minima, i.e., we view <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ as a <I>cost</I>
+function to be minimized (rather than a profit to be maximized).<A NAME="302"></A><A NAME="303"></A>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html430"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<UL>
+<LI><A NAME="tex2html431"
+  HREF="node7.html">1.2.1.1 First-order necessary condition for optimality</A>
+<LI><A NAME="tex2html432"
+  HREF="node8.html">1.2.1.2 Second-order conditions for optimality</A>
+<LI><A NAME="tex2html433"
+  HREF="node9.html">1.2.1.3 Feasible directions, global minima, and convex
+problems</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html434"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<UL>
+<LI><A NAME="tex2html435"
+  HREF="node11.html">1.2.2.1 First-order necessary condition (Lagrange
+multipliers)</A>
+<LI><A NAME="tex2html436"
+  HREF="node12.html">1.2.2.2 Second-order conditions</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html428"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html422"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html416"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html424"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html426"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html429"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Up:</B> <A NAME="tex2html423"
+  HREF="node3.html">1. Introduction</A>
+<B> Previous:</B> <A NAME="tex2html417"
+  HREF="node4.html">1.1 Optimal control problem</A>
+ &nbsp; <B>  <A NAME="tex2html425"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html427"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

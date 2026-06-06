@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.4.2 Hybrid maximum principle</TITLE>
+<META NAME="description" CONTENT="7.4.2 Hybrid maximum principle">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node133.html">
+<LINK REL="previous" HREF="node131.html">
+<LINK REL="up" HREF="node130.html">
+<LINK REL="next" HREF="node133.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2350"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2344"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2338"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2346"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2348"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2351"
+  HREF="node133.html">7.4.3 Example: light reflection</A>
+<B> Up:</B> <A NAME="tex2html2345"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2339"
+  HREF="node131.html">7.4.1 Hybrid optimal control</A>
+ &nbsp; <B>  <A NAME="tex2html2347"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2349"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00942000000000000000"></A><A NAME="ss-HMP"></A><A NAME="7506"></A>
+<BR>
+7.4.2 Hybrid maximum principle
+</H2>
+
+<P>
+The maximum principle that we are about to state provides necessary conditions for a trajectory <!-- MATH
+ $x^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$ x^*(\cdot)$">
+ of the hybrid control system corresponding to a control <!-- MATH
+ $u^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$ u^*(\cdot)$">
+, a time sequence <IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2196.gif"
+ ALT="$ \{t_i\}$">
+, and a switching sequence
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2197.gif"
+ ALT="$ \{q_i\}$">
+ to be locally optimal over trajectories <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ with the same switching sequence
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2197.gif"
+ ALT="$ \{q_i\}$">
+ and such that <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is close to <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ on each subinterval <!-- MATH
+ $(t_i,t_{i+1})$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2198.gif"
+ ALT="$ (t_i,t_{i+1})$">
+. Most of the statements of this hybrid maximum principle are more or less familiar to us from Chapter&nbsp;<A HREF="node61.html#c-mp">4</A>. We proceed with the understanding that suitable technical assumptions are in place so that all derivatives, tangent spaces, and other objects appearing below are well defined.
+
+<P>
+Define the family of Hamiltonians
+<P><!-- MATH
+ \begin{displaymath}
+H_q(x,u,p,p_0):=\langle p,f_q(x,u)\rangle +p_0L_q(x,u),\qquad q\in Q.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="411" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2199.gif"
+ ALT="$\displaystyle H_q(x,u,p,p_0):=\langle p,f_q(x,u)\rangle +p_0L_q(x,u),\qquad q\in Q.
+$">
+</DIV><P>
+</P>
+The abnormal multiplier must satisfy <!-- MATH
+ $p_0^*\le 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img981.gif"
+ ALT="$ p_0^*\le 0$">
+ as usual.
+The costate <!-- MATH
+ $p^*(\cdot)$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img950.gif"
+ ALT="$ p^*(\cdot)$">
+ is allowed to be discontinuous at the switching times <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2181.gif"
+ ALT="$ t_i$">
+ of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+, while between these times it must satisfy the adjoint equation
+<P><!-- MATH
+ \begin{displaymath}
+\dot p^*(t)=-\left.{(H_{q_i})}_{x}\right|_{*}(t)\qquad \forall\,t\in(t_i,t_{i+1}), \ i=0,1,\dots,k.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="424" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2200.gif"
+ ALT="$\displaystyle \dot p^*(t)=-\left.{(H_{q_i})}_{x}\right\vert _{*}(t)\qquad \forall\,t\in(t_i,t_{i+1}), \ i=0,1,\dots,k.
+$">
+</DIV><P>
+</P>
+The <I>transversality condition</I> says that the vector <!-- MATH
+ $\Big({\textstyle{p^*(t_0)}\atop
+\textstyle{-p^*(t_f)}}\Big)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1327.gif"
+ ALT="$ \Big({\textstyle{p^*(t_0)}\atop
+\textstyle{-p^*(t_f)}}\Big)$">
+ must be orthogonal to the
+tangent space to the endpoint constraint set <!-- MATH
+ $E_{q_0,q_k}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2195.gif"
+ ALT="$ E_{q_0,q_k}$">
+ at <!-- MATH
+ $\Big({\textstyle{x^*(t_0)}\atop
+\textstyle{x^*(t_f)}}\Big)$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="55" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1328.gif"
+ ALT="$ \Big({\textstyle{x^*(t_0)}\atop
+\textstyle{x^*(t_f)}}\Big)$">
+, which we write as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-transversality-hybrid"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+    p^*(t_0)\\
+    -p^*(t_f)
+  \end{pmatrix} \,\perp\, T_{\small\Big(\begin{matrix}
+   x^*(t_0)\\
+   x^*(t_f)
+  \end{matrix}\Big)}E_{q_0,q_k}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="239" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2201.gif"
+ ALT="$\displaystyle \begin{pmatrix}p^*(t_0)\\ -p^*(t_f) \end{pmatrix} \,\perp\, T_{\small\Big(\begin{matrix}x^*(t_0)\\ x^*(t_f) \end{matrix}\Big)}E_{q_0,q_k}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+At the switching times, we also have a set of <I>switching conditions</I><A NAME="7526"></A> saying that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-switchingcond-hybrid"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+    -p^*(t_i^-)\\
+    p^*(t_i^+)
+  \end{pmatrix}+p_0^*\nabla \Phi_{q_{i-1},q_i}(x^*(t_i^-),x^*(t_i^+))\,\perp\, T_{\small\Big(\begin{matrix}
+   x^*(t_i^-)\\
+   x^*(t_i^+)
+  \end{matrix}\Big)}S_{q_{i-1},q_i},\qquad i=1,\dots,k.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="604" HEIGHT="74" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2202.gif"
+ ALT="$\displaystyle \begin{pmatrix}-p^*(t_i^-)\\ p^*(t_i^+) \end{pmatrix}+p_0^*\nabla...
+...x}x^*(t_i^-)\\ x^*(t_i^+) \end{matrix}\Big)}S_{q_{i-1},q_i},\qquad i=1,\dots,k.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The <I>nontriviality condition</I> says that either <!-- MATH
+ $p_0^*\ne 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$ p_0^*\ne 0$">
+ or <!-- MATH
+ $p^*\not \equiv 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2203.gif"
+ ALT="$ p^*\not \equiv 0$">
+. The <I>Hamiltonian maximization condition</I> must hold in the usual sense for each <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2204.gif"
+ ALT="$ H_{q_i}$">
+ on the corresponding interval <!-- MATH
+ $(t_i,t_{i+1})$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2198.gif"
+ ALT="$ (t_i,t_{i+1})$">
+.
+Moreover, the Hamiltonian remains constant along the optimal trajectory (in particular, its value is not affected by the switching events). Finally, for free-time problems the Hamiltonian is 0.
+
+<P>
+<A NAME="7543"></A>The transversality condition&nbsp;(<A HREF="#e-transversality-hybrid">7.36</A>) is completely analogous to the transversality condition&nbsp;(<A HREF="node83.html#e-transv-initset">4.46</A>) for the case of initial sets discussed at the end of Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A>. As for the switching conditions&nbsp;(<A HREF="#e-switchingcond-hybrid">7.37</A>), the intuition behind them is similar and can be understood as follows. Consider the continuous portions of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ which correspond to the subintervals <!-- MATH
+ $(t_i,t_{i+1})$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2198.gif"
+ ALT="$ (t_i,t_{i+1})$">
+, <!-- MATH
+ $i=0,\dots,k$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2205.gif"
+ ALT="$ i=0,\dots,k$">
+. Reparameterize the time individually for each of them so that their domains are all mapped onto the same interval, say, <IMG
+ WIDTH="53" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2206.gif"
+ ALT="$ [s_0,s_f]$">
+. This allows us to ``stack" them all together, i.e., treat them as if they evolve simultaneously. Then, the transversality condition&nbsp;(<A HREF="#e-transversality-hybrid">7.36</A>) and the switching conditions&nbsp;(<A HREF="#e-switchingcond-hybrid">7.37</A>) become one aggregate transversality condition induced by the endpoint constraint and the switching surfaces. The appearance of the gradient of the switching cost in this transversality condition is also not surprising because the switching cost becomes a combination of terminal and initial cost (see Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A> for a discussion of transversality conditions for problems with terminal cost).
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2350"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2344"
+  HREF="node130.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2338"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2346"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2348"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2351"
+  HREF="node133.html">7.4.3 Example: light reflection</A>
+<B> Up:</B> <A NAME="tex2html2345"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Previous:</B> <A NAME="tex2html2339"
+  HREF="node131.html">7.4.1 Hybrid optimal control</A>
+ &nbsp; <B>  <A NAME="tex2html2347"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2349"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,659 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>1.3.2 First variation and first-order necessary
+condition</TITLE>
+<META NAME="description" CONTENT="1.3.2 First variation and first-order necessary
+condition">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node14.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node16.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html578"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html572"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html566"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html574"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html576"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html579"
+  HREF="node16.html">1.3.3 Second variation and</A>
+<B> Up:</B> <A NAME="tex2html573"
+  HREF="node13.html">1.3 Preview of infinite-dimensional</A>
+<B> Previous:</B> <A NAME="tex2html567"
+  HREF="node14.html">1.3.1 Function spaces, norms,</A>
+ &nbsp; <B>  <A NAME="tex2html575"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html577"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00332000000000000000"></A><A NAME="ss-1st-var"></A>
+<BR>
+1.3.2 First variation and first-order necessary
+condition
+</H2>
+
+<P>
+To develop the first-order necessary condition for optimality, we need a notion
+of derivative for functionals. Let <!-- MATH
+ $J: V\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img209.gif"
+ ALT="$ J: V\to \mathbb{R}$">
+ be a functional on a
+function space <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+, and consider some function <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img223.gif"
+ ALT="$ y\in V$">
+. The derivative
+of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ at <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, which will now be called
+the first variation,
+ will also be a functional on <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+, and in fact this functional
+will be linear. To define it, we consider functions in <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ of the form
+<!-- MATH
+ $y+\alpha\eta$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$ y+\alpha\eta
+$">
+,
+where <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$ \eta\in V$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ is a real parameter (which
+can be restricted to
+ some interval around 0). The reader will recognize these functions as
+infinite-dimensional analogs of the points <!-- MATH
+ $x^*+\alpha d$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$ x^*+\alpha d$">
+ around a
+given point <!-- MATH
+ $x^*\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img249.gif"
+ ALT="$ x^*\in\mathbb{R}^n$">
+, which we utilized earlier.
+
+<P>
+A linear functional <!-- MATH
+ $\left.\delta J\right|_{y}:V\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img250.gif"
+ ALT="$ \left.\delta J\right\vert _{y}:V\to \mathbb{R}$">
+ is
+called the <I>first variation</I><A NAME="778"></A><A NAME="779"></A> of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ at <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ if for all
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ and all <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1st-variation"></A><!-- MATH
+ \begin{equation}
+J(y+\alpha\eta )=J(y)+\left.\delta J\right|_{y} (\eta)\alpha+o(\alpha)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="284" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img251.gif"
+ ALT="$\displaystyle J(y+\alpha\eta )=J(y)+\left.\delta J\right\vert _{y} (\eta)\alpha+o(\alpha)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ o(\alpha)$">
+ satisfies&nbsp;(<A HREF="node7.html#e-oalpha">1.6</A>). The somewhat cumbersome
+notation <!-- MATH
+ $\left.\delta J\right|_{y}(\eta)$
+ -->
+<IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img252.gif"
+ ALT="$ \left.\delta J\right\vert _{y}(\eta)$">
+ is meant to emphasize that the linear term
+in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ in the expansion&nbsp;(<A HREF="#e-1st-variation">1.33</A>)
+depends on both <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. The requirement that
+<!-- MATH
+ $\left.\delta J\right|_{y}$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$ \left.\delta J\right\vert _{y}$">
+ must be a linear functional<A NAME="791"></A>
+is understood in the usual sense:
+<!-- MATH
+ $\left.\delta J\right|_{y}(\alpha_1\eta_1+\alpha_2\eta_2)=
+\alpha_1\left.\delta J\right|_{y}(\eta_1)+\alpha_2\left.\delta J\right|_{y}(\eta_2)$
+ -->
+<IMG
+ WIDTH="367" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img254.gif"
+ ALT="$ \left.\delta J\right\vert _{y}(\alpha_1\eta_1+\alpha_2\eta_2)=
+\alpha_1\left.\delta J\right\vert _{y}(\eta_1)+\alpha_2\left.\delta J\right\vert _{y}(\eta_2)$">
+
+for all <!-- MATH
+ $\eta_1,\eta_2\in V$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img255.gif"
+ ALT="$ \eta_1,\eta_2\in V$">
+ and <!-- MATH
+ $\alpha_1,\alpha_2\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img256.gif"
+ ALT="$ \alpha_1,\alpha_2\in\mathbb{R}$">
+.
+
+<P>
+The first variation as defined above
+ corresponds to the Gateaux derivative<A NAME="799"></A> of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+, which is
+just the usual derivative of <!-- MATH
+ $J(y+\alpha \eta)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img257.gif"
+ ALT="$ J(y+\alpha \eta)$">
+ with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+
+(for fixed <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+) evaluated at <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-gateaux"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{y}(\eta)=\lim_{\alpha\to 0} \frac{J(y+\alpha
+\eta)-J(y)}{\alpha}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="259" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img258.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\lim_{\alpha\to 0} \frac{J(y+\alpha \eta)-J(y)}{\alpha}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In other words, if we define
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-gJ"></A><!-- MATH
+ \begin{equation}
+g(\alpha):=J(y+\alpha \eta)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="141" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img259.gif"
+ ALT="$\displaystyle g(\alpha):=J(y+\alpha \eta)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-gdJ"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{y}(\eta)=g'(0)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="122" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img260.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=g'(0)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and&nbsp;(<A HREF="#e-1st-variation">1.33</A>) reduces
+exactly to our earlier first-order expansion&nbsp;(<A HREF="node7.html#e-g-1st-order">1.5</A>).
+
+<P>
+Now, suppose that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ is a local minimum of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ over some subset <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ A$">
+ of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+.
+We call a perturbation<A NAME="tex2html10"
+  HREF="footnode.html#foot818"><SUP>1.3</SUP></A> <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img248.gif"
+ ALT="$ \eta\in V$">
+ <I>admissible</I>
+<A NAME="820"></A><A NAME="821"></A>(with respect to the subset <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ A$">
+)
+ if <!-- MATH
+ $y^*+\alpha\eta\in A$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img263.gif"
+ ALT="$ y^*+\alpha\eta\in A$">
+ for all <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+
+sufficiently close to 0. It follows from our definitions of a local
+minimum and an admissible perturbation that <!-- MATH
+ $J(y^*+\alpha\eta)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img264.gif"
+ ALT="$ J(y^*+\alpha\eta)$">
+ as
+a function of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ has a local minimum at <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+ for each
+admissible <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. Let us assume that the first variation
+<!-- MATH
+ $\left.\delta J\right|_{y*}$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img265.gif"
+ ALT="$ \left.\delta J\right\vert _{y*}$">
+ exists (which is of course not always the
+case) so that we have&nbsp;(<A HREF="#e-1st-variation">1.33</A>). Applying the same reasoning that we used to derive the necessary condition&nbsp;(<A HREF="node7.html#e-g_ge0">1.7</A>) on the basis of&nbsp;(<A HREF="node7.html#e-g-1st-order">1.5</A>),
+we quickly arrive at the <B>first-order
+necessary condition for optimality</B>:<A NAME="829"></A><A NAME="830"></A> <I>For all admissible
+perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+, we must have</I>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1st-nec-inf"></A><!-- MATH
+ \begin{equation}
+\fbox{$\left.\delta J\right|_{y^*}(\eta)=0$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="113" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img266.gif"
+ ALT="$\displaystyle \fbox{$\left.\delta J\right\vert _{y^*}(\eta)=0$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As in the finite-dimensional case, the first-order necessary
+ condition applies to both minima and maxima.
+
+<P>
+When we were studying a minimum <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ of <!-- MATH
+ $f:\mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img34.gif"
+ ALT="$ f:\mathbb{R}^n\to\mathbb{R}$">
+ with the help
+of the function <!-- MATH
+ $g(\alpha):=f(x^*+\alpha d)$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img267.gif"
+ ALT="$ g(\alpha):=f(x^*+\alpha d)$">
+, it was easy to translate the equality
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$ g'(0)=0$">
+ via the formula&nbsp;(<A HREF="node7.html#e-gtofprime">1.10</A>) into the necessary
+condition <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+. The necessary
+condition&nbsp;(<A HREF="#e-1st-nec-inf">1.37</A>), while conceptually very similar,
+ is much less constructive. To be
+able to apply it, we need to learn how to compute
+the first variation of some useful functionals. This subject will be
+further discussed
+ in the next chapter; for now, we offer an example for the reader to work
+out.
+
+<P>
+<BR>
+<A NAME="z-dJAF"></A><IMG
+ WIDTH="555" HEIGHT="90" ALIGN="BOTTOM" BORDER="0"
+ SRC="img268.gif"
+ ALT="\begin{Exercise}
+Consider the space
+$V=\mathcal C^0([0,1],\mathbb{R})$, let $g:...
+...\left.\delta J\right\vert _{y}(\eta)=
+\int_0^1g'(y(x))\eta(x)dx$.
+\end{Exercise}">
+<BR>
+
+<P>
+Observe that our notion of the first variation, defined via the expansion&nbsp;(<A HREF="#e-1st-variation">1.33</A>), is
+independent of the choice of the norm on <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+. This means that the first-order necessary condition&nbsp;(<A HREF="#e-1st-nec-inf">1.37</A>) is valid for every norm. To obtain a necessary condition better
+tailored to a particular norm, we could define <!-- MATH
+ $\left.\delta J\right|_{y}$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$ \left.\delta J\right\vert _{y}$">
+ differently, by using
+the following
+expansion instead of&nbsp;(<A HREF="#e-1st-variation">1.33</A>):<A NAME="854"></A><A NAME="855"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1nd-order-J-alt"></A><!-- MATH
+ \begin{equation}
+J(y+\eta )=J(y)+\left.\delta J\right|_{y}
+(\eta)+o(\|\eta\|)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="277" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img269.gif"
+ ALT="$\displaystyle J(y+\eta )=J(y)+\left.\delta J\right\vert _{y} (\eta)+o(\Vert\eta\Vert)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.38)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The difference with our original formulation is subtle but substantial.
+The earlier expansion&nbsp;(<A HREF="#e-1st-variation">1.33</A>)
+describes how the value of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ changes with <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ for each fixed
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+.
+In&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>), the higher-order term is a function of
+<IMG
+ WIDTH="30" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.gif"
+ ALT="$ \Vert\eta\Vert$">
+ and so the expansion captures the effect of all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ at once. We remark that the first variation defined
+via&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>) corresponds to the Fr&#233;chet derivative<A NAME="7695"></A> of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+,
+which is a stronger differentiability notion than the Gateaux
+derivative&nbsp;(<A HREF="#e-gateaux">1.34</A>).
+Note also  that
+we no longer need the parameter
+<IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ in&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>). In fact, (<A HREF="#e-1nd-order-J-alt">1.38</A>) suggests constructing  more general perturbations: instead of working with functions of the form <!-- MATH
+ $y+\alpha\eta$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img247.gif"
+ ALT="$ y+\alpha\eta
+$">
+, where <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ is fixed and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ is a scalar parameter, we can consider perturbed functions <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img271.gif"
+ ALT="$ y+\eta$">
+ which can approach <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in a more arbitrary manner as <IMG
+ WIDTH="30" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img270.gif"
+ ALT="$ \Vert\eta\Vert$">
+ tends to 0 (multiplying <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ by a vanishing parameter is just one possibility). This generalization is conceptually similar to that of passing from the lines <!-- MATH
+ $x^*+\alpha d$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$ x^*+\alpha d$">
+ used in Section&nbsp;<A HREF="node6.html#ss-unconstr">1.2.1</A> to the curves <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.gif"
+ ALT="$ x(\alpha)$">
+ utilized in Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>. We will start seeing perturbations of this kind in Chapter&nbsp;<A HREF="node45.html#c-cv-to-oc">3</A>.
+
+<P>
+In what follows, we retain our original definition of the first variation
+in terms of&nbsp;(<A HREF="#e-1st-variation">1.33</A>).
+It is somewhat simpler to work with and
+is adequate for our needs (at least through Chapter&nbsp;<A HREF="node19.html#c-cv">2</A>). While the norm-dependent formulation could potentially provide sharper conditions for optimality, it takes more work to verify&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>) for all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ compared to verifying&nbsp;(<A HREF="#e-1st-variation">1.33</A>) for a fixed <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. Besides, we will
+eventually abandon the analysis based on the first variation altogether in
+favor of more powerful tools. However, it is useful to be aware of the alternative formulation&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>), and we will occasionally make some side remarks related to it. This issue will resurface in Chapter&nbsp;<A HREF="node45.html#c-cv-to-oc">3</A> where, although the alternative definition&nbsp;(<A HREF="#e-1nd-order-J-alt">1.38</A>) of the first variation will not be specifically needed, we will use more general perturbations along the lines of the preceding discussion.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html578"
+  HREF="node16.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html572"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html566"
+  HREF="node14.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html574"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html576"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html579"
+  HREF="node16.html">1.3.3 Second variation and</A>
+<B> Up:</B> <A NAME="tex2html573"
+  HREF="node13.html">1.3 Preview of infinite-dimensional</A>
+<B> Previous:</B> <A NAME="tex2html567"
+  HREF="node14.html">1.3.1 Function spaces, norms,</A>
+ &nbsp; <B>  <A NAME="tex2html575"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html577"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

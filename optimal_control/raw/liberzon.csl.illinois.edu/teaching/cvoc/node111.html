@@ -1,0 +1,458 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.1.4 Global existence of solution for the RDE</TITLE>
+<META NAME="description" CONTENT="6.1.4 Global existence of solution for the RDE">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node110.html">
+<LINK REL="up" HREF="node107.html">
+<LINK REL="next" HREF="node112.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2035"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2029"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2025"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2031"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2033"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2036"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Up:</B> <A NAME="tex2html2030"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2026"
+  HREF="node110.html">6.1.3 Value function and</A>
+ &nbsp; <B>  <A NAME="tex2html2032"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2034"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00814000000000000000"></A><A NAME="ss-RDE-exist"></A><A NAME="6297"></A>
+<BR>
+6.1.4 Global existence of solution for the RDE
+</H2>
+
+<P>
+We are finally in a position to prove that the solution <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1793.gif"
+ ALT="$ P(\cdot)$">
+ of the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>), propagated backward in time from the terminal condition&nbsp;(<A HREF="node108.html#e-RDE-boundcond">6.11</A>), exists for all <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1846.gif"
+ ALT="$ t\le t_1$">
+. It follows from the standard theory of local existence and uniqueness of solutions to ordinary differential equations that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ exists for <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ sufficiently close to <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+. (We already came across such results in Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A>, with the difference that there solutions were propagated forward in time; we also know about local existence of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ from a different argument based on the formula&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>), which we gave on page&nbsp;<A HREF="node108.html#e-Ptdef"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>.) As for global existence, the problem is that some entry of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ may have a finite escape time.<A NAME="6303"></A> In other words, there may exist a time <!-- MATH
+ $\bar t<t_1$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1847.gif"
+ ALT="$ \bar t&lt;t_1$">
+ and some indices <!-- MATH
+ $i,j\in\{1,\dots,n\}$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img652.gif"
+ ALT="$ i,j\in\{1,\dots,n\}$">
+ such that
+<IMG
+ WIDTH="46" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1848.gif"
+ ALT="$ P_{ij}(t)$">
+ approaches <IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1849.gif"
+ ALT="$ \pm\infty$">
+ as <!-- MATH
+ $t\searrow \bar t$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ t\searrow \bar t$">
+. Such behavior is actually quite typical for solutions of quadratic differential equations of Riccati type, as we discussed in detail on page&nbsp;<A HREF="node43.html#p-escape"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>. In the context of the formula&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>), this would mean that the matrix <!-- MATH
+ $\Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M$
+ -->
+<IMG
+ WIDTH="189" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1814.gif"
+ ALT="$ \Phi_{11}(t,t_1)-2\Phi_{12}(t,t_1)M$">
+ becomes singular at <IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1851.gif"
+ ALT="$ t=\bar t$">
+. Similarly, in the context of the formula&nbsp;(<A HREF="node109.html#e-P_Ham">6.15</A>) the finite escape would mean that the matrix <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1852.gif"
+ ALT="$ X(t)$">
+ becomes singular at <IMG
+ WIDTH="39" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1851.gif"
+ ALT="$ t=\bar t$">
+. In Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>, we encountered a closely related situation and formalized it in terms of existence of conjugate points. Fortunately, in the present setting it is not very difficult to show by a direct argument that all entries of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ remain bounded for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, relying on the fact--established in the previous subsection--that <IMG
+ WIDTH="67" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1853.gif"
+ ALT="$ x^TP(t)x$">
+ is the optimal LQR cost-to-go from <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1506.gif"
+ ALT="$ (t,x)$">
+.
+
+<P>
+Seeking a contradiction, suppose that there is a <!-- MATH
+ $\bar t<t_1$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1847.gif"
+ ALT="$ \bar t&lt;t_1$">
+ such that <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ exists on the interval <!-- MATH
+ $(\bar t,t_1]$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1854.gif"
+ ALT="$ (\bar t,t_1]$">
+ but some entry of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ becomes unbounded as <!-- MATH
+ $t\searrow \bar t$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ t\searrow \bar t$">
+. We know from Exercise&nbsp;<A HREF="node110.html#z-LQR-P">6.2</A> that for all <!-- MATH
+ $t\in (\bar t,t_1]$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1855.gif"
+ ALT="$ t\in (\bar t,t_1]$">
+ the matrix <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is symmetric and positive semidefinite, hence all its principal minors must be nonnegative.   If an off-diagonal entry <IMG
+ WIDTH="46" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1848.gif"
+ ALT="$ P_{ij}(t)$">
+
+becomes unbounded as <!-- MATH
+ $t\searrow \bar t$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ t\searrow \bar t$">
+
+while all diagonal entries stay bounded, then
+a certain <IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1856.gif"
+ ALT="$ 2\times 2$">
+ principal minor of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ must be negative for <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ sufficiently close to <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+; namely, this is the determinant of the matrix
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="137" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1857.gif"
+ ALT="$\displaystyle \qquad\quad\ \ \, i \qquad \quad j$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="154" HEIGHT="50" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1858.gif"
+ ALT="\begin{align*}\begin{array}{cc} \begin{array}{c} i\\ j \end{array}\hspace*{-1em}...
+...cc} * &amp; P_{ij}(t) \\ P_{ij}(t) &amp; * \\ \end{array}\right) \end{array}\end{align*}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+formed by the <IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+-th and the <IMG
+ WIDTH="12" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1859.gif"
+ ALT="$ j$">
+-th row and column of <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+.  Thus this scenario is ruled out, and the only remaining possibility is that a diagonal entry
+<IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1860.gif"
+ ALT="$ P_{ii}(t)$">
+ becomes unbounded as <!-- MATH
+ $t\searrow \bar t$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ t\searrow \bar t$">
+. Consider the vector
+<!-- MATH
+ $e_i:=(0,\dots,1,\dots,0)^T\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="216" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1861.gif"
+ ALT="$ e_i:=(0,\dots,1,\dots,0)^T\in\mathbb{R}^n$">
+,<A NAME="p-ei"></A> with 1 in the <IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+-th position and zeros everywhere else; then
+<!-- MATH
+ $e_i^TP(t)e_i=P_{ii}(t)\to\infty$
+ -->
+<IMG
+ WIDTH="178" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1862.gif"
+ ALT="$ e_i^TP(t)e_i=P_{ii}(t)\to\infty$">
+ as <!-- MATH
+ $t\searrow\bar t$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1850.gif"
+ ALT="$ t\searrow \bar t$">
+. Suppose that the system is in state <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1863.gif"
+ ALT="$ e_i$">
+ at some time <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1864.gif"
+ ALT="$ t&gt;\bar t$">
+. We know that <!-- MATH
+ $e_i^TP(t)e_i$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1865.gif"
+ ALT="$ e_i^TP(t)e_i$">
+ is the optimal cost-to-go from there, and so this cost must be unbounded as we take <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ to be closer to <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+. On the other hand, this cost cannot exceed the
+cost of applying, e.g., the zero control on
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1564.gif"
+ ALT="$ [t,t_1]$">
+. The state trajectory corresponding to this control  is
+<!-- MATH
+ $x( s)=\Phi_A( s,t)e_i$
+ -->
+<IMG
+ WIDTH="131" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1866.gif"
+ ALT="$ x( s)=\Phi_A( s,t)e_i$">
+ for  <!-- MATH
+ $s\in[t,t_1]$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1867.gif"
+ ALT="$ s\in[t,t_1]$">
+, where <!-- MATH
+ $\Phi_A(\cdot,\cdot)$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1868.gif"
+ ALT="$ \Phi_A(\cdot,\cdot)$">
+ is the transition matrix for <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1869.gif"
+ ALT="$ A(\cdot)$">
+, and the associated cost is
+<P><!-- MATH
+ \begin{displaymath}
+\int_t^{t_1}\left(e_i^T\Phi^T_A( s,t)Q( s)\Phi_A( s,t)e_i\right)d
+ s +e_i^T\Phi_A^T(t_1,t)M\Phi_A(t_1,t)e_i.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="465" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1870.gif"
+ ALT="$\displaystyle \int_t^{t_1}\left(e_i^T\Phi^T_A( s,t)Q( s)\Phi_A( s,t)e_i\right)d
+s +e_i^T\Phi_A^T(t_1,t)M\Phi_A(t_1,t)e_i.
+$">
+</DIV><P>
+</P>
+It is quite clear that this cost
+remains bounded as <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ approaches <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+, since the quantity inside the integral is bounded for <!-- MATH
+ $\bar t\le t\le  s\le t_1$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1871.gif"
+ ALT="$ \bar t\le t\le s\le t_1$">
+. The resulting contradiction proves that a finite escape time <IMG
+ WIDTH="10" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1249.gif"
+ ALT="$ \bar t$">
+ cannot exist.
+
+<P>
+The existence of the solution <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1793.gif"
+ ALT="$ P(\cdot)$">
+ to the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>) on the interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+ is now established. Thus we can be sure that the optimal control&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) is well defined, and the finite-horizon LQR problem has been completely solved.  We must be able to explicitly solve the RDE, though, if we want to obtain a closed-form expression for the optimal control law.
+
+<P>
+<BR>
+<A NAME="x-simplest-LQR"></A><IMG
+ WIDTH="555" HEIGHT="287" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1873.gif"
+ ALT="\begin{Example}
+To obtain the simplest possible finite-horizon LQR problem, cons...
+...eedback law $u(t)=-\tanh (t_1-t)x(t)$\ is the optimal control.~\qed\end{Example}"> <A NAME="tex2html73"
+  HREF="footnode.html#foot8063"><SUP>6.2</SUP></A>
+<BR>
+
+<P>
+If analytically solving the RDE is not a completely trivial task even for such an
+elementary example, we expect closed-form solutions to be obtainable only in very special cases. Yet, the LQR problem is much more tractable compared to the general optimal control problem studied in Chapter&nbsp;<A HREF="node91.html#c-hjb">5</A>. The main simplification is that instead of trying to solve the HJB equation which is a partial differential equation, we now have to solve the RDE which is an ordinary differential equation, and this can be done efficiently by standard numerical methods. In the next section, we define and study a variant of the LQR problem which lends itself to an even simpler solution; this development will be in line with what we already saw, in a more general context but in much less detail, towards the end of Section&nbsp;<A HREF="node95.html#ss-HJB">5.1.3</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2035"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2029"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2025"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2031"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2033"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2036"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Up:</B> <A NAME="tex2html2030"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2026"
+  HREF="node110.html">6.1.3 Value function and</A>
+ &nbsp; <B>  <A NAME="tex2html2032"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2034"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

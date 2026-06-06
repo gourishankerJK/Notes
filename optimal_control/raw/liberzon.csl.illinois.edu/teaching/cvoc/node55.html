@@ -1,0 +1,636 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.4.1 Preliminaries</TITLE>
+<META NAME="description" CONTENT="3.4.1 Preliminaries">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node56.html">
+<LINK REL="previous" HREF="node54.html">
+<LINK REL="up" HREF="node54.html">
+<LINK REL="next" HREF="node56.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1183"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1177"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1171"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1179"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1181"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1184"
+  HREF="node56.html">3.4.2 First variation</A>
+<B> Up:</B> <A NAME="tex2html1178"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1172"
+  HREF="node54.html">3.4 Variational approach to</A>
+ &nbsp; <B>  <A NAME="tex2html1180"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1182"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00541000000000000000"></A><A NAME="ss-preliminaries"></A>
+<BR>
+3.4.1 Preliminaries
+</H2>
+
+<P>
+Consider the optimal control problem from Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A> with
+ the following additional specifications: the target set is
+ <!-- MATH
+ $S= \{t_1\}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ S= \{t_1\}\times\mathbb{R}^n$">
+, where <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ is a fixed time
+ (so this is a fixed-time, free-endpoint problem); <!-- MATH
+ $U=\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img870.gif"
+ ALT="$ U=\mathbb{R}^m$">
+ (the
+ control is unconstrained); and the terminal cost is <IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img871.gif"
+ ALT="$ K=K(x_f)$">
+,
+ with no direct dependence
+ on the final time (just for simplicity).
+ We can rewrite the cost in terms of the fixed final time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+
+ as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-J_L+K"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^{t_1} L(t,x(t),u(t))dt+K(x(t_1)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="310" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img872.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_1} L(t,x(t),u(t))dt+K(x(t_1)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Our goal is to derive necessary conditions for optimality.
+Let <!-- MATH
+ $u^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$ u^*(\cdot)$">
+ be an optimal control, by which we presently
+ mean that it provides a global minimum:
+<!-- MATH
+ $J(u^*)\le J(u)$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img874.gif"
+ ALT="$ J(u^*)\le J(u)
+$">
+
+for all piecewise continuous controls&nbsp;<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Let
+<!-- MATH
+ $x^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$ x^*(\cdot)$">
+ be the corresponding optimal trajectory. We would like to consider nearby trajectories of the familiar form
+
+<P>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-x-perturb-wrong"></A><!-- MATH
+ \begin{equation}
+x=x^*+\alpha\eta
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img876.gif"
+ ALT="$\displaystyle x=x^*+\alpha\eta$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+but we must make sure that these perturbed trajectories are still solutions
+of the system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>), for suitably chosen controls. Unfortunately, the
+class of perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ that are admissible in this sense
+is difficult to characterize if we start with&nbsp;(<A HREF="#e-x-perturb-wrong">3.23</A>). Note also
+that the cost <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+, whose first variation we will be computing, is a function of
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and not of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+Thus, in the optimal control context it is more natural to <I>directly
+perturb the control</I> instead, and then define perturbed state
+trajectories in terms of perturbed controls.
+To this end, we consider controls of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-u-xi"></A><!-- MATH
+ \begin{equation}
+u=u^*+\alpha\xi
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="95" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img877.gif"
+ ALT="$\displaystyle u=u^*+\alpha\xi$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is a piecewise continuous function from <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+ to <!-- MATH
+ $\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img801.gif"
+ ALT="$ \mathbb{R}^m$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ is a real parameter as usual. We now want to find (if possible) a
+function <!-- MATH
+ $\eta:[t_0,t_1]\to \mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img878.gif"
+ ALT="$ \eta:[t_0,t_1]\to \mathbb{R}^n$">
+ for which the solutions of&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) corresponding
+to the controls&nbsp;(<A HREF="#e-u-xi">3.24</A>), for a fixed <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+, are given by&nbsp;(<A HREF="#e-x-perturb-wrong">3.23</A>). Actually, we do not have any reason to believe that the perturbed trajectory depends linearly on <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+. Thus we should replace&nbsp;(<A HREF="#e-x-perturb-wrong">3.23</A>) by the more general (and more realistic) expression
+ <P></P>
+<DIV ALIGN="CENTER"><A NAME="e-x-perturb"></A><!-- MATH
+ \begin{equation}
+x=x^*+\alpha\eta+o(\alpha).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="155" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img879.gif"
+ ALT="$\displaystyle x=x^*+\alpha\eta+o(\alpha).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+It is obvious that
+<!-- MATH
+ $\eta(t_0)=0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img880.gif"
+ ALT="$ \eta(t_0)=0$">
+ since the initial condition does not change.
+Next, we derive a differential equation for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. Let us use the more detailed notation <!-- MATH
+ $x(t,\alpha)$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img881.gif"
+ ALT="$ x(t,\alpha)$">
+ for the solution of&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) at time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ corresponding to the control&nbsp;(<A HREF="#e-u-xi">3.24</A>). The function <!-- MATH
+ $x(\cdot,\alpha)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img882.gif"
+ ALT="$ x(\cdot,\alpha)$">
+ coincides with the right-hand side of&nbsp;(<A HREF="#e-x-perturb">3.25</A>) if and only if
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-eta_ddx"></A><!-- MATH
+ \begin{equation}
+{x}_{\alpha}(t,0)=\eta(t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img883.gif"
+ ALT="$\displaystyle {x}_{\alpha}(t,0)=\eta(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. (We are assuming here that the partial derivative <!-- MATH
+ ${x}_{\alpha}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img884.gif"
+ ALT="$ {x}_{\alpha}$">
+ exists, but its existence can be shown rigorously; cf. Section&nbsp;<A HREF="node69.html#ss-vareqn">4.2.4</A>.)
+Differentiating the quantity&nbsp;(<A HREF="#e-eta_ddx">3.26</A>) with respect to time and interchanging the order of partial derivatives, we have
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="33" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img885.gif"
+ ALT="$\displaystyle \dot\eta(t)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="672" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img886.gif"
+ ALT="$\displaystyle =\frac d{dt}{x}_{\alpha}(t,0)={x}_{{\alpha}{t}}(t,0)= {x}_{{t}{\a...
+...ft.\frac d{d\alpha}\right\vert _{\alpha=0}f(t,x(t,\alpha),u^*(t)+\alpha \xi(t))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="399" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img887.gif"
+ ALT="$\displaystyle = {f}_{x}(t,x(t,0),u^*(t)){x}_{\alpha}(t,0)+{f}_{u}(t,x(t,0),u^*(t))\xi(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="355" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img888.gif"
+ ALT="$\displaystyle = {f}_{x}(t,x^*(t),u^*(t))\eta(t)+{f}_{u}(t,x^*(t),u^*(t))\xi(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which we write more compactly as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-xivareq"></A><!-- MATH
+ \begin{equation}
+\dot \eta={f}_{x}(t,x^*,u^*)\eta+{f}_{u}(t,x^*,u^*)\xi=:\left.{f}_{x}\right|_{*}\eta+\left.{f}_{u}\right|_{*}\xi.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="390" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img889.gif"
+ ALT="$\displaystyle \dot \eta={f}_{x}(t,x^*,u^*)\eta+{f}_{u}(t,x^*,u^*)\xi=:\left.{f}_{x}\right\vert _{*}\eta+\left.{f}_{u}\right\vert _{*}\xi.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Here and below, we use the shorthand notation
+<!-- MATH
+ $\left.\right|_{*}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img890.gif"
+ ALT="$ \left.\right\vert _{*}$">
+ to indicate that a function is being evaluated along the optimal
+trajectory.
+The linear time-varying
+  system&nbsp;(<A HREF="#e-xivareq">3.27</A>) is nothing but the
+linearization<A NAME="3148"></A> of the original system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>)
+ around the optimal trajectory. To emphasize the linearity of the system&nbsp;(<A HREF="#e-xivareq">3.27</A>) we can
+introduce the notation <!-- MATH
+ $A_*(t):=\left.{f}_{x}\right|_{*}(t)$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img891.gif"
+ ALT="$ A_*(t):=\left.{f}_{x}\right\vert _{*}(t)$">
+ and <!-- MATH
+ $B_*(t):=\left.{f}_{u}\right|_{*}(t)$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img892.gif"
+ ALT="$ B_*(t):=\left.{f}_{u}\right\vert _{*}(t)$">
+ for the matrices appearing in it, bringing it to the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-xidot"></A><!-- MATH
+ \begin{equation}
+\dot \eta=A_*(t)\eta+B_*(t)\xi.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="161" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img893.gif"
+ ALT="$\displaystyle \dot \eta=A_*(t)\eta+B_*(t)\xi.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+The optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ minimizes the cost given by&nbsp;(<A HREF="#e-J_L+K">3.22</A>), and the control system&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>) can be viewed as imposing the pointwise-in-time (non-integral) constraint
+<!-- MATH
+ $\dot x(t)-f(t,x(t),u(t))=0$
+ -->
+<IMG
+ WIDTH="192" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img895.gif"
+ ALT="$ \dot x(t)-f(t,x(t),u(t))=0$">
+. Motivated by Lagrange's idea for treating
+such constraints in calculus of variations, expressed by the augmented cost&nbsp;(<A HREF="node39.html#e-Lagrange-naive-nonint">2.53</A>) on page&nbsp;<A HREF="node39.html#e-Lagrange-naive-nonint"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>, let us
+ rewrite our cost as
+<P><!-- MATH
+ \begin{displaymath}
+J(u)=\int_{t_0}^{t_1}\big(L(t,x(t),u(t))+p(t)\cdot(\dot
+x(t)-f(t,x(t),u(t)))\big)dt+K(x(t_1))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="553" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img896.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_1}\big(L(t,x(t),u(t))+p(t)\cdot(\dot
+x(t)-f(t,x(t),u(t)))\big)dt+K(x(t_1))
+$">
+</DIV><P>
+</P>
+for some <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <!-- MATH
+ $p:[t_0,t_1]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img897.gif"
+ ALT="$ p:[t_0,t_1]\to\mathbb{R}^n$">
+ to be selected later. Clearly, the
+extra term inside the integral does not change the value of the cost. The function <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.gif"
+ ALT="$ p(\cdot)$">
+ is reminiscent of the Lagrange multiplier function <!-- MATH
+ $\lambda(\cdot)$
+ -->
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img898.gif"
+ ALT="$ \lambda(\cdot)$">
+ in Section&nbsp;<A HREF="node39.html#ss-constraint-nonint">2.5.2</A> (the exact relationship between the two
+will be clarified in Exercise&nbsp;<A HREF="node56.html#z-plambda">3.6</A>
+below). As we will see momentarily, <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ is also closely related to
+the momentum from Section&nbsp;<A HREF="node33.html#s-canvar">2.4</A>.
+We will be working in the Hamiltonian framework,
+which is why we continue to use the same symbol <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ by which we denoted the momentum
+earlier (while some other sources prefer
+<IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+).
+
+<P>
+We will henceforth use the more explicit notation <!-- MATH
+ $\langle \cdot,\cdot\rangle$
+ -->
+<IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img899.gif"
+ ALT="$ \langle \cdot,\cdot\rangle $">
+
+for the inner product in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+. Let us introduce
+the <I>Hamiltonian</I><A NAME="3169"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-hamiltonian-control"></A><!-- MATH
+ \begin{equation}
+H(t,x,u,p):=\langle p,f(t,x,u)\rangle -L(t,x,u).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="308" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img900.gif"
+ ALT="$\displaystyle H(t,x,u,p):=\langle p,f(t,x,u)\rangle -L(t,x,u).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that this definition matches our earlier definition of the Hamiltonian in calculus of variations, where we had <!-- MATH
+ $H(x,y,y',p)=\langle p, y'\rangle -L(x,y,y')$
+ -->
+<IMG
+ WIDTH="259" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img901.gif"
+ ALT="$ H(x,y,y',p)=\langle p, y'\rangle -L(x,y,y')$">
+; we just need to remember that after we changed the notation from calculus of variations to optimal control, the independent variable <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ became <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, the dependent variable <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ became
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, its derivative <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ became <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img835.gif"
+ ALT="$ \dot x$">
+ and is given by&nbsp;(<A HREF="node51.html#e-basic-control">3.18</A>),
+and the third argument of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+is taken to be <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ rather than <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img835.gif"
+ ALT="$ \dot x$">
+ (which with the current definition
+of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ makes even more sense).
+We can rewrite the cost in terms of the Hamiltonian as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-JuHam"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^{t_1}\big(\langle p(t),\dot
+x(t)\rangle-H(t,x(t),u(t),p(t))\big)dt+K(x(t_1)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="467" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img902.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_1}\big(\langle p(t),\dot x(t)\rangle-H(t,x(t),u(t),p(t))\big)dt+K(x(t_1)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1183"
+  HREF="node56.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1177"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1171"
+  HREF="node54.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1179"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1181"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1184"
+  HREF="node56.html">3.4.2 First variation</A>
+<B> Up:</B> <A NAME="tex2html1178"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1172"
+  HREF="node54.html">3.4 Variational approach to</A>
+ &nbsp; <B>  <A NAME="tex2html1180"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1182"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

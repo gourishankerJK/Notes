@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.2.2 Infinite-horizon problem and its solution</TITLE>
+<META NAME="description" CONTENT="6.2.2 Infinite-horizon problem and its solution">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node115.html">
+<LINK REL="previous" HREF="node113.html">
+<LINK REL="up" HREF="node112.html">
+<LINK REL="next" HREF="node115.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2081"
+  HREF="node115.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2075"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2069"
+  HREF="node113.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2077"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2079"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2082"
+  HREF="node115.html">6.2.3 Closed-loop stability</A>
+<B> Up:</B> <A NAME="tex2html2076"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2070"
+  HREF="node113.html">6.2.1 Existence and properties</A>
+ &nbsp; <B>  <A NAME="tex2html2078"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2080"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00822000000000000000"></A><A NAME="ss-infhorsol"></A>
+<BR>
+6.2.2 Infinite-horizon problem and its solution
+</H2>
+
+<P>
+We have now prepared the ground for taking the limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+ and considering the infinite-horizon LQR problem with the cost
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-J_infty"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^\infty \left(x^T(t)Qx(t)+u^T(t)Ru(t)\right)dt.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="324" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1908.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^\infty \left(x^T(t)Qx(t)+u^T(t)Ru(t)\right)dt.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Recalling the optimal cost&nbsp;(<A HREF="node112.html#e-Vt_10">6.26</A>)
+and the optimal control&nbsp;(<A HREF="node112.html#e-u_t_1">6.24</A>)
+for the finite-horizon case, and passing to the limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+,
+it is natural to guess that the infinite-horizon optimal cost and optimal control will be<A NAME="tex2html75"
+  HREF="footnode.html#foot6486"><SUP>6.3</SUP></A><P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-infhorLQR"></A><!-- MATH
+ \begin{equation}
+V (x_0)=x_0^TP x_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="123" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1911.gif"
+ ALT="$\displaystyle V (x_0)=x_0^TP x_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-control-infhorLQR"></A><!-- MATH
+ \begin{equation}
+u^* (t)=-R^{-1}B^TP x^* (t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="185" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1912.gif"
+ ALT="$\displaystyle u^* (t)=-R^{-1}B^TP x^* (t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is the matrix limit&nbsp;(<A HREF="node113.html#e-P-ssdef">6.27</A>) which satisfies the ARE&nbsp;(<A HREF="node113.html#e-ARE">6.28</A>). Note that the quadratic cost&nbsp;(<A HREF="#e-cost-infhorLQR">6.30</A>) is independent of <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ and the linear feedback law&nbsp;(<A HREF="#e-control-infhorLQR">6.31</A>) is time-invariant, which is consistent with the problem formulation and with our earlier findings in Section&nbsp;<A HREF="node95.html#ss-HJB">5.1.3</A>. Still, optimality of&nbsp;(<A HREF="#e-control-infhorLQR">6.31</A>) is far from obvious, and it is not even clear whether a control yielding a bounded cost exists. Strictly speaking, the use of the asterisks in&nbsp;(<A HREF="#e-control-infhorLQR">6.31</A>) is not yet justified; at this point, <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is simply the trajectory of the system under the action of the feedback law&nbsp;(<A HREF="#e-control-infhorLQR">6.31</A>) with <!-- MATH
+ $x^* (t_0)=x_0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img951.gif"
+ ALT="$ x^*(t_0)=x_0$">
+.
+
+<P>
+We now show that the above guess is indeed correct. Consider the function <!-- MATH
+ $\widehat V (x):=x^TP x$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1913.gif"
+ ALT="$ \widehat V (x):=x^TP x$">
+.<A NAME="6502"></A> Its derivative along
+the trajectory <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="88" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1914.gif"
+ ALT="$\displaystyle \frac d{dt}\widehat V (x^* (t))$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="542" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1915.gif"
+ ALT="$\displaystyle = (x^* )^T(t)P (A-BR^{-1}B^TP )x^* (t)+ (x^* )^T(t)(A^T-P BR^{-1}B^T)P x^* (t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="347" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1916.gif"
+ ALT="$\displaystyle = (x^* )^T(t)(P A+A^TP -2P BR^{-1}B^TP ) x^* (t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="280" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1917.gif"
+ ALT="$\displaystyle = -(x^* )^T(t)(Q+P BR^{-1}B^TP ) x^* (t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the last equality follows from the ARE&nbsp;(<A HREF="node113.html#e-ARE">6.28</A>).
+We can then calculate the portion of the corresponding cost over an arbitrary finite interval <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1918.gif"
+ ALT="$ [t_0,T]$">
+ to be
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="624" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1919.gif"
+ ALT="$\displaystyle \int_{t_0}^T \left((x^* )^T(t)Qx^* (t)+ (u^* )^T(t)Ru^* (t)\right)dt= \int_{t_0}^T (x^* )^T(t)(Q+P BR^{-1}B^TP )x^* (t)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="623" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1920.gif"
+ ALT="$\displaystyle =-\int _{t_0}^T \frac d{dt}\widehat V (x^* (t))dt=\widehat V (x_0)- \widehat V (x^* (T))= x^T_0P x_0-(x^* )^T(T)P x^* (T)\le x^T_0P x_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the last inequality follows from the fact that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.gif"
+ ALT="$ P \ge 0$">
+. Taking the limit
+as <!-- MATH
+ $T\to\infty$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1922.gif"
+ ALT="$ T\to\infty$">
+, we obtain
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-J-infty"></A><!-- MATH
+ \begin{equation}
+J(u^*)\le x^T_0P x_0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="126" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1923.gif"
+ ALT="$\displaystyle J(u^*)\le x^T_0P x_0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In particular, we can now be sure that the infinite-horizon problem is well posed, because <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ gives a bounded cost.
+On the other hand, consider another trajectory <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ with the same initial condition corresponding to an arbitrary control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Since <!-- MATH
+ $x_0^TP(t_0,t_1)x_0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1885.gif"
+ ALT="$ x_0^TP(t_0,t_1)x_0$">
+ is the finite-horizon optimal cost, we have for every finite <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ that
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="104" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1924.gif"
+ ALT="$\displaystyle x_0^TP(t_0,t_1)x_0$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="613" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1925.gif"
+ ALT="$\displaystyle \le \int_{t_0}^{t_1} \left(x^T(t)Qx(t)+u^T(t)Ru(t)\right)dt\le \int_{t_0}^\infty \left(x^T(t)Qx(t)+u^T(t)Ru(t)\right)dt=J(u)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the second inequality relies on the positive (semi)definiteness of <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ and
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1779.gif"
+ ALT="$ R$">
+. Passing to the limit as <!-- MATH
+ $t_1\to\infty$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1874.gif"
+ ALT="$ t_1\to\infty$">
+ yields
+<P><!-- MATH
+ \begin{displaymath}
+x_0^TP x_0\le J(u).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="118" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1926.gif"
+ ALT="$\displaystyle x_0^TP x_0\le J(u).
+$">
+</DIV><P>
+</P>
+Comparing this inequality with&nbsp;(<A HREF="#e-J-infty">6.32</A>) and remembering that  <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ was arbitrary (and could in particular be equal to <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+), we see that
+<P><!-- MATH
+ \begin{displaymath}
+J(u^*)= x^T_0P x_0\le J(u)\qquad \forall\,u
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="236" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1927.gif"
+ ALT="$\displaystyle J(u^*)= x^T_0P x_0\le J(u)\qquad \forall\,u
+$">
+</DIV><P>
+</P>
+hence <!-- MATH
+ $x_0^TP x_0$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1928.gif"
+ ALT="$ x_0^TP x_0$">
+ is the infinite-horizon optimal cost  and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is an optimal control, as claimed.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2081"
+  HREF="node115.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2075"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2069"
+  HREF="node113.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2077"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2079"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2082"
+  HREF="node115.html">6.2.3 Closed-loop stability</A>
+<B> Up:</B> <A NAME="tex2html2076"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2070"
+  HREF="node113.html">6.2.1 Existence and properties</A>
+ &nbsp; <B>  <A NAME="tex2html2078"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2080"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

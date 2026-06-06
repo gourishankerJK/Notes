@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.5.2.1 Holonomic constraints</TITLE>
+<META NAME="description" CONTENT="2.5.2.1 Holonomic constraints">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node39.html">
+<LINK REL="up" HREF="node39.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html954"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html948"
+  HREF="node39.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html944"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html950"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html952"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html955"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Up:</B> <A NAME="tex2html949"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+<B> Previous:</B> <A NAME="tex2html945"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+ &nbsp; <B>  <A NAME="tex2html951"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html953"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00452100000000000000"></A><A NAME="2078"></A>
+<A NAME="2079"></A>
+<BR>
+2.5.2.1 Holonomic constraints
+</H3>
+
+<P>
+Consider the special case when
+the constraint function <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ does not depend on <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+, so that the constraints
+take the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-integrated"></A><!-- MATH
+ \begin{equation}
+M(x,y(x))=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img545.gif"
+ ALT="$\displaystyle M(x,y(x))=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.53)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Alternatively, we might be able to
+integrate the constraints&nbsp;(<A HREF="node39.html#e-constraint-nonint">2.52</A>) to bring them to this form.
+We then say that the constraints are <I>holonomic</I>.
+The equation&nbsp;(<A HREF="#e-integrated">2.54</A>) gives us a constraint surface in the <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$ (x,y)$">
+-space, and we have two options
+for studying our constrained optimization problem.
+The first one is to use the previous necessary condition
+involving a Lagrange multiplier function.
+The second option is to find fewer independent variables that parameterize
+the constraint surface,
+  and reformulate the problem in terms of these variables.
+The
+problem then becomes an unconstrained one, and can be studied via the usual Euler-Lagrange 
+equation.
+Sometimes this latter approach turns out to be more effective.
+
+<P>
+<BR>
+<A NAME="e-pendulum"></A><A NAME="p-pendulum"></A><A NAME="f-pendulum"></A><IMG
+ WIDTH="557" HEIGHT="678" ALIGN="BOTTOM" BORDER="0"
+ SRC="img546.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8535Consider a simple planar pendulum\i...
+... \theta
+\end{equation}which is the familiar pendulum equation.
+\qed\end{Example}">
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="559" HEIGHT="83" ALIGN="BOTTOM" BORDER="0"
+ SRC="img547.gif"
+ ALT="\begin{Exercise}
+Study the above example directly in the $(x,y)$-coordinates, wi...
+.... Are you able to reproduce~\eqref{e-pendulum} using
+this method?
+\end{Exercise}">
+<BR>
+
+<P>
+In control theory, one is often more interested in the opposite
+situation where the constraints are nonholonomic,<A NAME="2113"></A>
+<A NAME="2114"></A> i.e.,
+cannot be integrated. In this case, two arbitrary points in the <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$ (x,y)$">
+-space
+can be connected by a path satisfying the constraints, and there is
+no lower-dimensional constraint surface.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html954"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html948"
+  HREF="node39.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html944"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html950"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html952"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html955"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Up:</B> <A NAME="tex2html949"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+<B> Previous:</B> <A NAME="tex2html945"
+  HREF="node39.html">2.5.2 Non-integral constraints</A>
+ &nbsp; <B>  <A NAME="tex2html951"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html953"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

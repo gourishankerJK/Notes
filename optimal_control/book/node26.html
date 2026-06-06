@@ -1,0 +1,338 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.2.1 Weak and strong extrema</TITLE>
+<META NAME="description" CONTENT="2.2.1 Weak and strong extrema">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node25.html">
+<LINK REL="up" HREF="node25.html">
+<LINK REL="next" HREF="node27.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html754"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html748"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html744"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html750"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html752"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html755"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Up:</B> <A NAME="tex2html749"
+  HREF="node25.html">2.2 Basic calculus of</A>
+<B> Previous:</B> <A NAME="tex2html745"
+  HREF="node25.html">2.2 Basic calculus of</A>
+ &nbsp; <B>  <A NAME="tex2html751"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html753"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00421000000000000000"></A><A NAME="s-weak-strong"></A>
+<BR>
+2.2.1 Weak and strong extrema
+</H2>
+
+<P>
+We recall from Section&nbsp;<A HREF="node13.html#s-inf-preview">1.3</A> that in order to define local optimality, we must first select a norm, and on the space of <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves <!-- MATH
+ $y:[a,b]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$ y:[a,b]\to\mathbb{R}$">
+ there are two natural candidates for the
+norm: the 0-norm&nbsp;(<A HREF="node14.html#e-0-norm">1.30</A>) and the 1-norm&nbsp;(<A HREF="node14.html#e-1-norm">1.31</A>).
+Extrema (minima and maxima) of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ with respect to the 0-norm
+are called <I>strong extrema</I>, and those with respect to the 1-norm are called <I>weak extrema</I>.<A NAME="1215"></A><A NAME="1216"></A><A NAME="1217"></A><A NAME="1218"></A>
+
+<P>
+These two notions will be central to our subsequent developments, and so it is useful to reflect on them for a little while until the distinction between the two types of extrema becomes clear and there is no possibility of confusing them. If a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ is a strong extremum, then it is automatically a weak one, but the converse is not true.
+The reason is that an <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+-ball around <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ with respect to the 0-norm
+contains the <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+-ball with respect to the 1-norm for the same <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, as is clear from the norm definitions; on the other hand, the <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+-ball with respect to the 1-norm does not contain the <!-- MATH
+ $\varepsilon '$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img344.gif"
+ ALT="$ \varepsilon '$">
+-ball with respect to the 0-norm for any <!-- MATH
+ $\varepsilon '$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img344.gif"
+ ALT="$ \varepsilon '$">
+, no matter how small. In other words, it is harder to satisfy <!-- MATH
+ $J(y^*)\le
+J(y)$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img345.gif"
+ ALT="$ J(y^*)\le
+J(y)$">
+ for all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ close enough to <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ if we understand closeness in the sense of the 0-norm. Closeness in the sense of the 1-norm is a more restrictive condition, since the derivatives of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ also have to be close,
+meaning that there are fewer perturbations to check than for the 0-norm.
+We will see that, for the same reason, studying weak extrema is easier than studying strong
+extrema.
+
+<P>
+On the other hand, it will become evident later that the concept of
+a weak minimum is not very suitable in optimal control. Indeed, an optimal trajectory <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ should give a lower cost than all nearby trajectories <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, and there is no compelling reason to take into account the difference between the derivatives of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+.
+Also, as we already mentioned, requiring <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ to be a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve is often
+too restrictive. Specifically, we will want to allow curves <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ which are
+continuous everywhere on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ and whose derivative <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ exists everywhere
+except possibly a finite number of points in <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ and is continuous
+and bounded between these points. Let us agree to call such curves
+<I>piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+</I>,<A NAME="1222"></A><A NAME="1223"></A> to reflect the fact that they are
+concatenations of finitely many <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ pieces.
+ (We could define the class of admissible curves more precisely using
+ the notion of an absolutely continuous function; we will revisit this
+ issue in Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A> as we make the transition to optimal control.) If we use the 0-norm, then it makes no difference whether <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ or piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ or just <!-- MATH
+ $\mathcal C^0$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img346.gif"
+ ALT="$ \mathcal C^0$">
+; this is another
+advantage of the 0-norm over the 1-norm.
+
+<P>
+In view of the above remarks, it seems natural to first obtain some basic tools for studying weak minima and then proceed to develop more advanced tools for investigating strong minima. This is essentially what we will do. The next example illustrates some of the points that we just made regarding the 0-norm versus the 1-norm.<A NAME="1226"></A><A NAME="1227"></A> The exercise that follows should help the reader to better grasp the concepts of weak and strong minima; it is to be solved using only the definitions.
+
+<P>
+<BR>
+<A NAME="f-zigzag"></A><A NAME="x-weak-strong"></A><IMG
+ WIDTH="555" HEIGHT="461" ALIGN="BOTTOM" BORDER="0"
+ SRC="img347.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8229Consider the three curves $y_0$, $y...
+...g extrema provide a more reasonable
+notion of local optimality.\qed\end{Example}">
+<BR>
+
+<P>
+<BR>
+<A NAME="z-jurdjevic"></A><IMG
+ WIDTH="555" HEIGHT="123" ALIGN="BOTTOM" BORDER="0"
+ SRC="img348.gif"
+ ALT="\begin{Exercise}
+Consider the problem of minimizing the functional
+\begin{displa...
+... C^1$\ curves)? Is there
+another curve that is a strong minimum?
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html754"
+  HREF="node27.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html748"
+  HREF="node25.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html744"
+  HREF="node25.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html750"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html752"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html755"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Up:</B> <A NAME="tex2html749"
+  HREF="node25.html">2.2 Basic calculus of</A>
+<B> Previous:</B> <A NAME="tex2html745"
+  HREF="node25.html">2.2 Basic calculus of</A>
+ &nbsp; <B>  <A NAME="tex2html751"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html753"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

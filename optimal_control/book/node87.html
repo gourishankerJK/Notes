@@ -1,0 +1,1143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.4.3 Nonlinear systems, singular controls, and Lie brackets</TITLE>
+<META NAME="description" CONTENT="4.4.3 Nonlinear systems, singular controls, and Lie brackets">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node88.html">
+<LINK REL="previous" HREF="node86.html">
+<LINK REL="up" HREF="node84.html">
+<LINK REL="next" HREF="node88.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1675"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1669"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1663"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1671"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1673"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1676"
+  HREF="node88.html">4.4.4 Fuller's problem</A>
+<B> Up:</B> <A NAME="tex2html1670"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1664"
+  HREF="node86.html">4.4.2 Bang-bang principle for</A>
+ &nbsp; <B>  <A NAME="tex2html1672"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1674"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00643000000000000000"></A><A NAME="ss-singular-Lie"></A>
+<BR>
+4.4.3 Nonlinear systems, singular controls, and Lie brackets
+</H2>
+
+<P>
+Let us now investigate whether the preceding results can be
+extended beyond the class of linear control systems. Regarding the
+bang-bang principle cited in the previous paragraph, the hope that
+it might be true for general nonlinear systems is quickly
+shattered by the following example.
+
+<P>
+<BR>
+<A NAME="e-singular"></A><A NAME="x-singular"></A><IMG
+ WIDTH="557" HEIGHT="545" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1404.gif"
+ ALT="\begin{Example}
+% latex2html id marker 9379For the planar system
+\begin{equati...
+...ero, and there is no contradiction with the maximum principle. \qed\end{Example}">
+<BR>
+
+<P>
+A distinguishing feature of the above example is that the function
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+, whose sign determines the value of the optimal control
+<IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+, identically vanishes. Consequently, the Hamiltonian
+maximization condition alone does not give us enough information
+to find <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. In problems where this situation occurs on some
+interval of time, the optimal control on that interval is called
+<I>singular</I>,<A NAME="4809"></A> and the corresponding piece of the optimal state
+trajectory is called a <I>singular arc</I>.<A NAME="4811"></A>
+
+<P>
+Example&nbsp;<A HREF="#x-singular">4.1</A> should not be taken to suggest, however,
+that we must give up hope of formulating a bang-bang principle for
+nonlinear systems. After all, we saw in
+Section&nbsp;<A HREF="node86.html#ss-bang-bang-linear">4.4.2</A> that even for linear systems, to
+be able to prove that all time-optimal controls are bang-bang we
+need the normality assumption. It is conceivable that the
+bang-bang property of time-optimal controls for certain nonlinear
+systems can be guaranteed under an appropriate nonlinear
+counterpart of that assumption.
+
+<P>
+Motivated by these remarks, our goal now is to better formalize
+the phenomenon of singularity--and reach a deeper understanding
+of its reasons--for a class of systems that includes the linear
+systems considered in Section&nbsp;<A HREF="node86.html#ss-bang-bang-linear">4.4.2</A> as well as
+the nonlinear system&nbsp;(<A HREF="#e-singular">4.58</A>). This class is composed of
+nonlinear systems affine in controls, defined as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-affine"></A><!-- MATH
+ \begin{equation}
+\dot x=f(x)+G(x)u=f(x)+\sum_{i=1}^m g_i(x)u_i
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="298" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1405.gif"
+ ALT="$\displaystyle \dot x=f(x)+G(x)u=f(x)+\sum_{i=1}^m g_i(x)u_i$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.58)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+, <!-- MATH
+ $u\in U\subset \mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img797.gif"
+ ALT="$ u\in U\subset \mathbb{R}^m$">
+, <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1406.gif"
+ ALT="$ G(x)$">
+ is an <IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1407.gif"
+ ALT="$ n\times m$">
+
+matrix with columns <!-- MATH
+ $g_1(x),\dots, g_m(x)$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1408.gif"
+ ALT="$ g_1(x),\dots, g_m(x)$">
+, and for the control
+set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ we again take the hypercube&nbsp;(<A HREF="node86.html#e-hypercube">4.52</A>). The
+Hamiltonian for the time-optimal control problem is
+<P><!-- MATH
+ \begin{displaymath}
+H(x,u,p,p_0)=\Big\langle p,f(x)+\sum_{i=1}^m g_i(x)u_i\Big\rangle +p_0.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="341" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1409.gif"
+ ALT="$\displaystyle H(x,u,p,p_0)=\Big\langle p,f(x)+\sum_{i=1}^m g_i(x)u_i\Big\rangle +p_0.
+$">
+</DIV><P>
+</P>
+From the Hamiltonian maximization condition we obtain,
+completely analogously to Section&nbsp;<A HREF="node86.html#ss-bang-bang-linear">4.4.2</A>, that
+the components <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1375.gif"
+ ALT="$ u_i^*(t)$">
+ of the optimal control are determined by
+the signs of the functions <!-- MATH
+ $\varphi_i(t):=\langle 
+p^*(t),g_i(x^*(t))\rangle$
+ -->
+<IMG
+ WIDTH="190" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1410.gif"
+ ALT="$ \varphi_i(t):=\langle
+p^*(t),g_i(x^*(t))\rangle $">
+. These functions of time (always associated
+with a specific optimal trajectory) are called the <I>switching
+functions</I>.<A NAME="4825"></A> To investigate the bang-bang property, we need to
+study zeros of the switching functions.
+
+<P>
+In order to simplify calculations, from this point on we assume
+that <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img163.gif"
+ ALT="$ m=1$">
+, so that the input <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is scalar and we have only one
+switching function
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-varphi"></A><!-- MATH
+ \begin{equation}
+\varphi(t)=\langle p^*(t),g(x^*(t))\rangle .
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="180" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1411.gif"
+ ALT="$\displaystyle \varphi(t)=\langle p^*(t),g(x^*(t))\rangle .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.59)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The optimal control satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-u_sign-of-phi"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\text{sgn}(\varphi(t))=\begin{cases} 1
+\quad&\text{ if }\ \varphi(t)>0\\
+-1\quad&\text{ if }\ \varphi(t)<0\\
+?\quad&\text{ if }\ \varphi(t)=0          \end{cases}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1347.gif"
+ ALT="$\displaystyle u^*(t)=$">sgn<IMG
+ WIDTH="237" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1412.gif"
+ ALT="$\displaystyle (\varphi(t))=\begin{cases}1 \quad&amp;\text{ if }\ \varphi(t)&gt;0\\ -1\quad&amp;\text{ if }\ \varphi(t)&lt;0\\ ?\quad&amp;\text{ if }\ \varphi(t)=0 \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.60)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The canonical equations are <!-- MATH
+ $\dot x^*=f(x^*)+g(x^*)u^*$
+ -->
+<IMG
+ WIDTH="164" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1413.gif"
+ ALT="$ \dot x^*=f(x^*)+g(x^*)u^*$">
+ and
+<P><!-- MATH
+ \begin{displaymath}
+\dot p^*=\left.-{H}_{x}\right|_{*}=-\big.{\left({f}_{x}\right)^T}\big|_*p^*-\big.{\left({g}_{x}\right)^T}\big|_*p^*u^*
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="311" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1414.gif"
+ ALT="$\displaystyle \dot p^*=\left.-{H}_{x}\right\vert _{*}=-\big.{\left({f}_{x}\right)^T}\big\vert _*p^*-\big.{\left({g}_{x}\right)^T}\big\vert _*p^*u^*
+$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$ {f}_{x}$">
+ and <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1415.gif"
+ ALT="$ {g}_{x}$">
+ are the Jacobian matrices of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and
+<IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+. Let us now compute the derivative of <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-phidot-calc"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot\varphi&=\langle \dot p^*,g(x^*)\rangle +\langle p^*,{g}_{x}(x^*)\dot
+x^*\rangle =-\big\langle \big.{\left({f}_{x}\right)^T}p^*,g\big\rangle \big|_*-{\big\langle \big.{\left({g}_{x}\right)^T}p^*,g\big\rangle \big|_* u^*}\\
+&+\left.\left\langle p^*,{g}_{x} f\right\rangle \right|_{*}+\left.\langle p^*,{g}_{x}
+g\rangle \right|_{*} u^*=\left.\left\langle p^*,{g}_{x}f-{f}_{x}g\right\rangle \right|_{*}.
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="517" HEIGHT="58" BORDER="0"
+ SRC="img1417.gif"
+ ALT="\begin{displaymath}\begin{split}\dot\varphi&amp;=\langle \dot p^*,g(x^*)\rangle +\la...
+...^*,{g}_{x}f-{f}_{x}g\right\rangle \right\vert _{*}. \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.61)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We see that <!-- MATH
+ $\dot \varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.gif"
+ ALT="$ \dot \varphi$">
+ is the inner product of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ with the
+vector <!-- MATH
+ $\left.({g}_{x}f-{f}_{x}g)\right|_{*}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1419.gif"
+ ALT="$ \left.({g}_{x}f-{f}_{x}g)\right\vert _{*}$">
+. Perhaps the vector field <!-- MATH
+ ${g}_{x}f-{f}_{x}g$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1420.gif"
+ ALT="$ {g}_{x}f-{f}_{x}g$">
+, which we have not encountered up to now, has some
+significant meaning?
+
+<P>
+<BR>
+<A NAME="x-bracket-linear"></A><IMG
+ WIDTH="555" HEIGHT="105" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1421.gif"
+ ALT="\begin{Example}
+Let us take $f$\ and $g$\ to be linear vector fields: $f(x)=Ax$\...
+...A$.\index{commutator\vert see{Lie bracket}}\index{Lie bracket}
+\qed\end{Example}">
+<BR>
+
+<P>
+In general, the <I>Lie bracket</I> of two differentiable vector fields <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ is defined as
+<P><!-- MATH
+ \begin{displaymath}
+[f,g](x):={g}_{x}(x)f(x)-{f}_{x}(x)g(x).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="264" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1422.gif"
+ ALT="$\displaystyle [f,g](x):={g}_{x}(x)f(x)-{f}_{x}(x)g(x).
+$">
+</DIV><P>
+</P>
+Note that the definitions of the Lie bracket for matrices (in linear algebra) and for vector fields (in differential geometry) usually follow
+the opposite sign conventions.
+The geometric meaning of the Lie bracket--which justifies its alternative name ``commutator"--is as follows (see Figure&nbsp;<A HREF="#f-eps2">4.16</A>).
+Suppose that, starting at some point <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, we move
+along the vector field <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ for <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ units of time, then along the vector
+field <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ for <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ units of time, after that along <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img46.gif"
+ ALT="$ -f$">
+ (backward along <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+) for
+<!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ units of time, and finally
+along <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1423.gif"
+ ALT="$ -g$">
+ for <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ units of time. It is straightforward
+(although quite tedious)
+to check that for small <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ the resulting motion is
+approximated, up to terms of higher order in <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, by <!-- MATH
+ $\varepsilon ^2
+[f,g](x_0)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1424.gif"
+ ALT="$ \varepsilon ^2
+[f,g](x_0)$">
+. In particular, we will return to <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ if <!-- MATH
+ $[f,g]\equiv0$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1425.gif"
+ ALT="$ [f,g]\equiv0$">
+ in a neighborhood of <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, in which case we say that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ <I>commute</I>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-eps2"></A><A NAME="7889"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Geometric interpretation of the Lie bracket
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="302" HEIGHT="269" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1426.gif"
+ ALT="\includegraphics{figures/eps2.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We can now write the result of the calculation&nbsp;(<A HREF="#e-phidot-calc">4.62</A>)
+more informatively as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-varphi-dot"></A><!-- MATH
+ \begin{equation}
+\dot \varphi(t)=\langle p^*(t),[f,g](x^*(t))\rangle .
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="207" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1427.gif"
+ ALT="$\displaystyle \dot \varphi(t)=\langle p^*(t),[f,g](x^*(t))\rangle .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.62)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Coupled with the law&nbsp;(<A HREF="#e-u_sign-of-phi">4.61</A>), this equation
+reveals a fundamental connection between Lie brackets and optimal
+control.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1428.gif"
+ ALT="\begin{Exercise}For the multiple-input system~\eqref{e-affine}, compute $\dot \v...
+...i_i$, $i=1,\dots,m$. Express the result in terms of Lie brackets.
+\end{Exercise}">
+<BR>
+
+<P>
+Lie brackets
+can help us shed light on the bang-bang property.
+For a singular optimal control to exist, <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ must identically vanish on some time interval. In view of&nbsp;(<A HREF="#e-varphi">4.60</A>) and&nbsp;(<A HREF="#e-varphi-dot">4.63</A>), this can happen only if <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1276.gif"
+ ALT="$ p^*(t)$">
+ stays orthogonal to both <IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1429.gif"
+ ALT="$ g(x^*(t))$">
+ and <!-- MATH
+ $[f,g](x^*(t))$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1430.gif"
+ ALT="$ [f,g](x^*(t))$">
+. We have seen that in time-optimal problems <!-- MATH
+ $p^*(t)\ne 0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1431.gif"
+ ALT="$ p^*(t)\ne 0$">
+ for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. Thus for planar systems (<IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img539.gif"
+ ALT="$ n=2$">
+) we can rule out singularity if <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ and
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1432.gif"
+ ALT="$ [f,g]$">
+ are linearly independent along the optimal trajectory.
+
+<P>
+If <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1433.gif"
+ ALT="$ n&gt;2$">
+ or <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ and <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1432.gif"
+ ALT="$ [f,g]$">
+ are not linearly independent, then we
+have to look at higher derivatives of <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ and see what it
+takes for them to vanish as well. Rather than differentiating
+<!-- MATH
+ $\dot\varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.gif"
+ ALT="$ \dot \varphi$">
+ again, let us revisit our derivation of
+<!-- MATH
+ $\dot\varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.gif"
+ ALT="$ \dot \varphi$">
+ and try to see a general pattern in it. Consider an
+arbitrary differentiable function <!-- MATH
+ $h:\mathbb{R}^n \to \mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1434.gif"
+ ALT="$ h:\mathbb{R}^n \to \mathbb{R}^n$">
+. Following the
+same calculation steps as in&nbsp;(<A HREF="#e-phidot-calc">4.62</A>) and using the
+definition of the Lie bracket, we easily arrive at
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-derivative-general"></A><!-- MATH
+ \begin{equation}
+\dfrac d{dt}\langle p^*(t),h(x^*(t))\rangle =\langle p^*(t),[f,h](x^*(t))\rangle +\langle p^*(t),[g,h](x^*(t))\rangle u^*.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="498" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1435.gif"
+ ALT="$\displaystyle \dfrac d{dt}\langle p^*(t),h(x^*(t))\rangle =\langle p^*(t),[f,h](x^*(t))\rangle +\langle p^*(t),[g,h](x^*(t))\rangle u^*.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.63)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The formula&nbsp;(<A HREF="#e-varphi-dot">4.63</A>) for <!-- MATH
+ $\dot\varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1418.gif"
+ ALT="$ \dot \varphi$">
+ is recovered from this result as a special case by setting <IMG
+ WIDTH="51" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1436.gif"
+ ALT="$ h:=g$">
+ which gives <!-- MATH
+ $[g,h]=[g,g]=0$
+ -->
+<IMG
+ WIDTH="130" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1437.gif"
+ ALT="$ [g,h]=[g,g]=0$">
+. Now, if we want to compute <!-- MATH
+ $\ddot\varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ \ddot\varphi$">
+, we only need to set <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1439.gif"
+ ALT="$ h:=[f,g]$">
+ to obtain the following expression in terms of iterated Lie brackets of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ddot-varphi"></A><!-- MATH
+ \begin{equation}
+\ddot \varphi(t)=\langle p^*(t),[f,[f,g]](x^*(t))\rangle +\langle p^*(t),[g,[f,g]](x^*(t))\rangle 
+u^*.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="443" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1440.gif"
+ ALT="$\displaystyle \ddot \varphi(t)=\langle p^*(t),[f,[f,g]](x^*(t))\rangle +\langle p^*(t),[g,[f,g]](x^*(t))\rangle u^*.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.64)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+A singular optimal control must make <!-- MATH
+ $\ddot\varphi$
+ -->
+<IMG
+ WIDTH="15" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1438.gif"
+ ALT="$ \ddot\varphi$">
+ vanish. The control
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-potentially"></A><!-- MATH
+ \begin{equation}
+u^*(t)=-\dfrac{\langle p^*(t),[f,[f,g]](x^*(t))\rangle }{\langle p^*(t),[g,[f,g]](x^*(t))\rangle }
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="252" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1441.gif"
+ ALT="$\displaystyle u^*(t)=-\dfrac{\langle p^*(t),[f,[f,g]](x^*(t))\rangle }{\langle p^*(t),[g,[f,g]](x^*(t))\rangle }$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.65)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+can potentially be singular if <!-- MATH
+ $\langle p^*,g(x^*)\rangle =\langle p^*,[f,g](x^*)\rangle \equiv 0$
+ -->
+<IMG
+ WIDTH="241" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1442.gif"
+ ALT="$ \langle p^*,g(x^*)\rangle =\langle p^*,[f,g](x^*)\rangle \equiv 0$">
+. However, it should meet the
+magnitude constraint  <!-- MATH
+ $|u^*(t)|\le 1$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1443.gif"
+ ALT="$ \vert u^*(t)\vert\le 1$">
+.
+If we assume, for example,
+ that the relation
+<P><!-- MATH
+ \begin{displaymath}
+[g,[f,g]](x)=\alpha(x)g(x)+\beta(x)[f,g](x)+\gamma(x)[f,[f,g]](x)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="435" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1444.gif"
+ ALT="$\displaystyle [g,[f,g]](x)=\alpha(x)g(x)+\beta(x)[f,g](x)+\gamma(x)[f,[f,g]](x)
+$">
+</DIV><P>
+</P>
+holds with <!-- MATH
+ $|\gamma(x)|<1$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1445.gif"
+ ALT="$ \vert\gamma(x)\vert&lt;1$">
+ for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, then&nbsp;(<A HREF="#e-potentially">4.66</A>) would not be an admissible control unless <!-- MATH
+ $\langle p^*,[f,[f,g]](x^*)\rangle \equiv 0$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1446.gif"
+ ALT="$ \langle p^*,[f,[f,g]](x^*)\rangle \equiv 0$">
+.
+To investigate the  possibility that this last function does vanish, we need to consider  its derivative given by&nbsp;(<A HREF="#e-derivative-general">4.64</A>) with <!-- MATH
+ $h:=[f,[f,g]]$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1447.gif"
+ ALT="$ h:=[f,[f,g]]$">
+, and so on.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="102" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1448.gif"
+ ALT="\begin{Exercise}Continuing this process, generate a
+set of conditions that rule ...
+...)^k ( g):=[ f,(\operatorname{ad}{
+f})^{k-1} ( g)]$\ for $k\ge 1$. \end{Exercise}">
+<BR>
+
+<P>
+We are now in a position to gain a better insight into our earlier observations by using the language of Lie brackets.
+
+<P>
+L<SMALL>INEAR SYSTEMS (</SMALL>S<SMALL>ECTION&nbsp;</SMALL><A HREF="#SS-BANG-BANG-LINEAR"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>). In the single-input case, we have
+<IMG
+ WIDTH="84" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1449.gif"
+ ALT="$ f(x)=Ax$">
+ and <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1450.gif"
+ ALT="$ g(x)=b$">
+. Calculating the relevant Lie brackets, we obtain <IMG
+ WIDTH="97" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1451.gif"
+ ALT="$ [f,g]=-Ab$">
+, <!-- MATH
+ $[f,[f,g]]=A^2b$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1452.gif"
+ ALT="$ [f,[f,g]]=A^2b$">
+,
+<!-- MATH
+ $[g,[f,g]]=0$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1453.gif"
+ ALT="$ [g,[f,g]]=0$">
+, <!-- MATH
+ $[f,[f,[f,g]]]=-A^3b$
+ -->
+<IMG
+ WIDTH="158" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1454.gif"
+ ALT="$ [f,[f,[f,g]]]=-A^3b$">
+, <!-- MATH
+ $[g,[f,[f,g]]]=0$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1455.gif"
+ ALT="$ [g,[f,[f,g]]]=0$">
+, etc. A crucial consequence of linearity is that iterated Lie brackets containing two <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+'s are 0, which makes the derivatives of the switching function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ independent of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. It is easy to see that <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ cannot vanish if
+the vectors <!-- MATH
+ $b,Ab,\dots,A^{n-1}b$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1456.gif"
+ ALT="$ b,Ab,\dots,A^{n-1}b$">
+ span <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, which is precisely the controllability condition.
+
+<P>
+E<SMALL>XAMPLE&nbsp;</SMALL><A HREF="#X-SINGULAR"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> <SMALL>REVISITED.</SMALL>
+For the system&nbsp;(<A HREF="#e-singular">4.58</A>), we have
+<!-- MATH
+ $f=\Big({\textstyle{x_2^2-1}\atop
+\textstyle{0}}\Big)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1457.gif"
+ ALT="$ f=\Big({\textstyle{x_2^2-1}\atop
+\textstyle{0}}\Big)$">
+, <!-- MATH
+ $g=\Big({\textstyle{0}\atop
+\textstyle{1}}\Big)$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1458.gif"
+ ALT="$ g=\Big({\textstyle{0}\atop
+\textstyle{1}}\Big)$">
+. The first Lie bracket is
+<P><!-- MATH
+ \begin{displaymath}
+[f,g](x)=-\begin{pmatrix}
+    0 & 2x_2\\
+    0 & 0
+  \end{pmatrix}\begin{pmatrix}
+    0\\
+    1
+  \end{pmatrix}=\begin{pmatrix}
+    -2x_2\\
+    0
+  \end{pmatrix}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="313" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1459.gif"
+ ALT="$\displaystyle [f,g](x)=-\begin{pmatrix}
+0 &amp; 2x_2\\
+0 &amp; 0
+\end{pmatrix}\begin{pmatrix}
+0\\
+1
+\end{pmatrix}=\begin{pmatrix}
+-2x_2\\
+0
+\end{pmatrix}.
+$">
+</DIV><P>
+</P>
+On the <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+-axis, where the singular optimal trajectory lives, <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1432.gif"
+ ALT="$ [f,g]$">
+ vanishes and so <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ and <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1432.gif"
+ ALT="$ [f,g]$">
+ do not span <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1460.gif"
+ ALT="$ \mathbb{R}^2$">
+. In fact, <!-- MATH
+ $\langle p^*,g(x^*)\rangle =\langle p^*,[f,g](x^*)\rangle = 0$
+ -->
+<IMG
+ WIDTH="241" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1461.gif"
+ ALT="$ \langle p^*,g(x^*)\rangle =\langle p^*,[f,g](x^*)\rangle = 0$">
+ when <IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1462.gif"
+ ALT="$ p_2^*= 0$">
+. The next Lie bracket that we should then calculate is
+<P><!-- MATH
+ \begin{displaymath}
+[f,[f,g]](x)=\begin{pmatrix}
+    0 & -2\\
+    0 & 0
+  \end{pmatrix}\begin{pmatrix}
+    x_2^2-1\\
+    0
+  \end{pmatrix}-\begin{pmatrix}
+    0 & 2x_2\\
+    0 & 0
+  \end{pmatrix}\begin{pmatrix}
+    -2x_2\\
+    0
+  \end{pmatrix}=\begin{pmatrix}
+    0\\
+    0
+  \end{pmatrix}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="493" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1463.gif"
+ ALT="$\displaystyle [f,[f,g]](x)=\begin{pmatrix}
+0 &amp; -2\\
+0 &amp; 0
+\end{pmatrix}\beg...
+...pmatrix}
+-2x_2\\
+0
+\end{pmatrix}=\begin{pmatrix}
+0\\
+0
+\end{pmatrix}.
+$">
+</DIV><P>
+</P>
+Since <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1464.gif"
+ ALT="$ u\equiv 0$">
+, (<A HREF="#e-ddot-varphi">4.65</A>) gives
+<!-- MATH
+ $\ddot\varphi\equiv 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1465.gif"
+ ALT="$ \ddot\varphi\equiv 0$">
+. All higher-order Lie brackets are obviously 0, hence <!-- MATH
+ $\varphi\equiv 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1466.gif"
+ ALT="$ \varphi\equiv 0$">
+.
+We see that all information about the singularity is indeed encoded in the Lie brackets.
+
+<P>
+It is worth noting that singular controls are not necessarily complex. The optimal control <!-- MATH
+ $u^*\equiv 0$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1467.gif"
+ ALT="$ u^*\equiv 0$">
+ in Example&nbsp;<A HREF="#x-singular">4.1</A> is actually quite simple. For single-input planar systems <!-- MATH
+ $\dot x=f(x)+g(x)u$
+ -->
+<IMG
+ WIDTH="134" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1468.gif"
+ ALT="$ \dot x=f(x)+g(x)u$">
+,
+<!-- MATH
+ $x\in\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1469.gif"
+ ALT="$ x\in\mathbb{R}^2$">
+, <!-- MATH
+ $u\in[-1,1]$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1470.gif"
+ ALT="$ u\in[-1,1]$">
+, with <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ real analytic, it can be shown that all time-optimal trajectories are
+concatenations of a <I>finite</I> number of ``bang" pieces
+(each corresponding to either <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1360.gif"
+ ALT="$ u= 1$">
+ or <IMG
+ WIDTH="59" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1361.gif"
+ ALT="$ u= -1$">
+) and real analytic singular arcs. It is natural to ask whether a similar claim holds for other optimal control problems in <!-- MATH
+ $\mathbb{R}^2$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1460.gif"
+ ALT="$ \mathbb{R}^2$">
+
+or for
+time-optimal control problems in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ \mathbb{R}^3$">
+. We are about to see that these two questions are related and that the answer to both is negative.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1675"
+  HREF="node88.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1669"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1663"
+  HREF="node86.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1671"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1673"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1676"
+  HREF="node88.html">4.4.4 Fuller's problem</A>
+<B> Up:</B> <A NAME="tex2html1670"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1664"
+  HREF="node86.html">4.4.2 Bang-bang principle for</A>
+ &nbsp; <B>  <A NAME="tex2html1672"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1674"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.2 Proof of the maximum principle</TITLE>
+<META NAME="description" CONTENT="4.2 Proof of the maximum principle">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node61.html">
+<LINK REL="next" HREF="node66.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1348"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1342"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1336"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1344"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1346"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1349"
+  HREF="node66.html">4.2.1 From Lagrange to</A>
+<B> Up:</B> <A NAME="tex2html1343"
+  HREF="node61.html">4. The Maximum Principle</A>
+<B> Previous:</B> <A NAME="tex2html1337"
+  HREF="node64.html">4.1.2 Basic variable-endpoint control</A>
+ &nbsp; <B>  <A NAME="tex2html1345"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1347"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00620000000000000000"></A><A NAME="s-mp-proof"></A>
+<BR>
+4.2 Proof of the maximum principle
+</H1>
+
+<P>
+Our proof of the two versions of
+the maximum principle stated in the previous section will be divided
+into the following steps.
+
+<P>
+<DL>
+<DT><STRONG>Step 1: From Lagrange to Mayer form</STRONG></DT>
+<DD><P>
+As the first step, we will pass from the given Lagrange problem to an equivalent
+problem in the Mayer form by appending an additional state (this technique
+was already discussed
+in Section&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A>).
+
+<P>
+</DD>
+<DT><STRONG>Step 2: Temporal control perturbation</STRONG></DT>
+<DD><P>
+In the next step, we will apply a small perturbation to the length of the time
+interval over which the optimal control is acting, and will characterize the
+resulting perturbation of the terminal state.
+
+<P>
+</DD>
+<DT><STRONG>Step 3: Spatial control perturbation</STRONG></DT>
+<DD><P>
+In this step, we will replace the optimal control on a small time interval
+ by an arbitrary constant control, and will study how the resulting state
+ trajectory deviates from the optimal one at the end of this time interval.
+ (This perturbation will be reminiscent of the one
+ we used in the proof of the Weierstrass necessary condition in Section&nbsp;<A HREF="node48.html#ss-Efcn">3.1.2</A>.)
+
+<P>
+</DD>
+<DT><STRONG>Step 4: Variational equation</STRONG></DT>
+<DD>We will then derive a linear differential
+equation which propagates, modulo terms of higher order, the effect of
+spatial control perturbations up to
+the terminal time. This is the variational equation (we already encountered
+this terminology in Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>).
+
+<P>
+</DD>
+<DT><STRONG>Step 5: Terminal cone</STRONG></DT>
+<DD>Combining the effects of temporal and spatial
+control perturbations, we will construct a
+convex cone, with vertex at the terminal state of the optimal trajectory,
+which describes infinitesimal directions of all
+possible
+perturbations of the terminal state.
+
+<P>
+</DD>
+<DT><STRONG>Step 6: Key topological lemma</STRONG></DT>
+<DD>Next, we will use optimality to show
+that the terminal cone does not contain in its interior
+the direction of decreasing cost.
+
+<P>
+</DD>
+<DT><STRONG>Step 7: Separating hyperplane</STRONG></DT>
+<DD>We will invoke the separating hyperplane
+theorem to establish the existence of a hyperplane that passes through the terminal
+state and separates the terminal cone from the direction
+of decreasing cost. We will define the adjoint vector at the terminal
+time as the normal to this separating hyperplane.
+
+<P>
+</DD>
+<DT><STRONG>Step 8: Adjoint equation</STRONG></DT>
+<DD>We will then
+introduce the adjoint equation which propagates
+the adjoint vector up to the terminal time; it will
+match the second canonical equation, as required by the maximum principle.
+
+<P>
+</DD>
+<DT><STRONG>Step 9: Properties of the Hamiltonian</STRONG></DT>
+<DD>We will verify that the Hamiltonian
+maximization condition holds and that the Hamiltonian is identically 0
+along the optimal trajectory. This will conclude the proof of the maximum
+principle for the
+Basic Fixed-Endpoint Control Problem.
+
+<P>
+</DD>
+<DT><STRONG>Step 10: Transversality condition</STRONG></DT>
+<DD>Finally, we will prove
+the maximum principle for the Basic Variable-Endpoint Control Problem by refining
+the separation property from steps&nbsp;6 and&nbsp;7 and arriving at the transversality
+condition.
+
+<P>
+</DD>
+</DL>
+
+<P>
+Each of the subsections that follow corresponds to one step in the proof.
+Until we reach step&nbsp;10 in Section&nbsp;<A HREF="node77.html#ss-transv">4.2.10</A>,
+we assume that we are dealing
+with the Basic Fixed-Endpoint Control Problem, i.e.,
+<!-- MATH
+ $S=[t_0,\infty)\times\{x_1\}$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ S=[t_0,\infty)\times\{x_1\} $">
+. The next exercise is meant to be worked on in parallel with following the proof.
+
+<P>
+<BR>
+<A NAME="z-illustr-steps"></A><IMG
+ WIDTH="555" HEIGHT="173" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1022.gif"
+ ALT="\begin{Exercise}
+Consider the double integrator $\dot x_1=x_2$, $\dot x_2=u$\ wi...
+...plicit numerical formulas, and draw figures wherever appropriate.
+\end{Exercise}">
+<BR>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1350"
+  HREF="node66.html">4.2.1 From Lagrange to Mayer form</A>
+<LI><A NAME="tex2html1351"
+  HREF="node67.html">4.2.2 Temporal control perturbation</A>
+<LI><A NAME="tex2html1352"
+  HREF="node68.html">4.2.3 Spatial control perturbation</A>
+<LI><A NAME="tex2html1353"
+  HREF="node69.html">4.2.4 Variational equation</A>
+<LI><A NAME="tex2html1354"
+  HREF="node70.html">4.2.5 Terminal cone</A>
+<LI><A NAME="tex2html1355"
+  HREF="node71.html">4.2.6 Key topological lemma</A>
+<LI><A NAME="tex2html1356"
+  HREF="node72.html">4.2.7 Separating hyperplane</A>
+<LI><A NAME="tex2html1357"
+  HREF="node73.html">4.2.8 Adjoint equation</A>
+<LI><A NAME="tex2html1358"
+  HREF="node74.html">4.2.9 Properties of the Hamiltonian</A>
+<UL>
+<LI><A NAME="tex2html1359"
+  HREF="node75.html">4.2.9.1 Statement&nbsp;2: Hamiltonian maximization condition</A>
+<LI><A NAME="tex2html1360"
+  HREF="node76.html">4.2.9.2 Statement&nbsp;3: <!-- MATH
+ $\left.H\right|_{*}\equiv 0$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.gif"
+ ALT="$ \left .H\right \vert _{*}\equiv 0$">
+</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1361"
+  HREF="node77.html">4.2.10 Transversality
+condition</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1348"
+  HREF="node66.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1342"
+  HREF="node61.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1336"
+  HREF="node64.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1344"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1346"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1349"
+  HREF="node66.html">4.2.1 From Lagrange to</A>
+<B> Up:</B> <A NAME="tex2html1343"
+  HREF="node61.html">4. The Maximum Principle</A>
+<B> Previous:</B> <A NAME="tex2html1337"
+  HREF="node64.html">4.1.2 Basic variable-endpoint control</A>
+ &nbsp; <B>  <A NAME="tex2html1345"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1347"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

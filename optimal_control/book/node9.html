@@ -1,0 +1,635 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>1.2.1.3 Feasible directions, global minima, and convex
+problems</TITLE>
+<META NAME="description" CONTENT="1.2.1.3 Feasible directions, global minima, and convex
+problems">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html492"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html486"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html482"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html488"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html490"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html493"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Up:</B> <A NAME="tex2html487"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html483"
+  HREF="node8.html">1.2.1.2 Second-order conditions for</A>
+ &nbsp; <B>  <A NAME="tex2html489"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html491"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00321300000000000000">
+1.2.1.3 Feasible directions, global minima, and convex
+problems</A>
+</H3>
+
+<P>
+The key fact that we used in the previous developments
+ was that for every <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+,
+points of the form <!-- MATH
+ $x^*+\alpha d$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$ x^*+\alpha d$">
+ for <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ sufficiently
+close to 0 belong to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. This is no longer the case if <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ has
+a boundary
+(e.g., <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a closed ball in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+) and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a point on this boundary.
+Such situations do not fit into the unconstrained optimization scenario as we defined it at the beginning of Section&nbsp;<A HREF="node6.html#ss-unconstr">1.2.1</A>; however, for simple enough sets <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ and with some extra care, a similar analysis is possible. Let us call a vector <!-- MATH
+ $d \in \mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+ a <I>feasible direction</I><A NAME="448"></A> (at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+) if
+<!-- MATH
+ $x^*+\alpha d\in D$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.gif"
+ ALT="$ x^*+\alpha d\in D$">
+
+for small enough <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img101.gif"
+ ALT="$ \alpha&gt; 0$">
+ (see Figure&nbsp;<A HREF="#f-feasible">1.1</A>).
+If not all directions
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ are feasible, then the condition <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+
+is no longer necessary for optimality. We can still define the
+function&nbsp;(<A HREF="node7.html#e-g-ray">1.4</A>) for every feasible direction <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+, but the proof
+of&nbsp;(<A HREF="node7.html#e-g_ge0">1.7</A>) is no longer valid
+because <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ is now nonnegative. We leave it to the reader
+to modify that argument and
+show that if <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a local
+minimum, then <!-- MATH
+ $\nabla f(x^*)\cdot d\ge 0$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$ \nabla f(x^*)\cdot d\ge 0$">
+
+for
+every feasible direction <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+.
+As for the second-order necessary condition, the
+inequality&nbsp;(<A HREF="node8.html#e-2ndorder-g">1.14</A>) is still
+true if <IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$ g'(0)=0$">
+,
+which together with&nbsp;(<A HREF="node7.html#e-gtofprime">1.10</A>) and&nbsp;(<A HREF="node8.html#e-g2nd-hessian">1.15</A>)
+implies that we must have <!-- MATH
+ $d^T\nabla^2 f(x^*)d\ge 0$
+ -->
+<IMG
+ WIDTH="128" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img104.gif"
+ ALT="$ d^T\nabla^2 f(x^*)d\ge 0$">
+ for all feasible directions
+satisfying <!-- MATH
+ $\nabla f(x^*)\cdot d=0$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$ \nabla f(x^*)\cdot d=0$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-feasible"></A><A NAME="7679"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Feasible directions
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="342" HEIGHT="178" ALIGN="BOTTOM" BORDER="0"
+ SRC="img106.gif"
+ ALT="\includegraphics{figures/feasible.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+If the set <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is <I>convex</I>,<A NAME="470"></A> then the line segment connecting <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ to an
+arbitrary
+other point <IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$ x\in D$">
+ lies entirely in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. All points on this line segment
+take the form <!-- MATH
+ $x^*+\alpha d$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img100.gif"
+ ALT="$ x^*+\alpha d$">
+, <!-- MATH
+ $\alpha\in[0,\bar\alpha]$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img107.gif"
+ ALT="$ \alpha\in[0,\bar\alpha]$">
+ for
+some <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+ and <!-- MATH
+ $\bar\alpha>0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img108.gif"
+ ALT="$ \bar\alpha&gt;0$">
+.
+This means that
+the feasible direction approach is particularly
+suitable for the case of a convex <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. But if <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is not convex,
+then the first-order and second-order necessary
+conditions in terms of feasible directions are conservative. The next
+exercise touches on the issue of sufficiency.
+
+<P>
+<BR>
+<A NAME="z-sufficiency"></A><IMG
+ WIDTH="555" HEIGHT="83" ALIGN="BOTTOM" BORDER="0"
+ SRC="img109.gif"
+ ALT="\begin{Exercise}
+Suppose that $f$\ is a $\mathcal C^2$\ function and $x^*$\ is a...
+...cessarily a local minimum of $f$? Prove
+or give a counterexample.
+\end{Exercise}">
+<BR>
+
+<P>
+When we are not dealing with the completely unconstrained case
+in which <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is the entire <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+,
+we think of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ as the constraint set over which <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is being minimized.
+Particularly important in optimization theory is the case when equality constraints
+are present, so that <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a lower-dimensional surface in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ (see
+Figure&nbsp;<A HREF="#f-surface">1.2</A>). In such situations, the above method which utilizes
+ feasible
+directions represented by
+ straight lines is no longer suitable: there might not be
+ any feasible directions, and then
+the corresponding necessary conditions are vacuous. We will describe a refined
+approach to constrained optimization in Section&nbsp;<A HREF="node10.html#ss-constrained">1.2.2</A>; it
+essentially replaces straight lines by arbitrary curves.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-surface"></A><A NAME="7681"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A surface<A NAME="482"></A>
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="290" HEIGHT="171" ALIGN="BOTTOM" BORDER="0"
+ SRC="img110.gif"
+ ALT="\includegraphics[height=1.5in]{figures/surface.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+So far we have only discussed local minima.
+In practice, however, one is typically interested in finding a global minimum
+over a given domain (or constraint set) <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+, if such a global minimum exists.
+We now briefly discuss how conditions for local optimality can be
+useful for solving global optimization problems as well, provided
+that these global problems have certain nice features.
+
+<P>
+The following basic existence result is known as the <A NAME="p-WT"></A><B>Weierstrass Theorem</B>:<A NAME="487"></A> <I>If <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is a continuous
+function and <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a compact set, then there exists a global
+minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.</I> The reader will recall that for subsets
+of <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, compactness can be defined in three equivalent ways:<A NAME="489"></A>
+
+<P>
+<BR>
+
+<A NAME="p-3compdef"></A><OL>
+<LI><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is compact if it is closed and bounded.
+</LI>
+<LI><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is compact if every open cover of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ has a finite subcover.
+</LI>
+<LI><IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is compact if every sequence in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+
+  has a subsequence converging to some point
+  in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ (sequential compactness).
+</LI>
+</OL>
+<BR>
+We will revisit compactness and the
+Weierstrass Theorem in the infinite-dimensional optimization setting.
+
+<P>
+The necessary conditions for local optimality that we discussed earlier
+suggest the following procedure for finding a global minimum.<A NAME="496"></A><A NAME="497"></A>
+First, find all interior points of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ satisfying <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+
+  (the stationary points).
+ If <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is not differentiable everywhere, include also points
+  where <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img111.gif"
+ ALT="$ \nabla f$">
+ does not exist (these points
+  together with the stationary points comprise the
+  <I>critical points</I>).<A NAME="499"></A>
+Next, find all boundary points satisfying <!-- MATH
+ $\nabla f(x^*)\cdot
+  d\ge 0$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$ \nabla f(x^*)\cdot d\ge 0$">
+ for all feasible <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+.
+Finally, compare values at all these candidate points and choose the smallest
+  one.
+If one can afford the computation of second derivatives, then
+the second-order conditions can be used
+in combination with the first-order ones.
+
+<P>
+If <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a convex set and <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is a convex function,<A NAME="500"></A> then the minimization
+problem is particularly tractable.
+First, a local minimum is automatically a global one.
+Second, the first-order necessary condition (for <!-- MATH
+ $f\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$ f\in\mathcal C^1$">
+)
+is also a sufficient condition. Thus if <!-- MATH
+ $\nabla f(x^*)\cdot d\ge 0$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img102.gif"
+ ALT="$ \nabla f(x^*)\cdot d\ge 0$">
+ for all
+   feasible directions <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+, or in particular if <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+
+   is an interior point of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ and <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+,
+   then <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a global minimum.
+These  properties are consequences of the fact (illustrated in
+Figure&nbsp;<A HREF="#f-convex">1.3</A>) that
+the graph of a
+convex function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ lies above that of the linear approximation
+<!-- MATH
+ $x\mapsto f(x^*)+\nabla f(x^*)\cdot (x-x^*)$
+ -->
+<IMG
+ WIDTH="234" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img112.gif"
+ ALT="$ x\mapsto f(x^*)+\nabla f(x^*)\cdot (x-x^*)$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-convex"></A><A NAME="7683"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A convex function
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="252" HEIGHT="197" ALIGN="BOTTOM" BORDER="0"
+ SRC="img113.gif"
+ ALT="\includegraphics{figures/convex.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Efficient numerical algorithms--such as the well-known steepest
+descent (or gradient) method--exist for converging to points
+satisfying <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+ (stationary points). For
+convex problems, these algorithms yield convergence to global minima.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html492"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html486"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html482"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html488"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html490"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html493"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Up:</B> <A NAME="tex2html487"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html483"
+  HREF="node8.html">1.2.1.2 Second-order conditions for</A>
+ &nbsp; <B>  <A NAME="tex2html489"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html491"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

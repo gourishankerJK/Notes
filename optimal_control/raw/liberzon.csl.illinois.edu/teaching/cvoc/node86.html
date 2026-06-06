@@ -1,0 +1,804 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.4.2 Bang-bang principle for linear
+systems</TITLE>
+<META NAME="description" CONTENT="4.4.2 Bang-bang principle for linear
+systems">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node87.html">
+<LINK REL="previous" HREF="node85.html">
+<LINK REL="up" HREF="node84.html">
+<LINK REL="next" HREF="node87.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1661"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1655"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1649"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1657"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1659"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1662"
+  HREF="node87.html">4.4.3 Nonlinear systems, singular</A>
+<B> Up:</B> <A NAME="tex2html1656"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1650"
+  HREF="node85.html">4.4.1 Example: double integrator</A>
+ &nbsp; <B>  <A NAME="tex2html1658"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1660"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00642000000000000000"></A><A NAME="ss-bang-bang-linear"></A>
+<BR>
+4.4.2 Bang-bang principle for linear
+systems
+</H2>
+
+<P>
+Consider now a system with general linear time-invariant dynamics
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-linear-control"></A><!-- MATH
+ \begin{equation}
+\dot x=Ax+Bu
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="105" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1366.gif"
+ ALT="$\displaystyle \dot x=Ax+Bu$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.51)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+ and <!-- MATH
+ $u\in U\subset \mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img797.gif"
+ ALT="$ u\in U\subset \mathbb{R}^m$">
+. We want to investigate
+under what conditions time-optimal controls for this system have a
+bang-bang property along the lines of what we saw in the previous
+example. Of course, we need to specify what the control set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+
+is and exactly what we mean by a bang-bang property for controls
+taking values in this <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. As a natural generalization of the
+interval <!-- MATH
+ $[-1,1]\subset \mathbb{R}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1367.gif"
+ ALT="$ [-1,1]\subset \mathbb{R}$">
+ to higher dimensions, we take <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ to
+be an <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ m$">
+-dimensional hypercube:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-hypercube"></A><!-- MATH
+ \begin{equation}
+U=\{u\in\mathbb{R}^m: u_i\in[-1,1],\, i=1,\dots,m\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="322" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1368.gif"
+ ALT="$\displaystyle U=\{u\in\mathbb{R}^m: u_i\in[-1,1],\, i=1,\dots,m\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.52)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is a reasonable control set representing independent control
+actuators. We take the magnitude constraints on the different
+components of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ to be the same just for simplicity; the
+extension to different constraints is immediate.
+
+<P>
+Suppose that the control objective is to steer <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ from a given
+initial state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ to a given final state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ in minimal time.
+To be sure that this problem is well posed, we assume that there
+exists some control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ that achieves the transfer from <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ to
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ (in some time). As we will see in
+Section&nbsp;<A HREF="node89.html#s-existence-optcontr">4.5</A> (Theorem&nbsp;<A HREF="node89.html#t-opt-exist">4.3</A>),
+this guarantees that a time-optimal control <!-- MATH
+ $u^*:[t_0,t^*]\to U$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1369.gif"
+ ALT="$ u^*:[t_0,t^*]\to U$">
+
+exists. We now
+use the maximum principle to characterize it. The Hamiltonian is <!-- MATH
+ $H(x,u,p,p_0)=\langle 
+p,Ax+Bu\rangle +p_0$
+ -->
+<IMG
+ WIDTH="260" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1370.gif"
+ ALT="$ H(x,u,p,p_0)=\langle
+p,Ax+Bu\rangle +p_0$">
+. The Hamiltonian maximization condition implies
+that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-toberecovered"></A><!-- MATH
+ \begin{equation}
+\langle p^*(t),Bu^*(t)\rangle=\max_{u\in U}\langle
+p^*(t),Bu(t)\rangle
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="269" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1371.gif"
+ ALT="$\displaystyle \langle p^*(t),Bu^*(t)\rangle=\max_{u\in U}\langle p^*(t),Bu(t)\rangle$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.53)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <!-- MATH
+ $t\in[t_0,t^*]$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1372.gif"
+ ALT="$ t\in[t_0,t^*]$">
+.
+We can rewrite this formula in terms of the input components as
+<P><!-- MATH
+ \begin{displaymath}
+\sum_{i=1}^m\langle p^*(t),b_i\rangle u_i^*(t)=\max_{u\in U}\sum_{i=1}^m\langle p^*(t),b_i\rangle u_i
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="306" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1373.gif"
+ ALT="$\displaystyle \sum_{i=1}^m\langle p^*(t),b_i\rangle u_i^*(t)=\max_{u\in U}\sum_{i=1}^m\langle p^*(t),b_i\rangle u_i
+$">
+</DIV><P>
+</P>
+where <!-- MATH
+ $b_1,\dots,b_m$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1374.gif"
+ ALT="$ b_1,\dots,b_m$">
+ are the columns of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img272.gif"
+ ALT="$ B$">
+. Since the components
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1375.gif"
+ ALT="$ u_i^*(t)$">
+ of the optimal control can be chosen independently, it
+is clear that each term in the summation must be maximized:
+<P><!-- MATH
+ \begin{displaymath}
+\langle p^*(t),b_i\rangle u_i^*(t)=\max_{|u_i|\le 1}\langle
+p^*(t),b_i\rangle u_i,\qquad i=1,\dots,m.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="397" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1376.gif"
+ ALT="$\displaystyle \langle p^*(t),b_i\rangle u_i^*(t)=\max_{\vert u_i\vert\le 1}\langle
+p^*(t),b_i\rangle u_i,\qquad i=1,\dots,m.
+$">
+</DIV><P>
+</P>
+It has now become obvious that we must have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-u_-3cases"></A><!-- MATH
+ \begin{equation}
+u_i^*(t)=\text{sgn}(\langle p^*(t),b_i\rangle)=\begin{cases} 1
+\quad&\text{ if }\ \langle p^*(t),b_i\rangle>0\\
+-1\quad&\text{ if }\ \langle p^*(t),b_i\rangle<0\\
+?\quad&\text{ if }\ \langle p^*(t),b_i\rangle=0
+\end{cases}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1377.gif"
+ ALT="$\displaystyle u_i^*(t)=$">sgn<IMG
+ WIDTH="315" HEIGHT="94" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1378.gif"
+ ALT="$\displaystyle (\langle p^*(t),b_i\rangle)=\begin{cases}1 \quad&amp;\text{ if }\ \la...
+...*(t),b_i\rangle&lt;0\\ ?\quad&amp;\text{ if }\ \langle p^*(t),b_i\rangle=0 \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.54)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for each <IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+. Observe that&nbsp;(<A HREF="#e-u_-3cases">4.54</A>)
+resembles&nbsp;(<A HREF="node85.html#e-Hmin-softland">4.50</A>). Similarly to how we proceeded
+from that formula, we now need to investigate the possibility that
+<!-- MATH
+ $\langle p^*,b_i\rangle\equiv 0$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1379.gif"
+ ALT="$ \langle p^*,b_i\rangle\equiv 0$">
+ on some interval of time for some
+<IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+, as this would prevent us from determining <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1380.gif"
+ ALT="$ u_i^*$">
+ on that
+interval.
+
+<P>
+The adjoint equation is <!-- MATH
+ $\dot p^*=-A^Tp^*$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1381.gif"
+ ALT="$ \dot p^*=-A^Tp^*$">
+, which gives
+<!-- MATH
+ $p^*(t)=e^{A^T(t^*-t)}p^*(t^*)$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1382.gif"
+ ALT="$ p^*(t)=e^{A^T(t^*-t)}p^*(t^*)$">
+. From this we obtain <!-- MATH
+ $\langle
+p^*(t),b_i\rangle=\langle p^*(t^*),e^{A(t^*-t)}b_i\rangle$
+ -->
+<IMG
+ WIDTH="232" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1383.gif"
+ ALT="$ \langle
+p^*(t),b_i\rangle=\langle p^*(t^*),e^{A(t^*-t)}b_i\rangle$">
+. This
+is a real analytic function of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+; hence, if it vanishes on some
+time interval, then it vanishes for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, together with all its
+derivatives. Calculating these derivatives at <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1050.gif"
+ ALT="$ t=t^*$">
+, we arrive
+at the equalities
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-vanish-bad"></A><!-- MATH
+ \begin{equation}
+\langle p^*(t^*),b_i\rangle=\langle p^*(t^*),Ab_i\rangle=\dots=
+\langle p^*(t^*),A^{n-1}b_i\rangle=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="416" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1384.gif"
+ ALT="$\displaystyle \langle p^*(t^*),b_i\rangle=\langle p^*(t^*),Ab_i\rangle=\dots= \langle p^*(t^*),A^{n-1}b_i\rangle=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.55)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In other words, <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.gif"
+ ALT="$ p^*(t^*)$">
+ is orthogonal to the vectors <IMG
+ WIDTH="16" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1385.gif"
+ ALT="$ b_i$">
+,
+<IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1386.gif"
+ ALT="$ Ab_i$">
+, <IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1387.gif"
+ ALT="$ \dots$">
+, <!-- MATH
+ $A^{n-1}b_i$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1388.gif"
+ ALT="$ A^{n-1}b_i$">
+. As we know, <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.gif"
+ ALT="$ p^*(t^*)$">
+ itself
+cannot be 0 in a time-optimal control problem (see
+page&nbsp;<A HREF="node78.html#p-pnonzero"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>). Therefore, to rule
+out&nbsp;(<A HREF="#e-vanish-bad">4.55</A>) it is enough to assume that <IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1389.gif"
+ ALT="$ (A,b_i)$">
+ is
+a controllable pair.<A NAME="4720"></A> We need this to be true for each <IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+; i.e.,
+the system should be controllable with respect to each individual input
+channel. Such linear control systems are called <I>normal</I>.<A NAME="4722"></A><A NAME="4723"></A>
+
+<P>
+Let us now collect the properties of the optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+
+that we are able to derive under the above normality assumption.
+None of the functions <!-- MATH
+ $\langle p^*(\cdot),b_i\rangle$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1390.gif"
+ ALT="$ \langle p^*(\cdot),b_i\rangle$">
+ equal 0 on any
+time interval; being real analytic functions, they only have
+finitely many zeros on the interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1168.gif"
+ ALT="$ [t_0,t^*]$">
+. Using the
+formula&nbsp;(<A HREF="#e-u_-3cases">4.54</A>), we see that each function <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1380.gif"
+ ALT="$ u_i^*$">
+
+only takes the values <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1350.gif"
+ ALT="$ \pm1$">
+ and switches between these values
+finitely many times. Away from these switching times, <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1380.gif"
+ ALT="$ u_i^*$">
+ is
+uniquely determined by&nbsp;(<A HREF="#e-u_-3cases">4.54</A>). We conclude that the
+overall optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ takes values only in the set of
+<I>vertices</I> of the hypercube <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+, has finitely many
+discontinuities (switches), and is unique everywhere else.
+Generalizing the earlier notion, we say that controls taking
+values in the set of vertices of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ are <I>bang-bang</I> (or
+have the bang-bang property);<A NAME="4729"></A><A NAME="4730"></A> the result that we have just
+obtained is a version of the <B>bang-bang principle</B><A NAME="4732"></A> for
+linear systems.
+
+<P>
+Before closing this discussion, it is instructive to see how the
+above bang-bang property can be established in a self-contained
+way, without relying on the maximum principle. More precisely, the
+argument outlined next essentially rederives the maximum principle from scratch for
+the particular problem at hand (in the spirit of
+Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A>). Solutions of the
+system&nbsp;(<A HREF="#e-linear-control">4.51</A>) take the form
+<P><!-- MATH
+ \begin{displaymath}
+x(t)=e^{A(t-t_0)}x_0+\int_{t_0}^te^{A (t-s) }Bu( s )d s .
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="297" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1391.gif"
+ ALT="$\displaystyle x(t)=e^{A(t-t_0)}x_0+\int_{t_0}^te^{A (t-s) }Bu( s )d s .
+$">
+</DIV><P>
+</P>
+For <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1392.gif"
+ ALT="$ t\ge t_0$">
+, let us introduce the set of points reachable from
+<!-- MATH
+ $x(t_0)=x_0$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1393.gif"
+ ALT="$ x(t_0)=x_0$">
+ at time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+:<A NAME="p-reach-set"></A><A NAME="4740"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-R_t-def"></A><!-- MATH
+ \begin{equation}
+R^t(x_0):=\left\{e^{A(t-t_0)}x_0+\int_{t_0}^te^{A (t-s)} Bu( s )d
+s:u( s )\in U,\, t_0\le s \le t\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="516" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1394.gif"
+ ALT="$\displaystyle R^t(x_0):=\left\{e^{A(t-t_0)}x_0+\int_{t_0}^te^{A (t-s)} Bu( s )d s:u( s )\in U,\, t_0\le s \le t\right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.56)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We know that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-x_1-voc"></A><!-- MATH
+ \begin{equation}
+x_1=e^{A(t^*-t_0)}x_0+\int_{t_0}^{t^*}e^{A (t^*-s) }Bu^*( s )d
+s\in R^{t^*}(x_0).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="391" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1395.gif"
+ ALT="$\displaystyle x_1=e^{A(t^*-t_0)}x_0+\int_{t_0}^{t^*}e^{A (t^*-s) }Bu^*( s )d s\in R^{t^*}(x_0).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.57)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In fact, the optimal time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ is the smallest time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ such that
+<!-- MATH
+ $x_1\in R^t(x_0)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1396.gif"
+ ALT="$ x_1\in R^t(x_0)$">
+. It follows that <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ must belong to the
+<I>boundary</I> of the reachable set <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+; indeed, if it were an interior
+point of <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+ then we could reach it sooner. We will see
+a little later (in
+Section&nbsp;<A HREF="node89.html#s-existence-optcontr">4.5</A>) that the
+ set <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+ is compact and convex. Along the lines of
+ Section&nbsp;<A HREF="node72.html#ss-hyperplane">4.2.7</A>,
+ there exists a hyperplane that
+passes through <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ and contains <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+ on one side; such
+a hyperplane is said to <I>support</I> <!-- MATH
+ $R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="61" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1397.gif"
+ ALT="$ R^{t^*}(x_0)$">
+ at
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+.<A NAME="4766"></A><A NAME="4767"></A> Denoting a suitably chosen normal vector to this hyperplane
+by <IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1310.gif"
+ ALT="$ p^*(t^*)$">
+, we have <!-- MATH
+ $\langle p^*(t^*),x_1\rangle \ge \langle p^*(t^*),x\rangle$
+ -->
+<IMG
+ WIDTH="184" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1398.gif"
+ ALT="$ \langle p^*(t^*),x_1\rangle \ge \langle p^*(t^*),x\rangle $">
+
+for all <!-- MATH
+ $x\in R^{t^*}(x_0)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1399.gif"
+ ALT="$ x\in R^{t^*}(x_0)$">
+. Using&nbsp;(<A HREF="#e-R_t-def">4.56</A>)
+and&nbsp;(<A HREF="#e-x_1-voc">4.57</A>), we easily obtain
+<P><!-- MATH
+ \begin{displaymath}
+\int_{t_0}^{t^*} \langle p^*(t^*),e^{A(t^*- s) }Bu^*( s ) \rangle d
+s\ge\int_{t_0}^{t^*} \langle p^*(t^*),e^{A(t^*- s) }Bu( s )
+\rangle d s \qquad \forall\,u:[t_0,t^*]\to U
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="623" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1400.gif"
+ ALT="$\displaystyle \int_{t_0}^{t^*} \langle p^*(t^*),e^{A(t^*- s) }Bu^*( s ) \rangle...
+...le p^*(t^*),e^{A(t^*- s) }Bu( s )
+\rangle d s \qquad \forall\,u:[t_0,t^*]\to U
+$">
+</DIV><P>
+</P>
+which, in view of the formula <!-- MATH
+ $e^{A^T(t^*-s)}p^*(t^*)=p^*(s)$
+ -->
+<IMG
+ WIDTH="176" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1401.gif"
+ ALT="$ e^{A^T(t^*-s)}p^*(t^*)=p^*(s)$">
+, is
+equivalent to
+<P><!-- MATH
+ \begin{displaymath}
+\int_{t_0}^{t^*} \langle p^*(s),Bu^*( s ) \rangle d
+s\ge\int_{t_0}^{t^*} \langle p^*(s),Bu( s ) \rangle d s \qquad \forall\,u:[t_0,t^*]\to U.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="500" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1402.gif"
+ ALT="$\displaystyle \int_{t_0}^{t^*} \langle p^*(s),Bu^*( s ) \rangle d
+s\ge\int_{t_0}^{t^*} \langle p^*(s),Bu( s ) \rangle d s \qquad \forall\,u:[t_0,t^*]\to U.
+$">
+</DIV><P>
+</P>
+From this it is not difficult to recover the fact
+that&nbsp;(<A HREF="#e-toberecovered">4.53</A>) must hold for (almost) all
+<!-- MATH
+ $t\in[t_0,t^*]$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1372.gif"
+ ALT="$ t\in[t_0,t^*]$">
+, and we can proceed from there as
+before.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="82" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1403.gif"
+ ALT="\begin{Exercise}Consider the same time-optimal control problem as
+above, but tak...
+...o not assume normality). What can you say
+about optimal controls? \end{Exercise}">
+<BR>
+
+<P>
+The  assumption of normality, which was needed to prove the
+bang-bang property of time-optimal controls for <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ a hypercube,
+is quite strong.
+ A different, weaker
+version of the bang-bang principle could be formulated as follows.
+Rather than wishing for <I>every</I> time-optimal control to be
+bang-bang, we could ask whether every state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img856.gif"
+ ALT="$ x_1$">
+ reachable from
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ by some control is also reachable from <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ <I>in the
+same time</I> by a bang-bang control; in other words, whether
+reachable sets for bang-bang controls coincide with reachable sets
+for all controls. This would imply that, even though not all
+time-optimal controls are necessarily bang-bang, we can always
+select one that is bang-bang. It turns out that this modified
+bang-bang principle<A NAME="4788"></A> holds for every linear control system (no
+controllability assumption is necessary) and every control set
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ that is a convex polyhedron. The proof requires a refinement
+of the above argument and some additional
+steps; see&nbsp;[<A
+ HREF="node135.html#sussmann-survey-83">Sus83</A>, Section&nbsp;8.1]
+for details.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1661"
+  HREF="node87.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1655"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1649"
+  HREF="node85.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1657"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1659"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1662"
+  HREF="node87.html">4.4.3 Nonlinear systems, singular</A>
+<B> Up:</B> <A NAME="tex2html1656"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1650"
+  HREF="node85.html">4.4.1 Example: double integrator</A>
+ &nbsp; <B>  <A NAME="tex2html1658"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1660"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

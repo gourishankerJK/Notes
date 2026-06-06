@@ -1,0 +1,1175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>3.1.1 Weierstrass-Erdmann corner conditions</TITLE>
+<META NAME="description" CONTENT="3.1.1 Weierstrass-Erdmann corner conditions">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node48.html">
+<LINK REL="previous" HREF="node46.html">
+<LINK REL="up" HREF="node46.html">
+<LINK REL="next" HREF="node48.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1067"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1061"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1055"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1063"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1065"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1068"
+  HREF="node48.html">3.1.2 Weierstrass excess function</A>
+<B> Up:</B> <A NAME="tex2html1062"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+<B> Previous:</B> <A NAME="tex2html1056"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+ &nbsp; <B>  <A NAME="tex2html1064"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1066"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00511000000000000000"></A><A NAME="ss-WE"></A>
+<BR>
+3.1.1 Weierstrass-Erdmann corner conditions
+</H2>
+
+<P>
+Recall from Section&nbsp;<A HREF="node26.html#s-weak-strong">2.2.1</A> that a piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+
+on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+
+ is <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ everywhere except possibly at a finite number of points where it is
+ continuous but its derivative <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ is discontinuous. Such points
+ of discontinuity of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ are known
+ as <I>corner points</I>.<A NAME="2557"></A> A corner point <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img662.gif"
+ ALT="$ c\in[a,b]$">
+ is characterized by the property
+ that the left-hand derivative <!-- MATH
+ $y'(c^-):=\lim_{x\nearrow c}y'(x)$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img663.gif"
+ ALT="$ y'(c^-):=\lim_{x\nearrow c}y'(x)$">
+ and the
+right-hand derivative <!-- MATH
+ $y'(c^+):=\lim_{x\searrow c}y'(x)$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img664.gif"
+ ALT="$ y'(c^+):=\lim_{x\searrow c}y'(x)$">
+ both exist but have
+different values. For example, if a hanging chain (catenary) is suspended
+ too close to the ground, then it will not look as in Figure&nbsp;<A HREF="node23.html#f-catenary">2.3</A>
+on page&nbsp;<A HREF="node23.html#f-catenary"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A> but will instead touch the ground and have
+two corner points; see Figure&nbsp;<A HREF="#f-broken">3.1</A>. Below is another example
+in which a corner point arises.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-broken"></A><A NAME="7764"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">An extremal with two corners for the catenary problem<A NAME="2576"></A>
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="311" HEIGHT="166" ALIGN="BOTTOM" BORDER="0"
+ SRC="img665.gif"
+ ALT="\includegraphics{figures/broken.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<BR>
+<A NAME="x-broken-gelfand"></A><IMG
+ WIDTH="570" HEIGHT="208" ALIGN="BOTTOM" BORDER="0"
+ SRC="img666.gif"
+ ALT="\begin{Example}
+Consider the problem of minimizing
+$
+J(y)=\int_{-1}^1y^2(x)(y'(x...
+...ve is piecewise $\mathcal C^1$\ with a corner point at $x=0$.
+\qed\end{Example}">
+<BR>
+
+<P>
+Suppose that a piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a strong extremum
+for the Basic Calculus of Variations Problem, under the same assumptions as in Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A>.
+Clearly, <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is then also a weak extremum, with respect to the generalized
+1-norm
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1norm-gen"></A><!-- MATH
+ \begin{equation}
+\|y\|_1:=\max_{a\le x\le b}|y(x)|+\max_{a\le x\le b}\max\{|y'(x^-)|,|y'(x^+)|\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="397" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img667.gif"
+ ALT="$\displaystyle \Vert y\Vert _1:=\max_{a\le x\le b}\vert y(x)\vert+\max_{a\le x\le b}\max\{\vert y'(x^-)\vert,\vert y'(x^+)\vert\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As we stated in Section&nbsp;<A HREF="node30.html#ss-EL-tech-remarks">2.3.3</A> (see in particular footnote&nbsp;<A HREF="node30.html#f-EL-int-piece">2</A> there), such an extremum
+must satisfy the integral form&nbsp;(<A HREF="node30.html#e-E-L-int">2.23</A>) of the Euler-Lagrange equation
+almost everywhere, i.e., at all noncorner points. Extending
+our previous terminology to the present setting, we will refer to piecewise
+<!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ solutions of&nbsp;(<A HREF="node30.html#e-E-L-int">2.23</A>) as <I>extremals</I> (sometimes extremals
+with corner points are also called <I>broken extremals</I>).<A NAME="2598"></A>
+ We now
+want to investigate what additional conditions must hold at corner points in order for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ to be a strong extremum. We give a direct analysis<A NAME="tex2html28"
+  HREF="footnode.html#foot7766"><SUP>3.1</SUP></A> below; later we will
+mention an alternative way of deriving these conditions (see
+Exercise&nbsp;<A HREF="node48.html#z-WE">3.3</A>).
+
+<P>
+For simplicity, we
+assume that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ has only one (unspecified) corner point
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img662.gif"
+ ALT="$ c\in[a,b]$">
+. As a generalization of&nbsp;(<A HREF="node27.html#e-perturbed-var">2.10</A>), we will let two separate perturbations <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+ and
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ \eta_2$">
+ act on the two portions of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ (before and after the
+corner point). To make this construction precise, denote these two
+portions by <!-- MATH
+ $y_1: [a,c]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img670.gif"
+ ALT="$ y_1: [a,c]\to\mathbb{R}$">
+ and  <!-- MATH
+ $y_2: [c,b]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img671.gif"
+ ALT="$ y_2: [c,b]\to\mathbb{R}$">
+; their
+perturbed versions will then be <!-- MATH
+ $y_1+\alpha\eta_1$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img672.gif"
+ ALT="$ y_1+\alpha\eta_1$">
+ and
+<!-- MATH
+ $y_2+\alpha\eta_2$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img673.gif"
+ ALT="$ y_2+\alpha\eta_2$">
+. Clearly, we must have <!-- MATH
+ $\eta_1(a)=\eta_2(b)=0$
+ -->
+<IMG
+ WIDTH="135" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img674.gif"
+ ALT="$ \eta_1(a)=\eta_2(b)=0$">
+
+to preserve the endpoints. Furthermore, since the location of the
+corner point is not fixed, we should allow the corner point of the
+perturbed curve to deviate from <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+. Let this new corner point be
+<!-- MATH
+ $c+\alpha{\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img675.gif"
+ ALT="$ c+\alpha{\scriptstyle\Delta}x$">
+ for some <!-- MATH
+ ${\scriptstyle\Delta}x\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img676.gif"
+ ALT="$ {\scriptstyle\Delta}x\in\mathbb{R}$">
+, with the same <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ as
+before for convenience. Our family of perturbed curves
+(parameterized by <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+) is thus determined by the two curves
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+, <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ \eta_2$">
+ and one real number <!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+. We label these new curves as <!-- MATH
+ $y(\cdot,\alpha)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img678.gif"
+ ALT="$ y(\cdot,\alpha)$">
+, with <!-- MATH
+ $y(\cdot,0)=y$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img679.gif"
+ ALT="$ y(\cdot,0)=y$">
+.
+There will be an additional condition on <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+ and <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ \eta_2$">
+ to
+guarantee that <!-- MATH
+ $y(\cdot,\alpha)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img678.gif"
+ ALT="$ y(\cdot,\alpha)$">
+ is continuous for each <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+;
+see&nbsp;(<A HREF="#e-def-alphasdy">3.4</A>) below. We take both <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+ and
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ \eta_2$">
+ to be <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+, to ensure that
+ <!-- MATH
+ $y(\cdot,\alpha)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img678.gif"
+ ALT="$ y(\cdot,\alpha)$">
+ is
+piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ with a single corner point at <!-- MATH
+ $c+\alpha{\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img675.gif"
+ ALT="$ c+\alpha{\scriptstyle\Delta}x$">
+. (Note that the difference <!-- MATH
+ $y(\cdot,\alpha)-y$
+ -->
+<IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img680.gif"
+ ALT="$ y(\cdot,\alpha)-y$">
+
+is piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ with two corner points, one at <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+ and the other
+at <!-- MATH
+ $c+\alpha{\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img675.gif"
+ ALT="$ c+\alpha{\scriptstyle\Delta}x$">
+.)
+ Figure&nbsp;<A HREF="#f-W-E">3.2</A> should help visualize this situation and the argument
+that follows.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-W-E"></A><A NAME="7768"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A perturbation of an extremal with a corner
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="400" HEIGHT="209" ALIGN="BOTTOM" BORDER="0"
+ SRC="img681.gif"
+ ALT="\includegraphics{figures/W-E.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The reader might have noticed a small problem which we need to fix before proceeding. The domain of <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ y_1$">
+
+is <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img682.gif"
+ ALT="$ [a,c]$">
+, whereas we want the domain of <!-- MATH
+ $y_1+\alpha\eta_1$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img672.gif"
+ ALT="$ y_1+\alpha\eta_1$">
+ to be <!-- MATH
+ $[a,c+\alpha{\scriptstyle\Delta}x]$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img683.gif"
+ ALT="$ [a,c+\alpha{\scriptstyle\Delta}x]$">
+. For <!-- MATH
+ $\alpha{\scriptstyle\Delta}x>0$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img684.gif"
+ ALT="$ \alpha{\scriptstyle\Delta}x&gt;0$">
+, such a perturbed curve is ill defined. To deal with this issue, let us agree to extend <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ y_1$">
+ beyond <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+ via linear continuation: define <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ y_1$">
+ for <IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img685.gif"
+ ALT="$ x&gt;c$">
+ by <!-- MATH
+ $y_1(x):=y(c)+y'(c^-)(x-c)$
+ -->
+<IMG
+ WIDTH="221" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img686.gif"
+ ALT="$ y_1(x):=y(c)+y'(c^-)(x-c)$">
+. The linearity is actually not crucial,
+all we need is that the function <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img310.gif"
+ ALT="$ y_1$">
+ be <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ at
+ <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img629.gif"
+ ALT="$ x=c$">
+, with
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-y1_c"></A><!-- MATH
+ \begin{equation}
+y_1(c)=y(c),\qquad y_1'(c)=y'(c^-).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="248" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img687.gif"
+ ALT="$\displaystyle y_1(c)=y(c),\qquad y_1'(c)=y'(c^-).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If the perturbation <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+ is also defined on an interval extending to the right of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+, then the earlier construction
+makes sense (at least for <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ close enough to 0). Of course we need to make
+a similar modification to <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img688.gif"
+ ALT="$ y_2$">
+, extending it linearly to the left of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+.
+
+<P>
+Let us write the functional to be minimized as a sum of two components:
+<P><!-- MATH
+ \begin{displaymath}
+J(y)=\int_a^b L(x,y(x),y'(x))dx=\int_a^c L(x,y_1(x),y_1'(x))dx+\int_c^b L(x,y_2(x),y_2'(x))dx=:J_1(y_1)+J_2(y_2).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="769" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img689.gif"
+ ALT="$\displaystyle J(y)=\int_a^b L(x,y(x),y'(x))dx=\int_a^c L(x,y_1(x),y_1'(x))dx+\int_c^b L(x,y_2(x),y_2'(x))dx=:J_1(y_1)+J_2(y_2).
+$">
+</DIV><P>
+</P>
+After the perturbation, the first functional becomes
+<P><!-- MATH
+ \begin{displaymath}
+J_1(y_1+\alpha\eta_1)=\int_a^{c+\alpha{\scriptstyle\Delta}
+x}L(x,y_1+\alpha\eta_1,y_1'+\alpha\eta_1')dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="387" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img690.gif"
+ ALT="$\displaystyle J_1(y_1+\alpha\eta_1)=\int_a^{c+\alpha{\scriptstyle\Delta}
+x}L(x,y_1+\alpha\eta_1,y_1'+\alpha\eta_1')dx
+$">
+</DIV><P>
+</P>
+(note that <!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+ should also be an argument on the left-hand side, but we
+omit it for simplicity). We can now compute the corresponding first variation:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img691.gif"
+ ALT="$\displaystyle \left.\delta J_1\right\vert _{y_1}(\eta_1)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="179" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img692.gif"
+ ALT="$\displaystyle =\left.\frac d{d\alpha}\right\vert _{\alpha=0} J_1(y_1+\alpha\eta_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="632" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img693.gif"
+ ALT="$\displaystyle =\int_a^c\big({L}_{y}(x,y_1(x),y_1'(x))\eta_1(x) +{L}_{y'}(x,y_1(x),y_1'(x))\eta_1'(x)\big)dx+L(c,y_1(c),y_1'(c)){\scriptstyle\Delta}x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Applying integration by parts and recalling&nbsp;(<A HREF="#e-y1_c">3.2</A>) and
+ the constraint <!-- MATH
+ $\eta_1(a)=0$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img694.gif"
+ ALT="$ \eta_1(a)=0$">
+, we can bring the above expression to the form
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img691.gif"
+ ALT="$\displaystyle \left.\delta J_1\right\vert _{y_1}(\eta_1)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="453" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img695.gif"
+ ALT="$\displaystyle =\int_a^c\Big({L}_{y}(x,y_1(x),y_1'(x))- \frac d{dx} {L}_{y'}(x,y_1(x),y_1'(x))\Big)\eta_1(x)dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="363" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img696.gif"
+ ALT="$\displaystyle +{L}_{y'}(c,y(c),y'(c^-)){\eta_1}(c)+L(c,y(c),y'(c^-)){\scriptstyle\Delta}x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Similarly, for the second functional we have
+<P><!-- MATH
+ \begin{displaymath}
+J_2(y_2+\alpha\eta_2)=\int_{c+\alpha{\scriptstyle\Delta}x}^b
+L(x,y_2+\alpha\eta_2,y_2'+\alpha\eta _2')dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="379" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img697.gif"
+ ALT="$\displaystyle J_2(y_2+\alpha\eta_2)=\int_{c+\alpha{\scriptstyle\Delta}x}^b
+L(x,y_2+\alpha\eta_2,y_2'+\alpha\eta _2')dx
+$">
+</DIV><P>
+</P>
+and the first variation of <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img698.gif"
+ ALT="$ J_2$">
+ at <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img688.gif"
+ ALT="$ y_2$">
+ is
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img699.gif"
+ ALT="$\displaystyle \left.\delta J_2\right\vert _{y_2}(\eta_2)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="453" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img700.gif"
+ ALT="$\displaystyle =\int_c^b\Big({L}_{y}(x,y_2(x),y_2'(x))- \frac d{dx}{L}_{y'}(x,y_2(x),y_2'(x))\Big)\eta_2(x)dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="363" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img701.gif"
+ ALT="$\displaystyle -{L}_{y'}(c,y(c),y'(c^+))\eta_2(c) -L(c,y(c),y'(c^+)){\scriptstyle\Delta}x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+For <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ close to 0, the perturbed curve <!-- MATH
+ $y(\cdot,\alpha)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img678.gif"
+ ALT="$ y(\cdot,\alpha)$">
+ is close to the original curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in the sense of the 0-norm.
+Therefore, the function <!-- MATH
+ $\alpha\mapsto J(y(\cdot,\alpha))$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img702.gif"
+ ALT="$ \alpha\mapsto J(y(\cdot,\alpha))$">
+ must attain a minimum at <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+, implying that
+<P><!-- MATH
+ \begin{displaymath}
+0=\left.\frac
+d{d\alpha}\right|_{\alpha=0} J(y(\cdot,\alpha))=\left.\frac
+d{d\alpha}\right|_{\alpha=0}\Big(J_1(y_1+\alpha\eta_1)+
+J_2(y_2+\alpha\eta_2)\Big)
+=\left.\delta J_1\right|_{y_1}(\eta_1)+\left.\delta J_2\right|_{y_2}(\eta_2).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="691" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img703.gif"
+ ALT="$\displaystyle 0=\left.\frac
+d{d\alpha}\right\vert _{\alpha=0} J(y(\cdot,\alpha)...
+...elta J_1\right\vert _{y_1}(\eta_1)+\left.\delta J_2\right\vert _{y_2}(\eta_2).
+$">
+</DIV><P>
+</P>
+Next, observe that each of the two portions <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img704.gif"
+ ALT="$ y_i$">
+, <IMG
+ WIDTH="58" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img705.gif"
+ ALT="$ i=1,2$">
+ of the optimal curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+
+must be an extremal of the corresponding functional <IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img706.gif"
+ ALT="$ J_i$">
+. Indeed, this
+becomes clear
+if we consider the special case when the
+ perturbation <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img707.gif"
+ ALT="$ \eta_i$">
+ vanishes at <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+ and <!-- MATH
+ ${\scriptstyle\Delta}x=0$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img708.gif"
+ ALT="$ {\scriptstyle\Delta}x=0$">
+. Therefore, the
+ integrals in the preceding expressions for <!-- MATH
+ $\left.\delta J_1\right|_{y_1}(\eta_1)$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img709.gif"
+ ALT="$ \left.\delta J_1\right\vert _{y_1}(\eta_1)$">
+
+ and <!-- MATH
+ $\left.\delta J_2\right|_{y_2}(\eta_2)$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img710.gif"
+ ALT="$ \left.\delta J_2\right\vert _{y_2}(\eta_2)$">
+ should both vanish, and we are left with
+ the condition
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-aibm"></A><!-- MATH
+ \begin{equation}
+%after integrals, before matching
+{L}_{y'}(c,y(c),y'(c^-)){\eta_1}(c)
+-{L}_{y'}(c,y(c),y'(c^+))\eta_2(c)+L(c,y(c),y'(c^-)){\scriptstyle\Delta}x
+-L(c,y(c),y'(c^+)){\scriptstyle\Delta}x=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="981" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img711.gif"
+ ALT="$\displaystyle &lt;tex2html_comment_mark&gt;65 {L}_{y'}(c,y(c),y'(c^-)){\eta_1}(c) -{L...
+...c,y(c),y'(c^-)){\scriptstyle\Delta}x -L(c,y(c),y'(c^+)){\scriptstyle\Delta}x=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Now we need to take into account the fact
+that the two perturbations <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img668.gif"
+ ALT="$ \eta_1$">
+ and <IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img669.gif"
+ ALT="$ \eta_2$">
+
+are not independent: they have to be such that the perturbed curve remains
+continuous at <!-- MATH
+ $x=c+\alpha {\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img712.gif"
+ ALT="$ x=c+\alpha {\scriptstyle\Delta}x$">
+. This provides the additional relation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-def-alphasdy"></A><!-- MATH
+ \begin{equation}
+y_1(c+\alpha {\scriptstyle\Delta}x)+\alpha\eta_1(c+\alpha {\scriptstyle\Delta}x)=
+y_2(c+\alpha {\scriptstyle\Delta}x)+\alpha\eta_2(c+\alpha {\scriptstyle\Delta}x)=:y(c)+\alpha{\scriptstyle\Delta}y+o(\alpha).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="623" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img713.gif"
+ ALT="$\displaystyle y_1(c+\alpha {\scriptstyle\Delta}x)+\alpha\eta_1(c+\alpha {\scrip...
+..._2(c+\alpha {\scriptstyle\Delta}x)=:y(c)+\alpha{\scriptstyle\Delta}y+o(\alpha).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The quantity <!-- MATH
+ ${\scriptstyle\Delta}y$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img714.gif"
+ ALT="$ {\scriptstyle\Delta}y$">
+ describes the first-order (in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+)
+vertical displacement of the corner point, in much the same
+sense that
+<!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+ describes the first-order horizontal displacement; <!-- MATH
+ ${\scriptstyle\Delta}y$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img714.gif"
+ ALT="$ {\scriptstyle\Delta}y$">
+ and <!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+
+are independent of each other.
+Equating the first-order terms with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+
+in&nbsp;(<A HREF="#e-def-alphasdy">3.4</A>) and using the
+second equality in&nbsp;(<A HREF="#e-y1_c">3.2</A>)
+along with its counterpart <!-- MATH
+ $y_2'(c)=y'(c^+)$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img715.gif"
+ ALT="$ y_2'(c)=y'(c^+)$">
+, we obtain
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-def-sdy"></A><!-- MATH
+ \begin{equation}
+y'(c^-){\scriptstyle\Delta}x+\eta_1(c)=y'(c^+){\scriptstyle\Delta}x+\eta_2(c)={\scriptstyle\Delta}y.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="327" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img716.gif"
+ ALT="$\displaystyle y'(c^-){\scriptstyle\Delta}x+\eta_1(c)=y'(c^+){\scriptstyle\Delta}x+\eta_2(c)={\scriptstyle\Delta}y.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Using&nbsp;(<A HREF="#e-def-sdy">3.5</A>), we can eliminate <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img717.gif"
+ ALT="$ \eta_1(c)$">
+
+and <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img718.gif"
+ ALT="$ \eta_2(c)$">
+ from&nbsp;(<A HREF="#e-aibm">3.3</A>) and rewrite that formula in terms of
+<!-- MATH
+ ${\scriptstyle\Delta}y$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img714.gif"
+ ALT="$ {\scriptstyle\Delta}y$">
+ and <!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+ as follows:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="335" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img719.gif"
+ ALT="$\displaystyle \big({L}_{y'}(c,y(c),y'(c^-)) -{L}_{y'}(c,y(c),y'(c^+))\big){\scriptstyle\Delta}y$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img720.gif"
+ ALT="$\displaystyle -$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="748" HEIGHT="49" ALIGN="MIDDLE" BORDER="0"
+ SRC="img721.gif"
+ ALT="$\displaystyle \Big(\big({L}_{y'}(c,y(c),y'(c^-)y'(c^-)-L(c,y(c),y'(c^-))\big)- ...
+..._{y'}(c,y(c),y'(c^+))y'(c^+) -L(c,y(c),y'(c^+))\big) \Big){\scriptstyle\Delta}x$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img722.gif"
+ ALT="$\displaystyle =$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="637" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img723.gif"
+ ALT="$\displaystyle -\left.{L}_{y'}(x,y(x),y'(x))\right\vert _{c^-}^{c^+}{\scriptstyl...
+...x))y'(x) -L(x,y(x),y'(x))\Big)\right\vert _{c^-}^{c^+}{\scriptstyle\Delta}x =0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <!-- MATH
+ ${\scriptstyle\Delta}x$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img677.gif"
+ ALT="$ {\scriptstyle\Delta}x$">
+ and <!-- MATH
+ ${\scriptstyle\Delta}y$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img714.gif"
+ ALT="$ {\scriptstyle\Delta}y$">
+ are independent and arbitrary, we conclude that
+the terms multiplying them must be&nbsp;0. This means that
+ <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+ and <!-- MATH
+ $y'{L}_{y'}-L$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ y'{L}_{y'}-L$">
+
+are in fact continuous at <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img629.gif"
+ ALT="$ x=c$">
+.
+
+<P>
+The above reasoning can be extended to multiple corner points,
+yielding the necessary conditions for optimality known as the
+<B>Weierstrass-Erdmann corner conditions</B>:<A NAME="2715"></A><A NAME="2716"></A> <I>If a
+curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a strong extremum, then
+<IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+ and <!-- MATH
+ $y'{L}_{y'}-L$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ y'{L}_{y'}-L$">
+ must be continuous at each corner point
+of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+.</I>
+More precisely, their discontinuities (due to the fact that <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+
+does not exist at corner points) must be <I>removable</I>.
+The quantities <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+ and
+<!-- MATH
+ $y'{L}_{y'}-L$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img724.gif"
+ ALT="$ y'{L}_{y'}-L$">
+ are of course familiar to us from Chapter&nbsp;<A HREF="node19.html#c-cv">2</A>;
+they are, respectively, the momentum and the Hamiltonian.
+Weierstrass<A NAME="2723"></A> presented these conditions in 1865
+during his lectures on calculus of
+variations, but never formally published them.
+They were independently derived and published by Erdmann<A NAME="2724"></A> in
+1877.
+
+<P>
+<BR>
+<A NAME="z-W-E-strong"></A><IMG
+ WIDTH="559" HEIGHT="103" ALIGN="BOTTOM" BORDER="0"
+ SRC="img725.gif"
+ ALT="\begin{Exercise}
+Let $y$\ be a weak extremum (with~\eqref{e-1norm-gen} serving a...
+...'}$) can still be
+established by suitably specializing the proof.
+\end{Exercise}">
+<BR>
+
+<P>
+For the case of a single corner point,
+  the two Weierstrass-Erdmann corner conditions
+  together with the two boundary
+  conditions provide four relations, which is
+  the correct number to uniquely specify two portions
+  of the extremal (each satisfying the second-order Euler-Lagrange differential equation).
+ <A NAME="2731"></A>In general, to uniquely specify an extremal
+consisting
+  of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ m$">
+ portions (i.e., having <IMG
+ WIDTH="49" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img726.gif"
+ ALT="$ m-1$">
+ corner points)  we need <IMG
+ WIDTH="27" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img727.gif"
+ ALT="$ 2m$">
+ conditions,
+and these are provided by <IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img728.gif"
+ ALT="$ 2(m-1)$">
+ corner conditions plus the
+two boundary conditions.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="109" ALIGN="BOTTOM" BORDER="0"
+ SRC="img729.gif"
+ ALT="\begin{Exercise}
+Consider the problem of minimizing
+$
+J(y)=\int_{-1}^1(y'(x))^3d...
+...or each one that does, check if it
+is a minimum (weak or strong).
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1067"
+  HREF="node48.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1061"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1055"
+  HREF="node46.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1063"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1065"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1068"
+  HREF="node48.html">3.1.2 Weierstrass excess function</A>
+<B> Up:</B> <A NAME="tex2html1062"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+<B> Previous:</B> <A NAME="tex2html1056"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+ &nbsp; <B>  <A NAME="tex2html1064"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1066"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

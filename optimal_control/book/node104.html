@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.3.3 HJB equation and the value function</TITLE>
+<META NAME="description" CONTENT="5.3.3 HJB equation and the value function">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node103.html">
+<LINK REL="up" HREF="node101.html">
+<LINK REL="next" HREF="node105.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1926"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1920"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1916"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1922"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1924"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1927"
+  HREF="node105.html">5.4 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1921"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1917"
+  HREF="node103.html">5.3.2 Viscosity solutions of</A>
+ &nbsp; <B>  <A NAME="tex2html1923"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1925"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00733000000000000000"></A><A NAME="ss-hjb-value"></A>
+<BR>
+5.3.3 HJB equation and the value function
+</H2>
+
+<P>
+Let us finally go back to our fixed-time optimal control problem from Section&nbsp;<A HREF="node94.html#ss-princopt-hjb">5.1.2</A> and its HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>) with the boundary condition&nbsp;(<A HREF="node94.html#e-V-bound-cond">5.3</A>), with the goal of resolving the difficulty identified at the end of Section&nbsp;<A HREF="node100.html#ss-V-nonsmooth">5.2.1</A>. Specifically, our hope is that the value function&nbsp;(<A HREF="node94.html#e-V-def">5.2</A>) is a solution of the HJB equation in the viscosity sense. In order to more closely match the PDE&nbsp;(<A HREF="node103.html#e-pde2stars">5.34</A>), we first rewrite the HJB equation as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB_0"></A><!-- MATH
+ \begin{equation}
+-{V}_{t}(t,x)-\inf_{u\in U} \left\{L(t,x,u)+\left\langle {V}_{x}(t,x),f(t,x,u)\right\rangle \right\}=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="408" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1750.gif"
+ ALT="$\displaystyle -{V}_{t}(t,x)-\inf_{u\in U} \left\{L(t,x,u)+\left\langle {V}_{x}(t,x),f(t,x,u)\right\rangle \right\}=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.34)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As we saw in the previous subsection, flipping the sign in a PDE affects its viscosity solutions; it will turn out that the above sign convention is the correct one. The PDE&nbsp;(<A HREF="#e-HJB_0">5.38</A>) is still not in the form&nbsp;(<A HREF="node103.html#e-pde2stars">5.34</A>) because it contains the additional independent variable <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. However, the concepts and results of Sections&nbsp;<A HREF="node102.html#ss-one-sided-diff">5.3.1</A> and&nbsp;<A HREF="node103.html#ss-viscosity">5.3.2</A> extend to this time-space setting without difficulties. Alternatively, we can absorb  <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ into <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ by introducing the extra state variable <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+, a trick already familiar to us from Chapters&nbsp;<A HREF="node45.html#c-cv-to-oc">3</A> and&nbsp;<A HREF="node61.html#c-mp">4</A>. Then the PDE&nbsp;(<A HREF="#e-HJB_0">5.38</A>) takes the form&nbsp;(<A HREF="node103.html#e-pde2stars">5.34</A>) with the obvious definition of the function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+, except that the domain of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is the subset<A NAME="tex2html71"
+  HREF="footnode.html#foot7942"><SUP>5.4</SUP></A> <!-- MATH
+ $[t_0,t_1]\times \mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1752.gif"
+ ALT="$ [t_0,t_1]\times \mathbb{R}^n$">
+ of <!-- MATH
+ $\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="42" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1030.gif"
+ ALT="$ \mathbb{R}^{n+1}$">
+. The control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ does not appear as an argument of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ since the definition of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ includes taking the infimum over <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+.
+
+<P>
+Now the theory of viscosity solutions can be applied to the HJB equation. Under suitable technical assumptions on the functions <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+, and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+, we have the following <B>main result</B>: <I>The value function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is a unique
+viscosity solution of the HJB equation&nbsp;(<A HREF="#e-HJB_0">5.38</A>) with the boundary
+condition&nbsp;(<A HREF="node94.html#e-V-bound-cond">5.3</A>).<A NAME="5900"></A><A NAME="5901"></A> It is also locally
+Lipschitz</I> (but, as we know from Section&nbsp;<A HREF="node100.html#ss-V-nonsmooth">5.2.1</A>, not necessarily <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+).  Regarding the technical assumptions, we will not list them here (see the references in Section&nbsp;<A HREF="node105.html#s-HJB-refs">5.4</A>) but we mention that they are satisfied if, for example, <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+, and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ are uniformly continuous, <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$ {f}_{x}$">
+, <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ {L}_{x}$">
+, and <IMG
+ WIDTH="27" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1753.gif"
+ ALT="$ {K}_{x}$">
+ are bounded, and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ is a compact set.
+
+<P>
+We will not attempt to establish the uniqueness and the Lipschitz property, but we do want to understand why <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is a viscosity solution of&nbsp;(<A HREF="#e-HJB_0">5.38</A>). To this end, let us prove that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is a viscosity <I>sub</I>solution. The additional technical assumptions cited above are actually not needed for this claim. Fix an arbitrary pair <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+.
+We need to show that for every <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ test function
+<!-- MATH
+ $\varphi=\varphi(t,x)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1754.gif"
+ ALT="$ \varphi=\varphi(t,x)$">
+ such that <IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1755.gif"
+ ALT="$ \varphi-V$">
+ attains a local minimum
+at <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+, the inequality
+<P><!-- MATH
+ \begin{displaymath}
+-\varphi_t(t_0,x_0)-\inf_{u\in U}\{ L(t_0,x_0,u)+\langle \varphi_x(t_0,x_0), f(t_0,x_0,u)\rangle \}\le 0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="463" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1756.gif"
+ ALT="$\displaystyle -\varphi_t(t_0,x_0)-\inf_{u\in U}\{ L(t_0,x_0,u)+\langle \varphi_x(t_0,x_0), f(t_0,x_0,u)\rangle \}\le 0
+$">
+</DIV><P>
+</P>
+must be satisfied.
+Suppose that, on the contrary, there exist a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ and a control value <IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1757.gif"
+ ALT="$ u_0\in U$">
+ such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-varphi_SPMgt_V"></A><!-- MATH
+ \begin{equation}
+\varphi(t_0,x_0)=V(t_0,x_0),\qquad
+  \varphi(t,x)\ge V(t,x)\quad \forall\,(t,x) \text{ near } (t_0,x_0)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="391" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1758.gif"
+ ALT="$\displaystyle \varphi(t_0,x_0)=V(t_0,x_0),\qquad \varphi(t,x)\ge V(t,x)\quad \forall\,(t,x)$">&nbsp; &nbsp; near&nbsp;<IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1759.gif"
+ ALT="$\displaystyle (t_0,x_0)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.35)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-varphi-Theta"></A><!-- MATH
+ \begin{equation}
+-\varphi_t(t_0,x_0)-L(t_0,x_0,u_0)-\langle \varphi_x(t_0,x_0), f(t_0,x_0,u_0)\rangle > 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="438" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1760.gif"
+ ALT="$\displaystyle -\varphi_t(t_0,x_0)-L(t_0,x_0,u_0)-\langle \varphi_x(t_0,x_0), f(t_0,x_0,u_0)\rangle &gt; 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.36)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Taking <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ as the initial condition, let us consider the state trajectory <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ that results from applying the control <!-- MATH
+ $u\equiv u_0$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1761.gif"
+ ALT="$ u\equiv u_0$">
+ on a small time interval <!-- MATH
+ $[t_0,t_0+{\scriptstyle\Delta}t]$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1762.gif"
+ ALT="$ [t_0,t_0+{\scriptstyle\Delta}t]$">
+.
+We will now demonstrate that the rate of change of the value function along this trajectory is inconsistent with the principle of optimality.
+As long as we pick <!-- MATH
+ ${\scriptstyle\Delta}t$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1595.gif"
+ ALT="$ {\scriptstyle\Delta}t$">
+ to be sufficiently small, we have
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1763.gif"
+ ALT="$\displaystyle V(t_0$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="667" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1764.gif"
+ ALT="$\displaystyle +{\scriptstyle\Delta}t,x(t_0+{\scriptstyle\Delta}t))-V(t_0,x_0)\l...
+...lta}t))-\varphi(t_0,x_0)=\int_{t_0}^{t_0+\Delta t}\frac{d}{dt}\varphi(t,x(t))dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="607" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1765.gif"
+ ALT="$\displaystyle =\int_{t_0}^{t_0+\Delta t} \big(\varphi_t(t,x(t))+\langle \varphi...
+...(t)), f(t,x(t),u_0)\rangle \big) dt &lt; -\int_{t_0}^{t_0+\Delta t}L(t,x(t),u_0)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the first inequality is a direct consequence of&nbsp;(<A HREF="#e-varphi_SPMgt_V">5.39</A>) and the last inequality follows from&nbsp;(<A HREF="#e-varphi-Theta">5.40</A>) by virtue of continuity of all the functions appearing there. We thus obtain
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Vcontr"></A><!-- MATH
+ \begin{equation}
+V(t_0,x_0)>\int_{t_0}^{t_0+\Delta t}L(t,x(t),u_0)dt+V(t_0+{\scriptstyle\Delta}t,x(t_0+{\scriptstyle\Delta}t)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="453" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1766.gif"
+ ALT="$\displaystyle V(t_0,x_0)&gt;\int_{t_0}^{t_0+\Delta t}L(t,x(t),u_0)dt+V(t_0+{\scriptstyle\Delta}t,x(t_0+{\scriptstyle\Delta}t)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.37)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+On the other hand, the principle of optimality&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>) tells us that
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="448" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1767.gif"
+ ALT="$\displaystyle V(t_0,x_0)\le \int_{t_0}^{t_0+\Delta t} L(t,x(t),u_0)dt+V(t_0+{\scriptstyle\Delta}t,x(t_0+{\scriptstyle\Delta} t))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and we arrive at a
+contradiction. Provided that optimal controls exist, here is a slightly different way to see why&nbsp;(<A HREF="#e-Vcontr">5.41</A>) cannot be true: it would imply that the optimal cost-to-go from <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ is higher than the cost of applying  the constant control  <!-- MATH
+ $u\equiv u_0$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1761.gif"
+ ALT="$ u\equiv u_0$">
+ on  <!-- MATH
+ $[t_0,t_0+{\scriptstyle\Delta}t]$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1762.gif"
+ ALT="$ [t_0,t_0+{\scriptstyle\Delta}t]$">
+ followed by an optimal control on the remaining interval <!-- MATH
+ $(t_0+{\scriptstyle\Delta}t,t_1]$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1768.gif"
+ ALT="$ (t_0+{\scriptstyle\Delta}t,t_1]$">
+, which is clearly impossible.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="39" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1769.gif"
+ ALT="\begin{Exercise}Use a similar argument to show that the value function is a
+viscosity \emph {super}solution of the HJB equation~\eqref{e-HJB=0}.
+\end{Exercise}">
+<BR>
+
+<P>
+We now have at our disposal a more rigorous formulation of the necessary conditions for optimality from Section&nbsp;<A HREF="node95.html#ss-HJB">5.1.3</A>. The above reasoning is of course quite different from our original derivation of the HJB equation, but we see that the principle of optimality still plays a central role.
+The sufficient condition for
+optimality from Section&nbsp;<A HREF="node97.html#ss-HJB-suff">5.1.4</A> can also be generalized, a task that we leave as an exercise.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="37" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1770.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9708Formulate and prove a sufficient c...
+...xercise~\ref{z-suff-alt} in the framework of viscosity solutions.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1926"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1920"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1916"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1922"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1924"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1927"
+  HREF="node105.html">5.4 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1921"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1917"
+  HREF="node103.html">5.3.2 Viscosity solutions of</A>
+ &nbsp; <B>  <A NAME="tex2html1923"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1925"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

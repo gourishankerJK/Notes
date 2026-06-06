@@ -1,0 +1,305 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>1.2.2.2 Second-order conditions</TITLE>
+<META NAME="description" CONTENT="1.2.2.2 Second-order conditions">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html532"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html526"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html522"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html528"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html530"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html533"
+  HREF="node13.html">1.3 Preview of infinite-dimensional</A>
+<B> Up:</B> <A NAME="tex2html527"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html523"
+  HREF="node11.html">1.2.2.1 First-order necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html529"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html531"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00322200000000000000">
+1.2.2.2 Second-order conditions</A>
+</H3>
+
+<P>
+For the sake of completeness, we quickly
+ state the second-order conditions for constrained optimality;
+ they will not be used
+in the sequel.
+For the necessary condition,
+suppose that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a regular point of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ and a local minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+, where <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is defined by the equality
+constraints&nbsp;(<A HREF="node10.html#e-hi">1.18</A>) as before.
+We let <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ be the vector of Lagrange multipliers
+provided by the first-order necessary
+condition, and define the augmented
+cost <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+ as in&nbsp;(<A HREF="node11.html#e-augmented">1.27</A>). We also assume that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is <!-- MATH
+ $\mathcal C^2$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ \mathcal C^2$">
+. Consider the Hessian of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ evaluated
+at <!-- MATH
+ $(x^*,\lambda^*)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ (x^*,\lambda^*)$">
+:
+<P><!-- MATH
+ \begin{displaymath}
+{\ell}_{{x}{x}}(x^*,\lambda^*)=\nabla^2 f(x^*)+\sum_{i=1}^m
+\lambda_i^* \nabla^2 h_i(x^*).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="311" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img203.gif"
+ ALT="$\displaystyle {\ell}_{{x}{x}}(x^*,\lambda^*)=\nabla^2 f(x^*)+\sum_{i=1}^m
+\lambda_i^* \nabla^2 h_i(x^*).
+$">
+</DIV><P>
+</P>
+The second-order necessary condition<A NAME="697"></A><A NAME="698"></A> says that
+this Hessian matrix must be positive semidefinite on the tangent space to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+, i.e.,
+we must have
+<!-- MATH
+ $d^T{\ell}_{{x}{x}}(x^*,\lambda^*) d\ge 0$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img204.gif"
+ ALT="$ d^T{\ell}_{{x}{x}}(x^*,\lambda^*) d\ge 0$">
+ for all <!-- MATH
+ $d\in
+T_{x^*}D$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.gif"
+ ALT="$ d\in T_{x^*}D$">
+. Note that this is weaker than asking the above Hessian matrix
+to be positive semidefinite in the usual sense
+(on the entire <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+).
+
+<P>
+The second-order sufficient condition<A NAME="703"></A><A NAME="704"></A>
+says that a point <IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$ x^*\in D$">
+ is a strict constrained local minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ if
+the first-order necessary condition for optimality&nbsp;(<A HREF="node11.html#e-lagr-mult">1.25</A>) holds and,
+in addition, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-posdeftan"></A><!-- MATH
+ \begin{equation}
+d^T{\ell}_{{x}{x}}(x^*,\lambda^*)d>0\qquad \forall\,d \ \text{ such that }\ \nabla
+h_i(x^*)\cdot d=0,\ i=1,\dots,m.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="206" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img205.gif"
+ ALT="$\displaystyle d^T{\ell}_{{x}{x}}(x^*,\lambda^*)d&gt;0\qquad \forall\,d \ $">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="234" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.gif"
+ ALT="$\displaystyle \ \nabla h_i(x^*)\cdot d=0,\ i=1,\dots,m.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.29)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Again, here <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ is the vector of Lagrange multipliers and <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+ is the
+corresponding augmented cost.
+Note that
+regularity of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is not needed for this sufficient condition to be
+true. If <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is in fact a
+regular point, then we know (from our derivation of the first-order necessary
+condition for constrained optimality) that the condition imposed on <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+
+in&nbsp;(<A HREF="#e-posdeftan">1.29</A>) describes exactly the tangent vectors
+to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. In other words, in this case&nbsp;(<A HREF="#e-posdeftan">1.29</A>) is equivalent
+to saying
+that <!-- MATH
+ ${\ell}_{{x}{x}}(x^*,\lambda^*)$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img206.gif"
+ ALT="$ {\ell}_{{x}{x}}(x^*,\lambda^*)$">
+ is positive definite on
+the tangent space <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html532"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html526"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html522"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html528"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html530"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html533"
+  HREF="node13.html">1.3 Preview of infinite-dimensional</A>
+<B> Up:</B> <A NAME="tex2html527"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html523"
+  HREF="node11.html">1.2.2.1 First-order necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html529"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html531"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

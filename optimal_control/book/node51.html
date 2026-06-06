@@ -1,0 +1,817 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>3.3.1 Control system</TITLE>
+<META NAME="description" CONTENT="3.3.1 Control system">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node52.html">
+<LINK REL="previous" HREF="node50.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node52.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1124"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1118"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1112"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1120"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1122"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1125"
+  HREF="node52.html">3.3.2 Cost functional</A>
+<B> Up:</B> <A NAME="tex2html1119"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1113"
+  HREF="node50.html">3.3 Optimal control problem</A>
+ &nbsp; <B>  <A NAME="tex2html1121"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1123"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00531000000000000000"></A><A NAME="ss-exist-unique"></A><A NAME="2953"></A>
+<BR>
+3.3.1 Control system
+</H2>
+
+<P>
+In the notation announced at the end of the previous section, control systems
+that we want to study take the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-basic-control"></A><!-- MATH
+ \begin{equation}
+\dot x=f(t,x,u),\qquad x(t_0)=x_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="223" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.gif"
+ ALT="$\displaystyle \dot x=f(t,x,u),\qquad x(t_0)=x_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is an exact copy of&nbsp;(<A HREF="node4.html#e-control-system">1.1</A>). Here <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+ is the state,
+<!-- MATH
+ $u\in U\subset \mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="97" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img797.gif"
+ ALT="$ u\in U\subset \mathbb{R}^m$">
+ is the control,
+<!-- MATH
+ $t\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img798.gif"
+ ALT="$ t\in\mathbb{R}$">
+ is the time,
+<IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ is the
+initial time, and <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ is the initial state. Both <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ are
+functions of time: <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img799.gif"
+ ALT="$ x=x(t)$">
+, <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img800.gif"
+ ALT="$ u=u(t)$">
+. The control set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+<A NAME="2958"></A>
+is usually a closed subset of <!-- MATH
+ $\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img801.gif"
+ ALT="$ \mathbb{R}^m$">
+ and can be the entire
+<!-- MATH
+ $\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img801.gif"
+ ALT="$ \mathbb{R}^m$">
+; in principle  it
+can also  vary with time,
+but here we take it to be fixed.
+
+<P>
+We want to know that for every choice of the initial data
+<IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ and every admissible control <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+, the
+system&nbsp;(<A HREF="#e-basic-control">3.18</A>) has a unique solution <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ on
+some time interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+. If this property holds, we will
+say that the system is <I>well posed</I>.
+ To guarantee local existence and uniqueness
+of solutions for&nbsp;(<A HREF="#e-basic-control">3.18</A>), we need to impose some regularity
+conditions on the right-hand side <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and on the admissible controls <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+.
+For the sake of simplicity, we will usually
+be willing to make slightly stronger assumptions than necessary; when we do this,
+we will briefly indicate how our assumptions can be relaxed.<A NAME="2964"></A>
+
+<P>
+Let us first consider the case of no controls:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-nou"></A><!-- MATH
+ \begin{equation}
+\dot x=f(t,x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img804.gif"
+ ALT="$\displaystyle \dot x=f(t,x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+First, to assure sufficient regularity of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, we take
+ <!-- MATH
+ $f(\cdot,x)$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img805.gif"
+ ALT="$ f(\cdot,x)$">
+ to
+be piecewise
+continuous for each fixed <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Here, by a
+<I>piecewise continuous</I> function<A NAME="2969"></A><A NAME="2970"></A> we mean
+a function having at most a finite number of discontinuities
+on every bounded interval, and possessing the limits from the right
+and from the left at each of these
+  discontinuities.
+  For convenience,<A NAME="p-piece-cont"></A> we assume that the value of such a function
+  at each discontinuity is equal to
+  one of these one-sided limits (i.e., the function is
+  either left-continuous or right-continuous at each point).
+The assumption of a finite number of discontinuities on each bounded interval
+is actually not crucial; we can allow discontinuities to  have
+accumulation points, as long as the function remains locally
+bounded (or at least locally integrable).
+
+<P>
+Second, we need to specify how regular <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ should be with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+A standard assumption in this regard is that
+ <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is locally
+Lipschitz in <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, uniformly over <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. <A NAME="2974"></A>Namely, for every <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+
+there should exist a constant <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ such that we have
+<P><!-- MATH
+ \begin{displaymath}
+|f(t,x_1)-f(t,x_2)|\le L|x_1-x_2|
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="246" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img806.gif"
+ ALT="$\displaystyle \vert f(t,x_1)-f(t,x_2)\vert\le L\vert x_1-x_2\vert
+$">
+</DIV><P>
+</P>
+for all <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img807.gif"
+ ALT="$ (t,x_1)$">
+ and <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img808.gif"
+ ALT="$ (t,x_2)$">
+
+in some neighborhood of <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.gif"
+ ALT="$ (t_0,x_0)$">
+ in <!-- MATH
+ $\mathbb{R}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img809.gif"
+ ALT="$ \mathbb{R}\times\mathbb{R}^n$">
+.
+We can in fact be more
+generous and assume the following:
+<!-- MATH
+ $f(t,\cdot)$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img810.gif"
+ ALT="$ f(t,\cdot)$">
+ is <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ for each fixed <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+,
+and <!-- MATH
+ ${f}_{x}(\cdot,x)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img811.gif"
+ ALT="$ {f}_{x}(\cdot,x)$">
+ is piecewise continuous for each fixed <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. It is easy to verify using
+  the Mean Value Theorem that such a function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ satisfies the previous Lipschitz
+  condition. Note that here and below,
+  we extend our earlier notation <!-- MATH
+ ${f}_{x}:={\partial f}/{\partial x}$
+ -->
+<IMG
+ WIDTH="98" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img812.gif"
+ ALT="$ {f}_{x}:={\partial f}/{\partial x}$">
+ to the vector case, so that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$ {f}_{x}$">
+ stands for the Jacobian matrix of partial derivatives of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+
+<P>
+If <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ satisfies the above regularity assumptions,
+then on some interval <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+ there exists a unique solution
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ of the system&nbsp;(<A HREF="#e-nou">3.19</A>). Since we did not assume that
+<IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is continuous with respect to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, some care is needed in interpreting
+what we mean by a solution of&nbsp;(<A HREF="#e-nou">3.19</A>). In the present situation,
+it is reasonable to call a function
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ a solution of&nbsp;(<A HREF="#e-nou">3.19</A>) if it
+ is continuous everywhere,
+<!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ almost everywhere, and satisfies the corresponding integral equation
+<P><!-- MATH
+ \begin{displaymath}
+x(t)=x_0+\int_{t_0}^t f(s,x(s))ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="215" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img814.gif"
+ ALT="$\displaystyle x(t)=x_0+\int_{t_0}^t f(s,x(s))ds.
+$">
+</DIV><P>
+</P>
+A function <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ that can be represented as an integral of
+another function <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img815.gif"
+ ALT="$ g(\cdot)$">
+, and thus automatically satisfies
+<IMG
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img816.gif"
+ ALT="$ \dot x=g$">
+
+almost everywhere, is called
+<I>absolutely continuous</I>.<A NAME="p-abscon"></A><A NAME="2986"></A><A NAME="2987"></A> This class of functions generalizes the
+piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ functions
+that we considered earlier. Basically, the extra generality here is that
+the derivative
+can be discontinuous on a set of points that has measure zero (e.g., a countable set) rather than at a finite number of points
+on a bounded interval, and
+can approach infinity near these points. If we insist that the derivative
+be locally bounded, we arrive at the slightly smaller class of locally Lipschitz
+functions.<A NAME="2988"></A><A NAME="2989"></A>
+
+<P>
+We are now ready to go back to the control system&nbsp;(<A HREF="#e-basic-control">3.18</A>).
+To guarantee local existence and uniqueness of its solutions, we can impose
+assumptions on <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ that would let us invoke the previous existence and
+uniqueness result for the right-hand side
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-barf"></A><!-- MATH
+ \begin{equation}
+\bar f(t,x):=f(t,x,u(t)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="170" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img817.gif"
+ ALT="$\displaystyle \bar f(t,x):=f(t,x,u(t)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Here is one such set of assumptions which, although not the weakest
+possible, is adequate for our purposes:
+<IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is continuous in <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ in <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+;
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img818.gif"
+ ALT="$ f_x$">
+ is continuous in <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+;
+and
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+ is piecewise continuous as a function of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+.
+Another, weaker set of hypotheses is obtained by replacing the assumptions of existence of
+<IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img818.gif"
+ ALT="$ f_x$">
+ and its continuity with respect to all variables
+with the following Lipschitz property: for every bounded subset <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ of <!-- MATH
+ $\mathbb{R}\times\mathbb{R}^n\times U$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img819.gif"
+ ALT="$ \mathbb{R}\times\mathbb{R}^n\times U$">
+, there exists an <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ such that we have<A NAME="2994"></A>
+<P><!-- MATH
+ \begin{displaymath}
+|f(t,x_1,u)-f(t,x_2,u)|\le L|x_1-x_2|
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="282" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img820.gif"
+ ALT="$\displaystyle \vert f(t,x_1,u)-f(t,x_2,u)\vert\le L\vert x_1-x_2\vert
+$">
+</DIV><P>
+</P>
+for all <!-- MATH
+ $(t,x_1,u),(t,x_2,u)\in D$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img821.gif"
+ ALT="$ (t,x_1,u),(t,x_2,u)\in D$">
+. Note that in either case, differentiability of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is not assumed.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="82" ALIGN="BOTTOM" BORDER="0"
+ SRC="img822.gif"
+ ALT="\begin{Exercise}Verify that each of the two sets of hypotheses just described
+gu...
+...~\eqref{e-barf}. Explain which hypotheses can be further
+relaxed.
+\end{Exercise}">
+<BR>
+
+<P>
+When the right-hand side does not explicitly depend on time, i.e., when
+we have <IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img823.gif"
+ ALT="$ f=f(x,u)$">
+, a convenient way to guarantee that the above conditions
+hold is to assume that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is locally Lipschitz (as a function from <!-- MATH
+ $\mathbb{R}^n\times U$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img824.gif"
+ ALT="$ \mathbb{R}^n\times U$">
+ to <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+).
+In general, <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ depends on <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ in two ways: directly through the
+<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ argument, and indirectly through <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Regarding the first dependence,
+we are willing to be generous by assuming that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is at least continuous in <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+.
+In fact, we can always eliminate the direct dependence of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ on <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+
+by introducing the extra state variable <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+,  with the dynamics <!-- MATH
+ $\dot
+x_{n+1}=1$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img826.gif"
+ ALT="$ \dot
+x_{n+1}=1$">
+. Note that in order for the new system obtained in this way
+to satisfy our conditions for existence and uniqueness of
+solutions, continuity of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ in <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+
+is not enough and we need <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ to be <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ in <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ (or satisfy
+an appropriate Lipschitz condition).
+
+<P>
+On the other hand, as far as regularity of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ with
+respect to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ is concerned, it would be too restrictive to assume
+anything stronger than piecewise continuity.
+In fact, occasionally we may even want to relax this assumption and
+allow <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ to be a locally bounded function with countably many
+discontinuities. More precisely, the  class of admissible
+controls can be defined to consist of functions
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ that are <A NAME="3001"></A><A NAME="3002"></A>measurable<A NAME="tex2html32"
+  HREF="footnode.html#foot8059"><SUP>3.2</SUP></A> and locally
+  bounded. In view of the remarks made earlier about
+  the system&nbsp;(<A HREF="#e-nou">3.19</A>), local existence and uniqueness of solutions is
+  still guaranteed for this larger class
+  of controls.
+We will rarely need this level of generality, <A NAME="p-measurable"></A>and piecewise continuous controls will be adequate for most of our
+purposes (with the exception of some of the material to be
+discussed in Sections&nbsp;<A HREF="node84.html#s-timeopt">4.4</A>
+and&nbsp;<A HREF="node89.html#s-existence-optcontr">4.5</A>--specifically, Fuller's problem
+and Filippov's theorem). Similarly to the case of the
+system&nbsp;(<A HREF="#e-nou">3.19</A>), by a solution of&nbsp;(<A HREF="#e-basic-control">3.18</A>) we
+mean an absolutely continuous function <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ satisfying
+<P><!-- MATH
+ \begin{displaymath}
+x(t)=x_0+\int_{t_0}^t f(s,x(s),u(s))ds.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="254" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img827.gif"
+ ALT="$\displaystyle x(t)=x_0+\int_{t_0}^t f(s,x(s),u(s))ds.
+$">
+</DIV><P>
+</P>
+
+<P>
+In what follows, we will always assume that the property of local existence and uniqueness of solutions holds for a given control system. This of course does not guarantee that solutions exist globally in time. Typically, we will consider a candidate optimal trajectory defined on some time interval
+<IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img803.gif"
+ ALT="$ [t_0,t_1]$">
+, and then existence over the same time interval will be automatically ensured for nearby trajectories.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1124"
+  HREF="node52.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1118"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1112"
+  HREF="node50.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1120"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1122"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1125"
+  HREF="node52.html">3.3.2 Cost functional</A>
+<B> Up:</B> <A NAME="tex2html1119"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1113"
+  HREF="node50.html">3.3 Optimal control problem</A>
+ &nbsp; <B>  <A NAME="tex2html1121"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1123"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

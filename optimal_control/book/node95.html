@@ -1,0 +1,600 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.1.3 HJB equation</TITLE>
+<META NAME="description" CONTENT="5.1.3 HJB equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node97.html">
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1803"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1797"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1791"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1799"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1801"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1804"
+  HREF="node96.html">5.1.3.1 Infinite-horizon problem</A>
+<B> Up:</B> <A NAME="tex2html1798"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1792"
+  HREF="node94.html">5.1.2 Principle of optimality</A>
+ &nbsp; <B>  <A NAME="tex2html1800"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1802"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00713000000000000000"></A><A NAME="ss-HJB"></A>
+<BR>
+5.1.3 HJB equation
+</H2>
+
+<P>
+In the principle of optimality&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>) the value
+function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ appears on both sides with different arguments. We
+can thus think of&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>) as describing a dynamic
+relationship among the optimal values of the
+costs&nbsp;(<A HREF="node94.html#e-costs-family">5.1</A>) for different <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, which we declared earlier
+to be our goal. However, this relationship is rather clumsy and not very
+convenient to use in its present form. What we will now do is pass
+to its more compact infinitesimal
+version, which will take the form of a partial differential equation (PDE).
+The steps that follow rely on first-order Taylor
+expansions; the reader will recall that
+we used somewhat similar calculations when deriving the
+maximum principle.
+First, write <!-- MATH
+ $x(t+{\scriptstyle\Delta}t)$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1588.gif"
+ ALT="$ x(t+{\scriptstyle\Delta}t)$">
+ appearing on the right-hand side
+of&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>) as
+<P><!-- MATH
+ \begin{displaymath}
+x(t+{\scriptstyle\Delta}t)=x+f(t,x,u(t)){\scriptstyle\Delta}t+o({\scriptstyle\Delta}t)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="291" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1589.gif"
+ ALT="$\displaystyle x(t+{\scriptstyle\Delta}t)=x+f(t,x,u(t)){\scriptstyle\Delta}t+o({\scriptstyle\Delta}t)
+$">
+</DIV><P>
+</P>
+where we remembered that <IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1561.gif"
+ ALT="$ x(t)=x$">
+. This allows us to express
+<!-- MATH
+ $V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))$
+ -->
+<IMG
+ WIDTH="153" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1590.gif"
+ ALT="$ V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))$">
+ as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-V-expanded"></A><!-- MATH
+ \begin{equation}
+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))= V(t,x)+{V}_{t}(t,x){\scriptstyle\Delta}t+\langle {V}_{x}(t,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="579" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1591.gif"
+ ALT="$\displaystyle V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))= V(t,x)+{V}...
+... {V}_{x}(t,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(for now we proceed under the assumption--whose validity we will examine later--that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+.)
+We also have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Lint-expanded"></A><!-- MATH
+ \begin{equation}
+\int_t^{t+{\scriptstyle\Delta}t}L( s,x(s),u(s))d s= L(t,x,u(t)){\scriptstyle\Delta}t+o({\scriptstyle\Delta}t).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="379" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1592.gif"
+ ALT="$\displaystyle \int_t^{t+{\scriptstyle\Delta}t}L( s,x(s),u(s))d s= L(t,x,u(t)){\scriptstyle\Delta}t+o({\scriptstyle\Delta}t).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Substituting the expressions given by&nbsp;(<A HREF="#e-V-expanded">5.7</A>)
+and&nbsp;(<A HREF="#e-Lint-expanded">5.8</A>) into the right-hand side of&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>),
+we obtain
+<P><!-- MATH
+ \begin{displaymath}
+V(t,x)=\inf_{u_{[t,t+\Delta t]}}\left\{L(t,x,u(t)){\scriptstyle\Delta}t
++V(t,x)+{V}_{t}(t,x){\scriptstyle\Delta}t+\langle {V}_{x}(t,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)\right\}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="687" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1593.gif"
+ ALT="$\displaystyle V(t,x)=\inf_{u_{[t,t+\Delta t]}}\left\{L(t,x,u(t)){\scriptstyle\D...
+...,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)\right\}.
+$">
+</DIV><P>
+</P>
+The two <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1565.gif"
+ ALT="$ V(t,x)$">
+ terms cancel out (because the one inside the infimum
+does not depend on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ and can be pulled outside), which leaves us with
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-already"></A><!-- MATH
+ \begin{equation}
+0=\inf_{u_{[t,t+\Delta t]}}\left\{L(t,x,u(t)){\scriptstyle\Delta}t
++{V}_{t}(t,x){\scriptstyle\Delta}t+\langle {V}_{x}(t,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="571" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1594.gif"
+ ALT="$\displaystyle 0=\inf_{u_{[t,t+\Delta t]}}\left\{L(t,x,u(t)){\scriptstyle\Delta}...
+...t,x),f(t,x,u(t)){\scriptstyle\Delta}t\rangle +o({\scriptstyle\Delta}t)\right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let us now divide
+by <!-- MATH
+ ${\scriptstyle\Delta}t$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1595.gif"
+ ALT="$ {\scriptstyle\Delta}t$">
+ and take it to be small. In the limit as <!-- MATH
+ ${\scriptstyle\Delta}t\to 0$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1596.gif"
+ ALT="$ {\scriptstyle\Delta}t\to 0$">
+
+the higher-order term <!-- MATH
+ $o({\scriptstyle\Delta}t)/{\scriptstyle\Delta}t$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1597.gif"
+ ALT="$ o({\scriptstyle\Delta}t)/{\scriptstyle\Delta}t$">
+ disappears,
+and the infimum is taken
+ over the instantaneous value of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ at time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ (in fact, already in&nbsp;(<A HREF="#e-already">5.9</A>) the control values <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1598.gif"
+ ALT="$ u(s)$">
+ for <IMG
+ WIDTH="41" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1599.gif"
+ ALT="$ s&gt;t$">
+ affect the expression inside the infimum only through the <!-- MATH
+ $o({\scriptstyle\Delta}t)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1600.gif"
+ ALT="$ o({\scriptstyle\Delta}t)$">
+ term).
+Pulling <!-- MATH
+ ${V}_{t}(t,x)$
+ -->
+<IMG
+ WIDTH="57" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1601.gif"
+ ALT="$ {V}_{t}(t,x)$">
+ outside the infimum as it does not depend on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, we conclude that the equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB"></A><!-- MATH
+ \begin{equation}
+\fbox{$-{V}_{t}(t,x)=\inf\limits_{u\in U} \Big\{L(t,x,u)+\big\langle {V}_{x}(t,x),f(t,x,u)\big\rangle \Big\}$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="392" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1602.gif"
+ ALT="$\displaystyle \fbox{$-{V}_{t}(t,x)=\inf\limits_{u\in U} \Big\{L(t,x,u)+\big\langle {V}_{x}(t,x),f(t,x,u)\big\rangle \Big\}$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+must hold for all <!-- MATH
+ $t\in[t_0,t_1)$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1603.gif"
+ ALT="$ t\in[t_0,t_1)$">
+
+ and all <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+.
+This equation for the value function is called the <B>Hamilton-Jacobi-Bellman
+(HJB) equation</B>.<A NAME="5379"></A> It is a PDE<A NAME="5380"></A> since it contains partial derivatives of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ with respect to 
+<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.  The accompanying boundary condition is&nbsp;(<A HREF="node94.html#e-V-bound-cond">5.3</A>).
+
+<P>
+Note that the terminal cost appears only in the boundary
+condition and not in the HJB equation itself. In fact, the specifics about
+the terminal cost and terminal time did not play a role in our derivation
+of the HJB equation. For different target sets,
+the boundary condition changes (as
+we already discussed) but the HJB equation remains the same. However, the HJB equation will not hold for <!-- MATH
+ $(t,x)\in S$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1569.gif"
+ ALT="$ (t,x)\in S$">
+ just like it does not hold at <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1604.gif"
+ ALT="$ t=t_1$">
+ in the fixed-time case, because the principle of optimality is not valid there.
+
+<P>
+We can apply one more transformation in order to rewrite the
+HJB equation in a simpler--and also more insightful--way. It is
+easy to check that&nbsp;(<A HREF="#e-HJB">5.10</A>) is equivalent to
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-flipped"></A><!-- MATH
+ \begin{equation}
+{V}_{t}(t,x)=\sup_{u\in U} \left\{\left\langle -{V}_{x}(t,x),f(t,x,u)\right\rangle -L(t,x,u)\right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="381" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1605.gif"
+ ALT="$\displaystyle {V}_{t}(t,x)=\sup_{u\in U} \left\{\left\langle -{V}_{x}(t,x),f(t,x,u)\right\rangle -L(t,x,u)\right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Let us now recall our earlier
+definition&nbsp;(<A HREF="node55.html#e-hamiltonian-control">3.29</A>) of the Hamiltonian,
+reproduced here:
+<P><!-- MATH
+ \begin{displaymath}
+H(t,x,u,p):=\langle p,f(t,x,u)\rangle -L(t,x,u).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="308" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img900.gif"
+ ALT="$\displaystyle H(t,x,u,p):=\langle p,f(t,x,u)\rangle -L(t,x,u).$">
+</DIV><P>
+</P>
+We see that the expression inside the supremum in&nbsp;(<A HREF="#e-HJB-flipped">5.11</A>) is
+nothing but the Hamiltonian, with <IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1606.gif"
+ ALT="$ -{V}_{x}$">
+ playing the role of
+the costate. This brings us to the Hamiltonian form of the HJB equation:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-ham"></A><!-- MATH
+ \begin{equation}
+{V}_{t}(t,x)=\displaystyle\sup_{u\in U} H\left(t,x,u,-{V}_{x}(t,x)\right).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="270" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1607.gif"
+ ALT="$\displaystyle {V}_{t}(t,x)=\displaystyle\sup_{u\in U} H\left(t,x,u,-{V}_{x}(t,x)\right).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+So far, the existence of an optimal control has not been assumed.
+When an optimal (in the global sense) control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ does exist, the infimum in the
+previous calculations can be replaced by a minimum and this
+minimum is achieved when <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is plugged in. In particular, the
+principle of optimality&nbsp;(<A HREF="node94.html#e-V-printopt">5.4</A>) yields
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1608.gif"
+ ALT="$\displaystyle V(t,x^*(t))$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="455" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1609.gif"
+ ALT="$\displaystyle =\min_{u_{[t,t+\Delta t]}}\left\{\int_t^{t+{\scriptstyle\Delta}t} L( s,x(s),u(s))d s+V(t+{\scriptstyle\Delta}t,x(t+{\scriptstyle\Delta}t))\right\}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="397" HEIGHT="62" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1610.gif"
+ ALT="$\displaystyle =\int_t^{t+{\scriptstyle\Delta}t} L( s,x^*(s),u^*(s))d s+V(t+{\scriptstyle\Delta}t,x^*(t+{\scriptstyle\Delta}t))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $x^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$ x^*(\cdot)$">
+ and <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ are trajectories corresponding
+to <!-- MATH
+ $u^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$ u^*(\cdot)$">
+ and <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+, respectively, both passing through
+the same point <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ x^*(t)$">
+ at time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+. From this, repeating the
+same steps that led us earlier to the HJB equation&nbsp;(<A HREF="#e-HJB">5.10</A>),
+we obtain
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-min-achieved"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+-{V}_{t}(t,x^*(t))&=\min_{u\in U} \left\{L(t,x^*(t),u)+\left\langle {V}_{x}(t,x^*(t)),f(t,x^*(t),u)\right\rangle \right\}\\&=
+L(t,x^*(t),u^*(t))+\left\langle {V}_{x}(t,x^*(t)),f(t,x^*(t),u^*(t))\right\rangle .
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="491" HEIGHT="64" BORDER="0"
+ SRC="img1611.gif"
+ ALT="\begin{displaymath}\begin{split}-{V}_{t}(t,x^*(t))&amp;=\min_{u\in U} \left\{L(t,x^*...
+...{V}_{x}(t,x^*(t)),f(t,x^*(t),u^*(t))\right\rangle . \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Expressed in terms of the Hamiltonian, the second equation in&nbsp;(<A HREF="#e-min-achieved">5.13</A>) becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ustar"></A><!-- MATH
+ \begin{equation}
+H(t,x^*(t),u^*(t),-{V}_{x}(t,x^*(t)))=\max_{u\in U}
+H(t,x^*(t),u,-{V}_{x}(t,x^*(t))).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="501" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1612.gif"
+ ALT="$\displaystyle H(t,x^*(t),u^*(t),-{V}_{x}(t,x^*(t)))=\max_{u\in U} H(t,x^*(t),u,-{V}_{x}(t,x^*(t))).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This Hamiltonian maximization condition<A NAME="5414"></A> is analogous to the one we
+had in the maximum principle.  We see that if we can find a closed-form expression for  the control that maximizes the Hamiltonian--or, equivalently, the control that achieves the infimum in the HJB equation&nbsp;(<A HREF="#e-HJB">5.10</A>)--then the HJB equation becomes simpler and more explicit.
+
+<P>
+<BR>
+<A NAME="e-HJB-ugly"></A><A NAME="e-HJB-scal"></A><A NAME="x-scalar-HJB"></A><IMG
+ WIDTH="585" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1614.gif"
+ ALT="\begin{Example}
+Consider the standard integrator $\dot x=u$\ (with $x,u\in\mathb...
+...dex{Hamilton-Jacobi-Bellman
+(HJB) equation!solving}
+difficult.~\qed\end{Example}"> <A NAME="tex2html63"
+  HREF="footnode.html#foot7919"><SUP>5.1</SUP></A>
+<BR>
+
+<P>
+<BR>
+<A NAME="e-HJB-simplified"></A><A NAME="e-x-HJB"></A><A NAME="x-parking-again"></A><IMG
+ WIDTH="567" HEIGHT="389" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1615.gif"
+ ALT="\begin{Example}
+% latex2html id marker 9578Consider again the minimal-time par...
+...t invite the reader to play more with it in the next exercise.~\qed\end{Example}">
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="560" HEIGHT="122" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1616.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9602Do you see a way to further simpli...
+...lier results to obtain more information about the value function?
+\end{Exercise}">
+<BR>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1805"
+  HREF="node96.html">5.1.3.1 Infinite-horizon problem</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1803"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1797"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1791"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1799"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1801"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1804"
+  HREF="node96.html">5.1.3.1 Infinite-horizon problem</A>
+<B> Up:</B> <A NAME="tex2html1798"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1792"
+  HREF="node94.html">5.1.2 Principle of optimality</A>
+ &nbsp; <B>  <A NAME="tex2html1800"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1802"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

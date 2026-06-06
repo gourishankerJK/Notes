@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.2.3 Closed-loop stability</TITLE>
+<META NAME="description" CONTENT="6.2.3 Closed-loop stability">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node116.html">
+<LINK REL="previous" HREF="node114.html">
+<LINK REL="up" HREF="node112.html">
+<LINK REL="next" HREF="node116.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2095"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2089"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2083"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2091"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2093"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2096"
+  HREF="node116.html">6.2.4 Complete result and</A>
+<B> Up:</B> <A NAME="tex2html2090"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2084"
+  HREF="node114.html">6.2.2 Infinite-horizon problem and</A>
+ &nbsp; <B>  <A NAME="tex2html2092"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2094"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00823000000000000000"></A><A NAME="ss-closedloopstab"></A><A NAME="6530"></A>
+<BR>
+6.2.3 Closed-loop stability
+</H2>
+
+<P>
+In the previous subsection we were able to obtain a complete solution to the infinite-horizon LQR problem, under the assumption (enforced since Section&nbsp;<A HREF="node113.html#ss-limit-exist">6.2.1</A>) that the system is controllable.
+Here we investigate an important property of the optimal closed-loop system which will motivate us to introduce one more
+assumption.
+
+<P>
+<BR>
+<A NAME="x-LQR-unstable"></A><IMG
+ WIDTH="555" HEIGHT="103" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1929.gif"
+ ALT="\begin{Example}
+Consider the scalar system $
+\dot x=x+u$\ and the cost
+$
+J(u)=\i...
+....) The optimal closed-loop system $\dot x^*=x^*$\ is unstable.~\qed\end{Example}">
+<BR>
+
+<P>
+An optimal control that causes the state to grow unbounded is hardly acceptable.
+The reason for this undesirable situation in the above example is that the cost only takes into account the control effort and does not penalize
+instability. It is natural to ask under what additional assumption(s) the optimal control&nbsp;(<A HREF="node114.html#e-control-infhorLQR">6.31</A>) automatically ensures that the state converges to 0.
+One option is to require <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ to be strictly positive definite, but we will see in a moment that this would be an overkill. It is well known and easy to show (for example, via diagonalization) that every symmetric positive semidefinite matrix <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ can be written as <P><!-- MATH
+ \begin{displaymath}
+Q=C^TC
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="78" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1930.gif"
+ ALT="$\displaystyle Q=C^TC$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ is a
+<IMG
+ WIDTH="44" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1931.gif"
+ ALT="$ p\times n$">
+ matrix with <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1932.gif"
+ ALT="$ p\le n$">
+.
+Introducing the auxiliary output <P><!-- MATH
+ \begin{displaymath}
+y:=Cx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1933.gif"
+ ALT="$\displaystyle y:=Cx$">
+</DIV><P>
+</P>
+we can rewrite the cost&nbsp;(<A HREF="node114.html#e-J_infty">6.29</A>) as
+<P><!-- MATH
+ \begin{displaymath}
+J(u)=\int_{t_0}^\infty \left(y^T(t)y(t)+u^T(t)Ru(t)\right)dt.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="309" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1934.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^\infty \left(y^T(t)y(t)+u^T(t)Ru(t)\right)dt.
+$">
+</DIV><P>
+</P>
+Let us now assume that our system is observable through this output, i.e., <I>assume that <IMG
+ WIDTH="52" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1935.gif"
+ ALT="$ (A,C)$">
+ is an observable pair</I>.<A NAME="6545"></A>
+Note that if <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1936.gif"
+ ALT="$ Q&gt;0$">
+ then <IMG
+ WIDTH="75" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1937.gif"
+ ALT="$ C=Q^{1/2}$">
+ (matrix square root) which is <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ n\times n$">
+ and
+nonsingular, and the observability assumption automatically holds.  On the
+other hand, in Example&nbsp;<A HREF="#x-LQR-unstable">6.2</A> we had <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1938.gif"
+ ALT="$ Q=0$">
+ hence <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1939.gif"
+ ALT="$ C= 0$">
+ and the observability
+assumption fails.
+
+<P>
+It is not difficult to see why observability guarantees that the optimal closed-loop system is asymptotically stable.<A NAME="6548"></A> We know from&nbsp;(<A HREF="node114.html#e-J-infty">6.32</A>) that the optimal control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ gives a bounded cost (for arbitrary <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+). This cost is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-yuintegral"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+J(u^*)
+&=\int_{t_0}^\infty \left((y^*)^T (t)y^*(t)+
+(u^* )^T(t)Ru^* (t)\right)dt
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="364" HEIGHT="48" BORDER="0"
+ SRC="img1940.gif"
+ ALT="\begin{displaymath}\begin{split}J(u^*) &amp;=\int_{t_0}^\infty \left((y^*)^T (t)y^*(t)+ (u^* )^T(t)Ru^* (t)\right)dt \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $y^*(t)=Cx^*(t)$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1941.gif"
+ ALT="$ y^*(t)=Cx^*(t)$">
+ is the output along the optimal trajectory. Next, recall that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is generated by the linear feedback law&nbsp;(<A HREF="node114.html#e-control-infhorLQR">6.31</A>), which means that the optimal closed-loop system is a linear time-invariant system. Its solution <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is thus given by a linear combination of (complex) exponential functions of time, and the same is true about <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+. This observation and the fact that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1888.gif"
+ ALT="$ R&gt;0$">
+ make it clear that in order for the integral in&nbsp;(<A HREF="#e-yuintegral">6.33</A>)  to be bounded we must have <!-- MATH
+ $y^*(t)\to 0$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1942.gif"
+ ALT="$ y^*(t)\to 0$">
+ and
+<!-- MATH
+ $u^*(t)\to 0$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1943.gif"
+ ALT="$ u^*(t)\to 0$">
+ as <!-- MATH
+ $t\to\infty$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1944.gif"
+ ALT="$ t\to\infty$">
+. It is well known that if the output and the input of an observable linear time-invariant system converge to 0, then so does the state. (One way to see this is as follows: by observability, there exists a matrix <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ such that <IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1945.gif"
+ ALT="$ A-LC$">
+ has arbitrary desired eigenvalues with negative real parts; rewriting the system dynamics as <!-- MATH
+ $\dot x=(A-LC)x+Ly+Bu$
+ -->
+<IMG
+ WIDTH="208" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1946.gif"
+ ALT="$ \dot x=(A-LC)x+Ly+Bu$">
+, it is easy to show that  <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1947.gif"
+ ALT="$ x\to 0$">
+ when <IMG
+ WIDTH="66" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1948.gif"
+ ALT="$ y,u\to 0$">
+.) Therefore, the optimal closed-loop system must be asymptotically--in fact, exponentially--stable.<A NAME="6558"></A>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2095"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2089"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2083"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2091"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2093"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2096"
+  HREF="node116.html">6.2.4 Complete result and</A>
+<B> Up:</B> <A NAME="tex2html2090"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2084"
+  HREF="node114.html">6.2.2 Infinite-horizon problem and</A>
+ &nbsp; <B>  <A NAME="tex2html2092"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2094"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

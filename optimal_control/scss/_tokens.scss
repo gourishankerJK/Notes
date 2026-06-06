@@ -1,0 +1,74 @@
+// =============================================================
+//  Shared design tokens & mixins — Fine-Press Mathematics Edition
+//  (Ruby Sass 3.7 compatible)
+// =============================================================
+
+// ── Light palette ───────────────────────────────────────────
+$paper:      #f7f4ec;
+$paper-2:    #fffdf8;
+$ink:        #161310;
+$ink-2:      #4a443b;
+$ink-3:      #8a8175;
+$rule:       #e4ddcf;
+$rule-2:     #d2c9b6;
+$accent:     #1a1f71;   // fountain-pen blue-black
+$accent-2:   #3b3fa0;
+$gold:       #9a7b4f;
+$gold-soft:  #c9a875;
+$eq-bg:      #fbf8f0;
+$eq-border:  #c9a875;
+
+// ── Dark palette ────────────────────────────────────────────
+$d-paper:    #14120f;
+$d-paper-2:  #1c1916;
+$d-ink:      #ece7dd;
+$d-ink-2:    #b3aa9c;
+$d-ink-3:    #837b6e;
+$d-rule:     #2c2823;
+$d-rule-2:   #3a352e;
+$d-accent:   #8b90ff;
+$d-gold:     #c9a875;
+$d-eq-bg:    #1f1b15;
+
+// ── Paper palette ────────────────────────────────────────────
+$p-bg:        #f0e6c8;
+$p-bg2:       #e8dab8;
+$p-ink:       #2c1a0e;
+$p-ink2:      #5c3d25;
+$p-ink3:      #9c7a58;
+$p-gold:      #9b6820;
+$p-gold-soft: #c8a870;
+$p-rule:      #d4b896;
+$p-rule2:     #c0a070;
+$p-accent:    #7b2f0c;
+$p-eq-bg:     #ede8cc;
+
+// ── Type ────────────────────────────────────────────────────
+$serif:      'EB Garamond', Georgia, 'Times New Roman', serif;
+$display:    'Playfair Display', 'EB Garamond', Georgia, serif;
+$sans:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+// ── Misc ────────────────────────────────────────────────────
+$maxw:       1080px;
+$ease:       cubic-bezier(.22,.61,.36,1);
+
+// ── Mixins ──────────────────────────────────────────────────
+@mixin kicker {
+  font-family: $sans;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: $gold;
+}
+
+@mixin lift {
+  transition: transform .35s $ease, box-shadow .35s $ease, border-color .35s $ease, background .35s $ease, color .35s $ease;
+}
+
+@mixin fade-up($delay: 0s) {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeUp .9s $ease forwards;
+  animation-delay: $delay;
+}

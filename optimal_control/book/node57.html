@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>3.4.3 Second variation</TITLE>
+<META NAME="description" CONTENT="3.4.3 Second variation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node58.html">
+<LINK REL="previous" HREF="node56.html">
+<LINK REL="up" HREF="node54.html">
+<LINK REL="next" HREF="node58.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1211"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1205"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1199"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1207"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1209"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1212"
+  HREF="node58.html">3.4.4 Some comments</A>
+<B> Up:</B> <A NAME="tex2html1206"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1200"
+  HREF="node56.html">3.4.2 First variation</A>
+ &nbsp; <B>  <A NAME="tex2html1208"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1210"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00543000000000000000"></A><A NAME="ss-varappr-2ndvar"></A>
+<BR>
+3.4.3 Second variation
+</H2>
+
+<P>
+To better understand the behavior of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ as a function of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ along the
+optimal trajectory, let us
+bring in the second variation.
+To do this, we must first augment the description&nbsp;(<A HREF="node55.html#e-x-perturb">3.25</A>) of the perturbed state trajectory with the second-order term in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+, writing
+<!-- MATH
+ $x=x^*+\alpha\eta+\alpha^2\zeta +o(\alpha^2).$
+ -->
+<IMG
+ WIDTH="212" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img937.gif"
+ ALT="$ x=x^*+\alpha\eta+\alpha^2\zeta +o(\alpha^2).
+$">
+
+We then need to go back to the
+expressions&nbsp;(<A HREF="node56.html#e-K-firstvar">3.32</A>)-(<A HREF="node56.html#e-bypartsagain">3.34</A>) and expand them by adding
+second-order terms in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+. With <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ already set equal to <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ as defined above,
+it is relatively straightforward to check that the <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img938.gif"
+ ALT="$ \zeta$">
+-dependent terms drop out--exactly in the same way as the <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+-dependent terms dropped out of the first variation&nbsp;(<A HREF="node56.html#e-dJu_">3.35</A>)--and that the second variation is given by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2ndvar-Hessian"></A><!-- MATH
+ \begin{equation}
+\left.\delta^2 J\right|_{u^*}(\xi)= -\frac12\int_{t_0}^{t_1}
+  \begin{pmatrix}
+    \eta^T & \xi^T
+  \end{pmatrix}
+  \left.\begin{pmatrix}
+    {H}_{{x}{x}}
+     & {H}_{{ x}{ u}} \\
+    {H}_{{ x}{ u}} &
+    {H}_{{ u}{u}}
+  \end{pmatrix}\right|_{*}
+  \begin{pmatrix}
+    \eta \\
+    \xi
+  \end{pmatrix}dt+\frac12 \eta^T{K}_{{x}{x}}(x^*(t_1))\eta
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="563" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img939.gif"
+ ALT="$\displaystyle \left.\delta^2 J\right\vert _{u^*}(\xi)= -\frac12\int_{t_0}^{t_1}...
+...in{pmatrix}\eta \\ \xi \end{pmatrix}dt+\frac12 \eta^T{K}_{{x}{x}}(x^*(t_1))\eta$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.40)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we recall that
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ is obtained as the state of the system&nbsp;(<A HREF="node55.html#e-xivareq">3.27</A>) driven
+by <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ with the initial condition <!-- MATH
+ $\eta(t_0)=0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img880.gif"
+ ALT="$ \eta(t_0)=0$">
+.
+
+<P>
+<BR>
+<IMG
+ WIDTH="306" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img940.gif"
+ ALT="\begin{Exercise}Verify the formula~\eqref{e-2ndvar-Hessian}.
+\end{Exercise}">
+<BR>
+
+<P>
+We know from
+the second-order necessary condition for optimality (see
+Section&nbsp;<A HREF="node16.html#ss-second-variation">1.3.3</A>) that we must have
+<!-- MATH
+ $\left.\delta^2 J\right|_{u^*}(\xi)\ge 0$
+ -->
+<IMG
+ WIDTH="111" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img941.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{u^*}(\xi)\ge 0$">
+ for all <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+.
+ Let us concentrate
+on the integrand in&nbsp;(<A HREF="#e-2ndvar-Hessian">3.41</A>) and ask the following question:
+does one term in the Hessian matrix of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ dominate the other terms? If
+yes, then this term should be nonpositive to ensure the correct sign of
+<!-- MATH
+ $\left.\delta^2 J\right|_{u^*}(\xi)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img942.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{u^*}(\xi)$">
+.
+We encountered a very similar issue in Section&nbsp;<A HREF="node42.html#ss-legendre-nec">2.6.1</A> in relation to the
+inequality&nbsp;(<A HREF="node42.html#e-2nd-var-nonneg">2.61</A>). We found there that for the overall
+integral to be nonnegative, the function multiplying <!-- MATH
+ $(\eta'(x))^2$
+ -->
+<IMG
+ WIDTH="62" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img943.gif"
+ ALT="$ (\eta'(x))^2$">
+
+must be nonnegative, because <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ may be large while <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ itself is small. The present situation is a bit different since <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is not
+just the derivative of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+, i.e., the system relating the two is not
+a simple integrator. However, the corresponding conclusion is still valid:
+<!-- MATH
+ $\xi^T\left.{H}_{{ u}{u}}\right|_{*}\xi$
+ -->
+<IMG
+ WIDTH="82" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img944.gif"
+ ALT="$ \xi^T\left.{H}_{{ u}{u}}\right\vert _{*}\xi$">
+ is the dominant term because we may have a large
+<IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ producing a small <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+
+(but not vice versa), as illustrated in Figure&nbsp;<A HREF="#f-input-output">3.5</A>.
+Thus, in order for the second variation&nbsp;(<A HREF="#e-2ndvar-Hessian">3.41</A>)
+to be nonnegative, we must have
+<!-- MATH
+ $\xi^T\left.{H}_{{ u}{u}}\right|_{*}\xi\le 0$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img945.gif"
+ ALT="$ \xi^T\left.{H}_{{ u}{u}}\right\vert _{*}\xi\le 0$">
+ for all <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+, which can only happen if the matrix
+<!-- MATH
+ $\left.{H}_{{ u}{u}}\right|_{*}$
+ -->
+<IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img946.gif"
+ ALT="$ \left.{H}_{{ u}{u}}\right\vert _{*}$">
+ is negative semidefinite:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-extr__SPMgt_max"></A><!-- MATH
+ \begin{equation}
+{H}_{{u}{u}}(t,x^*(t),u^*(t),p^*(t))\le 0\qquad \forall\,t\in[t_0,t_1].
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="345" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img947.gif"
+ ALT="$\displaystyle {H}_{{u}{u}}(t,x^*(t),u^*(t),p^*(t))\le 0\qquad \forall\,t\in[t_0,t_1].$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.41)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This condition is known as the <B>Legendre-Clebsch condition</B><A NAME="3374"></A> (in its  Hamiltonian formulation).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-input-output"></A><A NAME="7799"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Large <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ can produce small <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="755" HEIGHT="224" ALIGN="BOTTOM" BORDER="0"
+ SRC="img948.gif"
+ ALT="\includegraphics{figures/input-output.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We already know from&nbsp;(<A HREF="node56.html#e-H_u_0">3.39</A>) that for each
+<!-- MATH
+ $t\in[t_0,t_1]$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img949.gif"
+ ALT="$ t\in[t_0,t_1]$">
+, the function <!-- MATH
+ $H(t,x^*(t),\cdot,p^*(t)))$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img924.gif"
+ ALT="$ H(t,x^*(t),\cdot,p^*(t)))$">
+ must
+have a stationary point at <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+. Now the
+Legendre-Clebsch condition&nbsp;(<A HREF="#e-extr__SPMgt_max">3.42</A>) tells us that if this stationary
+point is an extremum, then it is necessarily a <I>maximum</I>.
+Even though we have not proved that the stationary point must
+indeed be an extremum, it is tempting to conjecture that this
+Hamiltonian maximization property is true. In other words, our
+findings up to this point are very suggestive of the following
+(<I>not yet proved</I>) <A NAME="3392"></A><B>necessary conditions for
+optimality</B>: <I>If <!-- MATH
+ $u^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img873.gif"
+ ALT="$ u^*(\cdot)$">
+ is an optimal control and
+<!-- MATH
+ $x^*(\cdot)$
+ -->
+<IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img875.gif"
+ ALT="$ x^*(\cdot)$">
+ is the corresponding optimal state trajectory, then
+there exists an adjoint vector (costate) <!-- MATH
+ $p^*(\cdot)$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img950.gif"
+ ALT="$ p^*(\cdot)$">
+ such
+that:</I>
+
+<OL>
+<LI><I><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ satisfy the canonical
+  equations&nbsp;(<A HREF="node56.html#e-canonical">3.40</A>) with the boundary conditions
+  <!-- MATH
+ $x^*(t_0)=x_0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img951.gif"
+ ALT="$ x^*(t_0)=x_0$">
+, <!-- MATH
+ $p^*(t_1)=-{K}_{x}(x^*(t_1))$
+ -->
+<IMG
+ WIDTH="166" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img952.gif"
+ ALT="$ p^*(t_1)=-{K}_{x}(x^*(t_1))$">
+.</I>
+
+<P>
+</LI>
+<LI><I>For each fixed <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, the function <!-- MATH
+ $u\mapsto H(t,x^*(t),u,p^*(t))$
+ -->
+<IMG
+ WIDTH="183" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img953.gif"
+ ALT="$ u\mapsto H(t,x^*(t),u,p^*(t))$">
+ has a (local) maximum
+  at <IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img954.gif"
+ ALT="$ u=u^*(t)$">
+:</I><A NAME="3401"></A>
+  <P><!-- MATH
+ \begin{displaymath}
+H(t,x^*(t),u^*(t),p^*(t))\ge H(t,x^*(t),u,p^*(t))
+ \qquad \forall\,u \text{ near } u^*(t),\ \forall\,t\in[t_0,t_1].
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="397" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img955.gif"
+ ALT="$\displaystyle H(t,x^*(t),u^*(t),p^*(t))\ge H(t,x^*(t),u,p^*(t))
+\qquad \forall\,u$">&nbsp; &nbsp; near&nbsp;<IMG
+ WIDTH="144" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img956.gif"
+ ALT="$\displaystyle u^*(t),\ \forall\,t\in[t_0,t_1].
+$">
+</DIV><P>
+</P>
+
+<P>
+</LI>
+</OL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1211"
+  HREF="node58.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1205"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1199"
+  HREF="node56.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1207"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1209"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1212"
+  HREF="node58.html">3.4.4 Some comments</A>
+<B> Up:</B> <A NAME="tex2html1206"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1200"
+  HREF="node56.html">3.4.2 First variation</A>
+ &nbsp; <B>  <A NAME="tex2html1208"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1210"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

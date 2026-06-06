@@ -1,0 +1,569 @@
+// =============================================================
+//  Reading pages stylesheet  →  compiles to  book/cvoc.css
+//  Fine-Press Mathematics Edition  (Ruby Sass 3.7 compatible)
+// =============================================================
+
+@import 'tokens';
+
+$nav-h: 54px;
+
+// ── Reset & base ────────────────────────────────────────────
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: $serif;
+  font-size: 19px;
+  line-height: 1.82;
+  background: $paper;
+  color: $ink;
+  margin: 0;
+  padding: $nav-h 0 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  #cvoc-content { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+// Hide raw page before enhance.js runs (avoids flash of broken layout)
+body.cvoc-ready { /* shown */ }
+body:not(.cvoc-ready) #cvoc-content { /* still visible as fallback */ }
+
+// ── Top navigation bar ──────────────────────────────────────
+#cvoc-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: $nav-h;
+  background: rgba($paper-2, .92);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid $rule;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 26px;
+}
+
+.nav-side {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  &.right { justify-content: flex-end; }
+}
+
+.nav-center {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.nav-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: $sans;
+  font-size: 13px;
+  font-weight: 500;
+  color: $accent;
+  padding: 7px 12px;
+  border-radius: 3px;
+  text-decoration: none !important;
+  white-space: nowrap;
+  @include lift;
+  svg { width: 15px; height: 15px; flex: 0 0 auto; }
+  .lbl-sub {
+    font-family: $serif;
+    font-size: 12px;
+    color: $ink-3;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &:hover { background: rgba($accent, .07); }
+  &.dead { color: $rule-2; pointer-events: none; opacity: .4; }
+}
+.nav-arrow.right { flex-direction: row; text-align: right; }
+.nav-arrow.right .nav-arrow-text { text-align: right; }
+.nav-arrow .nav-arrow-text { display: flex; flex-direction: column; line-height: 1.2; }
+.nav-arrow .lbl-main { font-weight: 600; }
+
+.nav-link {
+  font-family: $sans;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: $ink-2;
+  text-decoration: none !important;
+  padding: 6px 10px;
+  border-radius: 3px;
+  @include lift;
+  &:hover { background: rgba($accent, .07); color: $accent; }
+}
+
+.nav-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  color: $gold;
+  border-radius: 3px;
+  text-decoration: none !important;
+  @include lift;
+  svg { width: 17px; height: 17px; }
+  &:hover { background: rgba($gold, .12); }
+}
+
+.nav-dot { color: $rule-2; user-select: none; font-size: 11px; }
+
+// ── Reading progress ────────────────────────────────────────
+#cvoc-progress {
+  height: 2px;
+  background: transparent;
+  #cvoc-progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, $gold, $gold-soft);
+    transition: width 90ms linear;
+  }
+}
+
+// ── Content article ─────────────────────────────────────────
+#cvoc-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 40px 120px;
+  @include fade-up(0s);
+  animation-duration: .6s;
+}
+
+// ── Headings ────────────────────────────────────────────────
+#cvoc-content {
+  h1, h2, h3, h4, h5,
+  H1, H2, H3, H4, H5 {
+    font-family: $display;
+    font-weight: 600;
+    color: $ink;
+    letter-spacing: -.005em;
+    line-height: 1.25;
+    a { color: inherit; text-decoration: none; }
+    br { display: none; }            // LaTeX2HTML sprinkles <br> in headings
+  }
+
+  h1, H1 {
+    font-size: 2.5rem;
+    margin: 0 0 1.4rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid $gold-soft;
+  }
+  h2, H2 {
+    font-size: 1.75rem;
+    margin: 2.6rem 0 1rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid $rule;
+  }
+  h3, H3 { font-size: 1.34rem; margin: 2rem 0 .8rem; }
+  h4, H4 { font-size: 1.12rem; margin: 1.6rem 0 .6rem; color: $ink-2; }
+}
+
+// ── Body text ───────────────────────────────────────────────
+#cvoc-content {
+  p, P {
+    margin: 0 0 1.15em;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    border-bottom: 1px solid rgba($accent, .25);
+    transition: border-color .2s, color .2s;
+    &:hover { border-bottom-color: $accent; }
+    &:visited { color: darken($accent, 5%); }
+  }
+
+  b, strong, B, STRONG { font-weight: 600; color: $ink; }
+  i, em, I, EM { font-style: italic; }
+
+  sup { font-size: .7em; vertical-align: super; line-height: 0; }
+  sub { font-size: .7em; vertical-align: sub; line-height: 0; }
+
+  hr, HR {
+    border: none;
+    height: 1px;
+    background: $rule;
+    margin: 2.6rem 0;
+  }
+}
+
+// ── Lists (incl. the big Contents page) ─────────────────────
+#cvoc-content {
+  ul, ol { margin: .6em 0 1.2em 1.6em; padding: 0; }
+  li { margin-bottom: .35em; }
+  ul ul, ol ol, ul ol, ol ul { margin-top: .3em; margin-bottom: .3em; }
+
+  // Contents / TOC list styling — make link lists feel editorial
+  ul {
+    list-style: none;
+    margin-left: 0;
+    li {
+      position: relative;
+      padding-left: 1.3em;
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0; top: .85em;
+        width: 5px; height: 5px;
+        border-radius: 50%;
+        background: $gold-soft;
+      }
+    }
+    ul li::before { background: none; border: 1px solid $rule-2; }
+  }
+  ol { list-style: decimal; margin-left: 1.6em; li { padding-left: .2em; } }
+}
+
+// ── Figures / diagram images ────────────────────────────────
+#cvoc-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  // Standalone figure images get a card treatment
+  div[align="CENTER"] > img,
+  div[align="center"] > img,
+  p > img[src$=".png"],
+  p > img[src$=".gif"]:not(.math) {
+    display: inline-block;
+  }
+}
+
+// ── Equation blocks (built by enhance.js) ───────────────────
+.eq-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 1.8rem 0;
+  padding: 1.1rem 3.4rem 1.1rem 1.6rem;
+  background: $eq-bg;
+  border-left: 3px solid $eq-border;
+  border-radius: 0 4px 4px 0;
+  overflow-x: auto;
+  &.unnumbered { padding-right: 1.6rem; }
+
+  .eq-math {
+    flex: 1;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .eq-num {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: $sans;
+    font-size: 12px;
+    color: $gold;
+    user-select: none;
+    white-space: nowrap;
+  }
+}
+
+.math-inline { white-space: nowrap; }
+
+// MathJax tweaks
+mjx-container { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+mjx-container[display="true"] { margin: 0 !important; }
+
+// ── Figure / rasterized-block cards ─────────────────────────
+//  LaTeX2HTML renders figures and long theorem environments as
+//  black-on-transparent GIFs. We sit them on a light card so they
+//  stay legible even in dark mode, at native resolution.
+.lx-card {
+  margin: 2rem 0;
+  padding: 20px 22px;
+  background: #fdfcf8;
+  border: 1px solid $rule;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba($ink, .04);
+
+  .lx-scroll { overflow-x: auto; text-align: center; }
+  img { max-width: 100%; height: auto; display: inline-block; }
+}
+
+.lx-label {
+  display: block;
+  margin: 0 0 12px;
+  font-family: $sans;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: $gold;
+  text-align: left;
+}
+
+.lx-ref { font-family: $sans; font-size: .82em; color: $ink-3; }
+
+// ── Callouts (rendered short theorem environments) ──────────
+.callout {
+  margin: 2rem 0;
+  padding: 18px 24px 6px;
+  background: $paper-2;
+  border: 1px solid $rule;
+  border-left: 3px solid $gold;
+  border-radius: 0 6px 6px 0;
+
+  .callout-head {
+    font-family: $sans;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: $gold;
+    margin-bottom: 8px;
+  }
+  .callout-body p { margin: 0 0 1em; }
+
+  &.callout-theorem, &.callout-lemma, &.callout-proposition, &.callout-corollary {
+    border-left-color: $accent;
+    .callout-head { color: $accent; }
+  }
+}
+
+// ── Legacy LaTeX2HTML font classes ──────────────────────────
+.MATH, .MATH I, .BOLDMATH { font-family: $serif; }
+SMALL.XTINY { font-size: .6em; } SMALL.TINY { font-size: .7em; }
+SMALL.SCRIPTSIZE { font-size: .75em; } SMALL.FOOTNOTESIZE { font-size: .83em; }
+BIG.LARGE { font-size: 1.12em; } BIG.XLARGE { font-size: 1.3em; }
+BIG.XXLARGE { font-size: 1.5em; } BIG.HUGE { font-size: 1.75em; } BIG.XHUGE { font-size: 2em; }
+
+// ── Address / page footer note ──────────────────────────────
+#cvoc-content {
+  address, ADDRESS {
+    display: block;
+    margin-top: 4rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid $rule;
+    font-family: $sans;
+    font-style: normal;
+    font-size: 12px;
+    color: $ink-3;
+    text-align: center;
+    letter-spacing: .04em;
+  }
+}
+
+// Footer page-link row injected by enhance.js
+.page-end-nav {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin-top: -80px;
+  margin-bottom: 80px;
+
+  a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 20px;
+    border: 1px solid $rule;
+    border-radius: 4px;
+    background: $paper-2;
+    text-decoration: none;
+    @include lift;
+    &:hover { border-color: $gold-soft; transform: translateY(-2px); }
+    .pe-dir { font-family: $sans; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: $gold; }
+    .pe-title { font-family: $serif; font-size: 1.05rem; color: $ink; }
+    &.pe-next { text-align: right; align-items: flex-end; }
+  }
+  a.dead { visibility: hidden; }
+}
+
+// ── Responsive ──────────────────────────────────────────────
+@media (max-width: 820px) {
+  body { font-size: 18px; }
+  #cvoc-content { padding: 40px 22px 90px; }
+  .page-end-nav { padding: 0 22px; }
+  #cvoc-content h1, #cvoc-content H1 { font-size: 2rem; }
+  #cvoc-content h2, #cvoc-content H2 { font-size: 1.45rem; }
+  .nav-arrow .lbl-sub { display: none; }
+}
+@media (max-width: 560px) {
+  .nav-arrow .nav-arrow-text { display: none; }
+  .nav-center { gap: 0; }
+  .nav-link { padding: 6px 7px; }
+}
+
+// ── Themes ───────────────────────────────────────────────────
+
+@mixin theme-dark {
+  body { background: $d-paper; color: $d-ink; }
+  #cvoc-nav { background: rgba($d-paper-2, .9); border-bottom-color: $d-rule; }
+  .nav-arrow { color: $d-accent; .lbl-sub { color: $d-ink-3; } &:hover { background: rgba($d-accent, .12); } &.dead { color: $d-rule-2; } }
+  .nav-link { color: $d-ink-2; &:hover { background: rgba($d-accent, .12); color: $d-accent; } }
+  .nav-home { color: $d-gold; &:hover { background: rgba($d-gold, .15); } }
+  .nav-dot { color: $d-rule-2; }
+  #cvoc-progress-fill { background: linear-gradient(90deg, $d-gold, lighten($d-gold, 8%)); }
+  #cvoc-content {
+    h1, h2, h3, h4, h5, H1, H2, H3, H4, H5 { color: $d-ink; }
+    h1, H1 { border-bottom-color: rgba($d-gold, .5); }
+    h2, H2 { border-top-color: $d-rule; }
+    h4, H4 { color: $d-ink-2; }
+    p, P { color: $d-ink; }
+    a { color: $d-accent; border-bottom-color: rgba($d-accent, .3); &:hover { border-bottom-color: $d-accent; } &:visited { color: lighten($d-accent, 6%); } }
+    b, strong, B, STRONG { color: $d-ink; }
+    hr, HR { background: $d-rule; }
+    ul li::before { background: rgba($d-gold, .7); }
+    ul ul li::before { background: none; border-color: $d-rule-2; }
+    address, ADDRESS { border-top-color: $d-rule; color: $d-ink-3; }
+  }
+  .eq-block { background: $d-eq-bg; border-left-color: rgba($d-gold, .6); .eq-num { color: $d-gold; } }
+  .lx-card { background: #f4f0e6; border-color: $d-rule; box-shadow: 0 1px 3px rgba(#000, .3); }
+  .lx-label { color: darken($gold, 6%); }
+  .lx-ref { color: $d-ink-3; }
+  .callout {
+    background: $d-paper-2; border-color: $d-rule; border-left-color: $d-gold;
+    .callout-head { color: $d-gold; }
+    .callout-body, .callout-body p { color: $d-ink; }
+    &.callout-theorem, &.callout-lemma, &.callout-proposition, &.callout-corollary {
+      border-left-color: $d-accent; .callout-head { color: $d-accent; }
+    }
+  }
+  .page-end-nav a { background: $d-paper-2; border-color: $d-rule; &:hover { border-color: rgba($d-gold, .6); } .pe-dir { color: $d-gold; } .pe-title { color: $d-ink; } }
+  .theme-toggle { border-color: $d-rule-2; .tt-btn { color: $d-ink-3; &.active { background: $d-paper-2; color: $d-gold; } } }
+  li.toc-entry > a { &:hover { background: rgba($d-accent, .1); } .sec-num { color: $d-gold; } .sec-title { color: $d-accent; } }
+}
+
+@mixin theme-paper {
+  body { background: $p-bg; color: $p-ink; }
+  #cvoc-nav { background: rgba($p-bg, .94); border-bottom-color: $p-rule2; }
+  .nav-arrow { color: $p-accent; .lbl-sub { color: $p-ink3; } &:hover { background: rgba($p-accent, .07); } &.dead { color: $p-rule2; } }
+  .nav-link { color: $p-ink2; &:hover { background: rgba($p-accent, .07); color: $p-accent; } }
+  .nav-home { color: $p-gold; &:hover { background: rgba($p-gold, .1); } }
+  .nav-dot { color: $p-rule2; }
+  #cvoc-progress-fill { background: linear-gradient(90deg, $p-gold, $p-gold-soft); }
+  #cvoc-content {
+    h1, h2, h3, h4, h5, H1, H2, H3, H4, H5 { color: $p-ink; }
+    h1, H1 { border-bottom-color: $p-gold-soft; }
+    h2, H2 { border-top-color: $p-rule; }
+    h4, H4 { color: $p-ink2; }
+    p, P { color: $p-ink; }
+    a { color: $p-accent; border-bottom-color: rgba($p-accent, .3); &:hover { border-bottom-color: $p-accent; } &:visited { color: darken($p-accent, 10%); } }
+    b, strong, B, STRONG { color: $p-ink; }
+    hr, HR { background: $p-rule; }
+    ul li::before { background: $p-gold-soft; }
+    ul ul li::before { background: none; border-color: $p-rule; }
+    address, ADDRESS { border-top-color: $p-rule; color: $p-ink3; }
+  }
+  .eq-block { background: $p-eq-bg; border-left-color: $p-gold-soft; .eq-num { color: $p-gold; } }
+  .lx-card { background: $p-bg2; border-color: $p-rule2; box-shadow: 0 1px 4px rgba($p-ink, .06); }
+  .lx-label { color: $p-gold; }
+  .lx-ref { color: $p-ink3; }
+  .callout {
+    background: $p-bg2; border-color: $p-rule; border-left-color: $p-gold;
+    .callout-head { color: $p-gold; }
+    .callout-body, .callout-body p { color: $p-ink; }
+    &.callout-theorem, &.callout-lemma, &.callout-proposition, &.callout-corollary {
+      border-left-color: $p-accent; .callout-head { color: $p-accent; }
+    }
+  }
+  .page-end-nav a { background: $p-bg2; border-color: $p-rule; &:hover { border-color: $p-gold-soft; } .pe-dir { color: $p-gold; } .pe-title { color: $p-ink; } }
+  .theme-toggle { border-color: $p-rule2; .tt-btn { color: $p-ink3; &.active { background: $p-bg2; color: $p-gold; } } }
+  li.toc-entry > a { &:hover { background: rgba($p-accent, .06); } .sec-num { color: $p-gold; } .sec-title { color: $p-accent; } }
+}
+
+// System auto dark — skipped when user picked a theme explicitly
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="paper"]) {
+    @include theme-dark;
+  }
+}
+html[data-theme="dark"]  { @include theme-dark; }
+html[data-theme="paper"] { @include theme-paper; }
+
+// ── Theme toggle widget ──────────────────────────────────────
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 1px solid $rule-2;
+  border-radius: 30px;
+  padding: 3px 4px;
+  gap: 2px;
+  margin-left: 10px;
+  flex-shrink: 0;
+
+  .tt-btn {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    color: $ink-3;
+    cursor: pointer;
+    padding: 0;
+    @include lift;
+
+    svg { width: 13px; height: 13px; display: block; }
+
+    &.active { background: $paper-2; color: $gold; box-shadow: 0 1px 3px rgba($ink, .12); }
+    &:hover:not(.active) { color: $ink-2; }
+  }
+}
+
+// ── TOC / section-list links ─────────────────────────────────
+#cvoc-content ul li.toc-entry {
+  padding-left: 0;
+  &::before { display: none; }
+}
+
+li.toc-entry > a {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 5px 10px;
+  margin: 1px -4px;
+  border-radius: 4px;
+  border-bottom: none !important;
+  @include lift;
+
+  .sec-num {
+    font-family: $sans;
+    font-size: .78em;
+    font-weight: 700;
+    color: $gold;
+    letter-spacing: .02em;
+    flex-shrink: 0;
+    min-width: 3.8em;
+  }
+  .sec-title {
+    color: $accent;
+    font-family: $serif;
+  }
+  &:hover { background: rgba($accent, .05); .sec-title { color: $ink; } }
+  &:visited .sec-title { color: darken($accent, 5%); }
+}

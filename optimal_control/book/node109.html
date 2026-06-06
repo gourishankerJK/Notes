@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>6.1.2 Riccati differential equation</TITLE>
+<META NAME="description" CONTENT="6.1.2 Riccati differential equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node110.html">
+<LINK REL="previous" HREF="node108.html">
+<LINK REL="up" HREF="node107.html">
+<LINK REL="next" HREF="node110.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2009"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2003"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1997"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2005"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2007"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2010"
+  HREF="node110.html">6.1.3 Value function and</A>
+<B> Up:</B> <A NAME="tex2html2004"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html1998"
+  HREF="node108.html">6.1.1 Candidate optimal feedback</A>
+ &nbsp; <B>  <A NAME="tex2html2006"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2008"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00812000000000000000">
+6.1.2 Riccati differential equation</A>
+</H2>
+
+<P>
+We will now  derive a <I>differential equation</I> that the matrix <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1793.gif"
+ ALT="$ P(\cdot)$">
+ defined in&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>) must satisfy. First, differentiate both sides of the equality&nbsp;(<A HREF="node108.html#p_-Px">6.6</A>) to obtain
+<P><!-- MATH
+ \begin{displaymath}
+\dot p^*(t)=-2\dot P(t)x^*(t)-2P(t)\dot x^*(t).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="262" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1821.gif"
+ ALT="$\displaystyle \dot p^*(t)=-2\dot P(t)x^*(t)-2P(t)\dot x^*(t).
+$">
+</DIV><P>
+</P>
+Next, expand <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1822.gif"
+ ALT="$ \dot p^*$">
+ and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1823.gif"
+ ALT="$ \dot x^*$">
+ using the canonical
+equations&nbsp;(<A HREF="node108.html#e-canon-cloo">6.7</A>) to arrive at
+<P><!-- MATH
+ \begin{displaymath}
+2Q(t)x^*(t)-A^T(t)p^*(t)=-2\dot P(t)x^*(t)-2P(t)A(t)x^*(t)-P(t)B(t)R^{-1}(t)B^T(t)p^*(t).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="656" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1824.gif"
+ ALT="$\displaystyle 2Q(t)x^*(t)-A^T(t)p^*(t)=-2\dot P(t)x^*(t)-2P(t)A(t)x^*(t)-P(t)B(t)R^{-1}(t)B^T(t)p^*(t).
+$">
+</DIV><P>
+</P>
+Applying&nbsp;(<A HREF="node108.html#p_-Px">6.6</A>) to eliminate <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ and dividing by 2, we conclude that the equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-RDE-with-x"></A><!-- MATH
+ \begin{equation}
+Q(t)x^*(t)+A^T(t)P(t)x^*(t)=-\dot P(t)x^*(t)-P(t)A(t)x^*(t)+P(t)B(t)R^{-1}(t)B^T(t)P(t)x^*(t)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="695" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1825.gif"
+ ALT="$\displaystyle Q(t)x^*(t)+A^T(t)P(t)x^*(t)=-\dot P(t)x^*(t)-P(t)A(t)x^*(t)+P(t)B(t)R^{-1}(t)B^T(t)P(t)x^*(t)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+must hold (for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ at which <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is defined). Since the initial state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ is arbitrary and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is the state of the linear time-varying system given by&nbsp;(<A HREF="node107.html#e-LTV-LQR">6.1</A>) and (<A HREF="node108.html#e-oplife">6.12</A>) whose transition matrix is nonsingular, <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ x^*(t)$">
+ can be arbitrary.
+It follows that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ must be a solution of the matrix
+differential equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-RDE"></A><!-- MATH
+ \begin{equation}
+\fbox{$\dot P(t)=-P(t)A(t)-A^T(t)P(t)-Q(t)+P(t)B(t)R^{-1}(t)B^T(t)P(t)$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="522" HEIGHT="51" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1826.gif"
+ ALT="$\displaystyle \fbox{$\dot P(t)=-P(t)A(t)-A^T(t)P(t)-Q(t)+P(t)B(t)R^{-1}(t)B^T(t)P(t)$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is called the <B>Riccati differential equation (RDE)</B>.<A NAME="6179"></A>
+We already know that the boundary condition for it is specified by&nbsp;(<A HREF="node108.html#e-RDE-boundcond">6.11</A>). The solution <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ is to be propagated backward in time from <IMG
+ WIDTH="47" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1604.gif"
+ ALT="$ t=t_1$">
+; its global existence remains to be addressed.
+
+<P>
+It is interesting to compare the two descriptions that we now have for <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+. The RDE&nbsp;(<A HREF="#e-RDE">6.14</A>) is a quadratic matrix differential equation. The formula&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>), on the other hand, is in terms of the transition matrix <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1799.gif"
+ ALT="$ \Phi$">
+ which satisfies a <I>linear</I> matrix differential equation <!-- MATH
+ $\frac d{dt}\Phi(t,t_1)=\mathcal H(t)\Phi(t,t_1)$
+ -->
+<IMG
+ WIDTH="185" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1827.gif"
+ ALT="$ \frac d{dt}\Phi(t,t_1)=\mathcal H(t)\Phi(t,t_1)$">
+ but has size <!-- MATH
+ $2n\times 2n$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1828.gif"
+ ALT="$ 2n\times 2n$">
+ (while <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is <IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1116.gif"
+ ALT="$ n\times n$">
+). Ignoring the computational effort involved in computing the matrix inverse in&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>), we can say that by passing from&nbsp;(<A HREF="node108.html#e-Ptdef">6.10</A>) to&nbsp;(<A HREF="#e-RDE">6.14</A>) we reduced in half the size of the matrix to be solved for, but traded a linear differential equation for a quadratic one. Actually, if we prefer matrix differential equations that are linear rather than quadratic, it is possible to compute <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ somewhat more efficiently by solving a linear system of size <!-- MATH
+ $2n\times n$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1829.gif"
+ ALT="$ 2n\times n$">
+, as shown in the next exercise.
+
+<P>
+<BR>
+<A NAME="e-P_Ham"></A><A NAME="z-RDE-Ham"></A><IMG
+ WIDTH="554" HEIGHT="192" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1830.gif"
+ ALT="\begin{Exercise}
+Let $X(t)$, $Y(t)$\ be $n\times n$\ matrices satisfying the lin...
+...\eqref{e-RDE}
+and the boundary condition~\eqref{e-RDE-boundcond}.
+\end{Exercise}">
+<BR>
+
+<P>
+The idea of reducing a quadratic differential equation to a linear one of twice the size is in fact not new to us; we already saw it in Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A> in the context of deriving second-order sufficient conditions for optimality in calculus of variations. In the single-degree-of-freedom case, we passed from the first-order quadratic differential equation&nbsp;(<A HREF="node43.html#e-w-riccati">2.64</A>) to the second-order linear differential equation&nbsp;(<A HREF="node43.html#e-accessory">2.67</A>) via the substitution&nbsp;(<A HREF="node43.html#e-wusub">2.66</A>). In the multiple-degrees-of-freedom setting, scalar variables need to be replaced by matrices but a similar transformation can be applied, as we stated (without including the derivations) at the end of Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>. Associating the matrix <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img656.gif"
+ ALT="$ W$">
+ there with the matrix <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ here, the reader will readily see the correspondence between that earlier construction and the one given in Exercise&nbsp;<A HREF="#z-RDE-Ham">6.1</A>.
+
+<P>
+The outcome of applying the necessary conditions of the maximum principle to the LQR problem can now be summarized as follows: a unique candidate for an optimal control is given by the linear feedback law&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>), where the matrix <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ satisfies the RDE&nbsp;(<A HREF="#e-RDE">6.14</A>)
+and the boundary condition&nbsp;(<A HREF="node108.html#e-RDE-boundcond">6.11</A>). This is as far as the maximum principle can take us; we need to employ other tools for investigating whether <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1809.gif"
+ ALT="$ P(t)$">
+ exists for all <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and whether the control&nbsp;(<A HREF="node108.html#e-oplife">6.12</A>) is indeed optimal.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2009"
+  HREF="node110.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2003"
+  HREF="node107.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1997"
+  HREF="node108.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2005"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2007"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2010"
+  HREF="node110.html">6.1.3 Value function and</A>
+<B> Up:</B> <A NAME="tex2html2004"
+  HREF="node107.html">6.1 Finite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html1998"
+  HREF="node108.html">6.1.1 Candidate optimal feedback</A>
+ &nbsp; <B>  <A NAME="tex2html2006"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2008"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

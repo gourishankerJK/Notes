@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.6 Second-order conditions</TITLE>
+<META NAME="description" CONTENT="2.6 Second-order conditions">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node44.html">
+<LINK REL="previous" HREF="node37.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html968"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html962"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html956"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html964"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html966"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html969"
+  HREF="node42.html">2.6.1 Legendre's necessary condition</A>
+<B> Up:</B> <A NAME="tex2html963"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html957"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+ &nbsp; <B>  <A NAME="tex2html965"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html967"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00460000000000000000"></A><A NAME="s-cv-2ndorder"></A>
+<BR>
+2.6 Second-order conditions
+</H1>
+
+<P>
+In Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A> we used the first variation to obtain the
+first-order necessary condition for optimality expressed by the Euler-Lagrange equation. In this section
+we will work with the second variation and derive first
+a necessary condition and then a sufficient condition for optimality. The setting is
+that of the Basic Calculus of Variations Problem and weak minima (cf. the discussion
+at the beginning of Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A>).
+
+<P>
+Recall from Section&nbsp;<A HREF="node16.html#ss-second-variation">1.3.3</A> the
+second-order expansion
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2nd-exp-again"></A><!-- MATH
+ \begin{equation}
+J(y+\alpha \eta)=J(y)+\left.\delta J\right|_{y}
+(\eta)\alpha+\left.\delta^2 J\right|_{y}(\eta)\alpha^2+o(\alpha^2)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="400" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img548.gif"
+ ALT="$\displaystyle J(y+\alpha \eta)=J(y)+\left.\delta J\right\vert _{y} (\eta)\alpha+\left.\delta^2 J\right\vert _{y}(\eta)\alpha^2+o(\alpha^2)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.54)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which defines the quadratic form <!-- MATH
+ $\left.\delta^2 J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ called the second
+variation. The basic second-order necessary condition&nbsp;(<A HREF="node16.html#e-2nd-nec-inf">1.40</A>) says that
+if a curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a local minimum of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+, then for all admissible
+perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ we must have <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)\ge0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img549.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)\ge0$">
+.
+In the present context, the function space <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ and the subset <!-- MATH
+ $A\subset V$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img277.gif"
+ ALT="$ A\subset V$">
+
+are as at the beginning of Section&nbsp;<A HREF="node27.html#s-1st-order-nec">2.3</A>,
+ and so admissible perturbations are <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ functions
+ satisfying&nbsp;(<A HREF="node28.html#e-E-L-boundcond">2.11</A>).
+Using the fact that the functional <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ takes the form&nbsp;(<A HREF="node25.html#e-cvbasic-J">2.9</A>), we
+will derive in Section&nbsp;<A HREF="node42.html#ss-legendre-nec">2.6.1</A> a more explicit second-order
+necessary condition for this situation.
+
+<P>
+We also discussed in Section&nbsp;<A HREF="node16.html#ss-second-variation">1.3.3</A> that to develop
+a second-order <I>sufficient</I> condition for a local minimum, we need
+to assume the first-order necessary condition,
+strengthen the second-order necessary condition
+to <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)>0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)&gt;0$">
+, and then try to prove that the second-order
+term dominates the higher-order term in the expansion&nbsp;(<A HREF="#e-2nd-exp-again">2.56</A>).
+For the variational problem at hand, we will be able to carry out this program
+in Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>.
+
+<P>
+Of course, second-order conditions for a local <I>maximum</I> are easily obtained
+by reversing the inequalities (or, equivalently, by replacing <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ with <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img296.gif"
+ ALT="$ -J$">
+).
+For this reason, we confine our attention to minima.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html970"
+  HREF="node42.html">2.6.1 Legendre's necessary condition for a
+weak minimum</A>
+<LI><A NAME="tex2html971"
+  HREF="node43.html">2.6.2 Sufficient condition for a weak minimum</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html968"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html962"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html956"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html964"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html966"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html969"
+  HREF="node42.html">2.6.1 Legendre's necessary condition</A>
+<B> Up:</B> <A NAME="tex2html963"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html957"
+  HREF="node40.html">2.5.2.1 Holonomic constraints</A>
+ &nbsp; <B>  <A NAME="tex2html965"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html967"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

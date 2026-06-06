@@ -1,0 +1,1286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.6.2 Sufficient condition for a weak minimum</TITLE>
+<META NAME="description" CONTENT="2.6.2 Sufficient condition for a weak minimum">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html996"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html990"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html986"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html992"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html994"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html997"
+  HREF="node44.html">2.7 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html991"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Previous:</B> <A NAME="tex2html987"
+  HREF="node42.html">2.6.1 Legendre's necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html993"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html995"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00462000000000000000"></A><A NAME="ss-legendre-suff"></A>
+<BR>
+2.6.2 Sufficient condition for a weak minimum
+</H2>
+
+<P>
+We are now interested in obtaining a second-order
+sufficient condition for proving optimality of a given test curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+. Looking at the
+expansion&nbsp;(<A HREF="node41.html#e-2nd-exp-again">2.56</A>) and recalling our earlier discussions, we know
+that we want to have <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)>0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)&gt;0$">
+ for all admissible
+perturbations, which means having a
+strict inequality in&nbsp;(<A HREF="node42.html#e-2nd-var-nonneg">2.61</A>). In addition, we need
+some uniformity to be able
+to dominate the <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+ term.
+Since we saw that the <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+-dependent term inside the integral
+in&nbsp;(<A HREF="node42.html#e-2nd-var-nonneg">2.61</A>) is the dominant term in the second variation,
+it is natural to conjecture--as Legendre did--that having
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.gif"
+ ALT="$ P(x)&gt;0$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+
+should be sufficient for the second variation to be positive definite.
+Legendre tried to prove this implication using the following
+clever approach. For every differentiable function
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img596.gif"
+ ALT="$ w=w(x)$">
+ we have
+<P><!-- MATH
+ \begin{displaymath}
+0=\left.w\eta^2\right|_{a}^b=\int_a^b \frac d{dx}(w\eta^2)dx=\int_a^b(w'\eta^2+2w\eta\eta')dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="396" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img597.gif"
+ ALT="$\displaystyle 0=\left.w\eta^2\right\vert _{a}^b=\int_a^b \frac d{dx}(w\eta^2)dx=\int_a^b(w'\eta^2+2w\eta\eta')dx
+$">
+</DIV><P>
+</P>
+where the first equality follows from the constraint
+ <!-- MATH
+ $\eta(a)=\eta(b)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img598.gif"
+ ALT="$ \eta(a)=\eta(b)=0$">
+. This lets us rewrite the second variation as
+<P><!-- MATH
+ \begin{displaymath}
+\int_a^b\!\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx=
+\int_a^b\!\left(P(x)(\eta'(x))^2+2w(x)\eta(x)\eta'(x)+(Q(x)+w'(x))
+(\eta(x))^2\right)dx.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="780" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img599.gif"
+ ALT="$\displaystyle \int_a^b\!\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx=
+\int_a...
+...\left(P(x)(\eta'(x))^2+2w(x)\eta(x)\eta'(x)+(Q(x)+w'(x))
+(\eta(x))^2\right)dx.
+$">
+</DIV><P>
+</P>
+Now, the idea is to find a function <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ that makes the integrand
+on the right-hand side into a perfect square.
+Clearly, such a <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ needs to satisfy<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-w-riccati"></A><!-- MATH
+ \begin{equation}
+P(Q+w')=w^2.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="132" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img601.gif"
+ ALT="$\displaystyle P(Q+w')=w^2.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.61)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is a quadratic differential equation, of
+<I>Riccati</I> type,<A NAME="2312"></A> for the unknown function <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+.
+
+<P>
+Let us suppose that we found a function <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+
+satisfying&nbsp;(<A HREF="#e-w-riccati">2.64</A>).
+Then our second variation can be written as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-legendre-rhs"></A><!-- MATH
+ \begin{equation}
+\int_a^b \bigg(\sqrt{ P(x)} \eta'(x)+\frac {w(x)}{\sqrt{P(x)}}\eta(x)\bigg)^2dx=
+\int_a^b P(x)\bigg(\eta'(x)+\frac {w(x)}{P(x)}\eta(x)\bigg)^2dx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="556" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img602.gif"
+ ALT="$\displaystyle \int_a^b \bigg(\sqrt{ P(x)} \eta'(x)+\frac {w(x)}{\sqrt{P(x)}}\eta(x)\bigg)^2dx= \int_a^b P(x)\bigg(\eta'(x)+\frac {w(x)}{P(x)}\eta(x)\bigg)^2dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.62)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(the division by <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is permissible since we are operating under
+the assumption that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ P&gt;0$">
+).
+It is obvious that the right-hand side of&nbsp;(<A HREF="#e-legendre-rhs">2.65</A>)
+is nonnegative, but we claim that it
+is actually
+positive for every admissible perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ that is not identically&nbsp;0.
+Indeed, if the integral is 0, then <!-- MATH
+ $\eta'+\frac {w}{P}\eta\equiv
+0$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img604.gif"
+ ALT="$ \eta'+\frac {w}{P}\eta\equiv
+0$">
+. We also know that <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img430.gif"
+ ALT="$ \eta(a)=0$">
+. But there is only one solution <!-- MATH
+ $\eta: [a,b]\to
+\mathbb{R}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img351.gif"
+ ALT="$ \eta:[a,b]\to \mathbb{R}$">
+ of
+the first-order differential equation <!-- MATH
+ $\eta'+\frac {w}{P}\eta=0$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img605.gif"
+ ALT="$ \eta'+\frac {w}{P}\eta=0$">
+ with the
+zero initial condition, and this
+solution is <!-- MATH
+ $\eta\equiv 0$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img606.gif"
+ ALT="$ \eta\equiv 0$">
+.
+So, it seems that we have <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)>0$
+ -->
+<IMG
+ WIDTH="104" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img550.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)&gt;0$">
+ for all
+<!-- MATH
+ $\eta\not\equiv 0$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img607.gif"
+ ALT="$ \eta\not\equiv 0$">
+. At this point we challenge the reader to see a gap in the above
+argument.
+
+<P>
+The problem with the foregoing reasoning is that the
+ Riccati differential equation&nbsp;(<A HREF="#e-w-riccati">2.64</A>) may have a finite escape time,<A NAME="p-escape"></A><A NAME="2331"></A> i.e., the solution <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ may not exist on the whole interval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+For example, if <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img608.gif"
+ ALT="$ P\equiv 1$">
+ and <!-- MATH
+ $Q\equiv -1$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img609.gif"
+ ALT="$ Q\equiv -1$">
+ then&nbsp;(<A HREF="#e-w-riccati">2.64</A>) becomes
+<IMG
+ WIDTH="95" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img610.gif"
+ ALT="$ w'=w^2+1$">
+. Its solution <!-- MATH
+ $w(x)=\tan(x-c)$
+ -->
+<IMG
+ WIDTH="141" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img611.gif"
+ ALT="$ w(x)=\tan(x-c)$">
+, where
+the constant <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+ depends on the choice of the initial condition, blows up when
+<IMG
+ WIDTH="42" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img612.gif"
+ ALT="$ x-c$">
+ is an odd integer multiple of <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img613.gif"
+ ALT="$ \pi/2$">
+. This means that <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ will not exist
+on all of <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ for any choice of <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img614.gif"
+ ALT="$ w(a)$">
+ if
+<IMG
+ WIDTH="75" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img615.gif"
+ ALT="$ b-a\ge\pi$">
+.
+
+<P>
+We see that a sufficient condition for optimality
+should involve, in addition to an inequality like <!-- MATH
+ $L_{y'y'}> 0$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img616.gif"
+ ALT="$ L_{y'y'}&gt; 0$">
+
+holding pointwise along the curve, some ``global" considerations
+applied to the entire curve.
+In fact, this becomes intuitively clear if we observe
+that a concatenation of optimal
+curves is not necessarily optimal. For example, consider the
+ two great-circle arcs on a sphere shown in Figure&nbsp;<A HREF="#f-sphere">2.13</A>. Each arc
+ minimizes the distance between its endpoints, but this statement is no longer
+ true for their concatenation--even when compared with
+nearby curves. At the same time,
+the concatenated arc would still satisfy
+any pointwise condition fulfilled by the two pieces.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-sphere"></A><A NAME="7750"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Concatenation of shortest-distance curves on a sphere is not
+  shortest-distance
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="245" HEIGHT="197" ALIGN="BOTTOM" BORDER="0"
+ SRC="img617.gif"
+ ALT="\includegraphics{figures/sphere.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+So, we need to ensure the existence of a solution for the
+differential equation&nbsp;(<A HREF="#e-w-riccati">2.64</A>) on the whole interval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+This issue, which escaped Legendre's<A NAME="2342"></A> attention, was pointed out by
+Lagrange in 1797.<A NAME="2343"></A>
+However, it was only in 1837, after 50 years had passed since Legendre's
+investigation, that Jacobi<A NAME="2344"></A> closed the gap by
+providing a missing ingredient which we now describe.
+The first step is to reduce the quadratic first-order
+differential equation&nbsp;(<A HREF="#e-w-riccati">2.64</A>)
+ to another differential equation, linear but of second
+ order, by
+making the substitution<A NAME="2346"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-wusub"></A><!-- MATH
+ \begin{equation}
+w(x)=-\frac{Pv'(x)}{v(x)}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="131" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img618.gif"
+ ALT="$\displaystyle w(x)=-\frac{Pv'(x)}{v(x)}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.63)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is a new (unknown) function, twice differentiable and
+ not equal to 0 anywhere. Rewriting&nbsp;(<A HREF="#e-w-riccati">2.64</A>) in terms of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+, we
+ obtain
+<P><!-- MATH
+ \begin{displaymath}
+P\bigg(Q-\frac{\frac
+d{dx}(Pv')v-P(v')^2}{v^2}\bigg)=
+\frac{P^2(v')^2}{v^2}.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="307" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img619.gif"
+ ALT="$\displaystyle P\bigg(Q-\frac{\frac
+d{dx}(Pv')v-P(v')^2}{v^2}\bigg)=
+\frac{P^2(v')^2}{v^2}.
+$">
+</DIV><P>
+</P>
+Multiplying both sides of this equation
+by <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ (which is nonzero), dividing by <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ (which is positive), and canceling
+terms,
+we can bring it to the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-accessory"></A><!-- MATH
+ \begin{equation}
+Qv=\frac d{dx}(Pv').
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="118" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img620.gif"
+ ALT="$\displaystyle Qv=\frac d{dx}(Pv').$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.64)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is the so-called <I>accessory</I>, or <I>Jacobi</I>, <A NAME="2363"></A><A NAME="7752"></A>equation. We will be done if we can find a solution <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ of the
+accessory equation&nbsp;(<A HREF="#e-accessory">2.67</A>) that does not vanish anywhere on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+,
+because then we can obtain a desired
+solution <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ to the original equation&nbsp;(<A HREF="#e-w-riccati">2.64</A>)
+via the formula&nbsp;(<A HREF="#e-wusub">2.66</A>).
+
+<P>
+Since&nbsp;(<A HREF="#e-accessory">2.67</A>) is a second-order differential equation, the initial
+data at <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img369.gif"
+ ALT="$ x=a$">
+ needed to uniquely
+specify a solution consists of <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img621.gif"
+ ALT="$ v(a)$">
+ and <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img622.gif"
+ ALT="$ v'(a)$">
+. In addition, note that if <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+
+is a solution
+of&nbsp;(<A HREF="#e-accessory">2.67</A>) then <IMG
+ WIDTH="23" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img623.gif"
+ ALT="$ \lambda v$">
+ is also a solution for every constant
+<IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+. By adjusting <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+ appropriately, we can thus assume with no loss
+of generality that <IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.gif"
+ ALT="$ v'(a)=1$">
+ (since we are not interested
+in <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ being identically 0). Among such solutions, let us consider the one
+that starts at 0, i.e., set <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.gif"
+ ALT="$ v(a)=0$">
+. A point <IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img626.gif"
+ ALT="$ c&gt;a$">
+ is said to be <I>conjugate</I><A NAME="2372"></A>
+to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ if this solution <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ hits 0 again at <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+, i.e., <!-- MATH
+ $v(c)=v(a)=0$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img627.gif"
+ ALT="$ v(c)=v(a)=0$">
+ (see Figure&nbsp;<A HREF="#f-conjugate">2.14</A>).
+It is clear that conjugate points are completely determined by <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ and <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+,
+which in turn depend, through&nbsp;(<A HREF="node42.html#e-PandQ">2.59</A>),
+only on the test curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ in the
+original variational problem.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-conjugate"></A><A NAME="7755"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A conjugate point
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="275" HEIGHT="66" ALIGN="BOTTOM" BORDER="0"
+ SRC="img628.gif"
+ ALT="\includegraphics{figures/conjugate.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Conjugate points have a number of interesting properties and
+interpretations, and their
+theory is outside the scope of this book. We do mention the following
+ interesting
+fact, which involves a concept that we will see again later when proving
+the maximum principle. If we consider two neighboring extremals (solutions of the
+Euler-Lagrange equation) starting from the same point at <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img369.gif"
+ ALT="$ x=a$">
+, and if <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+ is a point
+conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+, then at <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img629.gif"
+ ALT="$ x=c$">
+ the distance between these two extremals
+becomes small (an infinitesimal of higher order) relative to the distance between the two extremals as well as between their derivatives over <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+As their distance over <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ approaches 0, the two extremals
+actually intersect at a point whose <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+-coordinate approaches <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+. The reason behind
+this phenomenon is that
+the Jacobi equation is, approximately, the differential equation satisfied
+by the difference between two neighboring extremals; the next exercise makes this
+statement
+precise.
+
+<P>
+<BR>
+<A NAME="e-v-corrected"></A><IMG
+ WIDTH="555" HEIGHT="117" ALIGN="BOTTOM" BORDER="0"
+ SRC="img630.gif"
+ ALT="\begin{Exercise}
+Suppose that $y$\ and $y+v$\ are two neighboring extremals of t...
+...Q} and $\Vert\cdot\Vert$\ is a suitable norm (specify which one).
+\end{Exercise}">
+<BR>
+
+<P>
+We see from&nbsp;(<A HREF="#e-v-corrected">2.68</A>) that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+, which is
+the difference between the two extremals,
+satisfies the Jacobi equation&nbsp;(<A HREF="#e-accessory">2.67</A>) modulo terms of higher order.
+A linear differential equation that describes,
+within terms of higher order, the propagation
+of the difference between two nearby solutions
+of a given differential equation is called the <I>variational equation</I><A NAME="2402"></A>
+(corresponding to the given differential equation). In
+this sense, the Jacobi equation is the variational equation for the Euler-Lagrange equation.
+ This property
+can be shown to imply the claims we made before the exercise.
+Intuitively speaking,
+a conjugate point is where different neighboring extremals
+starting from the same point meet again (approximately). If we revisit
+the example of shortest-distance curves on a sphere, we see that conjugate points
+correspond to diametrically
+opposite points: all extremals
+(which are great-circle arcs)
+with a given initial point intersect after completing half a circle.
+We will encounter the concept of a variational equation again in Section&nbsp;<A HREF="node69.html#ss-vareqn">4.2.4</A>.
+
+<P>
+Now, suppose that the interval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ contains no points conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+.
+Let us see how this may help us in our task of finding a solution <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ of the
+Jacobi equation&nbsp;(<A HREF="#e-accessory">2.67</A>) that does not equal 0 anywhere on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+The absence of conjugate points means, by definition, that the solution with the
+initial
+data <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.gif"
+ ALT="$ v(a)=0$">
+ and <IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img624.gif"
+ ALT="$ v'(a)=1$">
+ never returns to 0 on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+. This is not yet
+a desired solution because we cannot have <IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img625.gif"
+ ALT="$ v(a)=0$">
+.
+What we can do, however, is make <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img621.gif"
+ ALT="$ v(a)$">
+ very small but positive. Using the property of continuity with respect to 
+initial conditions for solutions of differential equations, it is possible to
+ show that
+such a solution will remain positive everywhere on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+
+<P>
+In view of our earlier discussion, we conclude that the second variation
+<!-- MATH
+ $\left.\delta^2J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ is positive definite (on the space of admissible perturbations)
+if <IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img595.gif"
+ ALT="$ P(x)&gt;0$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+ and there are no points conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+
+on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+.
+We remark in passing that the absence of points conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ on
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ is also a necessary condition for
+<!-- MATH
+ $\left.\delta^2J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ to be positive definite, and if
+<!-- MATH
+ $\left.\delta^2J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ is positive semidefinite then no interior point of <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+
+can be conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+.
+We are now ready to state the following <B>second-order sufficient condition
+for optimality</B>:<A NAME="2411"></A><A NAME="2412"></A> <I>An extremal <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+ is a strict minimum if
+<!-- MATH
+ $L_{y'y'}(x,y(x),y'(x))>0$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img631.gif"
+ ALT="$ L_{y'y'}(x,y(x),y'(x))&gt;0$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+
+and the interval
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ contains no points conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+.</I>
+
+<P>
+Note that we do not yet have a proof of this result.
+Referring to the second-order expansion&nbsp;(<A HREF="node41.html#e-2nd-exp-again">2.56</A>),
+we know that under the conditions just listed <!-- MATH
+ $\left.\delta J\right|_{y}(\eta)=0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.gif"
+ ALT="$ \left.\delta J\right\vert _{y}(\eta)=0$">
+ (since
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal) and <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img558.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)$">
+ given by&nbsp;(<A HREF="node42.html#e-2nd-var-expression">2.58</A>)
+is positive, but we still need to
+show that <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)\alpha^2$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img632.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)\alpha^2$">
+ dominates the higher-order term <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+ which
+has the properties established in Exercise&nbsp;<A HREF="node42.html#z-hot">2.12</A>.
+Since <!-- MATH
+ $P(x)=\frac 12 L_{y'y'}(x,y(x),y'(x))>0$
+ -->
+<IMG
+ WIDTH="251" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img633.gif"
+ ALT="$ P(x)=\frac 12 L_{y'y'}(x,y(x),y'(x))&gt;0$">
+ on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+,
+we can pick a small enough
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \delta&gt;0$">
+ such that <!-- MATH
+ $P(x)>\delta$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img634.gif"
+ ALT="$ P(x)&gt;\delta$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+. Consider the integral
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-P-delta"></A><!-- MATH
+ \begin{equation}
+\int_a^b \left((P(x)-\delta)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="324" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img635.gif"
+ ALT="$\displaystyle \int_a^b \left((P(x)-\delta)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.65)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Reducing <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img636.gif"
+ ALT="$ \delta$">
+ further towards 0 if necessary, we can ensure that
+no points conjugate to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img325.gif"
+ ALT="$ a$">
+ on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ are introduced as
+we pass from <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ to <IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img637.gif"
+ ALT="$ P-\delta$">
+ (thanks to continuity of solutions of the
+accessory equation with respect to parameter variations). This guarantees that the
+functional&nbsp;(<A HREF="#e-P-delta">2.69</A>) is still positive definite, hence
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-good-shape"></A><!-- MATH
+ \begin{equation}
+\int_a^b
+\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx>\delta\int_a^b(\eta'(x))^2dx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="412" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img638.gif"
+ ALT="$\displaystyle \int_a^b \left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx&gt;\delta\int_a^b(\eta'(x))^2dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.66)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all admissible perturbations (not identically equal to 0).
+
+<P>
+In light of our earlier derivation of Legendre's condition, we know that the
+term depending on <IMG
+ WIDTH="38" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img639.gif"
+ ALT="$ (\eta')^2$">
+ is in some sense
+ the dominant term in&nbsp;(<A HREF="node42.html#e-oalpha2-exercise">2.60</A>),
+and the inequality&nbsp;(<A HREF="#e-good-shape">2.70</A>) indicates that we are in good shape.
+Formally, we can handle the other, <IMG
+ WIDTH="20" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img640.gif"
+ ALT="$ \eta^2$">
+-dependent term in&nbsp;(<A HREF="node42.html#e-oalpha2-exercise">2.60</A>)
+ as follows.
+Use the Cauchy-Schwarz inequality<A NAME="2432"></A> with respect to the <!-- MATH
+ $\mathcal L_2$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.gif"
+ ALT="$ \mathcal L_2$">
+
+norm<A NAME="tex2html26"
+  HREF="footnode.html#foot2433"><SUP>2.4</SUP></A> to write
+<P><!-- MATH
+ \begin{displaymath}
+\eta^2(x)=\left(\int_a^x 1\cdot\eta'(z) dz\right)^2
+\le(x-a)\int_a^x(\eta'(z))^2dz\le(x-a)\int_a^b(\eta'(z))^2dz.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="566" HEIGHT="65" ALIGN="MIDDLE" BORDER="0"
+ SRC="img642.gif"
+ ALT="$\displaystyle \eta^2(x)=\left(\int_a^x 1\cdot\eta'(z) dz\right)^2
+\le(x-a)\int_a^x(\eta'(z))^2dz\le(x-a)\int_a^b(\eta'(z))^2dz.
+$">
+</DIV><P>
+</P>
+From this, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-eta_SPMlt_eta_"></A><!-- MATH
+ \begin{equation}
+\int_a^b \eta^2(x)dx\le\int_a^b(x-a)dx\int_a^b(\eta'(z))^2dz=
+\frac{(b-a)^2}2\int_a^b(\eta'(x))^2dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="508" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img643.gif"
+ ALT="$\displaystyle \int_a^b \eta^2(x)dx\le\int_a^b(x-a)dx\int_a^b(\eta'(z))^2dz= \frac{(b-a)^2}2\int_a^b(\eta'(x))^2dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.67)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Now, Exercise&nbsp;<A HREF="node42.html#z-hot">2.12</A> tells us that the term <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+ in&nbsp;(<A HREF="node41.html#e-2nd-exp-again">2.56</A>) takes the form&nbsp;(<A HREF="node42.html#e-oalpha2-exercise">2.60</A>) where for <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ close enough to 0
+ both <IMG
+ WIDTH="27" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img644.gif"
+ ALT="$ \vert\bar P\vert$">
+ and <!-- MATH
+ $|\bar Q{(b-a)^2}/2|$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img645.gif"
+ ALT="$ \vert\bar Q{(b-a)^2}/2\vert$">
+ are
+smaller than <IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img646.gif"
+ ALT="$ \delta/2$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+ and all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+
+with <!-- MATH
+ $\|\eta\|_1=1$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img647.gif"
+ ALT="$ \Vert\eta\Vert _1=1$">
+.
+Combined with&nbsp;(<A HREF="node42.html#e-2nd-var-expression">2.58</A>), (<A HREF="#e-good-shape">2.70</A>),
+and&nbsp;(<A HREF="#e-eta_SPMlt_eta_">2.71</A>) this
+implies <!-- MATH
+ $J(y+\alpha\eta)>J(y)$
+ -->
+<IMG
+ WIDTH="137" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img648.gif"
+ ALT="$ J(y+\alpha\eta)&gt;J(y)$">
+ for these values of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ (except of course <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+), proving that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a (strict) weak minimum.
+
+<P>
+The above sufficient condition is not
+as constructive and practical as the first-order and second-order
+necessary conditions,
+because to apply it one needs to study conjugate points.
+The simpler necessary conditions can be exploited first, to see
+if they help narrow down candidates for an optimal solution. It should be observed,
+though, that the existence of conjugate points can be ruled out if the interval
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+ is taken to be sufficiently small.
+
+<P>
+<BR>
+<A NAME="z-least"></A><IMG
+ WIDTH="555" HEIGHT="59" ALIGN="BOTTOM" BORDER="0"
+ SRC="img649.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 8605Justify the term \lq\lq principle of \e...
+...re automatically its minima on sufficiently
+small time intervals.
+\end{Exercise}">
+<BR>
+
+<P>
+As for the multiple-degrees-of-freedom setting, let us make the simplifying assumption that <IMG
+ WIDTH="35" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img650.gif"
+ ALT="$ L_{yy'}$">
+ is a symmetric matrix (i.e., <!-- MATH
+ ${L}_{{y_i}{y_j'}}={L}_{{y_j}{y_i'}}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img651.gif"
+ ALT="$ {L}_{{y_i}{y_j'}}={L}_{{y_j}{y_i'}}$">
+ for all <!-- MATH
+ $i,j\in\{1,\dots,n\}$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img652.gif"
+ ALT="$ i,j\in\{1,\dots,n\}$">
+). Then it is not difficult to show, following steps similar to those that led us to&nbsp;(<A HREF="node42.html#e-2nd-var-expression">2.58</A>), that the second variation
+<!-- MATH
+ $\left.\delta^2 J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ is given
+by the formula
+<P><!-- MATH
+ \begin{displaymath}
+\left.\delta^2 J\right|_{y}(\eta)=\int_a^b\left((\eta')^T(x)P(x)\eta'(x)+
+\eta^T(x)Q(x)\eta(x)\right)dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="431" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img653.gif"
+ ALT="$\displaystyle \left.\delta^2 J\right\vert _{y}(\eta)=\int_a^b\left((\eta')^T(x)P(x)\eta'(x)+
+\eta^T(x)Q(x)\eta(x)\right)dx
+$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img654.gif"
+ ALT="$ P(x)$">
+ and <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img655.gif"
+ ALT="$ Q(x)$">
+ are symmetric
+matrices still defined by&nbsp;(<A HREF="node42.html#e-PandQ">2.59</A>). In place of <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ introduced at the beginning of this subsection we need to consider a
+symmetric matrix
+<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img656.gif"
+ ALT="$ W$">
+, and a suitable modification of our earlier square completion argument yields the Riccati matrix differential
+equation<A NAME="2462"></A>
+ <P><!-- MATH
+ \begin{displaymath}
+Q+W'=WP^{-1}W
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="154" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img657.gif"
+ ALT="$\displaystyle Q+W'=WP^{-1}W
+$">
+</DIV><P>
+</P>
+(note that <IMG
+ WIDTH="27" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img658.gif"
+ ALT="$ W'$">
+ denotes the derivative of <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img656.gif"
+ ALT="$ W$">
+, not the transpose). This quadratic
+differential equation is reduced to the
+second-order linear matrix differential equation<A NAME="2465"></A> <!-- MATH
+ $QV=\frac d{dx}(PV')$
+ -->
+<IMG
+ WIDTH="119" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img659.gif"
+ ALT="$ QV=\frac d{dx}(PV')$">
+
+ by the substitution <!-- MATH
+ $W=-PV'V^{-1}$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img660.gif"
+ ALT="$ W=-PV'V^{-1}$">
+, where
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is a matrix. Conjugate points are defined in terms of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ becoming
+singular. Generalizing the previous results by following this route is
+straightforward. Riccati matrix differential equations and their solutions
+play a central role in the linear quadratic regulator problem, which we
+will study in detail in Chapter&nbsp;<A HREF="node106.html#c-lqr">6</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html996"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html990"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html986"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html992"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html994"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html997"
+  HREF="node44.html">2.7 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html991"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Previous:</B> <A NAME="tex2html987"
+  HREF="node42.html">2.6.1 Legendre's necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html993"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html995"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

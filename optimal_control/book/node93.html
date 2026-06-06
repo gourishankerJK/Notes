@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.1.1 Motivation: the discrete problem</TITLE>
+<META NAME="description" CONTENT="5.1.1 Motivation: the discrete problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node94.html">
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node92.html">
+<LINK REL="next" HREF="node94.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1775"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1769"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1763"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1771"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1773"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1776"
+  HREF="node94.html">5.1.2 Principle of optimality</A>
+<B> Up:</B> <A NAME="tex2html1770"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1764"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+ &nbsp; <B>  <A NAME="tex2html1772"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1774"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00711000000000000000"></A><A NAME="ss-dynprog-dt"></A>
+<BR>
+5.1.1 Motivation: the discrete problem
+</H2>
+
+<P>
+The dynamic programming approach is quite general, but to fix
+ideas we first present it for the purely discrete case.<A NAME="5222"></A>  Consider a
+system of the form
+<P><!-- MATH
+ \begin{displaymath}
+x_{k+1}=f(x_k,u_k),\qquad k=0,1,\dots, T-1
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="312" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1541.gif"
+ ALT="$\displaystyle x_{k+1}=f(x_k,u_k),\qquad k=0,1,\dots, T-1
+$">
+</DIV><P>
+</P>
+where <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ lives in a finite set <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1543.gif"
+ ALT="$ X$">
+ consisting of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ elements,
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ u_k$">
+ lives in a finite set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ consisting of <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ elements, and
+<IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1544.gif"
+ ALT="$ T,N,M$">
+ are fixed positive integers. We suppose that each possible
+transition from some <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ to <IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1545.gif"
+ ALT="$ x_{k+1}$">
+ corresponding to some
+control value <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ u_k$">
+ has a cost assigned to it, and there is also a
+terminal cost function on <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1543.gif"
+ ALT="$ X$">
+. For each trajectory, the total cost
+accumulated at time <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ is the sum of the transition costs at time
+steps <!-- MATH
+ $0,\dots,T-1$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1546.gif"
+ ALT="$ 0,\dots,T-1$">
+ plus the terminal cost at <IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1547.gif"
+ ALT="$ x_T$">
+. For a given
+initial state <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ we want to minimize this total cost, the
+terminal state <IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1547.gif"
+ ALT="$ x_T$">
+ being free.
+
+<P>
+The most naive approach to this problem is as follows: starting
+from <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, enumerate all possible trajectories going forward up
+to time <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+, calculate the cost for each one, then compare them
+and select the optimal one. Figure&nbsp;<A HREF="#f-dt-forward">5.1</A> provides a
+visualization of this scenario. It is easy to estimate the
+computational effort required to implement such a solution: there
+are <IMG
+ WIDTH="33" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1548.gif"
+ ALT="$ M^T$">
+ possible trajectories and we need <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ additions to compute the cost for each one, which results
+in roughly <IMG
+ WIDTH="73" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1549.gif"
+ ALT="$ O(M^TT)$">
+ algebraic operations.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-dt-forward"></A><A NAME="7904"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Discrete case: going forward
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="371" HEIGHT="207" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1550.gif"
+ ALT="\includegraphics{figures/dt-forward.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We now examine an alternative approach, which might initially
+appear counterintuitive: let us go backward in time. At <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1551.gif"
+ ALT="$ k=T$">
+,
+terminal costs are known for each <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+. At <IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1552.gif"
+ ALT="$ k=T-1$">
+, for each
+<IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ we find to which <IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1545.gif"
+ ALT="$ x_{k+1}$">
+ we should jump so as to have the
+smallest cost (the one-step running cost plus the terminal cost).
+Write this optimal ``cost-to-go" next to each <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ and mark the
+selected path (see Figure&nbsp;<A HREF="#f-dt-backward">5.2</A>). In case of more
+than one path giving the same cost, choose one of them at random.
+Repeat these steps for <!-- MATH
+ $k=T-2,\dots, 0$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1553.gif"
+ ALT="$ k=T-2,\dots, 0$">
+, working with the
+costs-to-go computed previously in place of the terminal costs.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-dt-backward"></A><A NAME="7906"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Discrete case: going backward
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="371" HEIGHT="208" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1554.gif"
+ ALT="\includegraphics{figures/dt-backward.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We claim that  when we are done, we will have generated an optimal
+trajectory from each <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ to some <IMG
+ WIDTH="24" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1547.gif"
+ ALT="$ x_T$">
+. The justification of
+this claim relies on the principle of optimality, an observation
+that we already made during the proof of the maximum principle
+(see page&nbsp;<A HREF="node66.html#p-poo"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>). In the present context this principle
+says that for each time step <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+, if <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ is a point on an
+optimal trajectory then the remaining decisions (from time <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+
+onward) must constitute an optimal policy with respect to <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ as
+the initial condition. What the principle of optimality does for
+us here is guarantee that the paths we discard going backward
+cannot be portions of optimal trajectories. On the other hand, in
+the previous approach (going forward) we are not able to discard
+any paths until we reach the terminal time and finish the
+calculations.
+
+<P>
+Let us assess the computational effort associated with this
+backward scheme. At each time <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+,
+ for each state <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ and each control <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1524.gif"
+ ALT="$ u_k$">
+ we need to add
+ the cost of the corresponding transition to the
+ cost-to-go already computed for the resulting
+ <IMG
+ WIDTH="39" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1545.gif"
+ ALT="$ x_{k+1}$">
+. Thus, the number of required operations is <IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1555.gif"
+ ALT="$ O(N
+MT)$">
+. Comparing this with the <IMG
+ WIDTH="73" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1549.gif"
+ ALT="$ O(M^TT)$">
+ operations needed for the
+earlier forward scheme, we conclude that the backward computation
+is more efficient for large <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+, with  <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ and <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ fixed. Of
+course, the number of operations will still be large if <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ and
+<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ are large (this is the ``curse of
+  dimensionality").
+
+<P>
+Actually, the above comparison is not really accurate because the
+backward scheme provides much more information: it finds the
+optimal policy for every initial condition <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, and in fact it
+tells us what the optimal decision is at every <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+.
+We can restate this last property as follows: the backward scheme
+yields the
+  optimal control policy in the form of a <I>state feedback
+  law</I>.<A NAME="5273"></A> In the forward
+scheme, on the other hand, to handle all initial conditions we
+would need <IMG
+ WIDTH="89" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1556.gif"
+ ALT="$ O(NM^TT)$">
+ operations, and we would still not cover all
+states <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1542.gif"
+ ALT="$ x_k$">
+ for <IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1557.gif"
+ ALT="$ k&gt;0$">
+; hence, a state feedback is not obtained.
+We see that the backward scheme fulfills the objective formulated
+in Bellman's quote at the beginning of this chapter.
+  This recursive scheme serves as an example of
+the general method of dynamic programming.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1775"
+  HREF="node94.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1769"
+  HREF="node92.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1763"
+  HREF="node92.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1771"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1773"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1776"
+  HREF="node94.html">5.1.2 Principle of optimality</A>
+<B> Up:</B> <A NAME="tex2html1770"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+<B> Previous:</B> <A NAME="tex2html1764"
+  HREF="node92.html">5.1 Dynamic programming and</A>
+ &nbsp; <B>  <A NAME="tex2html1772"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1774"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

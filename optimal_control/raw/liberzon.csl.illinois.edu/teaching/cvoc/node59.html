@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.4.5 Critique of the variational approach and preview of
+the maximum principle </TITLE>
+<META NAME="description" CONTENT="3.4.5 Critique of the variational approach and preview of
+the maximum principle ">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node58.html">
+<LINK REL="up" HREF="node54.html">
+<LINK REL="next" HREF="node60.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1237"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1231"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1227"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1233"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1235"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1238"
+  HREF="node60.html">3.5 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1232"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1228"
+  HREF="node58.html">3.4.4 Some comments</A>
+ &nbsp; <B>  <A NAME="tex2html1234"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1236"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00545000000000000000"></A><A NAME="ss-varappr-critique"></A>
+<BR>
+3.4.5 Critique of the variational approach and preview of
+the maximum principle 
+</H2>
+
+<P>
+The variational approach presented in
+Sections&nbsp;<A HREF="node55.html#ss-preliminaries">3.4.1</A>-<A HREF="node57.html#ss-varappr-2ndvar">3.4.3</A> has led
+us, quite quickly, to the necessary conditions for optimality
+expressed by the canonical equations and the Hamiltonian
+maximization property (we did not actually prove the latter
+property, but we will see that it is indeed correct). While it
+helps us build intuition for what the correct statement of the
+maximum principle should look like, the variational approach has
+several limitations which, upon closer inspection, turn out to be
+quite severe.
+
+<P>
+C<SMALL>ONTROL SET.</SMALL> Recall that our starting point was to
+consider perturbed controls of the form&nbsp;(<A HREF="node55.html#e-u-xi">3.24</A>). Such
+perturbations make sense when the values of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ are interior
+points of the control set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. This may not be the case, though,
+if <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ has a boundary, and bounded (or even finite)
+ control sets are common in control applications.
+As we will see in the next chapter,
+the statement that the function
+<!-- MATH
+ $u\mapsto H(t,x^*(t),u,p^*(t))$
+ -->
+<IMG
+ WIDTH="183" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img953.gif"
+ ALT="$ u\mapsto H(t,x^*(t),u,p^*(t))$">
+ must have a maximum
+  at <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+ is true even in such situations
+   and, moreover, this maximum is in fact global.
+However, we cannot hope to establish this fact using the variational approach,
+because
+<!-- MATH
+ $\left.{H}_{u}\right|_{*}$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img921.gif"
+ ALT="$ \left.{H}_{u}\right\vert _{*}$">
+ need not be 0 when the maximum is achieved at a boundary point
+of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+.
+
+<P>
+F<SMALL>INAL STATE.</SMALL> In the preceding we treated the case
+when the final state <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img849.gif"
+ ALT="$ x_f$">
+ is free, but
+  we know (see Section&nbsp;<A HREF="node53.html#ss-target-set">3.3.3</A>) that in general
+   we may have some target set <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img852.gif"
+ ALT="$ S$">
+. Consider, for example,
+ the case of a fixed endpoint: <!-- MATH
+ $S=\{t_1\}\times\{x_1\}$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img865.gif"
+ ALT="$ S=\{t_1\}\times \{x_1\}$">
+.
+ Then
+  the control perturbation <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is no longer arbitrary, since the resulting
+  state perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ must satisfy <!-- MATH
+ $\eta(t_1)=0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img972.gif"
+ ALT="$ \eta(t_1)=0$">
+. In view of the fact
+  that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ and <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ are related by the system&nbsp;(<A HREF="node55.html#e-xidot">3.28</A>) with
+  <!-- MATH
+ $\eta(t_0)=0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img880.gif"
+ ALT="$ \eta(t_0)=0$">
+, it is easy to show that admissible perturbations
+<IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ must satisfy the constraint
+<P><!-- MATH
+ \begin{displaymath}
+\int_{t_0}^{t_1}\Phi_*(t_1,t)B(t)\xi(t)dt=0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="207" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img973.gif"
+ ALT="$\displaystyle \int_{t_0}^{t_1}\Phi_*(t_1,t)B(t)\xi(t)dt=0
+$">
+</DIV><P>
+</P>
+where <!-- MATH
+ $\Phi_*(\cdot,\cdot)$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img974.gif"
+ ALT="$ \Phi_*(\cdot,\cdot)$">
+ is the transition matrix for <!-- MATH
+ $A_*(\cdot)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img930.gif"
+ ALT="$ A_*(\cdot)$">
+
+in&nbsp;(<A HREF="node55.html#e-xidot">3.28</A>).
+The second equation in&nbsp;(<A HREF="node56.html#e-intHu_0">3.38</A>) needs to hold
+only for admissible
+perturbations, and not for all <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+. This condition is no longer strong enough
+to let us conclude that
+<!-- MATH
+ $\left.{H}_{u}\right|_{*}\equiv 0$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img922.gif"
+ ALT="$ \left.{H}_{u}\right\vert _{*}\equiv0$">
+. We see that the prospects of
+extending the variational approach beyond
+free-endpoint problems do not look very promising.
+
+<P>
+D<SMALL>IFFERENTIABILITY.</SMALL> When developing the first
+variation, we were tacitly
+  assuming that <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is differentiable with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ (as well as <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+). Since the Hamiltonian
+  <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is defined via&nbsp;(<A HREF="node55.html#e-hamiltonian-control">3.29</A>), both <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ must thus
+  be differentiable with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. The reader can readily check that
+  differentiability of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ was <I>not</I>
+one of the assumptions we made in Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A> to ensure
+existence
+and uniqueness of solutions  for our control system. In other words,
+ the variational approach requires extra regularity
+assumptions to be imposed on the system.
+Having to assume differentiability of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ is also undesirable, as
+  it rules out otherwise quite reasonable cost functionals like
+  <!-- MATH
+ $J(u)=\int_{t_0}^{t_1} |u(t)|dt.$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img975.gif"
+ ALT="$ J(u)=\int_{t_0}^{t_1} \vert u(t)\vert dt.
+$">
+
+Furthermore, the analysis based on the second variation--which
+is needed to distinguish between a minimum and a
+maximum--involves second-order partial derivatives
+of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. It is clear that the variational
+approach would take us on a path of overly restrictive regularity assumptions.
+Instead, we would like
+ to establish the Hamiltonian maximization property more directly, not by
+working with derivatives.
+
+<P>
+C<SMALL>ONTROL PERTURBATIONS.</SMALL> When considering the control
+and state perturbations as in&nbsp;(<A HREF="node55.html#e-u-xi">3.24</A>)
+and&nbsp;(<A HREF="node55.html#e-x-perturb">3.25</A>) with <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ near 0, we are allowing only
+small deviations in both <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. For the system <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img964.gif"
+ ALT="$ \dot x=u$">
+, this would correspond exactly to the
+notion of a weak minimum from calculus of variations. However, as we
+already discussed as early as Section&nbsp;<A HREF="node26.html#s-weak-strong">2.2.1</A> (see in
+particular Example&nbsp;<A HREF="node26.html#x-weak-strong">2.1</A>), we would like to have a
+larger family of control perturbations. More precisely, we want to
+capture optimality with respect to control perturbations that may be large,
+as long as the corresponding state trajectories are close to the
+given one. For example, Figure&nbsp;<A HREF="#f-perturbation">3.6</A> illustrates a
+particular control perturbation (for controls that switch between
+only two values) which is very reasonable  but falls outside the
+scope of the variational approach. As we will soon see, working
+with a richer perturbation family is crucial for obtaining sharper
+necessary conditions for optimality.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-perturbation"></A><A NAME="7805"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A control perturbation
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="741" HEIGHT="212" ALIGN="BOTTOM" BORDER="0"
+ SRC="img976.gif"
+ ALT="\includegraphics{figures/perturbation.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+In summary, while the basic form of the necessary conditions
+ provided by the maximum principle will be similar to what we obtained using the variational
+ approach, several shortcomings of the variational approach must be overcome
+  in order to obtain a more satisfactory result. Specifically,
+ we need to accommodate
+constraints on the control set,
+constraints on the final state, and weaker differentiability assumptions.
+A less restrictive notion of ``closeness" of controls will be the
+key to achieving these goals. Borrowing a colorful expression from&nbsp;[<A
+ HREF="node135.html#pesch-bulirsch">PB94</A>],
+we can describe the task ahead of us as ``the cutting of
+the umbilical cord between the calculus of variations and optimal
+control theory." The maximum principle is a very
+nontrivial extension of the variational approach, and was developed
+many years later. The proof of the maximum principle is quite different from the argument given in this section; in particular, it is
+much more geometric in nature.  We are now ready, in terms
+ of both technical preparation
+and conceptual motivation, to tackle this proof in the next
+chapter.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1237"
+  HREF="node60.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1231"
+  HREF="node54.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1227"
+  HREF="node58.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1233"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1235"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1238"
+  HREF="node60.html">3.5 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html1232"
+  HREF="node54.html">3.4 Variational approach to</A>
+<B> Previous:</B> <A NAME="tex2html1228"
+  HREF="node58.html">3.4.4 Some comments</A>
+ &nbsp; <B>  <A NAME="tex2html1234"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1236"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

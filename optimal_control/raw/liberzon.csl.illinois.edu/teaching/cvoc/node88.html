@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>4.4.4 Fuller's problem</TITLE>
+<META NAME="description" CONTENT="4.4.4 Fuller's problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node84.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1687"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1681"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1677"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1683"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1685"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1688"
+  HREF="node89.html">4.5 Existence of optimal</A>
+<B> Up:</B> <A NAME="tex2html1682"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1678"
+  HREF="node87.html">4.4.3 Nonlinear systems, singular</A>
+ &nbsp; <B>  <A NAME="tex2html1684"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1686"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00644000000000000000"></A>
+<A NAME="4944"></A>
+<BR>
+4.4.4 Fuller's problem
+</H2>
+
+<P>
+Consider again the double
+integrator&nbsp;(<A HREF="node85.html#e-double-int-ss">4.48</A>) with the same control
+constraint <!-- MATH
+ $u\in[-1,1]$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1470.gif"
+ ALT="$ u\in[-1,1]$">
+. Let the cost functional be
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-fuller"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^{t_f}x_1^2(t)dt
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="148" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1471.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_f}x_1^2(t)dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.66)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and let the target set be
+<!-- MATH
+ $S=[t_0,\infty)\times\Big\{\Big({\textstyle{0}\atop
+\textstyle{0}}\Big)\Big\}$
+ -->
+<IMG
+ WIDTH="167" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1472.gif"
+ ALT="$ S=[t_0,\infty)\times\Big\{\Big({\textstyle{0}\atop
+\textstyle{0}}\Big)\Big\}$">
+. In other words,
+the final time is free and the final state is the origin, but this
+is not a minimal-time problem any more. The Hamiltonian is <!-- MATH
+ $H=p_1x_2+p_2u+p_0x_1^2$
+ -->
+<IMG
+ WIDTH="179" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1473.gif"
+ ALT="$ H=p_1x_2+p_2u+p_0x_1^2 $">
+ and the optimal control must again
+satisfy&nbsp;(<A HREF="node85.html#e-Hmin-softland">4.50</A>), i.e., the switching function is
+<!-- MATH
+ $\varphi(t)=p_2^*(t)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1474.gif"
+ ALT="$ \varphi(t)=p_2^*(t)$">
+; we can also see this from the general
+formula&nbsp;(<A HREF="node87.html#e-varphi">4.60</A>). The adjoint equation is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-adj-hard"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot p_1^*&=-2p_0^*x_1^*\\
+\dot p_2^*&=-p_1^*
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="95" HEIGHT="55" BORDER="0"
+ SRC="img1475.gif"
+ ALT="\begin{displaymath}\begin{split}\dot p_1^*&amp;=-2p_0^*x_1^*\\ \dot p_2^*&amp;=-p_1^* \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.67)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We claim that singular arcs are ruled out. Indeed, along a
+singular arc <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ must vanish. Inspecting the differential
+equations for <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+, <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1341.gif"
+ ALT="$ p_1^*$">
+, and <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1476.gif"
+ ALT="$ x_1^*$">
+, we see that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1341.gif"
+ ALT="$ p_1^*$">
+,
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1476.gif"
+ ALT="$ x_1^*$">
+, and <IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1477.gif"
+ ALT="$ x_2^*$">
+ must then  vanish too. Thus the only possible
+singular arc is the trivial one consisting of the equilibrium at
+the origin.
+
+<P>
+It follows that all optimal controls are bang-bang, with switches
+occurring when <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+ equals 0. Our findings up to this point
+replicate those in the time-optimal setting of
+Section&nbsp;<A HREF="node85.html#ss-double-int">4.4.1</A>. There, we used the fact that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1343.gif"
+ ALT="$ p_2^*$">
+
+depended linearly on <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ to go further and show that the optimal
+control has at most one switch. The present adjoint
+equation&nbsp;(<A HREF="#e-adj-hard">4.68</A>) is different from&nbsp;(<A HREF="node85.html#e-adj-easy">4.49</A>)
+and so we can no longer reach the same conclusion. Instead, it turns out that the optimal solution
+has the following properties (which we state without proof):
+
+<P>
+<BR>
+
+<OL>
+<LI>Optimal controls are bang-bang with <I>infinitely many
+switches</I>.
+</LI>
+<LI>Switching takes place on the curve
+<!-- MATH
+ $\Big\{\Big({\textstyle{x_1}\atop
+\textstyle{x_2}}\Big):x_1+\gamma|x_2|x_2=0\Big\}$
+ -->
+<IMG
+ WIDTH="209" HEIGHT="48" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1478.gif"
+ ALT="$ \Big\{\Big({\textstyle{x_1}\atop
+\textstyle{x_2}}\Big):x_1+\gamma\vert x_2\vert x_2=0\Big\}$">
+ where
+<!-- MATH
+ $\gamma\approx 0.445$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1479.gif"
+ ALT="$ \gamma\approx 0.445$">
+.
+</LI>
+<LI>Time intervals between
+consecutive switches decrease in geometric progression.
+</LI>
+</OL>
+<BR>
+The last property is consistent with the fact that the final time
+must be finite (as the origin is reachable from every initial
+state in finite time, e.g., by using the time-optimal control).
+The occurrence of a switching pattern in which switching times
+form an infinite sequence accumulating near the final time is
+known as <I>Fuller's phenomenon</I>,<A NAME="4974"></A> or <I>Zeno
+behavior</I>.<A NAME="7893"></A> We note that the resulting control is measurable but not
+piecewise constant (see page&nbsp;<A HREF="node51.html#p-measurable"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>).
+Figure&nbsp;<A HREF="#f-zeno">4.17</A> shows the switching curve<A NAME="tex2html56"
+  HREF="footnode.html#foot4979"><SUP>4.5</SUP></A> and a sketch of an optimal state trajectory.<A NAME="4980"></A>
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-zeno"></A><A NAME="7895"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">An optimal trajectory for Fuller's
+  problem
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="319" HEIGHT="236" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1480.gif"
+ ALT="\includegraphics{figures/zeno2.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We note that the switching curves in Fuller's problem and in the
+time-optimal control problem for the double integrator (treated in
+Section&nbsp;<A HREF="node85.html#ss-double-int">4.4.1</A>) are given by the same formula, but
+in the time-optimal problem we had a different value of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1481.gif"
+ ALT="$ \gamma$">
+, namely, <!-- MATH
+ $\gamma=1/2$
+ -->
+<IMG
+ WIDTH="63" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1482.gif"
+ ALT="$ \gamma=1/2$">
+.  The nature of
+switching, however, is drastically different in the two cases. We
+can embed both problems in the parameterized family of problems
+with the cost functional <!-- MATH
+ $J(u)=\int_{t_0}^{t_f}|x_1(t)|^\nu dt$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1483.gif"
+ ALT="$ J(u)=\int_{t_0}^{t_f}\vert x_1(t)\vert^\nu dt$">
+
+where <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1484.gif"
+ ALT="$ \nu\ge 0$">
+ is a parameter. For <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1485.gif"
+ ALT="$ \nu=0$">
+ we recover the
+time-optimal problem while for <IMG
+ WIDTH="45" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1486.gif"
+ ALT="$ \nu=2$">
+ we recover Fuller's
+problem. Interestingly, one can prove that there exists a
+``bifurcation value" <!-- MATH
+ $\bar\nu\approx 0.35$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1487.gif"
+ ALT="$ \bar\nu\approx 0.35$">
+ with the following
+property: for <!-- MATH
+ $\nu\in[0,\bar\nu]$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1488.gif"
+ ALT="$ \nu\in[0,\bar\nu]$">
+ the optimal control is bang-bang
+  with at most one switch, while for <!-- MATH
+ $\nu>\bar\nu$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1489.gif"
+ ALT="$ \nu&gt;\bar\nu$">
+ we have Fuller's
+  phenomenon (Zeno behavior).
+
+<P>
+The next exercise shows that Fuller's phenomenon is also observed
+in time-optimal control problems starting with dimension <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1490.gif"
+ ALT="$ 3$">
+. Its
+solution can be based on Fuller's problem.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="83" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1491.gif"
+ ALT="\begin{Exercise}Give an example of a control system $\dot
+x=f(x)+g(x)u$\ with $x...
+...ween $u=1$\ and $u=-1$\ (at least for
+some initial states $x_0$).
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1687"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1681"
+  HREF="node84.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1677"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1683"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1685"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1688"
+  HREF="node89.html">4.5 Existence of optimal</A>
+<B> Up:</B> <A NAME="tex2html1682"
+  HREF="node84.html">4.4 Time-optimal control problems</A>
+<B> Previous:</B> <A NAME="tex2html1678"
+  HREF="node87.html">4.4.3 Nonlinear systems, singular</A>
+ &nbsp; <B>  <A NAME="tex2html1684"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1686"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

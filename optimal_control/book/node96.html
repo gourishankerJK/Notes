@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.1.3.1 Infinite-horizon problem</TITLE>
+<META NAME="description" CONTENT="5.1.3.1 Infinite-horizon problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node95.html">
+<LINK REL="up" HREF="node95.html">
+<LINK REL="next" HREF="node97.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1816"
+  HREF="node97.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1810"
+  HREF="node95.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1806"
+  HREF="node95.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1812"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1814"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1817"
+  HREF="node97.html">5.1.4 Sufficient condition for</A>
+<B> Up:</B> <A NAME="tex2html1811"
+  HREF="node95.html">5.1.3 HJB equation</A>
+<B> Previous:</B> <A NAME="tex2html1807"
+  HREF="node95.html">5.1.3 HJB equation</A>
+ &nbsp; <B>  <A NAME="tex2html1813"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1815"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00713100000000000000">
+5.1.3.1 Infinite-horizon problem</A>
+</H3>
+
+<P>
+The reader may find it somewhat discouraging that even for simple examples like the ones we just presented, solving the HJB equation analytically is a challenging task. Nevertheless, the HJB equation gives a considerable insight into the problem, and one can often apply numerical techniques to obtain approximate solutions. We now discuss one important situation in which the HJB equation takes a simpler form.
+Suppose that both the control system and the cost functional are time-invariant, i.e., <IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img823.gif"
+ ALT="$ f=f(x,u)$">
+ and <IMG
+ WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img977.gif"
+ ALT="$ L=L(x,u)$">
+, and that there is no terminal cost (<IMG
+ WIDTH="52" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img836.gif"
+ ALT="$ K\equiv0$">
+). Keeping the final state free, we let the final time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ approach <IMG
+ WIDTH="21" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1617.gif"
+ ALT="$ \infty$">
+; in the limit, the cost functional becomes <!-- MATH
+ $J(u)=\int_{t_0}^\infty L(x(t),u(t))dt$
+ -->
+<IMG
+ WIDTH="199" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1618.gif"
+ ALT="$ J(u)=\int_{t_0}^\infty L(x(t),u(t))dt$">
+ and we have what is called an <I>infinite-horizon</I> <A NAME="5481"></A>problem.<A NAME="tex2html64"
+  HREF="footnode.html#foot7921"><SUP>5.2</SUP></A> It is clear that in this scenario, the cost does not depend on the initial time, hence the value function depends  on
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ only: <IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1620.gif"
+ ALT="$ V=V(x)$">
+. Thus the partial derivative <IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1621.gif"
+ ALT="$ {V}_{t}$">
+ vanishes and the HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>)
+reduces to<A NAME="5485"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-ih"></A><!-- MATH
+ \begin{equation}
+0=\inf_{u\in U} \left\{L(x,u)+\left\langle {V}_{x}(x),f(x,u)\right\rangle \right\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="280" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1622.gif"
+ ALT="$\displaystyle 0=\inf_{u\in U} \left\{L(x,u)+\left\langle {V}_{x}(x),f(x,u)\right\rangle \right\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We let the reader think of other problem formulations for which the HJB equation simplifies in the same way.
+
+<P>
+The PDE&nbsp;(<A HREF="#e-HJB-ih">5.19</A>) may still be difficult to solve, but it is certainly more tractable than the general HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>). In the special case when <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is scalar, (<A HREF="#e-HJB-ih">5.19</A>) is actually an ODE. Let us consider the infinite-horizon version of Example&nbsp;<A HREF="node95.html#x-scalar-HJB">5.1</A>. The HJB equation
+becomes
+<!-- MATH
+ ${x^4-3\big(\textstyle\frac14{V}_{x}(x)\big)^{4/3}}=0$
+ -->
+<IMG
+ WIDTH="173" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1623.gif"
+ ALT="$ {x^4-3\big(\textstyle\frac14{V}_{x}(x)\big)^{4/3}}=0$">
+ from which we derive <!-- MATH
+ ${V}_{x}(x)=\pm\big(\frac13\big)^{3/4}4x^3$
+ -->
+<IMG
+ WIDTH="156" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1624.gif"
+ ALT="$ {V}_{x}(x)=\pm\big(\frac13\big)^{3/4}4x^3$">
+. We must choose the plus sign because <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ should be positive definite (since <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ is positive definite).  We do not even need to solve for <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ because the optimal feedback law is obtained from <IMG
+ WIDTH="22" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1625.gif"
+ ALT="$ {V}_{x}$">
+ directly: <!-- MATH
+ $u^*(t)=-\big(\frac14{V}_{x}(x^*(t))\big)^{1/3}=-\big(\frac13\big)^{1/4}x^*(t)$
+ -->
+<IMG
+ WIDTH="317" HEIGHT="46" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1626.gif"
+ ALT="$ u^*(t)=-\big(\frac14{V}_{x}(x^*(t))\big)^{1/3}=-\big(\frac13\big)^{1/4}x^*(t)$">
+.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1816"
+  HREF="node97.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1810"
+  HREF="node95.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1806"
+  HREF="node95.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1812"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1814"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1817"
+  HREF="node97.html">5.1.4 Sufficient condition for</A>
+<B> Up:</B> <A NAME="tex2html1811"
+  HREF="node95.html">5.1.3 HJB equation</A>
+<B> Previous:</B> <A NAME="tex2html1807"
+  HREF="node95.html">5.1.3 HJB equation</A>
+ &nbsp; <B>  <A NAME="tex2html1813"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1815"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,863 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.1.2 Re-interpreting the maximum principle</TITLE>
+<META NAME="description" CONTENT="7.1.2 Re-interpreting the maximum principle">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node122.html">
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node119.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2194"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2188"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2182"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2190"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2192"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2195"
+  HREF="node122.html">7.1.3 Symplectic geometry and</A>
+<B> Up:</B> <A NAME="tex2html2189"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2183"
+  HREF="node120.html">7.1.1 Differentiable manifolds</A>
+ &nbsp; <B>  <A NAME="tex2html2191"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2193"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00912000000000000000">
+7.1.2 Re-interpreting the maximum principle</A>
+</H2>
+
+<P>
+Suppose that we are given a (time-invariant) control system<A NAME="6746"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-control-sys-again"></A><!-- MATH
+ \begin{equation}
+\dot x=f(x,u)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2013.gif"
+ ALT="$\displaystyle \dot x=f(x,u)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+whose state <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ takes values in some <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img214.gif"
+ ALT="$ k$">
+-dimensional manifold <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ and whose control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ takes values in some control set <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+. For its solution <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ to stay in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+, the velocity vector <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2014.gif"
+ ALT="$ f(x,u)$">
+ must be tangent to <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. Thus we see that there is an important difference between the states and the velocity vectors: the former live in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ while the latter live in the tangent bundle <IMG
+ WIDTH="35" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1996.gif"
+ ALT="$ TM$">
+. When we worked over <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+, which is its own tangent space, we never explicitly made this distinction. In local coordinates, the system description takes the form
+<P><!-- MATH
+ \begin{displaymath}
+\begin{pmatrix}
+  \dot x_1 \\
+  \vdots \\
+  \dot x_k \\
+\end{pmatrix}=\begin{pmatrix}
+  f_1(x,u) \\
+  \vdots \\
+  f_k(x,u) \\
+\end{pmatrix}\in\mathbb{R}^k
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="206" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2015.gif"
+ ALT="$\displaystyle \begin{pmatrix}
+\dot x_1 \\
+\vdots \\
+\dot x_k \\
+\end{pmat...
+...{pmatrix}
+f_1(x,u) \\
+\vdots \\
+f_k(x,u) \\
+\end{pmatrix}\in\mathbb{R}^k
+$">
+</DIV><P>
+</P>
+and the difference between states and tangent vectors becomes ``hidden" once again.
+
+<P>
+Let us assume for simplicity that an optimal control problem<A NAME="6755"></A> is formulated in the Mayer form (i.e., with terminal cost only). We know that problems with running cost can always be converted to this form by appending an additional state <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+, which would yield a system on the augmented manifold <!-- MATH
+ $\mathbb{R}\times M$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2016.gif"
+ ALT="$ \mathbb{R}\times M$">
+ (cf. Sections&nbsp;<A HREF="node52.html#ss-cost-fcnl">3.3.2</A> and&nbsp;<A HREF="node66.html#ss-lagr-to-mayer">4.2.1</A>). The basic ingredients of the maximum principle are the costate <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ and the Hamiltonian <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+. In the case when <!-- MATH
+ $M=\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2017.gif"
+ ALT="$ M=\mathbb{R}^n$">
+, the Hamiltonian for the Mayer problem took the form
+<!-- MATH
+ $H(x,u,p)=\langle p, f(x,u)\rangle$
+ -->
+<IMG
+ WIDTH="182" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2018.gif"
+ ALT="$ H(x,u,p)=\langle p, f(x,u)\rangle
+$">
+. For a general manifold <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+, we need to ask ourselves which space <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ should belong to and how <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ should be (re)defined. Our first natural guess might be that <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+, like <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2014.gif"
+ ALT="$ f(x,u)$">
+, should be a tangent vector to <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+. However, in contrast with <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2014.gif"
+ ALT="$ f(x,u)$">
+, there is no clear geometric reason why <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ should be a tangent vector. Also, taking <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ to be a tangent vector, we cannot assign a new meaning to our earlier definition of <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ unless we equip the tangent space with an inner product. (Introducing an inner product on each tangent space <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+--called a <I>Riemannian metric</I> on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+--is possible but, as we will see, is neither necessary nor relevant for our present purposes.) Another option that might come to mind is that <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ should live in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ itself; however, this choice offers even fewer clues towards any natural interpretation of the Hamiltonian.
+
+<P>
+Can we perhaps take a more direct guidance from the fact that in our old definition of the Hamiltonian, <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ appears in an inner product with the velocity vector <IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2014.gif"
+ ALT="$ f(x,u)$">
+? In fact, we already remarked in Section&nbsp;<A HREF="node56.html#ss-first-var-MP">3.4.2</A> that <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ never appears by itself but always inside inner products such as <!-- MATH
+ $\langle p,\dot x\rangle$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img933.gif"
+ ALT="$ \langle p,\dot x\rangle $">
+; in other words, it
+<I>acts</I> on velocity vectors. This observation suggests that the intrinsic role of the costate <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ is not that of a tangent vector,
+but that of a <I>covector</I>.<A NAME="6763"></A> To better understand the difference between these two types of objects and why the latter one correctly captures the notion of a costate, let us look at how they propagate along a flow induced by a dynamical system on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+.
+
+<P>
+Fix a number <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1049.gif"
+ ALT="$ \tau&gt;0$">
+ and let <!-- MATH
+ $\Phi_{\tau}: M\to M$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2019.gif"
+ ALT="$ \Phi_{\tau}: M\to M$">
+ be a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ map. While the construction that we are about to describe is valid for every such map, the map that we have in mind here is the one obtained by flowing forward for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+ units of time along the trajectory of the system&nbsp;(<A HREF="#e-control-sys-again">7.2</A>) corresponding to some fixed control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ (which, ultimately, is taken to be an optimal control for a given initial condition). Let us first discuss the transformation that <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ induces on tangent vectors. Pick a point <IMG
+ WIDTH="53" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1982.gif"
+ ALT="$ x\in M$">
+ and a tangent vector <!-- MATH
+ $\xi \in T_x M$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2003.gif"
+ ALT="$ \xi\in T_x M$">
+. We know that <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is tangent to some curve in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ passing through <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, namely, <!-- MATH
+ $\xi=\dot x(0)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1992.gif"
+ ALT="$ \xi=\dot x(0)$">
+ where <!-- MATH
+ $x(\alpha)\in M$
+ -->
+<IMG
+ WIDTH="78" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2021.gif"
+ ALT="$ x(\alpha)\in M$">
+ for real <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ (around 0) and <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1989.gif"
+ ALT="$ x(0)=x$">
+. The image <!-- MATH
+ $\Phi_{\tau}(x(\cdot))$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2022.gif"
+ ALT="$ \Phi_{\tau}(x(\cdot))$">
+ of this curve under the map <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ is a curve in <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ which passes through <!-- MATH
+ $\Phi_{\tau}(x)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2023.gif"
+ ALT="$ \Phi_{\tau}(x)$">
+, as illustrated in Figure&nbsp;<A HREF="#f-contravariance">7.1</A>. Denote the tangent vector at <!-- MATH
+ $\Phi_{\tau}(x)$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2023.gif"
+ ALT="$ \Phi_{\tau}(x)$">
+ associated with this new curve by <!-- MATH
+ $\left.d\Phi_{\tau}\right|_{x}(\xi)$
+ -->
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2024.gif"
+ ALT="$ \left.d\Phi_{\tau}\right\vert _{x}(\xi)$">
+; in other words, define
+<P><!-- MATH
+ \begin{displaymath}
+\left.d\Phi_{\tau}\right|_{x}(\xi):=\left.\frac d{d\alpha}\right|_{\alpha=0}\Phi_{\tau}(x(\alpha)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="237" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2025.gif"
+ ALT="$\displaystyle \left.d\Phi_{\tau}\right\vert _{x}(\xi):=\left.\frac d{d\alpha}\right\vert _{\alpha=0}\Phi_{\tau}(x(\alpha)).
+$">
+</DIV><P>
+</P>
+The above quantity depends only on the vector <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ and not on the choice of a particular curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ with this tangent vector.
+In this way we obtain a natural definition of a linear map
+<P><!-- MATH
+ \begin{displaymath}
+\left.d\Phi_{\tau}\right|_{x}: T_x M\to T_{\Phi_{\tau}(x)} M
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2026.gif"
+ ALT="$\displaystyle \left.d\Phi_{\tau}\right\vert _{x}: T_x M\to T_{\Phi_{\tau}(x)} M
+$">
+</DIV><P>
+</P>
+called the <I>derivative</I> (or <I>differential</I>)<A NAME="6782"></A> of <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+It extends to manifolds the standard notion of
+the differential of a function (described by its Jacobian matrix) from vector
+calculus; more generally, functions from <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ to another manifold <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img392.gif"
+ ALT="$ N$">
+ can be considered, and we already discussed the case <!-- MATH
+ $N=\mathbb{R}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2027.gif"
+ ALT="$ N=\mathbb{R}$">
+ in Section&nbsp;<A HREF="node120.html#ss-manifolds">7.1.1</A>.
+In fact, in the proof of the maximum principle we performed a closely related computation, showing that an infinitesimal state perturbation <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ propagates along an optimal trajectory of&nbsp;(<A HREF="#e-control-sys-again">7.2</A>) according to the variational equation
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-vareqn-again"></A><!-- MATH
+ \begin{equation}
+\dot \xi =\left.{f}_{x}\right|_{*} \xi
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="78" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2028.gif"
+ ALT="$\displaystyle \dot \xi =\left.{f}_{x}\right\vert _{*} \xi$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.3)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(see Section&nbsp;<A HREF="node69.html#ss-vareqn">4.2.4</A>). The derivative map <!-- MATH
+ ${d\Phi_{\tau}}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2029.gif"
+ ALT="$ {d\Phi_{\tau}}$">
+ pushes the tangent vectors forward in the direction of action of the original map <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+. Objects such as tangent vectors, which propagate forward along a flow on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ in this
+sense, are called <A NAME="6795"></A><I>contravariant</I>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-contravariance"></A><A NAME="7982"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Tangent vectors propagate forward
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="339" HEIGHT="200" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2030.gif"
+ ALT="\includegraphics[height=1.75in]{figures/contravariance.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Now suppose that we are given a <I>covector</I> at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, i.e., a
+linear function on <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+. Let us denote it by <!-- MATH
+ $\left.p\right|_{x}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2031.gif"
+ ALT="$ \left.p\right\vert _{x}$">
+ so as to have
+<!-- MATH
+ $\left.p\right|_{x}(\xi)\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2032.gif"
+ ALT="$ \left.p\right\vert _{x}(\xi)\in\mathbb{R}$">
+ for each <!-- MATH
+ $\xi\in T_x M$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2003.gif"
+ ALT="$ \xi\in T_x M$">
+.
+For the same map <!-- MATH
+ $\Phi_{\tau}: M\to M$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2019.gif"
+ ALT="$ \Phi_{\tau}: M\to M$">
+ as before, can we define in a natural way a linear function
+<!-- MATH
+ $\left.p\right|_{\Phi_{\tau}(x)}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2033.gif"
+ ALT="$ \left.p\right\vert _{\Phi_{\tau}(x)}$">
+ on <!-- MATH
+ $T_{\Phi_{\tau}(x)} M$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2034.gif"
+ ALT="$ T_{\Phi_{\tau}(x)} M$">
+? We must decide what the value
+<!-- MATH
+ $\left.p\right|_{\Phi_{\tau}(x)}(\eta)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2035.gif"
+ ALT="$ \left.p\right\vert _{\Phi_{\tau}(x)}(\eta)$">
+ should be for every <!-- MATH
+ $\eta\in T_{\Phi_{\tau}(x)} M$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2036.gif"
+ ALT="$ \eta\in T_{\Phi_{\tau}(x)} M$">
+.
+While it is tempting to say that <!-- MATH
+ $\left.p\right|_{\Phi_{\tau}(x)}(\eta)$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2035.gif"
+ ALT="$ \left.p\right\vert _{\Phi_{\tau}(x)}(\eta)$">
+ should equal the value of <!-- MATH
+ $\left.p\right|_{x}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2031.gif"
+ ALT="$ \left.p\right\vert _{x}$">
+ on the preimage of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ under the map <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+, this preimage is not well defined unless the map <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ is invertible. In fact, the reader will quickly realize that there is no apparent candidate map for propagating covectors along <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ similarly to how the derivative map <!-- MATH
+ $d\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2037.gif"
+ ALT="$ d\Phi_{\tau}$">
+ acts on tangent vectors. The reason is that, instead of trying to push covectors forward, we should <I>pull them back</I>. This revised objective is readily accomplished as follows:
+given a covector <!-- MATH
+ $\left.p\right|_{\Phi_{\tau}(x)}$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2033.gif"
+ ALT="$ \left.p\right\vert _{\Phi_{\tau}(x)}$">
+ on <!-- MATH
+ $T_{\Phi_{\tau}(x)} M$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2034.gif"
+ ALT="$ T_{\Phi_{\tau}(x)} M$">
+, define a covector <!-- MATH
+ $\left.p\right|_{x}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2031.gif"
+ ALT="$ \left.p\right\vert _{x}$">
+ on <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1988.gif"
+ ALT="$ T_xM$">
+ by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-pull-back"></A><!-- MATH
+ \begin{equation}
+\left.p\right|_{x}(\xi):= \left.p\right|_{\Phi_{\tau}(x)}(\left.d\Phi_{\tau}\right|_{x}(\xi)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="223" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2038.gif"
+ ALT="$\displaystyle \left.p\right\vert _{x}(\xi):= \left.p\right\vert _{\Phi_{\tau}(x)}(\left.d\Phi_{\tau}\right\vert _{x}(\xi)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As we indicated earlier, the intended meaning of <!-- MATH
+ $\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2020.gif"
+ ALT="$ \Phi_{\tau}$">
+ is that of flowing forward for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+ units of time along an optimal trajectory of&nbsp;(<A HREF="#e-control-sys-again">7.2</A>), and the infinitesimal (as <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2039.gif"
+ ALT="$ \tau\to 0$">
+) transformation induced by the derivative map <!-- MATH
+ $d\Phi_{\tau}$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2037.gif"
+ ALT="$ d\Phi_{\tau}$">
+ is the variational equation&nbsp;(<A HREF="#e-vareqn-again">7.3</A>). We can now recognize the formula&nbsp;(<A HREF="#e-pull-back">7.4</A>) as expressing--in an intrinsic, coordinate-free fashion--the adjoint property from Section&nbsp;<A HREF="node73.html#ss-adjoint">4.2.8</A>; indeed, it guarantees that <IMG
+ WIDTH="34" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2040.gif"
+ ALT="$ p(\xi)$">
+ stays constant along the trajectory. The familiar adjoint equation <!-- MATH
+ $\dot p=-\big.{\left({f}_{x}\right)^T}\big|_*p$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2041.gif"
+ ALT="$ \dot p=-\big.{\left({f}_{x}\right)^T}\big\vert _*p
+$">
+ is nothing but the infinitesimal version of&nbsp;(<A HREF="#e-pull-back">7.4</A>) written in local coordinates. A fact not really revealed by this differential equation is that covectors are <I>covariant</I> objects, in the sense that they propagate backward along a flow on <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+.<A NAME="6842"></A> This is exactly why we always have <I>terminal</I> rather than initial conditions
+for the costate!
+
+<P>
+Now everything is beginning to fall into place. The Hamiltonian for our Mayer problem on a manifold <IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ should be defined as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Ham-redefined"></A><!-- MATH
+ \begin{equation}
+H(x,u,p)=p(f(x,u))
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="174" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2042.gif"
+ ALT="$\displaystyle H(x,u,p)=p(f(x,u))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the costate <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+ is a covector at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ (strictly speaking, it would be more accurate to write it as <!-- MATH
+ $\left.p\right|_{x}$
+ -->
+<IMG
+ WIDTH="27" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2031.gif"
+ ALT="$ \left.p\right\vert _{x}$">
+). The maximum principle postulates the existence of a costate <!-- MATH
+ $p^*(t)\in T_{x^*(t)}^*M$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2043.gif"
+ ALT="$ p^*(t)\in T_{x^*(t)}^*M$">
+ for each <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, where <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is the optimal trajectory being analyzed. The terminal value <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1009.gif"
+ ALT="$ p^*(t_f)$">
+ uniquely specifies <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1276.gif"
+ ALT="$ p^*(t)$">
+ for all <!-- MATH
+ $t\in[t_0,t_f]$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img983.gif"
+ ALT="$ t\in[t_0,t_f]$">
+ as explained above.
+The Hamiltonian maximization
+condition takes the same form as in Chapter&nbsp;<A HREF="node61.html#c-mp">4</A>. For a formal statement of the maximum principle on manifolds along these lines,<A NAME="6852"></A> see the references listed in Section&nbsp;<A HREF="node134.html#s-notes-chap7">7.5</A>. There is, however, one more concept that is usually involved when such results are stated in the literature, and we examine it briefly in the next subsection.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2194"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2188"
+  HREF="node119.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2182"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2190"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2192"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2195"
+  HREF="node122.html">7.1.3 Symplectic geometry and</A>
+<B> Up:</B> <A NAME="tex2html2189"
+  HREF="node119.html">7.1 Maximum principle on</A>
+<B> Previous:</B> <A NAME="tex2html2183"
+  HREF="node120.html">7.1.1 Differentiable manifolds</A>
+ &nbsp; <B>  <A NAME="tex2html2191"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2193"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

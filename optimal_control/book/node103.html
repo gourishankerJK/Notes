@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.3.2 Viscosity solutions of PDEs</TITLE>
+<META NAME="description" CONTENT="5.3.2 Viscosity solutions of PDEs">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node104.html">
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node101.html">
+<LINK REL="next" HREF="node104.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1914"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1908"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1902"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1910"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1912"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1915"
+  HREF="node104.html">5.3.3 HJB equation and</A>
+<B> Up:</B> <A NAME="tex2html1909"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1903"
+  HREF="node102.html">5.3.1 One-sided differentials</A>
+ &nbsp; <B>  <A NAME="tex2html1911"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1913"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00732000000000000000"></A><A NAME="ss-viscosity"></A>
+<BR>
+5.3.2 Viscosity solutions of PDEs
+</H2>
+
+<P>
+We are now ready to introduce the concept of a viscosity solution for PDEs.
+Consider a PDE of the form<A NAME="5827"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-pde2stars"></A><!-- MATH
+ \begin{equation}
+F(x,v(x),\nabla v(x))=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="168" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1727.gif"
+ ALT="$\displaystyle F(x,v(x),\nabla v(x))=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $F:\mathbb{R}^n\times \mathbb{R}\times \mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1728.gif"
+ ALT="$ F:\mathbb{R}^n\times \mathbb{R}\times \mathbb{R}^n\to \mathbb{R}$">
+ is a continuous function.
+A <I>viscosity subsolution</I><A NAME="5833"></A> of the
+PDE&nbsp;(<A HREF="#e-pde2stars">5.34</A>)
+is
+a continuous function <!-- MATH
+ $v:\mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1681.gif"
+ ALT="$ v:\mathbb{R}^n\to
+\mathbb{R}$">
+ such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-subsol"></A><!-- MATH
+ \begin{equation}
+F(x,v(x),\xi)\le 0\qquad \forall\,\xi\in D^+v(x),\ \forall\,x.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="306" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1729.gif"
+ ALT="$\displaystyle F(x,v(x),\xi)\le 0\qquad \forall\,\xi\in D^+v(x),\ \forall\,x.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+As we know, this is equivalent to saying that at every <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ we must have <!-- MATH
+ $F(x,v(x),\nabla\varphi(x))\le 0$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1730.gif"
+ ALT="$ F(x,v(x),\nabla\varphi(x))\le 0$">
+ for every <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ test
+function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ such that <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a local minimum at
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Similarly, <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is a
+<I>viscosity supersolution</I><A NAME="5840"></A> of&nbsp;(<A HREF="#e-pde2stars">5.34</A>) if
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-supersol"></A><!-- MATH
+ \begin{equation}
+F(x,v(x),\xi)\ge 0\qquad \forall\,\xi\in D^-v(x),\ \forall\,x
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="301" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1731.gif"
+ ALT="$\displaystyle F(x,v(x),\xi)\ge 0\qquad \forall\,\xi\in D^-v(x),\ \forall\,x$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.32)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+or, equivalently, at every <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ we have <!-- MATH
+ $F(x,v(x),\nabla\varphi(x))\ge 0$
+ -->
+<IMG
+ WIDTH="170" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1732.gif"
+ ALT="$ F(x,v(x),\nabla\varphi(x))\ge 0$">
+ for every <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+
+function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ such that <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a local maximum at
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. Finally, <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is a <I>viscosity
+solution</I><A NAME="5846"></A> if it is both a viscosity subsolution and a viscosity supersolution.
+
+<P>
+The above definitions of a viscosity subsolution and supersolution impose conditions on <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ only
+at points where <IMG
+ WIDTH="39" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1733.gif"
+ ALT="$ D^+v$">
+, respectively <IMG
+ WIDTH="39" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1734.gif"
+ ALT="$ D^-v$">
+, is nonempty. We know that the
+set of these points is dense in the domain of <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+.
+At all points where <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is differentiable, the PDE must hold in the classical
+sense. If <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is Lipschitz, then by Rademacher's theorem it is differentiable almost everywhere.
+
+<P>
+<BR>
+<IMG
+ WIDTH="555" HEIGHT="186" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1735.gif"
+ ALT="\begin{Example}
+Consider the scalar case ($n=1$) and let $F(x,v,\xi)=1-\vert\xi\...
+...or all $\xi\in[-1,1]$, making~\eqref{e-supersol} true as well.~\qed\end{Example}">
+<BR>
+
+<P>
+Note the lack of symmetry in the definition of a viscosity solution: the sign convention used when writing the PDE is important.
+In the above example, if we rewrite the PDE as <!-- MATH
+ $|\nabla v(x)|-1=0$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1736.gif"
+ ALT="$ \vert\nabla v(x)\vert-1=0$">
+, then it is easy to see that <IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1737.gif"
+ ALT="$ v(x)=\vert x\vert$">
+
+is no longer a viscosity solution.
+
+<P>
+The terminology ``viscosity solutions" is motivated by the fact that a viscosity solution <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ of the PDE&nbsp;(<A HREF="#e-pde2stars">5.34</A>) can be obtained
+from smooth solutions <!-- MATH
+ $v_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1738.gif"
+ ALT="$ v_\varepsilon $">
+ to the family of PDEs
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-viscous"></A><!-- MATH
+ \begin{equation}
+F(x,v_\varepsilon (x),\nabla v_\varepsilon (x))=\varepsilon \Delta v_\varepsilon (x)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="233" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1739.gif"
+ ALT="$\displaystyle F(x,v_\varepsilon (x),\nabla v_\varepsilon (x))=\varepsilon \Delta v_\varepsilon (x)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.33)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(parameterized by <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+)
+in the limit as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+. The operator <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1740.gif"
+ ALT="$ \Delta$">
+ on the right-hand side of&nbsp;(<A HREF="#e-viscous">5.37</A>) denotes the Laplacian (<!-- MATH
+ $\Delta v={v}_{{x_1}{x_1}}+\cdots+{v}_{{x_n}{x_n}}$
+ -->
+<IMG
+ WIDTH="192" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1741.gif"
+ ALT="$ \Delta v={v}_{{x_1}{x_1}}+\cdots+{v}_{{x_n}{x_n}}$">
+); in fluid mechanics it appears in the PDE describing the motion of a viscous fluid.<A NAME="5860"></A> To understand the basic idea behind this convergence result, let <!-- MATH
+ $\xi\in D^-v(x_0)$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1742.gif"
+ ALT="$ \xi\in D^-v(x_0)$">
+ for some <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+. Consider a test function <IMG
+ WIDTH="15" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1416.gif"
+ ALT="$ \varphi$">
+ such that <!-- MATH
+ $\nabla \varphi(x_0)=\xi$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1743.gif"
+ ALT="$ \nabla \varphi(x_0)=\xi$">
+ and <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1700.gif"
+ ALT="$ \varphi-v$">
+ has a local maximum at
+<IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+. Assume that <!-- MATH
+ $\varphi\in\mathcal C^2$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1744.gif"
+ ALT="$ \varphi\in\mathcal C^2$">
+ (if not, approximate it by a <!-- MATH
+ $\mathcal C^2$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ \mathcal C^2$">
+ function).
+If <!-- MATH
+ $v_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1738.gif"
+ ALT="$ v_\varepsilon $">
+ is close to <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ for small <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+,
+then <!-- MATH
+ $\varphi-v_\varepsilon$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1745.gif"
+ ALT="$ \varphi-v_\varepsilon $">
+ has a local maximum at some <!-- MATH
+ $x_\varepsilon$
+ -->
+<IMG
+ WIDTH="20" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1582.gif"
+ ALT="$ x_\varepsilon $">
+
+near <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, implying that <!-- MATH
+ $\nabla \varphi(x_\varepsilon )=\nabla
+v_\varepsilon (x_\varepsilon )$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1746.gif"
+ ALT="$ \nabla \varphi(x_\varepsilon )=\nabla
+v_\varepsilon (x_\varepsilon )$">
+ and <!-- MATH
+ $\Delta \varphi(x_\varepsilon )\le \Delta
+v_\varepsilon (x_\varepsilon )$
+ -->
+<IMG
+ WIDTH="144" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1747.gif"
+ ALT="$ \Delta \varphi(x_\varepsilon )\le \Delta
+v_\varepsilon (x_\varepsilon )$">
+. Since <!-- MATH
+ $v_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1738.gif"
+ ALT="$ v_\varepsilon $">
+ solves&nbsp;(<A HREF="#e-viscous">5.37</A>), this gives <!-- MATH
+ $F(x_\varepsilon ,v_\varepsilon (x_\varepsilon ),\nabla \varphi(x_\varepsilon ))\ge
+\varepsilon \Delta \varphi(x_\varepsilon ).$
+ -->
+<IMG
+ WIDTH="258" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1748.gif"
+ ALT="$ F(x_\varepsilon ,v_\varepsilon (x_\varepsilon ),\nabla \varphi(x_\varepsilon ))\ge
+\varepsilon \Delta \varphi(x_\varepsilon ).$">
+ Taking the limit as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+, by continuity of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ we have
+<!-- MATH
+ $F(x_0,v(x_0),\nabla \varphi(x_0))\ge 0$
+ -->
+<IMG
+ WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1749.gif"
+ ALT="$ F(x_0,v(x_0),\nabla \varphi(x_0))\ge 0$">
+, which means that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is a supersolution of&nbsp;(<A HREF="#e-pde2stars">5.34</A>). The argument showing that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img321.gif"
+ ALT="$ v$">
+ is a subsolution is similar.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1914"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1908"
+  HREF="node101.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1902"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1910"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1912"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1915"
+  HREF="node104.html">5.3.3 HJB equation and</A>
+<B> Up:</B> <A NAME="tex2html1909"
+  HREF="node101.html">5.3 Viscosity solutions of</A>
+<B> Previous:</B> <A NAME="tex2html1903"
+  HREF="node102.html">5.3.1 One-sided differentials</A>
+ &nbsp; <B>  <A NAME="tex2html1911"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1913"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

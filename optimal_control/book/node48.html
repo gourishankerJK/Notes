@@ -1,0 +1,1101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>3.1.2 Weierstrass excess function</TITLE>
+<META NAME="description" CONTENT="3.1.2 Weierstrass excess function">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node47.html">
+<LINK REL="up" HREF="node46.html">
+<LINK REL="next" HREF="node49.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1079"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1073"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1069"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1075"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1077"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1080"
+  HREF="node49.html">3.2 Calculus of variations</A>
+<B> Up:</B> <A NAME="tex2html1074"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+<B> Previous:</B> <A NAME="tex2html1070"
+  HREF="node47.html">3.1.1 Weierstrass-Erdmann corner conditions</A>
+ &nbsp; <B>  <A NAME="tex2html1076"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1078"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00512000000000000000"></A><A NAME="ss-Efcn"></A>
+<BR>
+3.1.2 Weierstrass excess function
+</H2>
+
+<P>
+To continue our search for additional conditions (besides being an
+extremal) which are necessary for a piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ to be a strong minimum, we now introduce a new concept. For a given Lagrangian <!-- MATH
+ $L=L(x,y,z)$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$ L=L(x,y,z)$">
+, the
+<I>Weierstrass excess function</I>,<A NAME="2738"></A> or <I><IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img730.gif"
+ ALT="$ E$">
+-function</I>,<A NAME="7775"></A> is defined
+as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-def"></A><!-- MATH
+ \begin{equation}
+E(x,y,z,w):=L(x,y,w)-L(x,y,z)-(w-z)\cdot L_z(x,y,z).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="458" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img731.gif"
+ ALT="$\displaystyle E(x,y,z,w):=L(x,y,w)-L(x,y,z)-(w-z)\cdot L_z(x,y,z).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The above formula is written to suggest multiple degrees of freedom, but from now
+on we specialize to the single-degree-of-freedom case for simplicity.
+Note
+that <!-- MATH
+ $L(x,y,z)+(w-z)L_z(x,y,z)$
+ -->
+<IMG
+ WIDTH="227" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img732.gif"
+ ALT="$ L(x,y,z)+(w-z)L_z(x,y,z)$">
+ is the first-order Taylor
+approximation of <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img733.gif"
+ ALT="$ L(x,y,w)$">
+, viewed as a function of <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+, around
+<IMG
+ WIDTH="48" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img734.gif"
+ ALT="$ w=z$">
+. This gives the geometric interpretation of the <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img730.gif"
+ ALT="$ E$">
+-function as the distance
+between the Lagrangian and its linear approximation around <IMG
+ WIDTH="48" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img734.gif"
+ ALT="$ w=z$">
+; see
+Figure&nbsp;<A HREF="#f-weierstrass">3.3</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-weierstrass"></A><A NAME="7777"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Weierstrass excess function
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="306" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img735.gif"
+ ALT="\includegraphics{figures/weierstrass.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The <B>Weierstrass necessary condition for a strong minimum</B><A NAME="2760"></A><A NAME="2761"></A>
+states that <I>if
+<IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+ is a strong minimum, then
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-W-cond"></A><!-- MATH
+ \begin{equation}
+E(x,y(x),y'(x),w)\ge 0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="179" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img736.gif"
+ ALT="$\displaystyle E(x,y(x),y'(x),w)\ge 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all noncorner
+points <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+
+and all <!-- MATH
+ $w\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img737.gif"
+ ALT="$ w\in\mathbb{R}$">
+.</I>
+The geometric meaning of
+this condition is that for each <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, the graph of the function <!-- MATH
+ $L(x,y(x),\cdot)$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img738.gif"
+ ALT="$ L(x,y(x),\cdot)$">
+
+lies above its tangent line at <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+, which can be interpreted as
+a local convexity property of this function.
+
+<P>
+The Weierstrass necessary condition can be proved as follows.
+Suppose that a curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a strong minimum. Let <!-- MATH
+ $\bar x\in[a,b]$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.gif"
+ ALT="$ \bar x\in[a,b]$">
+ be a noncorner point of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, let <!-- MATH
+ $d\in(\bar x,b]$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img739.gif"
+ ALT="$ d\in(\bar x,b]$">
+ be such that the interval <!-- MATH
+ $[\bar x,d]$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img740.gif"
+ ALT="$ [\bar x,d]$">
+ contains no corner points of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+, and pick some <!-- MATH
+ $w\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img737.gif"
+ ALT="$ w\in\mathbb{R}$">
+.  We construct a family of perturbed curves <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+, parameterized by <!-- MATH
+ $\varepsilon \in[0,d-\bar x)$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img741.gif"
+ ALT="$ \varepsilon \in[0,d-\bar x)$">
+, which are continuous, coincide with <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ on the complement of <!-- MATH
+ $[\bar x,d]$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img740.gif"
+ ALT="$ [\bar x,d]$">
+, are linear with derivative <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ on <!-- MATH
+ $[\bar x,\bar x+\varepsilon ]$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img742.gif"
+ ALT="$ [\bar x,\bar x+\varepsilon ]$">
+, and differ from <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ by a linear function on <!-- MATH
+ $[\bar x+\varepsilon , d]$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img743.gif"
+ ALT="$ [\bar x+\varepsilon , d]$">
+. The precise definition is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-yeps-casesdef"></A><!-- MATH
+ \begin{equation}
+y(x,\varepsilon ):=\begin{cases} y(x)
+\quad&\text{ if }\ a\le x\le \bar x\ \text{ or }\ d\le x\le b\\
+y(\bar x)+w(x-\bar x)\quad&\text{ if }\ \bar x\le x\le \bar x+\varepsilon \\
+y(x)+\dfrac{d-x}{d-(\bar x+\varepsilon )}\Big(y(\bar x)+w\varepsilon -y(\bar x+\varepsilon )\Big)\quad&\text{ if }\ \bar x+\varepsilon \le x\le d  \end{cases}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="664" HEIGHT="111" ALIGN="MIDDLE" BORDER="0"
+ SRC="img744.gif"
+ ALT="$\displaystyle y(x,\varepsilon ):=\begin{cases}y(x) \quad&amp;\text{ if }\ a\le x\le...
+...+\varepsilon )\Big)\quad&amp;\text{ if }\ \bar x+\varepsilon \le x\le d \end{cases}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Such a perturbed curve <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+ is shown in Figure&nbsp;<A HREF="#f-mcshane">3.4</A>.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-mcshane"></A><A NAME="7780"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The graphs of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="327" HEIGHT="198" ALIGN="BOTTOM" BORDER="0"
+ SRC="img745.gif"
+ ALT="\includegraphics{figures/mcshane.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+It is clear that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Wclear"></A><!-- MATH
+ \begin{equation}
+y(\cdot,0)=y
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="80" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img746.gif"
+ ALT="$\displaystyle y(\cdot,0)=y$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and that for <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ close to 0 the perturbed curve <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+ is close to the original curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in the sense of the 0-norm.
+Therefore, the function <!-- MATH
+ $\varepsilon \mapsto J(y(\cdot,\varepsilon ))$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img747.gif"
+ ALT="$ \varepsilon \mapsto J(y(\cdot,\varepsilon ))$">
+ must have a minimum at <!-- MATH
+ $\varepsilon =0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ \varepsilon =0$">
+. We will now show that the right-sided derivative of this function at <!-- MATH
+ $\varepsilon =0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ \varepsilon =0$">
+ exists and equals <!-- MATH
+ $E(\bar x,y(\bar x),y'(\bar x),w)$
+ -->
+<IMG
+ WIDTH="147" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img749.gif"
+ ALT="$ E(\bar x,y(\bar x),y'(\bar x),w)$">
+. Then, since this derivative must be nonnegative and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+ and <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ are arbitrary, the proof will be complete.
+
+<P>
+Noting that the behavior of <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+ outside the interval <!-- MATH
+ $[\bar x,d]$
+ -->
+<IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img740.gif"
+ ALT="$ [\bar x,d]$">
+ does not depend on <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-W-2ints"></A><!-- MATH
+ \begin{equation}
+{\frac
+d{d\varepsilon }} J(y(\cdot,\varepsilon ))={\frac
+d{d\varepsilon }}\left(\int_{\bar x}^{\bar x+\varepsilon }L(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon ))dx +
+\int_{\bar x+\varepsilon }^{d}L(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon ))dx\right).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="624" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img750.gif"
+ ALT="$\displaystyle {\frac d{d\varepsilon }} J(y(\cdot,\varepsilon ))={\frac d{d\vare...
+...bar x+\varepsilon }^{d}L(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon ))dx\right).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+By&nbsp;(<A HREF="#e-yeps-casesdef">3.8</A>), the first integral in&nbsp;(<A HREF="#e-W-2ints">3.10</A>) is <!-- MATH
+ $\int_{\bar x}^{\bar x+\varepsilon }L(x,y(\bar x)+w(x-\bar x),w)dx$
+ -->
+<IMG
+ WIDTH="248" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img751.gif"
+ ALT="$ \int_{\bar x}^{\bar x+\varepsilon }L(x,y(\bar x)+w(x-\bar x),w)dx$">
+ and its derivative is simply
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Wcollect-1"></A><!-- MATH
+ \begin{equation}
+L(\bar x+\varepsilon ,y(\bar x)+w\varepsilon ,w).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="176" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img752.gif"
+ ALT="$\displaystyle L(\bar x+\varepsilon ,y(\bar x)+w\varepsilon ,w).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The differentiation of the second integral in&nbsp;(<A HREF="#e-W-2ints">3.10</A>) gives
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="558" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img753.gif"
+ ALT="$\displaystyle -L(\bar x+\varepsilon , y(\bar x+\varepsilon ,\varepsilon ),{y}_{...
+...y(x,\varepsilon ),{y}_{x}(x,\varepsilon )){y}_{\varepsilon } (x,\varepsilon )dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="e-Wcollect-2-top">(3.12)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="307" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img754.gif"
+ ALT="$\displaystyle +\int_{\bar x+\varepsilon }^{d}{L}_{y'}(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon )){y}_{{x}{\varepsilon }} (x,\varepsilon )dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="e-Wcollect-2-bottom">(3.13)</A></TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(it is straightforward to check that the partial derivatives <!-- MATH
+ ${y}_{x}(x,\varepsilon )$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img755.gif"
+ ALT="$ {y}_{x}(x,\varepsilon )$">
+,
+<!-- MATH
+ ${y}_{\varepsilon } (x,\varepsilon )$
+ -->
+<IMG
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img756.gif"
+ ALT="$ {y}_{\varepsilon } (x,\varepsilon )$">
+, <!-- MATH
+ ${y}_{{x}{\varepsilon }} (x,\varepsilon )$
+ -->
+<IMG
+ WIDTH="66" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img757.gif"
+ ALT="$ {y}_{{x}{\varepsilon }} (x,\varepsilon )$">
+ exist inside the relevant intervals).
+Since <!-- MATH
+ ${y}_{{x}{\varepsilon }} (x,\varepsilon )={y}_{{\varepsilon }{x}}(x,\varepsilon )=\frac d{dx}{y}_{\varepsilon } (x,\varepsilon )$
+ -->
+<IMG
+ WIDTH="248" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img758.gif"
+ ALT="$ {y}_{{x}{\varepsilon }} (x,\varepsilon )={y}_{{\varepsilon }{x}}(x,\varepsilon )=\frac d{dx}{y}_{\varepsilon } (x,\varepsilon )$">
+, we can use integration by parts to bring the integral in&nbsp;(<A HREF="#e-Wcollect-2-bottom">3.13</A>) to the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Wcollect-3"></A><!-- MATH
+ \begin{equation}
+\left.{L}_{y'}(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon )){y}_{\varepsilon } (x,\varepsilon )\right|_{\bar x+\varepsilon }^d-\int_{\bar x+\varepsilon }^d\frac d{dx}\Big({L}_{y'}(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon ))\Big){y}_{\varepsilon } (x,\varepsilon )dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="605" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img759.gif"
+ ALT="$\displaystyle \left.{L}_{y'}(x,y(x,\varepsilon ),{y}_{x}(x,\varepsilon )){y}_{\...
+...arepsilon ),{y}_{x}(x,\varepsilon ))\Big){y}_{\varepsilon } (x,\varepsilon )dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In more detail, the first term in&nbsp;(<A HREF="#e-Wcollect-3">3.14</A>) is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Wevalsplit"></A><!-- MATH
+ \begin{equation}
+{L}_{y'}(d,y(d,\varepsilon ),{y}_{x}(d,\varepsilon )){y}_{\varepsilon } (d,\varepsilon )-
+{L}_{y'}(\bar x+\varepsilon ,y(\bar x+\varepsilon ,\varepsilon ),{y}_{x}(\bar x+\varepsilon ,\varepsilon )){y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon ).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="586" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img760.gif"
+ ALT="$\displaystyle {L}_{y'}(d,y(d,\varepsilon ),{y}_{x}(d,\varepsilon )){y}_{\vareps...
+...arepsilon ,\varepsilon )){y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon ).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We have from&nbsp;(<A HREF="#e-yeps-casesdef">3.8</A>) that <!-- MATH
+ $y(d,\varepsilon )=y(d)$
+ -->
+<IMG
+ WIDTH="106" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img761.gif"
+ ALT="$ y(d,\varepsilon )=y(d)$">
+ for all <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, hence <!-- MATH
+ ${y}_{\varepsilon } (d,\varepsilon )=0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img762.gif"
+ ALT="$ {y}_{\varepsilon } (d,\varepsilon )=0$">
+ and so the first term in&nbsp;(<A HREF="#e-Wevalsplit">3.15</A>) is 0.
+Another consequence of&nbsp;(<A HREF="#e-yeps-casesdef">3.8</A>) is the relation <!-- MATH
+ $y(\bar x+\varepsilon ,\varepsilon )=y(\bar x)+w\varepsilon$
+ -->
+<IMG
+ WIDTH="180" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img763.gif"
+ ALT="$ y(\bar x+\varepsilon ,\varepsilon )=y(\bar x)+w\varepsilon $">
+. Differentiating it with respect to <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+, we obtain
+<!-- MATH
+ ${y}_{x}(\bar x+\varepsilon ,\varepsilon )+{y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )=w$
+ -->
+<IMG
+ WIDTH="231" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img764.gif"
+ ALT="$ {y}_{x}(\bar x+\varepsilon ,\varepsilon )+{y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )=w$">
+, or <!-- MATH
+ ${y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )=w-{y}_{x}(\bar x+\varepsilon ,\varepsilon )$
+ -->
+<IMG
+ WIDTH="231" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img765.gif"
+ ALT="$ {y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )=w-{y}_{x}(\bar x+\varepsilon ,\varepsilon )$">
+. When we substitute this expression for <!-- MATH
+ ${y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )$
+ -->
+<IMG
+ WIDTH="88" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img766.gif"
+ ALT="$ {y}_{\varepsilon } (\bar x+\varepsilon ,\varepsilon )$">
+ into the second term in&nbsp;(<A HREF="#e-Wevalsplit">3.15</A>), that term becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Wcollect-4"></A><!-- MATH
+ \begin{equation}
+-{L}_{y'}(\bar x+\varepsilon ,y(\bar x+\varepsilon ,\varepsilon ),{y}_{x}(\bar x+\varepsilon ,\varepsilon ))(w-{y}_{x}(\bar x+\varepsilon ,\varepsilon )).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="412" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img767.gif"
+ ALT="$\displaystyle -{L}_{y'}(\bar x+\varepsilon ,y(\bar x+\varepsilon ,\varepsilon )...
+...bar x+\varepsilon ,\varepsilon ))(w-{y}_{x}(\bar x+\varepsilon ,\varepsilon )).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We see that <!-- MATH
+ ${\frac
+d{d\varepsilon }} J(y(\cdot,\varepsilon ))$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img768.gif"
+ ALT="$ {\frac
+d{d\varepsilon }} J(y(\cdot,\varepsilon ))$">
+ is given by the sum of&nbsp;(<A HREF="#e-Wcollect-1">3.11</A>), (<A HREF="#e-Wcollect-2-top">3.12</A>), the integral (with the minus sign) in&nbsp;(<A HREF="#e-Wcollect-3">3.14</A>), and&nbsp;(<A HREF="#e-Wcollect-4">3.16</A>). Setting <!-- MATH
+ $\varepsilon =0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img748.gif"
+ ALT="$ \varepsilon =0$">
+ and rearranging terms, we arrive at
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="135" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img769.gif"
+ ALT="$\displaystyle \left.\frac d{d\varepsilon }\right\vert _{\varepsilon =0^+} \! J(y(\cdot,\varepsilon ))$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="588" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img770.gif"
+ ALT="$\displaystyle =L(\bar x,y(\bar x),w)-L(\bar x,y(\bar x,0), {y}_{x}(\bar x,0))-{L}_{y'}(\bar x,y(\bar x,0), {y}_{x}(\bar x,0))(w-{y}_{x}(\bar x,0))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="526" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img771.gif"
+ ALT="$\displaystyle +\int_{\bar x}^d \Big({L}_{y}(x,y( x,0), {y}_{x}( x,0))-\frac d{dx}{L}_{y'}(x,y( x,0), {y}_{x}( x,0))\Big){y}_{\varepsilon } (x,0)dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Now, recall&nbsp;(<A HREF="#e-Wclear">3.9</A>) which also implies that <!-- MATH
+ ${y}_{x}(\cdot, 0)=y'$
+ -->
+<IMG
+ WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img772.gif"
+ ALT="$ {y}_{x}(\cdot, 0)=y'$">
+. The integral on the second line of the previous formula thus equals
+<P><!-- MATH
+ \begin{displaymath}
+\int_{\bar x}^d \Big({L}_{y}(x,y( x),
+y'(x))-\frac d{dx}{L}_{y'}(x,y( x),
+y'(x))\Big){y}_{\varepsilon } (x,0)dx=0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="465" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img773.gif"
+ ALT="$\displaystyle \int_{\bar x}^d \Big({L}_{y}(x,y( x),
+y'(x))-\frac d{dx}{L}_{y'}(x,y( x),
+y'(x))\Big){y}_{\varepsilon } (x,0)dx=0
+$">
+</DIV><P>
+</P>
+because <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ as a strong (hence also weak) minimum must satisfy the Euler-Lagrange equation.
+We are left with
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="135" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img769.gif"
+ ALT="$\displaystyle \left.\frac d{d\varepsilon }\right\vert _{\varepsilon =0^+} \! J(y(\cdot,\varepsilon ))$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="499" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img774.gif"
+ ALT="$\displaystyle =L(\bar x,y(\bar x),w)-L(\bar x,y(\bar x), y'(\bar x))-{L}_{y'}(\bar x,y(\bar x), y'(\bar x))(w-y'(\bar x))$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="165" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img775.gif"
+ ALT="$\displaystyle =E(\bar x,y(\bar x),y'(\bar x),w)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+as desired, and the Weierstrass necessary condition is established.
+A necessary condition
+ for a strong <I>maximum</I> is analogous but with the reversed inequality
+ sign;<A NAME="2885"></A> this can be verified by passing from <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ to <IMG
+ WIDTH="29" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img776.gif"
+ ALT="$ -L$">
+ or by modifying the proof
+ in the obvious way. The Weierstrass necessary condition can also be extended to corner points, either by refining
+the proof or via a limiting argument (cf. Exercise&nbsp;<A HREF="#z-WE">3.3</A> below.)
+
+<P>
+Weierstrass<A NAME="2887"></A> introduced the above necessary condition during his 1879 lectures on
+calculus of variations. His original proof relied on an additional assumption
+(normality) which was subsequently removed by McShane<A NAME="2888"></A> in 1939. Let us now
+take a few moments to reflect on
+the perturbation used in the proof we just gave. First, it is important to observe
+that the perturbed curve <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+ is close to the original curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in the sense
+of the 0-norm, but not necessarily in the sense of the 1-norm. Indeed,
+it is clear that <!-- MATH
+ $\|y(\cdot,\varepsilon )-y\|_0\to 0$
+ -->
+<IMG
+ WIDTH="138" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img777.gif"
+ ALT="$ \Vert y(\cdot,\varepsilon )-y\Vert _0\to 0$">
+ as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+; on the other hand,
+the derivative of <!-- MATH
+ $y(\cdot,\varepsilon )$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$ y(\cdot ,\varepsilon )$">
+
+for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ immediately to the right of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+ equals <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+, hence <!-- MATH
+ $\|y(\cdot,\varepsilon )-y\|_1\ge |w-y'(\bar x)|$
+ -->
+<IMG
+ WIDTH="207" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img778.gif"
+ ALT="$ \Vert y(\cdot,\varepsilon )-y\Vert _1\ge \vert w-y'(\bar x)\vert$">
+ for all <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+,
+no matter how small. For this reason,
+the necessary condition applies only to strong minima, unless we restrict
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+ to be sufficiently close to <!-- MATH
+ $y'(\bar x)$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img779.gif"
+ ALT="$ y'(\bar x)$">
+. Note also that the first variation
+was not used in the proof. Thus we have already departed significantly from the
+variational approach which we followed in Chapter&nbsp;<A HREF="node19.html#c-cv">2</A>. Derived
+using a richer class of perturbations, the Weierstrass necessary condition
+turns out to be powerful enough to yield as its corollaries
+ the Weierstrass-Erdmann corner
+conditions from Section&nbsp;<A HREF="node47.html#ss-WE">3.1.1</A> as well as
+Legendre's condition from Section&nbsp;<A HREF="node42.html#ss-legendre-nec">2.6.1</A>.
+
+<P>
+<BR>
+<A NAME="z-WE"></A><IMG
+ WIDTH="555" HEIGHT="59" ALIGN="BOTTOM" BORDER="0"
+ SRC="img780.gif"
+ ALT="\begin{Exercise}
+Use the Weierstrass necessary condition to
+prove that a piecewi...
+...onditions} and Legendre's condition.\index{Legendre's condition}
+\end{Exercise}">
+<BR>
+
+<P>
+When solving this exercise, the reader should keep the following points in mind.
+First, we know from Exercise&nbsp;<A HREF="node47.html#z-W-E-strong">3.1</A>
+that the first Weierstrass-Erdmann corner condition is necessary
+for weak extrema as well. This condition should thus follow directly from
+the fact that <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremal--i.e., satisfies the integral form&nbsp;(<A HREF="node30.html#e-E-L-int">2.23</A>) of the Euler-Lagrange equation--without the need
+to apply the Weierstrass necessary condition. The second Weierstrass-Erdmann
+corner condition,
+on the other hand, is necessary only for strong extrema, and deducing
+ it requires
+the full power of the Weierstrass necessary condition (including
+a further analysis of what the latter implies for corner points). As for Legendre's condition,
+it can be derived from the local version of the
+Weierstrass necessary condition with <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img600.gif"
+ ALT="$ w$">
+
+restricted to be close to <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+ for a given <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, thus confirming that
+Legendre's condition is also necessary for weak extrema. Finally, when <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is a
+corner point, Legendre's
+condition should read
+ <!-- MATH
+ $L_{y'y'}(x,y(x),y'(x^\pm))\ge 0.$
+ -->
+<IMG
+ WIDTH="196" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img781.gif"
+ ALT="$ L_{y'y'}(x,y(x),y'(x^\pm))\ge 0.
+$">
+
+
+<P>
+The perturbation used in the above proof of the Weierstrass necessary condition
+is already quite close to
+the ones we will use later in the proof of the maximum principle.
+The main difference is that in the proof of the maximum principle, we will
+not insist on bringing the perturbed curve back to the original curve after the perturbation stops acting. Instead, we will analyze how the effect of a perturbation
+applied on a small interval
+propagates up to the terminal point.
+
+<P>
+There is a very insightful reformulation of the Weierstrass necessary
+condition which reveals its direct connection to the Hamiltonian maximization property discussed at the end
+of Section&nbsp;<A HREF="node42.html#ss-legendre-nec">2.6.1</A> (and thus to the maximum principle
+which we are steadily approaching).  Let us write our Hamiltonian&nbsp;(<A HREF="node42.html#e-H-def-repeat">2.63</A>) as
+<P><!-- MATH
+ \begin{displaymath}
+H(x,y,z,p)={z}p-L(x,y,z).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="229" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img782.gif"
+ ALT="$\displaystyle H(x,y,z,p)={z}p-L(x,y,z).
+$">
+</DIV><P>
+</P>
+Then a simple manipulation of&nbsp;(<A HREF="#e-E-def">3.6</A>) allows us to bring the <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img730.gif"
+ ALT="$ E$">
+-function and the condition&nbsp;(<A HREF="#e-W-cond">3.7</A>) to the form
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="147" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img783.gif"
+ ALT="$\displaystyle E(x,y(x),y'(x),w)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="345" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img784.gif"
+ ALT="$\displaystyle = \big(y'(x)L_z(x,y(x),y'(x))-L(x,y(x),y'(x))\big)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="292" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img785.gif"
+ ALT="$\displaystyle -\big(wL_z(x,y(x),y'(x))-L(x,y(x),w)\big)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="380" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img786.gif"
+ ALT="$\displaystyle =H(x,y(x),y'(x),p(x))-H(x,y(x),w,p(x))\ge 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where we used the formula
+<P><!-- MATH
+ \begin{displaymath}
+p(x)=L_z(x,y(x),y'(x))
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="187" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img787.gif"
+ ALT="$\displaystyle p(x)=L_z(x,y(x),y'(x))
+$">
+</DIV><P>
+</P>
+consistent with our earlier definition of the momentum
+ (see Section&nbsp;<A HREF="node34.html#ss-hamiltonian">2.4.1</A>).
+Therefore, the Weierstrass necessary condition simply says
+that if <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+ is an
+optimal trajectory and <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img788.gif"
+ ALT="$ p(\cdot)$">
+ is the corresponding momentum, then for
+every <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ the function <!-- MATH
+ $H(x,y(x),\cdot,p(x))$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img789.gif"
+ ALT="$ H(x,y(x),\cdot,p(x))$">
+, which is the same as
+the function <IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img591.gif"
+ ALT="$ H^*$">
+ defined in&nbsp;(<A HREF="node34.html#e-Hofz">2.32</A>), has a maximum at <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+.<A NAME="2910"></A>
+This interpretation escaped Weierstrass, not just because it requires
+bringing in the Hamiltonian but because it demands treating <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ and <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img235.gif"
+ ALT="$ p$">
+
+as independent arguments of the Hamiltonian (we already discussed
+this point at the end of Section&nbsp;<A HREF="node35.html#ss-legendre">2.4.2</A>).
+
+<P>
+Combining the Weierstrass necessary condition with the sufficient condition for a weak minimum from Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>, one can obtain a
+sufficient condition for a strong minimum.<A NAME="2914"></A> The precise
+formulation of this condition requires a new concept (that of a field)
+ and we will not develop it. While sufficient conditions for optimality are theoretically appealing, they tend to be less practical to apply compared
+ to necessary conditions; we already saw this in Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A> and will see again in Chapter&nbsp;<A HREF="node91.html#c-hjb">5</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1079"
+  HREF="node49.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1073"
+  HREF="node46.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1069"
+  HREF="node47.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1075"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1077"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1080"
+  HREF="node49.html">3.2 Calculus of variations</A>
+<B> Up:</B> <A NAME="tex2html1074"
+  HREF="node46.html">3.1 Necessary conditions for</A>
+<B> Previous:</B> <A NAME="tex2html1070"
+  HREF="node47.html">3.1.1 Weierstrass-Erdmann corner conditions</A>
+ &nbsp; <B>  <A NAME="tex2html1076"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1078"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

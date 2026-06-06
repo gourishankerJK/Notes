@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>6.1 Finite-horizon LQR problem</TITLE>
+<META NAME="description" CONTENT="6.1 Finite-horizon LQR problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node112.html">
+<LINK REL="previous" HREF="node106.html">
+<LINK REL="up" HREF="node106.html">
+<LINK REL="next" HREF="node108.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1977"
+  HREF="node108.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1971"
+  HREF="node106.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1965"
+  HREF="node106.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1973"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1975"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1978"
+  HREF="node108.html">6.1.1 Candidate optimal feedback</A>
+<B> Up:</B> <A NAME="tex2html1972"
+  HREF="node106.html">6. The Linear Quadratic</A>
+<B> Previous:</B> <A NAME="tex2html1966"
+  HREF="node106.html">6. The Linear Quadratic</A>
+ &nbsp; <B>  <A NAME="tex2html1974"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1976"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00810000000000000000"></A><A NAME="s-LQR-finhor"></A>
+<BR>
+6.1 Finite-horizon LQR problem
+</H1>
+
+<P>
+In this chapter we will focus on the special case when the system dynamics are linear and the cost is quadratic. While this additional structure certainly makes the optimal control problem more tractable, our goal is not merely to specialize our earlier results to this simpler setting. Rather, we want to go further and develop a more complete understanding of optimal solutions compared with what we were able to achieve for the general scenarios treated in the previous chapters.
+(We could have followed a different path in our studies and started with this specific problem class before tackling more difficult problems. From the pedagogical point of view, each approach has its own merits. Historically, however, the general nonlinear results--having their origins in calculus of variations--appeared first.)
+
+<P>
+The (finite-horizon) <I>Linear Quadratic Regulator (LQR)</I> problem<A NAME="6004"></A>
+is the optimal control problem from Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A> with
+ the following additional assumptions: the control system is a linear time-varying system
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-LTV-LQR"></A><!-- MATH
+ \begin{equation}
+\dot x=A(t)x+B(t)u,\qquad x(t_0)=x_0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="265" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1771.gif"
+ ALT="$\displaystyle \dot x=A(t)x+B(t)u,\qquad x(t_0)=x_0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with <!-- MATH
+ $x\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img208.gif"
+ ALT="$ x\in\mathbb{R}^n$">
+ and <!-- MATH
+ $u\in\mathbb{R}^m$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1772.gif"
+ ALT="$ u\in\mathbb{R}^m$">
+ (the
+ control is unconstrained); the target set is
+ <!-- MATH
+ $S= \{t_1\}\times\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img859.gif"
+ ALT="$ S= \{t_1\}\times\mathbb{R}^n$">
+, where <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img860.gif"
+ ALT="$ t_1$">
+ is a fixed time
+ (so this is a fixed-time, free-endpoint problem); and the cost functional is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cost-quadratic"></A><!-- MATH
+ \begin{equation}
+J(u)=\int_{t_0}^{t_1}\left(x^T(t)Q(t)x(t)+u^T(t)R(t)u(t)\right)dt+
+x^T(t_1)Mx(t_1)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="482" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1773.gif"
+ ALT="$\displaystyle J(u)=\int_{t_0}^{t_1}\left(x^T(t)Q(t)x(t)+u^T(t)R(t)u(t)\right)dt+ x^T(t_1)Mx(t_1)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(6.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1774.gif"
+ ALT="$ Q(\cdot)$">
+, <IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1775.gif"
+ ALT="$ R(\cdot)$">
+,
+<IMG
+ WIDTH="22" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img507.gif"
+ ALT="$ M$">
+ are matrices of appropriate dimensions satisfying <!-- MATH
+ $M=M^T\ge 0$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1776.gif"
+ ALT="$ M=M^T\ge 0$">
+ (symmetric positive semidefinite), <!-- MATH
+ $Q(t)=Q^T(t)\ge 0$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1777.gif"
+ ALT="$ Q(t)=Q^T(t)\ge 0$">
+ (symmetric positive semidefinite), and <!-- MATH
+ $R(t)=R^T(t)>0$
+ -->
+<IMG
+ WIDTH="136" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1778.gif"
+ ALT="$ R(t)=R^T(t)&gt;0$">
+ (symmetric positive <I>definite</I>)
+for all <!-- MATH
+ $t\in[t_0,t_1]$
+ -->
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img949.gif"
+ ALT="$ t\in[t_0,t_1]$">
+. The quadratic cost&nbsp;(<A HREF="#e-cost-quadratic">6.2</A>) is very reasonable: since both <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1779.gif"
+ ALT="$ R$">
+ are positive (semi)definite, it penalizes both the size of the state and the control effort, with <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1779.gif"
+ ALT="$ R$">
+ determining their relative weights. Incidentally, the formula <!-- MATH
+ $L(t,x,u)=x^TQ(t)x+u^TR(t)u$
+ -->
+<IMG
+ WIDTH="243" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1780.gif"
+ ALT="$ L(t,x,u)=x^TQ(t)x+u^TR(t)u$">
+ for the running cost is another justification of the acronym LQR. We require <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1779.gif"
+ ALT="$ R$">
+ to be strictly positive definite because we will soon need its inverse. Additional assumptions will be introduced later as necessary. More general target sets can also be considered.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1979"
+  HREF="node108.html">6.1.1 Candidate optimal feedback law</A>
+<LI><A NAME="tex2html1980"
+  HREF="node109.html">6.1.2 Riccati differential equation</A>
+<LI><A NAME="tex2html1981"
+  HREF="node110.html">6.1.3 Value function and optimality</A>
+<LI><A NAME="tex2html1982"
+  HREF="node111.html">6.1.4 Global existence of solution for the RDE</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1977"
+  HREF="node108.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1971"
+  HREF="node106.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1965"
+  HREF="node106.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1973"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1975"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1978"
+  HREF="node108.html">6.1.1 Candidate optimal feedback</A>
+<B> Up:</B> <A NAME="tex2html1972"
+  HREF="node106.html">6. The Linear Quadratic</A>
+<B> Previous:</B> <A NAME="tex2html1966"
+  HREF="node106.html">6. The Linear Quadratic</A>
+ &nbsp; <B>  <A NAME="tex2html1974"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1976"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,503 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>6.2.4 Complete result and discussion</TITLE>
+<META NAME="description" CONTENT="6.2.4 Complete result and discussion">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node115.html">
+<LINK REL="up" HREF="node112.html">
+<LINK REL="next" HREF="node117.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2107"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2101"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2097"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2103"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2105"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2108"
+  HREF="node117.html">6.3 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html2102"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2098"
+  HREF="node115.html">6.2.3 Closed-loop stability</A>
+ &nbsp; <B>  <A NAME="tex2html2104"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2106"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00824000000000000000"></A><A NAME="ss-LQRih-theorem"></A>
+<BR>
+6.2.4 Complete result and discussion
+</H2>
+
+<P>
+We now collect the results obtained in this section so far, as well as a few additional claims not yet proved, into a single theorem summarizing the solution  of the infinite-horizon LQR problem and its main properties.
+
+<P>
+<BR>
+<A NAME="i-stab-LQR"></A><A NAME="i-contr-LQR"></A><A NAME="i-cost-LQR"></A><A NAME="i-limit-LQR"></A><A NAME="t-LQR-ih"></A><IMG
+ WIDTH="574" HEIGHT="478" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1949.gif"
+ ALT="\begin{Theorem}[Main results for the infinite-horizon LQR problem]
+Consider the ...
+...(A-BR^{-1}B^TP)x^*$\ is exponentially
+stable.
+\end{enumerate}\par
+\end{Theorem}">
+<BR>
+
+<P>
+P<SMALL>ROOF</SMALL> (remaining claims).
+Statement&nbsp;<A HREF="#i-limit-LQR">1</A> of the theorem was proved in Section&nbsp;<A HREF="node113.html#ss-limit-exist">6.2.1</A> with the exception of two claims: the strict positive definiteness of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ (we only showed that <!-- MATH
+ $P=P^T\ge 0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1950.gif"
+ ALT="$ P=P^T\ge 0$">
+) and the uniqueness property. Statements&nbsp;<A HREF="#i-cost-LQR">2</A> and&nbsp;<A HREF="#i-contr-LQR">3</A> were proved in Section&nbsp;<A HREF="node114.html#ss-infhorsol">6.2.2</A>, except for the uniqueness of the optimal control. Statement&nbsp;<A HREF="#i-stab-LQR">4</A> was proved in Section&nbsp;<A HREF="node115.html#ss-closedloopstab">6.2.3</A>. With these results in place, we now establish the remaining claims.
+
+<P>
+Let us first prove that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img603.gif"
+ ALT="$ P&gt;0$">
+. We already know that <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.gif"
+ ALT="$ P \ge 0$">
+. Suppose that <!-- MATH
+ $x_0^TPx_0=0$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1951.gif"
+ ALT="$ x_0^TPx_0=0$">
+ for some <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+, which in view of statement&nbsp;<A HREF="#i-cost-LQR">2</A> means that for this initial condition <IMG
+ WIDTH="21" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.gif"
+ ALT="$ x_0$">
+ the optimal cost
+<!-- MATH
+ $\int_{t_0}^\infty ((x^*)^T(t) C^TCx^*(t)+(u^*)^T(t)Ru^*(t))dt$
+ -->
+<IMG
+ WIDTH="329" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1952.gif"
+ ALT="$ \int_{t_0}^\infty ((x^*)^T(t) C^TCx^*(t)+(u^*)^T(t)Ru^*(t))dt$">
+ equals 0. This is
+possible only if <!-- MATH
+ $Cx^*\equiv 0$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1953.gif"
+ ALT="$ Cx^*\equiv 0$">
+ and <!-- MATH
+ $u^*\equiv 0$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1467.gif"
+ ALT="$ u^*\equiv 0$">
+ (since <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1888.gif"
+ ALT="$ R&gt;0$">
+). By observability we must then have <!-- MATH
+ $x^*\equiv 0$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1954.gif"
+ ALT="$ x^*\equiv 0$">
+, as it is well known that the output of an observable linear time-invariant system (with the zero input) can be identically 0 only along the zero trajectory. Thus <IMG
+ WIDTH="53" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1673.gif"
+ ALT="$ x_0=0$">
+ which proves that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is indeed positive definite.
+
+<P>
+Let us now prove that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is a unique solution of the ARE in the class of positive definite matrices. In fact, we will show that it is unique even in the class of positive semidefinite matrices.<A NAME="6585"></A> Suppose that the ARE has another positive semidefinite solution <IMG
+ WIDTH="17" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1955.gif"
+ ALT="$ \bar P$">
+. Consider the new cost
+<P><!-- MATH
+ \begin{displaymath}
+\bar
+J^{t_1}(u):=\int_{t_0}^{t_1}\big(x^T(t)Qx(t)+u^T(t)R(t)u(t)\big)dt+x^T(t_1)\bar Px(t_1)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="471" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1956.gif"
+ ALT="$\displaystyle \bar
+J^{t_1}(u):=\int_{t_0}^{t_1}\big(x^T(t)Qx(t)+u^T(t)R(t)u(t)\big)dt+x^T(t_1)\bar Px(t_1)
+$">
+</DIV><P>
+</P>
+and its infinite-horizon counterpart
+<P><!-- MATH
+ \begin{displaymath}
+\bar
+J^{\infty}(u):=\lim_{t_1\to\infty}\bigg(
+\int_{t_0}^{t_1}\big(x^T(t)Qx(t)+u^T(t)R(t)u(t)\big)dt+x^T(t_1)\bar Px(t_1)\bigg).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="548" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1957.gif"
+ ALT="$\displaystyle \bar
+J^{\infty}(u):=\lim_{t_1\to\infty}\bigg(
+\int_{t_0}^{t_1}\big(x^T(t)Qx(t)+u^T(t)R(t)u(t)\big)dt+x^T(t_1)\bar Px(t_1)\bigg).
+$">
+</DIV><P>
+</P>
+By statements&nbsp;<A HREF="#i-stab-LQR">4</A> and&nbsp;<A HREF="#i-cost-LQR">2</A> of this theorem, the same control <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ as in statement&nbsp;<A HREF="#i-contr-LQR">3</A> gives
+<P><!-- MATH
+ \begin{displaymath}
+\bar J^{\infty}(u^*)=\int_{t_0}^\infty \big((x^*)^T(t)Qx^*(t)+(u^*)^T(t)Ru^*(t)\big)dt=x_0^TPx_0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="470" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1958.gif"
+ ALT="$\displaystyle \bar J^{\infty}(u^*)=\int_{t_0}^\infty \big((x^*)^T(t)Qx^*(t)+(u^*)^T(t)Ru^*(t)\big)dt=x_0^TPx_0
+$">
+</DIV><P>
+</P>
+and this is the optimal cost with respect to <!-- MATH
+ $\bar J^{\infty}$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1959.gif"
+ ALT="$ \bar J^{\infty}$">
+
+because for every other control <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ we have
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="430" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1960.gif"
+ ALT="$\displaystyle \bar J^{\infty}(u) \ge \int_{t_0}^{\infty}\big(x^T(t)Qx(t)+u^T(t)R(t)u(t)\big)dt\ge x_0^TPx_0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We also know from the results of Section&nbsp;<A HREF="node107.html#s-LQR-finhor">6.1</A> that the optimal cost with respect to <!-- MATH
+ $\bar
+J^{t_1}(u)$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1961.gif"
+ ALT="$ \bar
+J^{t_1}(u)$">
+ is <!-- MATH
+ $x_0^TP(t_0;\bar P,t_1)x_0$
+ -->
+<IMG
+ WIDTH="126" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1962.gif"
+ ALT="$ x_0^TP(t_0;\bar P,t_1)x_0$">
+, where <!-- MATH
+ $P(t_0;\bar P,t_1)$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1963.gif"
+ ALT="$ P(t_0;\bar P,t_1)$">
+ denotes the solution  at time <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.gif"
+ ALT="$ t_0$">
+ of the RDE&nbsp;(<A HREF="node109.html#e-RDE">6.14</A>) with the boundary condition <!-- MATH
+ $P(t_1)=\bar P$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1964.gif"
+ ALT="$ P(t_1)=\bar P$">
+. It follows that <!-- MATH
+ $P=\lim_{t_1\to\infty} P(t_0;\bar P,t_1)$
+ -->
+<IMG
+ WIDTH="191" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1965.gif"
+ ALT="$ P=\lim_{t_1\to\infty} P(t_0;\bar P,t_1)$">
+, i.e., <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is the steady-state solution of the RDE corresponding to <IMG
+ WIDTH="17" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1955.gif"
+ ALT="$ \bar P$">
+ as the terminal condition. But this steady-state solution must be <IMG
+ WIDTH="17" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1955.gif"
+ ALT="$ \bar P$">
+ itself, because <IMG
+ WIDTH="17" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1955.gif"
+ ALT="$ \bar P$">
+ is an equilibrium solution of the RDE (by virtue of satisfying the ARE). Therefore, <IMG
+ WIDTH="54" HEIGHT="18" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1966.gif"
+ ALT="$ \bar P=P$">
+ and the uniqueness property is confirmed.
+
+<P>
+Finally, to show that the optimal control is unique, recall the equations&nbsp;(<A HREF="node95.html#e-min-achieved">5.13</A>) and&nbsp;(<A HREF="node95.html#e-ustar">5.14</A>) in Section&nbsp;<A HREF="node95.html#ss-HJB">5.1.3</A> which say that an optimal control must satisfy
+<P><!-- MATH
+ \begin{displaymath}
+u^*(t)=\arg\min_{u\in U}\left\{L(t,x^*(t),u)+\left\langle {V}_{x}(t,x^*(t)),f(t,x^*(t),u)\right\rangle \right\}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="455" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1967.gif"
+ ALT="$\displaystyle u^*(t)=\arg\min_{u\in U}\left\{L(t,x^*(t),u)+\left\langle {V}_{x}(t,x^*(t)),f(t,x^*(t),u)\right\rangle \right\}
+$">
+</DIV><P>
+</P>
+or, what is the same,
+<P><!-- MATH
+ \begin{displaymath}
+u^*(t)=\arg\max_{u\in U}
+H(t,x^*(t),u,-{V}_{x}(t,x^*(t))).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="335" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1968.gif"
+ ALT="$\displaystyle u^*(t)=\arg\max_{u\in U}
+H(t,x^*(t),u,-{V}_{x}(t,x^*(t))).
+$">
+</DIV><P>
+</P>
+For the infinite-horizon LQR problem and the value function <!-- MATH
+ $V(x)=x^TPx$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1969.gif"
+ ALT="$ V(x)=x^TPx$">
+ this condition takes the form
+<P><!-- MATH
+ \begin{displaymath}
+u^*(t)=\arg\min_{u\in\mathbb{R}^m}\left\{(x^*)^T(t)Qx^*(t)+u^TRu+
+2(x^*)^T(t)PAx^*(t)+2(x^*)^T(t)PBu\right\}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="612" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1970.gif"
+ ALT="$\displaystyle u^*(t)=\arg\min_{u\in\mathbb{R}^m}\left\{(x^*)^T(t)Qx^*(t)+u^TRu+
+2(x^*)^T(t)PAx^*(t)+2(x^*)^T(t)PBu\right\}
+$">
+</DIV><P>
+</P>
+and it is easy to check (cf. Section&nbsp;<A HREF="node110.html#ss-LQR-optcost">6.1.3</A>) that this uniquely identifies the feedback law given in statement&nbsp;<A HREF="#i-contr-LQR">3</A>.&nbsp;
+
+<P>
+We can see from the proof that the observability assumption was only used for establishing exponential stability of the optimal closed-loop system (statement&nbsp;<A HREF="#i-stab-LQR">4</A>) and the positive definiteness and uniqueness of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ in statement&nbsp;<A HREF="#i-limit-LQR">1</A> (the uniqueness proof relied on observability indirectly because it invoked statement&nbsp;<A HREF="#i-stab-LQR">4</A>). The controllability assumption, on the other hand, was used for showing the existence of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ which is crucial for all the other claims. Nevertheless, there remains the possibility that some or all claims could be proved without relying on these assumptions.
+
+<P>
+<BR>
+<A NAME="z-controbs-_SPMgt_stabdet"></A><IMG
+ WIDTH="555" HEIGHT="105" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1971.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9776
+Suppose that the assumptions of c...
+...why not and how the statement should be modified to become true.)
+\end{Exercise}">
+<BR>
+
+<P>
+In view of statement&nbsp;<A HREF="#i-limit-LQR">1</A> of Theorem&nbsp;<A HREF="#t-LQR-ih">6.1</A> and its proof, we know that the ARE has exactly one positive semidefinite solution <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+, and this solution is in fact positive definite and gives the optimal cost and optimal control via statements&nbsp;<A HREF="#i-cost-LQR">2</A> and&nbsp;<A HREF="#i-contr-LQR">3</A>. For example, consider the infinite-horizon version of Example&nbsp;<A HREF="node111.html#x-simplest-LQR">6.1</A>, with the system <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img964.gif"
+ ALT="$ \dot x=u$">
+ and the cost
+<!-- MATH
+ $J(u)=\int_{t_0}^{\infty}(x^2(t)+u^2(t))dt$
+ -->
+<IMG
+ WIDTH="212" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1972.gif"
+ ALT="$ J(u)=\int_{t_0}^{\infty}(x^2(t)+u^2(t))dt
+$">
+. The ARE <IMG
+ WIDTH="87" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1973.gif"
+ ALT="$ P^2-1=0$">
+ has two solutions, <IMG
+ WIDTH="63" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1974.gif"
+ ALT="$ P=\pm 1$">
+, of which <IMG
+ WIDTH="49" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1975.gif"
+ ALT="$ P=1$">
+
+is the one we want. The optimal cost is <!-- MATH
+ $V(x_0)=x_0^2$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1976.gif"
+ ALT="$ V(x_0)=x_0^2$">
+ and the optimal control is <IMG
+ WIDTH="75" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1977.gif"
+ ALT="$ u^*=-x^*$">
+. The result that the reader obtained
+in
+Exercise&nbsp;<A HREF="node113.html#z-solving-ARE">6.4</A> should also immediately yield the optimal cost for that problem and the exponentially stable optimal closed-loop system.
+
+<P>
+Linearity, time-invariance, and exponential stability  are
+very desirable features of the optimal closed-loop system, indicating that the infinite-horizon LQR problem provides good control design guidelines. The choice of the matrices <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ and <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1779.gif"
+ ALT="$ R$">
+ is often part of the design process, which helps shape the behavior of the state and the control signal.
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="146" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1978.gif"
+ ALT="\begin{Exercise}
+Consider the scalar system
+$\dot x=ax+bu$\ and the cost
+$J(u)=\...
+...em tends to $-a$, i.e., the opposite of the open-loop eigenvalue.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2107"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2101"
+  HREF="node112.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2097"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2103"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2105"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2108"
+  HREF="node117.html">6.3 Notes and references</A>
+<B> Up:</B> <A NAME="tex2html2102"
+  HREF="node112.html">6.2 Infinite-horizon LQR problem</A>
+<B> Previous:</B> <A NAME="tex2html2098"
+  HREF="node115.html">6.2.3 Closed-loop stability</A>
+ &nbsp; <B>  <A NAME="tex2html2104"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2106"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

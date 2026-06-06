@@ -1,0 +1,1607 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>1.2.2.1 First-order necessary condition (Lagrange
+multipliers)</TITLE>
+<META NAME="description" CONTENT="1.2.2.1 First-order necessary condition (Lagrange
+multipliers)">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node12.html">
+<LINK REL="previous" HREF="node10.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node12.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html520"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html514"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html508"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html516"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html518"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html521"
+  HREF="node12.html">1.2.2.2 Second-order conditions</A>
+<B> Up:</B> <A NAME="tex2html515"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html509"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+ &nbsp; <B>  <A NAME="tex2html517"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html519"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00322100000000000000">
+1.2.2.1 First-order necessary condition (Lagrange
+multipliers)</A>
+</H3>
+
+<P>
+Let <IMG
+ WIDTH="57" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img38.gif"
+ ALT="$ x^*\in D$">
+ be a local minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. We assume
+that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a <I>regular point</I><A NAME="523"></A> of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ in the sense that
+the gradients <!-- MATH
+ $\nabla h_i$
+ -->
+<IMG
+ WIDTH="33" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img118.gif"
+ ALT="$ \nabla h_i$">
+, <!-- MATH
+ $i=1,\dots,m$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ i=1,\dots,m$">
+ are linearly independent
+at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. This is a technical assumption needed to rule out degenerate
+situations; see Exercise&nbsp;<A HREF="#z-regular">1.2</A> below.
+
+<P>
+Instead of line segments containing <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ which we used in the
+unconstrained case, we now
+consider <I>curves</I> in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ passing through <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. Such a curve is
+a family of points
+ <!-- MATH
+ $x(\alpha)\in D$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img119.gif"
+ ALT="$ x(\alpha)\in D$">
+
+parameterized by <!-- MATH
+ $\alpha\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$ \alpha\in\mathbb{R}$">
+, with <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.gif"
+ ALT="$ x(0)=x^*$">
+.
+We require the function <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+
+to be <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+, at least for <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ near 0.
+Given an arbitrary curve of this kind, we can consider the function
+<P><!-- MATH
+ \begin{displaymath}
+g(\alpha):=f(x(\alpha)).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="129" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img122.gif"
+ ALT="$\displaystyle g(\alpha):=f(x(\alpha)).
+$">
+</DIV><P>
+</P>
+Note that when there are
+ no equality constraints, functions of the form&nbsp;(<A HREF="node7.html#e-g-ray">1.4</A>)
+considered previously can be viewed as special cases of
+this more general construction.
+From the fact that 0 is a minimum of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+, we derive exactly as before
+that&nbsp;(<A HREF="node7.html#e-g_ge0">1.7</A>) holds, i.e., <IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img103.gif"
+ ALT="$ g'(0)=0$">
+. To interpret this result in
+terms of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, note that
+<P><!-- MATH
+ \begin{displaymath}
+g'(\alpha)=\nabla f(x(\alpha))\cdot x'(\alpha)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="190" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img123.gif"
+ ALT="$\displaystyle g'(\alpha)=\nabla f(x(\alpha))\cdot x'(\alpha)
+$">
+</DIV><P>
+</P>
+which for <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+ gives
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-inprodge0"></A><!-- MATH
+ \begin{equation}
+g'(0)=\nabla f(x^*)\cdot x'(0)= 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="204" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img124.gif"
+ ALT="$\displaystyle g'(0)=\nabla f(x^*)\cdot x'(0)= 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The vector <!-- MATH
+ $x'(0)\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img125.gif"
+ ALT="$ x'(0)\in\mathbb{R}^n$">
+ is an important
+object for us here. From the first-order Taylor expansion
+<!-- MATH
+ $x(\alpha)=x^*+x'(0)\alpha+o(\alpha)$
+ -->
+<IMG
+ WIDTH="203" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img126.gif"
+ ALT="$ x(\alpha)=x^*+x'(0)\alpha+o(\alpha)
+$">
+
+we see that <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$ x'(0)$">
+ defines a linear approximation of
+<IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. Geometrically, it specifies the infinitesimal direction
+of the curve (see Figure&nbsp;<A HREF="#f-tangent-vector">1.4</A>).
+The vector <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$ x'(0)$">
+ is a
+<I>tangent vector</I><A NAME="534"></A> to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. It lives in the
+<I>tangent space</I><A NAME="536"></A> to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+, which is denoted by <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+.<A NAME="p-TxM"></A> (We
+can
+think of this space as having its origin at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+.)
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-tangent-vector"></A><A NAME="7685"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A tangent vector
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="339" HEIGHT="200" ALIGN="BOTTOM" BORDER="0"
+ SRC="img129.gif"
+ ALT="\includegraphics[height=1.75in]{figures/tangent-vector.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We want to have a more explicit characterization of the tangent space
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+,
+which will help us understand it better. Since
+<IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ was defined as the set of points satisfying the equalities&nbsp;(<A HREF="node10.html#e-hi">1.18</A>),
+and since the points <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img130.gif"
+ ALT="$ x(\alpha)$">
+ lie in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ by construction,
+we must have
+<!-- MATH
+ $h_i(x(\alpha))=0$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img131.gif"
+ ALT="$ h_i(x(\alpha))=0$">
+ for all <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ and all <!-- MATH
+ $i\in\{1,\dots,m\}$
+ -->
+<IMG
+ WIDTH="111" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img132.gif"
+ ALT="$ i\in\{1,\dots,m\}$">
+. Differentiating
+this formula gives
+<P><!-- MATH
+ \begin{displaymath}
+0={\frac d{d\alpha}}h_i(x(\alpha))=\nabla
+h_i(x(\alpha))\cdot x'(\alpha), \qquad i=1,\dots, m
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="411" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img133.gif"
+ ALT="$\displaystyle 0={\frac d{d\alpha}}h_i(x(\alpha))=\nabla
+h_i(x(\alpha))\cdot x'(\alpha), \qquad i=1,\dots, m
+$">
+</DIV><P>
+</P>
+for all <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ (close enough to 0). Setting
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+ and remembering that <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.gif"
+ ALT="$ x(0)=x^*$">
+, we obtain
+<P><!-- MATH
+ \begin{displaymath}
+0=\left.\frac d{d\alpha}\right|_{\alpha=0}h_i(x(\alpha))=\nabla
+h_i(x^*)\cdot x'(0), \qquad i=1,\dots, m.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="434" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img134.gif"
+ ALT="$\displaystyle 0=\left.\frac d{d\alpha}\right\vert _{\alpha=0}h_i(x(\alpha))=\nabla
+h_i(x^*)\cdot x'(0), \qquad i=1,\dots, m.
+$">
+</DIV><P>
+</P>
+We have shown that for an arbitrary <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ with
+ <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img120.gif"
+ ALT="$ x(0)=x^*$">
+, its tangent vector <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$ x'(0)$">
+ must satisfy <!-- MATH
+ $\nabla
+h_i(x^*)\cdot x'(0)=0$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img135.gif"
+ ALT="$ \nabla
+h_i(x^*)\cdot x'(0)=0$">
+ for each <IMG
+ WIDTH="9" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img136.gif"
+ ALT="$ i$">
+.
+Actually, one can show that
+the converse is also true, namely, every vector <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+
+satisfying
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-tangent-char"></A><!-- MATH
+ \begin{equation}
+\nabla h_i(x^*)\cdot d=0, \qquad i=1,\dots, m
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="253" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.gif"
+ ALT="$\displaystyle \nabla h_i(x^*)\cdot d=0, \qquad i=1,\dots, m$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+is a tangent vector to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ corresponding to some curve.
+(We do not give a
+ proof of this fact but note that it relies on <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ being a regular point
+of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.)
+In other words,
+ the tangent vectors to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+
+are exactly the vectors <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ for which&nbsp;(<A HREF="#e-tangent-char">1.20</A>) holds.<A NAME="560"></A> This is
+the characterization of the tangent space <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+ that we were looking for.
+It is
+clear from&nbsp;(<A HREF="#e-tangent-char">1.20</A>) that
+<IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+ is a subspace of <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+; in particular,
+if <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ is
+a tangent vector, then so is <IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ -d$">
+ (going from <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$ x'(0)$">
+ to <IMG
+ WIDTH="54" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img138.gif"
+ ALT="$ -x'(0)$">
+ corresponds
+to reversing the direction of the curve).
+
+<P>
+Now let us go back to&nbsp;(<A HREF="#e-inprodge0">1.19</A>), which says
+that <!-- MATH
+ $\nabla f(x^*)\cdot d= 0$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img105.gif"
+ ALT="$ \nabla f(x^*)\cdot d=0$">
+ for all <!-- MATH
+ $d\in T_{x^*}D$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img139.gif"
+ ALT="$ d\in T_{x^*}D$">
+ (since the
+curve <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ and thus the tangent vector <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img127.gif"
+ ALT="$ x'(0)$">
+ were arbitrary).
+In view of the characterization of <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img128.gif"
+ ALT="$ T_{x^*}D$">
+ given
+by&nbsp;(<A HREF="#e-tangent-char">1.20</A>),
+we can rewrite this condition as follows:<A NAME="p-impl-lmfd"></A><P></P>
+<DIV ALIGN="CENTER"><A NAME="e-impl-lmfd"></A><!-- MATH
+ \begin{equation}
+\nabla f(x^*)\cdot d=0\qquad \forall\,d \ \text{ such that }\ \nabla
+h_i(x^*)\cdot d=0,\ i=1,\dots,m.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="175" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img140.gif"
+ ALT="$\displaystyle \nabla f(x^*)\cdot d=0\qquad \forall\,d \ $">&nbsp; &nbsp; such that&nbsp;<IMG
+ WIDTH="234" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img141.gif"
+ ALT="$\displaystyle \ \nabla h_i(x^*)\cdot d=0,\ i=1,\dots,m.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The relation between <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ and <!-- MATH
+ $\nabla h_i(x^*)$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img143.gif"
+ ALT="$ \nabla h_i(x^*)$">
+ expressed
+by&nbsp;(<A HREF="#e-impl-lmfd">1.21</A>) looks somewhat clumsy, since checking it involves
+a search over <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+. Can we eliminate <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ from this relation and make it more
+explicit? A careful look at&nbsp;(<A HREF="#e-impl-lmfd">1.21</A>) should quickly lead
+the reader to the following statement.
+
+<P>
+<I>Claim</I>: The gradient of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a linear combination of the
+gradients of the constraint functions <!-- MATH
+ $h_1,\dots,h_m$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img144.gif"
+ ALT="$ h_1,\dots,h_m$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-inspan"></A><!-- MATH
+ \begin{equation}
+\nabla f(x^*)\in\text{span}\{\nabla h_i(x^*),\,i=1,\dots,m\}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img145.gif"
+ ALT="$\displaystyle \nabla f(x^*)\in$">span<IMG
+ WIDTH="189" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img146.gif"
+ ALT="$\displaystyle \{\nabla h_i(x^*),\,i=1,\dots,m\}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Indeed, if the claim is not true, then
+ <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ has a component orthogonal to
+<!-- MATH
+ $\text{span}\{\nabla h_i(x^*)\}$
+ -->
+span<IMG
+ WIDTH="82" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img147.gif"
+ ALT="$ \{\nabla h_i(x^*)\}$">
+, i.e, there exists a <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img148.gif"
+ ALT="$ d \ne 0$">
+ such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-claim-1"></A><!-- MATH
+ \begin{equation}
+\nabla h_i(x^*)\cdot d=0,\qquad i=1,\dots,m
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="253" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img137.gif"
+ ALT="$\displaystyle \nabla h_i(x^*)\cdot d=0, \qquad i=1,\dots, m$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and <!-- MATH
+ $\nabla
+f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ can be written in the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-claim-2"></A><!-- MATH
+ \begin{equation}
+\nabla
+f(x^*)=d-\sum_{i=1}^m \lambda_i^* \nabla h_i(x^*)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="220" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img149.gif"
+ ALT="$\displaystyle \nabla f(x^*)=d-\sum_{i=1}^m \lambda_i^* \nabla h_i(x^*)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for some <!-- MATH
+ $\lambda_1^*,\dots,\lambda_m^*\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="117" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img150.gif"
+ ALT="$ \lambda_1^*,\dots,\lambda_m^*\in\mathbb{R}$">
+.
+Taking the inner product with <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ on both sides of&nbsp;(<A HREF="#e-claim-2">1.24</A>)
+and using&nbsp;(<A HREF="#e-claim-1">1.23</A>) gives
+<P><!-- MATH
+ \begin{displaymath}
+\nabla f(x^*)\cdot d=d\cdot d\ne 0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="167" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img151.gif"
+ ALT="$\displaystyle \nabla f(x^*)\cdot d=d\cdot d\ne 0
+$">
+</DIV><P>
+</P>
+and we reach a contradiction with&nbsp;(<A HREF="#e-impl-lmfd">1.21</A>).
+
+<P>
+Geometrically, the claim says that <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ is normal to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+.
+This situation is illustrated in Figure&nbsp;<A HREF="#f-gradients">1.5</A> for the case
+of two constraints in <!-- MATH
+ $\mathbb{R}^3$
+ -->
+<IMG
+ WIDTH="24" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img152.gif"
+ ALT="$ \mathbb{R}^3$">
+. Note that if there is only one constraint,
+say <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img153.gif"
+ ALT="$ h_1(x)=0$">
+, then <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a two-dimensional
+surface and <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ must be proportional
+to <!-- MATH
+ $\nabla h_1(x^*)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ \nabla h_1(x^*)$">
+, the normal direction to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+.
+When the second constraint <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img155.gif"
+ ALT="$ h_2(x)=0$">
+ is added, <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ becomes a curve
+(the thick curve
+in the figure) and <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+
+is allowed to live in the plane spanned by
+ <!-- MATH
+ $\nabla h_1(x^*)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img154.gif"
+ ALT="$ \nabla h_1(x^*)$">
+ and <!-- MATH
+ $\nabla h_2(x^*)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img156.gif"
+ ALT="$ \nabla h_2(x^*)$">
+, i.e., the normal plane to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+.
+In general, the intuition behind the claim is that
+unless <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+ is normal to <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+,
+there are
+curves in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ passing through <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+
+whose tangent vectors at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ make both positive and
+negative inner products with <!-- MATH
+ $\nabla f(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img142.gif"
+ ALT="$ \nabla f(x^*)$">
+, hence in particular <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+
+can be decreased by moving away from <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ while staying in <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-gradients"></A><A NAME="7689"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Gradient vectors and constrained optimality
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="349" HEIGHT="251" ALIGN="BOTTOM" BORDER="0"
+ SRC="img157.gif"
+ ALT="\includegraphics{figures/gradients_v2.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The condition&nbsp;(<A HREF="#e-inspan">1.22</A>) means that there exist real numbers
+<!-- MATH
+ $\lambda_1^*,\dots,\lambda_m^*$
+ -->
+<IMG
+ WIDTH="83" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img158.gif"
+ ALT="$ \lambda_1^*,\dots,\lambda_m^*$">
+ such that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-lagr-mult"></A><!-- MATH
+ \begin{equation}
+\fbox{$\nabla f(x^*)+\lambda_1^*\nabla h_1(x^*)+\dots+
+\lambda_m^*\nabla h_m(x^*)=0$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="359" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img159.gif"
+ ALT="$\displaystyle \fbox{$\nabla f(x^*)+\lambda_1^*\nabla h_1(x^*)+\dots+ \lambda_m^*\nabla h_m(x^*)=0$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This
+is the <B>first-order necessary condition for constrained
+optimality</B>.<A NAME="611"></A><A NAME="612"></A>
+The coefficients <!-- MATH
+ $\lambda_i^*$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img160.gif"
+ ALT="$ \lambda_i^*$">
+, <!-- MATH
+ $i=1,\dots,m$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img116.gif"
+ ALT="$ i=1,\dots,m$">
+
+are called <I>Lagrange multipliers</I>.<A NAME="614"></A>
+
+<P>
+<BR>
+<A NAME="z-regular"></A><IMG
+ WIDTH="555" HEIGHT="61" ALIGN="BOTTOM" BORDER="0"
+ SRC="img161.gif"
+ ALT="\begin{Exercise}
+Give an example where a local
+minimum $x^*$\ is not a regular p...
+...bove necessary
+condition is false (justify both of these claims).
+\end{Exercise}">
+<BR>
+
+<P>
+The above proof of the first-order necessary condition for constrained
+optimality involves geometric concepts. We also left a gap in it because we did
+not prove the converse implication in the equivalent characterization of the
+tangent space given by&nbsp;(<A HREF="#e-tangent-char">1.20</A>). We now give a shorter alternative proof which
+is purely analytic, and which will be useful when we
+study problems with constraints in calculus of variations.
+However, the
+geometric intuition behind the previous proof will be helpful for us
+later as well. We invite the reader to study both proofs as a way of testing
+the mathematical background knowledge
+ that will be required in the subsequent chapters.
+
+<P>
+Let us start again by assuming that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a local minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+, where
+<IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+ is a surface in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ defined by the equality constraints&nbsp;(<A HREF="node10.html#e-hi">1.18</A>) and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is
+a regular point of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.
+Our
+goal is to rederive the necessary condition expressed by&nbsp;(<A HREF="#e-lagr-mult">1.25</A>).
+For
+simplicity, we only give the argument for
+the case of a single constraint <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.gif"
+ ALT="$ h(x)=0$">
+, i.e., <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img163.gif"
+ ALT="$ m=1$">
+; the
+extension to <IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img164.gif"
+ ALT="$ m&gt;1$">
+ is straightforward (see Exercise&nbsp;<A HREF="#z-iftm_SPMgt_1">1.3</A> below).
+Given two arbitrary vectors <!-- MATH
+ $d_1,d_2\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="87" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img165.gif"
+ ALT="$ d_1,d_2\in\mathbb{R}^n$">
+, we can consider the following map  from <!-- MATH
+ $\mathbb{R}\times\mathbb{R}$
+ -->
+<IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img166.gif"
+ ALT="$ \mathbb{R}\times\mathbb{R}$">
+ to itself:
+<P><!-- MATH
+ \begin{displaymath}
+F: (\alpha_1,\alpha_2)\mapsto
+\big(f(x^*+\alpha_1d_1+\alpha_2d_2),
+{h}(x^*+\alpha_1d_1+\alpha_2d_2)\big).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="455" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img167.gif"
+ ALT="$\displaystyle F: (\alpha_1,\alpha_2)\mapsto
+\big(f(x^*+\alpha_1d_1+\alpha_2d_2),
+{h}(x^*+\alpha_1d_1+\alpha_2d_2)\big).
+$">
+</DIV><P>
+</P>
+The Jacobian matrix<A NAME="623"></A> of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ at <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.gif"
+ ALT="$ (0,0)$">
+ is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-jacobian"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+    \nabla f(x^*)\cdot d_1 &  \nabla f(x^*)\cdot d_2 \\
+     \nabla h(x^*)\cdot d_1  &  \nabla h(x^*)\cdot d_2
+  \end{pmatrix}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="223" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img170.gif"
+ ALT="$\displaystyle \begin{pmatrix}\nabla f(x^*)\cdot d_1 &amp; \nabla f(x^*)\cdot d_2 \\ \nabla h(x^*)\cdot d_1 &amp; \nabla h(x^*)\cdot d_2 \end{pmatrix}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.26)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If this Jacobian matrix were nonsingular, then we could apply the
+Inverse Function Theorem<A NAME="629"></A> (see, e.g., [<A
+ HREF="node135.html#rudin">Rud76</A>, Theorem&nbsp;9.24])
+and conclude that there are neighborhoods of <IMG
+ WIDTH="42" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img169.gif"
+ ALT="$ (0,0)$">
+ and
+<!-- MATH
+ $F(0,0)=(f(x^*),0)$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img171.gif"
+ ALT="$ F(0,0)=(f(x^*),0)$">
+ on which the map <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img168.gif"
+ ALT="$ F$">
+ is a bijection
+(has an inverse). This would imply, in particular, that there are
+points <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ arbitrarily close to
+ <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ such that
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.gif"
+ ALT="$ h(x)=0$">
+ and <!-- MATH
+ $f(x)< f(x^*)$
+ -->
+<IMG
+ WIDTH="102" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img172.gif"
+ ALT="$ f(x)&lt; f(x^*)$">
+;
+such points would be obtained by taking preimages
+of points on the ray directed to the left from <IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img173.gif"
+ ALT="$ F(0,0)$">
+
+in Figure&nbsp;<A HREF="#f-maccluer">1.6</A>. But this cannot be true, since <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img162.gif"
+ ALT="$ h(x)=0$">
+
+means that <IMG
+ WIDTH="50" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img40.gif"
+ ALT="$ x\in D$">
+ and we know that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is
+ a local minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ over <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+. Therefore, the matrix&nbsp;(<A HREF="#e-jacobian">1.26</A>) is singular.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-maccluer"></A><A NAME="7691"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">Illustrating the alternative proof
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="657" HEIGHT="181" ALIGN="BOTTOM" BORDER="0"
+ SRC="img174.gif"
+ ALT="\includegraphics{figures/maccluer.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Regularity of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ in the present case just means that the gradient <!-- MATH
+ $\nabla h(x^*)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img175.gif"
+ ALT="$ \nabla h(x^*)$">
+ is nonzero.
+Choose a <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$ d_1$">
+ such that <!-- MATH
+ $\nabla h(x^*)\cdot d_1\ne 0$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img177.gif"
+ ALT="$ \nabla h(x^*)\cdot d_1\ne 0$">
+. With this <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$ d_1$">
+ fixed, let
+<!-- MATH
+ $\lambda^*:=-(\nabla f(x^*)\cdot d_1)/(\nabla h(x^*)\cdot d_1)$
+ -->
+<IMG
+ WIDTH="269" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img178.gif"
+ ALT="$ \lambda^*:=-(\nabla f(x^*)\cdot d_1)/(\nabla h(x^*)\cdot d_1)
+$">
+,
+so that <!-- MATH
+ $\nabla f(x^*)\cdot d_1=-\lambda^*\nabla h(x^*)\cdot d_1$
+ -->
+<IMG
+ WIDTH="228" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img179.gif"
+ ALT="$ \nabla f(x^*)\cdot d_1=-\lambda^*\nabla h(x^*)\cdot d_1$">
+. Since the matrix&nbsp;(<A HREF="#e-jacobian">1.26</A>) must be singular for all choices of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img180.gif"
+ ALT="$ d_2$">
+, its first row must be a constant multiple of its second row (the second row being nonzero by our choice of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img176.gif"
+ ALT="$ d_1$">
+). Thus we have
+<!-- MATH
+ $\nabla f(x^*)\cdot d_2=-\lambda^*\nabla h(x^*)\cdot d_2$
+ -->
+<IMG
+ WIDTH="228" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img181.gif"
+ ALT="$ \nabla f(x^*)\cdot d_2=-\lambda^*\nabla h(x^*)\cdot d_2$">
+, or
+<!-- MATH
+ $(\nabla f(x^*)+\lambda^*\nabla h(x^*))\cdot d_2=0$
+ -->
+<IMG
+ WIDTH="229" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img182.gif"
+ ALT="$ (\nabla f(x^*)+\lambda^*\nabla h(x^*))\cdot d_2=0$">
+, and this must be true for all <!-- MATH
+ $d_2\in\mathbb{R}^n.$
+ -->
+<IMG
+ WIDTH="68" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img183.gif"
+ ALT="$ d_2\in\mathbb{R}^n.
+$">
+
+It follows that <!-- MATH
+ $\nabla f(x^*)+\lambda^*\nabla h(x^*)=0$
+ -->
+<IMG
+ WIDTH="186" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img184.gif"
+ ALT="$ \nabla f(x^*)+\lambda^*\nabla h(x^*)=0$">
+, which proves&nbsp;(<A HREF="#e-lagr-mult">1.25</A>) for the case when <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img163.gif"
+ ALT="$ m=1$">
+.
+
+<P>
+<BR>
+<A NAME="z-iftm_SPMgt_1"></A><IMG
+ WIDTH="555" HEIGHT="38" ALIGN="BOTTOM" BORDER="0"
+ SRC="img185.gif"
+ ALT="\begin{Exercise}
+Generalize the previous argument to an arbitrary number $m\ge 1...
+...ty constrains, assuming as before that $x^*$\ is a regular point.
+\end{Exercise}">
+<BR>
+
+<P>
+The first-order necessary condition for constrained optimality
+ generalizes the corresponding result we derived
+earlier for the unconstrained case.
+The condition&nbsp;(<A HREF="#e-lagr-mult">1.25</A>) together with
+the constraints&nbsp;(<A HREF="node10.html#e-hi">1.18</A>) is a system of <IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.gif"
+ ALT="$ n+m$">
+
+equations in <IMG
+ WIDTH="51" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img186.gif"
+ ALT="$ n+m$">
+ unknowns: <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+ components of <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ plus
+<IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img188.gif"
+ ALT="$ m$">
+ components of the Lagrange multiplier vector <!-- MATH
+ $\lambda^*=(\lambda_1^*,
+\dots,\lambda_m^*)^T$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img189.gif"
+ ALT="$ \lambda^*=(\lambda_1^*,
+\dots,\lambda_m^*)^T$">
+. For <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img190.gif"
+ ALT="$ m=0$">
+, we recover
+the condition&nbsp;(<A HREF="node7.html#e-1st-nec">1.11</A>)
+which consists of <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+ equations in
+<IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img187.gif"
+ ALT="$ n$">
+ unknowns.
+To make this relation even more explicit, consider the function
+<!-- MATH
+ $\ell:\mathbb{R}^n\times \mathbb{R}^m\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="133" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img191.gif"
+ ALT="$ \ell:\mathbb{R}^n\times \mathbb{R}^m\to \mathbb{R}$">
+ defined by
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-augmented"></A><!-- MATH
+ \begin{equation}
+\ell(x,\lambda):=f(x)+\sum_{i=1}^m \lambda_i h_i(x)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="218" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img192.gif"
+ ALT="$\displaystyle \ell(x,\lambda):=f(x)+\sum_{i=1}^m \lambda_i h_i(x)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.27)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which we call the <I>augmented cost</I><A NAME="669"></A> function.
+If <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a local constrained minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+ is the corresponding
+vector of Lagrange multipliers for which&nbsp;(<A HREF="#e-lagr-mult">1.25</A>) holds,
+then the gradient of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+ at <!-- MATH
+ $(x^*,\lambda^*)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ (x^*,\lambda^*)$">
+ satisfies
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-grad-aug"></A><!-- MATH
+ \begin{equation}
+\nabla \ell(x^*,\lambda^*)=
+\begin{pmatrix}{\ell}_{x}(x^*,\lambda^*)\\{\ell}_{\lambda}(x^*,\lambda^*)
+\end{pmatrix}=\begin{pmatrix}\nabla f(x^*)+\sum_{i=1}^m \lambda_i^*
+\nabla h_i(x^*)\\h(x^*)\end{pmatrix}=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="484" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img196.gif"
+ ALT="$\displaystyle \nabla \ell(x^*,\lambda^*)= \begin{pmatrix}{\ell}_{x}(x^*,\lambda...
+...}\nabla f(x^*)+\sum_{i=1}^m \lambda_i^* \nabla h_i(x^*)\\ h(x^*)\end{pmatrix}=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.28)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ ${\ell}_{x}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img197.gif"
+ ALT="$ {\ell}_{x}$">
+, <!-- MATH
+ ${\ell}_{\lambda}$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img198.gif"
+ ALT="$ {\ell}_{\lambda}$">
+ are the vectors of partial derivatives
+of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+ with respect to the components of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img199.gif"
+ ALT="$ \lambda$">
+, respectively, and
+<!-- MATH
+ $h=(h_1,\dots,h_m)^T$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img200.gif"
+ ALT="$ h=(h_1,\dots,h_m)^T$">
+ is the vector of constraint functions.
+We conclude that <!-- MATH
+ $(x^*,\lambda^*)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ (x^*,\lambda^*)$">
+ is a usual
+(unconstrained) stationary point of the augmented cost <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+.
+In other words, adding Lagrange multipliers basically converts a
+constrained problem into an unconstrained one, and the first-order necessary
+condition&nbsp;(<A HREF="#e-lagr-mult">1.25</A>) for constrained optimality is recovered from
+the first-order necessary condition for unconstrained optimality applied
+to <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+.
+
+<P>
+The idea of passing from constrained minimization of the original cost function to
+unconstrained minimization of the augmented cost function is due to Lagrange.<A NAME="679"></A>
+<A NAME="p-lagrange-naive"></A> If <!-- MATH
+ $(x^*,\lambda^*)$
+ -->
+<IMG
+ WIDTH="60" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img195.gif"
+ ALT="$ (x^*,\lambda^*)$">
+ is a minimum of <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+, then
+we must
+have <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img201.gif"
+ ALT="$ h(x^*)=0$">
+ (because otherwise we could decrease <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+
+by changing <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img193.gif"
+ ALT="$ \lambda^*$">
+), and subject to these constraints
+<IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ should minimize <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ (because otherwise it would not minimize
+<IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img194.gif"
+ ALT="$ \ell$">
+). Also, it is clear that&nbsp;(<A HREF="#e-grad-aug">1.28</A>) must hold. However,
+it does <I>not</I> follow that&nbsp;(<A HREF="#e-grad-aug">1.28</A>) is a necessary condition
+for <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+
+to be a constrained minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+. Unfortunately, there is no quick way to
+derive the first-order necessary condition for constrained optimality by
+working with the augmented cost--something that Lagrange originally attempted to
+do. Nevertheless, the basic form of the augmented cost function&nbsp;(<A HREF="#e-augmented">1.27</A>)
+ is fundamental in constrained optimization theory, and will
+reappear in various forms several times in this book.
+
+<P>
+Even though the condition in terms of Lagrange multipliers is only necessary
+and not sufficient for constrained optimality, it is very useful for narrowing
+down candidates for local extrema. The next exercise illustrates this point
+for a well-known optimization problem arising in optics.
+
+<P>
+<BR>
+<A NAME="z-reflect"></A><IMG
+ WIDTH="555" HEIGHT="255" ALIGN="BOTTOM" BORDER="0"
+ SRC="img202.gif"
+ ALT="\begin{Exercise}
+Consider a curve $D$\ in the plane described by
+the equation $h...
+...cessary condition for constrained optimality~\eqref{e-lagr-mult}.
+\end{Exercise}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html520"
+  HREF="node12.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html514"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html508"
+  HREF="node10.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html516"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html518"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html521"
+  HREF="node12.html">1.2.2.2 Second-order conditions</A>
+<B> Up:</B> <A NAME="tex2html515"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html509"
+  HREF="node10.html">1.2.2 Constrained optimization</A>
+ &nbsp; <B>  <A NAME="tex2html517"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html519"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,956 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.6.1 Legendre's necessary condition for a
+weak minimum</TITLE>
+<META NAME="description" CONTENT="2.6.1 Legendre's necessary condition for a
+weak minimum">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node41.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html984"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html978"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html972"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html980"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html982"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html985"
+  HREF="node43.html">2.6.2 Sufficient condition for</A>
+<B> Up:</B> <A NAME="tex2html979"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Previous:</B> <A NAME="tex2html973"
+  HREF="node41.html">2.6 Second-order conditions</A>
+ &nbsp; <B>  <A NAME="tex2html981"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html983"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00461000000000000000"></A><A NAME="ss-legendre-nec"></A>
+<BR>
+2.6.1 Legendre's necessary condition for a
+weak minimum
+</H2>
+
+<P>
+Let us compute <!-- MATH
+ $\left.\delta^2 J\right|_{y}$
+ -->
+<IMG
+ WIDTH="46" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img288.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}$">
+ for a given test curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+. Since third-order
+partial
+derivatives of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ will appear, we assume that <!-- MATH
+ $L\in\mathcal C^3$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img551.gif"
+ ALT="$ L\in\mathcal C^3$">
+.
+We work with the single-degree-of-freedom case for now.
+The left-hand side of&nbsp;(<A HREF="node41.html#e-2nd-exp-again">2.56</A>) is
+<P><!-- MATH
+ \begin{displaymath}
+J(y+\alpha\eta)=\int_a^b
+L(x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x))dx.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="409" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.gif"
+ ALT="$\displaystyle J(y+\alpha\eta)=\int_a^b L(x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x))dx.$">
+</DIV><P>
+</P>
+We need to write down its second-order Taylor expansion with respect
+ to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+. We do this by expanding the function inside the integral
+ with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ (using the chain rule) and separating the terms of different orders
+ in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img552.gif"
+ ALT="$\displaystyle J(y+\alpha \eta)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="647" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img553.gif"
+ ALT="$\displaystyle =\int_a^b L(x,y(x),y'(x))dx+\int_a^b \big({L}_{ y}(x,y(x),y'(x))\eta(x)+{L}_{y'}(x,y(x),y'(x))\eta'(x)\big)dx\cdot \alpha$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="497" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img554.gif"
+ ALT="$\displaystyle +\frac12\int_a^b\big({L}_{{ y}{y}}(x,y(x),y'(x))(\eta(x))^2+2{L}_{{ y}{ y'}}(x,y(x),y'(x))\eta(x)\eta'(x)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+<A NAME="e-second-var-messy">(2.55)</A></TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="394" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img555.gif"
+ ALT="$\displaystyle \qquad\ \ \,+ {L}_{{y'}{y'}}(x,y(x),y'(x))(\eta'(x))^2\big)dx\cdot \alpha^2 +o(\alpha^2).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Matching
+this expression with&nbsp;(<A HREF="node41.html#e-2nd-exp-again">2.56</A>) term by term, we
+deduce that the second
+variation is given by
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="392" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img556.gif"
+ ALT="$\displaystyle \left.\delta^2 J\right\vert _{y}(\eta)=\frac12\int_a^b\big({L}_{{ y}{y}} \eta^2+2{L}_{{ y}{ y'}}\eta\eta'+ {L}_{{y'}{y'}}(\eta')^2\big)dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the integrand is evaluated along <!-- MATH
+ $(x,y(x),y'(x))$
+ -->
+<IMG
+ WIDTH="112" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img557.gif"
+ ALT="$ (x,y(x),y'(x))$">
+.
+This is indeed a quadratic form as defined in Section&nbsp;<A HREF="node16.html#ss-second-variation">1.3.3</A>.
+Note that it explicitly depends on <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ as well as on <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. In contrast
+with the first variation (analyzed in detail in Section&nbsp;<A HREF="node28.html#ss-EL-derivation">2.3.1</A>), the dependence of the second
+variation on <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ is essential and cannot be eliminated. We can, however,
+simplify the expression for <!-- MATH
+ $\left.\delta^2 J\right|_{y}(\eta)$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img558.gif"
+ ALT="$ \left.\delta^2 J\right\vert _{y}(\eta)$">
+ by eliminating the ``mixed"
+term containing the product <IMG
+ WIDTH="26" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img559.gif"
+ ALT="$ \eta\eta'$">
+. We do this by using--as we did in our
+earlier derivation of the Euler-Lagrange equation--the method of integration by parts:
+<P><!-- MATH
+ \begin{displaymath}
+\int_a^b2L_{yy'}\eta\eta'dx=\int_a^bL_{yy'}\frac d{dx}(\eta^2)dx
+=\left.L_{yy'}\eta^2\right|_{a}^b-\int_a^b\frac d{dx}(L_{yy'})\eta^2dx.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="509" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img560.gif"
+ ALT="$\displaystyle \int_a^b2L_{yy'}\eta\eta'dx=\int_a^bL_{yy'}\frac d{dx}(\eta^2)dx
+=\left.L_{yy'}\eta^2\right\vert _{a}^b-\int_a^b\frac d{dx}(L_{yy'})\eta^2dx.
+$">
+</DIV><P>
+</P>
+The  first, non-integral term on the right-hand side vanishes due to the boundary
+conditions&nbsp;(<A HREF="node28.html#e-E-L-boundcond">2.11</A>). Therefore, the second variation can be written as
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2nd-var-expression"></A><!-- MATH
+ \begin{equation}
+\left.\delta^2 J\right|_{y}(\eta)= \int_a^b\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2
+\right)dx
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="368" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img561.gif"
+ ALT="$\displaystyle \left.\delta^2 J\right\vert _{y}(\eta)= \int_a^b\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2 \right)dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.56)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-PandQ"></A><!-- MATH
+ \begin{equation}
+P(x):=\frac12L_{y'y'}(x,y(x),y'(x)),\qquad Q(x):=\frac12\Big(L_{yy}(x,y(x),y'(x))
+-\frac
+d{dx}L_{yy'}(x,y(x),y'(x))\Big).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="689" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img562.gif"
+ ALT="$\displaystyle P(x):=\frac12L_{y'y'}(x,y(x),y'(x)),\qquad Q(x):=\frac12\Big(L_{yy}(x,y(x),y'(x)) -\frac d{dx}L_{yy'}(x,y(x),y'(x))\Big).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.57)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is continuous, and <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ is also continuous at least when
+<!-- MATH
+ $y\in\mathcal C^2$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.gif"
+ ALT="$ y\in
+\mathcal C^2$">
+.
+
+<P>
+When we come to the issue of sufficiency in the next subsection, we will also need
+a more precise characterization of the higher-order term labeled as <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+
+in the expansion&nbsp;(<A HREF="#e-second-var-messy">2.57</A>).
+The next exercise invites the reader to go back to the derivation of&nbsp;(<A HREF="#e-second-var-messy">2.57</A>)
+and analyze
+this term in more detail.
+
+<P>
+<BR>
+<A NAME="e-oalpha2-exercise"></A><A NAME="z-hot"></A><IMG
+ WIDTH="698" HEIGHT="227" ALIGN="BOTTOM" BORDER="0"
+ SRC="img565.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 8578Use Taylor's theorem with remainde...
+...he same statement with
+respect to the 0-norm is in
+general false.
+\end{Exercise}">
+<BR>
+
+<P>
+We know that if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a minimum, then
+for all <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ vanishing at the endpoints
+ the quantity&nbsp;(<A HREF="#e-2nd-var-expression">2.58</A>)
+must be nonnegative:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2nd-var-nonneg"></A><!-- MATH
+ \begin{equation}
+\int_a^b\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx\ge 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="313" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img566.gif"
+ ALT="$\displaystyle \int_a^b\left(P(x)(\eta'(x))^2+Q(x)(\eta(x))^2\right)dx\ge 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.58)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We would like to restate this condition in terms of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ and <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ only--which
+are defined directly from <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ via&nbsp;(<A HREF="#e-PandQ">2.59</A>)--so that we would
+not
+need to check it for all <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. (Recall that we followed a similar
+route earlier when passing from the condition&nbsp;(<A HREF="node28.html#e-EL-with-eta">2.16</A>) to the
+Euler-Lagrange equation via Lemma&nbsp;<A HREF="node28.html#l-dubois-reymond">2.1</A>.)
+
+<P>
+What, if anything,
+ does the inequality&nbsp;(<A HREF="#e-2nd-var-nonneg">2.61</A>) imply about <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ and <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+?
+ Does it force at least one of these two functions, or perhaps both,
+  to be nonnegative on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+?
+The two terms inside the integral in&nbsp;(<A HREF="#e-2nd-var-nonneg">2.61</A>) are
+of course not independent because <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ and
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ are related. So, we should try to see if maybe one of them
+ dominates the other.
+More specifically, can it
+happen that <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ is large (in magnitude) while <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ is small, or
+the other way around?
+
+<P>
+To answer these questions, consider a family of
+perturbations <!-- MATH
+ $\eta_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ \eta _\varepsilon $">
+ parameterized by small <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+, depicted
+in Figure&nbsp;<A HREF="#f-pulse">2.12</A>. The function <!-- MATH
+ $\eta_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ \eta _\varepsilon $">
+
+equals 0 everywhere outside some interval <!-- MATH
+ $[c,d]\subset[a,b]$
+ -->
+<IMG
+ WIDTH="95" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img567.gif"
+ ALT="$ [c,d]\subset[a,b]$">
+,
+and inside this interval it equals 1 except near the endpoints where it rapidly
+goes up to 1 and back down to 0. This rapid transfer is accomplished by the
+derivative
+<!-- MATH
+ $\eta'_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ \eta'_\varepsilon $">
+ having a short pulse of width approximately <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ and height
+approximately <!-- MATH
+ $1/\varepsilon$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1/\varepsilon $">
+ right after <IMG
+ WIDTH="11" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img331.gif"
+ ALT="$ c$">
+, and a similar negative pulse right before
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+. Here <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ is small compared to <IMG
+ WIDTH="41" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img570.gif"
+ ALT="$ d-c$">
+. We base
+the subsequent argument on this graphical description, but it is
+not difficult to specify a formula for <!-- MATH
+ $\eta_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ \eta _\varepsilon $">
+ and use it to
+ verify the claims that follow; see, e.g., [<A
+ HREF="node135.html#gelfand">GF63</A>, p. 103] for a similar
+ construction.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-pulse"></A><A NAME="7745"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The graphs of <!-- MATH
+ $\eta_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ \eta _\varepsilon $">
+ and its derivative
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="277" HEIGHT="402" ALIGN="BOTTOM" BORDER="0"
+ SRC="img571.gif"
+ ALT="\includegraphics{figures/pulse.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We can see that
+<P><!-- MATH
+ \begin{displaymath}
+\left|\int_a^b Q(x)(\eta_\varepsilon (x))^2dx\right|
+\le\int_{c}^{d}|Q(x)|dx
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="276" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img572.gif"
+ ALT="$\displaystyle \left\vert\int_a^b Q(x)(\eta_\varepsilon (x))^2dx\right\vert
+\le\int_{c}^{d}\vert Q(x)\vert dx
+$">
+</DIV><P>
+</P>
+and this bound is uniform over <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+.
+On the other hand, for nonzero <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ the integral
+<!-- MATH
+ $\int_a^b P(x)(\eta_\varepsilon '(x))^2dx$
+ -->
+<IMG
+ WIDTH="141" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img573.gif"
+ ALT="$ \int_a^b P(x)(\eta_\varepsilon '(x))^2dx
+$">
+
+does not stay bounded as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+, because it is of order
+<!-- MATH
+ $1/\varepsilon$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img569.gif"
+ ALT="$ 1/\varepsilon $">
+. In particular, let us see this more clearly for the case
+when <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is negative on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$ [c,d]$">
+, so
+that for some <IMG
+ WIDTH="44" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img575.gif"
+ ALT="$ \delta&gt;0$">
+ we have <!-- MATH
+ $P(x)\le -\delta$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img576.gif"
+ ALT="$ P(x)\le -\delta$">
+ for all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.gif"
+ ALT="$ x\in[c,d]$">
+. Assume
+that there is an interval inside <!-- MATH
+ $[c,c+\varepsilon ]$
+ -->
+<IMG
+ WIDTH="65" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img577.gif"
+ ALT="$ [c,c+\varepsilon ]$">
+ of length at least <!-- MATH
+ $\varepsilon /2$
+ -->
+<IMG
+ WIDTH="29" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img578.gif"
+ ALT="$ \varepsilon /2$">
+
+on which <!-- MATH
+ $\eta'_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ \eta'_\varepsilon $">
+ is no smaller than <!-- MATH
+ $1/(2\varepsilon )$
+ -->
+<IMG
+ WIDTH="51" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img579.gif"
+ ALT="$ 1/(2\varepsilon )$">
+; this property is
+completely consistent
+with our earlier description of <!-- MATH
+ $\eta_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.gif"
+ ALT="$ \eta _\varepsilon $">
+ and <!-- MATH
+ $\eta'_\varepsilon$
+ -->
+<IMG
+ WIDTH="19" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img568.gif"
+ ALT="$ \eta'_\varepsilon $">
+. We then have
+<P><!-- MATH
+ \begin{displaymath}
+\int_a^b P(x)(\eta_\varepsilon '(x))^2dx\le\int_c^{c+\varepsilon }P(x)(\eta_\varepsilon '(x))^2dx\le -\delta\frac{1}{4\varepsilon ^2}\frac\varepsilon 2=
+-\frac{\delta}{8\varepsilon }.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="479" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img580.gif"
+ ALT="$\displaystyle \int_a^b P(x)(\eta_\varepsilon '(x))^2dx\le\int_c^{c+\varepsilon ...
+...lta\frac{1}{4\varepsilon ^2}\frac\varepsilon 2=
+-\frac{\delta}{8\varepsilon }.
+$">
+</DIV><P>
+</P>
+As <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+, the above expression tends to <IMG
+ WIDTH="34" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img581.gif"
+ ALT="$ -\infty$">
+, dominating the
+bounded <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+-dependent term.
+It follows that the inequality&nbsp;(<A HREF="#e-2nd-var-nonneg">2.61</A>) cannot hold for all
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ if <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is negative on some subinterval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$ [c,d]$">
+. But this means that for
+<IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ to be a minimum, <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ must be nonnegative everywhere on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img210.gif"
+ ALT="$ [a,b]$">
+. Indeed,
+if <!-- MATH
+ $P(\bar x)<0$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img582.gif"
+ ALT="$ P(\bar x)&lt;0$">
+ for some <!-- MATH
+ $\bar x\in[a,b]$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.gif"
+ ALT="$ \bar x\in[a,b]$">
+, then by continuity of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+
+we can find a subinterval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$ [c,d]$">
+ containing <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+ on which <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ is negative,
+and the above construction can be applied.<A NAME="tex2html23"
+  HREF="footnode.html#foot2257"><SUP>2.3</SUP></A>
+<P>
+Recalling
+the definition of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+ in&nbsp;(<A HREF="#e-PandQ">2.59</A>), we arrive at our
+ <B>second-order necessary condition for optimality</B>:<A NAME="2260"></A><A NAME="2261"></A> <I>For all <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img446.gif"
+ ALT="$ x\in [a,b]$">
+ we must have</I>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-legendre"></A><!-- MATH
+ \begin{equation}
+\fbox{$L_{y'y'}(x,y(x),y'(x))\ge 0$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="190" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img586.gif"
+ ALT="$\displaystyle \fbox{$L_{y'y'}(x,y(x),y'(x))\ge 0$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.59)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This condition is known as <B>Legendre's condition</B>,<A NAME="2268"></A> as it was obtained by
+Legendre in 1786.<A NAME="2269"></A>
+Note that it places no restrictions on the sign of <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+; intuitively speaking,
+the <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+-dependent term in the second variation is dominated
+by the <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+-dependent term, hence <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img564.gif"
+ ALT="$ Q$">
+ can in principle be negative along the
+optimal curve (this point will become clearer in the next subsection).
+For multiple degrees of freedom, the proof takes a bit more work but the statement of Legendre's
+condition is virtually unchanged:<A NAME="2270"></A> <!-- MATH
+ $L_{y'y'}(x,y(x),y'(x))$
+ -->
+<IMG
+ WIDTH="148" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img587.gif"
+ ALT="$ L_{y'y'}(x,y(x),y'(x))$">
+, which becomes a symmetric
+matrix, must be positive semidefinite
+for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, i.e., (<A HREF="#e-legendre">2.62</A>) must hold
+in the matrix sense along the optimal curve.
+
+<P>
+As a brief digression, let us recall our definition&nbsp;(<A HREF="node34.html#e-H-def">2.29</A>)
+ of the Hamiltonian:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H-def-repeat"></A><!-- MATH
+ \begin{equation}
+H(x,y,y',p)=p\cdot{y'}-L(x,y,y')
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="251" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img588.gif"
+ ALT="$\displaystyle H(x,y,y',p)=p\cdot{y'}-L(x,y,y')$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.60)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $p={L}_{y'}(x,y,y')$
+ -->
+<IMG
+ WIDTH="121" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img589.gif"
+ ALT="$ p={L}_{y'}(x,y,y')$">
+. We already noted in
+Section&nbsp;<A HREF="node34.html#ss-hamiltonian">2.4.1</A> that when <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ is viewed as a function
+of <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ with the other
+ arguments evaluated along an optimal curve <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+,
+ it should have a stationary point
+at <IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img590.gif"
+ ALT="$ y'=y'(x)$">
+, the velocity of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ at <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. More, precisely, the
+function <IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img591.gif"
+ ALT="$ H^*$">
+ defined in&nbsp;(<A HREF="node34.html#e-Hofz">2.32</A>) has a stationary point at
+<IMG
+ WIDTH="73" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img592.gif"
+ ALT="$ z=y'(x)$">
+, which is a consequence of&nbsp;(<A HREF="node34.html#e-dHdz">2.33</A>). Legendre's
+condition tells us that, in addition, <!-- MATH
+ ${H}_{{y'}{y'}}=-{L}_{{y'}{y'}}\le 0$
+ -->
+<IMG
+ WIDTH="146" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img593.gif"
+ ALT="$ {H}_{{y'}{y'}}=-{L}_{{y'}{y'}}\le 0$">
+ along an optimal curve, which we can rewrite in
+terms of <IMG
+ WIDTH="27" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img591.gif"
+ ALT="$ H^*$">
+ as
+<P><!-- MATH
+ \begin{displaymath}
+\frac{d^2 H^*}{dz^2}(y'(x))=-{L}_{{y'}{y'}}(x,y,y'(x))\le 0.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="292" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img594.gif"
+ ALT="$\displaystyle \frac{d^2 H^*}{dz^2}(y'(x))=-{L}_{{y'}{y'}}(x,y,y'(x))\le 0.
+$">
+</DIV><P>
+</P>
+Thus, if the above stationary point is an extremum, then it is
+necessarily a <A NAME="2293"></A>maximum.
+This interpretation of necessary conditions
+for optimality moves us one step closer to the maximum principle.
+The basic idea behind our derivation of Legendre's condition will
+reappear in Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A> in the context of optimal
+control, but eventually (in Chapter&nbsp;<A HREF="node61.html#c-mp">4</A>) we will obtain a
+stronger result using more advanced techniques.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html984"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html978"
+  HREF="node41.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html972"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html980"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html982"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html985"
+  HREF="node43.html">2.6.2 Sufficient condition for</A>
+<B> Up:</B> <A NAME="tex2html979"
+  HREF="node41.html">2.6 Second-order conditions</A>
+<B> Previous:</B> <A NAME="tex2html973"
+  HREF="node41.html">2.6 Second-order conditions</A>
+ &nbsp; <B>  <A NAME="tex2html981"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html983"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

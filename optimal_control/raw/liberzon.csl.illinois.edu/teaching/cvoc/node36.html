@@ -1,0 +1,669 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.4.3 Principle of least action and conservation
+laws</TITLE>
+<META NAME="description" CONTENT="2.4.3 Principle of least action and conservation
+laws">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node33.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html898"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html892"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html888"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html894"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html896"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html899"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Up:</B> <A NAME="tex2html893"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html889"
+  HREF="node35.html">2.4.2 Legendre transformation</A>
+ &nbsp; <B>  <A NAME="tex2html895"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html897"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00443000000000000000"></A><A NAME="ss-least-action"></A>
+<BR>
+2.4.3 Principle of least action and conservation
+laws
+</H2>
+
+<P>
+Newton's second law of motion in the three-dimensional space can be written as
+the vector equation<A NAME="1818"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-newton"></A><!-- MATH
+ \begin{equation}
+\frac d{dt}(m\dot q)=-{U}_{q}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="116" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img475.gif"
+ ALT="$\displaystyle \frac d{dt}(m\dot q)=-{U}_{q}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.39)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <!-- MATH
+ $q=(x,y,z)^T$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img476.gif"
+ ALT="$ q=(x,y,z)^T$">
+ is the vector of coordinates,
+ <!-- MATH
+ $\dot q={dq}/{dt}$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img477.gif"
+ ALT="$ \dot q={dq}/{dt}$">
+ is the velocity vector, and <IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img478.gif"
+ ALT="$ U=U(q)$">
+
+is the potential;
+consequently,  <IMG
+ WIDTH="27" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img479.gif"
+ ALT="$ m\dot q$">
+ is the momentum and <!-- MATH
+ $-{ U}_{ q}$
+ -->
+<IMG
+ WIDTH="36" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img480.gif"
+ ALT="$ -{ U}_{ q}$">
+ is the force.
+Note that we are only considering situations where the force is conservative, i.e.,<A NAME="1829"></A>
+corresponds to the negative gradient of some potential function. Planar
+motion is obtained as a special case by dropping the <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+-coordinate.
+
+<P>
+It turns out that there
+is a direct relationship between&nbsp;(<A HREF="#e-newton">2.40</A>) and the Euler-Lagrange
+equation. This is difficult to see right now
+because the notation in&nbsp;(<A HREF="#e-newton">2.40</A>)
+is very different from the one we have been using. So, let us modify our
+earlier notation to better match&nbsp;(<A HREF="#e-newton">2.40</A>). First, let us write <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ instead
+of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ for the independent variable. Second, let us write <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ instead of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+
+for the dependent variable. Then also <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ becomes <IMG
+ WIDTH="12" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img482.gif"
+ ALT="$ \dot q$">
+ and we have
+<!-- MATH
+ $L=L(t,q,\dot q)$
+ -->
+<IMG
+ WIDTH="103" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img483.gif"
+ ALT="$ L=L(t,q,\dot q)$">
+. In the new notation, the Euler-Lagrange equation becomes
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-L-time"></A><!-- MATH
+ \begin{equation}
+\frac d{dt}{L}_{\dot q}={L}_{q}.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="89" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img484.gif"
+ ALT="$\displaystyle \frac d{dt}{L}_{\dot q}={L}_{q}.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.40)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that since <!-- MATH
+ $q\in\mathbb{R}^3$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img485.gif"
+ ALT="$ q\in\mathbb{R}^3$">
+,
+ we are referring to the multiple-degrees-of-freedom
+version&nbsp;(<A HREF="node30.html#e-E-L-vector">2.21</A>)
+of the Euler-Lagrange equation, with <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img341.gif"
+ ALT="$ n=3$">
+.
+
+<P>
+Some remarks on the above change of notation
+are in order (as it is also a preview of things to come).<A NAME="p-con"></A>The change from <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ to <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ is conceptually significant, because
+it implies that the curves are parameterized by <I>time</I> and thus describe
+some dynamic behavior (e.g.,
+trajectories of a moving object). In problems such as Dido's problem or catenary
+problem, where there is no motion with respect to time, this notation would
+ not be justified.
+Other variational problems, such as the brachistochrone problem, do indeed
+deal with paths of a moving particle. (We did not, however, explicitly
+use time when formulating the brachistochrone problem, and
+it would not make sense to just relabel <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ as
+<IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ in our earlier formulation of that problem.
+Instead,
+we would need to reparameterize the <IMG
+ WIDTH="44" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img316.gif"
+ ALT="$ (x,y)$">
+-trajectories with respect to time,
+which yields a different Lagrangian; we will do this
+in Section&nbsp;<A HREF="node49.html#s-cvvsoc">3.2</A>.)
+In mechanics, as well as in control theory, time is
+the default independent variable. Accordingly,
+when we come to the optimal control part of the book, we will
+make this change of notation permanent. For now, we adopt it just temporarily
+while we discuss applications of calculus of variations in mechanics. As
+for the (time-)dependent
+coordinate variables, it is natural
+to denote them by <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ and <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ for planar curves
+and by <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+, <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+ for spatial curves. In
+general, the choice of a label
+for the coordinate vector
+ is just a matter of preference and convention; the mechanics
+literature typically favors <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ or <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img486.gif"
+ ALT="$ r$">
+, while
+in control theory it is customary to use <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+
+<P>
+Let us now compare&nbsp;(<A HREF="#e-E-L-time">2.41</A>) with&nbsp;(<A HREF="#e-newton">2.40</A>). Is
+there a choice of the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ that would make these two equations
+ the same? The answer is yes, and the reader will have no difficulty in
+seeing that the following Lagrangian does the job:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-L_T-U"></A><!-- MATH
+ \begin{equation}
+L:=\frac12{m\big(\dot x^2+\dot y^2+\dot z^2\big)}-U(q)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="237" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img487.gif"
+ ALT="$\displaystyle L:=\frac12{m\big(\dot x^2+\dot y^2+\dot z^2\big)}-U(q)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.41)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is the difference between the kinetic energy
+<!-- MATH
+ $T:=\frac12m(\dot q\cdot\dot q)$
+ -->
+<IMG
+ WIDTH="113" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img488.gif"
+ ALT="$ T:=\frac12m(\dot q\cdot\dot q)$">
+ and the potential energy.
+We conclude that Newton's equations of motion can be recovered from a  path
+optimization problem. This important result is known as
+<B>Hamilton's principle of least action</B>:<A NAME="1853"></A> <I>Trajectories of
+mechanical systems are extremals of the functional</I>
+<P><!-- MATH
+ \begin{displaymath}
+\int_{t_0}^{t_1} (T-U)dt
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="110" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img489.gif"
+ ALT="$\displaystyle \int_{t_0}^{t_1} (T-U)dt
+$">
+</DIV><P>
+</P>
+which is called the <I>action integral</I>.<A NAME="1858"></A>
+In general, these extremals are not
+necessarily minima. However, they are indeed minima--hence the term
+``<I>least</I> action" is accurate--if the time horizon
+is sufficiently short; this will follow from the second-order sufficient
+condition for optimality, to be derived in
+Section&nbsp;<A HREF="node43.html#ss-legendre-suff">2.6.2</A>.
+
+<P>
+For example, if the potential is 0, then
+the trajectories are the extremals of
+ <!-- MATH
+ $\int_{t_0}^{t_1}\frac12{m(\dot q\cdot \dot q)} dt$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img490.gif"
+ ALT="$ \int_{t_0}^{t_1}\frac12{m(\dot q\cdot \dot q)} dt$">
+,
+which are straight lines. We saw in
+Example&nbsp;<A HREF="node28.html#x-straight">2.2</A> that straight lines arise
+as extremals when the Lagrangian is the arclength;
+the kinetic energy gives the same extremals.
+In the presence of gravity, the paths along which the action integral is
+minimized can be viewed as ``straight lines" (shortest paths, or geodesics)
+in a curved space whose metric is determined by gravitational forces.
+This view of mechanics forms the basis
+for Einstein's theory of general relativity.
+
+<P>
+Observe the difference between the law that the derivative of
+the momentum equals the force and the
+principle that the action integral is
+minimized. The former condition holds pointwise in time, while
+the latter is a statement about the entire trajectory. However, their
+relation is not surprising, because if the action integral is minimized then
+every small piece of the trajectory must also deliver minimal action. In the
+limit as the length of the piece approaches 0, we recover the differential
+statement. We already discussed this
+point in the general context of the Euler-Lagrange
+equation (see page&nbsp;<A HREF="node28.html#p-pointwise"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>).<A NAME="p-least-action"></A>
+<P>
+Now, what is the physical meaning of the Hamiltonian?
+Substituting <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+ for <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ in&nbsp;(<A HREF="node34.html#e-p-def">2.28</A>)-(<A HREF="node34.html#e-H-def">2.29</A>)
+and using&nbsp;(<A HREF="#e-L_T-U">2.42</A>), we have
+<P><!-- MATH
+ \begin{displaymath}
+H={L}_{\dot q}\cdot\dot q-L=m(\dot q\cdot \dot q)-
+\left(\frac12{m(\dot q\cdot \dot q)}-U\right)=
+\frac12{m(\dot q\cdot \dot q)}+U=T+U=E
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="586" HEIGHT="59" ALIGN="MIDDLE" BORDER="0"
+ SRC="img491.gif"
+ ALT="$\displaystyle H={L}_{\dot q}\cdot\dot q-L=m(\dot q\cdot \dot q)-
+\left(\frac12{m(\dot q\cdot \dot q)}-U\right)=
+\frac12{m(\dot q\cdot \dot q)}+U=T+U=E
+$">
+</DIV><P>
+</P>
+which is the total energy (kinetic plus potential). We see that the Hamiltonian
+not only enables a convenient rewriting of the Euler-Lagrange equation in the form of the
+canonical equations&nbsp;(<A HREF="node34.html#e-hamilton">2.30</A>), but also has a very clear mechanical interpretation.<A NAME="1876"></A>
+
+<P>
+<BR>
+<IMG
+ WIDTH="554" HEIGHT="40" ALIGN="BOTTOM" BORDER="0"
+ SRC="img492.gif"
+ ALT="\begin{Exercise}
+Reproduce all the derivations of this subsection (up to this point) for the
+more general setting of $N$\ moving particles.
+\end{Exercise}">
+<BR>
+
+<P>
+Recall that in
+Section&nbsp;<A HREF="node31.html#ss-EL-specialcases">2.3.4</A> we studied two special cases for
+which we found conserved quantities, i.e., functions that remain constant
+along extremals. We now revisit these two <A NAME="1880"></A><I>conservation laws</I>--as well
+as another related case--in the context
+of the principle of least action, which permits us to see their physical meaning.
+
+<P>
+C<SMALL>ONSERVATION OF ENERGY</SMALL>. In a conservative system, the potential
+is fixed and does not change with time. Since the kinetic
+energy does not explicitly
+depend on time either, we have <!-- MATH
+ $L=L(q,\dot q)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img493.gif"
+ ALT="$ L=L(q,\dot q)$">
+. In other words, the
+Lagrangian is invariant under time shifting.
+In our old notation, this corresponds to the
+``no <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+" case from Section&nbsp;<A HREF="node31.html#ss-EL-specialcases">2.3.4</A>, and we know that in
+this case the Hamiltonian is conserved. We also just saw that the Hamiltonian
+is the total energy of the system. Therefore, this is nothing but the well-known
+principle of conservation of energy.
+
+<P>
+C<SMALL>ONSERVATION OF MOMENTUM</SMALL>. Suppose that no force
+is acting on the system (i.e., the system is closed). Since the force
+is given by <!-- MATH
+ ${L}_{q}=-{U}_{q}$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img494.gif"
+ ALT="$ {L}_{q}=-{U}_{q}$">
+, this implies that <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img495.gif"
+ ALT="$ U$">
+ must be constant. The kinetic
+energy <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.gif"
+ ALT="$ T$">
+ depends on <IMG
+ WIDTH="12" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img482.gif"
+ ALT="$ \dot q$">
+ but not on <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+. Thus the Lagrangian
+<IMG
+ WIDTH="86" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img496.gif"
+ ALT="$ L=T-U$">
+ does not
+explicitly depend on <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img481.gif"
+ ALT="$ q$">
+, which means that it is invariant
+under
+parallel translations.
+This situation corresponds to the
+``no <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+" case from Section&nbsp;<A HREF="node31.html#ss-EL-specialcases">2.3.4</A>,
+where we saw that the <I>momentum</I>, <!-- MATH
+ ${L}_{\dot q}=m\dot q$
+ -->
+<IMG
+ WIDTH="70" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img497.gif"
+ ALT="$ {L}_{\dot q}=m\dot q$">
+ in the present
+notation,
+is conserved. A more general statement is that for
+each coordinate <IMG
+ WIDTH="17" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img498.gif"
+ ALT="$ q_i$">
+ that does not appear in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+, the
+corresponding component <!-- MATH
+ ${L}_{\dot q_i}=m\dot q_i$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img499.gif"
+ ALT="$ {L}_{\dot q_i}=m\dot q_i$">
+ of the momentum is conserved.
+
+<P>
+C<SMALL>ONSERVATION OF ANGULAR MOMENTUM</SMALL>.<A NAME="1892"></A>
+Consider a planar motion in a central field; in polar coordinates
+<!-- MATH
+ $(r,\theta)$
+ -->
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img500.gif"
+ ALT="$ (r,\theta)$">
+, this is defined by the property that
+<IMG
+ WIDTH="76" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img501.gif"
+ ALT="$ U=U(r)$">
+, i.e., the potential depends only on the radius and not on the
+ angle. This means that
+no <I>torque</I> is acting on the system, making the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+ invariant under
+rotations. Now we can use the fact
+(noted at the end of Section&nbsp;<A HREF="node30.html#ss-EL-tech-remarks">2.3.3</A>)
+ that the Euler-Lagrange equation looks the same in all coordinate systems. In particular,
+ in polar coordinates we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-polar"></A><!-- MATH
+ \begin{equation}
+{L}_{\theta}=\frac d{dt}{L}_{\dot \theta}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="84" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img502.gif"
+ ALT="$\displaystyle {L}_{\theta}=\frac d{dt}{L}_{\dot \theta}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.42)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and the analogous equation for <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img486.gif"
+ ALT="$ r$">
+ (which we do not need here).
+  Arguing exactly as before, we can show that in the present
+``no <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img328.gif"
+ ALT="$ \theta$">
+" case the corresponding component of the momentum,
+<!-- MATH
+ ${L}_{\dot\theta}$
+ -->
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img503.gif"
+ ALT="$ {L}_{\dot\theta}$">
+, is conserved.
+Converting the kinetic energy
+from Cartesian to polar
+coordinates, we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-kinetic-polar"></A><!-- MATH
+ \begin{equation}
+T=\frac12 m(\dot x^2+\dot y^2)=\frac 12m(\dot
+r^2+r^2\dot\theta^2).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="275" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img504.gif"
+ ALT="$\displaystyle T=\frac12 m(\dot x^2+\dot y^2)=\frac 12m(\dot r^2+r^2\dot\theta^2).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.43)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Thus the conserved quantity, in polar and Cartesian coordinates, is
+<P><!-- MATH
+ \begin{displaymath}
+{L}_{\dot\theta}={T}_{\dot\theta}=mr^2\dot\theta=m(x\dot
+y-y\dot x).
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="243" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img505.gif"
+ ALT="$\displaystyle {L}_{\dot\theta}={T}_{\dot\theta}=mr^2\dot\theta=m(x\dot
+y-y\dot x).
+$">
+</DIV><P>
+</P>
+These are familiar expressions for the <I>angular momentum</I>.
+
+<P>
+We remark that all of
+the above examples are special instances of a general result known
+as Noether's theorem,<A NAME="1913"></A> which says that invariance of the action
+integral under some transformation (e.g., time shift, translation,
+rotation) implies the existence of a conserved quantity.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html898"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html892"
+  HREF="node33.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html888"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html894"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html896"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html899"
+  HREF="node37.html">2.5 Variational problems with</A>
+<B> Up:</B> <A NAME="tex2html893"
+  HREF="node33.html">2.4 Hamiltonian formalism and</A>
+<B> Previous:</B> <A NAME="tex2html889"
+  HREF="node35.html">2.4.2 Legendre transformation</A>
+ &nbsp; <B>  <A NAME="tex2html895"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html897"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.2.2 Temporal control perturbation</TITLE>
+<META NAME="description" CONTENT="4.2.2 Temporal control perturbation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node68.html">
+<LINK REL="previous" HREF="node66.html">
+<LINK REL="up" HREF="node65.html">
+<LINK REL="next" HREF="node68.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1388"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1382"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1376"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1384"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1386"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1389"
+  HREF="node68.html">4.2.3 Spatial control perturbation</A>
+<B> Up:</B> <A NAME="tex2html1383"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1377"
+  HREF="node66.html">4.2.1 From Lagrange to</A>
+ &nbsp; <B>  <A NAME="tex2html1385"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1387"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00622000000000000000"></A><A NAME="ss-temporal"></A><A NAME="3776"></A><A NAME="3777"></A>
+<BR>
+4.2.2 Temporal control perturbation
+</H2>
+
+<P>
+Let us see what happens if we introduce a small
+change in the terminal time <IMG
+ WIDTH="17" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1037.gif"
+ ALT="$ t^*$">
+ of the optimal trajectory, i.e., let the optimal control act on a little
+longer or a little shorter time interval. We formalize this as follows: for an arbitrary <!-- MATH
+ $\tau\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1044.gif"
+ ALT="$ \tau\in\mathbb{R}$">
+ and a small <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+,  we consider the perturbed
+control
+<P><!-- MATH
+ \begin{displaymath}
+u_\tau(t):=u^*(\min\{t,t^*\}), \qquad t\in[t_0,t^*+\varepsilon \tau]
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="329" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1045.gif"
+ ALT="$\displaystyle u_\tau(t):=u^*(\min\{t,t^*\}), \qquad t\in[t_0,t^*+\varepsilon \tau]
+$">
+</DIV><P>
+</P>
+which is illustrated by the thick curves in Figure&nbsp;<A HREF="#f-temporal">4.3</A> (for the
+two cases depending on the sign of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-temporal"></A><A NAME="7825"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">A temporal perturbation
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="640" HEIGHT="179" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1047.gif"
+ ALT="\includegraphics{figures/temporal.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+We are interested in the value of the
+ resulting perturbed trajectory <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ at the new terminal time
+<!-- MATH
+ $t^*+\varepsilon \tau$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1048.gif"
+ ALT="$ t^*+\varepsilon \tau$">
+. For <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1049.gif"
+ ALT="$ \tau&gt;0$">
+, the first-order Taylor expansion of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ around <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1050.gif"
+ ALT="$ t=t^*$">
+ gives
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-deltatau"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+y(t^*+\varepsilon \tau)&=y^*(t^*)+ \dot y(t^*)\varepsilon \tau+o(\varepsilon )
+\\&=y^*(t^*)+g(y^*(t^*),u^*(t^*))\varepsilon \tau +o(\varepsilon )
+=:y^*(t^*)+\varepsilon \delta(\tau)+o(\varepsilon ).
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="540" HEIGHT="55" BORDER="0"
+ SRC="img1051.gif"
+ ALT="\begin{displaymath}\begin{split}y(t^*+\varepsilon \tau)&amp;=y^*(t^*)+ \dot y(t^*)\v...
+...:y^*(t^*)+\varepsilon \delta(\tau)+o(\varepsilon ). \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+For <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1052.gif"
+ ALT="$ \tau&lt;0$">
+, we have <!-- MATH
+ $y(t^*+\varepsilon \tau)=y^*(t^*+\varepsilon \tau)$
+ -->
+<IMG
+ WIDTH="185" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1053.gif"
+ ALT="$ y(t^*+\varepsilon \tau)=y^*(t^*+\varepsilon \tau)$">
+ and the first-order Taylor expansion of <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ around <IMG
+ WIDTH="47" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1050.gif"
+ ALT="$ t=t^*$">
+ gives the same result.
+The vector <!-- MATH
+ $\varepsilon \delta(\tau)$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1054.gif"
+ ALT="$ \varepsilon \delta(\tau)$">
+ describes
+the infinitesimal (first-order in <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+) perturbation
+of the terminal point. By
+definition, <!-- MATH
+ $\delta(\tau)$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ \delta(\tau)$">
+ depends linearly on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+. As we vary
+<IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+ over <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.gif"
+ ALT="$ \mathbb{R}$">
+, keeping <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ fixed, the points <!-- MATH
+ $y^*(t^*)+\varepsilon \delta(\tau)$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1056.gif"
+ ALT="$ y^*(t^*)+\varepsilon \delta(\tau)$">
+ form a line through <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1041.gif"
+ ALT="$ y^*(t^*)$">
+. We denote
+this line by
+<IMG
+ WIDTH="13" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1057.gif"
+ ALT="$ \vec\rho$">
+; see Figure&nbsp;<A HREF="#f-rho">4.4</A>. Every point on <IMG
+ WIDTH="13" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1057.gif"
+ ALT="$ \vec\rho$">
+ corresponds to a control <IMG
+ WIDTH="22" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1058.gif"
+ ALT="$ u_\tau$">
+ for
+some <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1046.gif"
+ ALT="$ \tau$">
+. On the other hand, the approximation of <!-- MATH
+ $y(t^*+\varepsilon \tau)$
+ -->
+<IMG
+ WIDTH="79" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1059.gif"
+ ALT="$ y(t^*+\varepsilon \tau)$">
+
+ by <!-- MATH
+ $y^*(t^*)+\varepsilon \delta(\tau)$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1056.gif"
+ ALT="$ y^*(t^*)+\varepsilon \delta(\tau)$">
+ is valid only in the limit as <!-- MATH
+ $\varepsilon \to 0$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img574.gif"
+ ALT="$ \varepsilon \to 0$">
+. So, <!-- MATH
+ $\delta(\tau)$
+ -->
+<IMG
+ WIDTH="35" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1055.gif"
+ ALT="$ \delta(\tau)$">
+ tells us the direction--but
+not the magnitude--of the terminal point deviation caused by
+an infinitesimal change in the terminal time. The arrow
+over <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1060.gif"
+ ALT="$ \rho$">
+ is meant to indicate that points on the line correspond
+to perturbation <I>directions</I>. Note that we are describing deviations of the terminal point in the <IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1061.gif"
+ ALT="$ (x^0,x)$">
+-space only, ignoring the differences in the terminal times; accordingly, the time axis is not included in the figures.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-rho"></A><A NAME="7827"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The effect of a temporal control perturbation
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="270" HEIGHT="220" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1062.gif"
+ ALT="\includegraphics{figures/rho.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1388"
+  HREF="node68.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1382"
+  HREF="node65.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1376"
+  HREF="node66.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1384"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1386"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1389"
+  HREF="node68.html">4.2.3 Spatial control perturbation</A>
+<B> Up:</B> <A NAME="tex2html1383"
+  HREF="node65.html">4.2 Proof of the</A>
+<B> Previous:</B> <A NAME="tex2html1377"
+  HREF="node66.html">4.2.1 From Lagrange to</A>
+ &nbsp; <B>  <A NAME="tex2html1385"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1387"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>7.3.3 Riccati inequalities and LMIs</TITLE>
+<META NAME="description" CONTENT="7.3.3 Riccati inequalities and LMIs">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="previous" HREF="node128.html">
+<LINK REL="up" HREF="node126.html">
+<LINK REL="next" HREF="node130.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html2305"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2299"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2295"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2301"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2303"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2306"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Up:</B> <A NAME="tex2html2300"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2296"
+  HREF="node128.html">7.3.2 control problem</A>
+ &nbsp; <B>  <A NAME="tex2html2302"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2304"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00933000000000000000">
+7.3.3 Riccati inequalities and LMIs</A>
+</H2>
+
+<P>
+As we have seen, a representative example of Riccati matrix inequalities encountered in robust control is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ARI-gamma_1"></A><!-- MATH
+ \begin{equation}
+PA+A^TP+C^TC+PBB^TP\le 0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="267" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2167.gif"
+ ALT="$\displaystyle PA+A^TP+C^TC+PBB^TP\le 0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.30)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+(this is&nbsp;(<A HREF="node127.html#e-ARI">7.26</A>) with <IMG
+ WIDTH="45" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2168.gif"
+ ALT="$ \gamma=1$">
+). Similar Riccati inequalities arise in the context of several other control problems.
+The inequality&nbsp;(<A HREF="#e-ARI-gamma_1">7.30</A>) is quadratic in the matrix variable
+<IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img563.gif"
+ ALT="$ P$">
+. However, it can be shown to be equivalent
+to the <I>linear</I> matrix inequality (<I>LMI</I>)<A NAME="7419"></A><A NAME="7420"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-LMI"></A><!-- MATH
+ \begin{equation}
+\begin{pmatrix}
+  PA+A^TP+C^TC & PB \\
+  B^TP & -I \\
+\end{pmatrix}\le 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="254" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2169.gif"
+ ALT="$\displaystyle \begin{pmatrix}PA+A^TP+C^TC &amp; PB \\ B^TP &amp; -I \\ \end{pmatrix}\le 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(7.31)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The matrix on the left-hand side of&nbsp;(<A HREF="#e-LMI">7.31</A>) is called the <I>Schur complement</I><A NAME="7428"></A> of the matrix on the left-hand side of&nbsp;(<A HREF="#e-ARI-gamma_1">7.30</A>).
+The constraint <IMG
+ WIDTH="49" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1921.gif"
+ ALT="$ P \ge 0$">
+ can also be naturally incorporated into this LMI.
+
+<P>
+<A NAME="7436"></A>Being convex feasibility problems, LMIs can be efficiently solved by known numerical algorithms from convex optimization. Several dedicated software packages exist for solving LMIs. This makes conditions expressed in terms of LMIs attractive from the computational point of view.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2305"
+  HREF="node130.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html2299"
+  HREF="node126.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html2295"
+  HREF="node128.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html2301"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html2303"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html2306"
+  HREF="node130.html">7.4 Maximum principle for</A>
+<B> Up:</B> <A NAME="tex2html2300"
+  HREF="node126.html">7.3 Riccati equations and</A>
+<B> Previous:</B> <A NAME="tex2html2296"
+  HREF="node128.html">7.3.2 control problem</A>
+ &nbsp; <B>  <A NAME="tex2html2302"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html2304"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

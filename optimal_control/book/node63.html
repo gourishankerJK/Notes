@@ -1,0 +1,490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>4.1.1 Basic fixed-endpoint control
+problem</TITLE>
+<META NAME="description" CONTENT="4.1.1 Basic fixed-endpoint control
+problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node64.html">
+<LINK REL="previous" HREF="node62.html">
+<LINK REL="up" HREF="node62.html">
+<LINK REL="next" HREF="node64.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1322"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1316"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1310"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1318"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1320"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1323"
+  HREF="node64.html">4.1.2 Basic variable-endpoint control</A>
+<B> Up:</B> <A NAME="tex2html1317"
+  HREF="node62.html">4.1 Statement of the</A>
+<B> Previous:</B> <A NAME="tex2html1311"
+  HREF="node62.html">4.1 Statement of the</A>
+ &nbsp; <B>  <A NAME="tex2html1319"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1321"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00611000000000000000"></A><A NAME="ss-mp-fixed"></A>
+<BR>
+4.1.1 Basic fixed-endpoint control
+problem
+</H2>
+
+<P>
+We will label as the <I>Basic Fixed-Endpoint Control Problem</I><A NAME="3570"></A>
+the optimal control problem from Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A> with
+ the following additional specifications: <IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img823.gif"
+ ALT="$ f=f(x,u)$">
+ and <IMG
+ WIDTH="92" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img977.gif"
+ ALT="$ L=L(x,u)$">
+, with no
+ <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+-argument
+ (the control system and the running cost are time-independent); <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img813.gif"
+ ALT="$ {f}_{x}$">
+, <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+,
+ and <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ {L}_{x}$">
+ are continuous (in other words, both <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ satisfy
+ the stronger set of regularity conditions from Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A>);
+  the target set is <!-- MATH
+ $S=[t_0,\infty)\times\{x_1\}$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ S=[t_0,\infty)\times\{x_1\} $">
+ (this
+  is a free-time, fixed-endpoint
+problem); and <IMG
+ WIDTH="52" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img836.gif"
+ ALT="$ K\equiv0$">
+ (the terminal cost is absent). For this special problem,
+the maximum principle takes the following form.
+
+<P>
+<B>Maximum Principle for the
+Basic Fixed-Endpoint Control Problem</B> <A NAME="3575"></A><I>Let <!-- MATH
+ $u^*:[t_0,t_f]\to U$
+ -->
+<IMG
+ WIDTH="123" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img978.gif"
+ ALT="$ u^*:[t_0,t_f]\to U$">
+ be an optimal control (in the global sense)
+ and let <!-- MATH
+ $x^*:[t_0,t_f]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="130" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img979.gif"
+ ALT="$ x^*:[t_0,t_f]\to\mathbb{R}^n$">
+ be the
+corresponding optimal state trajectory. Then there
+exist a function <!-- MATH
+ $p^*:[t_0,t_f]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img980.gif"
+ ALT="$ p^*:[t_0,t_f]\to\mathbb{R}^n$">
+
+and a constant <!-- MATH
+ $p_0^*\le 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img981.gif"
+ ALT="$ p_0^*\le 0$">
+ satisfying <!-- MATH
+ $(p_0^*,p^*(t))\ne (0,0)$
+ -->
+<IMG
+ WIDTH="139" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img982.gif"
+ ALT="$ (p_0^*,p^*(t))\ne (0,0)$">
+
+for all <!-- MATH
+ $t\in[t_0,t_f]$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img983.gif"
+ ALT="$ t\in[t_0,t_f]$">
+ and having the following
+properties:</I>
+
+<P>
+
+<OL>
+<LI><A NAME="i-canon"></A> <I><IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ and <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ satisfy the canonical equations
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-canon-mp"></A><!-- MATH
+ \begin{equation}
+\begin{split}
+\dot x^*&={H}_{p}(x^*,u^*,p^*,p_0^*)\\
+\dot p^*&=-{H}_{x}(x^*,u^*,p^*,p_0^*)
+\end{split}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="180" HEIGHT="55" BORDER="0"
+ SRC="img984.gif"
+ ALT="\begin{displaymath}\begin{split}\dot x^*&amp;={H}_{p}(x^*,u^*,p^*,p_0^*)\\ \dot p^*&amp;=-{H}_{x}(x^*,u^*,p^*,p_0^*) \end{split}\end{displaymath}"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.1)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+with the boundary conditions <!-- MATH
+ $x^*(t_0)=x_0$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img951.gif"
+ ALT="$ x^*(t_0)=x_0$">
+ and <!-- MATH
+ $x^*(t_f)=x_1$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img985.gif"
+ ALT="$ x^*(t_f)=x_1$">
+, where the
+Hamiltonian  <!-- MATH
+ $H:\mathbb{R}^n\times U\times \mathbb{R}^n\times\mathbb{R}\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="207" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img986.gif"
+ ALT="$ H:\mathbb{R}^n\times U\times \mathbb{R}^n\times\mathbb{R}\to\mathbb{R}$">
+
+ is defined as</I><A NAME="3586"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-H-abnormult"></A><!-- MATH
+ \begin{equation}
+H(x,u,p,p_0):=\langle p,f(x,u)\rangle+p_0L(x,u).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="306" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img987.gif"
+ ALT="$\displaystyle H(x,u,p,p_0):=\langle p,f(x,u)\rangle+p_0L(x,u).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(4.2)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+</LI>
+<LI><A NAME="i-max"></A> <I>For each fixed <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, the function <!-- MATH
+ $u\mapsto H(x^*(t),u,p^*(t),p_0^*)$
+ -->
+<IMG
+ WIDTH="193" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img988.gif"
+ ALT="$ u\mapsto H(x^*(t),u,p^*(t),p_0^*)$">
+
+   has a global maximum
+  at <IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img954.gif"
+ ALT="$ u=u^*(t)$">
+, i.e.,</I>
+  <P><!-- MATH
+ \begin{displaymath}
+H(x^*(t),u^*(t),p^*(t),p_0^*)\ge H(x^*(t),u,p^*(t),p_0^*)\qquad\forall\,
+t\in[t_0,t_f], \ \forall\,u\in U.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="554" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img989.gif"
+ ALT="$\displaystyle H(x^*(t),u^*(t),p^*(t),p_0^*)\ge H(x^*(t),u,p^*(t),p_0^*)\qquad\forall\,
+t\in[t_0,t_f], \ \forall\,u\in U.
+$">
+</DIV><P>
+</P><A NAME="3592"></A>
+
+<P>
+</LI>
+<LI><A NAME="i-zero"></A> <!-- MATH
+ $H(x^*(t),u^*(t),p^*(t),p_0^*)= 0$
+ -->
+<IMG
+ WIDTH="215" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img990.gif"
+ ALT="$ H(x^*(t),u^*(t),p^*(t),p_0^*)= 0$">
+ <I>for all  <!-- MATH
+ $t\in[t_0,t_f]$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img983.gif"
+ ALT="$ t\in[t_0,t_f]$">
+.</I>
+
+<P>
+</LI>
+</OL>
+
+<P>
+A few clarifications are in order. First, the
+maximum principle, as stated here, describes necessary conditions
+for <I>global</I> optimality. However, we announced in
+Section&nbsp;<A HREF="node59.html#ss-varappr-critique">3.4.5</A> that one of our goals is to
+capture an appropriate notion of local optimality. The proof of
+the maximum principle will make it clear that the same conditions
+are indeed necessary for local optimality in the sense outlined in
+Section&nbsp;<A HREF="node59.html#ss-varappr-critique">3.4.5</A>. We thus postpone further
+discussion of this issue until after the proof (see
+Section&nbsp;<A HREF="node78.html#s-mp-discussion">4.3</A>). Second, while the adjoint vector, or
+costate, <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ is already familiar from Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A>,
+one difference
+ with the necessary conditions derived using the variational approach
+ is the presence of
+   <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img991.gif"
+ ALT="$ p_0^*$">
+. This nonpositive scalar
+   is called the <I>abnormal multiplier</I>.<A NAME="3602"></A> Similarly
+   to the abnormal multiplier <!-- MATH
+ $\lambda_0^*$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img992.gif"
+ ALT="$ \lambda_0^*$">
+ from Section&nbsp;<A HREF="node37.html#s-var-constr">2.5</A>,
+  it equals 0 in degenerate cases; otherwise <!-- MATH
+ $p_0^*\ne 0$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img993.gif"
+ ALT="$ p_0^*\ne 0$">
+ and we
+  can recover our earlier definition&nbsp;(<A HREF="node55.html#e-hamiltonian-control">3.29</A>) of the
+Hamiltonian by normalizing <!-- MATH
+ $(p_0^*, p^*(t))$
+ -->
+<IMG
+ WIDTH="77" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img994.gif"
+ ALT="$ (p_0^*, p^*(t))$">
+ so that <IMG
+ WIDTH="65" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img995.gif"
+ ALT="$ p_0^*=-1$">
+ (note that such scaling does not affect any of the properties listed in statement of the maximum principle). In the future, whenever the abnormal multiplier is not explicitly written, it is assumed to be equal to <IMG
+ WIDTH="26" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img996.gif"
+ ALT="$ -1$">
+.
+ Finally, in Section&nbsp;<A HREF="node58.html#ss-varappr-comments">3.4.4</A>
+  we saw another scenario where <IMG
+ WIDTH="19" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img440.gif"
+ ALT="$ H$">
+ was constant,
+ but the claim that <IMG
+ WIDTH="51" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img997.gif"
+ ALT="$ H\equiv 0$">
+ may seem surprising. We will see
+  later (in Section&nbsp;<A HREF="node79.html#ss-mp-varchange">4.3.1</A>) that this is a special feature of
+  free-time problems. The next exercise provides an early illustration of the usefulness
+of the above result.
+
+<P>
+<BR>
+<A NAME="z-brachistochrone-MP"></A><IMG
+ WIDTH="554" HEIGHT="82" ALIGN="BOTTOM" BORDER="0"
+ SRC="img998.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 9086\index{brachistochrone}
+Consider t...
+... curves are cycloids
+given by~\eqref{e-brachistochrone-solution}. \end{Exercise}">
+<BR>
+
+<P>
+Let us now ask ourselves how
+restricted the Basic Fixed-Endpoint Control Problem really is.
+Time-independence of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+and the absence of the terminal cost do not really
+introduce a loss of generality. Indeed, we know from Section&nbsp;<A HREF="node50.html#s-ocform">3.3</A> that
+we can eliminate <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+ and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ from the problem formulation by introducing the
+extra state variable  <!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+ (although this entails
+stronger regularity assumptions on the original right-hand side
+ as a function of <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+)
+and passing to the new running cost <!-- MATH
+ $\hat L:=L+{K}_{t}+{K}_{x}\cdot
+f$
+ -->
+<IMG
+ WIDTH="164" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img999.gif"
+ ALT="$ \hat L:=L+{K}_{t}+{K}_{x}\cdot
+f$">
+. On the other hand, the target set
+  <!-- MATH
+ $S=[t_0,\infty)\times\{x_1\}$
+ -->
+<IMG
+ WIDTH="145" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img855.gif"
+ ALT="$ S=[t_0,\infty)\times\{x_1\} $">
+ is not very general, as it does not allow
+  any flexibility in choosing the final state. This motivates us to consider
+  the following refined problem formulation.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1322"
+  HREF="node64.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1316"
+  HREF="node62.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1310"
+  HREF="node62.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1318"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1320"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1323"
+  HREF="node64.html">4.1.2 Basic variable-endpoint control</A>
+<B> Up:</B> <A NAME="tex2html1317"
+  HREF="node62.html">4.1 Statement of the</A>
+<B> Previous:</B> <A NAME="tex2html1311"
+  HREF="node62.html">4.1 Statement of the</A>
+ &nbsp; <B>  <A NAME="tex2html1319"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1321"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

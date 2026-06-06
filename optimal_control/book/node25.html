@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>2.2 Basic calculus of variations problem</TITLE>
+<META NAME="description" CONTENT="2.2 Basic calculus of variations problem">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node27.html">
+<LINK REL="previous" HREF="node20.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html741"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html735"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html729"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html737"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html739"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html742"
+  HREF="node26.html">2.2.1 Weak and strong</A>
+<B> Up:</B> <A NAME="tex2html736"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html730"
+  HREF="node24.html">2.1.4 Brachistochrone</A>
+ &nbsp; <B>  <A NAME="tex2html738"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html740"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00420000000000000000"></A><A NAME="s-cv-basic"></A>
+<BR>
+2.2 Basic calculus of variations problem
+</H1>
+
+<P>
+The reader has probably observed that the problems of Dido, catenary, and brachistochrone, although different in their physical meaning, all take essentially the same mathematical form. We are now ready to turn to a general problem formulation that captures these examples and many related ones
+as special cases. For the moment we ignore the issue of constraints such as the arclength constraint&nbsp;(<A HREF="node21.html#e-arclength">2.1</A>), which was present in Dido's problem and the catenary problem; we will incorporate constraints of this type later (in Section&nbsp;<A HREF="node37.html#s-var-constr">2.5</A>).
+
+<P>
+The simplest version of the calculus of variations problem can be stated as follows. Consider a function <!-- MATH
+ $L:\mathbb{R}\times \mathbb{R}\times \mathbb{R}\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img334.gif"
+ ALT="$ L:\mathbb{R}\times \mathbb{R}\times \mathbb{R}\to \mathbb{R}$">
+.
+
+<P>
+<I>Basic Calculus of Variations Problem</I>:<A NAME="1188"></A> Among all <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves <!-- MATH
+ $y:[a,b]\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="101" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img293.gif"
+ ALT="$ y:[a,b]\to\mathbb{R}$">
+
+satisfying given boundary conditions
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cvbasic-bc"></A><!-- MATH
+ \begin{equation}
+y(a)=y_0,\qquad y(b)=y_1
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="187" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img335.gif"
+ ALT="$\displaystyle y(a)=y_0,\qquad y(b)=y_1$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+find
+(local) minima of the cost functional
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cvbasic-J"></A><!-- MATH
+ \begin{equation}
+J(y):=\int_a^b L(x,y(x),y'(x))dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="237" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img336.gif"
+ ALT="$\displaystyle J(y):=\int_a^b L(x,y(x),y'(x))dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Since <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ takes values in <!-- MATH
+ $\mathbb{R}$
+ -->
+<IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img117.gif"
+ ALT="$ \mathbb{R}$">
+, it represents a
+single planar curve connecting the two fixed points <IMG
+ WIDTH="50" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img337.gif"
+ ALT="$ (a,y_0)$">
+ and <IMG
+ WIDTH="48" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img338.gif"
+ ALT="$ (b,y_1)$">
+.
+This is the <I>single-degree-of-freedom</I> case.<A NAME="1197"></A> In the
+ <I>multiple-degrees-of-freedom</I> case,<A NAME="1199"></A> one has <!-- MATH
+ $y:[a,b]\to\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img339.gif"
+ ALT="$ y:[a,b]\to\mathbb{R}^n$">
+ and
+ accordingly <!-- MATH
+ $L:\mathbb{R}\times \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}$
+ -->
+<IMG
+ WIDTH="168" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img340.gif"
+ ALT="$ L:\mathbb{R}\times \mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}$">
+. This generalization is
+ useful for treating spatial curves (<IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img341.gif"
+ ALT="$ n=3$">
+) or for describing the motion
+ of many particles; the latter setting was originally proposed by Lagrange<A NAME="1200"></A>
+ in his 1788 monograph <I>M&#233;canique Analytique</I>. The assumption that
+  <!-- MATH
+ $y\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$ y\in\mathcal C^1$">
+ is made to ensure that <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ is well defined (of course we do not
+   need it if <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ does not appear in <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+). We can allow <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ to be discontinuous
+   at some points; we will discuss such situations and see their importance soon.
+
+<P>
+The function <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ is called the <I>Lagrangian</I>,<A NAME="1203"></A> or the <I>running cost</I>.<A NAME="1205"></A> It is clear that a maximization problem can always be converted into a minimization problem by flipping the sign of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+.<A NAME="1206"></A><A NAME="1207"></A> In the analysis that follows, it will be important to remember the following point: Even though <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ are the position and velocity along the curve,
+<IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ is to be viewed as a function of three
+independent variables. To emphasize this fact, we will sometimes write <!-- MATH
+ $L=L(x,y,z)$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$ L=L(x,y,z)$">
+. When deriving optimality conditions, we will need to impose some differentiability assumptions on <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html743"
+  HREF="node26.html">2.2.1 Weak and strong extrema</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html741"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html735"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html729"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html737"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html739"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html742"
+  HREF="node26.html">2.2.1 Weak and strong</A>
+<B> Up:</B> <A NAME="tex2html736"
+  HREF="node19.html">2. Calculus of Variations</A>
+<B> Previous:</B> <A NAME="tex2html730"
+  HREF="node24.html">2.1.4 Brachistochrone</A>
+ &nbsp; <B>  <A NAME="tex2html738"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html740"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

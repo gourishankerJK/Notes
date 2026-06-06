@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3.3 Technical remarks</TITLE>
+<META NAME="description" CONTENT="2.3.3 Technical remarks">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html815"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html809"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html803"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html813"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html816"
+  HREF="node31.html">2.3.4 Two special cases</A>
+<B> Up:</B> <A NAME="tex2html810"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html804"
+  HREF="node29.html">2.3.2 Historical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html812"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html814"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00433000000000000000"></A><A NAME="ss-EL-tech-remarks"></A>
+<BR>
+2.3.3 Technical remarks
+</H2>
+
+<P>
+It is straightforward to extend the necessary condition&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>)
+to the multiple-degrees-of-freedom setting, in which
+<!-- MATH
+ $y=(y_1,\dots,y_n)^T\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="175" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img395.gif"
+ ALT="$ y=(y_1,\dots,y_n)^T\in\mathbb{R}^n$">
+.<A NAME="1467"></A>
+The same derivation is valid, provided that
+<IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.gif"
+ ALT="$ {L}_{y}$">
+ and <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.gif"
+ ALT="$ {L}_{z}$">
+ are interpreted as gradient vectors of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img396.gif"
+ ALT="$ z$">
+, respectively, and  by products of
+vector quantities (such as <!-- MATH
+ ${L}_{y}\cdot \eta$
+ -->
+<IMG
+ WIDTH="45" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img397.gif"
+ ALT="$ {L}_{y}\cdot \eta$">
+) one means inner products
+in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+.
+The result is the same Euler-Lagrange equation&nbsp;(<A HREF="node28.html#e-E-L">2.18</A>), which is now
+perhaps easier to apply and interpret if it is written componentwise:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-L-vector"></A><!-- MATH
+ \begin{equation}
+{L}_{ y_i}=\dfrac d{dx}{L}_{ y'_i},\qquad i=1,\dots,n.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="233" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img398.gif"
+ ALT="$\displaystyle {L}_{ y_i}=\dfrac d{dx}{L}_{ y'_i},\qquad i=1,\dots,n.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+
+<P>
+Returning to the single-degree-of-freedom case, let us examine more carefully under what differentiability assumptions our derivation of the Euler-Lagrange equation is valid.<A NAME="1479"></A>
+We applied Lemma&nbsp;<A HREF="node28.html#l-dubois-reymond">2.1</A> to the function <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ given by the expression inside the large parentheses in&nbsp;(<A HREF="node28.html#e-EL-with-eta">2.16</A>), whose second term is shown in more detail in&nbsp;(<A HREF="node28.html#e-ddxLz-expanded">2.19</A>). In the lemma, <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ must be continuous.
+The appearance of second-order partial derivatives of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ in&nbsp;(<A HREF="node28.html#e-ddxLz-expanded">2.19</A>)
+suggests that we should assume <!-- MATH
+ $L\in\mathcal C^2$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img399.gif"
+ ALT="$ L\in\mathcal C^2$">
+.
+Somewhat more alarmingly, the presence of the term
+<!-- MATH
+ ${L}_{{z}{z}} y''$
+ -->
+<IMG
+ WIDTH="47" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img400.gif"
+ ALT="$ {L}_{{z}{z}} y''$">
+ indicates that we should assume <!-- MATH
+ $y\in
+\mathcal C^2$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img401.gif"
+ ALT="$ y\in
+\mathcal C^2$">
+, and not merely <!-- MATH
+ $y\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$ y\in\mathcal C^1$">
+ as in our original formulation of the Basic Calculus of Variations Problem. Fortunately, we can avoid making this assumption if we proceed more carefully, as follows.
+Let us
+apply integration by parts to the first term rather than the second term on the right-hand side of&nbsp;(<A HREF="node28.html#e-firstvar-prelim">2.14</A>):
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="64" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img402.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="525" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img403.gif"
+ ALT="$\displaystyle =\int_a^b\Big(-\eta'(x)\int_a^x{L}_{y}(w,y(w),y'(w))dw +{L}_{ z}(x,y(x),y'(x))\eta'(x)\Big)dx$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="260" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img404.gif"
+ ALT="$\displaystyle + \left.\eta(x)\int_a^x{L}_{y}(w,y(w),y'(w))dw\right\vert _{a}^b$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the last term again vanishes for our class of perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. Thus an extremum <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ must satisfy
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-with-eta-alt"></A><!-- MATH
+ \begin{equation}
+\int_a^b\Big({L}_{z}(x,y(x),y'(x))-\int_a^x{L}_{y}(w,y(w),y'(w))dw
+\Big)\eta'(x) dx=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="482" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img405.gif"
+ ALT="$\displaystyle \int_a^b\Big({L}_{z}(x,y(x),y'(x))-\int_a^x{L}_{y}(w,y(w),y'(w))dw \Big)\eta'(x) dx=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We now need the following modification of Lemma&nbsp;<A HREF="node28.html#l-dubois-reymond">2.1</A>.
+
+<P>
+<BR>
+<A NAME="l-dubois-reymond-alt"></A><IMG
+ WIDTH="556" HEIGHT="103" ALIGN="BOTTOM" BORDER="0"
+ SRC="img406.gif"
+ ALT="\begin{Lemma}
+If a continuous function $\xi:[a,b]\to\mathbb{R}$\ is such that
+\b...
+...{R}$\ with
+$\eta(a)=\eta(b)=0$, then $\xi$\ is a constant function.
+\end{Lemma}">
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="250" HEIGHT="12" ALIGN="BOTTOM" BORDER="0"
+ SRC="img407.gif"
+ ALT="\begin{Exercise}
+% latex2html id marker 8354
+Prove Lemma~\ref{l-dubois-reymond-alt}.
+\end{Exercise}">
+<BR>
+
+<P>
+From&nbsp;(<A HREF="#e-EL-with-eta-alt">2.22</A>) and Lemma&nbsp;<A HREF="#l-dubois-reymond-alt">2.2</A> we obtain that along an optimal curve we must have<A NAME="1513"></A>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-L-int"></A><!-- MATH
+ \begin{equation}
+{L}_{z}(x,y(x),y'(x))=\int_a^x{L}_{y}(w,y(w),y'(w))dw+C
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="378" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img408.gif"
+ ALT="$\displaystyle {L}_{z}(x,y(x),y'(x))=\int_a^x{L}_{y}(w,y(w),y'(w))dw+C$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img409.gif"
+ ALT="$ C$">
+ is a constant. It follows that the derivative <!-- MATH
+ $\frac d{dx}{L}_{z}(x,y(x),y'(x))$
+ -->
+<IMG
+ WIDTH="150" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img410.gif"
+ ALT="$ \frac d{dx}{L}_{z}(x,y(x),y'(x))$">
+ indeed exists and equals <!-- MATH
+ ${L}_{y}(x,y(x),y'(x))$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img411.gif"
+ ALT="$ {L}_{y}(x,y(x),y'(x))$">
+, and we do not need to make extra assumptions to guarantee the existence of this derivative. In other words, curves on which the first variation vanishes automatically enjoy additional regularity. Thus for the necessary condition described by the Euler-Lagrange equation to be valid,
+it is enough to assume that
+<!-- MATH
+ $y\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="52" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img342.gif"
+ ALT="$ y\in\mathcal C^1$">
+ and <!-- MATH
+ $L\in \mathcal C^1$
+ -->
+<IMG
+ WIDTH="54" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img412.gif"
+ ALT="$ L\in \mathcal C^1$">
+. The integral form&nbsp;(<A HREF="#e-E-L-int">2.23</A>) of the Euler-Lagrange equation actually applies to extrema over
+piecewise <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves as well, although we
+would need a more general version of Lemma&nbsp;<A HREF="#l-dubois-reymond-alt">2.2</A> to
+establish this fact.<A NAME="tex2html19"
+  HREF="footnode.html#foot7729"><SUP>2.2</SUP></A> The <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ assumption on <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ can be further relaxed; note, in particular, that the partial derivative <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ {L}_{x}$">
+ did not appear anywhere in our analysis.
+
+<P>
+It can be shown that the Euler-Lagrange equation is invariant under arbitrary
+  changes of coordinates, i.e., it takes the same form in
+  every coordinate system.<A NAME="1534"></A> This allows one to pick convenient coordinates
+  when studying a specific problem. For example,
+  in certain mechanical problems it is natural to use polar coordinates;
+  we will come across such a case in Section&nbsp;<A HREF="node36.html#ss-least-action">2.4.3</A>.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html815"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html809"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html803"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html811"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html813"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html816"
+  HREF="node31.html">2.3.4 Two special cases</A>
+<B> Up:</B> <A NAME="tex2html810"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html804"
+  HREF="node29.html">2.3.2 Historical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html812"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html814"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

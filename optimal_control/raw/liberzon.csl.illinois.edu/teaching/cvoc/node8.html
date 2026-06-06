@@ -1,0 +1,685 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.2.1.2 Second-order conditions for optimality</TITLE>
+<META NAME="description" CONTENT="1.2.1.2 Second-order conditions for optimality">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html480"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html474"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html468"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html476"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html478"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html481"
+  HREF="node9.html">1.2.1.3 Feasible directions, global</A>
+<B> Up:</B> <A NAME="tex2html475"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html469"
+  HREF="node7.html">1.2.1.1 First-order necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html477"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html479"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00321200000000000000">
+1.2.1.2 Second-order conditions for optimality</A>
+</H3>
+
+<P>
+We now derive another
+necessary condition and also a sufficient condition for optimality, under the
+stronger hypothesis that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is a <!-- MATH
+ $\mathcal C^2$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ \mathcal C^2$">
+ function (twice continuously differentiable).
+
+<P>
+First, we assume as before that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a local minimum and derive a necessary condition.
+For an arbitrary fixed <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+,
+let us consider a Taylor expansion of
+ <!-- MATH
+ $g(\alpha)=f(x^*+\alpha d)$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.gif"
+ ALT="$ g(\alpha)=f(x^*+\alpha d)$">
+ again,
+ but this time
+include <I>second-order terms</I>:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2nd-order"></A><!-- MATH
+ \begin{equation}
+g(\alpha)=g(0)+g'(0)\alpha+\frac12g''(0)\alpha^2+o(\alpha^2)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="314" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img79.gif"
+ ALT="$\displaystyle g(\alpha)=g(0)+g'(0)\alpha+\frac12g''(0)\alpha^2+o(\alpha^2)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-oalpha2"></A><!-- MATH
+ \begin{equation}
+\lim_{\alpha\to 0}\frac{o(\alpha^2)}{\alpha^2}=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="117" HEIGHT="60" ALIGN="MIDDLE" BORDER="0"
+ SRC="img80.gif"
+ ALT="$\displaystyle \lim_{\alpha\to 0}\frac{o(\alpha^2)}{\alpha^2}=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+By the first-order necessary condition, <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$ g'(0)$">
+ must be 0 since it is given
+by&nbsp;(<A HREF="node7.html#e-gtofprime">1.10</A>).
+We claim that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2ndorder-g"></A><!-- MATH
+ \begin{equation}
+g''(0)\ge 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="80" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img81.gif"
+ ALT="$\displaystyle g''(0)\ge 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Indeed, suppose that <IMG
+ WIDTH="75" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img82.gif"
+ ALT="$ g''(0)&lt;0$">
+. By&nbsp;(<A HREF="#e-oalpha2">1.13</A>), there exists an <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+
+such that
+<P><!-- MATH
+ \begin{displaymath}
+|\alpha|<\varepsilon \quad\Rightarrow\quad |o(\alpha^2)|<
+\frac12|g''(0)|\alpha^2.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="277" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img83.gif"
+ ALT="$\displaystyle \vert\alpha\vert&lt;\varepsilon \quad\Rightarrow\quad \vert o(\alpha^2)\vert&lt;
+\frac12\vert g''(0)\vert\alpha^2.
+$">
+</DIV><P>
+</P>
+For these values of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+, (<A HREF="#e-2nd-order">1.12</A>) reduces to <!-- MATH
+ $g(\alpha)-g(0)<0$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$ g(\alpha)-g(0)&lt;0$">
+,
+contradicting that fact that 0 is a minimum of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+. Therefore, (<A HREF="#e-2ndorder-g">1.14</A>)
+must hold.
+
+<P>
+What does this result imply about the original function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+?
+To see what <IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$ g''(0)$">
+ is in terms of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, we need to differentiate
+the formula&nbsp;(<A HREF="node7.html#e-fromgtof">1.9</A>).
+The reader may find it helpful to first rewrite&nbsp;(<A HREF="node7.html#e-fromgtof">1.9</A>)
+more explicitly as
+<P><!-- MATH
+ \begin{displaymath}
+g'(\alpha)=\sum_{i=1}^n {f}_{x_i}(x^*+\alpha d) d_i.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="207" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img85.gif"
+ ALT="$\displaystyle g'(\alpha)=\sum_{i=1}^n {f}_{x_i}(x^*+\alpha d) d_i.
+$">
+</DIV><P>
+</P>
+Differentiating both sides with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+, we have
+<P><!-- MATH
+ \begin{displaymath}
+g''(\alpha)=\sum_{i,j=1}^n {f}_{{x_i}{x_j}}(x^*+\alpha d) d_i d_j
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="242" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img86.gif"
+ ALT="$\displaystyle g''(\alpha)=\sum_{i,j=1}^n {f}_{{x_i}{x_j}}(x^*+\alpha d) d_i d_j
+$">
+</DIV><P>
+</P>
+where double subscripts are used to denote second-order partial derivatives.
+For <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+ this gives
+<P><!-- MATH
+ \begin{displaymath}
+g''(0)=\sum_{i,j=1}^n {f}_{{x_i}{x_j}}(x^*) d_i d_j
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="198" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img87.gif"
+ ALT="$\displaystyle g''(0)=\sum_{i,j=1}^n {f}_{{x_i}{x_j}}(x^*) d_i d_j
+$">
+</DIV><P>
+</P>
+or, in matrix notation,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-g2nd-hessian"></A><!-- MATH
+ \begin{equation}
+g''(0)=d^T\nabla^2 f(x^*)d
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="158" HEIGHT="39" ALIGN="MIDDLE" BORDER="0"
+ SRC="img88.gif"
+ ALT="$\displaystyle g''(0)=d^T\nabla^2 f(x^*)d$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where
+<P><!-- MATH
+ \begin{displaymath}
+\nabla^2 f:=
+  \begin{pmatrix}
+    {f}_{{x_1}{x_1}} & \dots&
+     {f}_{{x_1}{x_n}} \\&\ddots& \\
+    {f}_{{x_n}{x_1}} & \dots &{f}_{{x_n}{x_n}}
+  \end{pmatrix}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="230" HEIGHT="90" ALIGN="MIDDLE" BORDER="0"
+ SRC="img89.gif"
+ ALT="$\displaystyle \nabla^2 f:=
+\begin{pmatrix}
+{f}_{{x_1}{x_1}} &amp; \dots&amp;
+{f}_{{x...
+...n}} \\ &amp;\ddots&amp; \\
+{f}_{{x_n}{x_1}} &amp; \dots &amp;{f}_{{x_n}{x_n}}
+\end{pmatrix} $">
+</DIV><P>
+</P>
+is the <I>Hessian</I> matrix<A NAME="411"></A> of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+.
+In view of&nbsp;(<A HREF="#e-2ndorder-g">1.14</A>), (<A HREF="#e-g2nd-hessian">1.15</A>), and
+the fact that <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ was arbitrary, we conclude that the matrix
+<!-- MATH
+ $\nabla^2 f(x^*)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$ \nabla^2 f(x^*)$">
+ must be positive semidefinite:
+<P><!-- MATH
+ \begin{displaymath}
+\fbox{$\nabla^2 f(x^*)\ge 0$} \ \text{ (positive semidefinite)}
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="116" HEIGHT="47" ALIGN="MIDDLE" BORDER="0"
+ SRC="img91.gif"
+ ALT="$\displaystyle \fbox{$\nabla^2 f(x^*)\ge 0$} \ $">&nbsp; &nbsp; (positive semidefinite)
+</DIV><P>
+</P>
+This is the <B>second-order necessary condition for
+optimality</B>.<A NAME="417"></A><A NAME="418"></A>
+
+<P>
+Like the previous first-order necessary condition, this second-order
+condition only applies
+to the unconstrained case. But, unlike the first-order condition, it requires
+<IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ to be <!-- MATH
+ $\mathcal C^2$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ \mathcal C^2$">
+ and not just <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+. Another difference with the first-order
+condition is that the second-order condition distinguishes minima from maxima:
+at a local maximum, the Hessian must be <I>negative</I> semidefinite,
+while the first-order
+condition applies to any extremum (a minimum or a maximum).
+
+<P>
+Strengthening the second-order necessary
+condition and combining it with the first-order necessary condition, we can obtain the
+following <A NAME="420"></A><A NAME="421"></A><B>second-order sufficient condition for
+optimality</B>: <I>If a <!-- MATH
+ $\mathcal C^2$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img77.gif"
+ ALT="$ \mathcal C^2$">
+ function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ satisfies</I>
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-2nd-suf"></A><!-- MATH
+ \begin{equation}
+\nabla f(x^*)=0 \qquad\text{and}\qquad
+  \nabla^2 f(x^*)>0 \ \text{ (positive \emph {definite})}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img92.gif"
+ ALT="$\displaystyle \nabla f(x^*)=0$">&nbsp; &nbsp;and<IMG
+ WIDTH="140" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img93.gif"
+ ALT="$\displaystyle \qquad \nabla^2 f(x^*)&gt;0 \ $">&nbsp; &nbsp; (positive <I>definite</I>)</TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+<I>on an interior point <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ of its domain, then <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a strict local minimum
+of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+.</I>
+To see why this is true, take an arbitrary <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+ and consider again
+the second-order expansion&nbsp;(<A HREF="#e-2nd-order">1.12</A>) for <!-- MATH
+ $g(\alpha)=f(x^*+\alpha d)$
+ -->
+<IMG
+ WIDTH="143" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img78.gif"
+ ALT="$ g(\alpha)=f(x^*+\alpha d)$">
+.
+We know that <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$ g'(0)$">
+ is given by&nbsp;(<A HREF="node7.html#e-gtofprime">1.10</A>),
+thus it is 0 because <!-- MATH
+ $\nabla f(x^*)=0$
+ -->
+<IMG
+ WIDTH="91" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img94.gif"
+ ALT="$ \nabla f(x^*)=0$">
+. Next, <IMG
+ WIDTH="43" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img84.gif"
+ ALT="$ g''(0)$">
+ is given
+by&nbsp;(<A HREF="#e-g2nd-hessian">1.15</A>), and so we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-f2ndorder"></A><!-- MATH
+ \begin{equation}
+f(x^*+\alpha d)=f(x^*)+\frac12 d^T\nabla^2 f(x^*)d\alpha^2
++o(\alpha^2).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="363" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img95.gif"
+ ALT="$\displaystyle f(x^*+\alpha d)=f(x^*)+\frac12 d^T\nabla^2 f(x^*)d\alpha^2 +o(\alpha^2).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The intuition is that since the Hessian <!-- MATH
+ $\nabla^2 f(x^*)$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img90.gif"
+ ALT="$ \nabla^2 f(x^*)$">
+ is a positive definite matrix,
+the second-order term dominates the higher-order term <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+.
+To establish
+this fact rigorously, note that by the definition of
+<!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+ we can pick an <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+ small enough so that
+<P><!-- MATH
+ \begin{displaymath}
+|\alpha|<\varepsilon ,\ \alpha\ne 0 \quad\Rightarrow\quad |o(\alpha^2)|<\frac12
+d^T\nabla^2 f(x^*)d\alpha^2
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="372" HEIGHT="54" ALIGN="MIDDLE" BORDER="0"
+ SRC="img97.gif"
+ ALT="$\displaystyle \vert\alpha\vert&lt;\varepsilon ,\ \alpha\ne 0 \quad\Rightarrow\quad \vert o(\alpha^2)\vert&lt;\frac12
+d^T\nabla^2 f(x^*)d\alpha^2$">
+</DIV><P>
+</P>
+and for these values of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ we deduce from&nbsp;(<A HREF="#e-f2ndorder">1.17</A>) that
+<!-- MATH
+ $f(x^*+\alpha d)>f(x^*).$
+ -->
+<IMG
+ WIDTH="156" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img98.gif"
+ ALT="$ f(x^*+\alpha d)&gt;f(x^*).
+$">
+
+
+<P>
+To conclude that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a
+(strict) local minimum, one more technical detail is needed. According to
+the definition of a local minimum (see page&nbsp;<A HREF="node5.html#p-locmin"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="crossref.gif"></A>), we must show that <IMG
+ WIDTH="45" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img44.gif"
+ ALT="$ f(x^*)$">
+ is the lowest value
+of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ in some ball
+around <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+. But the term <!-- MATH
+ $o(\alpha^2)$
+ -->
+<IMG
+ WIDTH="44" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img96.gif"
+ ALT="$ o(\alpha^2)$">
+ and hence the value
+of <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ in the above construction
+depend on the choice of the direction <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+. It is clear
+ that this dependence is continuous, since all the
+ other terms in&nbsp;(<A HREF="#e-f2ndorder">1.17</A>)
+ are continuous in <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+.<A NAME="tex2html3"
+  HREF="footnode.html#foot7677"><SUP>1.2</SUP></A>Also, without loss of generality
+we can restrict <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ to be of unit length,
+and then we can
+take the minimum of <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ over all such <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+. Since
+the unit sphere in <!-- MATH
+ $\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="25" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.gif"
+ ALT="$ \mathbb{R}^n$">
+ is compact, the minimum is well defined
+(thanks to the
+Weierstrass Theorem which is discussed below).
+This minimal value of <!-- MATH
+ $\varepsilon$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img99.gif"
+ ALT="$ \varepsilon $">
+ provides the
+radius of the desired ball around <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ in which the lowest value of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is
+achieved
+at <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html480"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html474"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html468"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html476"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html478"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html481"
+  HREF="node9.html">1.2.1.3 Feasible directions, global</A>
+<B> Up:</B> <A NAME="tex2html475"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html469"
+  HREF="node7.html">1.2.1.1 First-order necessary condition</A>
+ &nbsp; <B>  <A NAME="tex2html477"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html479"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

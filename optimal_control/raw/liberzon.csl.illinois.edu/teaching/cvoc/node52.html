@@ -1,0 +1,423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>3.3.2 Cost functional</TITLE>
+<META NAME="description" CONTENT="3.3.2 Cost functional">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node53.html">
+<LINK REL="previous" HREF="node51.html">
+<LINK REL="up" HREF="node50.html">
+<LINK REL="next" HREF="node53.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1138"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1132"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1126"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1134"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1136"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1139"
+  HREF="node53.html">3.3.3 Target set</A>
+<B> Up:</B> <A NAME="tex2html1133"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1127"
+  HREF="node51.html">3.3.1 Control system</A>
+ &nbsp; <B>  <A NAME="tex2html1135"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1137"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00532000000000000000"></A><A NAME="ss-cost-fcnl"></A>
+<BR>
+3.3.2 Cost functional
+</H2>
+
+<P>
+We will consider cost functionals of the form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-Bolza"></A><!-- MATH
+ \begin{equation}
+J(u):=\int_{t_0}^{t_f} L(t,x(t),u(t))dt+K(t_f,x_f)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="314" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img26.gif"
+ ALT="$\displaystyle J(u):=\int_{t_0}^{t_f} L(t,x(t),u(t))dt+K(t_f,x_f)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(3.20)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+which is an exact copy of&nbsp;(<A HREF="node4.html#e-cost-first">1.2</A>).
+Here
+ <IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ and <!-- MATH
+ $x_f:=x(t_f)$
+ -->
+<IMG
+ WIDTH="89" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img30.gif"
+ ALT="$ x_f:=x(t_f)$">
+ are the <I>final</I><A NAME="3022"></A><A NAME="3023"></A> (or <I>terminal</I>) <A NAME="3025"></A><A NAME="3026"></A>time and state,
+ <!-- MATH
+ $L:\mathbb{R}\times\mathbb{R}^n\times U\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="160" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img828.gif"
+ ALT="$ L:\mathbb{R}\times\mathbb{R}^n\times U\to\mathbb{R}$">
+ is the <I>running cost</I><A NAME="3029"></A> (or Lagrangian),
+ and <!-- MATH
+ $K:\mathbb{R}\times\mathbb{R}^n\to\mathbb{R}$
+ -->
+<IMG
+ WIDTH="129" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img829.gif"
+ ALT="$ K:\mathbb{R}\times\mathbb{R}^n\to\mathbb{R}$">
+
+is the <I>terminal cost</I>.<A NAME="3031"></A> We will explain how the final time
+<IMG
+ WIDTH="18" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img29.gif"
+ ALT="$ t_f$">
+ is defined
+in Section&nbsp;<A HREF="node53.html#ss-target-set">3.3.3</A> below. Since the cost depends on the initial
+data and the final time as well as on the control, it would be more accurate to write
+<!-- MATH
+ $J(t_0,x_0,t_f,u)$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img830.gif"
+ ALT="$ J(t_0,x_0,t_f,u)$">
+, but we write <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img31.gif"
+ ALT="$ J(u)$">
+ for simplicity and to reflect
+the fact that the cost is being minimized over the space of
+control functions. Note that even if <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ does not depend on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+, the cost <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ depends on the control <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img802.gif"
+ ALT="$ u(\cdot)$">
+ through <IMG
+ WIDTH="32" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img121.gif"
+ ALT="$ x(\cdot)$">
+ which is the trajectory that this control generates. The reader might have remarked that our present choice
+of arguments for <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ deviates from the one we made in
+calculus of variations; it seems that <!-- MATH
+ $L(t,x,\dot x)$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img831.gif"
+ ALT="$ L(t,x,\dot x)$">
+ would have been more consistent.
+However, we can always pass from <!-- MATH
+ $(t,x,\dot x)$
+ -->
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img832.gif"
+ ALT="$ (t,x,\dot x)$">
+ to
+<IMG
+ WIDTH="59" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img833.gif"
+ ALT="$ (t,x,u)$">
+ by substituting <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img834.gif"
+ ALT="$ f(t,x,u)$">
+ for <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img835.gif"
+ ALT="$ \dot x$">
+, while it may not
+be possible to go in the opposite direction. Thus it is more general, as well
+as more natural, to let <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ depend explicitly on <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+. In contrast
+with Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A>, where the regularity conditions
+on <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+ were dictated by the goal of having a well-posed control
+system, there are no such a priori requirements on the functions
+<IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+. All
+derivatives that will appear in our subsequent derivations
+will be assumed to exist, and depending
+on the analysis method we will eventually see what
+differentiability assumptions on <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ are needed.
+
+<P>
+Optimal control problems in which the cost is given by&nbsp;(<A HREF="#e-Bolza">3.21</A>)
+are known as problems in the <I>Bolza form</I>, or collectively
+ as the <I>Bolza problem</I>.<A NAME="3037"></A><A NAME="3038"></A><A NAME="3039"></A>
+There are two important special cases of the Bolza problem. The
+first one is the <I>Lagrange problem</I>, in which there is no
+terminal cost: <IMG
+ WIDTH="52" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img836.gif"
+ ALT="$ K\equiv0$">
+.<A NAME="3041"></A><A NAME="3042"></A><A NAME="3043"></A> This problem--and its name--of course
+come from calculus of variations. The second special case is the
+<I>Mayer problem</I>, in which there is no running cost: <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img837.gif"
+ ALT="$ L\equiv
+0$">
+.<A NAME="3045"></A><A NAME="3046"></A><A NAME="3047"></A> We can pass back and forth between these different forms by
+means of simple transformations. Indeed, given a problem with a
+terminal cost <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+, we can write
+<P></P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="RIGHT"><IMG
+ WIDTH="74" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img838.gif"
+ ALT="$\displaystyle K(t_f,x_f)$"></TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="254" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img839.gif"
+ ALT="$\displaystyle =K(t_0,x_0)+ \int_{t_0}^{t_f}\frac d{dt}K(t,x(t))dt$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+<TR VALIGN="MIDDLE">
+<TD>&nbsp;</TD>
+<TD NOWRAP ALIGN="LEFT"><IMG
+ WIDTH="479" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img840.gif"
+ ALT="$\displaystyle =K(t_0,x_0)+\int_{t_0}^{t_f}\big( {K}_{t}(t,x(t))+{K}_{x}(t,x(t))\cdot f(t,x(t),u(t))\big)dt.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+&nbsp;&nbsp;&nbsp;</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <!-- MATH
+ $K(t_0,x_0)$
+ -->
+<IMG
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img841.gif"
+ ALT="$ K(t_0,x_0)$">
+ is a constant independent of <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+,
+we arrive at an equivalent problem in
+the Lagrange form with <!-- MATH
+ ${K}_{t}(t,x)+{K}_{x}(t,x)\cdot f(t,x,u)$
+ -->
+<IMG
+ WIDTH="222" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img842.gif"
+ ALT="$ {K}_{t}(t,x)+{K}_{x}(t,x)\cdot f(t,x,u)$">
+ added to the
+original running cost.
+On the other hand, given a problem with a running cost <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ satisfying the same
+regularity conditions as <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+,
+we can introduce an extra state variable
+  <IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img843.gif"
+ ALT="$ x^0$">
+ via
+  <P><!-- MATH
+ \begin{displaymath}
+\dot x^0=L(t,x,u),\qquad x^0(t_0)=0
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="231" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img844.gif"
+ ALT="$\displaystyle \dot x^0=L(t,x,u),\qquad x^0(t_0)=0
+$">
+</DIV><P>
+</P>
+  (we use a superscript instead of a subscript to avoid
+  confusion with the initial state).
+This yields
+<P><!-- MATH
+ \begin{displaymath}
+\int_{t_0}^{t_f} L(t,x(t),u(t))dt=x^0(t_f)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="229" HEIGHT="61" ALIGN="MIDDLE" BORDER="0"
+ SRC="img845.gif"
+ ALT="$\displaystyle \int_{t_0}^{t_f} L(t,x(t),u(t))dt=x^0(t_f)
+$">
+</DIV><P>
+</P>
+thus converting the problem to the Mayer form. (The value of <IMG
+ WIDTH="48" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img846.gif"
+ ALT="$ x^0(t_0)$">
+ can
+actually be arbitrary, since it only changes the cost by an additive constant.)
+Note that the similar trick of introducing the additional state variable
+<!-- MATH
+ $x_{n+1}:=t$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img825.gif"
+ ALT="$ x_{n+1}:=t$">
+, which we already mentioned in Section&nbsp;<A HREF="node51.html#ss-exist-unique">3.3.1</A>,
+eliminates the dependence of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and/or <IMG
+ WIDTH="20" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img28.gif"
+ ALT="$ K$">
+ on time;
+for the Bolza problem
+this gives <!-- MATH
+ $J(u)=\int_{t_0}^{t_f} L(x(t),u(t))dt+K(x_f)$
+ -->
+<IMG
+ WIDTH="267" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img847.gif"
+ ALT="$ J(u)=\int_{t_0}^{t_f} L(x(t),u(t))dt+K(x_f)$">
+ with <!-- MATH
+ $x\in\mathbb{R}^{n+1}$
+ -->
+<IMG
+ WIDTH="74" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img848.gif"
+ ALT="$ x\in\mathbb{R}^{n+1}$">
+.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1138"
+  HREF="node53.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1132"
+  HREF="node50.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1126"
+  HREF="node51.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1134"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1136"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1139"
+  HREF="node53.html">3.3.3 Target set</A>
+<B> Up:</B> <A NAME="tex2html1133"
+  HREF="node50.html">3.3 Optimal control problem</A>
+<B> Previous:</B> <A NAME="tex2html1127"
+  HREF="node51.html">3.3.1 Control system</A>
+ &nbsp; <B>  <A NAME="tex2html1135"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1137"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

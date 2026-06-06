@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<script>(function(){var t=localStorage.getItem("cvoc-theme");if(t)document.documentElement.setAttribute("data-theme",t);})()</script>
+<TITLE>5.2 HJB equation versus the maximum principle </TITLE>
+<META NAME="description" CONTENT="5.2 HJB equation versus the maximum principle ">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node101.html">
+<LINK REL="previous" HREF="node92.html">
+<LINK REL="up" HREF="node91.html">
+<LINK REL="next" HREF="node100.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html1856"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1850"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1844"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1852"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1854"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1857"
+  HREF="node100.html">5.2.1 Example: nondifferentiable value</A>
+<B> Up:</B> <A NAME="tex2html1851"
+  HREF="node91.html">5. The Hamilton-Jacobi-Bellman equation</A>
+<B> Previous:</B> <A NAME="tex2html1845"
+  HREF="node98.html">5.1.5 Historical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html1853"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1855"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00720000000000000000"></A><A NAME="s-relationships"></A><A NAME="5610"></A><A NAME="5611"></A>
+<BR>
+5.2 HJB equation versus the maximum principle 
+</H1>
+
+<P>
+Here we focus on the <I>necessary</I> conditions for optimality provided by
+the HJB equation&nbsp;(<A HREF="node95.html#e-HJB">5.10</A>) and the Hamiltonian maximization condition&nbsp;(<A HREF="node95.html#e-ustar">5.14</A>) on one hand and by the maximum principle on the other hand.
+There is a notable difference in how these two necessary conditions characterize optimal controls. In order to see this point more clearly, assume that the system and the cost are time-invariant. The maximum principle is formulated in terms of the canonical equations
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-canon-again"></A><!-- MATH
+ \begin{equation}
+\dot x^*=\left.{H}_{p}\right|_{*},\qquad  \dot p^*=\left.-{H}_{x}\right|_{*}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="216" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1657.gif"
+ ALT="$\displaystyle \dot x^*=\left.{H}_{p}\right\vert _{*},\qquad \dot p^*=\left.-{H}_{x}\right\vert _{*}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.21)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and says that at each time <IMG
+ WIDTH="10" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img21.gif"
+ ALT="$ t$">
+, the value <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+ of the optimal control must maximize <!-- MATH
+ $H(x^*(t),u,p^*(t))$
+ -->
+<IMG
+ WIDTH="132" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1658.gif"
+ ALT="$ H(x^*(t),u,p^*(t))$">
+ with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.gif"
+ ALT="$ u$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-argmax-MP"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\arg\max_{u\in U}H(x^*(t),u,p^*(t)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="260" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1659.gif"
+ ALT="$\displaystyle u^*(t)=\arg\max_{u\in U}H(x^*(t),u,p^*(t)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.22)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is an
+<I>open-loop</I> specification, because <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+ depends not only on the state <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ x^*(t)$">
+ but also on the costate <IMG
+ WIDTH="40" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1276.gif"
+ ALT="$ p^*(t)$">
+ which has to be computed from the adjoint differential equation. Now, in the context of the HJB equation, the optimal control must satisfy
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-argmax-HJB"></A><!-- MATH
+ \begin{equation}
+u^*(t)=\arg\max_{u\in U}H(x^*(t),u,-{V}_{x}(t,x^*(t))).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="321" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1660.gif"
+ ALT="$\displaystyle u^*(t)=\arg\max_{u\in U}H(x^*(t),u,-{V}_{x}(t,x^*(t))).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.23)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is a <I>closed-loop (feedback)</I> specification;<A NAME="5631"></A> indeed, assuming that we
+know the value function <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ everywhere, <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img925.gif"
+ ALT="$ u^*(t)$">
+ is completely determined by the current state
+<IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1363.gif"
+ ALT="$ x^*(t)$">
+. The ability to generate an
+optimal control policy in the form of a state feedback
+law is an important feature of the dynamic programming approach, as we in fact already knew from Section&nbsp;<A HREF="node93.html#ss-dynprog-dt">5.1.1</A>. Clearly, we cannot implement this feedback law unless we can first find the value function by solving the HJB partial differential equation, and we have seen that this is in general a very difficult task. Therefore, from the computational point of view the maximum principle has an advantage in that it involves only ordinary and not partial differential equations. In principle, the dynamic programming approach provides more information (including sufficiency), but in reality, the maximum principle is often easier to use and allows one to solve many optimal control problems for which the HJB equation is intractable.
+
+<P>
+As another point of comparison, it is interesting to recall how much longer and more complicated our proof of the maximum principle was compared with our derivation of the necessary conditions based on the HJB equation. This difference is especially perplexing in view of the striking similarity between the two Hamiltonian maximization conditions&nbsp;(<A HREF="#e-argmax-MP">5.26</A>) and&nbsp;(<A HREF="#e-argmax-HJB">5.27</A>). We may wonder whether it might actually be possible to give an easier proof of the maximum principle starting
+from the HJB equation. Suppose that <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img894.gif"
+ ALT="$ u^*$">
+ is an optimal control and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is the corresponding state trajectory. Still assuming for simplicity that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ are time-independent, we know that&nbsp;(<A HREF="#e-argmax-HJB">5.27</A>) must hold, where <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ is the value function satisfying
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-HJB-_-again"></A><!-- MATH
+ \begin{equation}
+-{V}_{t}(t,x^*(t))=L(x^*(t),u^*(t))+\left\langle {V}_{x}(t,x^*(t)),f(x^*(t),u^*(t))\right\rangle .
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="469" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1661.gif"
+ ALT="$\displaystyle -{V}_{t}(t,x^*(t))=L(x^*(t),u^*(t))+\left\langle {V}_{x}(t,x^*(t)),f(x^*(t),u^*(t))\right\rangle .$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.24)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+To establish the maximum principle, we need to prove the existence of a costate <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ with the required properties. The formulas&nbsp;(<A HREF="#e-argmax-MP">5.26</A>) and&nbsp;(<A HREF="#e-argmax-HJB">5.27</A>) strongly suggest that we should try to define it via
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-costate-trydef"></A><!-- MATH
+ \begin{equation}
+p^*(t):=-{V}_{x}(t,x^*(t)).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="170" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1662.gif"
+ ALT="$\displaystyle p^*(t):=-{V}_{x}(t,x^*(t)).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(5.25)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Then, the desired Hamiltonian maximization condition&nbsp;(<A HREF="#e-argmax-MP">5.26</A>) automatically follows from&nbsp;(<A HREF="#e-argmax-HJB">5.27</A>). We note also that if <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ satisfies the boundary condition   <!-- MATH
+ $V(t_1,x)=K(x)$
+ -->
+<IMG
+ WIDTH="125" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1663.gif"
+ ALT="$ V(t_1,x)=K(x)$">
+ as in&nbsp;(<A HREF="node94.html#e-V-bound-cond">5.3</A>), then
+the boundary condition for the costate&nbsp;(<A HREF="#e-costate-trydef">5.29</A>) is
+<!-- MATH
+ $p^*(t_1)=-{K}_{x}(x^*(t_1))$
+ -->
+<IMG
+ WIDTH="166" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img952.gif"
+ ALT="$ p^*(t_1)=-{K}_{x}(x^*(t_1))$">
+,
+and this matches the boundary
+condition&nbsp;(<A HREF="node82.html#e-ptermdefKx">4.43</A>) that we had in the maximum principle for problems with terminal cost. Thus far, the situation looks quite promising, but we do not have any apparent reason to expect that <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ defined by&nbsp;(<A HREF="#e-costate-trydef">5.29</A>) will satisfy the second differential equation in&nbsp;(<A HREF="#e-canon-again">5.25</A>). However, this turns out to be true as well!
+
+<P>
+<BR>
+<A NAME="z-pdot"></A><IMG
+ WIDTH="589" HEIGHT="62" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1664.gif"
+ ALT="\begin{Exercise}
+Let $p^*$\ be defined by~\eqref{e-costate-trydef}, with $V$\ fu...
+...p^*)$, where as usual $H(x,u,p)=\langle p,f(x,u)\rangle -L(x,u)$.
+\end{Exercise}">
+<BR>
+
+<P>
+In the proof of the maximum principle, the adjoint vector<A NAME="5656"></A> <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img917.gif"
+ ALT="$ p^*$">
+ was defined as the normal to a suitable hyperplane. In our earlier discussions in Section&nbsp;<A HREF="node54.html#s-varopt">3.4</A>, it was also related to the momentum and to the vector of Lagrange multipliers.
+From&nbsp;(<A HREF="#e-costate-trydef">5.29</A>) we now have
+another interpretation of the adjoint vector in terms of the gradient of the value function, i.e., the <I>sensitivity</I> of the optimal cost with respect to the state <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+.
+ In economic terms, this quantity corresponds to the ``marginal value," or ``shadow price"; it tells
+us by how much we can increase benefits by increasing
+resources/spending, or how much we would be willing to pay someone
+else for resources and still make a profit.
+
+<P>
+At this point, the reader may be puzzled as to why we cannot indeed deduce the maximum principle from the HJB equation via the reasoning just given. Upon careful inspection, however, we can identify one gap in the above argument: it assumes that the value function has a well-defined gradient and, moreover, that this gradient can be further differentiated with respect to time (to obtain the adjoint equation as in Exercise&nbsp;<A HREF="#z-pdot">5.5</A>). In other words, we need the existence of second-order partial derivatives of <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+. At the very least, we need <IMG
+ WIDTH="17" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img207.gif"
+ ALT="$ V$">
+ to be a <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ function--a property that we have in fact assumed all along, starting with the Taylor expansion&nbsp;(<A HREF="node95.html#e-V-expanded">5.7</A>).
+The next example demonstrates that, unfortunately, we cannot expect this to be true in general.
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1858"
+  HREF="node100.html">5.2.1 Example: nondifferentiable value function</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1856"
+  HREF="node100.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html1850"
+  HREF="node91.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html1844"
+  HREF="node98.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html1852"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html1854"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1857"
+  HREF="node100.html">5.2.1 Example: nondifferentiable value</A>
+<B> Up:</B> <A NAME="tex2html1851"
+  HREF="node91.html">5. The Hamilton-Jacobi-Bellman equation</A>
+<B> Previous:</B> <A NAME="tex2html1845"
+  HREF="node98.html">5.1.5 Historical remarks</A>
+ &nbsp; <B>  <A NAME="tex2html1853"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html1855"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+<script src="enhance.js"></script>
+</BODY>
+</HTML>

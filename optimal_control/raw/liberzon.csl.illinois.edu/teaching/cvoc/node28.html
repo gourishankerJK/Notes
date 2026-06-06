@@ -1,0 +1,700 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>2.3.1 Euler-Lagrange equation</TITLE>
+<META NAME="description" CONTENT="2.3.1 Euler-Lagrange equation">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node27.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html787"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html781"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html775"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html783"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html785"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html788"
+  HREF="node29.html">2.3.2 Historical remarks</A>
+<B> Up:</B> <A NAME="tex2html782"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html776"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+ &nbsp; <B>  <A NAME="tex2html784"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html786"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00431000000000000000"></A><A NAME="ss-EL-derivation"></A>
+<BR>
+2.3.1 Euler-Lagrange equation
+</H2>
+
+<P>
+We continue to follow the notational convention of Chapter&nbsp;<A HREF="node3.html#c-intro">1</A>
+and
+denote by <IMG
+ WIDTH="24" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img352.gif"
+ ALT="$ {L}_{x}$">
+, <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.gif"
+ ALT="$ {L}_{y}$">
+, <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img354.gif"
+ ALT="$ {L}_{z}$">
+, <!-- MATH
+ ${L}_{{x}{x}}$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img355.gif"
+ ALT="$ {L}_{{x}{x}}$">
+, <!-- MATH
+ ${L}_{{x}{y}}$
+ -->
+<IMG
+ WIDTH="31" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img356.gif"
+ ALT="$ {L}_{{x}{y}}$">
+, etc. the partial derivatives of the Lagrangian
+<!-- MATH
+ $L=L(x,y,z)$
+ -->
+<IMG
+ WIDTH="107" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img343.gif"
+ ALT="$ L=L(x,y,z)$">
+. To keep things simple, we assume that all derivatives appearing in our calculations exist and are continuous. While we will not focus on spelling out  the weakest possible regularity assumptions on <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+, we will make some remarks to clarify this issue in Section&nbsp;<A HREF="node30.html#ss-EL-tech-remarks">2.3.3</A>.
+
+<P>
+Let <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img357.gif"
+ ALT="$ y=y(x)$">
+ be a given test curve in <IMG
+ WIDTH="16" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img237.gif"
+ ALT="$ A$">
+.
+ For a
+perturbation <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ in&nbsp;(<A HREF="node27.html#e-perturbed-var">2.10</A>) to be admissible, the new
+curve&nbsp;(<A HREF="node27.html#e-perturbed-var">2.10</A>) must again satisfy the boundary
+conditions&nbsp;(<A HREF="node25.html#e-cvbasic-bc">2.8</A>).
+Clearly, this is true if and only if
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-L-boundcond"></A><!-- MATH
+ \begin{equation}
+\eta(a)=\eta(b)=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="126" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img358.gif"
+ ALT="$\displaystyle \eta(a)=\eta(b)=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+In other words, we must only consider perturbations vanishing at the endpoints.
+Now, the first-order necessary condition&nbsp;(<A HREF="node15.html#e-1st-nec-inf">1.37</A>) says that
+if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is a local extremum of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+, then for every <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+
+satisfying&nbsp;(<A HREF="#e-E-L-boundcond">2.11</A>) we must have <!-- MATH
+ $\left.\delta J\right|_{y}(\eta)=0$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img359.gif"
+ ALT="$ \left.\delta J\right\vert _{y}(\eta)=0$">
+. (We denoted extrema by <IMG
+ WIDTH="20" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img261.gif"
+ ALT="$ y^*$">
+ in&nbsp;(<A HREF="node15.html#e-1st-nec-inf">1.37</A>) but here we drop the asterisks to avoid overly cluttered notation.)
+In the present case we want to go further and use the specific form of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+ given by&nbsp;(<A HREF="node25.html#e-cvbasic-J">2.9</A>) to arrive at a more explicit condition in terms of the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+.
+
+<P>
+Recall that the first variation  <!-- MATH
+ $\left.\delta J\right|_{y}$
+ -->
+<IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img253.gif"
+ ALT="$ \left.\delta J\right\vert _{y}$">
+ was defined via
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-firstvar-encore"></A><!-- MATH
+ \begin{equation}
+J(y+\alpha \eta)=J(y)+\left.\delta J\right|_{y} (\eta)\alpha+o(\alpha).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="289" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img360.gif"
+ ALT="$\displaystyle J(y+\alpha \eta)=J(y)+\left.\delta J\right\vert _{y} (\eta)\alpha+o(\alpha).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.12)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+The left-hand side of&nbsp;(<A HREF="#e-firstvar-encore">2.12</A>) is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="Jy+aeta"></A><!-- MATH
+ \begin{equation}
+J(y+\alpha\eta)=\int_a^b
+L(x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x))dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="409" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img361.gif"
+ ALT="$\displaystyle J(y+\alpha\eta)=\int_a^b L(x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x))dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.13)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We can write down its first-order Taylor expansion with respect to <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ by expanding the expression inside the integral with the help of the chain rule:
+<P><!-- MATH
+ \begin{displaymath}
+J(y+\alpha \eta)=\int_a^b \big(L(x,y(x),y'(x))+{L}_{
+y}(x,y(x),y'(x))\alpha\eta(x)+{L}_{z}(x,y(x),y'(x))\alpha\eta'(x)
++o(\alpha)\big)dx.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="733" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img362.gif"
+ ALT="$\displaystyle J(y+\alpha \eta)=\int_a^b \big(L(x,y(x),y'(x))+{L}_{
+y}(x,y(x),y'(x))\alpha\eta(x)+{L}_{z}(x,y(x),y'(x))\alpha\eta'(x)
++o(\alpha)\big)dx.
+$">
+</DIV><P>
+</P>
+Matching this with the right-hand side of&nbsp;(<A HREF="#e-firstvar-encore">2.12</A>), we deduce that the first variation is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-firstvar-prelim"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{y}(\eta)=\int_a^b \big({L}_{
+y}(x,y(x),y'(x))\eta(x)+{L}_{z}(x,y(x),y'(x))\eta'(x)\big)dx.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="502" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img363.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\int_a^b \big({L}_{ y}(x,y(x),y'(x))\eta(x)+{L}_{z}(x,y(x),y'(x))\eta'(x)\big)dx.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.14)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Note that, proceeding slightly differently, we could arrive at the same result by remembering from&nbsp;(<A HREF="node15.html#e-gateaux">1.34</A>)-(<A HREF="node15.html#e-gdJ">1.36</A>) that
+<P><!-- MATH
+ \begin{displaymath}
+\left.\delta J\right|_{y}(\eta)=\lim_{\alpha\to
+0}\frac{J(y+\alpha\eta)-J(y)}{\alpha}=\left.\frac
+d{d\alpha}\right|_{\alpha=0} J(y+\alpha\eta)
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="414" HEIGHT="58" ALIGN="MIDDLE" BORDER="0"
+ SRC="img364.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\lim_{\alpha\to
+0}\frac{J(y+...
+...a)-J(y)}{\alpha}=\left.\frac
+d{d\alpha}\right\vert _{\alpha=0} J(y+\alpha\eta)
+$">
+</DIV><P>
+</P>
+and using differentiation under the integral sign on the right-hand side of&nbsp;(<A HREF="#Jy+aeta">2.13</A>).
+
+<P>
+<BR>
+<A NAME="z-firstvarnorm"></A><IMG
+ WIDTH="554" HEIGHT="58" ALIGN="BOTTOM" BORDER="0"
+ SRC="img365.gif"
+ ALT="\begin{Exercise}
+Prove that $\left.\delta J\right\vert _{y}$\ given by~\eqref{e-...
+...tion!alternative definition} Is this true for the
+0-norm as well?
+\end{Exercise}">
+<BR>
+
+<P>
+We see that the first variation depends not just on <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ but also on <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+. This is not
+surprising since <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ has <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ as one of its arguments.
+However, we can eliminate the dependence on <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img366.gif"
+ ALT="$ \eta'$">
+ if we apply integration by parts to the second term on the right-hand side of&nbsp;(<A HREF="#e-firstvar-prelim">2.14</A>):
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1stvar-ab"></A><!-- MATH
+ \begin{equation}
+\left.\delta J\right|_{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),y'(x))\eta(x)-\frac d{dx}{L}_{
+z}(x,y(x),y'(x))\eta(x)\Big)dx+\left.{L}_{z}(x,y(x),y'(x))\eta(x)\right|_{a}^b
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="716" HEIGHT="64" ALIGN="MIDDLE" BORDER="0"
+ SRC="img367.gif"
+ ALT="$\displaystyle \left.\delta J\right\vert _{y}(\eta)=\int_a^b\Big({L}_{y}(x,y(x),...
+...,y(x),y'(x))\eta(x)\Big)dx+\left.{L}_{z}(x,y(x),y'(x))\eta(x)\right\vert _{a}^b$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.15)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where the last term is 0 when <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ satisfies the boundary
+conditions&nbsp;(<A HREF="#e-E-L-boundcond">2.11</A>). Thus we conclude that if <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ is an extremum, then we must have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-with-eta"></A><!-- MATH
+ \begin{equation}
+\int_a^b\Big({L}_{y}(x,y(x),y'(x))-\frac d{dx}{L}_{z}(x,y(x),y'(x))\Big)\eta(x) dx=0
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="436" HEIGHT="63" ALIGN="MIDDLE" BORDER="0"
+ SRC="img368.gif"
+ ALT="$\displaystyle \int_a^b\Big({L}_{y}(x,y(x),y'(x))-\frac d{dx}{L}_{z}(x,y(x),y'(x))\Big)\eta(x) dx=0$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.16)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+for all <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ curves <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+ vanishing at the endpoints <IMG
+ WIDTH="46" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img369.gif"
+ ALT="$ x=a$">
+ and <IMG
+ WIDTH="44" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img370.gif"
+ ALT="$ x=b$">
+.
+
+<P>
+The condition&nbsp;(<A HREF="#e-EL-with-eta">2.16</A>) does not yet give us a practically useful test for optimality, because we would need to check it for all admissible perturbations <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+. However, it is logical to suspect that the only way&nbsp;(<A HREF="#e-EL-with-eta">2.16</A>) can hold is if the term inside the parentheses--which does not depend on <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+--equals 0 for all <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+. The next lemma shows that this is indeed the case.
+
+<P>
+<BR>
+<A NAME="l-dubois-reymond"></A><IMG
+ WIDTH="506" HEIGHT="84" ALIGN="BOTTOM" BORDER="0"
+ SRC="img371.gif"
+ ALT="\begin{Lemma}
+If a continuous function $\xi:[a,b]\to\mathbb{R}$\ is such that
+\b...
+...:[a,b]\to\mathbb{R}$\ with
+$\eta(a)=\eta(b)=0$, then $\xi\equiv 0$.
+\end{Lemma}">
+<BR>
+
+<P>
+P<SMALL>ROOF</SMALL>. Suppose that <!-- MATH
+ $\xi(\bar x)\ne 0$
+ -->
+<IMG
+ WIDTH="67" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img372.gif"
+ ALT="$ \xi(\bar x)\ne 0$">
+ for some <!-- MATH
+ $\bar x\in[a,b]$
+ -->
+<IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img373.gif"
+ ALT="$ \bar x\in[a,b]$">
+.
+By continuity, <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is then nonzero and maintains the same sign on
+ some subinterval <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$ [c,d]$">
+ containing <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img375.gif"
+ ALT="$ \bar x$">
+. Just for concreteness, let us say that <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.gif"
+ ALT="$ \xi $">
+ is positive on <IMG
+ WIDTH="38" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img374.gif"
+ ALT="$ [c,d]$">
+.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="f-eta"></A><A NAME="7720"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure:</STRONG>
+<FONT SIZE="-1">The graph of <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$ \eta $">
+</FONT></CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<FONT SIZE="-1">
+<IMG
+ WIDTH="302" HEIGHT="177" ALIGN="BOTTOM" BORDER="0"
+ SRC="img376.gif"
+ ALT="\includegraphics{figures/eta.eps}"></FONT></DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+Construct a function <!-- MATH
+ $\eta\in\mathcal C^1([a,b],\mathbb{R})$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img377.gif"
+ ALT="$ \eta\in\mathcal C^1([a,b],\mathbb{R})$">
+ that is positive on <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img378.gif"
+ ALT="$ (c,d)$">
+ and 0 everywhere else (see Figure&nbsp;<A HREF="#f-eta">2.7</A>). For example, we can set <!-- MATH
+ $\eta(x)=(x-c)^2(x-d)^2$
+ -->
+<IMG
+ WIDTH="181" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img379.gif"
+ ALT="$ \eta(x)=(x-c)^2(x-d)^2$">
+ for <IMG
+ WIDTH="69" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img380.gif"
+ ALT="$ x\in[c,d]$">
+ and <IMG
+ WIDTH="68" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img381.gif"
+ ALT="$ \eta(x)=0$">
+ otherwise. This gives <!-- MATH
+ $\int_a^b \xi(x)\eta(x) dx>0$
+ -->
+<IMG
+ WIDTH="140" HEIGHT="43" ALIGN="MIDDLE" BORDER="0"
+ SRC="img382.gif"
+ ALT="$ \int_a^b \xi(x)\eta(x) dx&gt;0$">
+, and we reach a contradiction.
+
+<P>
+It follows from&nbsp;(<A HREF="#e-EL-with-eta">2.16</A>) and Lemma&nbsp;<A HREF="#l-dubois-reymond">2.1</A> that for <IMG
+ WIDTH="31" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img383.gif"
+ ALT="$ y(\cdot)$">
+ to be an extremum, a necessary condition is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-EL-long"></A><!-- MATH
+ \begin{equation}
+{L}_{y}(x,y(x),y'(x))=\frac d{dx}{L}_{
+z}(x,y(x),y'(x))\qquad\forall\,x\in[a,b].
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="424" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img384.gif"
+ ALT="$\displaystyle {L}_{y}(x,y(x),y'(x))=\frac d{dx}{L}_{ z}(x,y(x),y'(x))\qquad\forall\,x\in[a,b].$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.17)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is the celebrated <B>Euler-Lagrange equation</B><A NAME="1379"></A> providing the
+<B>first-order
+necessary condition for optimality</B>.<A NAME="1381"></A><A NAME="1382"></A>
+It is often written in the shorter form
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-E-L"></A><!-- MATH
+ \begin{equation}
+\fbox{${L}_{ y}=\dfrac d{dx}{L}_{ y'}$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="104" HEIGHT="66" ALIGN="MIDDLE" BORDER="0"
+ SRC="img385.gif"
+ ALT="$\displaystyle \fbox{${L}_{ y}=\dfrac d{dx}{L}_{ y'}$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.18)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We must keep in mind, however, that the correct interpretation of the Euler-Lagrange equation is&nbsp;(<A HREF="#e-EL-long">2.17</A>):  <IMG
+ WIDTH="13" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.gif"
+ ALT="$ y$">
+ and <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img314.gif"
+ ALT="$ y'$">
+ are treated
+as independent variables when computing the partial derivatives <IMG
+ WIDTH="23" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img353.gif"
+ ALT="$ {L}_{y}$">
+
+and <IMG
+ WIDTH="28" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img386.gif"
+ ALT="$ {L}_{ y'}$">
+, then one plugs in for these variables the position <IMG
+ WIDTH="36" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img387.gif"
+ ALT="$ y(x)$">
+ and velocity <IMG
+ WIDTH="41" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img388.gif"
+ ALT="$ y'(x)$">
+ of the curve, and finally the differentiation with respect to <IMG
+ WIDTH="13" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img17.gif"
+ ALT="$ x$">
+ is performed using the chain rule. Written out in detail, the right-hand side of&nbsp;(<A HREF="#e-EL-long">2.17</A>) is
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-ddxLz-expanded"></A><!-- MATH
+ \begin{equation}
+\frac d{dx}{L}_{z}(x,y(x),y'(x))={L}_{{ z}{ x}}(x,y(x),y'(x))+{L}_{{ z}{ y}}(x,y(x),y'(x))y'(x)+{L}_{{z}{z}}(x,y(x),y'(x))y''(x).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="706" HEIGHT="56" ALIGN="MIDDLE" BORDER="0"
+ SRC="img389.gif"
+ ALT="$\displaystyle \frac d{dx}{L}_{z}(x,y(x),y'(x))={L}_{{ z}{ x}}(x,y(x),y'(x))+{L}_{{ z}{ y}}(x,y(x),y'(x))y'(x)+{L}_{{z}{z}}(x,y(x),y'(x))y''(x).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(2.19)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+It might not be necessary to actually perform all of these operations, though; sometimes a shortcut is possible, as in the next example.
+
+<P>
+<BR>
+<A NAME="e-length-Lz"></A><A NAME="x-straight"></A><IMG
+ WIDTH="555" HEIGHT="348" ALIGN="BOTTOM" BORDER="0"
+ SRC="img390.gif"
+ ALT="\begin{Example}
+% latex2html id marker 8308Let us find the shortest path betwe...
+... did not
+need to compute $\frac d{dx}{L}_{ z}(x,y(x),y'(x))$.
+\qed\end{Example}">
+<BR>
+
+<P>
+The functional <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img25.gif"
+ ALT="$ J$">
+<A NAME="p-pointwise"></A>to be minimized is given by the integral of the Lagrangian <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+
+along a path, while the Euler-Lagrange equation
+involves
+derivatives of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img27.gif"
+ ALT="$ L$">
+ and must hold for every point on the optimal path;
+observe that the integral
+has disappeared. The underlying reason is that if a path is optimal, then every
+infinitesimally small portion
+of it is optimal as well (no ``shortcuts" are possible). The exact mechanism
+by which we pass from the statement that the integral is minimized to the pointwise
+condition is revealed by Lemma&nbsp;<A HREF="#l-dubois-reymond">2.1</A> and its proof.
+
+<P>
+Trajectories satisfying the Euler-Lagrange equation&nbsp;(<A HREF="#e-E-L">2.18</A>) are
+called <I>extremals</I>.<A NAME="1440"></A> Since the Euler-Lagrange equation is only a
+necessary condition for optimality, not every extremal is an extremum.
+We see from&nbsp;(<A HREF="#e-ddxLz-expanded">2.19</A>) that the equation&nbsp;(<A HREF="#e-E-L">2.18</A>) is a
+second-order differential equation; thus we expect that generically, the two
+boundary conditions&nbsp;(<A HREF="node25.html#e-cvbasic-bc">2.8</A>) should be enough to specify a unique
+extremal.<A NAME="1444"></A> When this is true--as is the case in the above example--and when
+an optimal curve is known to exist, we can actually conclude that the unique
+extremal gives the optimal solution.
+In general, the question of existence
+of optimal solutions is not trivial, and the following example
+should serve as a warning. (We will come back to this issue later in the context of optimal control.)<A NAME="1446"></A>
+
+<P>
+<BR>
+<A NAME="x-vinter"></A><IMG
+ WIDTH="576" HEIGHT="126" ALIGN="BOTTOM" BORDER="0"
+ SRC="img391.gif"
+ ALT="\begin{Example}
+Consider the problem of minimizing
+$
+J(y)=\int_0^1y(x)(y'(x))^2d...
+...quiv 0$\ is easily seen to be neither a minimum nor
+a maximum.
+\qed\end{Example}">
+<BR>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html787"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html781"
+  HREF="node27.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html775"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html783"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html785"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html788"
+  HREF="node29.html">2.3.2 Historical remarks</A>
+<B> Up:</B> <A NAME="tex2html782"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+<B> Previous:</B> <A NAME="tex2html776"
+  HREF="node27.html">2.3 First-order necessary conditions</A>
+ &nbsp; <B>  <A NAME="tex2html784"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html786"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>

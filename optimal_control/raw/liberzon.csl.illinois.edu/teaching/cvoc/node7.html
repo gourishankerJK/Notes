@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2008 (1.71)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>1.2.1.1 First-order necessary condition for optimality</TITLE>
+<META NAME="description" CONTENT="1.2.1.1 First-order necessary condition for optimality">
+<META NAME="keywords" CONTENT="cvoc">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2008">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="cvoc.css">
+
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html466"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html460"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html454"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html462"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html464"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html467"
+  HREF="node8.html">1.2.1.2 Second-order conditions for</A>
+<B> Up:</B> <A NAME="tex2html461"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html455"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+ &nbsp; <B>  <A NAME="tex2html463"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html465"
+  HREF="node136.html">Index</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00321100000000000000">
+1.2.1.1 First-order necessary condition for optimality</A>
+</H3>
+
+<P>
+Suppose that <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ is a  <!-- MATH
+ $\mathcal C^1$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="19" ALIGN="BOTTOM" BORDER="0"
+ SRC="img48.gif"
+ ALT="$ \mathcal C^1$">
+ (continuously differentiable) function and
+<IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is its local minimum.
+Pick an arbitrary vector <!-- MATH
+ $d\in\mathbb{R}^n$
+ -->
+<IMG
+ WIDTH="55" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img49.gif"
+ ALT="$ d\in\mathbb{R}^n$">
+. Since we are in the unconstrained case,
+moving away from
+<IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ in the direction of
+ <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ or <IMG
+ WIDTH="26" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img51.gif"
+ ALT="$ -d$">
+ cannot immediately take us outside <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.
+ In other words, we have <!-- MATH
+ $x^*+\alpha d\in D$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img52.gif"
+ ALT="$ x^*+\alpha d\in D$">
+ for all <!-- MATH
+ $\alpha\in\mathbb{R}$
+ -->
+<IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img53.gif"
+ ALT="$ \alpha\in\mathbb{R}$">
+
+close enough to 0.
+
+<P>
+For a fixed <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+, we can consider <!-- MATH
+ $f(x^*+\alpha d)$
+ -->
+<IMG
+ WIDTH="86" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img54.gif"
+ ALT="$ f(x^*+\alpha d)$">
+ as
+a function of the real parameter
+<IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+, whose domain is some interval containing 0. Let us
+ call this new function <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-g-ray"></A><!-- MATH
+ \begin{equation}
+g(\alpha):=f(x^*+\alpha d).
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="153" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img57.gif"
+ ALT="$\displaystyle g(\alpha):=f(x^*+\alpha d).$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.4)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+Since <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is a minimum of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+, it is clear that 0 is a minimum of <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+.
+Passing from <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ to <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ is useful because <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ is a function of a scalar variable
+and so its minima
+can be studied using ordinary calculus. In particular, we can write down the
+first-order
+Taylor expansion for <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ around <IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+:
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-g-1st-order"></A><!-- MATH
+ \begin{equation}
+g(\alpha)=g(0)+g'(0)\alpha+o(\alpha)
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="214" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img59.gif"
+ ALT="$\displaystyle g(\alpha)=g(0)+g'(0)\alpha+o(\alpha)$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.5)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img60.gif"
+ ALT="$ o(\alpha)$">
+ represents ``higher-order terms" which
+go to 0 faster than <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ as <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ approaches 0, i.e.,
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-oalpha"></A><!-- MATH
+ \begin{equation}
+\lim_{\alpha\to 0}\frac{o(\alpha)}{\alpha}=0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="109" HEIGHT="57" ALIGN="MIDDLE" BORDER="0"
+ SRC="img61.gif"
+ ALT="$\displaystyle \lim_{\alpha\to 0}\frac{o(\alpha)}{\alpha}=0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.6)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+We claim that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-g_ge0"></A><!-- MATH
+ \begin{equation}
+g'(0)= 0.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="76" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img62.gif"
+ ALT="$\displaystyle g'(0)= 0.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.7)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+To show this, suppose that <!-- MATH
+ $g'(0)\ne 0$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img63.gif"
+ ALT="$ g'(0)\ne 0$">
+. Then,
+in view of&nbsp;(<A HREF="#e-oalpha">1.6</A>), there exists an <!-- MATH
+ $\varepsilon >0$
+ -->
+<IMG
+ WIDTH="43" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img39.gif"
+ ALT="$ \varepsilon &gt;0$">
+
+small enough so that for <!-- MATH
+ $|\alpha|<\varepsilon$
+ -->
+<IMG
+ WIDTH="56" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img64.gif"
+ ALT="$ \vert\alpha\vert&lt;\varepsilon $">
+, the absolute value of the fraction
+in&nbsp;(<A HREF="#e-oalpha">1.6</A>) is less than <IMG
+ WIDTH="49" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img65.gif"
+ ALT="$ \vert g'(0)\vert$">
+. We can write this as
+<P><!-- MATH
+ \begin{displaymath}
+|\alpha|<\varepsilon \quad\Rightarrow\quad |o(\alpha)|<
+|g'(0)\alpha|.
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="245" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img66.gif"
+ ALT="$\displaystyle \vert\alpha\vert&lt;\varepsilon \quad\Rightarrow\quad \vert o(\alpha)\vert&lt;
+\vert g'(0)\alpha\vert.
+$">
+</DIV><P>
+</P>
+For these values of <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+, (<A HREF="#e-g-1st-order">1.5</A>) gives
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-cancellation"></A><!-- MATH
+ \begin{equation}
+g(\alpha)-g(0)<g'(0)\alpha+|g'(0)\alpha|.
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="242" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img67.gif"
+ ALT="$\displaystyle g(\alpha)-g(0)&lt;g'(0)\alpha+\vert g'(0)\alpha\vert.$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.8)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+If we further
+restrict <IMG
+ WIDTH="15" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img55.gif"
+ ALT="$ \alpha$">
+ to have the opposite sign to <IMG
+ WIDTH="39" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img68.gif"
+ ALT="$ g'(0)$">
+, then
+the right-hand side of&nbsp;(<A HREF="#e-cancellation">1.8</A>) becomes 0 and we obtain
+<!-- MATH
+ $g(\alpha)-g(0)<0$
+ -->
+<IMG
+ WIDTH="122" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img69.gif"
+ ALT="$ g(\alpha)-g(0)&lt;0$">
+. But this contradicts the fact that <IMG
+ WIDTH="12" HEIGHT="30" ALIGN="MIDDLE" BORDER="0"
+ SRC="img56.gif"
+ ALT="$ g$">
+ has a minimum at 0. We
+have thus shown that&nbsp;(<A HREF="#e-g_ge0">1.7</A>) is indeed true.
+
+<P>
+We now need to re-express this result in terms of the original function <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+. A
+simple application of the chain rule from vector calculus yields the formula
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-fromgtof"></A><!-- MATH
+ \begin{equation}
+g'(\alpha)=\nabla f(x^*+\alpha d)\cdot d
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="184" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img70.gif"
+ ALT="$\displaystyle g'(\alpha)=\nabla f(x^*+\alpha d)\cdot d$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.9)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+where
+<P><!-- MATH
+ \begin{displaymath}
+\nabla f:=\left({f}_{x_1},\dots,{f}_{x_n}\right)^T
+\end{displaymath}
+ -->
+</P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="168" HEIGHT="41" ALIGN="MIDDLE" BORDER="0"
+ SRC="img71.gif"
+ ALT="$\displaystyle \nabla f:=\left({f}_{x_1},\dots,{f}_{x_n}\right)^T
+$">
+</DIV><P>
+</P>
+is the <I>gradient</I><A NAME="344"></A> of <IMG
+ WIDTH="14" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img32.gif"
+ ALT="$ f$">
+ and <IMG
+ WIDTH="8" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img72.gif"
+ ALT="$ \cdot$">
+ denotes inner product.<A NAME="tex2html2"
+  HREF="footnode.html#foot345"><SUP>1.1</SUP></A> Whenever there is no
+danger of confusion, we use
+subscripts as a shorthand notation for partial derivatives:
+<!-- MATH
+ ${f}_{x_i}:={\partial f}/{\partial x_i}$
+ -->
+<IMG
+ WIDTH="108" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img73.gif"
+ ALT="$ {f}_{x_i}:={\partial f}/{\partial x_i}$">
+. Setting
+<IMG
+ WIDTH="47" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img58.gif"
+ ALT="$ \alpha=0$">
+ in&nbsp;(<A HREF="#e-fromgtof">1.9</A>),
+we have
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-gtofprime"></A><!-- MATH
+ \begin{equation}
+g'(0)=\nabla f(x^*)\cdot d
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="140" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img74.gif"
+ ALT="$\displaystyle g'(0)=\nabla f(x^*)\cdot d$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.10)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+and this equals 0 by&nbsp;(<A HREF="#e-g_ge0">1.7</A>).
+Since <IMG
+ WIDTH="12" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img50.gif"
+ ALT="$ d$">
+ was arbitrary, we conclude that
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="e-1st-nec"></A><!-- MATH
+ \begin{equation}
+\fbox{$\nabla f(x^*)=0$}
+\end{equation}
+ -->
+<TABLE CELLPADDING="0" WIDTH="100%" ALIGN="CENTER">
+<TR VALIGN="MIDDLE">
+<TD NOWRAP ALIGN="CENTER"><IMG
+ WIDTH="102" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img75.gif"
+ ALT="$\displaystyle \fbox{$\nabla f(x^*)=0$}$"></TD>
+<TD NOWRAP WIDTH="10" ALIGN="RIGHT">
+(1.11)</TD></TR>
+</TABLE></DIV>
+<BR CLEAR="ALL"><P></P>
+This is the <B>first-order necessary condition for optimality</B>.<A NAME="359"></A><A NAME="360"></A>
+
+<P>
+A point <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ satisfying this condition is called a <A NAME="361"></A><I>stationary point</I>.
+The condition is ``first-order" because it is derived using the first-order
+expansion&nbsp;(<A HREF="#e-g-1st-order">1.5</A>).
+We emphasize that the result
+ is valid when <!-- MATH
+ $f\in\mathcal C^1$
+ -->
+<IMG
+ WIDTH="53" HEIGHT="37" ALIGN="MIDDLE" BORDER="0"
+ SRC="img76.gif"
+ ALT="$ f\in\mathcal C^1$">
+ and <IMG
+ WIDTH="21" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img43.gif"
+ ALT="$ x^*$">
+ is an interior point
+of <IMG
+ WIDTH="18" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img36.gif"
+ ALT="$ D$">
+.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html466"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.gif"></A> 
+<A NAME="tex2html460"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.gif"></A> 
+<A NAME="tex2html454"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.gif"></A> 
+<A NAME="tex2html462"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.gif"></A> 
+<A NAME="tex2html464"
+  HREF="node136.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="index" SRC="index.gif"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html467"
+  HREF="node8.html">1.2.1.2 Second-order conditions for</A>
+<B> Up:</B> <A NAME="tex2html461"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+<B> Previous:</B> <A NAME="tex2html455"
+  HREF="node6.html">1.2.1 Unconstrained optimization</A>
+ &nbsp; <B>  <A NAME="tex2html463"
+  HREF="node1.html">Contents</A></B> 
+ &nbsp; <B>  <A NAME="tex2html465"
+  HREF="node136.html">Index</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+Daniel
+2010-12-20
+</ADDRESS>
+</BODY>
+</HTML>
