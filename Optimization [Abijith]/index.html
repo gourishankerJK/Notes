@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){var t=localStorage.getItem('notes-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimization — Notes by Abijith Jagannath Kamath</title>
+  <meta name="description" content="Notes on Optimization covering convexity, gradient descent, proximal methods, and Fenchel conjugates.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../optimal_control/assets/index.css">
+  <style>
+    .back-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: #9a7b4f; text-decoration: none;
+    }
+    .back-link svg { width: 13px; height: 13px; }
+    .back-link:hover { color: #161310; }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <header class="masthead">
+    <a class="back-link" href="../index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+      All Notes
+    </a>
+    <div class="mast-right-wrap">
+      <span class="mast-right">Course Notes</span>
+      <div class="theme-toggle" id="landing-theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-kicker">Course Notes</div>
+    <h1 class="hero-title">Optimization</h1>
+    <p class="hero-sub">Convexity, gradient descent, proximal methods, and duality — from first principles.</p>
+    <div class="hero-byline">
+      <div class="by-name">Abijith Jagannath Kamath</div>
+      <div class="by-affil">Instructor: Kunal</div>
+    </div>
+    <div class="hero-actions">
+      <a href="book.html" class="btn btn-primary">
+        Read Notes
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="equations">
+    <div class="eq-head">
+      <div class="eq-kicker">Core Ideas</div>
+      <div class="eq-title">Key Formulations</div>
+    </div>
+    <div class="eq-grid">
+      <div class="eq-cell">
+        <div class="eq-render" data-tex="f\!\left(\lambda x + (1-\lambda)y\right) \leq \lambda f(x) + (1-\lambda)f(y)"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Convexity</span>
+          <span class="eq-ref">§1</span>
+        </div>
+      </div>
+      <div class="eq-cell">
+        <div class="eq-render" data-tex="x_{k+1} = x_k - \alpha \nabla f(x_k)"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Gradient Descent</span>
+          <span class="eq-ref">§3</span>
+        </div>
+      </div>
+      <div class="eq-cell">
+        <div class="eq-render" data-tex="\operatorname{prox}_{\lambda g}(x) = \arg\min_u \left\{ g(u) + \tfrac{1}{2\lambda}\|u - x\|^2 \right\}"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Proximal Operator</span>
+          <span class="eq-ref">§6</span>
+        </div>
+      </div>
+      <div class="eq-cell">
+        <div class="eq-render" data-tex="f^*(y) = \sup_{x} \left\{ \langle y, x \rangle - f(x) \right\}"></div>
+        <div class="eq-meta">
+          <span class="eq-name">Fenchel Conjugate</span>
+          <span class="eq-ref">§7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contents">
+    <div class="contents-head">
+      <h2>Contents</h2>
+      <span class="ch-count">Seven Sections</span>
+      <span class="rule-grow"></span>
+    </div>
+
+    <ol class="toc">
+      <li><a class="toc-item" href="book.html#convex-sets-and-convex-functions">
+        <span class="toc-num">1</span>
+        <span class="toc-body">
+          <span class="toc-title">Convex Sets and Convex Functions</span>
+          <span class="toc-desc">Differentiable functions, optima of convex functions, first-order conditions.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#notions-of-nonexpansiveness">
+        <span class="toc-num">2</span>
+        <span class="toc-body">
+          <span class="toc-title">Notions of Nonexpansiveness</span>
+          <span class="toc-desc">Nonexpansive and firmly nonexpansive operators, contraction mappings.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#the-gradient-descent-algorithm">
+        <span class="toc-num">3</span>
+        <span class="toc-body">
+          <span class="toc-title">The Gradient-Descent Algorithm</span>
+          <span class="toc-desc">Convergence analysis, contraction mapping theory.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#constrained-optimisation-and-projected-gradient-descent">
+        <span class="toc-num">4</span>
+        <span class="toc-body">
+          <span class="toc-title">Constrained Optimisation &amp; Projected Gradient Descent</span>
+          <span class="toc-desc">Convergence analysis, extended-valued functions, lower semicontinuity.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#subgradient-methods">
+        <span class="toc-num">5</span>
+        <span class="toc-body">
+          <span class="toc-title">Subgradient Methods</span>
+          <span class="toc-desc">Directional derivatives, support functions, subdifferential calculus.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#proximal-methods">
+        <span class="toc-num">6</span>
+        <span class="toc-body">
+          <span class="toc-title">Proximal Methods</span>
+          <span class="toc-desc">Projected subgradient descent, proximal gradient method.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+
+      <li><a class="toc-item" href="book.html#fenchel-conjugate">
+        <span class="toc-num">7</span>
+        <span class="toc-body">
+          <span class="toc-title">Fenchel Conjugate</span>
+          <span class="toc-desc">Properness, the biconjugate theorem, Fenchel duality.</span>
+        </span>
+        <span class="toc-right"><span class="toc-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+      </a></li>
+    </ol>
+  </section>
+
+  <footer class="site-footer">
+    <p><em>Optimization</em> — Notes by Abijith Jagannath Kamath.</p>
+  </footer>
+
+  <script>
+  window.addEventListener('load', function () {
+    if (!window.katex) return;
+    document.querySelectorAll('.eq-render[data-tex]').forEach(function (el) {
+      try { katex.render(el.getAttribute('data-tex'), el, { throwOnError: false, displayMode: true }); } catch(e){}
+    });
+  });
+  </script>
+
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('landing-theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return localStorage.getItem('notes-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('notes-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('notes-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+</body>
+</html>
