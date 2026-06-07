@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" $if(lang)$lang="$lang$"$endif$>
+<head>
+  <script>(function(){var t=localStorage.getItem('notes-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$if(title)$$title$$else$Notes$endif$</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <script>
+  window.MathJax = {
+    tex: {
+      macros: {
+        bb:     ['\\mathbb{#1}', 1],
+        ser:    ['\\mathsf{#1}', 1],
+        bd:     ['\\mathbf{#1}', 1],
+        bld:    ['\\boldsymbol{#1}', 1],
+        src:    ['\\mathscr{#1}', 1],
+        cl:     ['\\mathcal{#1}', 1],
+        iprod:  ['\\langle #1,\\, #2 \\rangle', 2],
+        TT:     '\\mathsf{T}',
+        jj:     '\\mathrm{j}',
+        dx:     '\\mathrm{d}',
+        zerovec:'\\boldsymbol{0}',
+        sinc:   '\\operatorname{sinc}',
+        crd:    '\\operatorname{card}',
+        dimn:   '\\operatorname{dim}',
+        nul:    '\\operatorname{nul}',
+        prox:   '\\operatorname{prox}',
+        Fix:    '\\operatorname{Fix}',
+        diag:   '\\operatorname{diag}',
+        dom:    '\\operatorname{dom}',
+        grad:   '\\nabla',
+        Disp:   '\\displaystyle',
+        norm:   ['\\left\\lVert #1 \\right\\rVert', 1],
+        abs:    ['\\left\\lvert #1 \\right\\rvert', 1]
+      },
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* ── Tokens ── */
+:root {
+  --bg:         #f7f4ec;
+  --bg2:        #fffdf8;
+  --text:       #161310;
+  --text2:      #4a443b;
+  --muted:      #8a8175;
+  --border:     #e4ddcf;
+  --accent:     #9a7b4f;
+  --link:       #1a1f71;
+  --def-bg:     #fefce8;
+  --def-border: #ca8a04;
+  --thm-bg:     #ecfeff;
+  --thm-border: #0891b2;
+  --prop-bg:    #fdf6f0;
+  --prop-border:#92400e;
+  --lem-bg:     #fff7ed;
+  --lem-border: #ea580c;
+  --cor-bg:     #f5f3ff;
+  --cor-border: #7c3aed;
+  --rem-border: #16a34a;
+  --ex-bg:      #f9fafb;
+  --ex-border:  #6b7280;
+  --proof-color:#4a443b;
+}
+html[data-theme="dark"] {
+  --bg:         #14120f;
+  --bg2:        #1c1916;
+  --text:       #ece7dd;
+  --text2:      #b3aa9c;
+  --muted:      #837b6e;
+  --border:     #2c2823;
+  --accent:     #c9a875;
+  --link:       #8b90ff;
+  --def-bg:     #1f1c0a;
+  --def-border: #a16207;
+  --thm-bg:     #0a1f22;
+  --thm-border: #0e7490;
+  --prop-bg:    #1a110a;
+  --prop-border:#78350f;
+  --lem-bg:     #1a0e04;
+  --lem-border: #c2410c;
+  --cor-bg:     #130e1f;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #1a1916;
+  --ex-border:  #4b5563;
+  --proof-color:#b3aa9c;
+}
+html[data-theme="paper"] {
+  --bg:         #f0e6c8;
+  --bg2:        #e8dab8;
+  --text:       #2c1a0e;
+  --text2:      #5c3d25;
+  --muted:      #9c7a58;
+  --border:     #d4b896;
+  --accent:     #9b6820;
+  --link:       #7b2f0c;
+  --def-bg:     #faf3da;
+  --def-border: #b45309;
+  --thm-bg:     #d8eef0;
+  --thm-border: #0e7490;
+  --prop-bg:    #f5e8da;
+  --prop-border:#78350f;
+  --lem-bg:     #fde8d0;
+  --lem-border: #c2410c;
+  --cor-bg:     #ede8f8;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #eee4cc;
+  --ex-border:  #6b7280;
+  --proof-color:#5c3d25;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Top bar ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.topbar-left { display: flex; align-items: center; gap: 20px; }
+.topbar-back {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--accent); transition: color 0.2s;
+}
+.topbar-back:hover { color: var(--text); text-decoration: none; }
+.topbar-back svg { width: 14px; height: 14px; }
+.topbar-title { color: var(--text); letter-spacing: .06em; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  display: inline-flex; align-items: center;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 30px; padding: 3px 4px; gap: 2px;
+}
+.tt-btn {
+  width: 24px; height: 24px; border-radius: 50%; border: none;
+  background: transparent; display: flex; align-items: center;
+  justify-content: center; color: var(--muted); cursor: pointer;
+  padding: 0; transition: background 0.2s, color 0.2s;
+}
+.tt-btn svg { width: 12px; height: 12px; display: block; }
+.tt-btn.active { background: var(--bg2); color: var(--accent); }
+
+/* ── Layout ── */
+.page-wrap {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  gap: 48px;
+}
+
+/* ── Sidebar TOC ── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 36px 0 60px;
+  position: sticky;
+  top: 52px;
+  height: calc(100vh - 52px);
+  overflow-y: auto;
+}
+.sidebar-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.sidebar nav ul { list-style: none; }
+.sidebar nav ul li { margin: 0; }
+.sidebar nav ul li a {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  padding: 4px 0 4px 10px;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  color: var(--text);
+  border-left-color: var(--accent);
+  text-decoration: none;
+}
+.sidebar nav ul ul { padding-left: 12px; }
+.sidebar nav ul ul li a { font-size: 11.5px; }
+
+/* ── Main content ── */
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 0 80px;
+  max-width: 72ch;
+}
+
+/* Typography */
+main h1, main h2, main h3, main h4 {
+  font-family: "Playfair Display", "EB Garamond", Georgia, serif;
+  color: var(--text);
+  line-height: 1.2;
+}
+main h1 { font-size: 2rem; margin-bottom: 1.2rem; font-weight: 600; }
+main h2 {
+  font-size: 1.45rem; margin-top: 2.8rem; margin-bottom: 1rem;
+  font-weight: 600; padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+}
+main h3 { font-size: 1.15rem; margin-top: 2rem; margin-bottom: .8rem; font-weight: 600; }
+main h4 { font-size: 1rem; margin-top: 1.6rem; margin-bottom: .5rem; font-weight: 600; }
+main p { margin-bottom: .9em; }
+main ul, main ol { padding-left: 1.6em; margin-bottom: .9em; }
+main li { margin-bottom: .3em; }
+main strong { font-weight: 600; color: var(--text); }
+main em { font-style: italic; }
+main table {
+  border-collapse: collapse; width: 100%;
+  margin: 1.2rem 0; font-size: 0.92rem;
+}
+main th, main td {
+  border: 1px solid var(--border); padding: 6px 12px; text-align: left;
+}
+main th { background: var(--bg2); font-family: "Inter", sans-serif; font-size: .85rem; }
+main code {
+  font-family: "Courier New", monospace; font-size: .85em;
+  background: var(--bg2); padding: 1px 5px; border-radius: 3px;
+}
+
+/* ── Theorem environments ── */
+.definition, .theorem, .proposition, .lemma, .corollary,
+.remark, .remarks, .example, .examples, .exercise, .proof, .cthm {
+  margin: 1.4rem 0;
+  padding: 14px 18px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.definition {
+  background: var(--def-bg);
+  border: 1px solid color-mix(in srgb, var(--def-border) 30%, transparent);
+  border-left: 3px solid var(--def-border);
+}
+.theorem {
+  background: var(--thm-bg);
+  border-left: 3px solid var(--thm-border);
+}
+.proposition {
+  background: var(--prop-bg);
+  border-left: 3px solid var(--prop-border);
+}
+.lemma {
+  background: var(--lem-bg);
+  border-left: 3px solid var(--lem-border);
+}
+.corollary {
+  background: var(--cor-bg);
+  border-left: 3px solid var(--cor-border);
+}
+.remark, .remarks {
+  border-left: 3px solid var(--rem-border);
+  padding-left: 16px;
+}
+.example, .examples {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--ex-border);
+}
+.cthm {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--muted);
+}
+.exercise {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.proof {
+  color: var(--proof-color);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 1rem;
+}
+
+/* Environment label */
+.definition > p:first-child::before    { content: 'Definition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; font-style: normal; color: var(--def-border); text-transform: uppercase; letter-spacing: .06em; }
+.theorem > p:first-child::before       { content: 'Theorem. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--thm-border); text-transform: uppercase; letter-spacing: .06em; }
+.proposition > p:first-child::before   { content: 'Proposition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--prop-border); text-transform: uppercase; letter-spacing: .06em; }
+.lemma > p:first-child::before         { content: 'Lemma. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--lem-border); text-transform: uppercase; letter-spacing: .06em; }
+.corollary > p:first-child::before     { content: 'Corollary. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--cor-border); text-transform: uppercase; letter-spacing: .06em; }
+.remark > p:first-child::before,
+.remarks > p:first-child::before       { content: 'Remark. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--rem-border); text-transform: uppercase; letter-spacing: .06em; }
+.example > p:first-child::before,
+.examples > p:first-child::before      { content: 'Example. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--ex-border); text-transform: uppercase; letter-spacing: .06em; }
+.exercise > p:first-child::before      { content: 'Exercise. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.proof > p:first-child::before         { content: 'Proof. '; font-style: normal; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* Math display */
+.math.display { overflow-x: auto; padding: 6px 0; }
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .page-wrap { padding: 0 18px; gap: 0; }
+  main { padding: 28px 0 60px; }
+  .topbar { padding: 0 18px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── Top bar ── -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="topbar-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Notes
+      </a>
+      <span class="topbar-title">$if(title)$$title$$else$Notes$endif$</span>
+    </div>
+    <div class="topbar-right">
+      <div class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <!-- ── Sidebar ── -->
+    $if(toc)$
+    <aside class="sidebar">
+      <div class="sidebar-label">Contents</div>
+      $toc$
+    </aside>
+    $endif$
+
+    <!-- ── Main ── -->
+    <main>
+      $body$
+    </main>
+  </div>
+
+  <!-- ── Theme toggle script ── -->
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return localStorage.getItem('notes-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('notes-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('notes-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+  <!-- ── Active TOC tracking ── -->
+  <script>
+  (function() {
+    var links = document.querySelectorAll('.sidebar nav a');
+    if (!links.length) return;
+    var headings = Array.from(document.querySelectorAll('main h2, main h3'));
+    function onScroll() {
+      var scrollY = window.scrollY + 80;
+      var active = headings[0];
+      headings.forEach(function(h) { if (h.offsetTop <= scrollY) active = h; });
+      links.forEach(function(a) {
+        a.classList.toggle('active', active && a.getAttribute('href') === '#' + active.id);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>
