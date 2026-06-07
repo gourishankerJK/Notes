@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <script>(function(){var t=localStorage.getItem('notes-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Convex Optimization</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <script>
+  window.MathJax = {
+    tex: {
+      macros: {
+        bb:     ['\\mathbb{#1}', 1],
+        ser:    ['\\mathsf{#1}', 1],
+        bd:     ['\\mathbf{#1}', 1],
+        bld:    ['\\boldsymbol{#1}', 1],
+        src:    ['\\mathscr{#1}', 1],
+        cl:     ['\\mathcal{#1}', 1],
+        iprod:  ['\\langle #1,\\, #2 \\rangle', 2],
+        TT:     '\\mathsf{T}',
+        jj:     '\\mathrm{j}',
+        dx:     '\\mathrm{d}',
+        zerovec:'\\boldsymbol{0}',
+        sinc:   '\\operatorname{sinc}',
+        crd:    '\\operatorname{card}',
+        dimn:   '\\operatorname{dim}',
+        nul:    '\\operatorname{nul}',
+        prox:   '\\operatorname{prox}',
+        Fix:    '\\operatorname{Fix}',
+        diag:   '\\operatorname{diag}',
+        dom:    '\\operatorname{dom}',
+        grad:   '\\nabla',
+        Disp:   '\\displaystyle'
+      },
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* ── Tokens ── */
+:root {
+  --bg:         #f7f4ec;
+  --bg2:        #fffdf8;
+  --text:       #161310;
+  --text2:      #4a443b;
+  --muted:      #8a8175;
+  --border:     #e4ddcf;
+  --accent:     #9a7b4f;
+  --link:       #1a1f71;
+  --def-bg:     #fefce8;
+  --def-border: #ca8a04;
+  --thm-bg:     #ecfeff;
+  --thm-border: #0891b2;
+  --prop-bg:    #fdf6f0;
+  --prop-border:#92400e;
+  --lem-bg:     #fff7ed;
+  --lem-border: #ea580c;
+  --cor-bg:     #f5f3ff;
+  --cor-border: #7c3aed;
+  --rem-border: #16a34a;
+  --ex-bg:      #f9fafb;
+  --ex-border:  #6b7280;
+  --proof-color:#4a443b;
+}
+html[data-theme="dark"] {
+  --bg:         #14120f;
+  --bg2:        #1c1916;
+  --text:       #ece7dd;
+  --text2:      #b3aa9c;
+  --muted:      #837b6e;
+  --border:     #2c2823;
+  --accent:     #c9a875;
+  --link:       #8b90ff;
+  --def-bg:     #1f1c0a;
+  --def-border: #a16207;
+  --thm-bg:     #0a1f22;
+  --thm-border: #0e7490;
+  --prop-bg:    #1a110a;
+  --prop-border:#78350f;
+  --lem-bg:     #1a0e04;
+  --lem-border: #c2410c;
+  --cor-bg:     #130e1f;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #1a1916;
+  --ex-border:  #4b5563;
+  --proof-color:#b3aa9c;
+}
+html[data-theme="paper"] {
+  --bg:         #f0e6c8;
+  --bg2:        #e8dab8;
+  --text:       #2c1a0e;
+  --text2:      #5c3d25;
+  --muted:      #9c7a58;
+  --border:     #d4b896;
+  --accent:     #9b6820;
+  --link:       #7b2f0c;
+  --def-bg:     #faf3da;
+  --def-border: #b45309;
+  --thm-bg:     #d8eef0;
+  --thm-border: #0e7490;
+  --prop-bg:    #f5e8da;
+  --prop-border:#78350f;
+  --lem-bg:     #fde8d0;
+  --lem-border: #c2410c;
+  --cor-bg:     #ede8f8;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #eee4cc;
+  --ex-border:  #6b7280;
+  --proof-color:#5c3d25;
+}
+
+body {
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Top bar ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.topbar-left { display: flex; align-items: center; gap: 20px; }
+.topbar-back {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--accent); transition: color 0.2s;
+}
+.topbar-back:hover { color: var(--text); text-decoration: none; }
+.topbar-back svg { width: 14px; height: 14px; }
+.topbar-title { color: var(--text); letter-spacing: .06em; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  display: inline-flex; align-items: center;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 30px; padding: 3px 4px; gap: 2px;
+}
+.tt-btn {
+  width: 24px; height: 24px; border-radius: 50%; border: none;
+  background: transparent; display: flex; align-items: center;
+  justify-content: center; color: var(--muted); cursor: pointer;
+  padding: 0; transition: background 0.2s, color 0.2s;
+}
+.tt-btn svg { width: 12px; height: 12px; display: block; }
+.tt-btn.active { background: var(--bg2); color: var(--accent); }
+
+/* ── Layout ── */
+.page-wrap {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  gap: 48px;
+}
+
+/* ── Sidebar TOC ── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 36px 0 60px;
+  position: sticky;
+  top: 52px;
+  height: calc(100vh - 52px);
+  overflow-y: auto;
+}
+.sidebar-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.sidebar nav ul { list-style: none; }
+.sidebar nav ul li { margin: 0; }
+.sidebar nav ul li a {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  padding: 4px 0 4px 10px;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  color: var(--text);
+  border-left-color: var(--accent);
+  text-decoration: none;
+}
+.sidebar nav ul ul { padding-left: 12px; }
+.sidebar nav ul ul li a { font-size: 11.5px; }
+
+/* ── Main content ── */
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 0 80px;
+  max-width: 72ch;
+}
+
+/* Typography */
+main h1, main h2, main h3, main h4 {
+  font-family: "Playfair Display", "EB Garamond", Georgia, serif;
+  color: var(--text);
+  line-height: 1.2;
+}
+main h1 { font-size: 2.4rem; margin-bottom: 1.2rem; font-weight: 600; }
+main h2 {
+  font-size: 1.7rem; margin-top: 2.8rem; margin-bottom: 1rem;
+  font-weight: 600; padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+}
+main h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: .8rem; font-weight: 600; }
+main h4 { font-size: 1.1rem; margin-top: 1.6rem; margin-bottom: .5rem; }
+main p { margin-bottom: .9em; }
+main ul, main ol { padding-left: 1.6em; margin-bottom: .9em; }
+main li { margin-bottom: .3em; }
+main strong { font-weight: 600; color: var(--text); }
+main em { font-style: italic; }
+main table {
+  border-collapse: collapse; width: 100%;
+  margin: 1.2rem 0; font-size: 0.92rem;
+}
+main th, main td {
+  border: 1px solid var(--border); padding: 6px 12px; text-align: left;
+}
+main th { background: var(--bg2); font-family: "Inter", sans-serif; font-size: .85rem; }
+main code {
+  font-family: "Courier New", monospace; font-size: .85em;
+  background: var(--bg2); padding: 1px 5px; border-radius: 3px;
+}
+
+/* ── Theorem environments ── */
+.definition, .theorem, .proposition, .lemma, .corollary,
+.remark, .remarks, .example, .examples, .exercise, .proof, .cthm {
+  margin: 1.4rem 0;
+  padding: 14px 18px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.definition {
+  background: var(--def-bg);
+  border: 1px solid color-mix(in srgb, var(--def-border) 30%, transparent);
+  border-left: 3px solid var(--def-border);
+}
+.theorem {
+  background: var(--thm-bg);
+  border-left: 3px solid var(--thm-border);
+}
+.proposition {
+  background: var(--prop-bg);
+  border-left: 3px solid var(--prop-border);
+}
+.lemma {
+  background: var(--lem-bg);
+  border-left: 3px solid var(--lem-border);
+}
+.corollary {
+  background: var(--cor-bg);
+  border-left: 3px solid var(--cor-border);
+}
+.remark, .remarks {
+  border-left: 3px solid var(--rem-border);
+  padding-left: 16px;
+}
+.example, .examples {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--ex-border);
+}
+.cthm {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--muted);
+}
+.exercise {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.proof {
+  color: var(--proof-color);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 1rem;
+}
+
+/* Environment label */
+.definition > p:first-child::before    { content: 'Definition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; font-style: normal; color: var(--def-border); text-transform: uppercase; letter-spacing: .06em; }
+.theorem > p:first-child::before       { content: 'Theorem. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--thm-border); text-transform: uppercase; letter-spacing: .06em; }
+.proposition > p:first-child::before   { content: 'Proposition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--prop-border); text-transform: uppercase; letter-spacing: .06em; }
+.lemma > p:first-child::before         { content: 'Lemma. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--lem-border); text-transform: uppercase; letter-spacing: .06em; }
+.corollary > p:first-child::before     { content: 'Corollary. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--cor-border); text-transform: uppercase; letter-spacing: .06em; }
+.remark > p:first-child::before,
+.remarks > p:first-child::before       { content: 'Remark. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--rem-border); text-transform: uppercase; letter-spacing: .06em; }
+.example > p:first-child::before,
+.examples > p:first-child::before      { content: 'Example. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--ex-border); text-transform: uppercase; letter-spacing: .06em; }
+.exercise > p:first-child::before      { content: 'Exercise. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.proof > p:first-child::before         { content: 'Proof. '; font-style: normal; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* Math display */
+.math.display { overflow-x: auto; padding: 6px 0; }
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .page-wrap { padding: 0 18px; gap: 0; }
+  main { padding: 28px 0 60px; }
+  .topbar { padding: 0 18px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── Top bar ── -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="topbar-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Notes
+      </a>
+      <span class="topbar-title">Advanced Convex Optimization</span>
+    </div>
+    <div class="topbar-right">
+      <div class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <!-- ── Sidebar ── -->
+        <aside class="sidebar">
+      <div class="sidebar-label">Contents</div>
+      <ul>
+      <li><a href="#introduction" id="toc-introduction">Introduction
+      </a></li>
+      <li><a href="#inclusion-problems-convexity-and-smoothness"
+      id="toc-inclusion-problems-convexity-and-smoothness">Inclusion
+      Problems, Convexity, and Smoothness</a>
+      <ul>
+      <li><a href="#euclidean-spaces-and-induced-norms"
+      id="toc-euclidean-spaces-and-induced-norms">Euclidean spaces and
+      induced norms</a></li>
+      <li><a href="#unconstrained-and-constrained-optimization"
+      id="toc-unconstrained-and-constrained-optimization">Unconstrained
+      and Constrained Optimization</a></li>
+      </ul></li>
+      <li><a href="#lecture-3" id="toc-lecture-3">Lecture 3</a></li>
+      <li><a href="#projected-gradient-descent"
+      id="toc-projected-gradient-descent">Projected Gradient
+      Descent</a></li>
+      </ul>
+    </aside>
+    
+    <!-- ── Main ── -->
+    <main>
+      <h1 id="introduction">Introduction </h1>
+      <div class="definition">
+      <p>Consider the optimization problem <span
+      class="math display">\[\min_{x \in X} f(x),\]</span> where <span
+      class="math inline">\(f : X \to \bb{R}\)</span>.</p>
+      <p>The associated <em>optimal value</em> is defined as <span
+      class="math display">\[p^\star := \inf_{x \in X}
+      f(x).\]</span></p>
+      <p>The infimum is used instead of the minimum since, in general,
+      the function <span class="math inline">\(f\)</span> may fail to
+      attain its minimum over the set <span
+      class="math inline">\(X\)</span>. That is, there may exist no
+      point <span class="math inline">\(x^\star \in X\)</span> such that
+      <span class="math display">\[f(x^\star) = \min_{x \in X}
+      f(x).\]</span></p>
+      <p>Nevertheless, the set <span class="math inline">\(\{ f(x) : x
+      \in X \} \subset \bb{R}\)</span> always admits a greatest lower
+      bound in <span class="math inline">\(\bb{R} \cup
+      \{-\infty\}\)</span>, which is precisely the infimum.</p>
+      <p>If there exists a point <span class="math inline">\(x^\star \in
+      X\)</span> satisfying <span class="math display">\[f(x^\star) =
+      \inf_{x \in X} f(x),\]</span> then the infimum is said to be
+      <em>attained</em>, and we may equivalently write <span
+      class="math display">\[p^\star = \min_{x \in X} f(x).\]</span> In
+      this case, <span class="math inline">\(x^\star\)</span> is called
+      an <em>optimal solution</em>.</p>
+      </div>
+      <div class="definition">
+      <p>Consider the constrained optimization problem <span
+      class="math display">\[\begin{aligned}
+                  \min_{x \in \bb{R}^n} \quad &amp; f(x)      \\
+                  \text{subject to} \quad     &amp; g(x) = 0,
+              \end{aligned}\]</span> where <span class="math inline">\(f
+      : \bb{R}^n \to \bb{R}\)</span> and <span class="math inline">\(g :
+      \bb{R}^n \to \bb{R}^m\)</span>.</p>
+      <p>The associated <em>feasible set</em> is defined by <span
+      class="math display">\[X := \{ x \in \bb{R}^n : g(x) = 0
+      \}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p>A point <span class="math inline">\(x^\star \in X\)</span> is
+      called a <em>local minimum</em> of the constrained optimization
+      problem if there exists <span class="math inline">\(\delta &gt;
+      0\)</span> such that <span class="math display">\[f(x^\star) \le
+      f(x)
+              \quad \text{for all } x \in X \cap
+      B(x^\star,\delta),\]</span> where <span
+      class="math display">\[B(x^\star,\delta)
+              := \{ x \in \bb{R}^n : \|x - x^\star\| &lt; \delta
+      \}\]</span> denotes the open ball of radius <span
+      class="math inline">\(\delta\)</span> centered at <span
+      class="math inline">\(x^\star\)</span>.</p>
+      <p>Equivalently, <span class="math inline">\(x^\star\)</span> is a
+      local minimum if no feasible point sufficiently close to <span
+      class="math inline">\(x^\star\)</span> achieves a strictly smaller
+      objective value.</p>
+      </div>
+      <div class="center">
+      <table>
+      <thead>
+      <tr>
+      <th style="text-align: center;"></th>
+      <th style="text-align: center;"><strong>Smooth</strong></th>
+      <th style="text-align: center;"><strong>Non-smooth</strong></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td style="text-align: center;"><strong>Convex</strong></td>
+      <td style="text-align: center;"><table>
+      <tbody>
+      <tr>
+      <td style="text-align: center;">Convex Optimization</td>
+      </tr>
+      <tr>
+      <td style="text-align: center;"></td>
+      </tr>
+      </tbody>
+      </table></td>
+      <td style="text-align: center;"><table>
+      <tbody>
+      <tr>
+      <td style="text-align: center;">Advanced Convex Optimization</td>
+      </tr>
+      <tr>
+      <td style="text-align: center;">(Proximal methods,
+      subgradients)</td>
+      </tr>
+      </tbody>
+      </table></td>
+      </tr>
+      <tr>
+      <td style="text-align: center;"><strong>Non-convex</strong></td>
+      <td style="text-align: center;"><table>
+      <tbody>
+      <tr>
+      <td style="text-align: center;">Deep Learning</td>
+      </tr>
+      </tbody>
+      </table></td>
+      <td style="text-align: center;"><table>
+      <tbody>
+      <tr>
+      <td style="text-align: center;">:(</td>
+      </tr>
+      </tbody>
+      </table></td>
+      </tr>
+      </tbody>
+      </table>
+      </div>
+      <div class="marginfigure">
+
+      </div>
+      <div class="example">
+      <p>Consider the optimization problem <span
+      class="math display">\[\min_{x \in \bb{R}}
+              \left\{
+              \frac{1}{2}(x-a)^2 + \tau |x|
+              \right\},
+              \qquad \tau &gt; 0.\]</span></p>
+      <p>The objective function is convex but non-smooth due to the
+      absolute value term. The subdifferential of <span
+      class="math inline">\(|x|\)</span> is the set-valued mapping <span
+      class="math display">\[\partial |x|
+              =
+              \begin{cases}
+                  \{1\},    &amp; x &gt; 0, \\[6pt]
+                  [-1,\,1], &amp; x = 0, \\[6pt]
+                  \{-1\},   &amp; x &lt; 0.
+              \end{cases}\]</span></p>
+      <p>Define <span class="math display">\[\phi(x) :=
+      \frac{1}{2}(x-a)^2 + \tau |x|.\]</span> Since <span
+      class="math inline">\(\phi\)</span> is convex, a point <span
+      class="math inline">\(x^\star \in \bb{R}\)</span> is optimal if
+      and only if <span class="math display">\[0 \in \partial
+      \phi(x^\star)
+              = (x^\star - a) + \tau \partial |x^\star|.\]</span>
+      Equivalently, <span class="math display">\[a - x^\star \in \tau
+      \partial |x^\star|.\]</span></p>
+      <p>A case-by-case analysis yields <span
+      class="math display">\[x^\star
+              =
+              \begin{cases}
+                  a - \tau, &amp; a &gt; \tau,     \\[6pt]
+                  0,        &amp; |a| \le \tau, \\[6pt]
+                  a + \tau, &amp; a &lt; -\tau.
+              \end{cases}\]</span></p>
+      <p>This solution can be written compactly as the
+      <em>soft-thresholding operator</em> <span
+      class="math display">\[x^\star
+              = \mathrm{sign}(a)\,\max\{ |a| - \tau,\, 0
+      \}.\]</span></p>
+      </div>
+      <h1 id="inclusion-problems-convexity-and-smoothness">Inclusion
+      Problems, Convexity, and Smoothness</h1>
+      <div class="definition">
+      <p>Let <span class="math inline">\(X\)</span> be a real Euclidean
+      space. An <em>inclusion problem</em> consists in finding <span
+      class="math display">\[x \in X \quad \text{such that} \quad 0 \in
+      T(x),\]</span> where <span class="math inline">\(T : X
+      \rightrightarrows X\)</span> is a set-valued operator.</p>
+      </div>
+      <div class="remark">
+      <p>Many convex optimization problems can be written as inclusion
+      problems by taking <span class="math inline">\(T = \partial
+      f\)</span>, where <span class="math inline">\(\partial f\)</span>
+      denotes the subdifferential of a convex function.</p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\(C \subset X\)</span> be a
+      convex set and let <span class="math inline">\(f : X \to
+      \bb{R}\)</span> be a convex function. The problem <span
+      class="math display">\[\min_{x \in C} f(x)\]</span> is called a
+      <em>convex optimization problem</em>.</p>
+      </div>
+      <div class="proposition">
+      <p>If both the objective function <span
+      class="math inline">\(f\)</span> and the constraint set <span
+      class="math inline">\(C\)</span> are convex, then every local
+      minimizer is a global minimizer.</p>
+      </div>
+      <div class="proposition">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> be twice continuously differentiable. If <span
+      class="math display">\[\nabla^2 f(x) \succeq 0
+              \quad \text{for all } x \in \bb{R}^n,\]</span> then <span
+      class="math inline">\(f\)</span> is convex. If <span
+      class="math display">\[\nabla^2 f(x) \succ 0
+              \quad \text{for all } x \in \bb{R}^n,\]</span> then <span
+      class="math inline">\(f\)</span> is strictly convex.</p>
+      </div>
+      <h2 id="euclidean-spaces-and-induced-norms">Euclidean spaces and
+      induced norms</h2>
+      <div class="definition">
+      <p>A real Euclidean space <span class="math inline">\(X\)</span>
+      is a real vector space equipped with an inner product <span
+      class="math display">\[\iprod{x}{y}.\]</span> The induced norm is
+      defined by <span class="math display">\[\|x\| :=
+      \sqrt{\iprod{x}{x}}.\]</span></p>
+      </div>
+      <div class="remark">
+      <p>The <span class="math inline">\(\ell^2\)</span>-norm on <span
+      class="math inline">\(\bb{R}^n\)</span> is induced by the standard
+      inner product. The <span
+      class="math inline">\(\ell^1\)</span>-norm is <em>not</em> induced
+      by any inner product.</p>
+      </div>
+      <div class="definition">
+      <p>The norm induces a metric <span class="math display">\[d(x,y)
+      := \|x-y\|,\]</span> which defines a topology on <span
+      class="math inline">\(X\)</span>.</p>
+      </div>
+      <div class="definition">
+      <p>A sequence <span class="math inline">\((x_k) \subset X\)</span>
+      converges to <span class="math inline">\(x \in X\)</span> if <span
+      class="math display">\[\|x_k - x\| \to 0.\]</span></p>
+      </div>
+      <div class="definition">
+      <p>A function <span class="math inline">\(f : X \to
+      \bb{R}\)</span> is continuous at <span class="math inline">\(x \in
+      X\)</span> if <span class="math display">\[x_k \to x \quad
+      \Rightarrow \quad f(x_k) \to f(x).\]</span></p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\(X\)</span> be a set and let
+      <span class="math inline">\(\tau\)</span> be a collection of
+      subsets of <span class="math inline">\(X\)</span>. The pair <span
+      class="math inline">\((X,\tau)\)</span> is called a
+      <em>topological space</em> if</p>
+      <ul>
+      <li><p><span class="math inline">\(\varnothing \in \tau\)</span>
+      and <span class="math inline">\(X \in \tau\)</span>,</p></li>
+      <li><p>the union of any collection of sets in <span
+      class="math inline">\(\tau\)</span> belongs to <span
+      class="math inline">\(\tau\)</span>,</p></li>
+      <li><p>the intersection of any finite collection of sets in <span
+      class="math inline">\(\tau\)</span> belongs to <span
+      class="math inline">\(\tau\)</span>.</p></li>
+      </ul>
+      <p>The elements of <span class="math inline">\(\tau\)</span> are
+      called <em>open sets</em>.</p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\((X,\tau)\)</span> be a
+      topological space and let <span class="math inline">\((x_k)
+      \subset X\)</span>. We say that <span
+      class="math inline">\(x_k\)</span> converges to <span
+      class="math inline">\(x \in X\)</span> if for every open set <span
+      class="math inline">\(U \in \tau\)</span> such that <span
+      class="math inline">\(x \in U\)</span>, there exists <span
+      class="math inline">\(N \in \bb{N}\)</span> for which <span
+      class="math display">\[x_k \in U
+              \quad \text{for all } k \ge N.\]</span></p>
+      </div>
+      <div class="remark">
+      <p>This definition of convergence depends only on the topology
+      <span class="math inline">\(\tau\)</span> and does not require any
+      notion of distance or norm. In particular, convergence can be
+      defined in spaces that are not metric spaces.</p>
+      </div>
+      <div class="proposition">
+      <p>Every convex function <span class="math inline">\(f : \bb{R}^n
+      \to \bb{R}\)</span> is continuous.</p>
+      </div>
+      <div class="proposition">
+      <p>For <span class="math inline">\(0 &lt; p &lt; 1\)</span>, the
+      set <span class="math display">\[B_p := \{ x \in \bb{R}^n :
+      \|x\|_p \le 1 \}\]</span> is not convex.</p>
+      </div>
+      <div class="definition">
+      <p>A function <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> is said to be differentiable at <span
+      class="math inline">\(x \in \bb{R}^n\)</span> if there exists
+      <span class="math inline">\(z \in \bb{R}^n\)</span> such that
+      <span class="math display">\[f(x+h)
+              =
+              f(x)
+              + \iprod{z}{h}
+              + o(\|h\|)
+              \quad \text{as } h \to 0.\]</span> In this case, <span
+      class="math inline">\(z = \nabla f(x)\)</span>. where The term
+      <span class="math inline">\(o(\|h\|)\)</span> satisfies <span
+      class="math display">\[\lim_{\|h\|\to 0}
+              \frac{o(\|h\|)}{\|h\|} = 0.\]</span></p>
+      </div>
+      <div class="exercise">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> be differentiable at <span class="math inline">\(x
+      \in \bb{R}^n\)</span> in the sense that there exists <span
+      class="math inline">\(z \in \bb{R}^n\)</span> such that <span
+      class="math display">\[f(x+h)
+              =
+              f(x)
+              + \iprod{z}{h}
+              + o(\|h\|)
+              \quad \text{as } h \to 0,\]</span> where <span
+      class="math display">\[\lim_{\|h\|\to 0} \frac{o(\|h\|)}{\|h\|} =
+      0.\]</span></p>
+      <ol>
+      <li><p>Show that for a fixed inner product <span
+      class="math inline">\(\iprod{\cdot}{\cdot}\)</span>, the vector
+      <span class="math inline">\(z\)</span> is unique.</p></li>
+      <li><p>Show that the vector <span class="math inline">\(z\)</span>
+      depends on the choice of inner product.</p></li>
+      <li><p>Show that the notion of differentiability does not depend
+      on the choice of inner product on <span
+      class="math inline">\(\bb{R}^n\)</span>.</p></li>
+      <li><p>Show that all norms on <span
+      class="math inline">\(\bb{R}^n\)</span> are equivalent.</p></li>
+      <li><p>Prove the Riesz representation theorem: every linear
+      functional on a Euclidean space can be represented as an inner
+      product.</p></li>
+      </ol>
+      </div>
+      <div class="proof">
+      <p><em>Solution.</em></p>
+      <ol>
+      <li><p><em>Uniqueness:</em> Assume that there exist <span
+      class="math inline">\(z_1, z_2 \in \bb{R}^n\)</span> such that
+      <span class="math display">\[f(x+h) = f(x) + \iprod{z_1}{h} +
+      o(\|h\|)\]</span> and <span class="math display">\[f(x+h) = f(x) +
+      \iprod{z_2}{h} + o(\|h\|).\]</span> Subtracting the two
+      expressions gives <span class="math display">\[\iprod{z_1 -
+      z_2}{h} = o(\|h\|).\]</span> Dividing by <span
+      class="math inline">\(\|h\|\)</span> and letting <span
+      class="math inline">\(h \to 0\)</span>, <span
+      class="math display">\[\frac{\iprod{z_1 - z_2}{h}}{\|h\|} \to
+      0.\]</span> Choosing <span class="math inline">\(h = z_1 -
+      z_2\)</span> yields <span class="math display">\[\|z_1 - z_2\|^2 =
+      0,\]</span> hence <span class="math inline">\(z_1 =
+      z_2\)</span>.</p></li>
+      <li><p><em>Dependence on inner product:</em> Let <span
+      class="math inline">\(f(x) = a^\TT x\)</span>, where <span
+      class="math inline">\(a \in \bb{R}^n\)</span>. For the standard
+      inner product, <span class="math display">\[f(x+h) = f(x) +
+      \iprod{a}{h},\]</span> so <span class="math inline">\(z =
+      a\)</span>.</p>
+      <p>Now consider a different inner product <span
+      class="math display">\[\iprod{x}{y}_M := \iprod{Mx}{y},\]</span>
+      where <span class="math inline">\(M\)</span> is symmetric positive
+      definite. Then <span class="math display">\[f(x+h) = f(x) +
+      \iprod{M^{-1}a}{h}_M.\]</span> Hence the representing vector <span
+      class="math inline">\(z\)</span> changes with the inner
+      product.</p></li>
+      <li><p><em>Independence of differentiability:</em>
+      Differentiability is equivalent to the existence of a linear map
+      <span class="math inline">\(L : \bb{R}^n \to \bb{R}\)</span> such
+      that <span class="math display">\[f(x+h) = f(x) + L(h) +
+      o(\|h\|).\]</span> This definition does not involve any inner
+      product.</p>
+      <p>By the Riesz representation theorem, for any chosen inner
+      product, there exists a unique vector <span
+      class="math inline">\(z\)</span> such that <span
+      class="math display">\[L(h) = \iprod{z}{h}.\]</span> Thus, while
+      the vector <span class="math inline">\(z\)</span> depends on the
+      inner product, the existence of the derivative does not.</p></li>
+      <li><p><em>Norm equivalence:</em> Let <span
+      class="math inline">\(\|\cdot\|_a\)</span> and <span
+      class="math inline">\(\|\cdot\|_b\)</span> be two norms on <span
+      class="math inline">\(\bb{R}^n\)</span>. To show they are
+      equivalent, we need to find <span class="math inline">\(c, C &gt;
+      0\)</span> such that <span class="math inline">\(c \|x\|_a \le
+      \|x\|_b \le C \|x\|_a\)</span> for all <span
+      class="math inline">\(x\)</span>.</p>
+      <p>The unit sphere <span class="math inline">\(S = \{x : \|x\|_a =
+      1\}\)</span> is compact. The function <span
+      class="math inline">\(x \mapsto \|x\|_b\)</span> is continuous on
+      <span class="math inline">\(S\)</span>, so it attains a minimum
+      <span class="math inline">\(c &gt; 0\)</span> and a maximum <span
+      class="math inline">\(C &gt; 0\)</span>. By homogeneity of norms,
+      the result follows for all <span
+      class="math inline">\(x\)</span>.</p></li>
+      <li><p><em>Riesz representation theorem:</em> Let <span
+      class="math inline">\(\{e_1,\dots,e_n\}\)</span> be an orthonormal
+      basis of <span class="math inline">\(X\)</span>. Define <span
+      class="math display">\[z := \sum_{i=1}^n L(e_i)\, e_i.\]</span>
+      Then for any <span class="math inline">\(h = \sum_i h_i
+      e_i\)</span>, <span class="math display">\[\iprod{z}{h}
+                        =
+                        \sum_{i=1}^n L(e_i) h_i
+                        =
+                        L(h).\]</span> Uniqueness follows from
+      non-degeneracy of the inner product.</p></li>
+      </ol>
+      <p> ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(X \subset \bb{R}^n\)</span> be
+      a convex set and let <span class="math inline">\(f : X \to
+      \bb{R}\)</span> be convex and differentiable. If <span
+      class="math inline">\(x^\star \in X\)</span> satisfies <span
+      class="math display">\[\nabla f(x^\star) = 0,\]</span> then <span
+      class="math inline">\(x^\star\)</span> is a global minimizer of
+      <span class="math inline">\(f\)</span> on <span
+      class="math inline">\(X\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Since <span class="math inline">\(f\)</span> is
+      convex, for any <span class="math inline">\(x, y \in X\)</span>
+      and any <span class="math inline">\(t \in [0,1]\)</span>, <span
+      class="math display">\[f(tx + (1-t)y)
+              \le
+              t f(x) + (1-t) f(y).\]</span></p>
+      <p>Fix <span class="math inline">\(x \in X\)</span> and define the
+      function <span class="math display">\[\varphi(t) := f(x^\star +
+      t(x - x^\star)),
+              \qquad t \in [0,1].\]</span> By convexity of <span
+      class="math inline">\(f\)</span>, the function <span
+      class="math inline">\(\varphi\)</span> is convex on <span
+      class="math inline">\([0,1]\)</span>.</p>
+      <p>Since <span class="math inline">\(f\)</span> is differentiable,
+      <span class="math inline">\(\varphi\)</span> is differentiable and
+      <span class="math display">\[\varphi&#39;(0)
+              =
+              \iprod{\nabla f(x^\star)}{x - x^\star}.\]</span></p>
+      <p>By assumption, <span class="math inline">\(\nabla f(x^\star) =
+      0\)</span>, hence <span class="math display">\[\varphi&#39;(0) =
+      0.\]</span></p>
+      <p>For a convex function on an interval, the derivative is
+      monotone non-decreasing. Therefore, for all <span
+      class="math inline">\(t \in [0,1]\)</span>, <span
+      class="math display">\[\varphi(t) \ge \varphi(0).\]</span></p>
+      <p>In particular, at <span class="math inline">\(t = 1\)</span>,
+      <span class="math display">\[f(x) = \varphi(1) \ge \varphi(0) =
+      f(x^\star).\]</span></p>
+      <p>Since <span class="math inline">\(x \in X\)</span> was
+      arbitrary, <span class="math inline">\(x^\star\)</span> is a
+      global minimizer of <span class="math inline">\(f\)</span>. ◻</p>
+      </div>
+      <h2 id="unconstrained-and-constrained-optimization">Unconstrained
+      and Constrained Optimization</h2>
+      <p>An <em>unconstrained optimization problem</em> is of the form
+      <span class="math display">\[\min_{x \in X} f(x),\]</span> where
+      typically <span class="math inline">\(X = \bb{R}^n\)</span> and
+      <span class="math inline">\(f : \bb{R}^n \to \bb{R}\)</span>.</p>
+      <p>In this case, every point in <span
+      class="math inline">\(X\)</span> is feasible, and optimality is
+      characterized by stationarity conditions such as <span
+      class="math display">\[\nabla f(x^\star) = 0.\]</span></p>
+      <p>A <em>constrained optimization problem</em> is given by <span
+      class="math display">\[\min_{x \in C} f(x),\]</span> where <span
+      class="math inline">\(C \subset \bb{R}^n\)</span> is a constraint
+      set and <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span>.</p>
+      <div class="definition">
+      <p>The set <span class="math display">\[C := \{ x \in \bb{R}^n :
+      \text{all constraints are satisfied} \}\]</span> is called the
+      <em>feasible set</em>. Points in <span
+      class="math inline">\(C\)</span> are called <em>feasible
+      points</em>.</p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\(C \subset \bb{R}^n\)</span>.
+      The indicator function <span class="math inline">\(\delta_C :
+      \bb{R}^n \to \bb{R} \cup \{+\infty\}\)</span> is defined as <span
+      class="math display">\[\delta_C(x)
+              :=
+              \begin{cases}
+                  0,       &amp; x \in C,    \\[4pt]
+                  +\infty, &amp; x \notin C.
+              \end{cases}\]</span></p>
+      </div>
+      <p>Then the constrained problem <span
+      class="math display">\[\min_{x \in C} f(x)\]</span> is equivalent
+      to the unconstrained problem <span class="math display">\[\min_{x
+      \in \bb{R}^n} \bigl( f(x) + \delta_C(x) \bigr).\]</span></p>
+      <div class="definition">
+      <p>Consider the constrained problem <span
+      class="math display">\[\begin{aligned}
+                  \min_{x \in \bb{R}^n} \quad &amp; f(x)        \\
+                  \text{subject to} \quad     &amp; g(x) \le 0,
+              \end{aligned}\]</span> where <span class="math inline">\(g
+      : \bb{R}^n \to \bb{R}^m\)</span>. The <em>Lagrangian</em>
+      associated with the problem is <span
+      class="math display">\[\mathcal{L}(x,\lambda)
+              :=
+              f(x) + \iprod{\lambda}{g(x)},
+              \qquad \lambda \in \bb{R}^m_+.\]</span></p>
+      </div>
+      <div class="proposition">
+      <p>If <span class="math inline">\(x^\star\)</span> is a solution
+      of the constrained problem and <span
+      class="math inline">\(\lambda^\star \ge 0\)</span> is a
+      corresponding Lagrange multiplier, then <span
+      class="math display">\[\mathcal{L}(x^\star,\lambda)
+              \le
+              \mathcal{L}(x^\star,\lambda^\star)
+              \le
+              \mathcal{L}(x,\lambda^\star)\]</span> for all feasible
+      <span class="math inline">\(x\)</span> and all <span
+      class="math inline">\(\lambda \ge 0\)</span>.</p>
+      </div>
+      <p>Thus, optimal solutions correspond to saddle points of the
+      Lagrangian.</p>
+      <div class="remark">
+      <p>Interior-point conditions (such as Slater’s condition) ensure
+      that Lagrange multipliers exist and that optimality conditions are
+      valid.</p>
+      </div>
+      <div class="example">
+      <p>Consider the problem <span class="math display">\[\min_{x \in
+      \bb{R}} x
+              \quad \text{subject to} \quad x \ge 0.\]</span> The
+      optimal solution is <span class="math inline">\(x^\star =
+      0\)</span>, which lies on the boundary of the feasible set.</p>
+      <p>If we perturb the constraint slightly, the gradient of the
+      objective cannot be balanced by any Lagrange multiplier unless the
+      feasible set has nonempty interior. This failure prevents the
+      derivation of meaningful optimality conditions.</p>
+      </div>
+      <div class="remark">
+      <p>Interior feasibility guarantees that constraints are not
+      degenerate and ensures the validity of duality and KKT conditions.
+      Without interior points, multipliers may fail to exist or be
+      unbounded.</p>
+      </div>
+      <h1 id="lecture-3">Lecture 3</h1>
+      <div class="definition">
+      <p>Let <span class="math inline">\(\bb{X}\)</span> be a normed
+      vector space.</p>
+      <ul>
+      <li><p><span class="math inline">\(\Gamma(\bb{X}) := \{ f : \bb{X}
+      \to \bb{R} \mid f \text{ is convex} \}\)</span>.</p></li>
+      <li><p><span class="math inline">\(C^0(\bb{X})\)</span> denotes
+      the space of continuous functions on <span
+      class="math inline">\(\bb{X}\)</span>.</p></li>
+      <li><p><span class="math inline">\(C^1(\bb{X})\)</span> denotes
+      the space of continuously differentiable functions on <span
+      class="math inline">\(\bb{X}\)</span>.</p></li>
+      <li><p>A function <span class="math inline">\(f : \bb{X} \to
+      \bb{R}\)</span> is called <span
+      class="math inline">\(\beta\)</span>-Lipschitz if <span
+      class="math display">\[|f(\bd{x}) - f(\bd{y})|
+                        \le \beta \|\bd{x} - \bd{y}\|
+                        \quad \text{for all } \bd{x},\bd{y} \in
+      \bb{X}.\]</span></p></li>
+      <li><p>A function <span class="math inline">\(f : \bb{X} \to
+      \bb{R}\)</span> is called <span
+      class="math inline">\(\beta\)</span>-smooth if <span
+      class="math inline">\(f \in C^1(\bb{X})\)</span> and <span
+      class="math display">\[\|\nabla f(\bd{x}) - \nabla f(\bd{y})\|
+                        \le \beta \|\bd{x} - \bd{y}\|
+                        \quad \text{for all } \bd{x},\bd{y} \in
+      \bb{X}.\]</span></p></li>
+      <li><p><span class="math display">\[C^1_\beta(\bb{X})
+                        := \{ f : \bb{X} \to \bb{R}
+                        \mid f \in C^1(\bb{X}) \text{ and }
+                        \nabla f \text{ is } \beta\text{-Lipschitz}
+      \}.\]</span></p></li>
+      </ul>
+      </div>
+      <div class="examples">
+      <ul>
+      <li><p>Let <span class="math inline">\(\bb{X}=\bb{R}^2\)</span>.
+      The function <span class="math display">\[f(\bd{x}) = \tfrac12
+      \|\bd{x}\|_2^2\]</span> is <span
+      class="math inline">\(1\)</span>-smooth.</p></li>
+      <li><p>Let <span class="math inline">\(Q \in \bb{R}^{n \times
+      n}\)</span> be symmetric positive semidefinite. The quadratic
+      function <span class="math display">\[f(\bd{x}) = \tfrac12
+      \bd{x}^\top Q \bd{x}\]</span> is <span
+      class="math inline">\(\lambda_{\max}(Q)\)</span>-smooth.</p></li>
+      <li><p>The function <span class="math display">\[f(\bd{x}) =
+      \|\bd{x}\|_2^2\]</span> is <span
+      class="math inline">\(4\)</span>-smooth on the unit ball <span
+      class="math display">\[\{ \bd{x} \in \bb{R}^n : \|\bd{x}\|_2 \le 1
+      \}.\]</span></p></li>
+      </ul>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> be continuously differentiable. Then <span
+      class="math inline">\(f\)</span> is <span
+      class="math inline">\(\beta\)</span>-Lipschitz (with respect to
+      the Euclidean norm) if and only if <span
+      class="math display">\[\|\nabla f(\bd{x})\|_2 \le \beta
+              \quad \text{for all } \bd{x} \in \bb{R}^n.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> (<span
+      class="math inline">\(\Rightarrow\)</span>) Assume <span
+      class="math inline">\(f\)</span> is <span
+      class="math inline">\(\beta\)</span>-Lipschitz. Fix <span
+      class="math inline">\(\bd{x} \in \bb{R}^n\)</span> and let <span
+      class="math inline">\(\bd{v} \in \bb{R}^n\)</span> be any unit
+      vector. For <span class="math inline">\(t \in \bb{R}\)</span>,
+      <span class="math display">\[|f(\bd{x} + t\bd{v}) - f(\bd{x})|
+              \le \beta |t|.\]</span> Dividing by <span
+      class="math inline">\(|t|\)</span> and letting <span
+      class="math inline">\(t \to 0\)</span>, we obtain <span
+      class="math display">\[|\nabla f(\bd{x})^\top \bd{v}| \le
+      \beta.\]</span> Taking the supremum over all unit vectors <span
+      class="math inline">\(\bd{v}\)</span> yields <span
+      class="math display">\[\|\nabla f(\bd{x})\|_2 \le
+      \beta.\]</span></p>
+      <p>(<span class="math inline">\(\Leftarrow\)</span>) Assume <span
+      class="math inline">\(\|\nabla f(\bd{x})\|_2 \le \beta\)</span>
+      for all <span class="math inline">\(\bd{x} \in \bb{R}^n\)</span>.
+      For any <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, define <span
+      class="math display">\[\bld{\gamma}(t) = \bd{x} + t(\bd{y} -
+      \bd{x}),
+              \quad t \in [0,1].\]</span> By the fundamental theorem of
+      calculus, <span class="math display">\[f(\bd{y}) - f(\bd{x})
+              = \int_0^1 \nabla f(\bld{\gamma}(t))^\top (\bd{y} -
+      \bd{x}) \, dt.\]</span> Applying the Cauchy–Schwarz inequality,
+      <span class="math display">\[|f(\bd{y}) - f(\bd{x})|
+              \le \int_0^1 \|\nabla f(\bld{\gamma}(t))\|_2 \, \|\bd{y} -
+      \bd{x}\|_2 \, dt
+              \le \beta \|\bd{y} - \bd{x}\|_2.\]</span> Thus, <span
+      class="math inline">\(f\)</span> is <span
+      class="math inline">\(\beta\)</span>-Lipschitz. ◻</p>
+      </div>
+      <div class="exercise">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> be differentiable. The following statements are
+      equivalent:</p>
+      <ol>
+      <li><p><span class="math inline">\(f\)</span> is convex.</p></li>
+      <li><p>For all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, <span class="math display">\[f(\bd{y})
+                        \ge
+                        f(\bd{x})
+                        +
+                        \langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span></p></li>
+      <li><p>For all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, <span class="math display">\[\langle \nabla
+      f(\bd{x}) - \nabla f(\bd{y}), \bd{x} - \bd{y} \rangle \ge
+      0.\]</span></p></li>
+      </ol>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> We prove the equivalence by showing <span
+      class="math inline">\((1)\Rightarrow(2)\Rightarrow(3)\Rightarrow(1)\)</span>.</p>
+      <p><span class="math inline">\((1)\Rightarrow(2)\)</span>. Assume
+      that <span class="math inline">\(f\)</span> is convex. Fix <span
+      class="math inline">\(\bd{x}, \bd{y} \in \bb{R}^n\)</span> and
+      define <span class="math display">\[\phi(t) := f(\bd{x} + t(\bd{y}
+      - \bd{x})), \quad t \in [0,1].\]</span> Since <span
+      class="math inline">\(f\)</span> is convex and differentiable,
+      <span class="math inline">\(\phi\)</span> is convex and
+      differentiable. By convexity of <span
+      class="math inline">\(\phi\)</span>, <span
+      class="math display">\[\phi(1) \ge \phi(0) +
+      \phi&#39;(0).\]</span> Using the chain rule, <span
+      class="math display">\[\phi&#39;(0)
+              =
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span> Substituting <span
+      class="math inline">\(\phi(1)=f(\bd{y})\)</span> and <span
+      class="math inline">\(\phi(0)=f(\bd{x})\)</span> yields <span
+      class="math display">\[f(\bd{y})
+              \ge
+              f(\bd{x})
+              +
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span></p>
+      <p><span class="math inline">\((2)\Rightarrow(3)\)</span>. Assume
+      that (2) holds. Applying (2) with <span
+      class="math inline">\((\bd{x},\bd{y})\)</span> gives <span
+      class="math display">\[f(\bd{y})
+              \ge
+              f(\bd{x})
+              +
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span> Applying (2) with <span
+      class="math inline">\((\bd{y},\bd{x})\)</span> gives <span
+      class="math display">\[f(\bd{x})
+              \ge
+              f(\bd{y})
+              +
+              \langle \nabla f(\bd{y}), \bd{x} - \bd{y}
+      \rangle.\]</span> Adding the two inequalities and simplifying
+      yields <span class="math display">\[\langle \nabla f(\bd{x}) -
+      \nabla f(\bd{y}),
+              \bd{x} - \bd{y} \rangle \ge 0.\]</span></p>
+      <p><span class="math inline">\((3)\Rightarrow(1)\)</span>. Assume
+      that (3) holds. Fix <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span> and define <span
+      class="math display">\[\bld{\gamma}(t) := (1-t)\bd{x} + t\bd{y},
+              \quad t \in [0,1],\]</span> and <span
+      class="math display">\[\phi(t) := f(\bld{\gamma}(t)).\]</span> By
+      the chain rule, <span class="math display">\[\phi&#39;(t)
+              =
+              \langle \nabla f(\bld{\gamma}(t)), \bd{y} - \bd{x}
+      \rangle.\]</span> Applying (3) with <span
+      class="math inline">\(\bd{x}=\bld{\gamma}(t)\)</span> and <span
+      class="math inline">\(\bd{y}=\bd{x}\)</span> gives <span
+      class="math display">\[\langle \nabla f(\bld{\gamma}(t)) - \nabla
+      f(\bd{x}),
+              \bld{\gamma}(t) - \bd{x} \rangle \ge 0.\]</span> Since
+      <span
+      class="math inline">\(\bld{\gamma}(t)-\bd{x}=t(\bd{y}-\bd{x})\)</span>,
+      this implies <span class="math display">\[\phi&#39;(t) \ge
+      \phi&#39;(0).\]</span> Thus <span
+      class="math inline">\(\phi&#39;\)</span> is nondecreasing on <span
+      class="math inline">\([0,1]\)</span>, and hence <span
+      class="math inline">\(\phi\)</span> is convex. Therefore, <span
+      class="math display">\[f(\bld{\gamma}(t))
+              \le
+              (1-t)f(\bd{x}) + t f(\bd{y}),
+              \quad \text{for all } t \in [0,1].\]</span> This is
+      precisely the definition of convexity of <span
+      class="math inline">\(f\)</span>. ◻</p>
+      </div>
+      <div class="remark">
+      <p>When <span class="math inline">\(n=1\)</span>, condition (3)
+      reduces to <span class="math display">\[(f&#39;(x) - f&#39;(y))(x
+      - y) \ge 0,\]</span> which is equivalent to monotonicity of <span
+      class="math inline">\(f&#39;\)</span>. Hence, a differentiable
+      function <span class="math inline">\(f : \bb{R} \to
+      \bb{R}\)</span> is convex if and only if its derivative is
+      nondecreasing.</p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(f \in
+      C^1_\beta(\bb{X})\)</span>, where <span
+      class="math inline">\(\bb{X} \subset \bb{R}^n\)</span>. Then, for
+      all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{X}\)</span>, <span class="math display">\[f(\bd{y})
+              \le
+              f(\bd{x})
+              +
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x} \rangle
+              +
+              \frac{\beta}{2}\|\bd{y} - \bd{x}\|_2^2.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Fix <span class="math inline">\(\bd{x}, \bd{y}
+      \in \bb{X}\)</span> and define <span
+      class="math display">\[\bld{\gamma}(t) := \bd{x} + t(\bd{y} -
+      \bd{x}),
+              \quad t \in [0,1],\]</span> and <span
+      class="math display">\[\phi(t) := f(\bld{\gamma}(t)).\]</span> By
+      the chain rule, <span class="math display">\[\phi&#39;(t)
+              =
+              \langle \nabla f(\bld{\gamma}(t)), \bd{y} - \bd{x}
+      \rangle.\]</span> Using the fundamental theorem of calculus, <span
+      class="math display">\[f(\bd{y}) - f(\bd{x})
+              =
+              \phi(1) - \phi(0)
+              =
+              \int_0^1 \phi&#39;(t)\, dt.\]</span> Add and subtract
+      <span class="math inline">\(\nabla f(\bd{x})\)</span> inside the
+      integrand: <span class="math display">\[\begin{aligned}
+                  f(\bd{y}) - f(\bd{x})
+                   &amp; =
+                  \int_0^1
+                  \langle \nabla f(\bd{x}), \bd{y} - \bd{x} \rangle \,
+      dt \\
+                   &amp; \quad +
+                  \int_0^1
+                  \langle \nabla f(\bld{\gamma}(t)) - \nabla f(\bd{x}),
+                  \bd{y} - \bd{x} \rangle \, dt.
+              \end{aligned}\]</span> The first term gives <span
+      class="math display">\[\langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span> For the second term, by Cauchy–Schwarz and <span
+      class="math inline">\(\beta\)</span>-Lipschitz continuity of <span
+      class="math inline">\(\nabla f\)</span>, <span
+      class="math display">\[\begin{aligned}
+                  \left|
+                  \langle \nabla f(\bld{\gamma}(t)) - \nabla f(\bd{x}),
+                  \bd{y} - \bd{x} \rangle
+                  \right|
+                   &amp; \le
+                  \|\nabla f(\bld{\gamma}(t)) - \nabla f(\bd{x})\|_2
+                  \|\bd{y} - \bd{x}\|_2 \\
+                   &amp; \le
+                  \beta t \|\bd{y} - \bd{x}\|_2^2.
+              \end{aligned}\]</span> Integrating over <span
+      class="math inline">\(t \in [0,1]\)</span> yields <span
+      class="math display">\[\int_0^1 \beta t \|\bd{y} - \bd{x}\|_2^2 \,
+      dt
+              =
+              \frac{\beta}{2}\|\bd{y} - \bd{x}\|_2^2.\]</span> Combining
+      all terms gives <span class="math display">\[f(\bd{y})
+              \le
+              f(\bd{x})
+              +
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x} \rangle
+              +
+              \frac{\beta}{2}\|\bd{y} - \bd{x}\|_2^2.\]</span> ◻</p>
+      </div>
+      <div class="lemma">
+      <p><span id="lem:smoothness" data-label="lem:smoothness"></span>
+      Let <span class="math inline">\(f \in C^1_\beta(\bb{X})\)</span>
+      and let <span class="math inline">\(\gamma \in (0,
+      2/\beta]\)</span>. Consider the gradient descent iteration <span
+      class="math display">\[\bd{x}_{k+1} = \bd{x}_k - \gamma \nabla
+      f(\bd{x}_k),
+              \quad \bd{x}_0 \in \bb{X}.\]</span> Then, for all <span
+      class="math inline">\(k \ge 0\)</span>, <span
+      class="math display">\[f(\bd{x}_{k+1}) \le f(\bd{x}_k),\]</span>
+      and more precisely, <span class="math display">\[f(\bd{x}_{k+1})
+              \le
+              f(\bd{x}_k)
+              -
+              \gamma\Bigl(1 - \tfrac{\beta\gamma}{2}\Bigr)
+              \|\nabla f(\bd{x}_k)\|_2^2.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Fix <span class="math inline">\(k \ge
+      0\)</span>. Apply Lemma <a href="#lem:smoothness"
+      data-reference-type="ref"
+      data-reference="lem:smoothness">[lem:smoothness]</a> (the
+      smoothness upper bound) with <span class="math display">\[\bd{x} =
+      \bd{x}_k,
+              \qquad
+              \bd{y} = \bd{x}_{k+1}.\]</span> Since <span
+      class="math display">\[\bd{x}_{k+1} - \bd{x}_k
+              =
+              - \gamma \nabla f(\bd{x}_k),\]</span> Lemma <a
+      href="#lem:smoothness" data-reference-type="ref"
+      data-reference="lem:smoothness">[lem:smoothness]</a> yields <span
+      class="math display">\[\begin{aligned}
+                  f(\bd{x}_{k+1})
+                   &amp; \le
+                  f(\bd{x}_k)
+                  +
+                  \langle \nabla f(\bd{x}_k),
+                  \bd{x}_{k+1} - \bd{x}_k \rangle
+                  +
+                  \frac{\beta}{2}\|\bd{x}_{k+1} - \bd{x}_k\|_2^2 \\
+                   &amp; =
+                  f(\bd{x}_k)
+                  -
+                  \gamma \|\nabla f(\bd{x}_k)\|_2^2
+                  +
+                  \frac{\beta}{2}\gamma^2
+                  \|\nabla f(\bd{x}_k)\|_2^2.
+              \end{aligned}\]</span> Rearranging gives <span
+      class="math display">\[f(\bd{x}_{k+1})
+              \le
+              f(\bd{x}_k)
+              -
+              \gamma\Bigl(1 - \tfrac{\beta\gamma}{2}\Bigr)
+              \|\nabla f(\bd{x}_k)\|_2^2.\]</span> If <span
+      class="math inline">\(\gamma \in (0,2/\beta]\)</span>, then <span
+      class="math inline">\(1 - \tfrac{\beta\gamma}{2} \ge 0\)</span>,
+      and hence <span class="math inline">\(f(\bd{x}_{k+1}) \le
+      f(\bd{x}_k)\)</span>. ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(f \in
+      C^1_\beta(\bb{R}^n)\)</span> be convex and let <span
+      class="math inline">\(\bd{x}^\ast \in \arg\min f\)</span> with
+      <span class="math inline">\(p^\ast := f(\bd{x}^\ast)\)</span>.
+      Consider gradient descent with step size <span
+      class="math inline">\(\gamma \in (0, 1/\beta]\)</span>: <span
+      class="math display">\[\bd{x}_{k+1} = \bd{x}_k - \gamma \nabla
+      f(\bd{x}_k).\]</span> Define <span class="math display">\[\delta_k
+      := f(\bd{x}_k) - p^\ast.\]</span> Then:</p>
+      <ol>
+      <li><p><span class="math inline">\(\{f(\bd{x}_k)\}\)</span> is
+      nonincreasing and bounded below by <span
+      class="math inline">\(p^\ast\)</span>;</p></li>
+      <li><p><span class="math inline">\(\sum_{k=0}^\infty \|\nabla
+      f(\bd{x}_k)\|_2^2 &lt; \infty\)</span>;</p></li>
+      <li><p>there exists <span class="math inline">\(C &gt; 0\)</span>
+      such that <span class="math display">\[\delta_k \le \frac{C}{k}
+                        \quad \text{for all } k \ge 1.\]</span></p></li>
+      </ol>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> By the descent lemma, for <span
+      class="math inline">\(\gamma \le 1/\beta\)</span>, <span
+      class="math display">\[f(\bd{x}_{k+1})
+              \le
+              f(\bd{x}_k)
+              -
+              \frac{\gamma}{2}\|\nabla f(\bd{x}_k)\|_2^2.\]</span>
+      Subtracting <span class="math inline">\(p^\ast\)</span> from both
+      sides yields <span class="math display">\[\delta_{k+1}
+              \le
+              \delta_k
+              -
+              \frac{\gamma}{2}\|\nabla f(\bd{x}_k)\|_2^2.
+              \tag{1}\]</span> Hence <span
+      class="math inline">\(\{\delta_k\}\)</span> is nonincreasing and
+      bounded below by <span class="math inline">\(0\)</span>, and
+      therefore <span class="math display">\[\delta_k \to v \ge
+      0.\]</span></p>
+      <p>Summing inequality <em>(1)</em> from <span
+      class="math inline">\(k=0\)</span> to <span
+      class="math inline">\(N-1\)</span> gives <span
+      class="math display">\[\delta_N
+              \le
+              \delta_0
+              -
+              \frac{\gamma}{2}
+              \sum_{k=0}^{N-1}
+              \|\nabla f(\bd{x}_k)\|_2^2.\]</span> Since <span
+      class="math inline">\(\delta_N \ge 0\)</span>, we obtain <span
+      class="math display">\[\sum_{k=0}^{\infty}
+              \|\nabla f(\bd{x}_k)\|_2^2
+              \le
+              \frac{2}{\gamma}\delta_0
+              &lt; \infty.
+              \tag{2}\]</span></p>
+      <p>By convexity of <span class="math inline">\(f\)</span>, <span
+      class="math display">\[f(\bd{x}_k) - p^\ast
+              \le
+              \langle \nabla f(\bd{x}_k), \bd{x}_k - \bd{x}^\ast
+      \rangle.\]</span> Using the Cauchy–Schwarz inequality, <span
+      class="math display">\[\delta_k
+              \le
+              \|\nabla f(\bd{x}_k)\|_2
+              \|\bd{x}_k - \bd{x}^\ast\|_2.\]</span> Since <span
+      class="math inline">\(\{f(\bd{x}_k)\}\)</span> is decreasing and
+      <span class="math inline">\(f\)</span> is coercive on level sets,
+      there exists <span class="math inline">\(R &gt; 0\)</span> such
+      that <span class="math display">\[\|\bd{x}_k - \bd{x}^\ast\|_2 \le
+      R
+              \quad \text{for all } k.\]</span></p>
+      <p>The boundedness of <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is established later
+      using Fejér monotonicity; see Remark <a
+      href="#rem:fejer-boundedness" data-reference-type="ref"
+      data-reference="rem:fejer-boundedness">[rem:fejer-boundedness]</a>.</p>
+      <p>Thus, <span class="math display">\[\delta_k
+              \le
+              R \|\nabla f(\bd{x}_k)\|_2.
+              \tag{3}\]</span></p>
+      <p>Combining <em>(1)</em> and <em>(3)</em>, we obtain <span
+      class="math display">\[\delta_{k+1}
+              \le
+              \delta_k
+              -
+              \frac{\gamma}{2R^2}
+              \delta_k^2.\]</span> This implies <span
+      class="math display">\[\frac{1}{\delta_{k+1}}
+              \ge
+              \frac{1}{\delta_k}
+              +
+              \frac{\gamma}{2R^2}.\]</span> Iterating, <span
+      class="math display">\[\frac{1}{\delta_k}
+              \ge
+              \frac{1}{\delta_0}
+              +
+              k\frac{\gamma}{2R^2}.\]</span> Taking reciprocals yields
+      <span class="math display">\[\delta_k
+              \le
+              \frac{2R^2}{\gamma k}
+              = \frac{C}{k},
+              \quad
+              C := \frac{2R^2}{\gamma}.\]</span> ◻</p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:fejer-boundedness"
+      data-label="rem:fejer-boundedness"></span> The boundedness
+      assumption used in the proof above is not restrictive. In fact,
+      for <span class="math inline">\(\gamma \in (0,1/\beta]\)</span>,
+      the gradient descent iterates <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> are Fejér monotone
+      with respect to <span class="math inline">\(\arg\min f\)</span>,
+      which implies boundedness and convergence.</p>
+      </div>
+      <div class="lemma">
+      <p><span id="lem:baillon-haddad"
+      data-label="lem:baillon-haddad"></span> Let <span
+      class="math inline">\(f : \bb{R}^n \to \bb{R}\)</span> be convex
+      and continuously differentiable. If <span
+      class="math inline">\(\nabla f\)</span> is <span
+      class="math inline">\(\beta\)</span>-Lipschitz, then <span
+      class="math inline">\(\nabla f\)</span> is <span
+      class="math inline">\(\frac{1}{\beta}\)</span>-cocoercive, i.e.,
+      for all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, <span class="math display">\[\langle \nabla
+      f(\bd{x}) - \nabla f(\bd{y}),
+              \bd{x} - \bd{y} \rangle
+              \ge
+              \frac{1}{\beta}
+              \|\nabla f(\bd{x}) - \nabla f(\bd{y})\|_2^2.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Since <span class="math inline">\(f \in
+      C^1_\beta(\bb{R}^n)\)</span>, the descent lemma gives, for all
+      <span class="math inline">\(\bd{x}, \bd{y} \in \bb{R}^n\)</span>,
+      <span class="math display">\[f(\bd{y})
+              \le
+              f(\bd{x})
+              +
+              \langle \nabla f(\bd{x}), \bd{y} - \bd{x} \rangle
+              +
+              \frac{\beta}{2}\|\bd{y} - \bd{x}\|_2^2.
+              \tag{1}\]</span> Exchanging the roles of <span
+      class="math inline">\(\bd{x}\)</span> and <span
+      class="math inline">\(\bd{y}\)</span> yields <span
+      class="math display">\[f(\bd{x})
+              \le
+              f(\bd{y})
+              +
+              \langle \nabla f(\bd{y}), \bd{x} - \bd{y} \rangle
+              +
+              \frac{\beta}{2}\|\bd{x} - \bd{y}\|_2^2.
+              \tag{2}\]</span> Adding <em>(1)</em> and <em>(2)</em>
+      gives <span class="math display">\[\langle \nabla f(\bd{x}) -
+      \nabla f(\bd{y}),
+              \bd{x} - \bd{y} \rangle
+              \le
+              \beta \|\bd{x} - \bd{y}\|_2^2.
+              \tag{3}\]</span></p>
+      <p>On the other hand, since <span class="math inline">\(\nabla
+      f\)</span> is <span
+      class="math inline">\(\beta\)</span>-Lipschitz, <span
+      class="math display">\[\|\nabla f(\bd{x}) - \nabla f(\bd{y})\|_2^2
+              \le
+              \beta
+              \langle \nabla f(\bd{x}) - \nabla f(\bd{y}),
+              \bd{x} - \bd{y} \rangle.\]</span> Rearranging yields the
+      desired inequality: <span class="math display">\[\langle \nabla
+      f(\bd{x}) - \nabla f(\bd{y}),
+              \bd{x} - \bd{y} \rangle
+              \ge
+              \frac{1}{\beta}
+              \|\nabla f(\bd{x}) - \nabla
+      f(\bd{y})\|_2^2.\]</span> ◻</p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\(\mathcal{C} \subset
+      \bb{R}^n\)</span> be nonempty. A sequence <span
+      class="math inline">\(\{\bd{x}_k\} \subset \bb{R}^n\)</span> is
+      said to be <em>Fejér monotone</em> with respect to <span
+      class="math inline">\(\mathcal{C}\)</span> if <span
+      class="math display">\[\|\bd{x}_{k+1} - \bd{z}\|_2
+              \le
+              \|\bd{x}_k - \bd{z}\|_2
+              \quad \text{for all } \bd{z} \in \mathcal{C} \text{ and
+      all } k \ge 0.\]</span></p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(f \in
+      C^1_\beta(\bb{R}^n)\)</span> be convex and let <span
+      class="math inline">\(\mathcal{X}^\ast := \arg\min f \neq
+      \varnothing\)</span>. Assume <span class="math inline">\(\gamma
+      \in (0,1/\beta]\)</span> and consider <span
+      class="math display">\[\bd{x}_{k+1} = \bd{x}_k - \gamma \nabla
+      f(\bd{x}_k).\]</span> Then <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is Fejér monotone with
+      respect to <span
+      class="math inline">\(\mathcal{X}^\ast\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Fix <span class="math inline">\(\bd{x}^\ast \in
+      \mathcal{X}^\ast\)</span>. We compute <span
+      class="math display">\[\bd{x}_{k+1}-\bd{x}^\ast
+              =
+              \bd{x}_k-\bd{x}^\ast
+              -
+              \gamma \nabla f(\bd{x}_k).\]</span> Taking squared norms,
+      <span class="math display">\[\begin{aligned}
+                  \|\bd{x}_{k+1}-\bd{x}^\ast\|_2^2
+                   &amp; =
+                  \|\bd{x}_k-\bd{x}^\ast\|_2^2
+                  -2\gamma\langle\nabla
+      f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle
+                  +\gamma^2\|\nabla f(\bd{x}_k)\|_2^2.
+              \end{aligned}\]</span></p>
+      <p>By convexity of <span class="math inline">\(f\)</span>, <span
+      class="math display">\[\langle\nabla
+      f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle
+              \ge
+              f(\bd{x}_k)-f(\bd{x}^\ast).
+              \tag{1}\]</span></p>
+      <p>Since <span class="math inline">\(f\)</span> is convex and
+      <span class="math inline">\(\beta\)</span>-smooth, the
+      Baillon–Haddad  <a href="#lem:baillon-haddad"
+      data-reference-type="ref"
+      data-reference="lem:baillon-haddad">[lem:baillon-haddad]</a>
+      implies that <span class="math inline">\(\nabla f\)</span> is
+      <span class="math inline">\(1/\beta\)</span>-cocoercive. In
+      particular, using <span class="math inline">\(\nabla
+      f(\bd{x}^\ast)=0\)</span>, we obtain <span
+      class="math display">\[\|\nabla f(\bd{x}_k)\|_2^2
+              \le
+              \beta\,
+              \langle\nabla f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle.
+              \tag{2}\]</span></p>
+      <p>Substituting <em>(1)</em> and <em>(2)</em> into the norm
+      identity yields <span class="math display">\[\begin{aligned}
+                  \|\bd{x}_{k+1}-\bd{x}^\ast\|_2^2
+                   &amp; \le
+                  \|\bd{x}_k-\bd{x}^\ast\|_2^2
+                  -2\gamma\langle\nabla
+      f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle
+                  +\beta\gamma^2\langle\nabla
+      f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle \\
+                   &amp; =
+                  \|\bd{x}_k-\bd{x}^\ast\|_2^2
+                  -\gamma(2-\beta\gamma)
+                  \langle\nabla f(\bd{x}_k),\bd{x}_k-\bd{x}^\ast\rangle.
+              \end{aligned}\]</span></p>
+      <p>Since <span class="math inline">\(\gamma \le 1/\beta\)</span>,
+      the coefficient <span
+      class="math inline">\((2-\beta\gamma)\)</span> is nonnegative, and
+      using <em>(1)</em> once more, we conclude <span
+      class="math display">\[\|\bd{x}_{k+1}-\bd{x}^\ast\|_2^2
+              \le
+              \|\bd{x}_k-\bd{x}^\ast\|_2^2.\]</span> Hence, <span
+      class="math display">\[\|\bd{x}_{k+1}-\bd{x}^\ast\|_2
+              \le
+              \|\bd{x}_k-\bd{x}^\ast\|_2,\]</span> which proves Fejér
+      monotonicity. ◻</p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(\{\bd{x}_k\}\)</span> be Fejér
+      monotone with respect to a closed set <span
+      class="math inline">\(\mathcal{C}\subset\bb{R}^n\)</span>. If
+      there exists a subsequence <span
+      class="math inline">\(\bd{x}_{k_j}\to\bd{x}^\ast\in\mathcal{C}\)</span>,
+      then <span
+      class="math inline">\(\bd{x}_k\to\bd{x}^\ast\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Since <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is Fejér monotone with
+      respect to <span class="math inline">\(\mathcal{C}\)</span>, it is
+      bounded. Hence, by the Bolzano-Weierstrass theorem, it admits a
+      convergent subsequence <span
+      class="math inline">\(\bd{x}_{k_j}\to\bd{x}^\ast\in\mathcal{C}\)</span>.</p>
+      <p>Fix <span class="math inline">\(\bd{z}=\bd{x}^\ast\)</span>. By
+      Fejér monotonicity, <span
+      class="math display">\[\|\bd{x}_{k+1}-\bd{x}^\ast\|_2
+              \le
+              \|\bd{x}_k-\bd{x}^\ast\|_2,\]</span> so the sequence <span
+      class="math inline">\(\|\bd{x}_k-\bd{x}^\ast\|_2\)</span> is
+      nonincreasing and converges to some <span
+      class="math inline">\(\ell\ge0\)</span>.</p>
+      <p>Along the subsequence, <span
+      class="math display">\[\|\bd{x}_{k_j}-\bd{x}^\ast\|_2 \to
+      0,\]</span> hence <span class="math inline">\(\ell=0\)</span>.
+      Therefore, <span class="math display">\[\bd{x}_k \to
+      \bd{x}^\ast.\]</span> ◻</p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(f \in
+      C^1_\beta(\bb{R}^n)\)</span> be convex and let <span
+      class="math inline">\(\bd{x}^\ast \in \arg\min f\)</span>. Assume
+      <span class="math inline">\(\gamma \in (0, 1/\beta]\)</span> and
+      consider the gradient descent iteration <span
+      class="math display">\[\bd{x}_{k+1} = \bd{x}_k - \gamma \nabla
+      f(\bd{x}_k).\]</span> Then the sequence <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is Fejér monotone with
+      respect to the solution set <span
+      class="math inline">\(\mathcal{X}^\ast := \arg\min f\)</span>,
+      i.e., <span class="math display">\[\|\bd{x}_{k+1} -
+      \bd{x}^\ast\|_2
+              \le
+              \|\bd{x}_k - \bd{x}^\ast\|_2
+              \quad \text{for all } \bd{x}^\ast \in
+      \mathcal{X}^\ast,\]</span> and in particular <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is bounded.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Fix <span class="math inline">\(\bd{x}^\ast \in
+      \mathcal{X}^\ast\)</span>. Using the update rule, <span
+      class="math display">\[\bd{x}_{k+1} - \bd{x}^\ast
+              =
+              \bd{x}_k - \bd{x}^\ast
+              -
+              \gamma \nabla f(\bd{x}_k).\]</span> Taking squared norms,
+      <span class="math display">\[\begin{aligned}
+                  \|\bd{x}_{k+1} - \bd{x}^\ast\|_2^2
+                   &amp; =
+                  \|\bd{x}_k - \bd{x}^\ast\|_2^2
+                  - 2\gamma
+                  \langle \nabla f(\bd{x}_k), \bd{x}_k - \bd{x}^\ast
+      \rangle
+                  + \gamma^2 \|\nabla f(\bd{x}_k)\|_2^2.
+              \end{aligned}\]</span> By convexity of <span
+      class="math inline">\(f\)</span> and optimality of <span
+      class="math inline">\(\bd{x}^\ast\)</span>, <span
+      class="math display">\[\langle \nabla f(\bd{x}_k), \bd{x}_k -
+      \bd{x}^\ast \rangle
+              \ge
+              f(\bd{x}_k) - f(\bd{x}^\ast).
+              \tag{1}\]</span> By <span
+      class="math inline">\(\beta\)</span>-smoothness, <span
+      class="math display">\[\|\nabla f(\bd{x}_k)\|_2^2
+              \le
+              2\beta \bigl(f(\bd{x}_k) - f(\bd{x}^\ast)\bigr).
+              \tag{2}\]</span> Substituting <em>(1)</em> and
+      <em>(2)</em> into the squared norm expression yields <span
+      class="math display">\[\begin{aligned}
+                  \|\bd{x}_{k+1} - \bd{x}^\ast\|_2^2
+                   &amp; \le
+                  \|\bd{x}_k - \bd{x}^\ast\|_2^2
+                  - 2\gamma \bigl(f(\bd{x}_k) - f(\bd{x}^\ast)\bigr)
+                  + 2\beta\gamma^2 \bigl(f(\bd{x}_k) -
+      f(\bd{x}^\ast)\bigr) \\
+                   &amp; =
+                  \|\bd{x}_k - \bd{x}^\ast\|_2^2
+                  - 2\gamma(1 - \beta\gamma)
+                  \bigl(f(\bd{x}_k) - f(\bd{x}^\ast)\bigr).
+              \end{aligned}\]</span> Since <span
+      class="math inline">\(\gamma \le 1/\beta\)</span>, the coefficient
+      <span class="math inline">\(2\gamma(1-\beta\gamma)\)</span> is
+      nonnegative, and hence <span class="math display">\[\|\bd{x}_{k+1}
+      - \bd{x}^\ast\|_2^2
+              \le
+              \|\bd{x}_k - \bd{x}^\ast\|_2^2.\]</span> Therefore, <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is Fejér monotone with
+      respect to <span class="math inline">\(\mathcal{X}^\ast\)</span>.
+      In particular, the sequence <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> is bounded. ◻</p>
+      </div>
+      <div class="lemma">
+      <p><span id="lem:convergence_fejer_monotone_limit"
+      data-label="lem:convergence_fejer_monotone_limit"></span> Let
+      <span class="math inline">\(\mathcal{C} \subset \bb{R}^n\)</span>
+      be nonempty and closed, and let <span
+      class="math inline">\(\{\bd{x}_k\} \subset \bb{R}^n\)</span> be
+      Fejér monotone with respect to <span
+      class="math inline">\(\mathcal{C}\)</span>, i.e., <span
+      class="math display">\[\|\bd{x}_{k+1} - \bd{z}\|_2
+              \le
+              \|\bd{x}_k - \bd{z}\|_2
+              \quad \text{for all } \bd{z} \in \mathcal{C},\ \forall k
+      \ge 0.\]</span> If there exists a subsequence <span
+      class="math inline">\(\{\bd{x}_{k_j}\}\)</span> and a point <span
+      class="math inline">\(\bd{x}^\ast \in \mathcal{C}\)</span> such
+      that <span class="math display">\[\bd{x}_{k_j} \to
+      \bd{x}^\ast,\]</span> then the whole sequence converges: <span
+      class="math display">\[\bd{x}_k \to \bd{x}^\ast.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Fix <span class="math inline">\(\bd{z} =
+      \bd{x}^\ast \in \mathcal{C}\)</span>. By Fejér monotonicity, the
+      sequence <span class="math display">\[d_k := \|\bd{x}_k -
+      \bd{x}^\ast\|_2\]</span> is nonincreasing and bounded below by
+      <span class="math inline">\(0\)</span>. Hence, there exists <span
+      class="math inline">\(\ell \ge 0\)</span> such that <span
+      class="math display">\[d_k \to \ell.\]</span></p>
+      <p>On the other hand, along the convergent subsequence, <span
+      class="math display">\[d_{k_j}
+              =
+              \|\bd{x}_{k_j} - \bd{x}^\ast\|_2
+              \to 0.\]</span> Therefore, <span
+      class="math inline">\(\ell = 0\)</span>. It follows that <span
+      class="math display">\[\|\bd{x}_k - \bd{x}^\ast\|_2 \to
+      0,\]</span> and hence <span class="math inline">\(\bd{x}_k \to
+      \bd{x}^\ast\)</span>. ◻</p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(f \in
+      C^1_\beta(\bb{R}^n)\)</span> be convex and let <span
+      class="math inline">\(\mathcal{X}^\ast := \arg\min f \neq
+      \varnothing\)</span>. Assume <span class="math inline">\(\gamma
+      \in (0,1/\beta]\)</span> and consider the gradient descent
+      iteration <span class="math display">\[\bd{x}_{k+1} = \bd{x}_k -
+      \gamma \nabla f(\bd{x}_k).\]</span> Then the sequence <span
+      class="math inline">\(\{\bd{x}_k\}\)</span> converges to a point
+      <span class="math inline">\(\bd{x}^\ast \in
+      \mathcal{X}^\ast\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> By Fejér monotonicity with respect to <span
+      class="math inline">\(\mathcal{X}^\ast\)</span>, the sequence
+      <span class="math inline">\(\{\bd{x}_k\}\)</span> is bounded.
+      Hence, by the Bolzano–Weierstrass theorem, there exists a
+      subsequence <span class="math inline">\(\{\bd{x}_{k_j}\}\)</span>
+      and a point <span class="math inline">\(\bd{x}^\ast \in
+      \bb{R}^n\)</span> such that <span
+      class="math display">\[\bd{x}_{k_j} \to \bd{x}^\ast.\]</span></p>
+      <p>By the descent lemma, <span
+      class="math display">\[f(\bd{x}_{k+1})
+              \le
+              f(\bd{x}_k)
+              -
+              \frac{\gamma}{2}\|\nabla f(\bd{x}_k)\|_2^2,\]</span> which
+      implies <span class="math display">\[\|\nabla f(\bd{x}_k)\|_2 \to
+      0.\]</span> By continuity of <span class="math inline">\(\nabla
+      f\)</span>, <span class="math display">\[\nabla f(\bd{x}^\ast) =
+      0.\]</span></p>
+      <p>Since <span class="math inline">\(f\)</span> is convex, this
+      implies <span class="math inline">\(\bd{x}^\ast \in
+      \mathcal{X}^\ast\)</span>.</p>
+      <p>By Fejér monotonicity and Lemma <a
+      href="#lem:convergence_fejer_monotone_limit"
+      data-reference-type="ref"
+      data-reference="lem:convergence_fejer_monotone_limit">[lem:convergence_fejer_monotone_limit]</a>,
+      the sequence <span class="math inline">\(\{\bd{x}_k\}\)</span>
+      converges to <span class="math inline">\(\bd{x}^\ast \in
+      \mathcal{X}^\ast\)</span>. ◻</p>
+      </div>
+      <div class="lemma">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\)</span> be differentiable. The following statements are
+      equivalent:</p>
+      <ol>
+      <li><p><span class="math inline">\(f\)</span> is convex.</p></li>
+      <li><p>For all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, <span class="math display">\[f(\bd{y})
+                        \ge
+                        f(\bd{x})
+                        +
+                        \langle \nabla f(\bd{x}), \bd{y} - \bd{x}
+      \rangle.\]</span></p></li>
+      <li><p>For all <span class="math inline">\(\bd{x}, \bd{y} \in
+      \bb{R}^n\)</span>, <span class="math display">\[\langle \nabla
+      f(\bd{x}) - \nabla f(\bd{y}),
+                        \bd{x} - \bd{y} \rangle \ge 0.\]</span></p></li>
+      </ol>
+      </div>
+      <h1 id="projected-gradient-descent">Projected Gradient
+      Descent</h1>
+      <div class="definition">
+      <p><span id="def:projection" data-label="def:projection"></span>
+      Let <span class="math inline">\(\bb{X} \subset \bb{R}^n\)</span>
+      be nonempty, closed, and convex. The projection operator <span
+      class="math inline">\(\Pi_{\bb{X}} : \bb{R}^n \to \bb{X}\)</span>
+      is defined by <span class="math display">\[\Pi_{\bb{X}}(\bd{z})
+              :=
+              \arg\min_{\bd{x} \in \bb{X}}
+              \|\bd{x} - \bd{z}\|_2.\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:projection" data-label="prop:projection"></span>
+      Let <span class="math inline">\(\bb{X} \subset \bb{R}^n\)</span>
+      be closed and convex. Then:</p>
+      <ol>
+      <li><p><span class="math inline">\(\Pi_{\bb{X}}\)</span> is
+      well-defined and single-valued.</p></li>
+      <li><p><span class="math inline">\(\Pi_{\bb{X}}\)</span> is
+      nonexpansive: <span class="math display">\[\|\Pi_{\bb{X}}(\bd{x})
+      - \Pi_{\bb{X}}(\bd{y})\|_2
+                        \le
+                        \|\bd{x} - \bd{y}\|_2.\]</span></p></li>
+      <li><p>(Projection inequality) <span
+      class="math display">\[\langle \bd{z} - \Pi_{\bb{X}}(\bd{z}),
+                        \bd{x} - \Pi_{\bb{X}}(\bd{z}) \rangle \le 0,
+                        \quad \forall \bd{x} \in
+      \bb{X}.\]</span></p></li>
+      </ol>
+      </div>
+      <div class="proof">
+      <p><em>Proof of (1): Existence.</em> Let <span
+      class="math inline">\(\mathcal{C} \subset \bb{R}^n\)</span> be
+      nonempty, closed, and convex, and fix <span
+      class="math inline">\(\bd{x} \in \bb{R}^n\)</span>. Choose any
+      point <span class="math inline">\(\bd{x}_0 \in
+      \mathcal{C}\)</span> and consider the problem: <span
+      class="math display">\[\min_{\bd{z} \in \mathcal{C}} \frac12
+      \|\bd{z} - \bd{x}\|_2^2.\]</span></p>
+      <p>Set <span class="math display">\[R := \|\bd{x} - \bd{x}_0\|_2
+              \quad \text{and} \quad
+              \mathcal{K} := \mathcal{C} \cap \overline{B}(\bd{x},
+      R),\]</span> where <span
+      class="math inline">\(\overline{B}(\bd{x}, R)\)</span> denotes the
+      closed ball centered at <span
+      class="math inline">\(\bd{x}\)</span> with radius <span
+      class="math inline">\(R\)</span>.</p>
+      <p>For any <span class="math inline">\(\bd{z} \in
+      \mathcal{C}\)</span> such that <span class="math inline">\(\bd{z}
+      \notin \mathcal{K}\)</span>, we must have <span
+      class="math inline">\(\|\bd{z} - \bd{x}\|_2 &gt; R\)</span>.
+      Substituting <span class="math inline">\(R\)</span>, this implies:
+      <span class="math display">\[\frac12 \|\bd{z} - \bd{x}\|_2^2
+              &gt;
+              \frac12 \|\bd{x}_0 - \bd{x}\|_2^2.\]</span> Since <span
+      class="math inline">\(\bd{x}_0 \in \mathcal{K}\)</span> achieves a
+      strictly lower objective value, no point outside <span
+      class="math inline">\(\mathcal{K}\)</span> can be a minimizer.
+      Therefore, <span class="math display">\[\arg\min_{\bd{z} \in
+      \mathcal{C}}
+              \frac12 \|\bd{z} - \bd{x}\|_2^2
+              =
+              \arg\min_{\bd{z} \in \mathcal{K}}
+              \frac12 \|\bd{z} - \bd{x}\|_2^2.\]</span></p>
+      <p>The set <span class="math inline">\(\mathcal{K}\)</span> is the
+      intersection of a closed set <span
+      class="math inline">\(\mathcal{C}\)</span> and a closed, bounded
+      ball, so <span class="math inline">\(\mathcal{K}\)</span> is
+      closed and bounded (hence compact). Since the function <span
+      class="math display">\[\bd{z} \mapsto \frac12 \|\bd{z} -
+      \bd{x}\|_2^2\]</span> is continuous, it attains its minimum on the
+      compact set <span class="math inline">\(\mathcal{K}\)</span> by
+      the <em>Weierstrass extreme value theorem</em>. Thus, a minimizer
+      exists.<br />
+      <strong>Proof of (2): Uniqueness</strong> ◻</p>
+      </div>
+      <div class="algorithmblock">
+      <p><span id="alg:pgd" data-label="alg:pgd"></span>
+      <strong>Input:</strong> <span class="math inline">\(f\)</span>,
+      <span class="math inline">\(C\)</span>, <span
+      class="math inline">\(\gamma\)</span>, <span
+      class="math inline">\(\bd{x}_0\)</span><br />
+      <strong>for</strong> <span class="math inline">\(k =
+      0,1,2,\dots\)</span> <strong>do</strong><br />
+      <span class="math inline">\(\bd{x}_{k+1} = \Pi_C\bigl(\bd{x}_k -
+      \gamma \nabla f(\bd{x}_k)\bigr)\)</span><br />
+      <strong>end for</strong></p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:pgd" data-label="rem:pgd"></span></p>
+      <ul>
+      <li><p>If <span class="math inline">\(\bb{X} = \bb{R}^n\)</span>,
+      Algorithm <a href="#alg:pgd" data-reference-type="ref"
+      data-reference="alg:pgd">[alg:pgd]</a> reduces to standard
+      gradient descent.</p></li>
+      <li><p>Constraints are enforced via projection rather than
+      penalties.</p></li>
+      <li><p>The analysis parallels unconstrained gradient descent using
+      Fejér monotonicity.</p></li>
+      </ul>
+      </div>
+      <div class="theorem">
+      <p><span id="thm:pgd-main" data-label="thm:pgd-main"></span> Let
+      <span class="math inline">\(C \subset \bb{R}^n\)</span> be
+      nonempty, closed, and convex, and let <span
+      class="math inline">\(f\)</span> be differentiable on an open set
+      containing <span class="math inline">\(C\)</span>. Assume that the
+      problem <span class="math display">\[\min_{\bd{x} \in C}
+      f(\bd{x})\]</span> is solvable.</p>
+      <p>Let <span class="math inline">\(\{\bd{x}_k\}\)</span> be the
+      sequence generated by projected gradient descent. Then <span
+      class="math display">\[f(\bd{x}_k) - \min_{\bd{x} \in C} f(\bd{x})
+              \le
+              \mathcal{O}\!\left(\frac{1}{k}\right),\]</span> and <span
+      class="math display">\[\bd{x}_k \to \bd{x}^\ast,
+              \qquad
+              \bd{x}^\ast \in \arg\min_{\bd{x} \in C}
+      f(\bd{x}).\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:optimality-C"
+      data-label="prop:optimality-C"></span> Let <span
+      class="math inline">\(C \subset \bb{R}^n\)</span> be nonempty,
+      closed, and convex, and let <span class="math inline">\(f\)</span>
+      be differentiable on an open set containing <span
+      class="math inline">\(C\)</span>. For a point <span
+      class="math inline">\(\bd{x}^\ast \in C\)</span>, the following
+      statements are equivalent:</p>
+      <ol>
+      <li><p><span class="math display">\[\bd{x}^\ast \in
+      \arg\min_{\bd{x} \in C} f(\bd{x})\]</span></p></li>
+      <li><p><span class="math display">\[\bd{x}^\ast
+                        =
+                        \Pi_C\bigl(\bd{x}^\ast - \gamma \nabla
+      f(\bd{x}^\ast)\bigr),
+                        \quad \forall \gamma &gt; 0.\]</span></p></li>
+      <li><p><span class="math display">\[\langle \bd{x} - \bd{x}^\ast,
+                        \nabla f(\bd{x}^\ast) \rangle
+                        \ge 0,
+                        \quad \forall \bd{x} \in C.\]</span></p></li>
+      </ol>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:acuteness" data-label="prop:acuteness"></span>
+      Let <span class="math inline">\(C \subset \bb{R}^n\)</span> be
+      nonempty, closed, and convex. For <span
+      class="math inline">\(\bd{x}_0 \in \bb{R}^n\)</span> and <span
+      class="math inline">\(\bd{p} \in C\)</span>, the following
+      statements are equivalent:</p>
+      <ol>
+      <li><p><span class="math display">\[\bd{p} =
+      \Pi_C(\bd{x}_0)\]</span></p></li>
+      <li><p><span class="math display">\[\langle \bd{x}_0 - \bd{p},
+      \bd{x} - \bd{p} \rangle \le 0,
+                        \quad \forall \bd{x} \in C.\]</span></p></li>
+      </ol>
+      </div>
+      <div class="remark">
+      <p>The inequality states that the angle between the vectors <span
+      class="math inline">\(\bd{x}_0 - \bd{p}\)</span> and <span
+      class="math inline">\(\bd{x} - \bd{p}\)</span> is obtuse or right
+      for every <span class="math inline">\(\bd{x} \in C\)</span>.
+      Geometrically, this means that the segment joining <span
+      class="math inline">\(\bd{x}_0\)</span> to its projection <span
+      class="math inline">\(\bd{p}\)</span> forms a supporting
+      hyperplane to the set <span class="math inline">\(C\)</span> at
+      <span class="math inline">\(\bd{p}\)</span>.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── Theme toggle script ── -->
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return localStorage.getItem('notes-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('notes-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('notes-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+  <!-- ── Active TOC tracking ── -->
+  <script>
+  (function() {
+    var links = document.querySelectorAll('.sidebar nav a');
+    if (!links.length) return;
+    var headings = Array.from(document.querySelectorAll('main h2, main h3'));
+    function onScroll() {
+      var scrollY = window.scrollY + 80;
+      var active = headings[0];
+      headings.forEach(function(h) { if (h.offsetTop <= scrollY) active = h; });
+      links.forEach(function(a) {
+        a.classList.toggle('active', active && a.getAttribute('href') === '#' + active.id);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

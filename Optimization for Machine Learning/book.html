@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <script>(function(){var t=localStorage.getItem('notes-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimization for Machine Learning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <script>
+  window.MathJax = {
+    tex: {
+      macros: {
+        bb:     ['\\mathbb{#1}', 1],
+        ser:    ['\\mathsf{#1}', 1],
+        bd:     ['\\mathbf{#1}', 1],
+        bld:    ['\\boldsymbol{#1}', 1],
+        src:    ['\\mathscr{#1}', 1],
+        cl:     ['\\mathcal{#1}', 1],
+        iprod:  ['\\langle #1,\\, #2 \\rangle', 2],
+        TT:     '\\mathsf{T}',
+        jj:     '\\mathrm{j}',
+        dx:     '\\mathrm{d}',
+        zerovec:'\\boldsymbol{0}',
+        sinc:   '\\operatorname{sinc}',
+        crd:    '\\operatorname{card}',
+        dimn:   '\\operatorname{dim}',
+        nul:    '\\operatorname{nul}',
+        prox:   '\\operatorname{prox}',
+        Fix:    '\\operatorname{Fix}',
+        diag:   '\\operatorname{diag}',
+        dom:    '\\operatorname{dom}',
+        grad:   '\\nabla',
+        Disp:   '\\displaystyle'
+      },
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      tags: 'ams'
+    },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+  };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
+
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+/* ── Tokens ── */
+:root {
+  --bg:         #f7f4ec;
+  --bg2:        #fffdf8;
+  --text:       #161310;
+  --text2:      #4a443b;
+  --muted:      #8a8175;
+  --border:     #e4ddcf;
+  --accent:     #9a7b4f;
+  --link:       #1a1f71;
+  --def-bg:     #fefce8;
+  --def-border: #ca8a04;
+  --thm-bg:     #ecfeff;
+  --thm-border: #0891b2;
+  --prop-bg:    #fdf6f0;
+  --prop-border:#92400e;
+  --lem-bg:     #fff7ed;
+  --lem-border: #ea580c;
+  --cor-bg:     #f5f3ff;
+  --cor-border: #7c3aed;
+  --rem-border: #16a34a;
+  --ex-bg:      #f9fafb;
+  --ex-border:  #6b7280;
+  --proof-color:#4a443b;
+}
+html[data-theme="dark"] {
+  --bg:         #14120f;
+  --bg2:        #1c1916;
+  --text:       #ece7dd;
+  --text2:      #b3aa9c;
+  --muted:      #837b6e;
+  --border:     #2c2823;
+  --accent:     #c9a875;
+  --link:       #8b90ff;
+  --def-bg:     #1f1c0a;
+  --def-border: #a16207;
+  --thm-bg:     #0a1f22;
+  --thm-border: #0e7490;
+  --prop-bg:    #1a110a;
+  --prop-border:#78350f;
+  --lem-bg:     #1a0e04;
+  --lem-border: #c2410c;
+  --cor-bg:     #130e1f;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #1a1916;
+  --ex-border:  #4b5563;
+  --proof-color:#b3aa9c;
+}
+html[data-theme="paper"] {
+  --bg:         #f0e6c8;
+  --bg2:        #e8dab8;
+  --text:       #2c1a0e;
+  --text2:      #5c3d25;
+  --muted:      #9c7a58;
+  --border:     #d4b896;
+  --accent:     #9b6820;
+  --link:       #7b2f0c;
+  --def-bg:     #faf3da;
+  --def-border: #b45309;
+  --thm-bg:     #d8eef0;
+  --thm-border: #0e7490;
+  --prop-bg:    #f5e8da;
+  --prop-border:#78350f;
+  --lem-bg:     #fde8d0;
+  --lem-border: #c2410c;
+  --cor-bg:     #ede8f8;
+  --cor-border: #6d28d9;
+  --rem-border: #15803d;
+  --ex-bg:      #eee4cc;
+  --ex-border:  #6b7280;
+  --proof-color:#5c3d25;
+}
+
+body {
+  font-family: "EB Garamond", Georgia, "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Top bar ── */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 52px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.topbar-left { display: flex; align-items: center; gap: 20px; }
+.topbar-back {
+  display: flex; align-items: center; gap: 6px;
+  color: var(--accent); transition: color 0.2s;
+}
+.topbar-back:hover { color: var(--text); text-decoration: none; }
+.topbar-back svg { width: 14px; height: 14px; }
+.topbar-title { color: var(--text); letter-spacing: .06em; }
+.topbar-right { display: flex; align-items: center; gap: 12px; }
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  display: inline-flex; align-items: center;
+  background: transparent; border: 1px solid var(--border);
+  border-radius: 30px; padding: 3px 4px; gap: 2px;
+}
+.tt-btn {
+  width: 24px; height: 24px; border-radius: 50%; border: none;
+  background: transparent; display: flex; align-items: center;
+  justify-content: center; color: var(--muted); cursor: pointer;
+  padding: 0; transition: background 0.2s, color 0.2s;
+}
+.tt-btn svg { width: 12px; height: 12px; display: block; }
+.tt-btn.active { background: var(--bg2); color: var(--accent); }
+
+/* ── Layout ── */
+.page-wrap {
+  display: flex;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  gap: 48px;
+}
+
+/* ── Sidebar TOC ── */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  padding: 36px 0 60px;
+  position: sticky;
+  top: 52px;
+  height: calc(100vh - 52px);
+  overflow-y: auto;
+}
+.sidebar-label {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.sidebar nav ul { list-style: none; }
+.sidebar nav ul li { margin: 0; }
+.sidebar nav ul li a {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  color: var(--muted);
+  padding: 4px 0 4px 10px;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s;
+}
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  color: var(--text);
+  border-left-color: var(--accent);
+  text-decoration: none;
+}
+.sidebar nav ul ul { padding-left: 12px; }
+.sidebar nav ul ul li a { font-size: 11.5px; }
+
+/* ── Main content ── */
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 0 80px;
+  max-width: 72ch;
+}
+
+/* Typography */
+main h1, main h2, main h3, main h4 {
+  font-family: "Playfair Display", "EB Garamond", Georgia, serif;
+  color: var(--text);
+  line-height: 1.2;
+}
+main h1 { font-size: 2.4rem; margin-bottom: 1.2rem; font-weight: 600; }
+main h2 {
+  font-size: 1.7rem; margin-top: 2.8rem; margin-bottom: 1rem;
+  font-weight: 600; padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border);
+}
+main h3 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: .8rem; font-weight: 600; }
+main h4 { font-size: 1.1rem; margin-top: 1.6rem; margin-bottom: .5rem; }
+main p { margin-bottom: .9em; }
+main ul, main ol { padding-left: 1.6em; margin-bottom: .9em; }
+main li { margin-bottom: .3em; }
+main strong { font-weight: 600; color: var(--text); }
+main em { font-style: italic; }
+main table {
+  border-collapse: collapse; width: 100%;
+  margin: 1.2rem 0; font-size: 0.92rem;
+}
+main th, main td {
+  border: 1px solid var(--border); padding: 6px 12px; text-align: left;
+}
+main th { background: var(--bg2); font-family: "Inter", sans-serif; font-size: .85rem; }
+main code {
+  font-family: "Courier New", monospace; font-size: .85em;
+  background: var(--bg2); padding: 1px 5px; border-radius: 3px;
+}
+
+/* ── Theorem environments ── */
+.definition, .theorem, .proposition, .lemma, .corollary,
+.remark, .remarks, .example, .examples, .exercise, .proof, .cthm {
+  margin: 1.4rem 0;
+  padding: 14px 18px;
+  border-radius: 3px;
+  position: relative;
+}
+
+.definition {
+  background: var(--def-bg);
+  border: 1px solid color-mix(in srgb, var(--def-border) 30%, transparent);
+  border-left: 3px solid var(--def-border);
+}
+.theorem {
+  background: var(--thm-bg);
+  border-left: 3px solid var(--thm-border);
+}
+.proposition {
+  background: var(--prop-bg);
+  border-left: 3px solid var(--prop-border);
+}
+.lemma {
+  background: var(--lem-bg);
+  border-left: 3px solid var(--lem-border);
+}
+.corollary {
+  background: var(--cor-bg);
+  border-left: 3px solid var(--cor-border);
+}
+.remark, .remarks {
+  border-left: 3px solid var(--rem-border);
+  padding-left: 16px;
+}
+.example, .examples {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--ex-border);
+}
+.cthm {
+  background: var(--ex-bg);
+  border-left: 3px solid var(--muted);
+}
+.exercise {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+}
+.proof {
+  color: var(--proof-color);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 1rem;
+}
+
+/* Environment label */
+.definition > p:first-child::before    { content: 'Definition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; font-style: normal; color: var(--def-border); text-transform: uppercase; letter-spacing: .06em; }
+.theorem > p:first-child::before       { content: 'Theorem. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--thm-border); text-transform: uppercase; letter-spacing: .06em; }
+.proposition > p:first-child::before   { content: 'Proposition. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--prop-border); text-transform: uppercase; letter-spacing: .06em; }
+.lemma > p:first-child::before         { content: 'Lemma. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--lem-border); text-transform: uppercase; letter-spacing: .06em; }
+.corollary > p:first-child::before     { content: 'Corollary. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--cor-border); text-transform: uppercase; letter-spacing: .06em; }
+.remark > p:first-child::before,
+.remarks > p:first-child::before       { content: 'Remark. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--rem-border); text-transform: uppercase; letter-spacing: .06em; }
+.example > p:first-child::before,
+.examples > p:first-child::before      { content: 'Example. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--ex-border); text-transform: uppercase; letter-spacing: .06em; }
+.exercise > p:first-child::before      { content: 'Exercise. '; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+.proof > p:first-child::before         { content: 'Proof. '; font-style: normal; font-family: "Inter", sans-serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* Math display */
+.math.display { overflow-x: auto; padding: 6px 0; }
+
+/* ── Mobile ── */
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .page-wrap { padding: 0 18px; gap: 0; }
+  main { padding: 28px 0 60px; }
+  .topbar { padding: 0 18px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── Top bar ── -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <a class="topbar-back" href="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Notes
+      </a>
+      <span class="topbar-title">Optimization for Machine
+Learning</span>
+    </div>
+    <div class="topbar-right">
+      <div class="theme-toggle" id="theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <!-- ── Sidebar ── -->
+        <aside class="sidebar">
+      <div class="sidebar-label">Contents</div>
+      <ul>
+      <li><a href="#vector-spaces" id="toc-vector-spaces">Vector
+      Spaces</a></li>
+      <li><a href="#definitions" id="toc-definitions">Definitions</a>
+      <ul>
+      <li><a href="#sequences-and-convergence"
+      id="toc-sequences-and-convergence">Sequences and
+      Convergence</a></li>
+      <li><a href="#interior-closure-and-boundary"
+      id="toc-interior-closure-and-boundary">Interior, Closure, and
+      Boundary</a></li>
+      <li><a href="#convex-sets-and-functions"
+      id="toc-convex-sets-and-functions">Convex Sets and
+      Functions</a></li>
+      </ul></li>
+      <li><a href="#convex-optimization"
+      id="toc-convex-optimization">Convex Optimization</a></li>
+      </ul>
+    </aside>
+    
+    <!-- ── Main ── -->
+    <main>
+      <h1 id="vector-spaces">Vector Spaces</h1>
+      <div class="definition">
+      <p>A <em>field</em> is a nonempty set <span
+      class="math inline">\(\mathbb{F}\)</span> together with two binary
+      operations <span class="math display">\[+ :
+      \mathbb{F}\times\mathbb{F}\to\mathbb{F},
+              \qquad
+              \cdot : \mathbb{F}\times\mathbb{F}\to\mathbb{F},\]</span>
+      called binary <em>addition</em> and binary
+      <em>multiplication</em>, satisfying the following axioms.</p>
+      </div>
+      <ol>
+      <li><p><strong>Additive structure.</strong> The tuple <span
+      class="math inline">\((\bb{F},+)\)</span> is an abelian group:</p>
+      <ol>
+      <li><p><span id="ax:add_assoc" data-label="ax:add_assoc"></span>
+      <span class="math inline">\((a+b)+c = a+(b+c)\)</span>, <span
+      class="math inline">\(\forall a,b,c\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:add_comm" data-label="ax:add_comm"></span>
+      <span class="math inline">\(a+b=b+a\)</span>, <span
+      class="math inline">\(\forall a,b\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:add_id" data-label="ax:add_id"></span> <span
+      class="math inline">\(\exists\,0\in\bb{F}\)</span> such that <span
+      class="math inline">\(a+0=a\)</span>, <span
+      class="math inline">\(\forall a\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:add_inv" data-label="ax:add_inv"></span> <span
+      class="math inline">\(\forall a\in\bb{F},\
+      \exists\,(-a)\in\bb{F}\)</span> such that <span
+      class="math inline">\(a+(-a)=0\)</span></p></li>
+      </ol></li>
+      <li><p><strong>Multiplicative structure.</strong> The tuple <span
+      class="math inline">\((\bb{F}\setminus\{0\},\cdot)\)</span> is an
+      abelian group:</p>
+      <ol>
+      <li><p><span id="ax:mul_assoc" data-label="ax:mul_assoc"></span>
+      <span class="math inline">\((a\cdot b)\cdot c = a\cdot(b\cdot
+      c)\)</span>, <span class="math inline">\(\forall
+      a,b,c\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:mul_comm" data-label="ax:mul_comm"></span>
+      <span class="math inline">\(a\cdot b=b\cdot a\)</span>, <span
+      class="math inline">\(\forall a,b\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:mul_id" data-label="ax:mul_id"></span> <span
+      class="math inline">\(\exists\,1\in\bb{F}\)</span>, <span
+      class="math inline">\(1\neq0\)</span>, such that <span
+      class="math inline">\(a\cdot1=a\)</span>, <span
+      class="math inline">\(\forall a\in\bb{F}\)</span></p></li>
+      <li><p><span id="ax:mul_inv" data-label="ax:mul_inv"></span> <span
+      class="math inline">\(\forall a\in\bb{F}\setminus\{0\},\
+      \exists\,a^{-1}\in\bb{F}\)</span> such that <span
+      class="math inline">\(a\cdot a^{-1}=1\)</span></p></li>
+      </ol></li>
+      <li><p><strong>Compatibility.</strong></p>
+      <ol>
+      <li><p><span id="ax:distrib" data-label="ax:distrib"></span> <span
+      class="math inline">\(a\cdot(b+c)=a\cdot b + a\cdot c\)</span>,
+      <span class="math inline">\(\forall
+      a,b,c\in\bb{F}\)</span></p></li>
+      </ol></li>
+      </ol>
+      <div class="lemma">
+      <p><span id="lem:unique_inverse"
+      data-label="lem:unique_inverse"></span> Let <span
+      class="math inline">\((\bb{F},+)\)</span> be a group and let <span
+      class="math inline">\(a\in\bb{F}\)</span>. If <span
+      class="math inline">\(b,c\in\bb{F}\)</span> satisfy <span
+      class="math display">\[a+b=0
+              \qquad\text{and}\qquad
+              a+c=0,\]</span> then <span
+      class="math inline">\(b=c\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Using associativity and the additive identity,
+      <span class="math display">\[b = b+0 = b+(a+c).\]</span> By
+      associativity, <span class="math display">\[b+(a+c) =
+      (b+a)+c.\]</span> By commutativity, <span
+      class="math inline">\(b+a = a+b = 0\)</span>, hence <span
+      class="math display">\[(b+a)+c = 0+c = c.\]</span> Therefore <span
+      class="math inline">\(b=c\)</span>. ◻</p>
+      </div>
+      <div class="lemma">
+      <p><span id="lem:unique_mult_inverse"
+      data-label="lem:unique_mult_inverse"></span> Let <span
+      class="math inline">\((\bb{F}\setminus\{0\},\cdot)\)</span> be a
+      group and let <span class="math inline">\(a\neq0\)</span>. If
+      <span class="math inline">\(b,c\in\bb{F}\)</span> satisfy <span
+      class="math display">\[a\cdot b=1
+              \qquad\text{and}\qquad
+              a\cdot c=1,\]</span> then <span
+      class="math inline">\(b=c\)</span>.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:vector_space"
+      data-label="def:vector_space"></span> Let <span
+      class="math inline">\(\bb{F}\)</span> be a field. A <em>vector
+      space</em> over <span class="math inline">\(\bb{F}\)</span> is a
+      nonempty set <span class="math inline">\(V\)</span> together with
+      two operations <span class="math display">\[+ : V\times V \to V,
+              \qquad
+              \cdot : \bb{F}\times V \to V,\]</span> called <em>vector
+      addition</em> and <em>scalar multiplication</em>, such that the
+      following axioms hold.</p>
+      </div>
+      <ol>
+      <li><p><strong>Additive structure.</strong> The tuple <span
+      class="math inline">\((V,+)\)</span> is an abelian group:</p>
+      <ol>
+      <li><p><span id="ax:v_add_assoc"
+      data-label="ax:v_add_assoc"></span> <span
+      class="math inline">\((\mathbf{u}+\mathbf{v})+\mathbf{w}
+                              =
+      \mathbf{u}+(\mathbf{v}+\mathbf{w})\)</span></p></li>
+      <li><p><span id="ax:v_add_comm" data-label="ax:v_add_comm"></span>
+      <span
+      class="math inline">\(\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}\)</span></p></li>
+      <li><p><span id="ax:v_add_id" data-label="ax:v_add_id"></span>
+      <span class="math inline">\(\exists\,\mathbf{0}\in V\)</span> such
+      that <span
+      class="math inline">\(\mathbf{v}+\mathbf{0}=\mathbf{v}\)</span></p></li>
+      <li><p><span id="ax:v_add_inv" data-label="ax:v_add_inv"></span>
+      <span class="math inline">\(\forall \mathbf{v}\in V,\
+      \exists\,(-\mathbf{v})\in V\)</span> such that <span
+      class="math inline">\(\mathbf{v}+(-\mathbf{v})=\mathbf{0}\)</span></p></li>
+      </ol></li>
+      <li><p><strong>Scalar multiplication axioms.</strong> For all
+      <span class="math inline">\(a,b\in\bb{F}\)</span> and <span
+      class="math inline">\(\mathbf{u},\mathbf{v}\in V\)</span>:</p>
+      <ol>
+      <li><p><span id="ax:v_scalar_assoc"
+      data-label="ax:v_scalar_assoc"></span> <span
+      class="math inline">\((ab)\mathbf{v}=a(b\mathbf{v})\)</span></p></li>
+      <li><p><span id="ax:v_scalar_id"
+      data-label="ax:v_scalar_id"></span> <span
+      class="math inline">\(1\mathbf{v}=\mathbf{v}\)</span></p></li>
+      <li><p><span id="ax:v_scalar_dist_vec"
+      data-label="ax:v_scalar_dist_vec"></span> <span
+      class="math inline">\(a(\mathbf{u}+\mathbf{v})=a\mathbf{u}+a\mathbf{v}\)</span></p></li>
+      <li><p><span id="ax:v_scalar_dist_scal"
+      data-label="ax:v_scalar_dist_scal"></span> <span
+      class="math inline">\((a+b)\mathbf{v}=a\mathbf{v}+b\mathbf{v}\)</span></p></li>
+      </ol></li>
+      </ol>
+      <div class="example">
+      <p><span id="ex:Fn" data-label="ex:Fn"></span> Let <span
+      class="math inline">\(\bb{F}\)</span> be a field and <span
+      class="math inline">\(n\in\bb{N}\)</span>. Define <span
+      class="math display">\[\bb{F}^n := \{(x_1,\dots,x_n) :
+      x_i\in\bb{F}\}.\]</span> Addition and scalar multiplication are
+      defined componentwise: <span
+      class="math display">\[(x_1,\dots,x_n)+(y_1,\dots,y_n)
+              := (x_1+y_1,\dots,x_n+y_n),\]</span> <span
+      class="math display">\[a(x_1,\dots,x_n)
+              := (ax_1,\dots,ax_n).\]</span> Then <span
+      class="math inline">\((\bb{F}^n,\bb{F},+,\cdot)\)</span> is a
+      vector space over <span class="math inline">\(\bb{F}\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:Fmn" data-label="ex:Fmn"></span> Let <span
+      class="math inline">\(m,n\in\bb{N}\)</span>. Define <span
+      class="math display">\[\bb{F}^{m\times n}
+              := \{A=(a_{ij}) : a_{ij}\in\bb{F}\}.\]</span> Addition and
+      scalar multiplication are defined entrywise: <span
+      class="math display">\[(A+B)_{ij}=a_{ij}+b_{ij},
+              \qquad
+              (aA)_{ij}=a\,a_{ij}.\]</span> Then <span
+      class="math inline">\((\bb{F}^{m\times n},\bb{F},+,\cdot)\)</span>
+      is a vector space over <span
+      class="math inline">\(\bb{F}\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:poly_degree_n"
+      data-label="ex:poly_degree_n"></span> Let <span
+      class="math inline">\(n\in\bb{N}\)</span>. Define <span
+      class="math display">\[\bb{P}_n
+              := \left\{
+              a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
+              \;\middle|\;
+              a_0,\dots,a_n \in \bb{F}
+              \right\}.\]</span> Addition and scalar multiplication are
+      defined by <span class="math display">\[(p+q)(x) := p(x)+q(x),
+              \qquad
+              (a p)(x) := a\,p(x).\]</span> Then <span
+      class="math inline">\((\bb{P}_n,\bb{F},+,\cdot)\)</span> is a
+      vector space over <span class="math inline">\(\bb{F}\)</span> of
+      dimension <span class="math inline">\(n+1\)</span>.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:linear_combination"
+      data-label="def:linear_combination"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span
+      class="math display">\[\mathbf{v}_1,\dots,\mathbf{v}_k \in V,
+              \qquad
+              a_1,\dots,a_k \in \bb{F}.\]</span> A <em>linear
+      combination</em> of <span
+      class="math inline">\(\mathbf{v}_1,\dots,\mathbf{v}_k\)</span> is
+      a vector of the form <span class="math display">\[a_1\mathbf{v}_1
+      + a_2\mathbf{v}_2 + \cdots + a_k\mathbf{v}_k.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:subspace" data-label="def:subspace"></span> Let
+      <span class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a
+      vector space. A subset <span class="math inline">\(W\subseteq
+      V\)</span> is called a <em>subspace</em> of <span
+      class="math inline">\(V\)</span> if <span
+      class="math inline">\((W,\bb{F},+,\cdot)\)</span> is itself a
+      vector space.</p>
+      </div>
+      <div class="theorem">
+      <p><span id="thm:subspace_criterion"
+      data-label="thm:subspace_criterion"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span class="math inline">\(S\subseteq V\)</span> be
+      nonempty. Then <span class="math inline">\(S\)</span> is a
+      subspace of <span class="math inline">\(V\)</span> if and only if
+      <span class="math display">\[\alpha u + v \in S
+              \quad \text{for all } \alpha\in\bb{F}
+              \text{ and all } u,v\in S.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> (<span
+      class="math inline">\(\Rightarrow\)</span>) Assume <span
+      class="math inline">\(S\)</span> is a subspace of <span
+      class="math inline">\(V\)</span>. Then <span
+      class="math inline">\(S\)</span> is closed under vector addition
+      and scalar multiplication. Hence, for any <span
+      class="math inline">\(\alpha\in\bb{F}\)</span> and any <span
+      class="math inline">\(u,v\in S\)</span>, <span
+      class="math display">\[\alpha u \in S
+              \quad \text{and} \quad
+              \alpha u + v \in S.\]</span></p>
+      <p>(<span class="math inline">\(\Leftarrow\)</span>) Conversely,
+      assume <span class="math inline">\(S\subseteq V\)</span> is
+      nonempty and satisfies <span class="math display">\[\alpha u + v
+      \in S
+              \quad \text{for all } \alpha\in\bb{F},\ u,v\in
+      S.\]</span></p>
+      <p><em>Closure under scalar multiplication.</em> Fix <span
+      class="math inline">\(u\in S\)</span> and <span
+      class="math inline">\(\alpha\in\bb{F}\)</span>. Since <span
+      class="math inline">\(S\)</span> is nonempty, choose <span
+      class="math inline">\(v\in S\)</span>. Taking <span
+      class="math inline">\(v=0u=0\cdot u\)</span>, we obtain <span
+      class="math display">\[\alpha u = \alpha u + 0 \in S.\]</span></p>
+      <p><em>Closure under addition.</em> Let <span
+      class="math inline">\(u,v\in S\)</span>. Taking <span
+      class="math inline">\(\alpha=1\)</span>, we have <span
+      class="math display">\[u+v = 1\cdot u + v \in S.\]</span></p>
+      <p><em>Existence of additive identity.</em> Let <span
+      class="math inline">\(u\in S\)</span>. Taking <span
+      class="math inline">\(\alpha=0\)</span>, we obtain <span
+      class="math display">\[0 = 0\cdot u + u \in S.\]</span></p>
+      <p><em>Existence of additive inverse.</em> Let <span
+      class="math inline">\(u\in S\)</span>. Since <span
+      class="math inline">\(0\in S\)</span>, taking <span
+      class="math inline">\(\alpha=-1\)</span> gives <span
+      class="math display">\[-\,u = (-1)u + 0 \in S.\]</span></p>
+      <p>Thus <span class="math inline">\(S\)</span> contains <span
+      class="math inline">\(0\)</span>, is closed under addition and
+      scalar multiplication, and contains additive inverses. Therefore
+      <span class="math inline">\((S,+,\cdot)\)</span> is a vector
+      space, and hence <span class="math inline">\(S\)</span> is a
+      subspace of <span class="math inline">\(V\)</span>. ◻</p>
+      </div>
+      <div class="theorem">
+      <p><span id="thm:intersection_subspaces"
+      data-label="thm:intersection_subspaces"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span class="math inline">\(\cl{S}\)</span> be a
+      nonempty collection of subspaces of <span
+      class="math inline">\(V\)</span>. Define <span
+      class="math display">\[W := \bigcap_{S \in \cl{S}} S.\]</span>
+      Then <span class="math inline">\(W\)</span> is a subspace of <span
+      class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Since each <span
+      class="math inline">\(S\in\cl{S}\)</span> is a subspace, we have
+      <span class="math inline">\(\bd{0}\in S\)</span> for all <span
+      class="math inline">\(S\in\cl{S}\)</span>. Hence <span
+      class="math inline">\(\bd{0}\in W\)</span>, and thus <span
+      class="math inline">\(W\)</span> is nonempty.</p>
+      <p>Let <span class="math inline">\(\bd{u},\bd{v}\in W\)</span> and
+      let <span class="math inline">\(\alpha\in\bb{F}\)</span>. Then
+      <span class="math inline">\(\bd{u},\bd{v}\in S\)</span> for every
+      <span class="math inline">\(S\in\cl{S}\)</span>. Since each <span
+      class="math inline">\(S\)</span> is a subspace, it is closed under
+      linear combinations, and therefore <span
+      class="math display">\[\alpha \bd{u} + \bd{v} \in S
+              \quad \text{for all } S\in\cl{S}.\]</span> Hence <span
+      class="math inline">\(\alpha \bd{u} + \bd{v} \in
+      \bigcap_{S\in\cl{S}} S = W\)</span>.</p>
+      <p>By the subspace criterion, <span
+      class="math inline">\(W\)</span> is a subspace of <span
+      class="math inline">\(V\)</span>. ◻</p>
+      </div>
+      <div class="definition">
+      <p><span id="thm:span_as_intersection"
+      data-label="thm:span_as_intersection"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span class="math display">\[S :=
+      \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.\]</span> Let <span
+      class="math inline">\(\cl{S}\)</span> denote the collection of all
+      subspaces of <span class="math inline">\(V\)</span> that contain
+      <span class="math inline">\(S\)</span>, and define <span
+      class="math display">\[W := \bigcap_{K \in \cl{S}} K.\]</span>
+      Then <span class="math inline">\(W\)</span> is a subspace of <span
+      class="math inline">\(V\)</span>, called the <em>subspace spanned
+      by <span class="math inline">\(S\)</span></em>, and is denoted by
+      <span class="math display">\[W = \text{span}(S).\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:span_linear_combinations"
+      data-label="prop:span_linear_combinations"></span> <span
+      class="math display">\[\text{span}(S)
+              =
+              \left\{
+              \sum_{i=1}^n \alpha_i \bd{v}_i
+              \;\middle|\;
+              \alpha_1,\ldots,\alpha_n \in \bb{F}
+              \right\}.\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span
+      class="math display">\[S=\{\bd{v}_1,\ldots,\bd{v}_n\}\subseteq
+      V,\]</span> and let <span class="math display">\[W :=
+      \bigcap_{K\in\cl{S}} K,\]</span> where <span
+      class="math inline">\(\cl{S}\)</span> denotes the collection of
+      all subspaces of <span class="math inline">\(V\)</span> containing
+      <span class="math inline">\(S\)</span>. Let <span
+      class="math display">\[\text{span}(S)
+              :=
+              \left\{
+              \sum_{i=1}^n \alpha_i \bd{v}_i
+              \;\middle|\;
+              \alpha_1,\ldots,\alpha_n\in\bb{F}
+              \right\}.\]</span></p>
+      <p><strong>Step 1: <span
+      class="math inline">\(\text{span}(S)\subseteq
+      W\)</span>.</strong></p>
+      <p>Let <span
+      class="math inline">\(\bd{u}\in\text{span}(S)\)</span>. Then <span
+      class="math display">\[\bd{u}=\sum_{i=1}^n \alpha_i \bd{v}_i
+              \quad \text{for some }
+      \alpha_1,\ldots,\alpha_n\in\bb{F}.\]</span> Let <span
+      class="math inline">\(K\in\cl{S}\)</span> be arbitrary. Since
+      <span class="math inline">\(K\)</span> is a subspace containing
+      <span class="math inline">\(S\)</span>, we have <span
+      class="math inline">\(\bd{v}_i\in K\)</span> for all <span
+      class="math inline">\(i\)</span>. By closure of <span
+      class="math inline">\(K\)</span> under linear combinations, <span
+      class="math display">\[\bd{u}=\sum_{i=1}^n \alpha_i \bd{v}_i \in
+      K.\]</span> Since this holds for every <span
+      class="math inline">\(K\in\cl{S}\)</span>, it follows that <span
+      class="math display">\[\bd{u}\in \bigcap_{K\in\cl{S}} K =
+      W.\]</span> Hence <span
+      class="math inline">\(\text{span}(S)\subseteq W\)</span>.</p>
+      <p><strong>Step 2: <span
+      class="math inline">\(W\subseteq\text{span}(S)\)</span>.</strong></p>
+      <p>We first note that <span
+      class="math inline">\(\text{span}(S)\)</span> is a subspace of
+      <span class="math inline">\(V\)</span> and contains <span
+      class="math inline">\(S\)</span>. Therefore, <span
+      class="math display">\[\text{span}(S)\in\cl{S}.\]</span> By
+      definition of <span class="math inline">\(W\)</span> as the
+      intersection of all elements of <span
+      class="math inline">\(\cl{S}\)</span>, <span
+      class="math display">\[W = \bigcap_{K\in\cl{S}} K \subseteq
+      \text{span}(S).\]</span></p>
+      <p>Combining the two inclusions, we conclude that <span
+      class="math display">\[W=\text{span}(S).\]</span> ◻</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:linear_independence"
+      data-label="def:linear_independence"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span class="math display">\[S :=
+      \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.\]</span> The set <span
+      class="math inline">\(S\)</span> is said to be <em>linearly
+      independent</em> if <span class="math display">\[\alpha_1 \bd{v}_1
+      + \alpha_2 \bd{v}_2 + \cdots + \alpha_n \bd{v}_n = \bd{0}\]</span>
+      implies <span
+      class="math display">\[\alpha_1=\alpha_2=\cdots=\alpha_n=0.\]</span>
+      Otherwise, <span class="math inline">\(S\)</span> is called
+      <em>linearly dependent</em>.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:basis" data-label="def:basis"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and let <span class="math display">\[S :=
+      \{\bd{v}_1,\ldots,\bd{v}_n\} \subseteq V.\]</span> The set <span
+      class="math inline">\(S\)</span> is called a <em>basis</em> of
+      <span class="math inline">\(V\)</span> if</p>
+      <ol>
+      <li><p><span class="math inline">\(S\)</span> is linearly
+      independent, and</p></li>
+      <li><p><span class="math inline">\(\text{span}(S) =
+      V\)</span>.</p></li>
+      </ol>
+      </div>
+      <div class="remark">
+      <p><span id="rem:finite_dimensional"
+      data-label="rem:finite_dimensional"></span> A vector space <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> is said to be
+      <em>finite-dimensional</em> if there exists a finite set <span
+      class="math inline">\(B\subseteq V\)</span> that forms a basis of
+      <span class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:dimension" data-label="rem:dimension"></span> If
+      <span
+      class="math inline">\(S=\{\bd{v}_1,\ldots,\bd{v}_n\}\)</span> is a
+      basis of <span class="math inline">\(V\)</span>, then the integer
+      <span class="math inline">\(n\)</span> is called the
+      <em>dimension</em> of <span class="math inline">\(V\)</span> and
+      is denoted by <span class="math inline">\(\dimn V =
+      n\)</span>.</p>
+      </div>
+      <div class="theorem">
+      <p><span id="thm:li_bounded_by_spanning_set"
+      data-label="thm:li_bounded_by_spanning_set"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space and suppose <span class="math display">\[V = \text{span}(S),
+      \qquad
+              S=\{\bd{v}_1,\ldots,\bd{v}_m\}.\]</span> Then any linearly
+      independent set of vectors in <span
+      class="math inline">\(V\)</span> is finite and contains at most
+      <span class="math inline">\(m\)</span> vectors.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span
+      class="math display">\[L=\{\bd{u}_1,\ldots,\bd{u}_k\}\subseteq
+      V\]</span> be a linearly independent set. Since <span
+      class="math inline">\(V=\text{span}(S)\)</span>, each <span
+      class="math inline">\(\bd{u}_j\)</span> can be written as a linear
+      combination of <span
+      class="math inline">\(\bd{v}_1,\ldots,\bd{v}_m\)</span>: <span
+      class="math display">\[\bd{u}_j=\sum_{i=1}^m a_{ij}\bd{v}_i,
+              \qquad a_{ij}\in\bb{F}.\]</span></p>
+      <p>Suppose, for contradiction, that <span
+      class="math inline">\(k&gt;m\)</span>. Consider a linear
+      combination <span
+      class="math display">\[\alpha_1\bd{u}_1+\cdots+\alpha_k\bd{u}_k=\bd{0}.\]</span>
+      Substituting the expressions for <span
+      class="math inline">\(\bd{u}_j\)</span>, <span
+      class="math display">\[\sum_{j=1}^k \alpha_j \left( \sum_{i=1}^m
+      a_{ij}\bd{v}_i \right)
+              =
+              \sum_{i=1}^m \left( \sum_{j=1}^k \alpha_j a_{ij}
+      \right)\bd{v}_i
+              = \bd{0}.\]</span></p>
+      <p>This is a linear combination of the <span
+      class="math inline">\(m\)</span> vectors <span
+      class="math inline">\(\bd{v}_1,\ldots,\bd{v}_m\)</span>. Since
+      there are <span class="math inline">\(k&gt;m\)</span> scalars
+      <span class="math inline">\(\alpha_1,\ldots,\alpha_k\)</span>, the
+      homogeneous system <span class="math display">\[\sum_{j=1}^k
+      \alpha_j a_{ij}=0,
+              \qquad i=1,\ldots,m,\]</span> has a nontrivial solution.
+      Hence there exist scalars, not all zero, such that <span
+      class="math display">\[\alpha_1\bd{u}_1+\cdots+\alpha_k\bd{u}_k=\bd{0},\]</span>
+      contradicting the linear independence of <span
+      class="math inline">\(L\)</span>.</p>
+      <p>Therefore <span class="math inline">\(k\le m\)</span>. Thus
+      every linearly independent set in <span
+      class="math inline">\(V\)</span> is finite and contains no more
+      than <span class="math inline">\(m\)</span> vectors. ◻</p>
+      </div>
+      <div class="corollary">
+      <p><span id="cor:dimension_well_defined"
+      data-label="cor:dimension_well_defined"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a
+      finite-dimensional vector space. Then any two bases of <span
+      class="math inline">\(V\)</span> contain the same number of
+      vectors.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span
+      class="math display">\[B_1=\{\bd{v}_1,\ldots,\bd{v}_m\},
+              \qquad
+              B_2=\{\bd{u}_1,\ldots,\bd{u}_n\}\]</span> be two bases of
+      <span class="math inline">\(V\)</span>. Since <span
+      class="math inline">\(B_1\)</span> spans <span
+      class="math inline">\(V\)</span> and <span
+      class="math inline">\(B_2\)</span> is linearly independent, by
+      Theorem <a href="#thm:li_bounded_by_spanning_set"
+      data-reference-type="ref"
+      data-reference="thm:li_bounded_by_spanning_set">[thm:li_bounded_by_spanning_set]</a>
+      we have <span class="math display">\[n \le m.\]</span> Similarly,
+      since <span class="math inline">\(B_2\)</span> spans <span
+      class="math inline">\(V\)</span> and <span
+      class="math inline">\(B_1\)</span> is linearly independent, the
+      same theorem gives <span class="math display">\[m \le n.\]</span>
+      Therefore <span class="math inline">\(m=n\)</span>. ◻</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:linear_transformation"
+      data-label="def:linear_transformation"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> and <span
+      class="math inline">\((W,\bb{F},+,\cdot)\)</span> be vector
+      spaces. A map <span class="math display">\[T : V \to W\]</span> is
+      called a <em>linear transformation</em> if for all <span
+      class="math inline">\(\bd{u},\bd{v}\in V\)</span> and all <span
+      class="math inline">\(\alpha\in\bb{F}\)</span>,</p>
+      <ol>
+      <li><p><span class="math inline">\(T(\bd{u}+\bd{v}) = T(\bd{u}) +
+      T(\bd{v})\)</span> (additivity)</p></li>
+      <li><p><span class="math inline">\(T(\alpha \bd{u}) = \alpha\,
+      T(\bd{u})\)</span> (homogeneity)</p></li>
+      </ol>
+      </div>
+      <div class="remark">
+      <p><span id="rem:linear_combination_preserving"
+      data-label="rem:linear_combination_preserving"></span> A map <span
+      class="math inline">\(T:V\to W\)</span> is linear if and only if
+      <span class="math display">\[T(\alpha \bd{u}+\bd{v})=\alpha
+      T(\bd{u})+T(\bd{v})
+              \quad
+              \forall\,\alpha\in\bb{F},\ \bd{u},\bd{v}\in
+      V.\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:linear_basic_properties"
+      data-label="prop:linear_basic_properties"></span> If <span
+      class="math inline">\(T:V\to W\)</span> is linear, then <span
+      class="math display">\[T(\bd{0})=\bd{0},
+              \qquad
+              T(-\bd{u})=-T(\bd{u})
+              \quad \forall\,\bd{u}\in V.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:homomorphism"
+      data-label="def:homomorphism"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> and <span
+      class="math inline">\((W,\bb{F},+,\cdot)\)</span> be vector
+      spaces. A map <span class="math display">\[T: V \to W\]</span> is
+      called a <em>(vector space) homomorphism</em> if for all <span
+      class="math inline">\(\bd{u},\bd{v}\in V\)</span> and all <span
+      class="math inline">\(\alpha\in\bb{F}\)</span>, <span
+      class="math display">\[T(\bd{u}+\bd{v}) = T(\bd{u}) + T(\bd{v}),
+              \qquad
+              T(\alpha \bd{u}) = \alpha\, T(\bd{u}).\]</span></p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:homomorphism_equiv"
+      data-label="rem:homomorphism_equiv"></span> A map <span
+      class="math inline">\(T:V\to W\)</span> is a homomorphism if and
+      only if <span class="math display">\[T(\alpha \bd{u}+\bd{v})
+              =
+              \alpha T(\bd{u}) + T(\bd{v})
+              \quad
+              \forall\,\alpha\in\bb{F},\ \bd{u},\bd{v}\in
+      V.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:linear_functional"
+      data-label="def:linear_functional"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space. A <em>linear functional</em> on <span
+      class="math inline">\(V\)</span> is a linear transformation <span
+      class="math display">\[f: V \to \bb{F}.\]</span> That is, for all
+      <span class="math inline">\(\bd{u},\bd{v}\in V\)</span> and all
+      <span class="math inline">\(\alpha\in\bb{F}\)</span>, <span
+      class="math display">\[f(\bd{u}+\bd{v}) = f(\bd{u}) + f(\bd{v}),
+              \qquad
+              f(\alpha \bd{u}) = \alpha\, f(\bd{u}).\]</span></p>
+      </div>
+      <div class="example">
+      <p><span id="ex:eval_functional"
+      data-label="ex:eval_functional"></span> Fix <span
+      class="math inline">\(a\in\bb{F}\)</span>. Define <span
+      class="math inline">\(f_a : \bb{F}[x] \to \bb{F}\)</span> by <span
+      class="math display">\[f_a(p) := p(a).\]</span> Then <span
+      class="math inline">\(f_a\)</span> is a linear functional.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:const_coeff" data-label="ex:const_coeff"></span>
+      Define <span class="math inline">\(f_0 : \bb{P}_n \to
+      \bb{F}\)</span> by <span class="math display">\[f_0(a_0 + a_1 x +
+      \cdots + a_n x^n) := a_0.\]</span> Then <span
+      class="math inline">\(f_0\)</span> is a linear functional.</p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:dual_space_preview"
+      data-label="rem:dual_space_preview"></span> The set of all linear
+      functionals on <span class="math inline">\(V\)</span> forms a
+      vector space over <span class="math inline">\(\bb{F}\)</span>,
+      called the <em>dual space</em> and denoted by <span
+      class="math inline">\(V^*\)</span>.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:inner_product"
+      data-label="def:inner_product"></span> Let <span
+      class="math inline">\(V\)</span> be a vector space over <span
+      class="math inline">\(\bb{F}\)</span>, where <span
+      class="math inline">\(\bb{F}=\bb{R}\)</span> or <span
+      class="math inline">\(\bb{C}\)</span>. An <em>inner product</em>
+      on <span class="math inline">\(V\)</span> is a map <span
+      class="math display">\[\iprod{\cdot}{\cdot} : V\times V \to
+      \bb{F}\]</span> satisfying the following properties for all <span
+      class="math inline">\(\bd{u},\bd{v},\bd{w}\in V\)</span> and all
+      <span class="math inline">\(\alpha\in\bb{F}\)</span>:</p>
+      <ol>
+      <li><p><span class="math inline">\(\iprod{\bd{u}}{\bd{v}} =
+      \overline{\iprod{\bd{v}}{\bd{u}}}\)</span> (conjugate
+      symmetry)</p></li>
+      <li><p><span
+      class="math inline">\(\iprod{\alpha\bd{u}+\bd{v}}{\bd{w}}
+                        = \alpha\iprod{\bd{u}}{\bd{w}} +
+      \iprod{\bd{v}}{\bd{w}}\)</span> (linearity in the first
+      argument)</p></li>
+      <li><p><span class="math inline">\(\iprod{\bd{u}}{\bd{u}} \ge
+      0\)</span> and <span
+      class="math inline">\(\iprod{\bd{u}}{\bd{u}}=0 \iff
+      \bd{u}=\bd{0}\)</span> (positive definiteness)</p></li>
+      </ol>
+      <p>If <span class="math inline">\(\bb{F}=\bb{R}\)</span>,
+      conjugation is trivial and symmetry reduces to <span
+      class="math inline">\(\iprod{\bd{u}}{\bd{v}}=\iprod{\bd{v}}{\bd{u}}\)</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:inner_product_space"
+      data-label="def:inner_product_space"></span> An <em>inner product
+      space</em> is a pair <span
+      class="math inline">\((V,\iprod{\cdot}{\cdot})\)</span> where
+      <span class="math inline">\(V\)</span> is a vector space over
+      <span class="math inline">\(\bb{F}\)</span> and <span
+      class="math inline">\(\iprod{\cdot}{\cdot}\)</span> is an inner
+      product on <span class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:euclidean_ip" data-label="ex:euclidean_ip"></span>
+      <span class="math display">\[\iprod{\bd{x}}{\bd{y}} :=
+      \sum_{i=1}^n x_i \overline{y_i}.\]</span></p>
+      </div>
+      <div class="example">
+      <p><span id="ex:poly_ip" data-label="ex:poly_ip"></span> <span
+      class="math display">\[\iprod{p}{q} := \int_0^1
+      p(x)\overline{q(x)}\,dx.\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:ip_basic" data-label="prop:ip_basic"></span> For
+      all <span class="math inline">\(\bd{u},\bd{v}\in V\)</span>: <span
+      class="math display">\[\iprod{\bd{u}}{\bd{v}}=0 \iff
+      \bd{u}\perp\bd{v},
+              \qquad
+              \|\bd{u}\| := \sqrt{\iprod{\bd{u}}{\bd{u}}}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:norm_from_ip"
+      data-label="def:norm_from_ip"></span> For <span
+      class="math inline">\(\bd{u}\in V\)</span>, define <span
+      class="math display">\[\|\bd{u}\| :=
+      \sqrt{\iprod{\bd{u}}{\bd{u}}}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:orthogonality"
+      data-label="def:orthogonality"></span> Vectors <span
+      class="math inline">\(\bd{u},\bd{v}\in V\)</span> are said to be
+      <em>orthogonal</em>, written <span
+      class="math inline">\(\bd{u}\perp\bd{v}\)</span>, if <span
+      class="math display">\[\iprod{\bd{u}}{\bd{v}}=0.\]</span></p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:ip_basic_properties"
+      data-label="prop:ip_basic_properties"></span> Let <span
+      class="math inline">\((V,\iprod{\cdot}{\cdot})\)</span> be an
+      inner product space. Then for all <span
+      class="math inline">\(\bd{u},\bd{v}\in V\)</span>:</p>
+      <ol>
+      <li><p><span class="math inline">\(\|\bd{u}\|\ge 0\)</span> and
+      <span class="math inline">\(\|\bd{u}\|=0 \iff
+      \bd{u}=\bd{0}\)</span></p></li>
+      <li><p><span class="math inline">\(\|\alpha\bd{u}\| =
+      |\alpha|\,\|\bd{u}\|\)</span></p></li>
+      <li><p><span class="math inline">\(\iprod{\bd{u}}{\bd{v}}=0 \iff
+      \bd{u}\perp\bd{v}\)</span></p></li>
+      </ol>
+      </div>
+      <div class="definition">
+      <p><span id="def:norm" data-label="def:norm"></span> Let <span
+      class="math inline">\((V,\bb{F},+,\cdot)\)</span> be a vector
+      space, where <span class="math inline">\(\bb{F}=\bb{R}\)</span> or
+      <span class="math inline">\(\bb{C}\)</span>. A <em>norm</em> on
+      <span class="math inline">\(V\)</span> is a function <span
+      class="math display">\[\|\cdot\| : V \to [0,\infty)\]</span>
+      satisfying, for all <span class="math inline">\(\bd{u},\bd{v}\in
+      V\)</span> and all <span
+      class="math inline">\(\alpha\in\bb{F}\)</span>,</p>
+      <ol>
+      <li><p><span id="ax:norm_pos" data-label="ax:norm_pos"></span>
+      <span class="math inline">\(\|\bd{u}\|\ge 0\)</span> and <span
+      class="math inline">\(\|\bd{u}\|=0\)</span> if and only if <span
+      class="math inline">\(\bd{u}=\bd{0}\)</span> (positive
+      definiteness)</p></li>
+      <li><p><span id="ax:norm_hom" data-label="ax:norm_hom"></span>
+      <span class="math inline">\(\|\alpha \bd{u}\| =
+      |\alpha|\,\|\bd{u}\|\)</span> (absolute homogeneity)</p></li>
+      <li><p><span id="ax:norm_triangle"
+      data-label="ax:norm_triangle"></span> <span
+      class="math inline">\(\|\bd{u}+\bd{v}\| \le \|\bd{u}\| +
+      \|\bd{v}\|\)</span> (triangle inequality)</p></li>
+      </ol>
+      </div>
+      <div class="definition">
+      <p><span id="def:normed_vector_space"
+      data-label="def:normed_vector_space"></span> A <em>normed vector
+      space</em> is a pair <span
+      class="math inline">\((V,\|\cdot\|)\)</span>, where <span
+      class="math inline">\(V\)</span> is a vector space and <span
+      class="math inline">\(\|\cdot\|\)</span> is a norm on <span
+      class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:lp_norms" data-label="ex:lp_norms"></span> For
+      <span
+      class="math inline">\(\bd{x}=(x_1,\ldots,x_n)\in\bb{F}^n\)</span>,
+      define <span class="math display">\[\|\bd{x}\|_p :=
+              \begin{cases}
+                  \left( \sum_{i=1}^n |x_i|^p \right)^{1/p}, &amp; 1\le
+      p&lt;\infty, \\[6pt]
+                  \max_{1\le i\le n} |x_i|,                  &amp;
+      p=\infty.
+              \end{cases}\]</span> Then <span
+      class="math inline">\((\bb{F}^n,\|\cdot\|_p)\)</span> is a normed
+      vector space.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:norm_from_ip" data-label="ex:norm_from_ip"></span>
+      Let <span class="math inline">\((V,\iprod{\cdot}{\cdot})\)</span>
+      be an inner product space. Define <span
+      class="math display">\[\|\bd{u}\| :=
+      \sqrt{\iprod{\bd{u}}{\bd{u}}}.\]</span> Then <span
+      class="math inline">\(\|\cdot\|\)</span> is a norm on <span
+      class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:poly_norm" data-label="ex:poly_norm"></span> Let
+      <span class="math inline">\(V=\bb{P}_n\)</span> and <span
+      class="math inline">\(\bb{F}=\bb{R}\)</span>. Define <span
+      class="math display">\[\|p\| := \max_{x\in[0,1]} |p(x)|.\]</span>
+      Then <span class="math inline">\((\bb{P}_n,\|\cdot\|)\)</span> is
+      a normed vector space.</p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:norm_basic" data-label="prop:norm_basic"></span>
+      Let <span class="math inline">\((V,\|\cdot\|)\)</span> be a normed
+      vector space. Then for all <span
+      class="math inline">\(\bd{u},\bd{v}\in V\)</span>:</p>
+      <ol>
+      <li><p><span class="math inline">\(\|\bd{u}-\bd{v}\|=0 \iff
+      \bd{u}=\bd{v}\)</span></p></li>
+      <li><p><span class="math inline">\(\|\bd{u}-\bd{v}\| \le
+      \|\bd{u}\|+\|\bd{v}\|\)</span></p></li>
+      <li><p><span class="math inline">\(|\|\bd{u}\|-\|\bd{v}\|| \le
+      \|\bd{u}-\bd{v}\|\)</span></p></li>
+      </ol>
+      </div>
+      <div class="remark">
+      <p><span id="rem:norm_vs_ip" data-label="rem:norm_vs_ip"></span>
+      Every inner product induces a norm, but not every norm arises from
+      an inner product.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:metric" data-label="def:metric"></span> Let <span
+      class="math inline">\(X\)</span> be a nonempty set. A
+      <em>metric</em> on <span class="math inline">\(X\)</span> is a
+      function <span class="math display">\[d : X \times X \to
+      [0,\infty)\]</span> satisfying, for all <span
+      class="math inline">\(x,y,z\in X\)</span>:</p>
+      <ol>
+      <li><p><span id="ax:metric_pos" data-label="ax:metric_pos"></span>
+      <span class="math inline">\(d(x,y)\ge 0\)</span> and <span
+      class="math inline">\(d(x,y)=0\)</span> if and only if <span
+      class="math inline">\(x=y\)</span> (non-negativity and
+      identity)</p></li>
+      <li><p><span id="ax:metric_sym" data-label="ax:metric_sym"></span>
+      <span class="math inline">\(d(x,y)=d(y,x)\)</span>
+      (symmetry)</p></li>
+      <li><p><span id="ax:metric_triangle"
+      data-label="ax:metric_triangle"></span> <span
+      class="math inline">\(d(x,z)\le d(x,y)+d(y,z)\)</span> (triangle
+      inequality)</p></li>
+      </ol>
+      </div>
+      <div class="definition">
+      <p><span id="def:metric_space"
+      data-label="def:metric_space"></span> A <em>metric space</em> is a
+      pair <span class="math inline">\((X,d)\)</span>, where <span
+      class="math inline">\(X\)</span> is a set and <span
+      class="math inline">\(d\)</span> is a metric on <span
+      class="math inline">\(X\)</span>.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:euclidean_metric"
+      data-label="ex:euclidean_metric"></span> Let <span
+      class="math inline">\(X=\bb{F}^n\)</span> and define <span
+      class="math display">\[d(\bd{x},\bd{y}) :=
+      \|\bd{x}-\bd{y}\|_2.\]</span> Then <span
+      class="math inline">\((\bb{F}^n,d)\)</span> is a metric space.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:discrete_metric"
+      data-label="ex:discrete_metric"></span> Let <span
+      class="math inline">\(X\)</span> be any set and define <span
+      class="math display">\[d(x,y) :=
+              \begin{cases}
+                  0, &amp; x=y,     \\
+                  1, &amp; x\neq y.
+              \end{cases}\]</span> Then <span
+      class="math inline">\((X,d)\)</span> is a metric space.</p>
+      </div>
+      <div class="example">
+      <p><span id="ex:poly_metric" data-label="ex:poly_metric"></span>
+      Let <span class="math inline">\(X=\bb{P}_n\)</span> and define
+      <span class="math display">\[d(p,q):=\|p-q\|_\infty
+              = \max_{x\in[0,1]} |p(x)-q(x)|.\]</span> Then <span
+      class="math inline">\((\bb{P}_n,d)\)</span> is a metric space.</p>
+      </div>
+      <div class="proposition">
+      <p><span id="prop:norm_induces_metric"
+      data-label="prop:norm_induces_metric"></span> Let <span
+      class="math inline">\((V,\|\cdot\|)\)</span> be a normed vector
+      space. Define <span class="math display">\[d(\bd{u},\bd{v}) :=
+      \|\bd{u}-\bd{v}\|.\]</span> Then <span
+      class="math inline">\(d\)</span> is a metric on <span
+      class="math inline">\(V\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Non-negativity and symmetry follow directly
+      from properties of the norm. Moreover, <span
+      class="math display">\[d(\bd{u},\bd{v})=0
+              \iff \|\bd{u}-\bd{v}\|=0
+              \iff \bd{u}=\bd{v}.\]</span> Finally, by the triangle
+      inequality for the norm, <span
+      class="math display">\[d(\bd{u},\bd{w})
+              = \|\bd{u}-\bd{w}\|
+              \le \|\bd{u}-\bd{v}\| + \|\bd{v}-\bd{w}\|
+              = d(\bd{u},\bd{v}) + d(\bd{v},\bd{w}).\]</span> ◻</p>
+      </div>
+      <div class="remark">
+      <p><span id="rem:metric_vs_norm"
+      data-label="rem:metric_vs_norm"></span> Every normed vector space
+      is a metric space, but a metric space need not carry any linear or
+      vector space structure.</p>
+      </div>
+      <h1 id="definitions">Definitions</h1>
+      <p>The following definitions and properties establish the
+      topological groundwork on <span
+      class="math inline">\(\bb{R}^n\)</span> required for convex
+      analysis.</p>
+      <div class="definition">
+      <p>Fix a norm <span class="math inline">\(\|\cdot\|\)</span> on
+      <span class="math inline">\(\bb{R}^n\)</span>. An <strong>open
+      ball</strong> of radius <span class="math inline">\(\epsilon &gt;
+      0\)</span> centered at <span
+      class="math inline">\(\bd{x}\)</span>, denoted <span
+      class="math inline">\(B_{\epsilon}(\bd{x})\)</span>, is defined
+      as: <span class="math display">\[B_{\epsilon}(\bd{x}) := \{ \bd{y}
+      \in \bb{R}^n : \|\bd{x} - \bd{y}\| &lt; \epsilon \}\]</span></p>
+      </div>
+      <div class="definition">
+      <p>A set <span class="math inline">\(C \subseteq \bb{R}^n\)</span>
+      is said to be <strong>open</strong> if for every <span
+      class="math inline">\(\bd{x} \in C\)</span>, there exists some
+      <span class="math inline">\(\epsilon &gt; 0\)</span> such that the
+      ball is fully contained in the set: <span
+      class="math display">\[B_{\epsilon}(\bd{x}) \subseteq
+      C\]</span></p>
+      </div>
+      <div class="definition">
+      <p>A set <span class="math inline">\(C \subseteq \bb{R}^n\)</span>
+      is <strong>closed</strong> if its complement <span
+      class="math inline">\(C^c = \bb{R}^n \setminus C\)</span> is an
+      open set.</p>
+      </div>
+      <h2 class="unnumbered" id="sequences-and-convergence">Sequences
+      and Convergence</h2>
+      <div class="definition">
+      <p>A sequence is a function from the natural numbers <span
+      class="math inline">\(\bb{N}\)</span> to a set <span
+      class="math inline">\(X\)</span> (here <span
+      class="math inline">\(\bb{R}^n\)</span>). It is denoted as <span
+      class="math inline">\((\bd{x}_k)_{k \ge 1} \subseteq
+      \bb{R}^n\)</span>.</p>
+      </div>
+      <div class="definition">
+      <p>A sequence <span class="math inline">\((\bd{x}_k)_{k \ge
+      1}\)</span> is said to <strong>converge</strong> to a limit <span
+      class="math inline">\(\bd{x} \in \bb{R}^n\)</span> (denoted <span
+      class="math inline">\(\bd{x}_k \to \bd{x}\)</span>) if for every
+      <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists
+      an integer <span class="math inline">\(N \in \bb{N}\)</span> such
+      that: <span class="math display">\[\|\bd{x}_k - \bd{x}\| &lt;
+      \epsilon \quad \text{for all } k \ge N\]</span> Equivalently,
+      <span class="math inline">\(\lim_{k \to \infty} \|\bd{x}_k -
+      \bd{x}\| = 0\)</span>.</p>
+      </div>
+      <div class="proposition">
+      <p>A subset <span class="math inline">\(C \subseteq
+      \bb{R}^n\)</span> is closed if and only if for every convergent
+      sequence <span class="math inline">\((\bd{x}_k)_{k \ge 1}
+      \subseteq C\)</span> such that <span
+      class="math inline">\(\bd{x}_k \to \bd{x}\)</span>, the limit
+      point satisfies <span class="math inline">\(\bd{x} \in
+      C\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> (<span
+      class="math inline">\(\Rightarrow\)</span>) Suppose <span
+      class="math inline">\(C\)</span> is closed and let <span
+      class="math inline">\((\bd{x}_k) \subseteq C\)</span> converge to
+      <span class="math inline">\(\bd{x}\)</span>. We must show <span
+      class="math inline">\(\bd{x} \in C\)</span>. Assume for the sake
+      of contradiction that <span class="math inline">\(\bd{x} \notin
+      C\)</span>. Then <span class="math inline">\(\bd{x} \in
+      C^c\)</span>. Since <span class="math inline">\(C\)</span> is
+      closed, <span class="math inline">\(C^c\)</span> is open.
+      Therefore, there exists <span class="math inline">\(\epsilon &gt;
+      0\)</span> such that <span
+      class="math inline">\(B_{\epsilon}(\bd{x}) \subseteq C^c\)</span>.
+      Since <span class="math inline">\(\bd{x}_k \to \bd{x}\)</span>,
+      there exists <span class="math inline">\(N\)</span> such that for
+      all <span class="math inline">\(k \ge N\)</span>, <span
+      class="math inline">\(\|\bd{x}_k - \bd{x}\| &lt;
+      \epsilon\)</span>, which implies <span
+      class="math inline">\(\bd{x}_k \in B_{\epsilon}(\bd{x})\)</span>.
+      This means <span class="math inline">\(\bd{x}_k \in C^c\)</span>,
+      which contradicts the fact that the sequence is contained in <span
+      class="math inline">\(C\)</span>. Thus, <span
+      class="math inline">\(\bd{x}\)</span> must belong to <span
+      class="math inline">\(C\)</span>.</p>
+      <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that
+      if the limit property holds, <span
+      class="math inline">\(C\)</span> is closed (i.e., <span
+      class="math inline">\(C^c\)</span> is open). Suppose <span
+      class="math inline">\(C^c\)</span> is not open. Then there exists
+      <span class="math inline">\(\bd{x} \in C^c\)</span> such that for
+      every <span class="math inline">\(\epsilon &gt; 0\)</span>, <span
+      class="math inline">\(B_{\epsilon}(\bd{x}) \not\subseteq
+      C^c\)</span>. This implies <span
+      class="math inline">\(B_{\epsilon}(\bd{x}) \cap C \neq
+      \emptyset\)</span>. For each <span class="math inline">\(k \ge
+      1\)</span>, choose <span class="math inline">\(\bd{x}_k \in
+      B_{1/k}(\bd{x}) \cap C\)</span>. Then <span
+      class="math inline">\((\bd{x}_k) \subseteq C\)</span> and <span
+      class="math inline">\(\|\bd{x}_k - \bd{x}\| &lt; 1/k \to
+      0\)</span>, so <span class="math inline">\(\bd{x}_k \to
+      \bd{x}\)</span>. By the hypothesis, the limit <span
+      class="math inline">\(\bd{x}\)</span> must be in <span
+      class="math inline">\(C\)</span>. But we started with <span
+      class="math inline">\(\bd{x} \in C^c\)</span>, a
+      contradiction. ◻</p>
+      </div>
+      <h2 class="unnumbered"
+      id="interior-closure-and-boundary">Interior, Closure, and
+      Boundary</h2>
+      <div class="definition">
+      <p>The <strong>interior</strong> of a set <span
+      class="math inline">\(C\)</span>, denoted <span
+      class="math inline">\(\text{int}(C)\)</span>, is the set of all
+      interior points: <span class="math display">\[\text{int}(C) = \{
+      \bd{x} \in C : \exists \epsilon &gt; 0 \text{ such that }
+      B_{\epsilon}(\bd{x}) \subseteq C \}\]</span></p>
+      </div>
+      <div class="proposition">
+      <p>For any set <span class="math inline">\(C \subseteq
+      \bb{R}^n\)</span>, the interior <span
+      class="math inline">\(\text{int}(C)\)</span> is an open set.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span class="math inline">\(\bd{x} \in
+      \text{int}(C)\)</span>. By definition, there exists <span
+      class="math inline">\(\epsilon &gt; 0\)</span> such that <span
+      class="math inline">\(B_{\epsilon}(\bd{x}) \subseteq C\)</span>.
+      We claim that <span class="math inline">\(B_{\epsilon}(\bd{x})
+      \subseteq \text{int}(C)\)</span>. Let <span
+      class="math inline">\(\bd{y} \in B_{\epsilon}(\bd{x})\)</span>.
+      Then <span class="math inline">\(\|\bd{x} - \bd{y}\| &lt;
+      \epsilon\)</span>. Let <span class="math inline">\(\delta =
+      \epsilon - \|\bd{x} - \bd{y}\| &gt; 0\)</span>. We show that <span
+      class="math inline">\(B_{\delta}(\bd{y}) \subseteq C\)</span>. Let
+      <span class="math inline">\(\bd{z} \in
+      B_{\delta}(\bd{y})\)</span>. Then: <span
+      class="math display">\[\|\bd{z} - \bd{x}\| \le \|\bd{z} - \bd{y}\|
+      + \|\bd{y} - \bd{x}\| &lt; \delta + \|\bd{y} - \bd{x}\| =
+      \epsilon\]</span> Thus <span class="math inline">\(\bd{z} \in
+      B_{\epsilon}(\bd{x}) \subseteq C\)</span>. This shows <span
+      class="math inline">\(B_{\delta}(\bd{y}) \subseteq C\)</span>, so
+      <span class="math inline">\(\bd{y} \in \text{int}(C)\)</span>.
+      Since <span class="math inline">\(\bd{y}\)</span> was arbitrary,
+      <span class="math inline">\(B_{\epsilon}(\bd{x}) \subseteq
+      \text{int}(C)\)</span>, proving <span
+      class="math inline">\(\text{int}(C)\)</span> is open. ◻</p>
+      </div>
+      <div class="definition">
+      <p>The <strong>closure</strong> of a set <span
+      class="math inline">\(C\)</span>, denoted <span
+      class="math inline">\(\overline{C}\)</span>, is the set of all
+      points that are "close" to <span class="math inline">\(C\)</span>:
+      <span class="math display">\[\overline{C} = \{ \bd{x} \in \bb{R}^n
+      : B_{\epsilon}(\bd{x}) \cap C \neq \emptyset, \forall \epsilon
+      &gt; 0 \}\]</span> Intuitively, this set contains all elements of
+      <span class="math inline">\(C\)</span> plus its boundary.</p>
+      </div>
+      <div class="definition">
+      <p>The <strong>boundary</strong> of a set <span
+      class="math inline">\(C\)</span>, denoted <span
+      class="math inline">\(\partial C\)</span>, is the set difference
+      between the closure and the interior: <span
+      class="math display">\[\partial C := \overline{C} \setminus
+      \text{int}(C)\]</span></p>
+      </div>
+      <div class="definition">
+      <p>Let <span class="math inline">\(f : \bb{R}^n \to
+      \bb{R}\cup\{+\infty\}\)</span> and let <span
+      class="math inline">\(\bd{x}_0 \in \dom f\)</span>. The function
+      <span class="math inline">\(f\)</span> is said to be
+      <em>continuous at <span
+      class="math inline">\(\bd{x}_0\)</span></em> if <span
+      class="math display">\[\lim_{\bd{x}\to \bd{x}_0} f(\bd{x}) =
+      f(\bd{x}_0),\]</span> that is, for every <span
+      class="math inline">\(\varepsilon &gt; 0\)</span> there exists
+      <span class="math inline">\(\delta &gt; 0\)</span> such that <span
+      class="math display">\[\|\bd{x}-\bd{x}_0\| &lt; \delta
+              \;\Longrightarrow\;
+              |f(\bd{x}) - f(\bd{x}_0)| &lt; \varepsilon.\]</span></p>
+      </div>
+      <h2 class="unnumbered" id="convex-sets-and-functions">Convex Sets
+      and Functions</h2>
+      <div class="definition">
+      <p><span id="def:convex_set" data-label="def:convex_set"></span> A
+      set <span class="math inline">\(C\subseteq \bb{R}^n\)</span> is
+      called <em>convex</em> if for all <span
+      class="math inline">\(\bd{x},\bd{y}\in C\)</span> and all <span
+      class="math inline">\(\lambda\in[0,1]\)</span>, <span
+      class="math display">\[\lambda \bd{x} + (1-\lambda)\bd{y} \in
+      C.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:convex_function"
+      data-label="def:convex_function"></span> Let <span
+      class="math inline">\(C\subseteq \bb{R}^n\)</span> be a convex
+      set. A function <span class="math inline">\(f:C\to\bb{R}\)</span>
+      is called <em>convex</em> if for all <span
+      class="math inline">\(\bd{x},\bd{y}\in C\)</span> and all <span
+      class="math inline">\(\lambda\in[0,1]\)</span>, <span
+      class="math display">\[f\bigl(\lambda \bd{x} +
+      (1-\lambda)\bd{y}\bigr)
+              \le
+              \lambda f(\bd{x}) + (1-\lambda) f(\bd{y}).\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:convex_program"
+      data-label="def:convex_program"></span> A <em>convex program</em>
+      is an optimization problem of the form <span
+      class="math display">\[\min_{\bd{x}\in C} f(\bd{x}),\]</span>
+      where <span class="math inline">\(C\subseteq\bb{R}^n\)</span> is a
+      convex set and <span class="math inline">\(f:C\to\bb{R}\)</span>
+      is a convex function.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:linear_program"
+      data-label="def:linear_program"></span> A <em>linear program</em>
+      is an optimization problem of the form <span
+      class="math display">\[\min_{\bd{x}\in\bb{R}^n} \;\bd{c}^\TT
+      \bd{x}
+              \quad \text{subject to } A\bd{x}\le \bd{b},\]</span> where
+      <span class="math inline">\(\bd{c}\in\bb{R}^n\)</span>, <span
+      class="math inline">\(A\in\bb{R}^{m\times n}\)</span>, and <span
+      class="math inline">\(\bd{b}\in\bb{R}^m\)</span>.</p>
+      </div>
+      <div class="remark">
+      <p>Every linear program is a convex program.</p>
+      </div>
+      <div class="definition">
+      <p><span id="def:affine_set" data-label="def:affine_set"></span> A
+      set <span class="math inline">\(A\subseteq\bb{R}^n\)</span> is
+      called <em>affine</em> if for all <span
+      class="math inline">\(\bd{x},\bd{y}\in A\)</span> and all <span
+      class="math inline">\(\lambda\in\bb{R}\)</span>, <span
+      class="math display">\[\lambda \bd{x} + (1-\lambda)\bd{y} \in
+      A.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:affine_hull" data-label="def:affine_hull"></span>
+      Let <span class="math inline">\(S\subseteq\bb{R}^n\)</span>. The
+      <em>affine hull</em> of <span class="math inline">\(S\)</span>,
+      denoted <span
+      class="math inline">\(\operatorname{aff}(S)\)</span>, is the
+      smallest affine set containing <span
+      class="math inline">\(S\)</span>, equivalently <span
+      class="math display">\[\operatorname{aff}(S)
+              =
+              \left\{
+              \sum_{i=1}^k \alpha_i \bd{x}_i
+              \;\middle|\;
+              \bd{x}_i\in S,\;
+              \sum_{i=1}^k \alpha_i = 1
+              \right\}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:graph" data-label="def:graph"></span> Let <span
+      class="math inline">\(f:C\subseteq\bb{R}^n\to\bb{R}\)</span>. The
+      <em>graph</em> of <span class="math inline">\(f\)</span> is the
+      set <span class="math display">\[\operatorname{graph}(f)
+              :=
+              \{(\bd{x},t)\in\bb{R}^{n+1} : t=f(\bd{x}),\ \bd{x}\in
+      C\}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p><span id="def:epigraph" data-label="def:epigraph"></span> Let
+      <span
+      class="math inline">\(f:C\subseteq\bb{R}^n\to\bb{R}\)</span>. The
+      <em>epigraph</em> of <span class="math inline">\(f\)</span> is the
+      set <span class="math display">\[\operatorname{epi}(f)
+              :=
+              \{(\bd{x},t)\in\bb{R}^{n+1} : t\ge f(\bd{x}),\ \bd{x}\in
+      C\}.\]</span></p>
+      </div>
+      <div class="definition">
+      <p>A vector <span class="math inline">\(\bd{g} \in
+      \bb{R}^n\)</span> is a <strong>subgradient</strong> of a convex
+      function <span class="math inline">\(f\)</span> at <span
+      class="math inline">\(\bd{x}_0\)</span> if: <span
+      class="math display">\[f(\bd{x}) \ge f(\bd{x}_0) + \bd{g}^T
+      (\bd{x} - \bd{x}_0) \quad \forall \bd{x} \in
+      \text{dom}(f)\]</span> The set of all subgradients at <span
+      class="math inline">\(\bd{x}_0\)</span> is denoted <span
+      class="math inline">\(\partial f(\bd{x}_0)\)</span>.</p>
+      </div>
+      <h1 id="convex-optimization">Convex Optimization</h1>
+      <div class="theorem">
+      <p><span id="thm:epi_convex_implies_f_convex"
+      data-label="thm:epi_convex_implies_f_convex"></span> Let <span
+      class="math inline">\(C \subseteq \bb{R}^n\)</span> be a convex
+      set and let <span class="math inline">\(f : C \to \bb{R}\)</span>
+      be a function. The function <span class="math inline">\(f\)</span>
+      is convex if and only if its epigraph <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is a convex
+      set.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> The proof consists of two directions.</p>
+      <p><strong>Direction 1: <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is convex
+      <span class="math inline">\(\implies f\)</span> is
+      convex</strong><br />
+      Assume that <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is convex.
+      Let <span class="math inline">\(\bd{x}, \bd{y} \in C\)</span> and
+      let <span class="math inline">\(\lambda \in [0, 1]\)</span>. By
+      the definition of the epigraph: <span
+      class="math display">\[(\bd{x}, f(\bd{x})) \in
+      \operatorname{epi}(f) \quad \text{and} \quad (\bd{y}, f(\bd{y}))
+      \in \operatorname{epi}(f)\]</span> Since <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is a convex
+      set, the convex combination of these two points must also belong
+      to <span class="math inline">\(\operatorname{epi}(f)\)</span>:
+      <span class="math display">\[\lambda(\bd{x}, f(\bd{x})) + (1 -
+      \lambda)(\bd{y}, f(\bd{y})) \in \operatorname{epi}(f)\]</span>
+      Expanding this, we get: <span
+      class="math display">\[(\lambda\bd{x} + (1 - \lambda)\bd{y},
+      \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y})) \in
+      \operatorname{epi}(f)\]</span> By the definition of the epigraph,
+      if a point <span class="math inline">\((\bd{z}, t) \in
+      \operatorname{epi}(f)\)</span>, then <span
+      class="math inline">\(f(\bd{z}) \le t\)</span>. Applying this
+      here: <span class="math display">\[f(\lambda\bd{x} + (1 -
+      \lambda)\bd{y}) \le \lambda f(\bd{x}) + (1 -
+      \lambda)f(\bd{y})\]</span> Since <span
+      class="math inline">\(\bd{x}, \bd{y} \in C\)</span> and <span
+      class="math inline">\(\lambda \in [0, 1]\)</span> were arbitrary,
+      <span class="math inline">\(f\)</span> is a convex function on
+      <span class="math inline">\(C\)</span>.</p>
+      <p><strong>Direction 2: <span class="math inline">\(f\)</span> is
+      convex <span class="math inline">\(\implies
+      \operatorname{epi}(f)\)</span> is convex</strong><br />
+      Assume <span class="math inline">\(f\)</span> is convex. Let <span
+      class="math inline">\((\bd{x}, t_1) \in
+      \operatorname{epi}(f)\)</span> and <span
+      class="math inline">\((\bd{y}, t_2) \in
+      \operatorname{epi}(f)\)</span>. This implies: <span
+      class="math display">\[\bd{x}, \bd{y} \in C, \quad f(\bd{x}) \le
+      t_1, \quad \text{and} \quad f(\bd{y}) \le t_2\]</span> Consider a
+      convex combination of these points for any <span
+      class="math inline">\(\lambda \in [0, 1]\)</span>: <span
+      class="math display">\[\bd{P} = \lambda(\bd{x}, t_1) + (1 -
+      \lambda)(\bd{y}, t_2) = (\lambda\bd{x} + (1 - \lambda)\bd{y},
+      \lambda t_1 + (1 - \lambda)t_2)\]</span> Since <span
+      class="math inline">\(C\)</span> is a convex set, <span
+      class="math inline">\(\lambda\bd{x} + (1 - \lambda)\bd{y} \in
+      C\)</span>. Now we check the convexity condition for <span
+      class="math inline">\(f\)</span>: <span
+      class="math display">\[f(\lambda\bd{x} + (1 - \lambda)\bd{y}) \le
+      \lambda f(\bd{x}) + (1 - \lambda)f(\bd{y})\]</span> Because <span
+      class="math inline">\(f(\bd{x}) \le t_1\)</span> and <span
+      class="math inline">\(f(\bd{y}) \le t_2\)</span>, it follows that:
+      <span class="math display">\[\lambda f(\bd{x}) + (1 -
+      \lambda)f(\bd{y}) \le \lambda t_1 + (1 - \lambda)t_2\]</span> By
+      transitivity: <span class="math display">\[f(\lambda\bd{x} + (1 -
+      \lambda)\bd{y}) \le \lambda t_1 + (1 - \lambda)t_2\]</span> This
+      confirms that the point <span
+      class="math inline">\(\bd{P}\)</span> satisfies the definition of
+      the epigraph. Thus, <span class="math inline">\((\lambda\bd{x} +
+      (1 - \lambda)\bd{y}, \lambda t_1 + (1 - \lambda)t_2) \in
+      \operatorname{epi}(f)\)</span>, proving that <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is a convex
+      set. ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(C\)</span> and <span
+      class="math inline">\(D\)</span> be two convex subsets of <span
+      class="math inline">\(\bb{R}^n\)</span> that are both closed.
+      Furthermore, assume that at least one of them is bounded
+      (compact). If <span class="math inline">\(C \cap D =
+      \emptyset\)</span>, then there exists a hyperplane that strictly
+      separates <span class="math inline">\(C\)</span> and <span
+      class="math inline">\(D\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Since <span class="math inline">\(C\)</span>
+      and <span class="math inline">\(D\)</span> are disjoint, closed,
+      and at least one is bounded, the distance between the sets is
+      strictly positive. We define the distance as: <span
+      class="math display">\[\text{dist}(C, D) := \inf \{ \|\bd{x} -
+      \bd{y}\|_2 : \bd{x} \in C, \bd{y} \in D \}\]</span> Because of the
+      closed/bounded assumptions, this infimum is attained. There exist
+      points <span class="math inline">\(\bd{c} \in C\)</span> and <span
+      class="math inline">\(\bd{d} \in D\)</span> such that: <span
+      class="math display">\[\|\bd{c} - \bd{d}\| = \text{dist}(C, D)
+      &gt; 0\]</span></p>
+      <h2 class="unnumbered"
+      id="construction-of-the-hyperplane">Construction of the
+      Hyperplane</h2>
+      <p>We define the normal vector <span
+      class="math inline">\(\bd{a}\)</span> and the bias scalar <span
+      class="math inline">\(b\)</span> as follows (using the midpoint
+      construction): <span class="math display">\[\begin{aligned}
+              \bd{a} &amp; = \bd{d} -
+      \bd{c}                                                                           \\
+              b      &amp; = \dfrac{\|\bd{d}\|^2 - \|\bd{c}\|^2}{2} =
+      \bd{a}^T \left( \dfrac{\bd{d} + \bd{c}}{2} \right)
+          
+      \end{aligned}\]</span> The separating hyperplane is <span
+      class="math inline">\(H = \{ \bd{x} : \bd{a}^T \bd{x} = b
+      \}\)</span>. We claim that for all <span
+      class="math inline">\(\bd{x} \in C\)</span>, <span
+      class="math inline">\(\bd{a}^T \bd{x} \le \bd{a}^T
+      \bd{c}\)</span>, and for all <span class="math inline">\(\bd{y}
+      \in D\)</span>, <span class="math inline">\(\bd{a}^T \bd{y} \ge
+      \bd{a}^T \bd{d}\)</span>.</p>
+      <h2 class="unnumbered"
+      id="proof-by-contradiction-variational-argument">Proof by
+      Contradiction (Variational Argument)</h2>
+      <p>We show the first part: <span class="math inline">\(\bd{a}^T
+      \bd{x} \le \bd{a}^T \bd{c}\)</span> for all <span
+      class="math inline">\(\bd{x} \in C\)</span>.</p>
+      <p>Suppose for the sake of contradiction that there exists some
+      <span class="math inline">\(\bd{x} \in C\)</span> such that <span
+      class="math inline">\(\bd{a}^T \bd{x} &gt; \bd{a}^T
+      \bd{c}\)</span>. Consider the line segment connecting <span
+      class="math inline">\(\bd{c}\)</span> and <span
+      class="math inline">\(\bd{x}\)</span>. Since <span
+      class="math inline">\(C\)</span> is convex, the point <span
+      class="math inline">\(\bd{z}(t)\)</span> belongs to <span
+      class="math inline">\(C\)</span> for any <span
+      class="math inline">\(t \in [0, 1]\)</span>: <span
+      class="math display">\[\bd{z}(t) = (1-t)\bd{c} + t\bd{x} = \bd{c}
+      + t(\bd{x} - \bd{c})\]</span> We analyze the squared distance from
+      <span class="math inline">\(\bd{d}\)</span> to this point <span
+      class="math inline">\(\bd{z}(t)\)</span>: <span
+      class="math display">\[\begin{aligned}
+              \|\bd{z}(t) - \bd{d}\|^2 &amp; = \|\bd{c} + t(\bd{x} -
+      \bd{c}) -
+      \bd{d}\|^2                                                   \\
+                                       &amp; = \|(\bd{c} - \bd{d}) +
+      t(\bd{x} -
+      \bd{c})\|^2                                                 \\
+                                       &amp; = \|\bd{c} - \bd{d}\|^2 +
+      2t (\bd{c} - \bd{d})^T (\bd{x} - \bd{c}) + t^2 \|\bd{x} -
+      \bd{c}\|^2
+          
+      \end{aligned}\]</span> Recall that <span
+      class="math inline">\(\bd{a} = \bd{d} - \bd{c}\)</span>, so <span
+      class="math inline">\(\bd{c} - \bd{d} = -\bd{a}\)</span>.
+      Substituting this back: <span class="math display">\[\|\bd{z}(t) -
+      \bd{d}\|^2 = \|\bd{c} - \bd{d}\|^2 - 2t \bd{a}^T (\bd{x} - \bd{c})
+      + t^2 \|\bd{x} - \bd{c}\|^2\]</span> From our contradiction
+      assumption, <span class="math inline">\(\bd{a}^T \bd{x} &gt;
+      \bd{a}^T \bd{c}\)</span>, which implies <span
+      class="math inline">\(\bd{a}^T(\bd{x} - \bd{c}) &gt; 0\)</span>.
+      Let <span class="math inline">\(K = \bd{a}^T(\bd{x} - \bd{c}) &gt;
+      0\)</span>. <span class="math display">\[\|\bd{z}(t) - \bd{d}\|^2
+      = \|\bd{c} - \bd{d}\|^2 - t \left[ 2K - t \|\bd{x} - \bd{c}\|^2
+      \right]\]</span> Since <span class="math inline">\(K &gt;
+      0\)</span>, we can choose <span class="math inline">\(t\)</span>
+      strictly positive but small enough (specifically <span
+      class="math inline">\(0 &lt; t &lt; \dfrac{2K}{\|\bd{x} -
+      \bd{c}\|^2}\)</span>) such that the term in the brackets is
+      positive.</p>
+      <p>This implies: <span class="math display">\[\|\bd{z}(t) -
+      \bd{d}\|^2 &lt; \|\bd{c} - \bd{d}\|^2\]</span> This contradicts
+      the definition that <span class="math inline">\(\bd{c}\)</span> is
+      the closest point in <span class="math inline">\(C\)</span> to
+      <span class="math inline">\(D\)</span>. Therefore, such an <span
+      class="math inline">\(\bd{x}\)</span> cannot exist, and we must
+      have <span class="math inline">\(\bd{a}^T \bd{x} \le \bd{a}^T
+      \bd{c}\)</span> for all <span class="math inline">\(\bd{x} \in
+      C\)</span>.</p>
+      <h2 class="unnumbered" id="final-separation">Final Separation</h2>
+      <p>A symmetric argument shows that <span
+      class="math inline">\(\bd{a}^T \bd{y} \ge \bd{a}^T \bd{d}\)</span>
+      for all <span class="math inline">\(\bd{y} \in D\)</span>.
+      Combining these results with the definition of <span
+      class="math inline">\(b\)</span>: <span class="math display">\[b -
+      \bd{a}^T \bd{c} = \dfrac{\|\bd{d} - \bd{c}\|^2}{2} &gt; 0 \quad
+      \implies \quad \bd{a}^T \bd{c} &lt; b\]</span> <span
+      class="math display">\[\bd{a}^T \bd{d} - b = \dfrac{\|\bd{d} -
+      \bd{c}\|^2}{2} &gt; 0 \quad \implies \quad b &lt; \bd{a}^T
+      \bd{d}\]</span> Thus, for all <span class="math inline">\(\bd{x}
+      \in C\)</span> and <span class="math inline">\(\bd{y} \in
+      D\)</span>, we have the strict separation: <span
+      class="math display">\[\bd{a}^T \bd{x} \le \bd{a}^T \bd{c} &lt; b
+      &lt; \bd{a}^T \bd{d} \le \bd{a}^T \bd{y}\]</span> ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(f: \bb{R}^n \to \bb{R}\)</span>
+      be a convex function. Then <span class="math inline">\(f\)</span>
+      is continuous on <span
+      class="math inline">\(\bb{R}^n\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span class="math inline">\(\bd{x}_0 \in
+      \bb{R}^n\)</span> be arbitrary but fixed. We proceed by showing
+      <span class="math inline">\(f\)</span> is continuous at <span
+      class="math inline">\(\bd{x}_0\)</span> using a sequence of
+      claims.</p>
+      <div class="claim">
+      <p><span class="math inline">\(f\)</span> is locally bounded in
+      the neighborhood <span
+      class="math inline">\(B_r(\bd{x}_0)\)</span>.</p>
+      </div>
+      <p>Let <span class="math inline">\(\bd{v}_0, \dots,
+      \bd{v}_n\)</span> be an affinely independent set of points in
+      <span class="math inline">\(\bb{R}^n\)</span> such that <span
+      class="math inline">\(\bd{x}_0\)</span> lies in the interior of
+      their convex hull, <span
+      class="math inline">\(\text{conv}(\{\bd{v}_0, \dots,
+      \bd{v}_n\})\)</span>. There exists <span class="math inline">\(r
+      &gt; 0\)</span> such that <span
+      class="math inline">\(B_r(\bd{x}_0) \subset
+      \text{conv}(\{\bd{v}_0, \dots, \bd{v}_n\})\)</span>. Any <span
+      class="math inline">\(\bd{x} \in B_r(\bd{x}_0)\)</span> can be
+      written as <span class="math inline">\(\bd{x} = \sum \alpha_i
+      \bd{v}_i\)</span> with <span class="math inline">\(\sum \alpha_i =
+      1, \alpha_i \ge 0\)</span>. Since <span
+      class="math inline">\(f\)</span> is convex: <span
+      class="math display">\[f(\bd{x}) \le \sum \alpha_i f(\bd{v}_i) \le
+      \max_i f(\bd{v}_i) := M\]</span> To bound from below, for any
+      <span class="math inline">\(\bd{x} \in B_r(\bd{x}_0)\)</span>, let
+      <span class="math inline">\(\bd{z} = 2\bd{x}_0 - \bd{x}\)</span>.
+      Then <span class="math inline">\(\bd{x}_0 = \dfrac{1}{2}\bd{z} +
+      \dfrac{1}{2}\bd{x}\)</span>. Since <span
+      class="math inline">\(\bd{z} \in B_r(\bd{x}_0)\)</span>, we have:
+      <span class="math display">\[f(\bd{x}_0) \le \dfrac{1}{2}f(\bd{z})
+      + \dfrac{1}{2}f(\bd{x}) \implies f(\bd{x}) \ge 2f(\bd{x}_0) -
+      f(\bd{z}) \ge 2f(\bd{x}_0) - M := m\]</span> Thus, <span
+      class="math inline">\(m \le f(\bd{x}) \le M\)</span> for all <span
+      class="math inline">\(\bd{x} \in B_r(\bd{x}_0)\)</span>.</p>
+      <div class="claim">
+      <p>If <span class="math inline">\(\phi : [a, b] \to
+      \bb{R}\)</span> is convex and bounded (<span
+      class="math inline">\(m \le \phi(t) \le M\)</span>), then for
+      <span class="math inline">\(s, t \in [a+\delta,
+      b-\delta]\)</span>: <span class="math display">\[\dfrac{|\phi(t) -
+      \phi(s)|}{|t - s|} \le \dfrac{M - m}{\delta}\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Let <span class="math inline">\(a &lt; a+\delta
+      \le s &lt; t \le b-\delta &lt; b\)</span>. The property of convex
+      functions states that the slope of the chord <span
+      class="math inline">\(S(x, y) = \dfrac{\phi(y) - \phi(x)}{y -
+      x}\)</span> is non-decreasing in both variables.</p>
+      <p>We compare the slope on <span class="math inline">\([s,
+      t]\)</span> with the slopes involving boundary points:</p>
+      <ol>
+      <li><p>Comparing with the left boundary <span
+      class="math inline">\(a\)</span>: Since <span
+      class="math inline">\(a &lt; s &lt; t\)</span>, we have <span
+      class="math inline">\(S(a, s) \le S(s, t)\)</span>.</p>
+      <div class="talign*">
+
+      </div>
+      <p>Since <span class="math inline">\(s \ge a+\delta\)</span>, then
+      <span class="math inline">\(s-a \ge \delta\)</span>. Also <span
+      class="math inline">\(\phi(s) \ge m\)</span> and <span
+      class="math inline">\(\phi(a) \le M\)</span>, so <span
+      class="math inline">\(\phi(s) - \phi(a) \ge m - M\)</span>.</p>
+      <div class="talign*">
+
+      </div></li>
+      <li><p>Comparing with the right boundary <span
+      class="math inline">\(b\)</span>: Since <span
+      class="math inline">\(s &lt; t &lt; b\)</span>, we have <span
+      class="math inline">\(S(s, t) \le S(t, b)\)</span>.</p>
+      <div class="talign*">
+
+      </div>
+      <p>Since <span class="math inline">\(t \le b-\delta\)</span>, then
+      <span class="math inline">\(b-t \ge \delta\)</span>. Also <span
+      class="math inline">\(\phi(b) \le M\)</span> and <span
+      class="math inline">\(\phi(t) \ge m\)</span>, so <span
+      class="math inline">\(\phi(b) - \phi(t) \le M - m\)</span>.</p>
+      <div class="talign*">
+
+      </div></li>
+      </ol>
+      <p>Combining both inequalities:</p>
+      <div class="talign*">
+      <p>-</p>
+      </div>
+      <p>Taking the absolute value gives the desired linear growth
+      bound:</p>
+      <div class="talign*">
+
+      </div>
+      <p> ◻</p>
+      </div>
+      <div class="claim">
+      <p>If <span class="math inline">\(\varphi: [a, b] \to
+      \bb{R}\)</span> is convex and bounded (<span
+      class="math inline">\(m \le \varphi(t) \le M\)</span>), then for
+      <span class="math inline">\(s, t \in [a+\delta,
+      b-\delta]\)</span>: <span
+      class="math display">\[\dfrac{|\varphi(t) - \varphi(s)|}{|t - s|}
+      \le \dfrac{M - m}{\delta}\]</span></p>
+      </div>
+      <p>This follows from the property that for a convex function, the
+      slope of the chord is non-decreasing. By comparing the slope on
+      <span class="math inline">\([s, t]\)</span> with the slopes
+      involving the boundary points <span
+      class="math inline">\(a\)</span> and <span
+      class="math inline">\(b\)</span>, we obtain the linear growth
+      bound.</p>
+      <div class="claim">
+      <p><span class="math inline">\(f\)</span> has linear growth in the
+      neighborhood of <span class="math inline">\(\bd{x}_0\)</span>.</p>
+      </div>
+      <p>Let <span class="math inline">\(\bd{x} \in
+      B_{r/2}(\bd{x}_0)\)</span>. Define <span
+      class="math inline">\(\varphi(t) = f(\bd{x}_0 + t\bd{u})\)</span>
+      where <span class="math inline">\(\bd{u} = \dfrac{\bd{x} -
+      \bd{x}_0}{\|\bd{x} - \bd{x}_0\|}\)</span>. <span
+      class="math inline">\(\varphi(t)\)</span> is convex. Applying
+      Claim 2 with <span class="math inline">\(\delta = r/4\)</span> and
+      <span class="math inline">\(t = \|\bd{x} - \bd{x}_0\|, s =
+      0\)</span>: <span class="math display">\[\dfrac{|f(\bd{x}) -
+      f(\bd{x}_0)|}{\|\bd{x} - \bd{x}_0\|} \le \dfrac{M - m}{r/4} =
+      4\left(\dfrac{M - m}{r}\right)\]</span></p>
+      <div class="claim">
+      <p><span class="math inline">\(f\)</span> is continuous at <span
+      class="math inline">\(\bd{x}_0\)</span>.</p>
+      </div>
+      <p>From Claim 3, <span class="math inline">\(|f(\bd{x}) -
+      f(\bd{x}_0)| \le K \|\bd{x} - \bd{x}_0\|\)</span> where <span
+      class="math inline">\(K = \dfrac{4(M-m)}{r}\)</span>. As <span
+      class="math inline">\(\bd{x} \to \bd{x}_0\)</span>, <span
+      class="math inline">\(\|\bd{x} - \bd{x}_0\| \to 0\)</span>, which
+      implies <span class="math inline">\(f(\bd{x}) \to
+      f(\bd{x}_0)\)</span>. ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(C \subseteq \bb{R}^n\)</span>
+      be a non-empty convex set. Suppose <span
+      class="math inline">\(\bd{x}_0 \in \partial C\)</span> (the
+      boundary of <span class="math inline">\(C\)</span>). Then there
+      exists a non-zero vector <span class="math inline">\(\bd{a} \in
+      \bb{R}^n\)</span> such that the hyperplane <span
+      class="math inline">\(H = \{ \bd{x} : \bd{a}^T \bd{x} = \bd{a}^T
+      \bd{x}_0 \}\)</span> supports <span
+      class="math inline">\(C\)</span> at <span
+      class="math inline">\(\bd{x}_0\)</span>. Specifically, the entire
+      set <span class="math inline">\(C\)</span> lies on one side of the
+      hyperplane: <span class="math display">\[\bd{a}^T \bd{x} \ge
+      \bd{a}^T \bd{x}_0 \quad \forall \bd{x} \in C\]</span></p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> We consider two cases based on the interior of
+      <span class="math inline">\(C\)</span>.</p>
+      <p><strong>Case 1: <span class="math inline">\(\text{int}(C) \neq
+      \emptyset\)</span>.</strong><br />
+      Since <span class="math inline">\(\bd{x}_0\)</span> lies on the
+      boundary <span class="math inline">\(\partial C\)</span>, it does
+      not belong to the interior, i.e., <span
+      class="math inline">\(\bd{x}_0 \notin \text{int}(C)\)</span>. The
+      set <span class="math inline">\(\text{int}(C)\)</span> is open and
+      convex. The singleton set <span
+      class="math inline">\(\{\bd{x}_0\}\)</span> is convex and compact.
+      Since these two sets are disjoint, by the <strong>Separating
+      Hyperplane Theorem</strong>, there exists a non-zero vector <span
+      class="math inline">\(\bd{a} \in \bb{R}^n\)</span> that separates
+      them. Thus, for all <span class="math inline">\(\bd{y} \in
+      \text{int}(C)\)</span>: <span class="math display">\[\bd{a}^T
+      \bd{y} \ge \bd{a}^T \bd{x}_0\]</span> (Note: The direction of the
+      inequality depends on the choice of <span
+      class="math inline">\(\bd{a}\)</span>, here we assume the
+      direction pointing into the set). Since any point <span
+      class="math inline">\(\bd{x} \in C\)</span> can be approached by a
+      sequence of points in <span
+      class="math inline">\(\text{int}(C)\)</span> (as <span
+      class="math inline">\(\overline{\text{int}(C)} =
+      \overline{C}\)</span> for convex sets with non-empty interior),
+      and the inner product is continuous, the inequality holds for all
+      <span class="math inline">\(\bd{x} \in C\)</span>: <span
+      class="math display">\[\bd{a}^T \bd{x} \ge \bd{a}^T
+      \bd{x}_0\]</span></p>
+      <p><strong>Case 2: <span class="math inline">\(\text{int}(C) =
+      \emptyset\)</span>.</strong><br />
+      If the interior is empty, the convex set <span
+      class="math inline">\(C\)</span> must lie in an affine subspace of
+      dimension <span class="math inline">\(k &lt; n\)</span> (its
+      relative interior is non-empty, but its full interior is empty).
+      We can choose a vector <span class="math inline">\(\bd{a}\)</span>
+      that is orthogonal to this affine subspace (treating <span
+      class="math inline">\(\bd{x}_0\)</span> as the origin relative to
+      the subspace). For such a vector, <span
+      class="math inline">\(\bd{a}^T (\bd{x} - \bd{x}_0) = 0\)</span>
+      for all <span class="math inline">\(\bd{x} \in C\)</span>, which
+      implies: <span class="math display">\[\bd{a}^T \bd{x} = \bd{a}^T
+      \bd{x}_0\]</span> This trivially satisfies the condition <span
+      class="math inline">\(\bd{a}^T \bd{x} \ge \bd{a}^T
+      \bd{x}_0\)</span>. ◻</p>
+      </div>
+      <div class="theorem">
+      <p>Let <span class="math inline">\(f: \bb{R}^n \to \bb{R}\)</span>
+      be a convex function. For any point <span
+      class="math inline">\(\bd{x}_0\)</span> where <span
+      class="math inline">\(f\)</span> is finite, the subdifferential
+      set <span class="math inline">\(\partial f(\bd{x}_0)\)</span> is
+      non-empty. That is, there exists at least one subgradient <span
+      class="math inline">\(\bd{g}\)</span> such that the affine
+      function <span class="math inline">\(h(\bd{x}) = f(\bd{x}_0) +
+      \bd{g}^T(\bd{x} - \bd{x}_0)\)</span> supports <span
+      class="math inline">\(f\)</span> at <span
+      class="math inline">\(\bd{x}_0\)</span>.</p>
+      </div>
+      <div class="proof">
+      <p><em>Proof.</em> Consider the point <span
+      class="math inline">\((\bd{x}_0, f(\bd{x}_0)) \in
+      \bb{R}^{n+1}\)</span>. This point lies on the boundary of the
+      epigraph, <span
+      class="math inline">\(\operatorname{epi}(f)\)</span>. Since <span
+      class="math inline">\(f\)</span> is convex, <span
+      class="math inline">\(\operatorname{epi}(f)\)</span> is a convex
+      set. By the <strong>Supporting Hyperplane Theorem</strong>, there
+      exists a non-zero normal vector <span
+      class="math inline">\((\bd{a}, b) \in \bb{R}^n \times
+      \bb{R}\)</span> (where <span class="math inline">\((\bd{a}, b)
+      \neq (\bd{0}, 0)\)</span>) such that the hyperplane passing
+      through <span class="math inline">\((\bd{x}_0,
+      f(\bd{x}_0))\)</span> supports the epigraph. Thus, for all <span
+      class="math inline">\((\bd{x}, t) \in
+      \operatorname{epi}(f)\)</span>, we have: <span
+      class="math display">\[\begin{aligned}
+              \begin{bmatrix} \bd{a}^T &amp; b \end{bmatrix}
+      \begin{bmatrix} \bd{x} \\ t \end{bmatrix} &amp; \le
+      \begin{bmatrix} \bd{a}^T &amp; b \end{bmatrix} \begin{bmatrix}
+      \bd{x}_0 \\ f(\bd{x}_0) \end{bmatrix} \nonumber \\
+              \bd{a}^T \bd{x} + b
+      t                                                                &amp;
+      \le \bd{a}^T \bd{x}_0 + b f(\bd{x}_0) \label{eq:support}
+          
+      \end{aligned}\]</span></p>
+      <p><strong>Step 1: Show <span class="math inline">\(b \le
+      0\)</span>.</strong><br />
+      Fix <span class="math inline">\(\bd{x} = \bd{x}_0\)</span>. For
+      any <span class="math inline">\(t &gt; f(\bd{x}_0)\)</span>, the
+      point <span class="math inline">\((\bd{x}_0, t)\)</span> is in
+      <span class="math inline">\(\operatorname{epi}(f)\)</span>.
+      Substituting into (<a href="#eq:support" data-reference-type="ref"
+      data-reference="eq:support">[eq:support]</a>): <span
+      class="math display">\[\bd{a}^T \bd{x}_0 + b t \le \bd{a}^T
+      \bd{x}_0 + b f(\bd{x}_0) \implies b(t - f(\bd{x}_0)) \le
+      0\]</span> Since <span class="math inline">\(t - f(\bd{x}_0) &gt;
+      0\)</span>, we must have <span class="math inline">\(b \le
+      0\)</span>.</p>
+      <p><strong>Step 2: Show <span class="math inline">\(b \neq
+      0\)</span>.</strong><br />
+      Suppose for contradiction that <span class="math inline">\(b =
+      0\)</span>. Then <span class="math inline">\(\bd{a} \neq
+      \bd{0}\)</span> (since the normal vector is non-zero). The
+      inequality (<a href="#eq:support" data-reference-type="ref"
+      data-reference="eq:support">[eq:support]</a>) becomes: <span
+      class="math display">\[\bd{a}^T \bd{x} \le \bd{a}^T \bd{x}_0 \quad
+      \forall \bd{x} \in \text{dom}(f)\]</span> If <span
+      class="math inline">\(\text{dom}(f) = \bb{R}^n\)</span>, this
+      implies that a linear function is bounded above by a constant,
+      which is only possible if <span class="math inline">\(\bd{a} =
+      \bd{0}\)</span>. This creates a contradiction (since <span
+      class="math inline">\((\bd{a}, b) \neq \bd{0}\)</span>). Thus,
+      <span class="math inline">\(b &lt; 0\)</span>.</p>
+      <p><strong>Step 3: Construct the subgradient.</strong><br />
+      Since <span class="math inline">\(b &lt; 0\)</span>, we can divide
+      inequality (<a href="#eq:support" data-reference-type="ref"
+      data-reference="eq:support">[eq:support]</a>) by <span
+      class="math inline">\(b\)</span> (reversing the inequality sign):
+      <span class="math display">\[\dfrac{\bd{a}^T}{b} \bd{x} + t \ge
+      \dfrac{\bd{a}^T}{b} \bd{x}_0 + f(\bd{x}_0)\]</span> Let <span
+      class="math inline">\(\bd{g} = -\dfrac{1}{b}\bd{a}\)</span>. Then
+      for any <span class="math inline">\(\bd{x}\)</span>, taking <span
+      class="math inline">\(t = f(\bd{x})\)</span> (which is in the
+      epigraph): <span class="math display">\[-\bd{g}^T \bd{x} +
+      f(\bd{x}) \ge -\bd{g}^T \bd{x}_0 + f(\bd{x}_0)\]</span>
+      Rearranging terms yields the subgradient definition: <span
+      class="math display">\[f(\bd{x}) \ge f(\bd{x}_0) + \bd{g}^T
+      (\bd{x} - \bd{x}_0)\]</span> Thus, <span
+      class="math inline">\(\bd{g} \in \partial
+      f(\bd{x}_0)\)</span>. ◻</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- ── Theme toggle script ── -->
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return localStorage.getItem('notes-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('notes-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('notes-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+  <!-- ── Active TOC tracking ── -->
+  <script>
+  (function() {
+    var links = document.querySelectorAll('.sidebar nav a');
+    if (!links.length) return;
+    var headings = Array.from(document.querySelectorAll('main h2, main h3'));
+    function onScroll() {
+      var scrollY = window.scrollY + 80;
+      var active = headings[0];
+      headings.forEach(function(h) { if (h.offsetTop <= scrollY) active = h; });
+      links.forEach(function(a) {
+        a.classList.toggle('active', active && a.getAttribute('href') === '#' + active.id);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+  </script>
+
+</body>
+</html>

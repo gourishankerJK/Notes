@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>(function(){var t=localStorage.getItem('notes-theme');if(t)document.documentElement.setAttribute('data-theme',t);})()</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes — Gouri Shanker</title>
+  <meta name="description" content="Mathematical notes on optimization, control theory, and machine learning.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="optimal_control/assets/index.css">
+  <style>
+    .note-grid {
+      position: relative; z-index: 2;
+      max-width: 1080px; margin: 72px auto 0; padding: 0 40px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px; background: #e4ddcf; border: 1px solid #e4ddcf; border-radius: 4px;
+      overflow: hidden;
+    }
+    .note-card {
+      background: #fffdf8; padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 10px;
+      transition: background 0.25s, box-shadow 0.25s;
+      text-decoration: none; color: inherit;
+    }
+    .note-card:hover { background: #fff; box-shadow: 0 8px 30px rgba(22,19,16,0.07); z-index: 1; }
+    .note-tag {
+      font-family: "Inter", sans-serif; font-size: 10px; font-weight: 600;
+      letter-spacing: .2em; text-transform: uppercase; color: #9a7b4f;
+    }
+    .note-title {
+      font-family: "Playfair Display", "EB Garamond", Georgia, serif;
+      font-size: 1.4rem; font-weight: 600; color: #161310; line-height: 1.25;
+    }
+    .note-desc {
+      font-family: "Inter", sans-serif; font-size: 13px; color: #8a8175;
+      line-height: 1.6; flex: 1;
+    }
+    .note-go {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: "Inter", sans-serif; font-size: 12px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: #1a1f71;
+      margin-top: 6px;
+    }
+    .note-go svg { width: 14px; height: 14px; }
+
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]):not([data-theme="paper"]) .note-grid {
+        background: #2c2823; border-color: #2c2823;
+      }
+      html:not([data-theme="light"]):not([data-theme="paper"]) .note-card {
+        background: #1c1916;
+      }
+      html:not([data-theme="light"]):not([data-theme="paper"]) .note-card:hover {
+        background: #25211d;
+      }
+      html:not([data-theme="light"]):not([data-theme="paper"]) .note-title { color: #ece7dd; }
+      html:not([data-theme="light"]):not([data-theme="paper"]) .note-go { color: #8b90ff; }
+    }
+    html[data-theme="dark"] .note-grid { background: #2c2823; border-color: #2c2823; }
+    html[data-theme="dark"] .note-card { background: #1c1916; }
+    html[data-theme="dark"] .note-card:hover { background: #25211d; }
+    html[data-theme="dark"] .note-title { color: #ece7dd; }
+    html[data-theme="dark"] .note-go { color: #8b90ff; }
+
+    html[data-theme="paper"] .note-grid { background: #d4b896; border-color: #d4b896; }
+    html[data-theme="paper"] .note-card { background: #e8dab8; }
+    html[data-theme="paper"] .note-card:hover { background: #ece0c4; }
+    html[data-theme="paper"] .note-title { color: #2c1a0e; }
+    html[data-theme="paper"] .note-go { color: #7b2f0c; }
+
+    @media (max-width: 760px) {
+      .note-grid { margin: 48px auto 0; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <span class="mast-brand">G. Shanker</span>
+    <div class="mast-right-wrap">
+      <span class="mast-right">Mathematics · Optimization · Control</span>
+      <div class="theme-toggle" id="landing-theme-toggle" aria-label="Switch theme">
+        <button class="tt-btn" data-t="light" title="Light mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="6.64" y2="6.64"/><line x1="17.36" y1="17.36" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="17.36" y2="6.64"/><line x1="6.64" y1="17.36" x2="4.93" y2="19.07"/></svg></button>
+        <button class="tt-btn" data-t="dark" title="Dark mode"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="tt-btn" data-t="paper" title="Parchment mode"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-kicker">Mathematical Notes</div>
+    <h1 class="hero-title">Notes</h1>
+    <p class="hero-sub">Course notes and reading notes in optimization, control theory, and machine learning.</p>
+  </section>
+
+  <!-- Note cards -->
+  <div class="note-grid">
+
+    <a class="note-card" href="optimal_control/index.html">
+      <div class="note-tag">Textbook Notes</div>
+      <div class="note-title">Calculus of Variations &amp; Optimal Control</div>
+      <div class="note-desc">A web adaptation of Liberzon's concise introduction — from the Euler–Lagrange equation to the maximum principle and HJB.</div>
+      <div class="note-go">
+        Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <a class="note-card" href="Advance Convex Optimization/index.html">
+      <div class="note-tag">Course Notes</div>
+      <div class="note-title">Advanced Convex Optimization</div>
+      <div class="note-desc">Proximal methods, subgradients, and convergence analysis for smooth and non-smooth convex problems.</div>
+      <div class="note-go">
+        Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <a class="note-card" href="Optimization for Machine Learning/index.html">
+      <div class="note-tag">Course Notes</div>
+      <div class="note-title">Optimization for Machine Learning</div>
+      <div class="note-desc">Vector spaces, topological foundations, convexity, and first-order optimization algorithms for ML.</div>
+      <div class="note-go">
+        Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Notes by Gouri Shanker.</p>
+  </footer>
+
+  <!-- Theme toggle -->
+  <script>
+  (function() {
+    var html = document.documentElement;
+    var toggle = document.getElementById('landing-theme-toggle');
+    if (!toggle) return;
+    function getTheme() { return localStorage.getItem('notes-theme') || 'auto'; }
+    function setTheme(t) {
+      if (t === 'auto') { html.removeAttribute('data-theme'); localStorage.removeItem('notes-theme'); }
+      else { html.setAttribute('data-theme', t); localStorage.setItem('notes-theme', t); }
+      sync();
+    }
+    function sync() {
+      var cur = getTheme();
+      toggle.querySelectorAll('.tt-btn').forEach(function(b) {
+        b.classList.toggle('active', b.getAttribute('data-t') === cur);
+      });
+    }
+    toggle.addEventListener('click', function(e) {
+      var btn = e.target.closest ? e.target.closest('.tt-btn') : null;
+      if (!btn) return;
+      var t = btn.getAttribute('data-t');
+      setTheme(getTheme() === t ? 'auto' : t);
+    });
+    sync();
+  })();
+  </script>
+
+</body>
+</html>
