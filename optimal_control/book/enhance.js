@@ -264,18 +264,20 @@
     [].forEach.call(divs, function (div) {
       var table = div.querySelector('table');
       if (!table) return;
-      var img = table.querySelector('img');
-      if (!img) return;
-      var latex = altLatex(img);
-      if (latex === null) return;
+      if (!table.querySelector('img')) return;
 
-      var eqNum = '';
+      var eqNum = '', eqCell = null;
       [].forEach.call(table.querySelectorAll('td'), function (td) {
         var t = td.textContent.trim();
-        if (/^\(\d[\d.]*\)$/.test(t)) eqNum = t;
+        if (/^\(\d[\d.]*\)$/.test(t)) { eqNum = t; return; }
+        if (td.querySelector('img')) eqCell = td;
       });
-      var anchor = div.querySelector('a[name]');
+      if (!eqCell) return;
 
+      var latex = cellLatex(eqCell);
+      if (!latex) return;
+
+      var anchor = div.querySelector('a[name]');
       var block = document.createElement('div');
       block.className = 'eq-block' + (eqNum ? '' : ' unnumbered');
       if (anchor) block.id = anchor.getAttribute('name');
@@ -292,12 +294,10 @@
       div.parentNode.replaceChild(block, div);
     });
 
-    /* Pass B: unnumbered display equations (DIV > IMG) */
+    /* Pass B: unnumbered display equations (DIV > IMG, no table) */
     [].forEach.call(document.querySelectorAll('div[align="CENTER"], div[align="center"]'), function (div) {
-      var img = div.querySelector('img');
-      if (!img) return;
-      var latex = altLatex(img);
-      if (latex === null) return;
+      var latex = cellLatex(div);
+      if (!latex) return;
       var block = document.createElement('div');
       block.className = 'eq-block unnumbered';
       block.textContent = '\\[' + latex + '\\]';
@@ -351,7 +351,17 @@
         return;
       }
 
-      /* C4: anything else with non-math alt → neutral card so it stays readable */
+      /* C4: cross-reference icons — img wrapped in <a> with alt="[*]" → inline arrow */
+      if (img.parentNode && img.parentNode.tagName === 'A') {
+        var xref = document.createElement('span');
+        xref.className = 'xref-icon';
+        xref.setAttribute('aria-label', 'cross-reference');
+        xref.textContent = '→';
+        img.parentNode.replaceChild(xref, img);
+        return;
+      }
+
+      /* C5: anything else with non-math alt → neutral card so it stays readable */
       if (rawAlt && !/^(next|up|previous|contents|index)$/i.test(rawAlt)) figureCard(img, null);
     });
   }
@@ -408,11 +418,13 @@
     return s;
   }
   function mathEnvToTex(src, env) {
+    var inner = stripEnv(src, env);
     if (env === 'displaymath' || env === 'equation' || env === 'equation*') {
-      return '\\[' + stripEnv(src, env) + '\\]';
+      return '\\[' + inner + '\\]';
     }
-    if (env === 'split') return '\\[\\begin{split}' + stripEnv(src, 'split') + '\\end{split}\\]';
-    return src; // align*, multline*, gather*, eqnarray* are handled by MathJax directly
+    if (env === 'split') return '\\[\\begin{split}' + inner + '\\end{split}\\]';
+    // align, align*, gather, gather*, multline, multline*, eqnarray, eqnarray* — must be wrapped
+    return '\\[\\begin{' + env + '}' + inner + '\\end{' + env + '}\\]';
   }
   function renderLatexBody(src) {
     var s = src;
@@ -463,11 +475,135 @@
     var s = raw;
     if (s.charAt(s.length - 1) === '$') s = s.slice(1, -1);
     else s = s.slice(1);
-    return s.replace(/^\\displaystyle\s*/, '').trim();
+    s = s.replace(/^\\displaystyle\s*/, '');
+    s = s.replace(/\\ *$/, '');   // strip trailing "\ " so trim never leaves lone "\"
+    return s.trim();
+  }
+
+  /* Combine LaTeX from every img (and bridging text) in a single cell/div */
+  function cellLatex(cell) {
+    var parts = [], hasLatex = false;
+    [].forEach.call(cell.childNodes, function (node) {
+      if (node.nodeType === 1 && /^IMG$/i.test(node.tagName)) {
+        var lat = altLatex(node);
+        if (lat) { parts.push(lat); hasLatex = true; }
+      } else if (node.nodeType === 3) {
+        var t = node.nodeValue.replace(/ /g, ' ').trim();
+        if (t) parts.push('\\;\\text{' + esc(t) + '}\\;');
+      }
+    });
+    return hasLatex ? parts.join('') : null;
   }
 
   function esc(s) {
     return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  /* ── Footnotes: fetch footnode.html and inject inline ───────── */
+  function buildFootnotes() {
+    var fnLinks = document.querySelectorAll('a[href*="footnode.html#"]');
+    if (!fnLinks.length) return;
+
+    // Collect IDs in DOM order; re-point hrefs to local anchors
+    var seen = {}, fnOrder = [];
+    [].forEach.call(fnLinks, function (a) {
+      var id = (a.getAttribute('href') || '').split('#')[1];
+      if (!id) return;
+      if (!seen[id]) {
+        seen[id] = true;
+        fnOrder.push({ id: id, backName: a.getAttribute('name') || '' });
+      }
+      a.setAttribute('href', '#fn-' + id);
+      a.className = (a.className ? a.className + ' ' : '') + 'fn-marker';
+    });
+
+    fetch('footnode.html')
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var fdoc = new DOMParser().parseFromString(html, 'text/html');
+
+        var section = document.createElement('section');
+        section.className = 'fn-section';
+        var heading = document.createElement('h2');
+        heading.className = 'fn-heading';
+        heading.textContent = 'Notes';
+        section.appendChild(heading);
+
+        var ol = document.createElement('ol');
+        ol.className = 'fn-list';
+
+        fnOrder.forEach(function (entry) {
+          var anch = fdoc.querySelector('a[name="' + entry.id + '"]');
+          if (!anch) return;
+          var dtEl = anch.parentNode;
+          while (dtEl && dtEl.tagName !== 'DT') dtEl = dtEl.parentNode;
+          if (!dtEl) return;
+          var ddEl = dtEl.nextElementSibling;
+          if (!ddEl || ddEl.tagName !== 'DD') return;
+
+          var clone = ddEl.cloneNode(true);
+          // Remove spacing dots (PRE blocks with only dots/whitespace)
+          [].forEach.call(clone.querySelectorAll('pre'), function (pre) {
+            if (/^[\s.]*$/.test(pre.textContent)) pre.parentNode.removeChild(pre);
+          });
+
+          // Process math GIFs inside footnote
+          [].forEach.call(clone.querySelectorAll('img'), function (img) {
+            var rawAlt = (img.getAttribute('alt') || '').trim();
+            var lat = altLatex(img);
+            if (lat !== null) {
+              var w = parseInt(img.getAttribute('width') || '0', 10);
+              var isDisp = /^\\displaystyle/.test(rawAlt.replace(/^\$\s*/, '')) || w > 280;
+              var node;
+              if (isDisp) {
+                node = document.createElement('div');
+                node.className = 'eq-block unnumbered';
+                node.textContent = '\\[' + lat + '\\]';
+              } else {
+                node = document.createElement('span');
+                node.className = 'math-inline';
+                node.textContent = '\\(' + lat + '\\)';
+              }
+              img.parentNode.replaceChild(node, img);
+            } else if (img.parentNode && img.parentNode.tagName === 'A') {
+              var xr = document.createElement('span');
+              xr.className = 'xref-icon';
+              xr.textContent = '→';
+              img.parentNode.replaceChild(xr, img);
+            }
+          });
+
+          var li = document.createElement('li');
+          li.id = 'fn-' + entry.id;
+          li.className = 'fn-item';
+          li.innerHTML = clone.innerHTML;
+
+          if (entry.backName) {
+            var back = document.createElement('a');
+            back.href = '#' + entry.backName;
+            back.className = 'fn-back';
+            back.setAttribute('aria-label', 'return to text');
+            back.textContent = '↩';
+            li.insertBefore(back, li.firstChild);
+          }
+          ol.appendChild(li);
+        });
+
+        if (!ol.children.length) return;
+        section.appendChild(ol);
+
+        var content = document.getElementById('cvoc-content');
+        if (!content) return;
+        var hr = document.createElement('hr');
+        hr.className = 'fn-rule';
+        content.appendChild(hr);
+        content.appendChild(section);
+
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise([section]);
+        }
+      })
+      .catch(function () {});
   }
 
   /* ── MathJax loader ─────────────────────────────────────────── */
@@ -490,7 +626,16 @@
     buildNav(meta);
     processMath();
     enhanceTocLinks();
+    buildFootnotes();
     buildPageEndNav(meta);
+
+    // Clean footnode.html when visited directly (remove PRE spacing dots)
+    if (window.location.pathname.indexOf('footnode') !== -1) {
+      [].forEach.call(document.querySelectorAll('#cvoc-content pre'), function (pre) {
+        if (/^[\s.]*$/.test(pre.textContent)) pre.parentNode.removeChild(pre);
+      });
+    }
+
     document.body.classList.add('cvoc-ready');
     loadMathJax();
   }

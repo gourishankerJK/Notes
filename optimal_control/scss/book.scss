@@ -324,6 +324,71 @@ mjx-container[display="true"] { margin: 0 !important; }
 
 .lx-ref { font-family: $sans; font-size: .82em; color: $ink-3; }
 
+// Cross-reference inline arrow (replaces crossref.gif icons)
+a .xref-icon {
+  font-size: .78em;
+  vertical-align: super;
+  line-height: 1;
+  margin-left: .1em;
+  color: $accent;
+  opacity: .8;
+  transition: opacity .15s;
+}
+a:hover .xref-icon { opacity: 1; }
+
+// ── Footnotes ────────────────────────────────────────────────
+a.fn-marker {
+  color: $accent;
+  text-decoration: none;
+  border-bottom: none !important;
+  sup { font-size: .72em; }
+  &:hover { text-decoration: underline; }
+}
+
+hr.fn-rule {
+  border: none;
+  border-top: 1px solid $rule;
+  margin: 3.5rem 0 2rem;
+}
+
+.fn-section { margin-bottom: 3rem; }
+
+.fn-heading {
+  font-family: $sans;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: $ink-3;
+  margin-bottom: 1.4rem;
+}
+
+.fn-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .fn-item {
+    display: flex;
+    gap: .75rem;
+    margin-bottom: .9rem;
+    font-size: .85em;
+    line-height: 1.65;
+    color: $ink-2;
+    padding-left: 0;
+    &::before { display: none; }
+
+    .fn-back {
+      flex-shrink: 0;
+      margin-top: .1em;
+      color: $ink-3;
+      text-decoration: none;
+      border-bottom: none !important;
+      &:hover { color: $accent; }
+    }
+  }
+}
+
 // ── Callouts (rendered short theorem environments) ──────────
 .callout {
   margin: 2rem 0;
@@ -383,6 +448,8 @@ BIG.XXLARGE { font-size: 1.5em; } BIG.HUGE { font-size: 1.75em; } BIG.XHUGE { fo
   justify-content: space-between;
   margin-top: -80px;
   margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
 
   a {
     flex: 1;
@@ -456,6 +523,10 @@ BIG.XXLARGE { font-size: 1.5em; } BIG.HUGE { font-size: 1.75em; } BIG.XHUGE { fo
   .page-end-nav a { background: $d-paper-2; border-color: $d-rule; &:hover { border-color: rgba($d-gold, .6); } .pe-dir { color: $d-gold; } .pe-title { color: $d-ink; } }
   .theme-toggle { border-color: $d-rule-2; .tt-btn { color: $d-ink-3; &.active { background: $d-paper-2; color: $d-gold; } } }
   li.toc-entry > a { &:hover { background: rgba($d-accent, .1); } .sec-num { color: $d-gold; } .sec-title { color: $d-accent; } }
+  a.fn-marker { color: $d-accent; }
+  hr.fn-rule { border-color: $d-rule; }
+  .fn-heading { color: $d-ink-3; }
+  .fn-item { color: $d-ink-2; .fn-back { color: $d-ink-3; &:hover { color: $d-accent; } } }
 }
 
 @mixin theme-paper {
@@ -494,6 +565,10 @@ BIG.XXLARGE { font-size: 1.5em; } BIG.HUGE { font-size: 1.75em; } BIG.XHUGE { fo
   .page-end-nav a { background: $p-bg2; border-color: $p-rule; &:hover { border-color: $p-gold-soft; } .pe-dir { color: $p-gold; } .pe-title { color: $p-ink; } }
   .theme-toggle { border-color: $p-rule2; .tt-btn { color: $p-ink3; &.active { background: $p-bg2; color: $p-gold; } } }
   li.toc-entry > a { &:hover { background: rgba($p-accent, .06); } .sec-num { color: $p-gold; } .sec-title { color: $p-accent; } }
+  a.fn-marker { color: $p-accent; }
+  hr.fn-rule { border-color: $p-rule2; }
+  .fn-heading { color: $p-ink3; }
+  .fn-item { color: $p-ink2; .fn-back { color: $p-ink3; &:hover { color: $p-accent; } } }
 }
 
 // System auto dark — skipped when user picked a theme explicitly
