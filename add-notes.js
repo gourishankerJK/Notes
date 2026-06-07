@@ -230,7 +230,7 @@ function generateLandingPage(folder, info, sections) {
   </section>
   ${contentsSection}
   <footer class="site-footer">
-    <p><em>${esc(title)}</em> — Course notes by ${esc(author)}.</p>
+    <p>Thank you to the respective authors and professors for these notes.</p>
   </footer>
   <script>
   (function() {
