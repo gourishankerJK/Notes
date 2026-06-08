@@ -178,7 +178,7 @@
     if (node.nodeType === 3) return !node.nodeValue.trim();
     if (node.nodeType === 1) {
       var t = node.tagName;
-      if (t === 'BR' || t === 'HR') return true;
+      if (t === 'BR' || t === 'HR' || t === 'ADDRESS') return true;
       if (t === 'P' && !node.textContent.trim() && !node.querySelector('img')) return true;
     }
     return false;
@@ -254,6 +254,15 @@
     }
     wrap.innerHTML = card(meta.prev, 'prev', meta.title.Previous) + card(meta.next, 'next', meta.title.Next);
     document.body.appendChild(wrap);
+
+    var footer = document.createElement('footer');
+    footer.className = 'site-footer';
+    footer.innerHTML =
+      '<p><em>Calculus of Variations and Optimal Control Theory: A Concise Introduction</em> by Daniel Liberzon. ' +
+      'Original source: <a href="https://liberzon.csl.illinois.edu/teaching/cvoc/" target="_blank" rel="noopener">liberzon.csl.illinois.edu</a></p>' +
+      '<p class="site-footer-disclaimer">This HTML version was compiled by Gouri Shanker as a personal study aid, based on Prof. Liberzon\'s publicly available notes. ' +
+      'It is not affiliated with, endorsed by, or maintained by Prof. Liberzon.</p>';
+    document.body.appendChild(footer);
   }
 
   /* ── Math: replace alt-LaTeX GIFs with MathJax ──────────────── */
@@ -275,7 +284,9 @@
       if (!eqCell) return;
 
       var latex = cellLatex(eqCell);
+      if (!latex || isTruncated(latex)) latex = mathFromComment(div);
       if (!latex) return;
+      latex = normalizeLatex(latex);
 
       var anchor = div.querySelector('a[name]');
       var block = document.createElement('div');
@@ -297,7 +308,9 @@
     /* Pass B: unnumbered display equations (DIV > IMG, no table) */
     [].forEach.call(document.querySelectorAll('div[align="CENTER"], div[align="center"]'), function (div) {
       var latex = cellLatex(div);
+      if (!latex || isTruncated(latex)) latex = mathFromComment(div);
       if (!latex) return;
+      latex = normalizeLatex(latex);
       var block = document.createElement('div');
       block.className = 'eq-block unnumbered';
       block.textContent = '\\[' + latex + '\\]';
@@ -311,6 +324,18 @@
       /* C1: inline / display $…$ math */
       var latex = altLatex(img);
       if (latex !== null) {
+        if (isTruncated(latex)) {
+          var fb = mathFromComment(img.parentNode) ||
+                   (img.parentNode && mathFromComment(img.parentNode.parentNode));
+          if (fb) {
+            var bFb = document.createElement('div');
+            bFb.className = 'eq-block unnumbered';
+            bFb.textContent = '\\[' + normalizeLatex(fb) + '\\]';
+            img.parentNode.replaceChild(bFb, img);
+          }
+          return;
+        }
+        latex = normalizeLatex(latex);
         var w = parseInt(img.getAttribute('width') || '0', 10);
         var isDisplay = /^\\displaystyle/.test(rawAlt.replace(/^\$\s*/, '')) || w > 320;
         latex = latex.replace(/^\\displaystyle\s*/, '');
@@ -364,6 +389,42 @@
       /* C5: anything else with non-math alt → neutral card so it stays readable */
       if (rawAlt && !/^(next|up|previous|contents|index)$/i.test(rawAlt)) figureCard(img, null);
     });
+  }
+
+  /* ── Comment-based LaTeX fallback for truncated ALTs ───────── */
+  function isTruncated(s) {
+    return /\.\.\.\s*[\n\r]\s*\.\.\./.test(s);
+  }
+  function parseMathComment(val) {
+    if (!val || val.indexOf('MATH') === -1) return null;
+    var m = val.match(/\\begin\{([^}]+)\}([\s\S]*?)\\end\{\1\}/);
+    if (!m) return null;
+    var env = m[1], inner = m[2].trim();
+    if (env === 'displaymath' || env === 'equation' || env === 'equation*') return inner;
+    return '\\begin{' + env + '}' + inner + '\\end{' + env + '}';
+  }
+  function findMathComment(el) {
+    if (!el || !el.childNodes) return null;
+    for (var i = 0; i < el.childNodes.length; i++) {
+      if (el.childNodes[i].nodeType === 8) {
+        var r = parseMathComment(el.childNodes[i].nodeValue);
+        if (r) return r;
+      }
+    }
+    return null;
+  }
+  function mathFromComment(node) {
+    var r = findMathComment(node);
+    if (r) return r;
+    var sib = node ? node.previousSibling : null;
+    for (var i = 0; i < 6 && sib; i++, sib = sib.previousSibling) {
+      if (sib.nodeType === 8) { r = parseMathComment(sib.nodeValue); if (r) return r; }
+      else if (sib.nodeType === 1) { r = findMathComment(sib); if (r) return r; }
+    }
+    return null;
+  }
+  function normalizeLatex(s) {
+    return s.replace(/\{\\scriptstyle\\([A-Za-z]+)\}/g, '\\$1{}');
   }
 
   var MATH_ENVS = { displaymath:1, equation:1, 'equation*':1, align:1, 'align*':1,
@@ -499,6 +560,22 @@
     return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  /* Convert bare $...$ in text nodes to \(...\) so MathJax renders them */
+  function convertDollarMath(el) {
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var node, toReplace = [];
+    while ((node = walker.nextNode())) {
+      if (/\$[^$\n]+\$/.test(node.nodeValue)) toReplace.push(node);
+    }
+    toReplace.forEach(function (node) {
+      var span = document.createElement('span');
+      span.innerHTML = node.nodeValue
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\$([^$\n]+)\$/g, function (_, m) { return '\\(' + m + '\\)'; });
+      node.parentNode.replaceChild(span, node);
+    });
+  }
+
   /* ── Footnotes: fetch footnode.html and inject inline ───────── */
   function buildFootnotes() {
     var fnLinks = document.querySelectorAll('a[href*="footnode.html#"]');
@@ -576,16 +653,23 @@
           var li = document.createElement('li');
           li.id = 'fn-' + entry.id;
           li.className = 'fn-item';
-          li.innerHTML = clone.innerHTML;
 
           if (entry.backName) {
             var back = document.createElement('a');
             back.href = '#' + entry.backName;
             back.className = 'fn-back';
             back.setAttribute('aria-label', 'return to text');
-            back.textContent = '↩';
-            li.insertBefore(back, li.firstChild);
+            back.textContent = '\u21A9';
+            li.appendChild(back);
           }
+
+          // Wrap content in a div so it is one flex child, not many
+          var fnContent = document.createElement('div');
+          fnContent.className = 'fn-content';
+          fnContent.innerHTML = clone.innerHTML;
+          convertDollarMath(fnContent);
+          li.appendChild(fnContent);
+
           ol.appendChild(li);
         });
 
